@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <menuitem action="action_select_date"
+                  id="menu_action_manage_works"
+                  parent="project.menu_project_management"
+                  sequence="7"/>
+
+    </data>
+</openerp>

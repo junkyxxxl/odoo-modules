@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_duplicate_other_type" model="ir.ui.view">
+            <field name="name">Duplicate changing Document Type</field>
+            <field name="model">wizard.duplicate.other.type</field>
+            <field name="arch" type="xml">
+              <form string="Duplicate changing Document Type">
+                  	<group>		
+	                    <field name="document_type_id"/>
+                    </group>
+                    <footer>
+                        <button name="do_copy" string="Duplicate" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+            </form>
+            </field>
+        </record>
+
+        <record id="action_duplicate_other_type" model="ir.actions.act_window">
+            <field name="name">Duplicate changing Document Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.duplicate.other.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_duplicate_other_type"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="duplicate_other_type">
+            <field name="name">Duplicate changing Document Type</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_duplicate_other_type'))" />
+            <field name="key">action</field>
+            <field name="model">sale.order</field>
+        </record>
+
+    </data>
+</openerp>

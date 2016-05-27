@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_expense_line_accredia_form">
+            <field name="name">hr.expense.accredia.form</field>
+            <field name="model">hr.expense.expense</field>
+            <field name="inherit_id" ref="hr_expense.view_expenses_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='employee_id']" position="before">
+                    <field name="expense_number" readonly="1" />
+                </xpath>
+                <xpath expr="//field[@name='employee_id']" position="after">
+                    <field name="user_id" on_change="onchange_user_id(user_id)" />
+                </xpath>
+                <xpath expr="//sheet/group/group/field[@name='company_id']" position="after">
+                    <field name="task_id" string="Riferimento" context="{'t_user_id': user_id,'t_obj': 'mission'}" on_change="onchange_task(task_id,user_id)" domain="[('phase_id','!=',None),('phase_id','!=',False)]" />
+                    <field name="city" />
+                    <field name="holiday_id" on_change="onchange_holiday_id(holiday_id)" />
+                </xpath>
+                <xpath expr="//sheet/group/group/field[@name='currency_id']" position="after">
+                    <field name="currency_rate" />
+                    <field name="cash_currency_id" />
+                    <field name="own_car_use" />
+                </xpath>
+                <xpath expr="//page/field/form/group/group/field[@name='analytic_account']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page/field/tree/field[@name='uom_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page/field/tree/field[@name='name']" position="attributes">
+                    <attribute name="string">Descrizione</attribute>
+                </xpath>
+                <xpath expr="//page/field/form/group/group/field[@name='name']" position="attributes">
+                    <attribute name="string">Descrizione</attribute>
+                </xpath>
+<!--
+                <xpath expr="//tree/field[@name='analytic_account']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+-->
+                <xpath expr="//field[@name='department_id']" position="attributes">
+                    <attribute name="required">1</attribute>
+                    <attribute name="on_change">onchange_department_id(department_id)</attribute>
+                </xpath>
+                <xpath expr="//tree//field[@name='total_amount']" position="after">
+                    <field name="already_paid" />
+                </xpath>
+                <xpath expr="//tree[@string='Expense Lines']" position="attributes">
+                    <attribute name="editable"></attribute>
+                </xpath>
+                <xpath expr="//field[@name='journal_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']//form//field[@name='unit_amount']" position="before">
+                    <field name="currency_id"/>
+					<field name="currency_rate" invisible="1" />
+                    <field name="own_car_use" invisible="1" />
+				</xpath>
+                <xpath expr="//field[@name='line_ids']//form//field[@name='ref']" position="after">
+                    <field name="already_paid" />
+				</xpath>
+                <xpath expr="//field[@name='line_ids']//form//field[@name='product_id']" position="attributes">
+                    <attribute name="domain">[('hr_expense_ok','=',True),('type','=','service'),('expense_type','!=',None),('expense_type','!=',False)]</attribute>
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']" position="attributes">
+                    <attribute name="context">{'default_own_car_use': own_car_use}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='product_id']" position="attributes">
+                    <attribute name="context">{'check_car_use': True, 'own_car_use': own_car_use, 'default_hr_expense_ok':1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='amount']" position="after">
+                    <field name="amount_deposit" widget="monetary" options="{'currency_field': 'currency_id'}" />
+                    <field name="amount_paid" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <field name="amount_to_refund" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    <div>
+                        <button name="button_reset_amounts" states="draft,proforma2"
+                            string="(update)" class="oe_link oe_edit_only"
+                            type="object" help="Recompute total"/>
+                    </div>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_expenses_form">
+            <field name="name">hr.expense.expense.form</field>
+            <field name="model">hr.expense.expense</field>
+            <field name="inherit_id" ref="hr_expense_multicurrencies.view_expenses_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree//field[@name='currency_rate']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+				</xpath>
+			</field>
+        </record>
+
+        <record id="view_expenses_tree_accredia" model="ir.ui.view">
+            <field name="name">hr.expense.expense.tree.accredia</field>
+            <field name="model">hr.expense.expense</field>
+            <field name="inherit_id" ref="hr_expense.view_expenses_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='employee_id']" position="before">
+                    <field name="expense_number" readonly="1" />
+                </xpath>
+                <xpath expr="//tree//field[@name='employee_id']" position="before">
+                    <field name="user_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_expense.expense_all" model="ir.actions.act_window">
+            <field name="name">Expenses</field>
+            <field name="res_model">hr.expense.expense</field>
+            <field name="view_type">form</field>
+            <field name="search_view_id" ref="hr_expense.view_hr_expense_filter"/>
+            <field name="view_id" ref="hr_expense.view_expenses_tree"/>
+            <field name="context">{'t_obj': 'mission'}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to register new expenses. 
+              </p><p>
+                OpenERP will ensure the whole process is followed; the expense
+                sheet is validated by manager(s), the employee is reimbursed
+                from his expenses, some expenses must be re-invoiced to the
+                customers.
+              </p>
+            </field>
+        </record>
+
+    </data>
+</openerp>

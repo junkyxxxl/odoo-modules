@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="account_central_journal_report_id_webkit" model="ir.actions.report.xml">
+             <field name="report_type">webkit</field>
+             <field name="report_name">central_journal_report</field>
+             <field eval="[(6,0,[])]" name="groups_id"/>
+             <field eval="0" name="multi"/>
+             <field eval="0" name="auto"/>
+             <field eval="1" name="header"/>
+             <field name="model">account.move.line</field>
+             <field name="type">ir.actions.report.xml</field>
+             <field name="name">Stampa Libro Giornale</field>
+             <field name="report_rml">account_central_journal_webkit/report/central_journal_report.mako</field>
+             <field name="report_file">account_central_journal_webkit/report/central_journal_report.mako</field>
+         </record>
+        <record id="property_central_journal_report_id_webkit" model="ir.property">
+            <field name="name">property_central_journal_report_id_webkit</field>
+            <field name="fields_id" ref="report_webkit.field_ir_act_report_xml_webkit_header"/>
+            <field eval="'ir.header_webkit,'+str(ref('ir_header_central_journal_report'))" model="ir.header_webkit" name="value"/>
+            <field eval="'ir.actions.report.xml,'+str(ref('account_central_journal_webkit.account_central_journal_report_id_webkit'))" model="ir.actions.report.xml" name="res_id"/>
+        </record>
+
+    </data>
+</openerp>
+

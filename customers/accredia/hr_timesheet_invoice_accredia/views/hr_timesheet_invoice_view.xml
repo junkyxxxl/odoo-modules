@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_hr_timesheet_invoice_factor_form_accredia" model="ir.ui.view">
+            <field name="name">hr_timesheet_invoice.factor.form.accredia</field>
+            <field name="model">hr_timesheet_invoice.factor</field>
+            <field name="inherit_id" ref="hr_timesheet_invoice.view_hr_timesheet_invoice_factor_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group" position="inside">
+                    <newline />
+                    <field name="not_invoice"/>
+                    <field name="to_be_confirmed"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_line_search_inherit_accredia2" model="ir.ui.view">
+            <field name="name">account.analytic.line.search.accredia2</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="hr_timesheet_invoice.view_account_analytic_line_search_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='invoiced']" position="replace">
+                    <filter name="invoiced" string="Fatturato" domain="[('invoice_id','!=',None), ('invoice_id','!=',False), ('to_invoice','!=',None), ('to_invoice','!=',False)]" icon="terp-dolar"/> 
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

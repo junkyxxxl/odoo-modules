@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <!-- vista form -->
+        <record model="ir.ui.view" id="copy_salesagent_form">
+            <field name="name">copy.salesagent.form</field>
+            <field name="model">wizard.copy.salesagent.target</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <separator colspan="2" string="Fields from copy"/>
+                            <field name="salesagent_target_id" readonly="1" invisible="1"/>
+                            <field name="salesagent_from_id" readonly="1"/>
+                            <field name="year_from_id" readonly="1"/>
+                            <field name="categ_from_id" 
+                                options="{'no_create_edit': True, 'no_open': True, 'no_quick_create': True}"
+                                domain="[('id','=',context.get('default_categ_from_id', None))]"/>
+                        </group>
+                        <group>
+                            <separator colspan="2" string="fields to copy"/>
+                            <field name="salesagent_to_id"/>
+                            <field name="year_to_id"/>
+                            <field name="categ_to_id" 
+                                options="{'no_create_edit': True, 'no_open': True, 'no_quick_create': True}"
+                                attrs="{
+                                    'required':[('categ_from_id', 'not in', [False, None])],
+                                    'invisible':[('categ_from_id', 'in', [False, None])]
+                                }"/>
+                            <field name="target_deviation" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="copy_target" string="_Copy" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- azione per wizard -->
+        <record id="action_wizard_copy_target" model="ir.actions.act_window">
+            <field name="name">Wizard copy target</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.copy.salesagent.target</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

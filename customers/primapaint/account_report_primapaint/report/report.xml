@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+        <report
+            id="account_report_primapaint"
+            model="res.partner"
+            string="Report Per Agente"
+            report_type="qweb-pdf"
+            name="account_report_primapaint.print_budget"
+            file="account_report_primapaint.print_budget"
+            attachment_use="True"
+            menu="False"
+        />
+
+        <!-- Definisco il tipo di formato per il report -->
+        <record id="res_partner" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="account_report_primapaint.paperformat_account_report"/>
+        </record>
+    </data>
+</openerp>

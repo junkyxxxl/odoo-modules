@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="ir_header_webkit_export_statements_id" model="ir.header_webkit">
+            <field name="orientation">Portrait</field>
+            <field name="format">A4</field>
+            <field name="margin_top">0</field>
+            <field name="html"><![CDATA[<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <script>
+            function subst() {
+            var vars={};
+            var x=document.location.search.substring(1).split('&');
+            for(var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+            var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+            for(var i in x) {
+            var y = document.getElementsByClassName(x[i]);
+            for(var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+                }
+            }
+        </script>
+    </head>
+    <body style="border:0; margin: 0;" >
+    </body>
+</html>]]>
+</field>
+            
+            <field  name="name">Print Export Statements Header</field>
+        </record>
+        
+         <report
+            auto="False"
+            id="ir_webkit_exporter_statements_report"
+            model="account.exporter.statements"
+            name="exporter_statement_report"
+            file="account_exporter_statements_webkit/report/exporter_statements.mako"
+            string="Print Exporter Statements"
+            report_type="webkit"
+            menu="False"
+            webkit_header="ir_header_webkit_export_statements_id"/>
+
+    </data>
+</openerp>
+

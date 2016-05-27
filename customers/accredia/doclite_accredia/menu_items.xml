@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <!-- Menu item -->
+    <menuitem name="Document Models" parent="doclite.menu_doclite" id="menu_doclite_document_models" action="action_doclite_document_models" sequence="26"/>
+    <menuitem name="Document Category" parent="doclite.menu_doclite" id="menu_doclite_document_category" action="action_doclite_document_category" sequence="26"/>
+
+     </data>
+</openerp>

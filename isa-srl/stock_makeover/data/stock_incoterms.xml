@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <record id="stock.incoterm_EXW" model="stock.incoterms">
+            <field name="code">EXW</field>
+            <field name="name">Franco fabbrica</field>
+            <field name="group">E</field>
+        </record>
+        <record id="stock.incoterm_FCA" model="stock.incoterms">
+            <field name="code">FCA</field>
+            <field name="name">Franco vettore</field>
+            <field name="group">F</field>
+        </record>
+        <record id="stock.incoterm_FAS" model="stock.incoterms">
+            <field name="code">FAS</field>
+            <field name="name">Franco lungo bordo</field>
+            <field name="group">F</field>
+        </record>
+        <record id="stock.incoterm_FOB" model="stock.incoterms">
+            <field name="group">E</field>
+            <field name="code">FOB</field>
+            <field name="name">Franco a bordo</field>
+            <field name="group">F</field>
+        </record>
+        <record id="stock.incoterm_CFR" model="stock.incoterms">
+            <field name="code">CFR</field>
+            <field name="name">Costo e nolo</field>
+            <field name="group">C</field>
+        </record>
+        <record id="stock.incoterm_CIF" model="stock.incoterms">
+            <field name="code">CIF</field>
+            <field name="name">Costo assicurazione nolo</field>
+            <field name="group">C</field>
+        </record>
+        <record id="stock.incoterm_CPT" model="stock.incoterms">
+            <field name="code">CPT</field>
+            <field name="name">Trasporto pagato fino a...</field>
+            <field name="group">C</field>
+        </record>
+        <record id="stock.incoterm_CIP" model="stock.incoterms">
+            <field name="code">CIP</field>
+            <field name="name">Trasporto e assicurazione pagati fino a...</field>
+            <field name="group">C</field>
+        </record>
+        <record id="stock.incoterm_DAF" model="stock.incoterms">
+            <field name="code">DAF</field>
+            <field name="name">Reso frontiera</field>
+            <field name="group">D</field>
+        </record>
+        <record id="stock.incoterm_DES" model="stock.incoterms">
+            <field name="code">DES</field>
+            <field name="name">Reso ex ship</field>
+            <field name="group">D</field>
+        </record>
+        <record id="stock.incoterm_DEQ" model="stock.incoterms">
+            <field name="code">DEQ</field>
+            <field name="name">Reso banchina</field>
+            <field name="group">D</field>
+        </record>
+        <record id="stock.incoterm_DDU" model="stock.incoterms">
+            <field name="code">DDU</field>
+            <field name="name">Reso non sdoganato</field>
+            <field name="group">D</field>
+        </record>
+        <record id="stock.incoterm_DDP" model="stock.incoterms">
+            <field name="code">DDP</field>
+            <field name="name">Reso sdoganato (non va usato negli elenchi Intra)</field>
+            <field name="group">D</field>
+        </record>
+
+    </data>
+</openerp>

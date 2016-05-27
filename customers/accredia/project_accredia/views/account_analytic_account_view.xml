@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="account_analytic_account_form_accredia" model="ir.ui.view">
+            <field name="name">account.analytic.account.form.accredia</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+            <field name="arch" type="xml">    
+                <xpath expr="//form/sheet/group[@name='main']/group/field[@name='partner_id']" position="after">
+                        <field name="department_id" required="1" string="Dipartimento" />
+                </xpath>                
+            </field>
+        </record>
+
+        <record id="view_account_analytic_account_tree_c2c_3_accredia" model="ir.ui.view">
+            <field name="name">account.analytic.account.list.contract.accredia</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="account_analytic_analysis.view_account_analytic_account_tree_c2c_3"/>
+            <field name="arch" type="xml">
+                <field name="toinvoice_total" position="after">
+                    <field name="fnct_amount_toinvoice"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

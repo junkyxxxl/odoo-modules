@@ -1,0 +1,12 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_report_isa_gen_layout
+#
+msgid ""
+msgstr ""
+
+#. module: account_report_isa_gen_layout
+#: model:ir.actions.report.xml,name:l10n_it_account_report.invoice_report_id
+msgid "Print Fattura Isa gen Layout"
+msgstr "Stampa Fattura Isa gen Layout"
+

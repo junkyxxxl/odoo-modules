@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+	 <!-- Accreditation Roles Form View -->
+     <record model="ir.ui.view" id="view_accreditation_person_roles_form">
+            <field name="name">accreditation.person.roles.form</field>
+            <field name="model">accreditation.person.roles</field>
+            <field name="arch" type="xml">
+                <form string="Accreditation Person Role Form">
+                    <group>
+                        <!--field name="project_id" /-->
+                        <field name="partner_id" required="1" />
+                        <field name="role_id" required="1"/>
+                    </group>
+                </form>
+            </field>
+     </record>
+
+    <!-- Accreditation Roles Tree View -->
+    <record model="ir.ui.view" id="view_accreditation_person_roles_tree">
+            <field name="name">accreditation.person.roles.tree</field>
+            <field name="model">accreditation.person.roles</field>
+            <field name="arch" type="xml">
+                <tree string="Accreditation Person Role Tree">
+                    <field name="partner_id" context="{'view_person': True, 'default_is_entity': 0, 'default_is_company': 0, 'default_customer':0, 'default_supplier':0, 'default_individual':True, 'search_default_individual':1}" domain="[('individual', '=', True)]" />
+                    <field name="role_id"/>               
+                </tree>
+            </field>
+    </record>
+
+    </data>
+</openerp>

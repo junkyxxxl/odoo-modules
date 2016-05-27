@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<template id="report_onhand_products">
+		    <t t-call="report.html_container">
+		        <t t-foreach="docs" t-as="o">
+	                <t t-esc="setLang(o.company_id.partner_id.lang)"/>
+					<t t-set="stocks" t-value="get_stocks(o)"/>	 
+					<t t-set="families" t-value="get_families(o)"/>
+					<t t-set="picking_types" t-value="get_picking_types(o)"/>  
+					<t t-set="months" t-value="get_months()"/>            		    	
+		        	<div class="header">
+		        		<!--HEADER DEL DOCUMENTO-->		        		
+		        		<div class="row">
+		        			<div class="col-xs-12" style="font-size: xx-small; margin-top: 36px; margin-bottom: 12px; height: 62px; min-height: 62px !important;">
+		        				<table width="100%">
+		        					<tr style="font-size: 5pt; padding-left: 1px;">
+		        						<td colspan="2"><span><b>*** STAMPA ARTICOLI SOTTOSCORTA ***</b></span></td>
+		        						<td colspan="2"><span><b>Causali:</b></span></td>
+		        						<td><span><b>Data:</b></span><span t-esc="get_date_today()"/></td>
+		        						<td><span><b>Pag.:</b></span><span style="text-align: left; padding-left: 5px;" class="page"/></td>
+		        					</tr>
+		        					<tr style="font-size: 5pt; padding-left: 1px;">
+		        						<td colspan="2"><span><b>Magazzini:</b></span></td>
+		        						<td colspan="2"><span t-esc="picking_types[0]"/></td>
+		        						<td colspan="2"><span><b>Famiglie:</b></span></td>
+		        					</tr>
+		        					<tr style="font-size: 5pt; padding-left: 1px;">
+		        						<td colspan="2"><span t-esc="stocks[0][0]"/></td>
+		        						<td colspan="2"><span t-esc="picking_types[1]"/></td>
+		        						<td colspan="2"><span t-esc="families[0]"/></td>
+		        					</tr>
+		        					<tr style="font-size: 5pt; padding-left: 1px;">
+		        						<td colspan="2"><span t-esc="stocks[1][0]"/></td>
+		        						<td colspan="2"><span t-esc="picking_types[2]"/></td>
+		        						<td colspan="2"><span t-esc="families[1]"/></td>
+		        					</tr>
+		        					<tr style="font-size: 5pt; padding-left: 1px;">
+		        						<td colspan="2"><span t-esc="stocks[2][0]"/></td>
+		        						<td colspan="2"><span t-esc="picking_types[3]"/></td>
+		        						<td colspan="2"><span t-esc="families[2]"/></td>
+		        					</tr>
+		        					<tr style="font-size: 5pt; padding-left: 1px;">
+		        						<td colspan="2"><br/></td>
+		        						<td colspan="2"><span t-esc="picking_types[4]"/></td>
+		        						<td colspan="2"><span t-esc="families[3]"/></td>
+		        					</tr>		        							        							        												        					
+		        				</table> 
+							</div>
+						</div>
+		        		<!--HEADER DEL CORPO DOCUMENTO-->
+		        		
+		        		<div class="row">
+		        			<div class="col-xs-12">
+		        				<table style="width:100%; border: 1px solid black; table-layout:fixed;">
+		        					<tr style="font-size: 5pt; border: 1px solid black;">
+		        						<td style="width: 6%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">ARTICOLO</span>
+		        							</div>		        							
+		        						</td>
+		        						<td style="width: 19%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">DECODIFICA</span>
+		        							</div>		        							
+		        						</td>
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="stocks[0][1]"/>
+		        							</div>	
+		        						</td>		 
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="stocks[1][1]"/>
+		        							</div>	
+		        						</td>				
+
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">ORDINATO</span>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="months[0]"/>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="months[1]"/>
+		        							</div>	
+		        						</td>
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="months[2]"/>
+		        							</div>	
+		        						</td>
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="months[3]"/>
+		        							</div>	
+		        						</td>
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="months[4]"/>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="months[5]"/>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="months[6]"/>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="months[7]"/>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="months[8]"/>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="months[9]"/>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="months[10]"/>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="months[11]"/>
+		        							</div>	
+		        						</td>				        								        								        								        									        											        								        						      								        						
+		        					</tr>
+		        				</table>
+		        			</div>
+		        		</div>
+		        	</div>	        
+		        	
+		        	<!--CORPO DOCUMENTO-->
+		        		
+	                <div class="page" >
+	                    <div class="oe_structure" >	                    
+		                    <div class="row" >								
+		                        <div class="col-xs-12" >
+			        				<table style="width:100%; height:100%; border: 1px solid black; table-layout:fixed;">
+			        					<t t-foreach="get_records(o)" t-as="line">
+				        					<tr t-att-style="'page-break-inside:avoid; font-size: 6pt; background-color: '+line[18]+';'">
+				        						<td style="width: 6%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="padding-left: 1px;">
+				        								<span t-esc="line[0]"/>
+				        							</div>		        							
+				        						</td>
+				        						<td style="width: 19%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="padding-left: 1px;">
+				        								<span t-esc="line[1]"/>
+				        							</div>		        							
+				        						</td>
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[2]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[3]"/>
+				        							</div>	
+				        						</td>		 
+	 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[5]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[6]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[7]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[8]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[9]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[10]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[11]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[12]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[13]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[14]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[15]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[16]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+				        							<div style="text-align: right; padding-right: 3px;">
+				        								<span t-esc="line[17]"/>
+				        							</div>	
+				        						</td>
+				        					</tr>
+			        					</t>
+		        					
+			        				</table>
+			        				
+		                        </div>			                        		                        
+		                    </div>
+		                </div>
+	                </div>
+
+        		</t>
+        	</t>
+		</template>		
+		
+	</data>
+</openerp>

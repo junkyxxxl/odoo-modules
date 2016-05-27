@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="entity_changes_group" model="res.groups">
+           <field name="name">Entity Changes Accredia</field>
+        </record>
+        <record id="unit_changes_group" model="res.groups">
+           <field name="name">Units Changes Accredia</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_accreditation_standard,access_accreditation_standard,model_accreditation_standard,,1,1,1,1
+access_accreditation_schema,access_accreditation_schema,model_accreditation_schema,,1,1,1,1
+access_standard_sector_link,access_standard_sector_link,model_standard_sector_link,,1,1,1,1

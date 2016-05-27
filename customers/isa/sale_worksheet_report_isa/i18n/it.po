@@ -1,0 +1,117 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* sale_worksheet_report_isa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130328-001657\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-29 14:33+0000\n"
+"PO-Revision-Date: 2013-03-29 14:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:198
+msgid "Cod. articolo"
+msgstr "Cod. articolo"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:206
+msgid "U.M."
+msgstr "U.M."
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:179
+msgid "Ref. commerciale"
+msgstr "Ref. commerciale"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:163
+msgid "Tipo"
+msgstr "Tipo"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:164
+msgid "Scheda di Lavoro"
+msgstr "Scheda di Lavoro"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:158
+msgid "N.&#176; documento"
+msgstr "N.&#176; documento"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:138
+msgid "TEL:"
+msgstr "TEL:"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:210
+msgid "Q.ta"
+msgstr "Q.ta"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:146
+msgid "Cod. Cliente:"
+msgstr "Cod. Cliente:"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:202
+msgid "Descrizione"
+msgstr "Descrizione"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:100
+msgid "Fax:"
+msgstr "Fax:"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:255
+msgid "Note"
+msgstr "Note"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:110
+msgid "CF:"
+msgstr "CF:"
+
+#. module: sale_worksheet_report_isa
+#: model:ir.actions.report.xml,name:sale_worksheet_report_isa.worksheet_report_id_isa
+msgid "Print Worksheet"
+msgstr "Print Worksheet"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:135
+msgid "P.IVA"
+msgstr "P.IVA"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:107
+msgid "PIVA:"
+msgstr "PIVA:"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:104
+msgid "Email:"
+msgstr "Email:"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:168
+msgid "Data emissione"
+msgstr "Data emissione"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:141
+msgid "FAX:"
+msgstr "FAX:"
+
+#. module: sale_worksheet_report_isa
+#: report:addons/sale_worksheet_report_isa/report/worksheet.mako:97
+msgid "Tel:"
+msgstr "Tel:"
+

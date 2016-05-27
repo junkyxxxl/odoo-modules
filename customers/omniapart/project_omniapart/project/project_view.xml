@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+     <record id="view_project_project_filter_omniapart" model="ir.ui.view">
+            <field name="name">project.project.select.omniapart</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_project_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="/search/filter[@name='Template']" position="before">
+                    <filter icon="terp-dialog-close" string="Closed" name="Closed" domain="[('state', '=','close')]" help="Closed Projects"/>
+                </xpath>
+            </field>
+        </record>
+
+	 <!-- Omniapart Project Form View -->
+     <record model="ir.ui.view" id="view_project_omniapart_form">
+            <field name="name">project.project.omniapart.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@string='Project Name']" position="before">
+                    <label for="standard_id" class="oe_edit_only" string="Norma di Accreditamento"/>
+	                <field name="standard_id" on_change="onchange_standard_id(standard_id)"/>
+				</xpath>
+				<xpath expr="//field[@name='partner_id']" position="attributes">
+				    <attribute name="domain">[('customer','=',True),('parent_id','in',[False,None])]</attribute>
+				</xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                	<newline/>
+	                <field name="prospect_id" context="{'default_customer': 0, 'default_is_partner_level2': 1, 'search_default_is_partner_level2': 1}" domain="[('is_partner_level2', '=', True)]"/>
+	                <newline/>
+	                <field name="check"/>
+				</xpath>
+				<xpath expr="//group[@string='Administration']" position="before">
+					<group string="General">
+	                	<field name="c_number"/>
+	                	<field name="zig"/>
+					</group>
+				</xpath>			
+            </field>
+     </record>
+
+     <record id="view_task_search_omniapart_form" model="ir.ui.view">
+         <field name="name">project.task.search.form.omniapart</field>
+         <field name="model">project.task</field>
+         <field name="inherit_id" ref="project.view_task_search_form"/>
+         <field name="arch" type="xml">
+             <xpath expr="//filter[@string='Stage']" position="after">
+	             <filter string="Scadenza" context="{'group_by':'date_deadline'}"/>
+             </xpath>
+         </field>
+     </record>     
+
+	  <record id="view_project_task_omniapart_tree" model="ir.ui.view">
+            <field name="name">project.task.omniapart.tree</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_tree2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='effective_hours']" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </xpath>
+            </field>
+        </record>     
+     
+    </data>
+</openerp>

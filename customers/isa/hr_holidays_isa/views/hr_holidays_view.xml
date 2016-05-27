@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_new_holiday_isa" model="ir.ui.view">
+            <field name="name">hr.holidays.new.isa</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_new"/>
+            <field name="arch" type="xml">
+                <field name="date_to" position="replace">
+                    <field name="date_to" nolabel="1" on_change="onchange_date_from(date_to, date_from,holiday_status_id,employee_id)" attrs="{'required':[('type', '=', 'remove')]}" class="oe_inline"/>
+                </field>
+                <field name="date_from" position="replace">
+                    <field name="date_from" nolabel="1" on_change="onchange_date_from(date_to, date_from,holiday_status_id,employee_id)" attrs="{'required':[('type', '=', 'remove')]}" class="oe_inline"/>
+                </field>
+                <field name="holiday_status_id" position="attributes">
+                    <attribute name="on_change"> onchange_hol_status(holiday_status_id,date_to, date_from,employee_id)</attribute>
+                </field>
+                <field name="employee_id" position="replace">                   
+                    <field name="employee_id" attrs="{'required':[('holiday_type','=','employee')],'invisible':[('holiday_type','=','category')]}" on_change="onchange_empl(date_to, date_from,holiday_status_id,employee_id)" groups="base.group_hr_user"/>
+                </field>
+                <xpath expr="//sheet/group/group/div/div" position="replace">
+                    <div>
+                        <field name="number_of_days_temp" class="oe_inline"/> hours
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_holiday_isa" model="ir.ui.view">
+            <field name="name">hr.holidays.tree.isa</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.view_holiday"/>
+            <field name="arch" type="xml">
+               <field name="number_of_days" position="replace">
+               		<field name="number_of_days" string="N. Working Hours" sum='Remaining Hours'/>
+               </field>
+            </field>
+        </record>
+
+        <record id="view_holiday_allocation_tree_isa" model="ir.ui.view">
+            <field name="name">hr.holidays.allocation.tree.isa</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.view_holiday_allocation_tree"/>
+            <field name="arch" type="xml">
+               <field name="number_of_days" position="replace">
+               		<field name="number_of_days" string="N. Working Hours" sum='Remaining Hours'/>
+               </field>
+            </field>
+        </record>
+
+        <!-- Holidays: Allocation Request
+        <record id="allocation_leave_new_tree" model="ir.ui.view">
+            <field name="name">hr.holidays.allocation.leave.new.tree</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.allocation_leave_new"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group/group/div" position="replace">
+                   <div>
+                         <field name="number_of_days_temp" readonly="0" class="oe_inline"/> hours
+                   </div>
+                </xpath>
+            </field>
+        </record>  -->
+
+    </data>
+</openerp>

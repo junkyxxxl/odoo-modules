@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="product_category_form_view_montecristo" model="ir.ui.view">
+            <field name="name">product.category.form</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="stock.product_category_form_view_inherit" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@string='Logistics']" position="inside">
+					<field name="qty_per_pack"/>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

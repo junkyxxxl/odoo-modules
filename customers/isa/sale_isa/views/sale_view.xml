@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_order_cancel_reason_form">
+             <field name="name">sale.order.cancel.reason.form</field>
+             <field name="model">sale.order</field>
+             <field name="inherit_id" ref="sale.view_order_form" />
+             <field name="arch" type="xml">
+                <xpath expr="//button[@name='cancel']" position="attributes">
+                    <attribute name="states">draft</attribute>
+                </xpath>
+                <xpath expr="//button[@name='cancel']" position="after">
+                    <button name="cancel_replaced" states="sent" string="Quot. Replaced" type="object" groups="base.group_user"/>
+                    <button name="cancel_expired" states="sent" string="Quot. Expired" type="object" groups="base.group_user"/>
+                    <button name="cancel_rejected" states="sent" string="Quot. Rejected" type="object" groups="base.group_user"/>
+                </xpath>
+                <xpath expr="//field[@name='client_order_ref']" position="after">
+                    <field name="cancel_state" states="cancel" />
+                    <field name="cancel_reason" states="cancel" />
+                </xpath>
+                <xpath expr="//tree/field[@name='price_subtotal']" position="after">
+                    <field name="invoiced" />
+                </xpath>
+                <xpath expr='//button[@name="cancel"]' position="before">
+                    <button name="action_done" states="manual,progress" string="Completa" type="object" groups="base.group_user"/>
+                </xpath>
+             </field>
+        </record>
+
+        <record id="view_sales_order_cancel_filter" model="ir.ui.view">
+            <field name="name">sale.order.cancel.list.select</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@string='Done']" position="after">
+                    <filter icon="terp-dialog-close" string="Canceled"
+                            domain="[('state','=','cancel')]"
+                            help="Sales Order canceled"/>
+                    <filter icon="terp-dialog-close" string="Replaced"
+                            domain="[['state', '=', 'cancel'], ['cancel_state', '=', 'replaced']]"
+                            help="Sales Order canceled (replaced)"/>
+                    <filter icon="terp-dialog-close" string="Expired"
+                            domain="[['state', '=', 'cancel'], ['cancel_state', '=', 'expired']]"
+                            help="Sales Order canceled (expired)"/>
+                    <filter icon="terp-dialog-close" string="Rejected"
+                            domain="[['state', '=', 'cancel'], ['cancel_state', '=', 'rejected']]"
+                            help="Sales Order canceled (rejected)"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_quotation_tree_isa" model="ir.ui.view">
+            <field name="name">view.quotation.tree.isa</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_total']" position="replace">
+                    <field name="amount_untaxed" string="Totale imponibile" sum="Totale imponibile"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_sale_order_invoiced" model="ir.ui.view">
+            <field name="name">view.sale.order.invoiced</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree" />
+            <field name="arch" type="xml">
+            	<xpath expr="//tree[@string='Sales Orders']" position="attributes">
+                    <attribute name="colors">red:state in ('invoice_except','shipping_except') or to_invoice_untaxed_sale &lt; 0;grey:state=='cancel';blue:state in ('waiting_date','manual');</attribute>
+                </xpath>
+                <xpath expr="//field[@name='amount_total']" position="replace">
+                    <field name="amount_untaxed" string="Totale imponibile" sum="Total amount untaxed"/>
+                </xpath>
+                <xpath expr="//field[@name='amount_untaxed']" position="after">
+                    <field name="invoiced_untaxed_sale" sum="Total amount invoiced"/>
+                    <field name="to_invoice_untaxed_sale" sum="Total amount to invoice"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

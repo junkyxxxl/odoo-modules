@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="account_invoice_intracee_group_isa" context="{'noadmin':True}" model="res.groups">
+           <field name="name">Account Invoice Intracee Group Isa </field>
+        </record>
+    </data>
+</openerp>

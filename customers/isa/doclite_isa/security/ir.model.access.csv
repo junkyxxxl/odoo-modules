@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_doclite_document_model,access_doclite_document_model,model_doclite_document_model,,1,1,1,1
+access_doclite_document_category,access_doclite_document_category,model_doclite_document_category,,1,1,1,1

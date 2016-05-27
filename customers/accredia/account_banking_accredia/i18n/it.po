@@ -1,0 +1,162 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_banking_accredia
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140129-002604\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-29 15:04+0000\n"
+"PO-Revision-Date: 2014-01-29 15:04+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_banking_accredia
+#: field:account.italian.banks.cab,city:0
+msgid "City"
+msgstr "Città"
+
+#. module: account_banking_accredia
+#: selection:account.italian.banks.abi,status:0
+msgid "Banca non più attiva"
+msgstr "Banca non più attiva"
+
+#. module: account_banking_accredia
+#: field:account.italian.banks.abi,substitute:0
+msgid "Sostituto"
+msgstr "Sostituto"
+
+#. module: account_banking_accredia
+#: field:account.italian.banks.cab,agency:0
+msgid "Agency"
+msgstr "Filiale"
+
+#. module: account_banking_accredia
+#: view:account.italian.banks.abi:0
+msgid "Italian Banks Abi"
+msgstr "Abi Banche Italiane"
+
+#. module: account_banking_accredia
+#: field:res.partner.bank,iban_code:0
+msgid "IBAN code"
+msgstr "Codice IBAN"
+
+#. module: account_banking_accredia
+#: model:ir.model,name:account_banking_accredia.model_account_italian_banks_abi
+msgid "account.italian.banks.abi"
+msgstr "account.italian.banks.abi"
+
+#. module: account_banking_accredia
+#: field:account.italian.banks.cab,province:0
+msgid "Province"
+msgstr "Provincia"
+
+#. module: account_banking_accredia
+#: model:ir.model,name:account_banking_accredia.model_account_italian_banks_cab
+msgid "account.italian.banks.cab"
+msgstr "account.italian.banks.cab"
+
+#. module: account_banking_accredia
+#: field:account.italian.banks.abi,name:0
+#: field:account.italian.banks.cab,name:0
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: account_banking_accredia
+#: field:res.bank,abi_code:0
+msgid "ABI code"
+msgstr "Codice ABI"
+
+#. module: account_banking_accredia
+#: field:account.italian.banks.cab,address:0
+msgid "Address"
+msgstr "Indirizzo"
+
+#. module: account_banking_accredia
+#: field:account.italian.banks.abi,date:0
+#: field:account.italian.banks.cab,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: account_banking_accredia
+#: field:res.company,sia_code:0
+msgid "SIA code"
+msgstr "Codice SIA"
+
+#. module: account_banking_accredia
+#: model:ir.model,name:account_banking_accredia.model_res_bank
+msgid "Bank"
+msgstr "Banca"
+
+#. module: account_banking_accredia
+#: field:account.italian.banks.abi,status:0
+msgid "Status"
+msgstr "Stato"
+
+#. module: account_banking_accredia
+#: view:account.italian.banks.cab:0
+msgid "Italian Banks Cab"
+msgstr "Cab Banche Italiane"
+
+#. module: account_banking_accredia
+#: field:account.italian.banks.cab,cap:0
+msgid "CAP"
+msgstr "CAP"
+
+#. module: account_banking_accredia
+#: model:ir.actions.act_window,name:account_banking_accredia.action_account_italian_banks_abi
+#: model:ir.ui.menu,name:account_banking_accredia.remote_banking_account_italian_banks_abi
+msgid "Bank ABI"
+msgstr "ABI Banca"
+
+#. module: account_banking_accredia
+#: field:account.italian.banks.cab,abi:0
+msgid "ABI"
+msgstr "ABI"
+
+#. module: account_banking_accredia
+#: model:ir.model,name:account_banking_accredia.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: account_banking_accredia
+#: selection:account.italian.banks.abi,status:0
+msgid "Banca attiva"
+msgstr "Banca attiva"
+
+#. module: account_banking_accredia
+#: selection:account.italian.banks.abi,status:0
+msgid " - - - "
+msgstr " - - - "
+
+#. module: account_banking_accredia
+#: model:ir.ui.menu,name:account_banking_accredia.account_italian_banks_abi_cab
+msgid "Italian Bank Abi/Cab"
+msgstr "Abi/Cab Banche Italiane"
+
+#. module: account_banking_accredia
+#: field:account.italian.banks.abi,code:0
+#: field:account.italian.banks.cab,code:0
+msgid "Code"
+msgstr "Codice"
+
+#. module: account_banking_accredia
+#: model:ir.actions.act_window,name:account_banking_accredia.action_account_italian_banks_cab
+#: model:ir.ui.menu,name:account_banking_accredia.remote_banking_account_italian_banks_cab
+msgid "Bank CAB"
+msgstr "CAB Banca"
+
+#. module: account_banking_accredia
+#: model:ir.model,name:account_banking_accredia.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Conti Bancari"
+
+#. module: account_banking_accredia
+#: field:res.partner.bank,cab_code:0
+msgid "CAB code"
+msgstr "Codice CAB"
+

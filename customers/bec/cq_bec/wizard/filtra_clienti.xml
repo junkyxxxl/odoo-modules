@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+    
+    
+    <record id="filtra_clienti_form" model="ir.ui.view">
+      <field name="name">filtra.clienti.form</field>
+      <field name="model">res.partner.filtraclienti</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Filtra clienti per categoria/settore/attività" version="7.0">
+         <group col="4" string="Selezionare:">
+            <field name="categoria"/>
+            <field name="figli_cat"/>
+            <newline/>
+            <field name="settore"/>
+            <field name="figli_set"/>
+            <newline/>
+            <field name="attivita"/>
+            <field name="figli_att"/>
+            <newline/>
+            <field name="contatti"/>
+            <newline/>
+          </group>
+          <footer>
+            <button icon="gtk-go-forward" string="Filtra" class="oe_highlight" default_focus="1" name="filtra_clienti" type="object" />
+            <button string="Annulla" class="oe_link" special="cancel" />
+          </footer>
+        </form>
+      </field>
+    </record>
+    
+    <record id="action_filtra_clienti" model="ir.actions.act_window">
+      <field name="name">Clienti per categoria/settore/attività</field>
+      <field name="res_model">res.partner.filtraclienti</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="domain">[]</field>
+      <field name="view_id" ref="filtra_clienti_form"/>
+    </record>
+
+      <act_window name="Clienti per categoria/settore/attività"
+            res_model="res.partner.filtraclienti"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="action_filtra_clienti1"
+            view_id="filtra_clienti_form"/>
+
+    <menuitem id="menu_bec_filtri" name ="Filtri" parent="base.menu_sales" sequence="2" />
+    <menuitem action="action_filtra_clienti1" id="menu_filtra_clienti1" parent="menu_bec_filtri" sequence="2" />
+
+  </data> 
+</openerp>

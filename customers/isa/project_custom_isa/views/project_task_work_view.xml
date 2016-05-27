@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <!-- Project Task Work -->
+        <record id="project.view_task_work_form" model="ir.ui.view">
+            <field name="name">project.task.work.form</field>
+            <field name="model">project.task.work</field>
+            <field name="arch" type="xml">
+                <form string="Task Work">
+                    <group col="4">
+                        <field name="name" invisible="1" colspan="4" />
+                        <field name="project_id"
+                               colspan="4"
+                               required="1"
+                               on_change="onchange_project_id(project_id)"
+                               readonly="context.get('default_project_id',False)" />
+                        <field name="task_id"
+                               colspan="4"
+                               domain="[('project_id', '=', project_id)]"
+                               readonly="context.get('default_task_id',False)"
+                               context="{'default_project_id':project_id}" />
+                        <field name="type_id" required="1"/>
+                        <newline/>
+                        <field name="hours" widget="float_time"/>
+                        <field name="not_billing" select="1"/>
+                        <field name="billable_hours" select="1" widget="float_time"  invisible="1"/>
+                        <field name="date"/>
+                        <field name="user_id" options='{"no_open": True}'/>
+                        <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                        <field name="program" select="1"/>
+                        <field name="file" select="1"/>
+                        <field name="field" select="1"/>
+                        <field name="ptf_code" select="1"/>
+                        <field name="description" string="Work description" colspan="4"/>
+                    </group>
+                    <footer>
+                        <button icon="gtk-ok" confirm="If confirmed the record will be saved once and then you will be able to change anyway. Confirm?" name="duplicate_work" string="Duplicate Work" type="object"/>
+                        or 
+                        <button icon="gtk-ok" name="save_work" string="Save Work" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- search -->
+        <record id="search_action_project_task_work_ext_isa" model="ir.ui.view">
+            <field name="name">Works Search</field>
+            <field name="model">project.task.work</field>
+            <field name="arch" type="xml">
+                <search string="Works Search">
+                    <group expand="0" string="Filters...">
+                        <field colspan="3" name="user_id"/>
+                        <field colspan="6" name="type_id"/>
+                        <newline/>
+                    <filter icon="terp-go-today" string="Today"
+                    domain="[('date','&lt;', time.strftime('%%Y-%%m-%%d 23:59:59')), ('date','&gt;=', time.strftime('%%Y-%%m-%%d 00:00:00'))]" 
+                    help="Todays' Task Work" />
+                        <field colspan="10" name="date"/>
+                        <newline/>
+                        <field name="program"/>
+                        <field name="file"/>
+                        <field name="field"/>
+                        <field name="ptf_code" />
+                        <newline/>
+                        <field colspan="10" name="description" />
+                    </group>
+                    <group expand="0" string="Group By...">
+                        <filter string="User" icon="terp-personal" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Activities" icon="terp-stock_align_left_24" domain="[]" context="{'group_by':'type_id'}"/>
+                        <filter string="Date" icon="terp-project" domain="[]" context="{'group_by':'date'}"/>
+                    </group>
+                </search>
+            </field>            
+        </record>
+
+        <!-- view -->
+        <record model="ir.ui.view" id="action_project_task_work_ext_isa_tree">
+            <field name="name">project.task.work.tree.new</field>
+            <field name="model">project.task.work</field>
+            <field name="arch" type="xml">
+                <tree string="Work activity Tree">
+                    <field name="project_id"/>
+                    <field name="task_id"/>
+                    <field name="type_id"/>
+                    <field name="date"/>
+                    <field name="hours" widget="float_time" sum="Hours" />
+                    <field name="user_id"/>
+                    <field name="program"/>
+                    <field name="file"/>
+                    <field name="field"/>
+                    <field name="ptf_code"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- action -->
+        <record id="action_project_task_work_ext_isa" model="ir.actions.act_window">
+            <field name="name">Works</field>
+            <field name="res_model">project.task.work</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="search_action_project_task_work_ext_isa"/>
+            <field name="view_id" ref="action_project_task_work_ext_isa_tree"/>
+        </record>
+
+        <!-- menu works -->
+        <menuitem action="action_project_task_work_ext_isa"
+                  id="menu_action_project_task_work_ext_isa"
+                  parent="project.menu_project_management"
+                  sequence="6" />
+
+    </data>
+</openerp>

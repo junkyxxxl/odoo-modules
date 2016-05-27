@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <!-- Aggiungo il campo: codice prodotto dhl e tipo spedizione -->
+   		<record id="view_invoice_dhl" model="ir.ui.view">
+            <field name="name">view.invoice.dhl</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='bank_account']" position="after">
+                   <field name="product_code_dhl" attrs="{'invisible':[('is_shipping_invoice', '==', False)]}" domain="[('classifier1.code', '=', 'DHL')]"/>
+                   <field name="shipping_type" attrs="{'invisible':[('is_shipping_invoice', '==', False)]}"/> 
+	           </xpath> 
+            </field>
+        </record>  
+        
+        
+        <!-- Aggiungo nella ricerca avanzata (view_search), il filtro per "Fatture accompagnatorie" --> 
+        <record id="view_export_invoice_search" model="ir.ui.view">
+            <field name="name">view.export.invoice.search</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">                 
+               <xpath expr="filter[last()]" position="after"> 
+                 <filter name="accompanyInvoice" string="Fatture accompagnatorie" domain="[('is_shipping_invoice','=', True)]"/> 
+               </xpath>
+            </field>
+        </record> 
+        
+     
+    </data>
+</openerp>

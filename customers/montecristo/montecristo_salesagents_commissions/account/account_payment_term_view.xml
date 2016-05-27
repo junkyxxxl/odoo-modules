@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="account_payment_term_discount_view_montecristo" model="ir.ui.view">
+        <field name="name">account.payment.term.discount.view.montecristo</field>
+        <field name="model">account.payment.term</field>
+        <field name="inherit_id" ref="account_discount.account_payment_term_discount_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree[@string='Sconti globali']/field[@name='type']" position="attributes" >
+            	<attribute name="invisible">1</attribute>
+            </xpath>                                                   
+        </field>
+    </record>
+  </data>
+</openerp>

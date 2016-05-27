@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Accreditation Persons Units Views -->
+        <record id="view_accreditation_tab_persons_units" model="ir.ui.view">
+            <field name="name">accreditation.tab.persons.units.form</field>
+            <field name="model">accreditation.persons.units</field>
+            <field name="arch" type="xml">
+                <form string="Persons Units">
+                    <group>
+                        <group>
+                            <field name="partner_id" context="{'view_person': True, 'default_is_entity': 0, 'default_is_company': 0, 'default_customer':0, 'default_supplier':0, 'default_individual':True, 'search_default_individual':1}" domain="[('individual', '=', True)]" options="{'create': false, 'create_edit': false, 'no_open': True}" invisible="context.get('view_person',False)" />
+                            <field name="unit_id" options="{'create': false, 'create_edit': false, 'no_open': True}" invisible="not context.get('view_person',False)" />
+                            <field name="type_id" widget="selection" />
+                            <field name="job_ids" widget="many2many_tags" />
+                            <field name="period_date_from" domain="[('period_date_to','&gt;=','period_date_to')]" />
+                            <field name="period_date_to" domain="[('period_date_from','&lt;=','period_date_from')]" />
+                            <field name="to_followup" />
+                        </group>
+                        <group>
+                            <field name="email" />
+                            <field name="phone" />
+                            <field name="mobile" />
+                            <field name="fax" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_accreditation_from_persons_units" model="ir.ui.view">
+            <field name="name">accreditation.from.persons.units.form</field>
+            <field name="model">accreditation.persons.units</field>
+            <field name="arch" type="xml">
+                <form string="Persons Units">
+                    <group>
+                        <group>
+                            <field name="partner_id" context="{'view_person': True, 'default_is_entity': 0, 'default_is_company': 0, 'default_customer':0, 'default_supplier':0, 'default_individual':True, 'search_default_individual':1}" domain="[('individual', '=', True)]" invisible="context.get('view_person',False)" />
+                            <field name="unit_id" invisible="not context.get('view_person',False)" />
+                            <field name="type_id" widget="selection" />
+                            <field name="job_ids" widget="many2many_tags" />
+                            <field name="period_date_from" domain="[('period_date_to','&gt;=','period_date_to')]" />
+                            <field name="period_date_to" domain="[('period_date_from','&lt;=','period_date_from')]" />
+                            <field name="to_followup" />
+                        </group>
+                        <group>
+                            <field name="email" />
+                            <field name="phone" />
+                            <field name="mobile" />
+                            <field name="fax" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

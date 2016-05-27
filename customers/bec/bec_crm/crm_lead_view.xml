@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- Opportunities Search View -->
+        <record id="view_crm_case_opportunities_filter_bec" model="ir.ui.view">
+            <field name="name">CRM - Opportunities Search BEC</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="name" string="Opportunity" filter_domain="[('name', 'ilike', self)]"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

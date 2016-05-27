@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_hr_holidays_filter_accredia" model="ir.ui.view">
+            <field name="name">hr.holidays.filter.accredia</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.view_hr_holidays_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='holiday_status_id']" position="after">
+                    <filter name="secretary_executed" string="Eseguito Segreteria" domain="[('secretary_executed','=', True)]" />
+                    <filter name="not_secretary_executed" string="Non Eseguito Segreteria" domain="['|',('secretary_executed','=', False),('secretary_executed','=', None)]" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_holidays_tree_accredia" model="ir.ui.view">
+            <field name="name">hr.holidays.tree.accredia</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.view_holiday"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="before">
+                    <field name="secretary_executed" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_new_holiday_accredia" model="ir.ui.view">
+            <field name="name">hr.holidays.new.accredia</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_new"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="id" />
+                    <field name="create_date" />
+                </field>
+                <field name="department_id" position="after">
+                    <field name="user_id" />
+                    <field name="partner_id" context="{'view_person': True, 'default_is_entity': 0, 'default_is_company': 0, 'default_customer':0, 'default_supplier':0, 'default_individual':True, 'search_default_individual':1}" domain="[('individual', '=', True)]" />
+                </field>
+                <field name="department_id" position="attributes">
+                    <attribute name="attrs">{'invisible':[('holiday_type','=','category')],'readonly':[('state','!=','draft'),('state','!=','confirm')], 'required':[('holiday_type','=','mission')]}</attribute>
+                </field>
+                <field name="category_id" position="attributes">
+                    <attribute name="attrs">{'invisible':[('holiday_type','=','mission')]}</attribute>
+                </field>
+                <field name="employee_id" position="attributes">
+                    <attribute name="attrs">{'required':[('holiday_type','=','mission')]}</attribute>
+                </field>
+                <field name="holiday_status_id" position="attributes">
+                    <attribute name="attrs">{'invisible':[('holiday_type','=','mission')],'required':True}</attribute>
+                </field>
+
+                <xpath expr="//form/sheet" position="inside">
+                    <group attrs="{'invisible':[('holiday_type','!=','mission')]}">
+                        <group>
+                            <field name="date_doc_delivery" />
+                            <field name="task_id"
+                                   string="Riferimento"
+                                   context="{'t_user_id': user_id,'t_obj': 'mission'}"
+                                   domain="[('phase_id','!=',None),('phase_id','!=',False),('date_start','&gt;=',date_from),('date_start','&lt;=',date_to)]"
+                                   attrs="{'readonly':[('state','!=','draft'),('state','!=','confirm')]}" />
+                            <field name="expense_number" invisible="1" />
+                            <field name="expense_id" />
+                            <field name="secretary_executed" />
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <notebook attrs="{'invisible':[('holiday_type','!=','mission')]}">
+                        <page string="Descrizione">
+                            <field name="line_ids" nolabel="1" widget="one2many_list" context="{'default_partner_id': partner_id}" attrs="{'readonly':[('state','!=','draft'),('state','!=','confirm')]}">
+                                <tree string="Holiday Lines" editable="">
+                                    <field name="product_id" domain="[('hr_expense_ok','=',True),('type','=','service')]" />
+                                    <field name="name"/>
+                                    <field name="info"/>
+                                    <field name="date_from"/>
+                                    <field name="date_to"/>
+                                    <field name="place"/>
+                                    <field name="partner_id" invisible="1"/>
+                                </tree>
+                                <form string="Righe Richieste di Permesso/Missione">
+                                    <group>
+                                        <group>
+                                            <field name="product_id" domain="[('hr_expense_ok','=',True),('type','=','service'),('expense_type','!=',None),('expense_type','!=',False)]" />
+                                            <field name="name"/>
+                                            <field name="info"/>
+                                        </group>
+                                        <group>
+                                            <field name="date_from"/>
+                                            <field name="date_to"/>
+                                            <field name="place"/>
+                                            <field name="partner_id" invisible="1"/>
+                                        </group>
+                                    </group>
+                                </form>
+                            </field>
+                            <group>
+                                <div>
+                                    <separator string="Note"/>
+                                    <field name="note" placeholder="Aggiungi una Descrizione..." attrs="{'readonly':[('state','!=','draft'),('state','!=','confirm')]}"/>
+                                </div>
+                            </group>
+                        </page>
+                        <page string="Altre Informazioni">
+                            <group>
+                                <group>
+                                    <field name="own_car_use" />
+                                    <field name="cash_advance" />
+                                    <field name="cash_currency_id" attrs="{'required': [('cash_advance','!=',False),('cash_advance','!=',None)]}" />
+                                </group>
+                                <group>
+                                    <field name="km_expected" />
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="open_ask_holidays_accredia">
+            <field name="name">Leave Requests</field>
+            <field name="res_model">hr.holidays</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_new_holiday_accredia"/>
+            <field name="context">{'default_type': 'remove', 'search_default_my_leaves':1, 't_obj': 'mission'}</field>
+            <field name="domain">[('type','=','remove')]</field>
+            <field name="search_view_id" ref="view_hr_holidays_filter_accredia"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new leave request.
+              </p><p>
+                Once you have recorded your leave request, it will be sent
+                to a manager for validation. Be sure to set the right leave
+                type (recuperation, legal holidays, sickness) and the exact
+                number of open days related to your leave.
+              </p>
+            </field>
+        </record>
+
+        <menuitem parent="hr_holidays.menu_open_ask_holidays" sequence="1" id="hr_holidays.menu_open_ask_holidays_new" action="open_ask_holidays_accredia"/>
+
+    </data>
+</openerp>

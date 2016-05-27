@@ -1,0 +1,1177 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* project_custom_isa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20131218-002347\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-18 09:54+0000\n"
+"PO-Revision-Date: 2013-12-18 09:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_custom_isa
+#: view:project.project:0
+msgid "Billing Year"
+msgstr "Anno di Fatturazione"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/project_task_work.py:95
+#, python-format
+msgid "You cannot delete a work which is not in open or draft state !"
+msgstr "Non puoi eliminare una lavorazione che non è in stato Aperta o in Bozza !"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/task/project_task.py:188
+#, python-format
+msgid "You cannot close an activity with responsible HelpBoard."
+msgstr "You cannot close an activity with responsible HelpBoard."
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Group By..."
+msgstr "Raggruppa per..."
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/wizard_manage_works.py:105
+#, python-format
+msgid "Sunday"
+msgstr "Domenica"
+
+#. module: project_custom_isa
+#: field:project.project,included_package:0
+msgid "included package hours"
+msgstr "Incluso pacchetto ore"
+
+#. module: project_custom_isa
+#: view:project.wizard.manage.works:0
+msgid "Forward"
+msgstr "Avanti"
+
+#. module: project_custom_isa
+#: field:project.task,ticket_reference:0
+msgid "Ticket reference"
+msgstr "Riferimento ticket"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Remaining"
+msgstr "Rimanente"
+
+#. module: project_custom_isa
+#: field:project.contract,contract_number:0
+msgid "Contract Number"
+msgstr "Numero Contratto"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_state:0
+msgid "02 - To be billed"
+msgstr "02 - Da fatturare"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_month:0
+msgid "March"
+msgstr "Marzo"
+
+#. module: project_custom_isa
+#: field:project.task.category,ticket_required:0
+msgid "Ticket Required"
+msgstr "Ticket Richiesto"
+
+#. module: project_custom_isa
+#: field:project.task,fnct_state:0
+msgid "Get State"
+msgstr "Get State"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/wizard_manage_works.py:105
+#, python-format
+msgid "Friday"
+msgstr "Venerdì"
+
+#. module: project_custom_isa
+#: field:project.task.work,billable_hours:0
+msgid "Billable hours"
+msgstr "Ore fatturabili"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_task_category
+msgid "Category of task"
+msgstr "Categoria di attività"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/project_task_work.py:158
+#: code:addons/project_custom_isa/work/project_task_work.py:216
+#: code:addons/project_custom_isa/work/wizard_manage_works.py:186
+#, python-format
+msgid "Add New Work"
+msgstr "Aggiungi Lavorazione"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/project/project.py:241
+#, python-format
+msgid "The project '%s' has been closed."
+msgstr "Il progetto '%s' è stato chiuso."
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Task Completed"
+msgstr "Attività Completata"
+
+#. module: project_custom_isa
+#: field:project.task.work,project_task_state:0
+msgid "Task State"
+msgstr "Stato Attività"
+
+#. module: project_custom_isa
+#: field:project.contract,project_ids:0
+#: field:project.contract.line,project_ids:0
+msgid "project_id"
+msgstr "id_progetto"
+
+#. module: project_custom_isa
+#: field:project.wizard.manage.works,week_day:0
+msgid "Day"
+msgstr "Day"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_task
+#: field:project.wizard.manage.works.line,task_id:0
+msgid "Task"
+msgstr "Attività"
+
+#. module: project_custom_isa
+#: field:project.task,write_date:0
+msgid "Last Modification Date"
+msgstr "Data Ultima Modifica"
+
+#. module: project_custom_isa
+#: field:project.project,closing_category_id:0
+msgid "Causal Closure"
+msgstr "Causale di Chiusura"
+
+#. module: project_custom_isa
+#: field:project.task,issue_count:0
+msgid "Unclosed Issues"
+msgstr "Problematiche non chiuse"
+
+#. module: project_custom_isa
+#: view:project.task.category:0
+msgid "Category of task Search"
+msgstr "Categoria di attività Search"
+
+#. module: project_custom_isa
+#: view:project.project:0
+msgid "Bill Year"
+msgstr "Anno Fatt"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_project
+#: field:project.task.work,project_id:0
+#: field:project.wizard.manage.works.line,project_id:0
+msgid "Project"
+msgstr "Progetto"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Start Task"
+msgstr "Inizia Attività"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Parent Tasks"
+msgstr "Attività genitore"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_category_team
+msgid "Team of Category"
+msgstr "Team of Category"
+
+#. module: project_custom_isa
+#: model:ir.actions.act_window,name:project_custom_isa.action_project_task_work_ext_isa
+#: model:ir.ui.menu,name:project_custom_isa.menu_action_project_task_work_ext_isa
+#: model:ir.ui.menu,name:project_custom_isa.menu_works_config
+#: view:project.task:0
+#: view:project.wizard.manage.works:0
+msgid "Works"
+msgstr "Lavorazioni"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/project/project.py:256
+#, python-format
+msgid "Warning !"
+msgstr "Attenzione !"
+
+#. module: project_custom_isa
+#: view:project.wizard.manage.works:0
+msgid "Wizard Daily Works"
+msgstr "Wizard Gestione Lavorazioni"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/project/project.py:218
+#, python-format
+msgid "You cannot close a project with name strting with \"HB_\" without closing informations."
+msgstr "Non puoi chiudere un progetto con nome che inizia per \"HB_\" senza le informazioni di chiusura."
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "False"
+msgstr "Falso"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Todays' Task Work"
+msgstr "Lavori Odienri"
+
+#. module: project_custom_isa
+#: view:project.category:0
+msgid "Category of Project Search"
+msgstr "Categoria dei progetti Search"
+
+#. module: project_custom_isa
+#. openerp-web
+#: code:addons/project_custom_isa/static/src/js/formats.js:185
+#, python-format
+msgid "(%d records)"
+msgstr "(%d records)"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Conto analitico"
+
+#. module: project_custom_isa
+#: model:ir.actions.act_window,name:project_custom_isa.action_select_date
+#: model:ir.ui.menu,name:project_custom_isa.menu_action_manage_works
+msgid "Day Works Creation"
+msgstr "Lavorazioni Giornaliere"
+
+#. module: project_custom_isa
+#: field:account.analytic.account,ticket_number:0
+#: field:project.issue,ticket_number:0
+msgid "Ticket Number"
+msgstr "Ticket Number"
+
+#. module: project_custom_isa
+#: view:project.project:0
+msgid "Closed Notes"
+msgstr "Note Chiusura"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Duplicate Work"
+msgstr "Duplica Lavoro"
+
+#. module: project_custom_isa
+#: field:project.task.work,ptf_code:0
+#: field:project.wizard.manage.works.line,ptf_code:0
+msgid "PTF code"
+msgstr "Codice PTF"
+
+#. module: project_custom_isa
+#: field:project.contract,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Planned Hours"
+msgstr "Ore Pianificate"
+
+#. module: project_custom_isa
+#. openerp-web
+#: code:addons/project_custom_isa/static/src/js/formats.js:315
+#, python-format
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr "'%s' is not convertible to date, datetime nor time"
+
+#. module: project_custom_isa
+#: field:project.project,billing_year:0
+msgid "Year billing"
+msgstr "Anno fatturazione"
+
+#. module: project_custom_isa
+#: view:project.project:0
+msgid "Bill Month"
+msgstr "Mese Fatt"
+
+#. module: project_custom_isa
+#: field:project.wizard.manage.works.line,project_task_state:0
+msgid "State"
+msgstr "Stato"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Save and New"
+msgstr "Salva e Nuovo"
+
+#. module: project_custom_isa
+#: view:project.wizard.manage.works:0
+msgid "Billable"
+msgstr "Fatturabile"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Save"
+msgstr "Save"
+
+#. module: project_custom_isa
+#: view:project.project:0
+#: field:project.project,effective_hours_project:0
+msgid "Effective Hours"
+msgstr "Ore Effettive"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/project/project.py:198
+#: code:addons/project_custom_isa/project/project.py:203
+#: code:addons/project_custom_isa/project/project.py:209
+#: code:addons/project_custom_isa/project/project.py:217
+#: code:addons/project_custom_isa/project/project.py:225
+#: code:addons/project_custom_isa/task/project_task.py:40
+#: code:addons/project_custom_isa/task/project_task.py:46
+#: code:addons/project_custom_isa/task/project_task.py:182
+#: code:addons/project_custom_isa/task/project_task.py:187
+#: code:addons/project_custom_isa/work/project_task_work.py:270
+#, python-format
+msgid "Error !"
+msgstr "Errore !"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+#: view:project.wizard.manage.works.line:0
+#: field:project.wizard.manage.works.line,task_work:0
+msgid "Task Work"
+msgstr "Esecuzione Attività"
+
+#. module: project_custom_isa
+#. openerp-web
+#: code:addons/project_custom_isa/static/src/js/formats.js:258
+#: code:addons/project_custom_isa/static/src/js/formats.js:288
+#, python-format
+msgid "'%s' is not a correct time"
+msgstr "'%s' is not a correct time"
+
+#. module: project_custom_isa
+#: model:ir.actions.act_window,name:project_custom_isa.action_project_task_work_form_isa
+#: view:project.task:0
+msgid "New Work"
+msgstr "Nuova Lavorazione"
+
+#. module: project_custom_isa
+#: view:project.wizard.manage.works:0
+msgid "Select New Date"
+msgstr "Selezione Nuova Data"
+
+#. module: project_custom_isa
+#: view:project.task:0
+#: view:project.task.work:0
+#: view:project.wizard.manage.works:0
+#: field:project.wizard.manage.works.line,hours:0
+msgid "Hours"
+msgstr "Ore effettuate"
+
+#. module: project_custom_isa
+#: model:ir.actions.act_window,name:project_custom_isa.project_issue_category_action
+#: model:ir.ui.menu,name:project_custom_isa.menu_project_issue_category_act
+#: field:project.issue,issue_categ_ids:0
+#: view:project.issue.category:0
+msgid "Issue Category"
+msgstr "Categoria Problematica"
+
+#. module: project_custom_isa
+#: field:project.project,billing_as400:0
+#: field:project.task,billing_as400:0
+msgid "Transfer as400"
+msgstr "Trasferito as400"
+
+#. module: project_custom_isa
+#: view:project.wizard.manage.works:0
+msgid "Add Work"
+msgstr "Aggiungi Lavorazione"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "If confirmed the record will be saved and the Task will be set to Completed. Confirm?"
+msgstr "Se confermi la Lavorazione sarà memorizzata e l'Attività sarà impostata a Completata. Confermi?"
+
+#. module: project_custom_isa
+#: view:project.project:0
+msgid "fix_form_sheet_width"
+msgstr "fix_form_sheet_width"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Extra Info"
+msgstr "Informazioni Aggiuntive"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_month:0
+msgid "July"
+msgstr "Luglio"
+
+#. module: project_custom_isa
+#: model:ir.actions.act_window,name:project_custom_isa.project_category_action
+#: model:ir.actions.act_window,name:project_custom_isa.project_task_category_action
+#: model:ir.ui.menu,name:project_custom_isa.menu_project_category_action
+#: model:ir.ui.menu,name:project_custom_isa.menu_project_task_category_action
+msgid "Categories"
+msgstr "Categorie"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Today"
+msgstr "Oggi"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/project_task_work.py:110
+#, python-format
+msgid "Work"
+msgstr "Lavorazione"
+
+#. module: project_custom_isa
+#: field:project.wizard.manage.works,work_ids:0
+msgid "Work Lines"
+msgstr "Work Lines"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_contract_line
+msgid "Contract line of Isa project"
+msgstr "Righe contratto dei progetti"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Task Done"
+msgstr "Attività Completata"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/wizard_manage_works.py:105
+#, python-format
+msgid "Monday"
+msgstr "Lunedì"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Delegate"
+msgstr "Delega"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/wizard_manage_works.py:105
+#, python-format
+msgid "Wednesday"
+msgstr "Mercoledì"
+
+#. module: project_custom_isa
+#: view:project.category:0
+msgid "Team"
+msgstr "Team"
+
+#. module: project_custom_isa
+#: view:project.project:0
+#: field:project.project,billing_hours_project:0
+#: field:project.wizard.manage.works.line,billable_hours:0
+msgid "Hours Billed"
+msgstr "Ore Fatturate"
+
+#. module: project_custom_isa
+#. openerp-web
+#: code:addons/project_custom_isa/static/src/js/formats.js:303
+#, python-format
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr "'%s' is not a correct date, datetime nor time"
+
+#. module: project_custom_isa
+#: view:project.category:0
+msgid "Category of Project Tree"
+msgstr "Categoria dei progetti"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_month:0
+msgid "December"
+msgstr "Dicembre"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/wizard_manage_works.py:105
+#, python-format
+msgid "Tuesday"
+msgstr "Martedì"
+
+#. module: project_custom_isa
+#: view:project.wizard.manage.works:0
+msgid "Back"
+msgstr "Indietro"
+
+#. module: project_custom_isa
+#: field:project.project,billing_state:0
+msgid "State billing"
+msgstr "Stato fatturazione"
+
+#. module: project_custom_isa
+#: field:project.task.work,project_name:0
+msgid "Project Name"
+msgstr "Nome Progetto"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/task/project_task.py:47
+#, python-format
+msgid "You cannot open an activity with responsible HelpBoard."
+msgstr "You cannot open an activity with responsible HelpBoard."
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_closing_category
+msgid "Category of closing project"
+msgstr "Categorie di chiusura progetti"
+
+#. module: project_custom_isa
+#: field:project.task.work,project_task_effective_hours:0
+msgid "Task Effective Hours"
+msgstr "Ore Attività Effettuate"
+
+#. module: project_custom_isa
+#. openerp-web
+#: code:addons/project_custom_isa/static/src/js/formats.js:272
+#, python-format
+msgid "'%s' is not a correct datetime"
+msgstr "'%s' is not a correct datetime"
+
+#. module: project_custom_isa
+#: view:project.closing_category:0
+msgid "Category of Closing Project Form"
+msgstr "Categoria di chiusura progetti"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Save Work"
+msgstr "Salva Lavorazione"
+
+#. module: project_custom_isa
+#: field:project.category.team,project_category_id:0
+#: field:project.project,category_id:0
+#: field:project.task,category_id:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Delegated tasks"
+msgstr "Attività Delegate"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_task_work
+msgid "Project Task Work"
+msgstr "Lavoro attività progetto"
+
+#. module: project_custom_isa
+#: view:project.task.work.type:0
+msgid "Type of work activity Form"
+msgstr "Tipologia del lavoro"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/project/project.py:204
+#, python-format
+msgid "You cannot close a project without billing state."
+msgstr "Non puoi chiudere un progetto senza specificare il campo Stato Fatturazione."
+
+#. module: project_custom_isa
+#: field:project.task.work,program:0
+#: field:project.wizard.manage.works.line,program:0
+msgid "Program"
+msgstr "Programma"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Draft"
+msgstr "Bozza"
+
+#. module: project_custom_isa
+#: view:project.project:0
+msgid "ISA"
+msgstr "ISA"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_issue_category
+msgid "Category of project's issue"
+msgstr "Categoria della Problematica"
+
+#. module: project_custom_isa
+#: view:project.closing_category:0
+msgid "Category of Closing Project Search"
+msgstr "Categoria di chiusura progetti Search"
+
+#. module: project_custom_isa
+#: view:wizard.select.date:0
+msgid "or"
+msgstr "O"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_month:0
+msgid "August"
+msgstr "Agosto"
+
+#. module: project_custom_isa
+#: model:ir.actions.act_window,name:project_custom_isa.action_manage_works
+msgid "Daily Works"
+msgstr "Lavorazioni Giornaliere"
+
+#. module: project_custom_isa
+#: view:project.issue.category:0
+msgid "Tags"
+msgstr "Categoria"
+
+#. module: project_custom_isa
+#: model:ir.actions.act_window,name:project_custom_isa.project_contract_action
+#: model:ir.ui.menu,name:project_custom_isa.menu_project_contract_action
+msgid "Contracts"
+msgstr "Contratti"
+
+#. module: project_custom_isa
+#: field:project.contract,lines:0
+#: field:project.task,need_ticket:0
+msgid "unknown"
+msgstr "sconosciuto"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_issue
+msgid "Project Issue"
+msgstr "Problematica di progetto"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_month:0
+msgid "June"
+msgstr "Giugno"
+
+#. module: project_custom_isa
+#: field:project.project,hours_for_partner:0
+msgid "Hours worked for partners"
+msgstr "Ore Lavorate per cliente"
+
+#. module: project_custom_isa
+#: view:project.task:0
+#: field:project.task,datetime_end:0
+msgid "Task Closing Date Time"
+msgstr "Data e Ora di Chiusura Attività"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_state:0
+msgid "03 - Billed"
+msgstr "03 - Fatturato"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Gantt View"
+msgstr "Gantt View"
+
+#. module: project_custom_isa
+#: field:project.category.team,member_id:0
+#: view:project.task.work:0
+#: field:project.wizard.manage.works,user_id:0
+#: field:project.wizard.manage.works.line,user_id:0
+msgid "User"
+msgstr "Utente"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+#: field:project.wizard.manage.works,day:0
+#: field:project.wizard.manage.works.line,works_date:0
+#: field:wizard.select.date,day:0
+msgid "Date"
+msgstr "Data"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_month:0
+msgid "November"
+msgstr "Novembre"
+
+#. module: project_custom_isa
+#: view:project.task.category:0
+msgid "Category of task Form"
+msgstr "Categoria di attività"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_category
+msgid "Category of project's task, issue, ..."
+msgstr "Categoria delle attività, problematiche, ..."
+
+#. module: project_custom_isa
+#: view:project.project:0
+msgid "Project Graph"
+msgstr "Project Graph"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_month:0
+msgid "October"
+msgstr "Ottobre"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Works Search"
+msgstr "Ricerca Lavori"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_month:0
+msgid "January"
+msgstr "Gennaio"
+
+#. module: project_custom_isa
+#: view:project.task:0
+#: field:project.task,isa_billing_hours:0
+msgid "Billable Hours"
+msgstr "Ore fatturabili"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_wizard_manage_works_line
+msgid "Daily Works Line"
+msgstr "Daily Works Line"
+
+#. module: project_custom_isa
+#: field:project.contract.line,contract_id:0
+#: field:project.project,contract:0
+msgid "Contract"
+msgstr "Contratto"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_wizard_manage_works
+msgid "Manage Works"
+msgstr "Gestione Lavorazioni"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Task summary..."
+msgstr "Task summary..."
+
+#. module: project_custom_isa
+#: view:project.project:0
+msgid "Tasks"
+msgstr "Attività"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/task/project_task.py:183
+#, python-format
+msgid "You cannot close an activity without a responsible."
+msgstr "Non puoi chiudere una attività senza un responsabile."
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/project_task_work.py:90
+#: code:addons/project_custom_isa/work/project_task_work.py:94
+#, python-format
+msgid "Error"
+msgstr "Errore"
+
+#. module: project_custom_isa
+#. openerp-web
+#: code:addons/project_custom_isa/static/src/js/formats.js:247
+#, python-format
+msgid "'%s' is not a correct float"
+msgstr "'%s' is not a correct float"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/project_task_work.py:91
+#, python-format
+msgid "Task not defined for this Work !"
+msgstr "Attività non definita per questa lavorazione !"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_state:0
+msgid "01 - Not to be billed"
+msgstr "01 - Da non fatturare"
+
+#. module: project_custom_isa
+#: view:project.wizard.manage.works:0
+msgid "Update List"
+msgstr "Aggiorna Lista"
+
+#. module: project_custom_isa
+#: field:project.category,code:0
+#: field:project.closing_category,code:0
+#: field:project.task.category,code:0
+#: field:project.task.work.type,code:0
+msgid "Code"
+msgstr "Codice"
+
+#. module: project_custom_isa
+#: view:project.project:0
+msgid "Billing Month"
+msgstr "Mese di Fatturazione"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/project/project.py:199
+#, python-format
+msgid "You cannot close a project with project manager HelpBoard."
+msgstr "Non puoi chiudere un progetto con project manager HelpBoard."
+
+#. module: project_custom_isa
+#. openerp-web
+#: code:addons/project_custom_isa/static/src/js/formats.js:280
+#, python-format
+msgid "'%s' is not a correct date"
+msgstr "'%s' is not a correct date"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/wizard_select_date.py:92
+#, python-format
+msgid "Day Works"
+msgstr "Lavorazioni Giornaliere"
+
+#. module: project_custom_isa
+#: field:project.wizard.manage.works.line,manage_id:0
+msgid "Manage"
+msgstr "Gestione"
+
+#. module: project_custom_isa
+#: field:project.task.work,project_task_planned_hours:0
+msgid "Task Planned Hours"
+msgstr "Ore Pianificate per l'Attività"
+
+#. module: project_custom_isa
+#: view:project.project:0
+#: field:project.project,datetime_end:0
+msgid "Project Closing Date Time"
+msgstr "Data e ora di chiusura"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_month:0
+msgid "September"
+msgstr "Settembre"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_wizard_select_date
+#: view:wizard.select.date:0
+msgid "Wizard Select Date"
+msgstr "Wizard Select Date"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Done"
+msgstr "Completato"
+
+#. module: project_custom_isa
+#: view:wizard.select.date:0
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: project_custom_isa
+#. openerp-web
+#: code:addons/project_custom_isa/static/src/js/formats.js:232
+#, python-format
+msgid "'%s' is not a correct integer"
+msgstr "'%s' is not a correct integer"
+
+#. module: project_custom_isa
+#: view:project.task:0
+#: view:project.wizard.manage.works:0
+msgid "Edit Work"
+msgstr "Modifica Lavorazione"
+
+#. module: project_custom_isa
+#: field:project.project,billing_as400_date:0
+#: field:project.task,billing_as400_date:0
+msgid "Billing Date"
+msgstr "Data Fatturazione"
+
+#. module: project_custom_isa
+#: view:project.project:0
+msgid "Issues"
+msgstr "Problematiche"
+
+#. module: project_custom_isa
+#: view:project.wizard.manage.works:0
+msgid "Delete Work"
+msgstr "Elimina lavorazione"
+
+#. module: project_custom_isa
+#: view:project.task.work.type:0
+msgid "Type of work activity Tree"
+msgstr "Tipologia del lavoro dell'attività"
+
+#. module: project_custom_isa
+#: view:project.closing_category:0
+msgid "Category of Closing Project Tree"
+msgstr "Categoria di chiusura di progetti"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Work activity Tree"
+msgstr "Tipologia del lavoro"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/task/project_task.py:41
+#, python-format
+msgid "You cannot open an activity without a responsible."
+msgstr "Non puoi aprire una attività senza un responsabile."
+
+#. module: project_custom_isa
+#: field:project.project,contract_line:0
+msgid "Category Line"
+msgstr "Righe Categoria"
+
+#. module: project_custom_isa
+#: model:ir.actions.act_window,name:project_custom_isa.project_closing_category_action
+#: model:ir.ui.menu,name:project_custom_isa.menu_project_closing_category_action
+msgid "Closing Categories"
+msgstr "Categorie Chiusura"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/wizard_manage_works.py:105
+#, python-format
+msgid "Thursday"
+msgstr "Giovedì"
+
+#. module: project_custom_isa
+#: field:project.task.work,field:0
+#: field:project.wizard.manage.works.line,field:0
+msgid "Field"
+msgstr "Campo"
+
+#. module: project_custom_isa
+#: view:project.project:0
+msgid "Bill State"
+msgstr "Stato Fatt"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/project/project.py:257
+#, python-format
+msgid "Non si puo' chiudere il progetto perche' lo stato del lavoro \"%s\" non e' \"cancellato\" o \"terminato\"."
+msgstr "Non si puo' chiudere il progetto perche' lo stato del lavoro \"%s\" non e' \"cancellato\" o \"terminato\"."
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "If confirmed the record will be saved once and then you will be able to change anyway. Confirm?"
+msgstr "Se confermato il record sarà salvato subito e poi si potrà comunque modificare. Confermare?"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/project_task_work.py:271
+#, python-format
+msgid "You cannot close a work without hours."
+msgstr "Non puoi chiudere una lavorazione senza specificare il tempo impiegato."
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Activities"
+msgstr "Attività"
+
+#. module: project_custom_isa
+#: field:project.project,close_description:0
+msgid "Close Description"
+msgstr "Descrizione Chiusura"
+
+#. module: project_custom_isa
+#: field:project.closing_category,name:0
+#: field:project.contract,name:0
+#: field:project.contract.line,name:0
+#: view:project.task:0
+#: field:project.task.category,name:0
+#: field:project.task.work,description:0
+#: field:project.task.work.type,name:0
+#: field:project.wizard.manage.works.line,description:0
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_month:0
+msgid "May"
+msgstr "Maggio"
+
+#. module: project_custom_isa
+#: field:project.task.work,not_billing:0
+#: field:project.wizard.manage.works.line,not_billing:0
+msgid "Not Billing"
+msgstr "Non Fatturabile"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/project/project.py:226
+#, python-format
+msgid "You cannot close a project with category \"85 - Assistenza presso clienti\" without select contract line"
+msgstr "Non puoi chiudere un progetto con categoria \"85 - Assistenza presso clienti\" senza selezionare un contratto"
+
+#. module: project_custom_isa
+#: model:ir.actions.act_window,help:project_custom_isa.project_issue_category_action
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new tag.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a new tag.\n"
+"              </p>\n"
+"            "
+
+#. module: project_custom_isa
+#: field:project.task.work,project_task_name:0
+msgid "Project Task Name"
+msgstr "Attività"
+
+#. module: project_custom_isa
+#: field:project.project,contract_mod_date:0
+msgid "Contract Modify Date"
+msgstr "Data Modifica Contratto"
+
+#. module: project_custom_isa
+#: model:ir.actions.act_window,name:project_custom_isa.act_project_task_2_project_issue_all
+#: view:project.task:0
+msgid "Task Issues"
+msgstr "Problematiche"
+
+#. module: project_custom_isa
+#: field:project.project,billing_month:0
+msgid "Month billing"
+msgstr "Mese fatturazione"
+
+#. module: project_custom_isa
+#: model:ir.actions.act_window,name:project_custom_isa.project_contract_line_action
+#: model:ir.ui.menu,name:project_custom_isa.menu_project_contract_line_action
+msgid "Contracts Line"
+msgstr "Righe Contratto"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_month:0
+msgid "February"
+msgstr "Febbraio"
+
+#. module: project_custom_isa
+#: view:project.task.category:0
+msgid "Category of task Tree"
+msgstr "Categoria di attività"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_project_contract
+msgid "Contract of Isa project"
+msgstr "Contratti dei progetti isa"
+
+#. module: project_custom_isa
+#: field:project.issue.category,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: project_custom_isa
+#: field:project.category,category_team_ids:0
+msgid "Category Team Members"
+msgstr "Category Team Members"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Modify Work"
+msgstr "Modifica Lavorazione"
+
+#. module: project_custom_isa
+#: view:project.contract.line:0
+msgid "Project Contract Line"
+msgstr "Righe Contratto"
+
+#. module: project_custom_isa
+#: view:project.project:0
+msgid "Open Notes"
+msgstr "Note Apertura"
+
+#. module: project_custom_isa
+#: selection:project.project,billing_month:0
+msgid "April"
+msgstr "Aprile"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/wizard_manage_works.py:209
+#, python-format
+msgid "New Date"
+msgstr "New Date"
+
+#. module: project_custom_isa
+#: field:project.contract.line,contract_line_number:0
+msgid "Contract Line Number"
+msgstr "Numero Linea Contratto"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "References"
+msgstr "Riferimenti"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Spent Hours"
+msgstr "Ore impiegate"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Work description"
+msgstr "Descrizione del lavoro"
+
+#. module: project_custom_isa
+#: model:ir.model,name:project_custom_isa.model_res_users
+msgid "Users"
+msgstr "Utenti"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/project/project.py:210
+#, python-format
+msgid "You cannot close a project with billing hours not correct."
+msgstr "You cannot close a project with billing hours not correct."
+
+#. module: project_custom_isa
+#: view:wizard.select.date:0
+msgid "View Day Works"
+msgstr "Vedi Lavorazioni"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Filters..."
+msgstr "Filtri..."
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Delegation"
+msgstr "Delegazione"
+
+#. module: project_custom_isa
+#: view:project.task.work:0
+msgid "Save and Close"
+msgstr "Salva e Chiudi"
+
+#. module: project_custom_isa
+#: view:project.contract:0
+msgid "Project Contract"
+msgstr "Contratto progetto"
+
+#. module: project_custom_isa
+#: view:project.task:0
+msgid "Add a Description..."
+msgstr "Add a Description..."
+
+#. module: project_custom_isa
+#. openerp-web
+#: code:addons/project_custom_isa/static/src/js/formats.js:113
+#, python-format
+msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+msgstr "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+
+#. module: project_custom_isa
+#: field:project.task.work,file:0
+#: field:project.wizard.manage.works.line,file:0
+msgid "File"
+msgstr "File"
+
+#. module: project_custom_isa
+#: view:project.task.work.type:0
+msgid "Type of work activity Search"
+msgstr "Tipologia del lavoro Search"
+
+#. module: project_custom_isa
+#: view:project.wizard.manage.works:0
+msgid "If confirmed the record will be deleted. Confirm?"
+msgstr "Se confermi la lavorazione verrà eliminata. Confermi?"
+
+#. module: project_custom_isa
+#: code:addons/project_custom_isa/work/wizard_manage_works.py:105
+#, python-format
+msgid "Saturday"
+msgstr "Sabato"
+
+#. module: project_custom_isa
+#: model:ir.actions.act_window,name:project_custom_isa.project_task_work_type_action
+#: model:ir.model,name:project_custom_isa.model_project_task_work_type
+#: model:ir.ui.menu,name:project_custom_isa.menu_project_task_work_type_action
+#: field:project.task.work,type_id:0
+#: field:project.wizard.manage.works.line,type_id:0
+msgid "Type of work"
+msgstr "Tipologia del lavoro"
+

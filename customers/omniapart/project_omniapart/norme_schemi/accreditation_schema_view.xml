@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+     <record model="ir.ui.view" id="view_accreditation_schema_form">
+            <field name="name">accreditation.schema.form</field>
+            <field name="model">accreditation.schema</field>
+            <field name="arch" type="xml">
+                <form string="Schema" version="7.0">
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="schema_nick" />
+                        </group>
+                        <group>
+                            <field name="schema_code" />
+                        </group>
+                    </group>    
+                    <notebook colspan="4">
+	                    <page string="Descrizioni">
+		                    <label for="description" class="oe_edit_only" string="Descrizione (in italiano)"/>
+		                    <field name="description" />
+	                    </page>
+	                    <page string="Norme">
+		                    <field name="standard_ids" />
+	                    </page>
+                    </notebook>
+                </form>
+            </field>
+     </record>
+
+    <record model="ir.ui.view" id="view_accreditation_schema_tree">
+            <field name="name">accreditation.schema.tree</field>
+            <field name="model">accreditation.schema</field>
+            <field name="arch" type="xml">
+                <tree string="Schema">
+					 <field name="name" />        
+     		    	 <field name="description" />                    
+                </tree>
+            </field>
+    </record>
+
+ 
+    <record model="ir.ui.view" id="view_accreditation_schema_search">
+        <field name="name">accreditation.schema.search</field>
+        <field name="model">accreditation.schema</field>
+        <field name="arch" type="xml">
+            <search string="Schema Search">     
+				 <field name="name" />        
+     		     <field name="description" />
+            </search>
+        </field>
+    </record>
+
+ 
+    <record model="ir.actions.act_window" id="action_accreditation_schema">
+        <field name="name">Schemi</field>
+        <field name="res_model">accreditation.schema</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_accreditation_schema_search"/>
+    </record>
+
+    </data>
+</openerp>

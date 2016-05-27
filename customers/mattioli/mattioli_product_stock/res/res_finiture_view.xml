@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_finiture_tree" model="ir.ui.view">
+            <field name="name">res.finiture.tree</field>
+            <field name="model">res.finiture</field>
+            <field name="arch" type="xml">
+                <tree string="Finiture">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_finiture_form" model="ir.ui.view">
+            <field name="name">res.finiture.form</field>
+            <field name="model">res.finiture</field>
+            <field name="arch" type="xml">
+                <form string="Finitura">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_finiture" model="ir.actions.act_window">
+            <field name="name">Finiture</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.finiture</field>
+            <field name="view_type">form</field>
+            <field name="help">Mostra e gestisci la lista di tutte le finiture associabili ai tuoi prodotti.</field>
+        </record>
+		
+        <menuitem action="action_finiture" id="menu_finiture" parent="stock.menu_product_in_config_stock" sequence="27" groups="base.group_no_one"/>
+
+    </data>
+</openerp>

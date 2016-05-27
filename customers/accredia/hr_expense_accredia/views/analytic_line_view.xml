@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_expense_account_analytic_line_tree_accredia" model="ir.ui.view">
+            <field name="name">expense.account.analytic.line.tree.accredia</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="account.view_account_analytic_line_form"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="partner_id" context="{'view_person': True, 'default_is_entity': 0, 'default_is_company': 0, 'default_customer':0, 'default_supplier':0, 'default_individual':True, 'search_default_individual':1}" domain="[('individual', '=', True)]" />
+                    <field name="customer_id" />
+                    <field name="task_id" string="Riferimento" context="{'t_obj': 'mission'}" domain="[('phase_id','!=',None),('phase_id','!=',False)]" />
+                </field>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="on_change">onchange_user_id(user_id)</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_line_search_inherit_accredia" model="ir.ui.view">
+            <field name="name">account.analytic.line.search.accredia</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="account.view_account_analytic_line_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/filter[@string='Product']" position="before">
+                     <filter name="group_by_customer_id" string="Cliente" context="{'group_by':'customer_id'}"/>
+                     <filter name="group_by_project_id" string="Pratica" context="{'group_by':'project_id'}"/>
+                     <filter name="group_by_task_id" string="Audit" context="{'group_by':'task_id'}"/>
+                     <filter name="group_by_product_categ_id" string="Categoria Prodotto" context="{'group_by':'product_category_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Action Sales/Invoicing/Time and Material to Invoice -->
+        <record id="account_analytic_analysis.action_hr_tree_invoiced_all" model="ir.actions.act_window">
+            <field name="name">Attività da Fatturare</field>
+            <field name="res_model">account.analytic.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_to_invoice': 1, 'search_default_group_by_customer_id': True, 'search_default_group_by_project_id': True, 'search_default_group_by_task_id': True, 'search_default_group_by_product_categ_id': True}</field>
+            <field name="search_view_id" ref="view_account_analytic_line_search_inherit_accredia"/>
+            <field name="help" type="html">
+              <p>
+                You will find here timesheets and purchases you did for
+                contracts that can be reinvoiced to the customer.  If you want
+                to record new activities to invoice, you should use the timesheet
+                menu instead.
+              </p>
+            </field>
+        </record>
+
+    </data>
+</openerp>

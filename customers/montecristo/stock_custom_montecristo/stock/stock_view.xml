@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_stock_quant_tree_montecristo">
+            <field name="name">stock.quant.tree.montecristo</field>
+            <field name="model">stock.quant</field>
+            <field name="inherit_id" ref="stock.view_stock_quant_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='inventory_value']" position="replace"/>
+            </field>
+        </record>        
+        
+        <record id="view_picking_montecristo_tree2" model="ir.ui.view">
+            <field name="name">stock.picking.tree.montecristo</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='location_dest_id']" position="replace">
+                    <field name="default_location_dest_id"/>
+                    <field name="total_qty" />
+                </xpath>
+            </field>
+        </record>
+ 
+        <record id="view_picking_internal_search_montecristo" model="ir.ui.view">
+            <field name="name">view.picking.internal.search.montecristo</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@string='Status']" position="after">
+                    <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>  
+                </xpath>
+            </field>
+        </record>         
+        
+        <record id="stock_picking_tree_ddt_montecristo" model="ir.ui.view">
+            <field name="name">stock.picking.tree.ddt.montecristo</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="l10n_it_ddt.stock_picking_tree_ddt"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ddt_id']" position="after">
+                    <field name="supplier_ddt_number" string="DDT Fornitore"/>
+                </xpath>
+            </field>
+        </record>        
+        
+        <record id="view_picking_form_stock_montecristo" model="ir.ui.view">
+            <field name="name">view.picking.form.stock.montecristo</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//field[@name="supplier_ddt_number"]' position="attributes">
+                    <attribute name="on_change">onchange_ddt_references(partner_id,supplier_ddt_number,supplier_ddt_date,picking_type_id)</attribute>
+                </xpath>
+                <xpath expr='//field[@name="supplier_ddt_date"]' position="attributes">
+                    <attribute name="on_change">onchange_ddt_references(partner_id,supplier_ddt_number,supplier_ddt_date,picking_type_id)</attribute>
+                </xpath>
+                <xpath expr="//field[@name='picking_type_id']" position="replace" />
+                <xpath expr="//field[@name='partner_id']/../.." position="before">
+                    <group>
+                        <group>
+                			<field name="picking_type_id"/>
+                		</group>
+                		<group>
+                   			<button name="action_align_picking" type="object" string="Aggiorna Magazzino" attrs="{'invisible':[('state','in',['cancel','done'])]}"/>                    
+                   		</group>
+                   	</group>
+                </xpath>   
+                <xpath expr='//group[@string="General Informations"]' position="after">
+                    <group>
+                    	<button name="action_align_picking" type="object" string="Aggiorna Magazzino" attrs="{'invisible':[('state','in',['cancel','done'])]}"/>
+                    </group>
+                </xpath>                            
+            </field>
+        </record>      		        
+        
+        <record id="view_move_tree_montecristo" model="ir.ui.view">
+            <field name="name">stock.move.tree.montecristo</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_tree"/>
+            <field name="arch" type="xml">              
+                <xpath expr='//field[@name="picking_id"]' position="after">
+                    <field name="pick_partner_id" />
+                </xpath>
+            </field>
+        </record>           
+        
+        <record id="view_move_tree_picking_montecristo" model="ir.ui.view">
+            <field name="name">stock.move.tree.picking.montecristo</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr='//field[@name="scrapped"]' position="after">
+                    <field name="ordered_quants" readonly="1" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_move_tree_receipt_picking_montecristo" model="ir.ui.view">
+            <field name="name">stock.move.tree2.montecristo</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_tree_receipt_picking"/>
+            <field name="arch" type="xml">
+                <xpath expr='//field[@name="partner_id"]' position="after">
+                    <field name="pick_partner_id"/>
+                </xpath>
+                <xpath expr='//field[@name="partner_id"]' position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="view_stock_template_reservation" model="ir.ui.view">
+            <field name="name">view.stock.template.reservation.tree</field>
+            <field name="model">stock.template.reservation</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <tree string="Template Reservations" colors="blue:state in ('pre_init','draft'); black: state in ('confirmed'); green: state in ('done'); gray: state in ('cancel')">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="product_tmpl_id"/>                    
+                    <field name="color"/>                    
+                    <field name="location_id"/>
+                    <field name="date_confirmation"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_stock_template_reservation_form" model="ir.ui.view">
+            <field name="name">view.stock.template.reservation.form</field>
+            <field name="model">stock.template.reservation</field>
+            <field name="arch" type="xml">
+	            <form string="Scalature e Divisioni">
+	                <header>
+	                    <button name="action_start" type="object" string="Start" states="pre_init" class="oe_highlight"/>
+	                    <button name="action_confirm" type="object" string="Confirm" states="draft" class="oe_highlight"/>
+	                    <button name="action_close" type="object" string="Close" states="confirmed" class="oe_hightlight"/>
+	                    <!-- <button name="action_transfer_all" type="object" string="Transfer All" states="confirmed" class="oe_hightlight"/>  -->             
+	                    <button name="action_cancel" type="object" string="Cancel" states="pre_init,draft"/>	    
+	                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done" statusbar_colors='{"cancel":"red"}'/>
+	                </header>
+	                <group>
+	                    <group>
+	                        <field name="product_tmpl_id" required="1" on_change="onchange_template_id(product_tmpl_id)"/>
+	                        <field name="color" required="1" domain="[('id','=',0)]" />
+                        </group>
+                        <group>
+	                        <field name="location_id" required="1" />
+	                        <field name="season_id" required="1" on_change="onchange_season_id(season_id)"/>
+	                    </group>
+                        <group string="Data Consegna">
+	                        <field name="date_from" required="1" />
+	                        <field name="date_to" required="1" />
+	                    </group>
+                        <group>
+	                        <field name="user_id"/>
+	                        <field name="date_confirmation" states="['confirmed','done']" readonly="1"/>
+	                    </group>
+                    </group>
+
+                    <button name="action_recheck" type="object" string="Recheck Availabilities" states="draft"/>	                		
+                    <field name="availability_line_ids" attrs="{'invisible':[('state','=','pre_init')]}" readonly="1">                        
+		                <tree string="Availabilities" colors="blue:available_qty &gt; 0.0; red:available_qty &lt; 0.0; black: available_qty == 0.0;">
+		                    <field name="product_id"/>
+		                    <field name="original_available_qty" invisible="1"/>
+		                    <field name="required_qty" />
+		                    <field name="assigned_qty"/>
+		                    <field name="available_qty"/>
+		                    <field name="external_available_qty" />		                    
+		                    <field name="residual" />
+		                </tree>
+	            	</field>	    
+                    
+                    <button name="action_auto_assign" type="object" string="Auto Assign" states="draft"/>
+                    <button name="action_reserve_all" type="object" string="Reserve All" states="draft"/>	
+                    <!-- <button name="action_align_picking" type="object" string="Align Picking" states="draft"/> -->
+					<field name="partner_ids" invisible="1"/>
+					<field name="order_ids" invisible="1"/>																	
+					<group>
+						<group>
+							<field name="partner_id" attrs="{'invisible':[('state','=','pre_init')]}" domain="[('id','in',partner_ids)]" options="{'no_create': True}" context="{'t_check':True}"/>					    						    
+							<field name="order_id" attrs="{'invisible':[('state','=','pre_init')]}" domain="[('id','in',order_ids)]" options="{'no_create': True}" context="{'t_check':True}"/>					    							
+						</group>
+					</group>
+					<button name="button_dummy" type="object" string="Filtra" attrs="{'invisible':[('state','=','pre_init')]}"/> 
+					<button name="button_clear_filter" type="object" string="Clear" attrs="{'invisible':[('state','=','pre_init')]}"/>								
+                    <field name="reservation_product_ids" invisible="1" attrs="{'readonly':[('state','not in',['draft'])]}">
+                        <tree string="Reservations" editable="bottom" colors="blue:requested_qty == reserved_qty; red: requested_qty &lt; reserved_qty; black: requested_qty &gt; reserved_qty">
+                            <field name="order_id" readonly="1"/>
+                            <field name="is_invisible" invisible="1" />
+                            <field name="stock_number" readonly="1"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="picking_id" readonly="1"/>
+                            <field name="product_id" readonly="1"/>
+                            <field name="location_id" readonly="1"/>
+                            <field name="requested_qty" readonly="1"/>                                                       
+                            <field name="previously_reserved_qty" invisible="1" readonly="1"/>
+                            <field name="reserved_qty" on_change="onchange_reservation(reserved_qty, previously_reserved_qty)" attrs="{'readonly':[('is_invisible','=',True)]}"/>
+                            <field name="difference" invisible="1"/>                     
+                        </tree>
+                    </field>
+                    <field name="view_reservation_product_ids" attrs="{'invisible':[('state','=','pre_init')], 'readonly':[('state','not in',['draft'])]}">
+                        <tree string="Reservations" editable="bottom" colors="blue:requested_qty == reserved_qty; red: requested_qty &lt; reserved_qty; black: requested_qty &gt; reserved_qty">
+                            <field name="order_id" readonly="1"/>
+                            <field name="is_invisible" invisible="1" />
+                            <field name="stock_number" readonly="1"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="picking_id" readonly="1"/>
+                            <field name="product_id" readonly="1"/>
+                            <field name="location_id" readonly="1"/>
+                            <field name="requested_qty" readonly="1"/>                     
+                            <field name="previously_reserved_qty" invisible="1" readonly="1"/>
+                            <field name="reserved_qty" on_change="onchange_reservation(reserved_qty, previously_reserved_qty)" attrs="{'readonly':[('is_invisible','=',True)]}"/>
+                            <field name="difference" invisible="1"/>                        
+                            <!-- <button name="enter_transfer_details" string="Transfer" type="object" icon="terp-product" attrs="{'invisible':[('is_transferable','=',False)]}"/> -->                   
+                        </tree>
+                    </field>                    
+				</form>
+            </field>
+        </record>        
+        
+        <record id="view_template_reservation_filter" model="ir.ui.view">
+            <field name="name">stock.template.reservation.filter</field>
+            <field name="model">stock.template.reservation</field>
+            <field name="arch" type="xml">
+                <search string="Search Template Reservation">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="product_tmpl_id"/>
+                    <field name="color"/>
+                    <field name="location_id"/>                   
+                    <group expand="0" string="Group By"> 
+                        <filter string="Product" domain="[]" context="{'group_by':'product_tmpl_id'}"/>
+                        <filter string="Color" domain="[]" context="{'group_by':'color'}"/>
+                        <filter string="Season" domain="[]" context="{'group_by':'season_id'}"/>
+                        <filter string="Location" domain="[]" context="{'group_by':'location_id'}"/>
+                        <filter string="State" domain="[]" context="{'group_by':'state'}"/>                        
+                    </group>
+               </search>
+            </field>
+        </record>        
+
+        <record id="action_template_reservation" model="ir.actions.act_window">
+            <field name="name">Scalature e Divisioni</field>
+            <field name="res_model">stock.template.reservation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_stock_template_reservation"/>
+            <field name="search_view_id" ref="view_template_reservation_filter"/>            
+        </record>                 
+        
+        <menuitem action="action_template_reservation"
+        		  name="Scalature e Divisioni"
+                  id="menu_action_template_reservation"
+                  parent="l10n_it_ddt_makeover.menu_stock_products_moves"
+                  sequence="3"/>                
+        
+    </data>
+</openerp>

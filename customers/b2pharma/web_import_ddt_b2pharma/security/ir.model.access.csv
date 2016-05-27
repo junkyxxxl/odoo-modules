@@ -1,0 +1,3 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_import_ddt_b2pharma_line,access.import.ddt.b2pharma.line,web_import_ddt_b2pharma.model_track_import_ddt_line,purchase.group_purchase_manager,1,1,1,1
+access_import_ddt_b2pharma,access.import.ddt.b2pharma,web_import_ddt_b2pharma.model_track_import_ddt,purchase.group_purchase_manager,1,1,1,1

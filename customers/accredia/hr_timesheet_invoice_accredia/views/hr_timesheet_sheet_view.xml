@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Hr Timesheet Sheet View -->
+        <record id="hr_timesheet_sheet_doclite_accredia_form" model="ir.ui.view">
+            <field name="name">hr.timesheet.sheet.doclite.accredia.form</field>
+            <field name="model">hr_timesheet_sheet.sheet</field>
+            <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@string='Summary']" position="replace">
+                </xpath>
+                <xpath expr="//notebook/page[@string='Details']/field/tree/field[@name='unit_amount']" position="replace">
+                    <field name="unit_amount" on_change="on_change_unit_amount(product_id, unit_amount, False, product_uom_id,journal_id)" string="Giorni" sum="Giorni"/>
+                </xpath>
+                <xpath expr="//notebook/page[@string='Details']/field/form/field[@name='unit_amount']" position="replace">
+                    <field name="unit_amount" on_change="on_change_unit_amount(product_id, unit_amount, False, product_uom_id,journal_id)" string="Giorni"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <function model="ir.values" name="set_default">
+            <value>website.config.onepage.checkout</value>
+            <value>wk_address_panel</value>
+            <value>True</value>
+        </function>
+
+        <function model="ir.values" name="set_default">
+            <value>website.config.onepage.checkout</value>
+            <value>wk_address_panel_name</value>
+            <value>Billing and Shipping Information</value>
+        </function>
+
+        <function model="ir.values" name="set_default">
+            <value>website.config.onepage.checkout</value>
+            <value>wk_billing_information</value>
+            <value>True</value>
+        </function>
+        <function model="ir.values" name="set_default">
+            <value>website.config.onepage.checkout</value>
+            <value>wk_orderreview_panel_name</value>
+            <value>Order Preview and Delivery Method</value>
+        </function>
+        <function model="ir.values" name="set_default">
+            <value>website.config.onepage.checkout</value>
+            <value>wk_payment_panel</value>
+            <value>True</value>
+        </function>
+        <function model="ir.values" name="set_default">
+            <value>website.config.onepage.checkout</value>
+            <value>wk_payment_panel_name</value>
+            <value>Payment Option</value>
+        </function>
+    </data>
+</openerp>

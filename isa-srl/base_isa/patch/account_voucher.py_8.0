@@ -1,0 +1,18 @@
+=== modified file 'src/odoo-8.0/addons/account_voucher/account_voucher.py'
+--- src/odoo-8.0/addons/account_voucher/account_voucher.py      2014-12-17 15:38:51 +0000
++++ src/odoo-8.0/addons/account_voucher/account_voucher.py      2015-02-09 15:13:47 +0000
+@@ -1392,10 +1392,11 @@
+             move_line_brw = move_line_pool.browse(cr, uid, move_line_id, context=context)
+             line_total = move_line_brw.debit - move_line_brw.credit
+             rec_list_ids = []
+-            if voucher.type == 'sale':
+-                line_total = line_total - self._convert_amount(cr, uid, voucher.tax_amount, voucher.id, context=ctx)
+-            elif voucher.type == 'purchase':
+-                line_total = line_total + self._convert_amount(cr, uid, voucher.tax_amount, voucher.id, context=ctx)
++            if not voucher.tax_id.price_include:
++                if voucher.type == 'sale':
++                    line_total = line_total - self._convert_amount(cr, uid, voucher.tax_amount, voucher.id, context=ctx)
++                elif voucher.type == 'purchase':
++                    line_total = line_total + self._convert_amount(cr, uid, voucher.tax_amount, voucher.id, context=ctx)
+             # Create one move line per voucher line where amount is not 0.0
+             line_total, rec_list_ids = self.voucher_move_line_create(cr, uid, voucher.id, line_total, move_id, company_currency, current_currency, context)

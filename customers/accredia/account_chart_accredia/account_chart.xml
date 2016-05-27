@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+<!--
+Radice/Vista->account.data_account_type_view
+
+Attività->account.data_account_type_asset
+Passività->account.data_account_type_liability
+
+Crediti->account.data_account_type_receivable
+Debiti->account.data_account_type_payable
+
+Costi->account.data_account_type_expense
+Ricavi->account.data_account_type_income
+-->
+
+    <data noupdate="0">
+        <!-- Chart Template -->
+        <record id="l10n_it_chart_template_accredia" model="account.chart.template">
+            <field name="name">Italy - Accredia Piano dei Conti</field>
+            <field name="code_digits" eval="10"/>
+            <field name="account_root_id" ref="account_accredia_1"/>
+            <field name="tax_code_root_id" ref="vat_code_chart_root"/>
+            <field name="bank_account_view_id" ref="account_accredia_113"/>
+            <field name="property_account_receivable" ref="account_accredia_178"/>
+            <field name="property_account_payable" ref="account_accredia_455"/>
+            <field name="property_account_expense_categ" ref="account_accredia_833"/>
+            <field name="property_account_income_categ" ref="account_accredia_655"/>
+        </record>
+        <record id="l10n_it_chart_template_accredia_value" model="ir.values">
+            <field name="name">Italy - Accredia Piano dei Conti</field>
+            <field name="model">account.chart.template</field>
+            <field name="key">default</field>
+            <field name="res_id" ref="l10n_it_chart_template_accredia"/>
+            <field name="value" ref="base.EUR"/>
+        </record>
+    </data>
+</openerp>

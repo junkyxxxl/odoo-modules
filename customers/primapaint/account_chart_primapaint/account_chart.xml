@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <!-- Chart Template -->
+        <record id="l10n_it_chart_template_primapaint" model="account.chart.template">
+            <field name="name">Italy - Generic Chart of Accounts Primapaint</field>
+            <field name="account_root_id" ref="acc_0"/>
+            <field name="tax_code_root_id" ref="vat_code_chart_root"/>
+              <field name="bank_account_view_id" ref="acc_010101"/>
+            <field name="property_account_receivable" ref="acc_011001000000"/>
+            <field name="property_account_payable" ref="acc_200505000000"/>
+            <field name="property_account_expense_categ" ref="acc_301005000005"/>
+            <field name="property_account_income_categ" ref="acc_400505000005"/>
+            <field name="currency_id" ref="base.EUR"/>
+        </record>
+    </data>
+</openerp>

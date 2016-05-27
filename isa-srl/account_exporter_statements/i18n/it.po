@@ -1,0 +1,177 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_exporter_statements
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-02 09:27+0000\n"
+"PO-Revision-Date: 2014-10-02 09:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_exporter_statements
+#: selection:account.exporter.statements,letter_status:0
+msgid "Active"
+msgstr "Attiva"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,create_uid:0
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,create_date:0
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,name:0
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: account_exporter_statements
+#: code:addons/account_exporter_statements/account_exporter_statements.py:79
+#, python-format
+msgid "Error!"
+msgstr "Errore!"
+
+#. module: account_exporter_statements
+#: selection:account.exporter.statements,letter_status:0
+msgid "Expired"
+msgstr "Scaduta"
+
+#. module: account_exporter_statements
+#: view:account.exporter.statements:account_exporter_statements.view_account_exporter_statements_form
+#: view:account.exporter.statements:account_exporter_statements.view_account_exporter_statements_tree
+#: field:account.invoice,exporter_id:0
+#: model:ir.actions.act_window,name:account_exporter_statements.action_account_exporter_statements
+#: model:ir.ui.menu,name:account_exporter_statements.account_exporter_statements
+#: model:ir.ui.menu,name:account_exporter_statements.account_exporter_statements2
+#: view:res.partner:account_exporter_statements.view_partner_property_form_isa
+msgid "Exporter Statements"
+msgstr "Lettere d'Intento"
+
+#. module: account_exporter_statements
+#: view:account.exporter.statements:account_exporter_statements.view_account_exporter_statements_search
+msgid "Exporter Statements Search"
+msgstr "Ricerca Lettere d'Intento"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: account_exporter_statements
+#: model:ir.model,name:account_exporter_statements.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: account_exporter_statements
+#: model:ir.model,name:account_exporter_statements.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Righe Fattura"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento da parte di"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,write_date:0
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,letter_date:0
+msgid "Letter Date"
+msgstr "Data Lettera"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,letter_number:0
+msgid "Letter Number"
+msgstr "Numero Lettera"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,letter_status:0
+msgid "Letter Status"
+msgstr "Stato Lettera"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,letter_type:0
+msgid "Letter Type"
+msgstr "Tipo Lettera"
+
+#. module: account_exporter_statements
+#: field:res.partner,exporter_statements_ids:0
+msgid "Lettera d'Intento"
+msgstr "Lettera d'Intento"
+
+#. module: account_exporter_statements
+#: model:ir.model,name:account_exporter_statements.model_account_exporter_statements
+msgid "Lettera d'intento"
+msgstr "Lettera d'intento"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,max_amount:0
+msgid "Max Amount"
+msgstr "Importo Limite"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,partner_id:0
+#: model:ir.model,name:account_exporter_statements.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_exporter_statements
+#: selection:account.exporter.statements,letter_type:0
+msgid "Period"
+msgstr "Periodo"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,period_end:0
+msgid "Period End"
+msgstr "Fine Periodo"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,period_start:0
+msgid "Period Start"
+msgstr "Inizio Periodo"
+
+#. module: account_exporter_statements
+#: selection:account.exporter.statements,letter_status:0
+msgid "Revocated"
+msgstr "Revocata"
+
+#. module: account_exporter_statements
+#: selection:account.exporter.statements,letter_type:0
+msgid "Single Operation"
+msgstr "Singola Operazione"
+
+#. module: account_exporter_statements
+#: code:addons/account_exporter_statements/account_exporter_statements.py:79
+#, python-format
+msgid "This Partner already has an active exporter statements"
+msgstr "Questo partner dispone già di una lettera d'intento attiva"
+
+#. module: account_exporter_statements
+#: selection:account.exporter.statements,letter_type:0
+msgid "Till Import"
+msgstr "Fino ad Importo"
+
+#. module: account_exporter_statements
+#: field:account.exporter.statements,vat_code_id:0
+msgid "VAT Exemption Code"
+msgstr "Codice Esenzione Iva"
+
+#. module: account_exporter_statements
+#: view:account.invoice:account_exporter_statements.account_invoice_account_exporter_statements_form_view
+#: view:account.invoice:account_exporter_statements.view_invoice_supplier_account_exporter_statements_form
+msgid "{'partner_id': partner_id, 'price_type': context.get('price_type') or False, 'type': type, 'exporter_id': exporter_id, 'registration_date': registration_date, 'fiscal_position': fiscal_position, 'company_id': company_id}"
+msgstr "{'partner_id': partner_id, 'price_type': context.get('price_type') or False, 'type': type, 'exporter_id': exporter_id, 'registration_date': registration_date, 'fiscal_position': fiscal_position, 'company_id': company_id}"
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <!-- Bank Accounts -->
+    <record id="view_partner_bank_form_accredia" model="ir.ui.view">
+        <field name="name">res.partner.bank.form.accredia</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="department_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_bank_form_inherit_accredia" model="ir.ui.view">
+        <field name="name">view.partner.bank.form.inherit.accredia</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="account.view_partner_bank_form_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='accounting']" position="attributes">
+                <attribute name="invisible">0</attribute>
+                <attribute name="attrs"></attribute>
+            </xpath>
+            <xpath expr="//field[@name='journal_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</data>
+</openerp>

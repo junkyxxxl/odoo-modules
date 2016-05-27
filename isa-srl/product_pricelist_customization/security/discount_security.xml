@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="1">
+
+    <record id="group_multiple_discount_per_line" model="res.groups">
+        <field name="name">Multiple Discounts on lines</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('sale.group_discount_per_so_line'))]"/>        
+    </record>
+
+
+</data>
+</openerp>

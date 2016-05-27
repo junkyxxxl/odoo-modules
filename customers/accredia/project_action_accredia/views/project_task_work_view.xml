@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <!-- Questa è la vista relativa al wizard: deve starci il campo "date_obtained_accreditation" e il bottone "Salva" -->
+        <record id="view_project_task_wizard" model="ir.ui.view">
+            <field name="name">view.project.task.wizard</field>
+            <field name="model">project.task.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Data accreditamento">
+                  <group>
+					 <field name="date_obtained_accreditation" label="Data accreditamento" invisible="context.get('del_obtained_accreditation',False)"/>
+                     <field name="date_delete_accreditation" label="Data fine accreditamento" invisible="context.get('set_obtained_accreditation',False)"/>
+                  </group>
+                    <footer>
+                        <button name="send_button" string="Salva" type="object" class="oe_highlight"/>
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+        <!-- Project Task Work -->
+        <record id="view_project_task_work_doclite_form_accredia" model="ir.ui.view">
+            <field name="name">project.task.work.doclite.accredia.form</field>
+            <field name="model">project.task.work</field>
+            <field name="inherit_id" ref="project_accredia.view_project_task_work_form_accredia"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type_id']" position="attributes">
+                    <attribute name="colspan">2</attribute>
+                </xpath>
+                <xpath expr="//field[@name='type_id']" position="after">
+                   <!-- <button name="do_action" colspan="1" string="Esegui" type="object" attrs="{'invisible':['|',('exec_date','not in',[None, False]),('display_button','in',[None, False])]}"/> -->
+                    <button name="do_action_launch_wizard" string="Esegui" type='object' context="{'project_task_work_id': active_id}"  />
+                    <button name="do_not_action" colspan="1" string="Non Eseguire" type="object" attrs="{'invisible':['|',('exec_date','not in',[None, False]),('display_button','in',[None, False])]}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='date_obtained_accreditation']" position="replace">
+                      attrs="{'invisible':[('active','!=',True)]}"
+                </xpath>
+
+                <xpath expr="//page[@string='Risultati Azione']" position="inside">
+                    <group>
+                        <p  style="color:red;" attrs="{'invisible':['|',('fnct_phase_id','=',False),('fnct_phase_id','=',None)]}">
+                            Audit creato!<br/>Per completare o rivedere la pianificazione, aprire il seguente link:
+                            <field name="fnct_phase_id" />
+                        </p>
+                        <field name="fnct_to_plan_phase_ids" invisible="1" />
+                        <button name="open_to_plan_phase_ids" colspan="1" string="Mostra Audit da pianificare" type="object" attrs="{'invisible':['|','|',('fnct_to_plan_phase_ids','=',[]),('fnct_to_plan_phase_ids','=',False),('fnct_to_plan_phase_ids','=',None)]}" />
+                        <p  style="color:red;" attrs="{'invisible':['|','|',('fnct_action_url','=',False),('fnct_action_url','=',''),('fnct_action_url','=',None)]}">
+                            Link Doclite creato!<br/>Aprire il seguente link:
+                            <field name="fnct_action_url" widget="nameandurl" />
+                        </p>
+                        <field name="fnct_analytic_line_id"
+                               attrs="{'invisible':['|',('fnct_analytic_line_id','=',False),('fnct_analytic_line_id','=',None)]}" />
+                        <field name="fnct_action_url"
+                               widget="nameandurl"
+                               attrs="{'invisible':['|',('fnct_action_url','=',False),('fnct_action_url','=',None)]}"  />
+                        <field name="fnct_purchase_order_id"
+                               attrs="{'invisible':['|',('fnct_purchase_order_id','=',False),('fnct_purchase_order_id','=',None)]}" />
+                        <field name="fnct_project_task_ids"
+                               attrs="{'invisible':['|','|',('fnct_project_task_ids','=',[]),('fnct_project_task_ids','=',False),('fnct_project_task_ids','=',None)]}">
+                            <tree editable="">
+                                <field name="id" />
+                                <field name="name" />
+                            </tree>
+                        </field>
+                        <field name="fnct_purchase_requisition_id"
+                               attrs="{'invisible':['|',('fnct_purchase_requisition_id','=',False),('fnct_purchase_requisition_id','=',None)]}" />
+                        <field name="fnct_sale_order_id"
+                               attrs="{'invisible':['|',('fnct_sale_order_id','=',False),('fnct_sale_order_id','=',None)]}" />
+                        <field name="fnct_advance_invoice_id"
+                               attrs="{'invisible':['|',('fnct_advance_invoice_id','=',False),('fnct_advance_invoice_id','=',None)]}" />
+                        <field name="fnct_meeting_id"
+                               attrs="{'invisible':['|',('fnct_meeting_id','=',False),('fnct_meeting_id','=',None)]}" />
+                        <field name="fnct_request_id"
+                               attrs="{'invisible':['|',('fnct_request_id','=',False),('fnct_request_id','=',None)]}" />
+                        <field name="fnct_project_id"
+                               attrs="{'invisible':['|',('fnct_project_id','=',False),('fnct_project_id','=',None)]}" />
+                    </group>
+                </xpath>
+                <xpath expr="//page[@string='Risultati Azione']" position="after">
+                    <page string="Log">
+                        <field name="log_ids" colspan="4" readonly="1" />
+                     </page>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>
+
+

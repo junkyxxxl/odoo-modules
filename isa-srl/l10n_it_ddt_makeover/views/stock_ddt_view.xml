@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="stock_ddt_makeover_form" model="ir.ui.view">
+            <field name="name">stock.ddt.makeover.form</field>
+            <field name="model">stock.ddt</field>
+            <field name="inherit_id" ref="l10n_it_ddt.stock_ddt_form" />
+            <field name="arch" type="xml">
+                <xpath expr='//field[@name="sequence"]' position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr='//field[@name="parcels"]' position="before">
+                    <field name="payment_term" />
+                    <field name="incoterm_id" attrs="{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}" />
+                </xpath>
+                <xpath expr='//field[@name="parcels"]' position="after">
+                    <field name="weight" attrs="{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}" />
+                    <field name="weight_net" attrs="{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}" />
+                </xpath>
+                <xpath expr='//field[@name="delivery_date"]' position="after">
+                    <field name="date_done" attrs="{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}" />
+                    <field name="invoice_id" readonly="1" attrs="{'invisible':['|',('invoice_id','=',False),('invoice_id','=',None)]}" />
+                </xpath>
+                <xpath expr='//field[@name="delivery_address_id"]' position="attributes">
+                    <attribute name="attrs">{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}</attribute>
+                </xpath>
+                <xpath expr='//field[@name="delivery_address_id"]' position="after">
+                    <field name="company_id" attrs="{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}"/>
+                </xpath>                
+                <xpath expr='//field[@name="partner_id"]' position="attributes">
+                    <attribute name="domain">['|',('parent_id', '=', None),('parent_id', '=', False)]</attribute>
+                    <attribute name="attrs">{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}</attribute>
+                </xpath>
+                <!--        
+                <xpath expr="//field[@name='date']" position="after">
+                    <field name="ddt_date"/>
+                </xpath>         
+                -->    
+                <xpath expr='//field[@name="date"]' position="attributes">
+                    <attribute name="attrs">{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}</attribute>
+                    <attribute name="widget">date</attribute>
+                </xpath>
+                <xpath expr='//field[@name="delivery_date"]' position="attributes">
+                    <attribute name="attrs">{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}</attribute>
+                </xpath>
+
+                <xpath expr='//field[@name="goods_description_id"]' position="attributes">
+                    <attribute name="attrs">{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}</attribute>
+                </xpath>
+                <xpath expr='//field[@name="carriage_condition_id"]' position="attributes">
+                    <attribute name="attrs">{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}</attribute>
+                </xpath>
+                <xpath expr='//field[@name="transportation_reason_id"]' position="attributes">
+                    <attribute name="attrs">{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}</attribute>
+                </xpath>
+                <xpath expr='//field[@name="transportation_method_id"]' position="attributes">
+                    <attribute name="attrs">{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}</attribute>
+                </xpath>
+                <xpath expr='//field[@name="parcels"]' position="attributes">
+                    <attribute name="attrs">{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}</attribute>
+                </xpath>
+                <xpath expr='//field[@name="carrier_id"]' position="attributes">
+                    <attribute name="attrs">{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}</attribute>
+                </xpath>
+                <xpath expr='//field[@name="note"]' position="attributes">
+                    <attribute name="attrs">{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}</attribute>
+                </xpath>
+
+                <xpath expr='//field[@name="picking_ids"]' position="before">
+                    <field name="id" invisible="1" />
+                    <button string="Picking Cliente" icon="fa-arrow-right" states="draft" class="oe_stat_button" name="view_partner_pickings" type="object" context="{'default_ddt_id':id,'search_default_to_invoice':1}" />
+                </xpath>       
+                <xpath expr='//field[@name="picking_ids"]' position="after">
+ 		            <separator string="Picking di Storno" />                             
+                    <field name="picking_ids_return" />
+                </xpath>                
+                <xpath expr='//field[@name="ddt_lines"]' position="after">
+ 		            <separator string="Movimenti di Storno" />                             
+                    <field name="ddt_lines_return" />
+                </xpath>
+                <xpath expr='//field[@name="note"]' position="attributes">                           
+                    <attribute name="placeholder">Note di Spedizione...</attribute>
+                </xpath>                                
+                <xpath expr='//field[@name="note"]' position="after">                           
+                    <field name="note2" placeholder="Note..." attrs="{'invisible':[('invoice_id','not in',[None,False])]}" />
+                </xpath>                
+                
+            </field>
+        </record>
+
+        <record id="stock_ddt_makeover_tree" model="ir.ui.view" >
+            <field name="name">stock.ddt.makeover.tree</field>
+            <field name="model">stock.ddt</field>
+            <field name="inherit_id" ref="l10n_it_ddt.stock_ddt_tree" />
+            <field name="arch" type="xml">
+				<xpath expr='//tree[@string="DdT"]' position="attributes">
+                    <attribute name="default_order">ddt_date desc</attribute>
+                </xpath>            
+                <xpath expr='//field[@name="state"]' position="after">
+                    <field name="to_be_invoiced" invisible="1" />
+                </xpath>   
+                <xpath expr='//field[@name="date"]' position="after">
+                	<field name="ddt_date"/>
+                </xpath>    
+                <xpath expr='//field[@name="date"]' position="replace">
+                </xpath>                                 
+                <xpath expr='//field[@name="state"]' position="before">
+                    <field name="total_value" sum="Total" />
+                </xpath>                                  
+            </field>
+        </record>        
+        
+        <record id="stock_ddt_makeover_search" model="ir.ui.view">
+            <field name="name">stock.ddt.makeover.search</field>
+            <field name="model">stock.ddt</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                	<field name="partner_id" operator="child_of"/>
+                    <field name="carrier_id"/>                  
+                    <filter name="2binvoiced" string="Da Fatturare" domain="[('to_be_invoiced','=',True)]" help="DDT da fatturare"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter string="Corriere" domain="[]" context="{'group_by':'carrier_id'}"/>
+                        <filter string="Data Consegna" domain="[]" context="{'group_by':'date_done'}"/>
+                    </group>                    
+                </search>
+            </field>
+        </record>
+
+    </data>
+</openerp>

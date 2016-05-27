@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+__export__.ir_model_access_715,account.account.type agente,account.model_account_account_type,base.group_sale_salesman,1,0,0,0
+sale.access_account_invoice_line_salesman,account_invoice.line salesman,account.model_account_invoice_line,base.group_sale_salesman,1,0,0,0
+sale.access_account_invoice_salesman,account_invoice salesman,account.model_account_invoice,base.group_sale_salesman,1,0,0,0
+__export__.ir_model_access_707,account.tax.code agente,account.model_account_tax_code,base.group_sale_salesman,1,0,0,0
+sale_stock.access_procurement_salesman,procurement.order salesman,mrp.model_procurement_order,base.group_sale_salesman,1,1,1,0
+__export__.ir_model_access_717,res.family agente,product_custom_montecristo.model_res_family,base.group_sale_salesman,1,0,0,0
+__export__.ir_model_access_716,sale.history agente,sale_custom_montecristo.model_sale_history,base.group_sale_salesman,1,0,0,0
+sale_journal.access_sale_journal_invoice_type_salesman,sale_journal.invoice.type salesman,sale_journal.model_sale_journal_invoice_type,base.group_sale_salesman,1,0,0,0
+procurement.access_procurement,procurement.order,mrp.model_procurement_order,base.group_user,1,0,0,0
+mrp.access_procurement_user,procurement.order.user,mrp.model_procurement_order,base.group_user,1,0,0,0
+product.access_product_product_employee,product.product employee,account_invoice_intracee.model_product_product,base.group_user,1,0,0,0
+product.access_product_template_user,product.template.user,account.model_product_template,base.group_user,1,0,0,0
+sale_stock.access_procurement_salesman,procurement.order salesman,mrp.model_procurement_order,base.group_sale_salesman,1,0,0,0

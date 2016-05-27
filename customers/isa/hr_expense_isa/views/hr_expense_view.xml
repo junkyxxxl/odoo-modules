@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_expense_line_isa_form">
+            <field name="name">hr.expense.isa.form</field>
+            <field name="model">hr.expense.expense</field>
+            <field name="inherit_id" ref="hr_expense.view_expenses_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='line_ids']//form//field[@name='product_id']" position="attributes">
+                    <attribute name="context">{'default_hr_expense_ok':1, 'employee':parent.employee_id, 'analytic_account':analytic_account}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']//tree//field[@name='product_id']" position="attributes">
+                    <attribute name="context">{'default_hr_expense_ok':1, 'employee':parent.employee_id, 'analytic_account':analytic_account}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='line_ids']//form//field[@name='analytic_account']" position="attributes">
+                    <attribute name="on_change">onchange_analytic_account_id(analytic_account,product_id)</attribute>
+                    <attribute name="context">{'employee':parent.employee_id}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']//tree//field[@name='analytic_account']" position="attributes">
+                    <attribute name="on_change">onchange_analytic_account_id(analytic_account,product_id)</attribute>
+                    <attribute name="context">{'employee':parent.employee_id}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

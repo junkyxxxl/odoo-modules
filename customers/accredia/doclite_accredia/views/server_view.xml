@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_doclite_server_accredia" model="ir.ui.view">
+            <field name="name">doclite.server.accredia.form</field>
+            <field name="model">doclite.server</field>
+            <field name="inherit_id" ref="doclite.view_doclite_server_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='base_path']" position="after">
+                    <field name="server_location" required="1"/>
+                </xpath>
+           </field>
+        </record>
+        
+		<record id="view_doclite_server_tree_accredia" model="ir.ui.view">
+            <field name="name">doclite.server.accredia.tree</field>
+            <field name="model">doclite.server</field>
+            <field name="inherit_id" ref="doclite.view_doclite_server_tree"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='base_path']" position="after">
+                    <field name="server_location"/>
+                </xpath>
+           </field>
+        </record>
+
+    </data>
+</openerp>

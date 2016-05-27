@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="view_account_followup_date" model="ir.ui.view">
+            <field name="name">account.followup.date.form</field>
+            <field name="model">account_followup.date</field>
+            <field name="arch" type="xml">
+            <form string="Send follow-ups">
+                <group>
+                    <group>
+                        <field name="followup_id" groups="base.group_multi_company"/>
+                        <field name="date" string="Data Calcolo Scaduto" groups="base.group_no_one"/>
+                        <field name="partner_id" invisible="1" />
+                    </group>
+                    <group>
+                    </group>
+                </group>
+                <group>
+                    <field name="department_id" required="1" groups="base.group_no_one"/>
+                </group>
+                	<p class ="oe_grey">
+                        Questa azione mostra la situazione di tutti i clienti.
+                        L'importo dello scaduto è quello calcolato in base
+                        alla Data per il calcolo dello scaduto.
+                    </p>
+                    <footer>
+                        <button name="do_process" string="Mostra Solleciti" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+            </form>
+           </field>
+        </record>
+
+        <record id="action_account_followup_date" model="ir.actions.act_window">
+            <field name="name">Solleciti per Data</field>
+            <field name="res_model">account_followup.date</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="action_account_followup_date"
+                  id="account_followup.account_followup_s"
+                  parent="account_followup.menu_finance_followup"
+                  name = "Esecuzione Manuale Solleciti"
+                  groups = "account.group_account_user"
+                  sequence="3"/>
+
+    </data>
+</openerp>

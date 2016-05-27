@@ -1,0 +1,118 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_it_ea_sector
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-06 15:23+0000\n"
+"PO-Revision-Date: 2014-10-06 15:23+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_it_ea_sector
+#: field:accreditation.sector.ea,code:0
+msgid "Codice Settore"
+msgstr "Codice Settore"
+
+#. module: l10n_it_ea_sector
+#: field:accreditation.sector.ea,create_uid:0
+#: field:accreditation.sector.ea.nace,create_uid:0
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: l10n_it_ea_sector
+#: field:accreditation.sector.ea,create_date:0
+#: field:accreditation.sector.ea.nace,create_date:0
+msgid "Created on"
+msgstr "Creato"
+
+#. module: l10n_it_ea_sector
+#: model:ir.actions.act_window,help:l10n_it_ea_sector.action_sector_ea
+msgid "Display and manage the list of all EA sector that can be required to your company."
+msgstr "Display and manage the list of all EA sector that can be required to your company."
+
+#. module: l10n_it_ea_sector
+#: field:accreditation.sector.ea.nace,ea_id:0
+msgid "EA"
+msgstr "EA"
+
+#. module: l10n_it_ea_sector
+#: view:accreditation.sector.ea:l10n_it_ea_sector.view_sector_ea_tree
+msgid "EA Sector"
+msgstr "Settore EA"
+
+#. module: l10n_it_ea_sector
+#: field:res.partner.category,is_leaf:0
+msgid "Has Childs"
+msgstr "Has Childs"
+
+#. module: l10n_it_ea_sector
+#: field:accreditation.sector.ea,id:0
+#: field:accreditation.sector.ea.nace,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_it_ea_sector
+#: field:accreditation.sector.ea,write_uid:0
+#: field:accreditation.sector.ea.nace,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento di"
+
+#. module: l10n_it_ea_sector
+#: field:accreditation.sector.ea,write_date:0
+#: field:accreditation.sector.ea.nace,write_date:0
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento"
+
+#. module: l10n_it_ea_sector
+#: view:res.partner:l10n_it_ea_sector.view_res_partner_easector
+msgid "NACE"
+msgstr "NACE"
+
+#. module: l10n_it_ea_sector
+#: field:accreditation.sector.ea.nace,nace_parent_id:0
+msgid "Nace"
+msgstr "Nace"
+
+#. module: l10n_it_ea_sector
+#: field:accreditation.sector.ea,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: l10n_it_ea_sector
+#: model:ir.model,name:l10n_it_ea_sector.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: l10n_it_ea_sector
+#: model:ir.model,name:l10n_it_ea_sector.model_res_partner_category
+msgid "Partner Tags"
+msgstr "Tag Partner"
+
+#. module: l10n_it_ea_sector
+#: field:accreditation.sector.ea,related_nace_ids:0
+msgid "Related NACEs"
+msgstr "NACE Correlati"
+
+#. module: l10n_it_ea_sector
+#: model:ir.actions.act_window,name:l10n_it_ea_sector.action_sector_ea
+#: model:ir.ui.menu,name:l10n_it_ea_sector.menu_sector_ea
+msgid "Settore EA"
+msgstr "Settore EA"
+
+#. module: l10n_it_ea_sector
+#: view:res.partner:l10n_it_ea_sector.view_res_partner_easector
+msgid "Settori"
+msgstr "Settori"
+
+#. module: l10n_it_ea_sector
+#: field:res.partner,ea_sector_ids:0
+msgid "Settori EA"
+msgstr "Settori EA"
+

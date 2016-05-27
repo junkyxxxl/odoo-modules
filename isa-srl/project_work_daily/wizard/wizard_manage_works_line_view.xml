@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <!-- Project Task Work -->
+        <record id="view_manage_works_line" model="ir.ui.view">
+            <field name="name">project.wizard.manage.works.line.form</field>
+            <field name="model">project.wizard.manage.works.line</field>
+            <field name="arch" type="xml">
+                 <form string="Task Work" version="7.0">
+                    <field name="manage_id" invisible="1"/>
+                    <field name="project_id" required="1"/>
+                    <field name="task_id" required="1" domain="[('project_id', '=', project_id)]"/>
+                    <field name="user_id" required="1"/>
+					<field name="hours" required="1"/>
+					<fields name="works_date" required="1"/>
+                    <field name="description" />
+                  </form>
+                </field>
+        </record>
+
+    </data>
+</openerp>

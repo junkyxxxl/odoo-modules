@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+       <!-- Partner -->
+       <record id="view_res_partner_fiscalcode_change_partner_form" model="ir.ui.view">
+            <field name="name">view.res.partner.fiscal.change.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base_fiscalcode.view_partner_form_fiscalcode_data_inherit"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='fiscalcode']" position="after">
+                     <field name="attr_individual" invisible="1" />
+                     <field name="attr_accounting_user_flag" invisible="1" />
+                     <field name="attr_admin_user_flag" invisible="1" />
+                     <field name="attr_is_entity" invisible="1" />
+                     <field name="attr_id" invisible="1" />
+                </xpath>
+                <xpath expr="//field[@name='person_name']" position="attributes">
+                    <attribute name="on_change">onchange_person_name(person_name, person_surname)</attribute>
+                </xpath>
+                <xpath expr="//field[@name='person_surname']" position="attributes">
+                    <attribute name="on_change">onchange_person_name(person_name, person_surname)</attribute>
+                </xpath>
+                <xpath expr="//field[@name='individual']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|',('attr_is_entity','=', True),'&amp;',('parent_id','!=',None),('parent_id','!=',False)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='sex']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|',('attr_individual','!=', True),'&amp;',('parent_id','!=',None),('parent_id','!=',False)]}</attribute>
+                </xpath>
+                 <xpath expr="//field[@name='fiscalcode']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('attr_id','!=',False),'&amp;',('attr_accounting_user_flag','=',False),('attr_admin_user_flag','=',False),('attr_is_entity','=',True)],'invisible': ['|',('individual','!=', True),'&amp;',('parent_id','!=',None),('parent_id','!=',False)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Accreditation Entity Lists -->
+        <record id="view_res_partner_accreditation_entity_list" model="ir.ui.view">
+            <field name="name">view.res.partner.accreditation.entity.list</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                 <field name="display_name" position="after">
+                    <field name="name" string="Denominazione Legale" invisible="context.get('view_person',False)" />
+                    <field name="city" invisible="not context.get('view_entity',False)" />
+                    <field name="property_account_receivable_code" invisible="not context.get('view_entity',False)" />
+                    <field name="entity_category_id" invisible="not context.get('view_entity',False)" />
+                    <field name="birth_date" invisible="not context.get('view_person',False)" />
+                    <field name="birth_city_id" invisible="not context.get('view_person',False)" />
+                    <field name="sex" invisible="not context.get('view_person',False)" />
+                    <field name="active" invisible="not context.get('view_person',False)" />
+                    <field name="fiscalcode" invisible="not context.get('view_person',False)" />
+                    <field name="title" invisible="not context.get('view_person',False)" />
+                    <field name="department_id" invisible="not context.get('view_person',False)" />
+                 </field>
+                 <field name="display_name" position="before">
+                    <field name="code" invisible="not context.get('view_person',False)" />
+                 </field>
+                <field name="display_name" position="attributes">
+                    <attribute name="string">Nome e Cognome</attribute>
+                    <attribute name="invisible">not context.get('view_person',False)</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_partner_accredia_filter" model="ir.ui.view">
+            <field name="name">res.partner.select.accredia</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//filter[@string='Salesperson']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//filter[@string='Company']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <field name="name" position="attributes">
+                    <attribute name="string">Denominazione Legale</attribute>
+                    <attribute name="invisible">context.get('view_person',False)</attribute>
+                </field>
+                <field name="category_id" position="after">
+                    <field name="partner_name"
+                           filter_domain="['|','|',('name','ilike',self),('parent_id','ilike',self),('ref','=',self)]"
+                           invisible="not context.get('view_person',False)"/>
+                    <field string="P. IVA" name="vat" filter_domain="[('vat','ilike', self)]" invisible="not context.get('view_entity',False)"/>
+                    <filter string="Attivi" invisible="not context.get('view_person',False)" icon="terp-gdu-smart-failing" domain="[('active','=',True)]"/>
+                    <filter string="Inattivi" invisible="not context.get('view_person',False)" icon="terp-gdu-smart-failing" domain="[('active','=',False)]"/>
+                    <filter string="Attivi e Inattivi" invisible="not context.get('view_person',False)" icon="terp-gdu-smart-failing" domain="['|',('active','=',False),('active','=',True)]"/>
+                    <separator />
+                    <filter string="Evita Contatti" invisible="not context.get('view_person',False)" domain="['|',('parent_id','=',None),('parent_id','=',False)]"/>
+                    <filter string="Solo Contatti" invisible="not context.get('view_person',False)" domain="[('parent_id','!=',None),('parent_id','!=',False)]"/>
+                </field>
+                <field name="category_id" position="attributes">
+                    <attribute name="invisible">context.get('view_person',False)</attribute>
+                </field>
+                <filter help="My Partners" position="attributes">
+                    <attribute name="invisible">context.get('view_person',False)</attribute>
+                </filter>
+                <filter string="Companies" position="attributes">
+                    <attribute name="invisible">context.get('view_person',False)</attribute>
+                </filter>
+                <filter string="Persons" position="attributes">
+                    <attribute name="invisible">context.get('view_person',False)</attribute>
+                </filter>
+            </field>
+        </record>
+
+        <record id="view_res_partner_accreditation_entity_form" model="ir.ui.view">
+            <field name="name">view.res.partner.accreditation.entity.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account_makeover.view_partner_property_form_isa"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[@string='Sales &amp; Purchases']//field[@name='customer']" position="replace">
+                </xpath>
+                <xpath expr="//page[@string='Sales &amp; Purchases']//field[@name='supplier']" position="replace">
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[@string='Accounting']" position="after">
+                    <page string="Persons" attrs="{'invisible':[('is_entity','!=',True)]}">
+                        <group>
+                            <label for="persons_ids"/>
+                            <field name="persons_ids" colspan="4" nolabel="1" context="{'view_person' : False}" >
+                                <tree editable="bottom">
+                                    <field name="partner_id" context="{'view_person': True, 'default_is_entity': 0, 'default_is_company': 0, 'default_customer':0, 'default_supplier':0, 'default_individual':True, 'search_default_individual':1}" domain="[('individual', '=', True)]" />
+                                    <field name="exclude_reason_ids" widget="many2many_tags" />
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <label for="persons_units_ids"/>
+                            <field name="persons_units_ids" colspan="4" nolabel="1" context="{'view_person' : False}" >
+                                <tree>
+                                    <field name="name" />
+                                    <field name="email" />
+                                    <field name="phone" />
+                                    <field name="mobile" />
+                                    <field name="fax" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page string="Locations" attrs="{'invisible':[('is_entity','!=',True)]}">
+                        <button name="create_unit" string="Crea Unità da Sede Legale"
+                                attrs="{'invisible': [('entity_changed','=', True)]}"
+                                icon="gtk-execute" type="object" />
+                        <group>
+                            <field name="location_name_ids" colspan="4" nolabel="1" context="{'view_entity' : True}">
+                                <tree>
+                                    <field name="address" required="1" />
+                                    <field name="zip" required="1" />
+                                    <field name="city" required="1" />
+                                    <field name="province" required="1" />
+                                    <field name="phone" required="1" />
+                                    <field name="email" required="1" />
+                                    <field name="fax" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page string="Changelog" attrs="{'invisible':[('is_entity','!=',True)]}">
+                        <group>
+                            <group>
+                                <field name="replaced_by_id" />
+                                <field name="replaces_id" />
+                                <field name="validity_date" />
+                            </group>
+                            <group>
+                                <button name="change_sensible_data" string="Inserisci Variazione Anagrafica"
+                                        groups="hr_accredia.entity_changes_group"
+                                        attrs="{'invisible': [('entity_changed','=', True)]}"
+                                        icon="gtk-execute" type="object" />
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Units" attrs="{'invisible': [('individual','!=', True)]}">
+                        <field name="unit_ids" attrs="{'invisible':[('id','=',False)]}" context="{'view_person': context.get('view_person') or False, 'default_partner_id': id, 'form_view_ref': 'view_accreditation_from_persons_units'}" >
+                            <tree string="Persons Units" toolbar="1">
+                                <field name="partner_id" context="{'view_person': True, 'default_is_entity': 0, 'default_is_company': 0, 'default_customer':0, 'default_supplier':0, 'default_individual':True, 'search_default_individual':1}" domain="[('individual', '=', True)]" invisible="context.get('view_person',False)" />
+                                <field name="unit_id" invisible="not context.get('view_person',False)" />
+                                <field name="type_id" />
+                                <field name="job_ids" />
+                                <field name="period_date_from" />
+                                <field name="period_date_to" />
+                                <field name="email" />
+                                <field name="phone" />
+                                <field name="mobile" />
+                                <field name="fax" />
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Enti" attrs="{'invisible': [('individual','!=', True)]}">
+                        <label for="partner_ids"/>
+                        <field name="partner_ids" attrs="{'invisible':[('id','=',False)]}" context="{'view_person': context.get('view_person') or False}" >
+                            <tree toolbar="1" editable="bottom">
+                                <field name="entity_id" domain="['|',('is_entity', '=', True),('supplier', '=', True)]" context="{'default_is_entity': 1, 'default_is_company': 1, 'default_customer':0, 'default_supplier':1, 'default_individual':False, 'search_default_individual':0}" invisible="not context.get('view_person',False)" />
+                                <field name="exclude_reason_ids" widget="many2many_tags" />
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Roles" attrs="{'invisible':[('individual','!=',True)]}">
+                        <field name="roles_ids" context="{'view_person': context.get('view_person') or False}">
+                            <tree string="Persons Roles" toolbar="1" editable="bottom">
+                                <field name="role_id"/>
+                                <field name="is_techoff"/>
+                                <field name="is_supervisor"/>
+                                <field name="is_inspector"/>
+                                <field name="date_qualification"/>
+                                <field name="date_delibera_del_cda"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Componenti" attrs="{'invisible': [('is_institution','!=', True)]}">
+                        <field name="member_ids" attrs="{'invisible':[('id','=',False)]}" context="{'view_person': context.get('view_person') or False}">
+                            <tree string="Componenti" toolbar="1" editable="bottom">
+                                <field name="sequence" widget="handle" />
+                                <!--<field name="partner_person_id" options="{'no_create': True}" /> -->
+                                <field name="partner_person_id"  domain="[('parent_id','=', parent.id)]" />
+
+                                <field name="role_id" context="{'default_partner_id':partner_person_id}" />
+                                <field name="partner_entity_id" />
+                                <field name="register" />
+                                <field name="date_start" />
+                                <field name="date_stop" />
+
+                                <field name="rel_function" readonly="1" />
+                                <field name="rel_email" readonly="1" />
+                                <field name="rel_phone" readonly="1" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_res_partner_accreditation_entity_form2" model="ir.ui.view">
+            <field name="name">view.res.partner.accreditation.entity.form2</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="accounting_user_flag" invisible="1"/>
+                    <field name="admin_user_flag" invisible="1"/>
+                </xpath>
+                <!-- Ho tolto questa parte per evitare che il campo "name" sia nascosto quando vale true il campo "persona fisica"
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'readonly':['|',('individual','=',True),'&amp;',('id','!=',False),'&amp;',('accounting_user_flag','=',False),('is_entity','=',True)],'required':[('individual','!=',True)]}</attribute>
+                </xpath>
+                -->
+                <xpath expr="//field[@name='property_account_receivable']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['&amp;',('id','=',False),('subaccount_auto_generation_customer','=',True)],'readonly': ['|',('accounting_user_flag','=',False),('subaccount_auto_generation_customer','=',True),('id','!=',False)]}</attribute>
+                    <attribute name="groups">account.group_account_invoice</attribute>
+                </xpath>
+                <xpath expr="//field[@name='property_account_payable']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['&amp;',('id','=',False),('subaccount_auto_generation_supplier','=',True)],'readonly': ['|',('accounting_user_flag','=',False),('subaccount_auto_generation_supplier','=',True),('id','!=',False)]}</attribute>
+                    <attribute name="groups">account.group_account_invoice</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/div/field[@name='category_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='email']" position="after">
+                           <field name="accreditation_date" attrs="{'invisible':[('individual','=',True)]}" />
+                           <field name="accreditation_expiry_date" attrs="{'invisible':[('individual','=',True)]}" />
+                </xpath>
+                <xpath expr="//field[@name='property_account_position']" position="after">
+                    <field name="account_tax_id"/>
+                </xpath>
+                <xpath expr="//form/sheet/div/div[@class='oe_edit_only']" position="replace">
+                    <div class="oe_edit_only">
+                        <div attrs="{'invisible': [('individual','=',False)]}">
+                            <label for="code" />
+                            <field name="code" />
+                        </div>
+                        <label for="name" attrs="{'invisible':[('individual','=',True)]}" />
+                    </div>
+                </xpath>
+
+                <xpath expr="//page[@string='Sales &amp; Purchases']" position="attributes">
+                       <attribute name="attrs">{'invisible':['&amp;','&amp;',('is_entity','!=',True),('customer','!=',True),('supplier','!=',True)]}</attribute>
+                 </xpath>
+
+                <xpath expr="//form/sheet/div/field[@name='parent_id']" position="after">
+                    <separator/>
+                        <group>
+                            <group invisible="context.get('view_person',False)">
+                                <field name="is_company" invisible="1" on_change="onchange_type(is_company)" class="oe_inline"/>
+                                <field name="is_entity" class="oe_inline" />
+                                <field name="is_institution" class="oe_inline"/>
+                                <field name="entity_changed" class="oe_inline"/>
+                            </group>
+                            <group>
+                                <field name="customer" class="oe_inline" on_change="onchange_customer_flag(customer)"/>
+                                <field name="supplier" class="oe_inline" on_change="onchange_supplier_flag(supplier)"/>
+                            </group>
+                        </group>
+                    <separator/>
+                        <group col="2">
+                            <field name="active" string="Active" />
+                        </group>
+
+                        <group col="2">
+                            <field name="entity_name"
+                                   placeholder="Entity Name"
+                                   domain="[('is_entity', '=', True)]"
+                                   context="{'default_is_entity': False}"
+                                   readonly="1"
+                                   attrs="{'invisible': [('is_entity','!=', True)]}" />
+
+                            <field name="entity_category_id"
+                                   widget="many2many_tags"
+                                   placeholder="Categories..."
+                                   context="{'default_is_entity': False}"
+                                   attrs="{'invisible': [('is_entity','!=', True),('is_institution','!=', True)], 'required': [('is_entity','=', True)]}" />
+
+                        </group>
+                    <separator/>
+                        <label for="different_than_accredia" attrs="{'invisible': [('is_entity','!=', True)]}" />
+                        <field name="different_than_accredia" attrs="{'invisible': [('is_entity','!=', True)]}" />
+                        <separator/>
+                        <label for="ref_entity" attrs="{'required':[('is_entity','=', True),('different_than_accredia','=',True)],'invisible':['|',('is_entity','!=', True),('different_than_accredia','!=',True)]}" />
+                        <field name="ref_entity" attrs="{'required':[('is_entity','=', True),('different_than_accredia','=',True)],'invisible':['|',('is_entity','!=', True),('different_than_accredia','!=',True)]}" />
+                        <label for="reminder_state" attrs="{'required':[('is_entity','=', True),('different_than_accredia','=',True)],'invisible':['|',('is_entity','!=', True),('different_than_accredia','!=',True)]}" />
+                        <field name="reminder_state" attrs="{'required':[('is_entity','=', True),('different_than_accredia','=',True)],'invisible':['|',('is_entity','!=', True),('different_than_accredia','!=',True)]}" />
+                        <label for="obtained" attrs="{'invisible':['|',('is_entity','!=', True),('obtained','!=', True)]}" />
+                        <field name="obtained" readonly="1" attrs="{'invisible':['|',('is_entity','!=', True),('obtained','!=', True)]}" />
+                    <separator/>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[@string='Contacts']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('child_ids', '=', []),('is_company','=',False),('individual','=',False)]}</attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook" position="attributes">
+                    <attribute name="attrs">{'invisible': [('individual','=', True),('parent_id','!=',None),('parent_id','!=',False)]}</attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[@string='Contacts']" position="inside">
+                    <group string="Indirizzi Unità e Enti" attrs="{'invisible': [('individual','!=', True)]}">
+                    </group>
+                    <label for="address_units_ids" attrs="{'invisible': [('individual','!=', True)]}" />
+                    <field name="address_units_ids" attrs="{'invisible': [('individual','!=', True)]}" readonly="1">
+                        <tree>
+                            <field name="address" />
+                            <field name="zip" />
+                            <field name="partner_id" />
+                            <field name="city" />
+                            <field name="province" />
+                            <field name="country_id" />
+                            <field name="phone" />
+                            <field name="mobile" />
+                            <field name="email" />
+                            <field name="fax" />
+                        </tree>
+                    </field>
+                </xpath>
+
+                <xpath expr="//field[@name='title']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('individual','!=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="km_rate" attrs="{'invisible': [('individual','!=', True)]}" />
+                    <field name="magnitude" attrs="{'invisible': [('individual','!=', True)]}" />
+                    <field name="source_system" attrs="{'invisible': [('individual','!=', True)]}" readonly="1" />
+                    <field name="employee_pa" attrs="{'invisible': [('individual','!=', True)]}" />
+                </xpath>
+
+                <xpath expr="//page[@string='Accounting']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('customer','!=',True),('supplier','!=',True)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="res_partner_opt_out_form_accredia">
+            <field name="name">res.partner.opt_out.form.accredia</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="email_template.res_partner_opt_out_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='opt_out']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_res_partner_vat_change_entity_form" model="ir.ui.view">
+            <field name="name">view.res.partner.vat.change.entity.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base_vat.view_partner_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='vat']" position="attributes">
+                   <attribute name="attrs">{'readonly':[('id','!=',False),('accounting_user_flag','=',False),('is_entity','=',True)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_accreditation_entities" model="ir.actions.act_window">
+            <field name="name">Enti</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_res_partner_accreditation_entity_list"/>
+            <field name="domain">[('is_entity','=',True)]</field>
+            <field name="context">{'view_entity': True, 'default_is_entity': True, 'default_customer': False}</field>
+        </record>
+
+        <record id="base.action_partner_form" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{"search_default_customer":1}</field>
+            <field name="search_view_id" ref="base.view_res_partner_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a contact in your address book.
+              </p><p>
+                OpenERP helps you easily track all activities related to
+                a customer; discussions, history of business opportunities,
+                documents, etc.
+              </p>
+            </field>
+        </record>
+
+        <record id="base.action_partner_customer_form" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="domain">[('customer','=',1)]</field>
+            <field name="context">{'default_customer':1, 'search_default_customer':1}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a contact in your address book.
+              </p><p>
+                OpenERP helps you easily track all activities related to
+                a customer: discussions, history of business opportunities,
+                documents, etc.
+              </p>
+            </field>
+        </record>
+
+        <record id="base.action_partner_supplier_form" model="ir.actions.act_window">
+            <field name="name">Suppliers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="context">{'search_default_supplier': 1,'default_customer': 0,'default_supplier': 1}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a contact in your address book.
+              </p><p>
+                OpenERP helps you easily track all activities related to
+                a supplier: discussions, history of purchases,
+                documents, etc.
+              </p>
+            </field>
+        </record>
+
+        <record id="action_accreditation_persons_accredia" model="ir.actions.act_window">
+            <field name="name">Persone Fisiche</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_id" ref="view_res_partner_accreditation_entity_list"/>
+            <field name="search_view_id" ref="view_partner_accredia_filter"/>
+            <field name="domain">[('individual','=',1)]</field>
+            <field name="context">{'view_person': True, 'default_is_entity': 0, 'default_is_company': 0, 'default_customer':0, 'default_supplier':0, 'default_individual':True, 'search_default_individual':1}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a contact in your address book.
+              </p><p>
+                OpenERP helps you easily track all activities related to
+                a person: discussions, history of business opportunities,
+                documents, etc.
+              </p>
+            </field>
+        </record>
+
+    </data>
+</openerp>

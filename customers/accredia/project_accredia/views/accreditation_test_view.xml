@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+    <!-- Accreditation Test Search View-->
+    <record model="ir.ui.view" id="view_accreditation_test_search">
+        <field name="name">accreditation.test.search</field>
+        <field name="model">accreditation.test</field>
+        <field name="arch" type="xml">
+            <search string="Accreditation Test">
+                <field name="project_id" />
+                <field name="rev_number" />
+                <field name="unit_id" />
+            </search>
+        </field>
+    </record>
+
+     <!-- Accreditation Test Form View -->
+     <record model="ir.ui.view" id="view_accreditation_test_form">
+            <field name="name">accreditation.test.form</field>
+            <field name="model">accreditation.test</field>
+            <field name="arch" type="xml">
+                <form string="Form Prove Accreditate" create="false" delete="false">
+                    <header>
+                        <button icon="gtk-ok"
+                                name="create_model_da02"
+                                string="Crea modello DA02-All.1"
+                                type="object"
+                                attrs="{'invisible': ['|',('state','!=','draft'),('is_last_rev','!=',True)]}"
+                                class="oe_highlight" />
+                        <field name="state"
+                               widget="statusbar"
+                               statusbar_colors="{&quot;draft&quot;:&quot;blue&quot;}"
+                               readonly="1"/>
+                    </header>
+                    <group>
+                        <group>
+                            <field name="project_id" />
+                            <field name="partner_id" readonly="1"/>
+                            <field name="unit_id"
+                            	   domain="[('partner_id', '=', partner_id)]"
+                                   options="{'create': false, 'create_edit': false, 'no_open': True}" />
+                            <field name="active" />
+                        </group>
+                        <group>
+                            <field name="rev_date" />
+                            <field name="rev_number" />
+                            <field name="is_last_rev" invisible="1" />
+                            <field name="filename" invisible="1"/>      
+                            <field name="filedata" filename="filename"/>                            
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Dettagli">
+                            <group>
+                                <field name="test_list_ids" nolabel="1">
+                                    <tree editable="" create="false" delete="false" edit="false">
+                                        <field name="ref_excel" />
+                                        <field name="material_product_matrix" />
+                                        <field name="property" />
+                                        <field name="measure" />
+                                        <field name="technique" />
+                                        <field name="method" />
+                                        <field name="category_id" />
+                                        <field name="state" />
+                                    </tree>
+                                    <form create="false" delete="false" edit="false" string="Accreditation Test List Form">
+                                        <group>
+                                            <group>
+                                                <field name="material_product_matrix" />
+                                                <field name="property" />
+                                                <field name="measure" />
+                                                <field name="technique" />
+                                                <field name="method" />
+                                            </group>
+                                            <group>
+                                                <field name="ref_excel" />
+                                                <field name="category_id" />
+                                                <field name="state" />
+                                            </group>
+                                        </group>
+                                        <group string="Ultima Variazione Stato">
+                                            <group>
+                                                <field name="state_write_date" />
+                                            </group>
+                                            <group>
+                                                <field name="state_write_uid" />
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+     </record>
+
+    <!-- Accreditation Test Tree View -->
+    <record model="ir.ui.view" id="view_accreditation_test_tree">
+            <field name="name">accreditation.test.tree</field>
+            <field name="model">accreditation.test</field>
+            <field name="arch" type="xml">
+                <tree string="Lista Prove Accreditate" create="false" delete="true">
+                    <field name="project_id" />
+                    <field name="unit_id" />
+                    <field name="rev_date" />
+                    <field name="rev_number" />
+                </tree>
+            </field>
+    </record>
+
+    <!-- Accreditation Test Action -->
+    <record model="ir.actions.act_window" id="action_accreditation_test">
+        <field name="name">Prove Accreditate</field>
+        <field name="res_model">accreditation.test</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_accreditation_test_search"/>
+    </record>
+
+    </data>
+</openerp>

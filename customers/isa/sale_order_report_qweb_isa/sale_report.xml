@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+            id="report_sale_order_isa"
+            string="Preventivo"
+            model="sale.order" 
+            report_type="qweb-pdf"
+            file="sale_order_report_qweb_isa.report_saleorder_isa" 
+            name="sale_order_report_qweb_isa.report_saleorder_isa" 
+        />
+    </data>
+</openerp>

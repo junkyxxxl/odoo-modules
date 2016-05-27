@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_order_form_exclude_from_print_list" model="ir.ui.view">
+            <field name="name">sale.order.form.exclude.from.print.list</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="after">
+                    <field name="exclude_from_print" />
+                    <field name="exclude_from_invoice" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <!-- Project -->
+        <record id="view_project_form_flati" model="ir.ui.view">
+            <field name="name">project.form.flati</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="name" string="Construction site" select="1"/>
+                </field>
+                <field name="privacy_visibility" position="before">
+                    <separator string="Address of construction site" colspan="6"/>
+                    <field name="street" colspan="6"/>
+                    <field name="zip"/>
+                    <field name="city"/>
+                    <field name="country_id"/>
+                </field>
+            </field>
+        </record>
+        
+        <record id="view_project_tree_flati" model="ir.ui.view">
+            <field name="name">project.tree.flati</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project"/>
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="name" string="Construction site"/>
+                </field>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    	<record id="view_idi_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.idi.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+  	            <xpath expr="//form[@string='Contact']/sheet//field[@name='mobile']" position="after">
+                    <field name="destination_code" attrs="{'invisible':[('type','!=','delivery')]}"/>
+                </xpath>  
+  	            <xpath expr="//page[@string='Contacts']//field[@name='child_ids']//kanban" position="replace">
+					<kanban>
+                           <field name="color"/>
+                           <field name="name"/>
+                           <field name="title"/>
+                           <field name="email"/>
+                           <field name="parent_id"/>
+                           <field name="is_company"/>
+                           <field name="function"/>
+                           <field name="phone"/>
+                           <field name="street"/>
+                           <field name="street2"/>
+                           <field name="zip"/>
+                           <field name="city"/>
+                           <field name="country_id"/>
+                           <field name="mobile"/>
+                           <field name="fax"/>
+                           <field name="state_id"/>
+                           <field name="has_image"/>
+                           <templates>
+                               <t t-name="kanban-box">
+                                   <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+                                   <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '')" style="position: relative">
+                                       <a t-if="! read_only_mode" type="delete" style="position: absolute; right: 0; padding: 4px; diplay: inline-block">X</a>
+                                       <div class="oe_module_vignette">
+                                       <a type="open">
+                                           <t t-if="record.has_image.raw_value === true">
+                                               <img t-att-src="kanban_image('res.partner', 'image_small', record.id.value)" class="oe_avatar oe_kanban_avatar_smallbox"/>
+                                           </t>
+                                           <t t-if="record.image and record.image.raw_value !== false">
+                                               <img t-att-src="'data:image/png;base64,'+record.image.raw_value" class="oe_avatar oe_kanban_avatar_smallbox"/>
+                                           </t>
+                                           <t t-if="record.has_image.raw_value === false and (!record.image or record.image.raw_value === false)">
+                                               <t t-if="record.is_company.raw_value === true">
+                                                   <img t-att-src='_s + "/base/static/src/img/company_image.png"' class="oe_kanban_image oe_kanban_avatar_smallbox"/>
+                                               </t>
+                                               <t t-if="record.is_company.raw_value === false">
+                                                   <img t-att-src='_s + "/base/static/src/img/avatar.png"' class="oe_kanban_image oe_kanban_avatar_smallbox"/>
+                                               </t>
+                                           </t>
+                                       </a>
+                                           <div class="oe_module_desc">
+                                               <div class="oe_kanban_box_content oe_kanban_color_bglight oe_kanban_color_border">
+                                                   <table class="oe_kanban_table">
+                                                       <tr>
+                                                           <td class="oe_kanban_title1" align="left" valign="middle">
+                                                               <h4><a type="open"><field name="name"/></a></h4>
+                                                               <i><div t-if="record.function.raw_value">
+                                                                   <field name="function"/></div></i>
+                                                               <div><a t-if="record.email.raw_value" title="Mail" t-att-href="'mailto:'+record.email.value">
+                                                                   <field name="email"/>
+                                                               </a></div>
+                                                               <div t-if="record.destination_code.raw_value">Destination code: <field name="destination_code"/></div>
+                                                           </td>
+                                                       </tr>
+                                                   </table>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </t>
+                           </templates>
+                    </kanban>
+                </xpath>  
+            </field>
+    	</record>
+    </data>
+</openerp>

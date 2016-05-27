@@ -1,0 +1,529 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_custom_montecristo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-18 08:21+0000\n"
+"PO-Revision-Date: 2015-09-18 08:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_custom_montecristo
+#: view:stock.picking:stock_custom_montecristo.view_picking_form_stock_montecristo
+msgid "Aggiorna Magazzino"
+msgstr "Update Locations"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+msgid "Align Picking"
+msgstr "Align Picking"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.product,previously_reserved_qty:0
+msgid "Already Reserved Quantity"
+msgstr "Already Reserved Quantity"
+
+#. module: stock_custom_montecristo
+#: view:wizard.assign.stock.number:stock_custom_montecristo.wizard_assign_stock_number
+msgid "Assign"
+msgstr "Assign"
+
+#. module: stock_custom_montecristo
+#: view:wizard.assign.stock.number:stock_custom_montecristo.wizard_assign_stock_number
+msgid "Assign Stock Number"
+msgstr "Assign Stock Number"
+
+#. module: stock_custom_montecristo
+#: model:ir.model,name:stock_custom_montecristo.model_wizard_assign_stock_number
+#: model:ir.ui.menu,name:stock_custom_montecristo.menu_assign_stock_number
+msgid "Assign Stock Numbers"
+msgstr "Assign Stock Numbers"
+
+#. module: stock_custom_montecristo
+#: model:ir.actions.act_window,name:stock_custom_montecristo.action_assign_stock_number
+msgid "Assign stock numbers"
+msgstr "Assign stock numbers"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,assigned_qty:0
+msgid "Assigned Quantity"
+msgstr "Assigned Quantity"
+
+#. module: stock_custom_montecristo
+#: field:stock.template.reservation,user_id:0
+msgid "Author"
+msgstr "Author"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+msgid "Auto Assign"
+msgstr "Auto Assign"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+#: field:stock.template.reservation,availability_line_ids:0
+msgid "Availabilities"
+msgstr "Availabilities"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,available_qty:0
+msgid "Available Quantity"
+msgstr "Available Quantity"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,external_available_qty:0
+msgid "Available in Other Location"
+msgstr "Available in Other Location"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+#: view:wizard.assign.stock.number:stock_custom_montecristo.wizard_assign_stock_number
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: stock_custom_montecristo
+#: selection:stock.template.reservation,state:0
+msgid "Cancelled"
+msgstr "Cancelled"
+
+#. module: stock_custom_montecristo
+#: view:sale.order:stock_custom_montecristo.montecristo_stock_view_order_form_inherit
+msgid "Causale"
+msgstr "Causal"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+msgid "Close"
+msgstr "Close"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_template_reservation_filter
+#: field:stock.template.reservation,color:0
+msgid "Color"
+msgstr "Color"
+
+#. module: stock_custom_montecristo
+#: model:ir.model,name:stock_custom_montecristo.model_res_company
+msgid "Companies"
+msgstr "Companies"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+msgid "Confirm"
+msgstr "Confirm"
+
+#. module: stock_custom_montecristo
+#: selection:stock.template.reservation,state:0
+msgid "Confirmed"
+msgstr "Confirmed"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,create_uid:0
+#: field:stock.reservation.product,create_uid:0
+#: field:stock.template.reservation,create_uid:0
+#: field:wizard.assign.stock.number,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,create_date:0
+#: field:stock.reservation.product,create_date:0
+#: field:stock.template.reservation,create_date:0
+#: field:wizard.assign.stock.number,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: stock_custom_montecristo
+#: view:sale.order:stock_custom_montecristo.view_order_package_filter
+msgid "Customer"
+msgstr "Customer"
+
+#. module: stock_custom_montecristo
+#: view:stock.picking:stock_custom_montecristo.stock_picking_tree_ddt_montecristo
+msgid "DDT Fornitore"
+msgstr "Supplier DDT"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+msgid "Data Consegna"
+msgstr "Delivery Date"
+
+#. module: stock_custom_montecristo
+#: field:stock.template.reservation,date_confirmation:0
+msgid "Date Confirmation"
+msgstr "Date Confirmation"
+
+#. module: stock_custom_montecristo
+#: field:stock.picking,default_location_dest_id:0
+msgid "Destination Location"
+msgstr "Destination Location"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.product,difference:0
+msgid "Difference"
+msgstr "Difference"
+
+#. module: stock_custom_montecristo
+#: selection:stock.template.reservation,state:0
+msgid "Done"
+msgstr "Done"
+
+#. module: stock_custom_montecristo
+#: selection:stock.template.reservation,state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: stock_custom_montecristo
+#: code:addons/stock_custom_montecristo/stock/stock.py:527
+#, python-format
+msgid "Error!"
+msgstr "Error!"
+
+#. module: stock_custom_montecristo
+#: code:addons/stock_custom_montecristo/stock/stock_picking.py:67
+#, python-format
+msgid "Esiste già un picking riferito allo stesso fornitore, con lo stesso DDT e la stessa data DDT."
+msgstr "A picking from the same partner, referred to the same DDT and with the same date already exists."
+
+#. module: stock_custom_montecristo
+#: view:wizard.assign.stock.number:stock_custom_montecristo.wizard_assign_stock_number
+#: field:wizard.assign.stock.number,category_ids:0
+msgid "Excluded Categories"
+msgstr "Excluded Categories"
+
+#. module: stock_custom_montecristo
+#: field:stock.template.reservation,date_from:0
+msgid "From"
+msgstr "From"
+
+#. module: stock_custom_montecristo
+#: view:sale.order:stock_custom_montecristo.view_order_package_filter
+#: view:stock.template.reservation:stock_custom_montecristo.view_template_reservation_filter
+msgid "Group By"
+msgstr "Group By"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,id:0
+#: field:stock.reservation.product,id:0
+#: field:stock.template.reservation,id:0
+#: field:wizard.assign.stock.number,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: stock_custom_montecristo
+#: constraint:sale.order:0
+msgid "Il numero di magazzino impostato è già assegnato ad un altro ordine della stessa stagionalità."
+msgstr "The selected stock number is already assigned to another order in the same season."
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.product,is_invisible:0
+msgid "Invisible"
+msgstr "Invisible"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,write_uid:0
+#: field:stock.reservation.product,write_uid:0
+#: field:stock.template.reservation,write_uid:0
+#: field:wizard.assign.stock.number,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,write_date:0
+#: field:stock.reservation.product,write_date:0
+#: field:stock.template.reservation,write_date:0
+#: field:wizard.assign.stock.number,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.product,location_id:0
+#: view:stock.template.reservation:stock_custom_montecristo.view_template_reservation_filter
+#: field:stock.template.reservation,location_id:0
+msgid "Location"
+msgstr "Location"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.product,move_id:0
+msgid "Movement"
+msgstr "Movement"
+
+#. module: stock_custom_montecristo
+#: selection:stock.template.reservation,state:0
+msgid "New"
+msgstr "New"
+
+#. module: stock_custom_montecristo
+#: field:stock.template.reservation,name:0
+msgid "Number"
+msgstr "Number"
+
+#. module: stock_custom_montecristo
+#: field:sale.order,stock_number_txt:0
+msgid "Numero Magazzino"
+msgstr "Stock Number"
+
+#. module: stock_custom_montecristo
+#: field:sale.order,stock_number:0
+msgid "Numero magazzino"
+msgstr "Stock number"
+
+#. module: stock_custom_montecristo
+#: field:sale.order,package_number:0
+msgid "Numero pacchi"
+msgstr "Package numbers"
+
+#. module: stock_custom_montecristo
+#: view:sale.order:stock_custom_montecristo.view_sale_order_package
+msgid "Order Number"
+msgstr "Order Number"
+
+#. module: stock_custom_montecristo
+#: field:stock.move,ordered_quants:0
+msgid "Ordered Quant"
+msgstr "Ordered Quant"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,original_assigned_qty:0
+msgid "Original Assigned Quantity"
+msgstr "Original Assigned Quantity"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,original_available_qty:0
+msgid "Original Available Quantity"
+msgstr "Original Available Quantity"
+
+#. module: stock_custom_montecristo
+#: field:stock.move,pick_partner_id:0
+#: view:stock.picking:stock_custom_montecristo.view_picking_internal_search_montecristo
+#: field:stock.reservation.product,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: stock_custom_montecristo
+#: model:ir.actions.act_window,name:stock_custom_montecristo.action_order_package
+#: model:ir.ui.menu,name:stock_custom_montecristo.menu_action_order_package
+msgid "Pianificazione Magazzino"
+msgstr "Warehouse Planning"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.product,picking_id:0
+msgid "Picking"
+msgstr "Picking"
+
+#. module: stock_custom_montecristo
+#: model:ir.model,name:stock_custom_montecristo.model_stock_picking
+msgid "Picking List"
+msgstr "Picking List"
+
+#. module: stock_custom_montecristo
+#: field:product.category,qty_per_pack:0
+msgid "Pieces per Package"
+msgstr "Pieces per Package"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,product_id:0
+#: field:stock.reservation.product,product_id:0
+#: view:stock.template.reservation:stock_custom_montecristo.view_template_reservation_filter
+msgid "Product"
+msgstr "Product"
+
+#. module: stock_custom_montecristo
+#: model:ir.model,name:stock_custom_montecristo.model_stock_reservation_availability
+msgid "Product Availability"
+msgstr "Product Availability"
+
+#. module: stock_custom_montecristo
+#: model:ir.model,name:stock_custom_montecristo.model_product_category
+msgid "Product Category"
+msgstr "Product Category"
+
+#. module: stock_custom_montecristo
+#: field:stock.picking,total_qty:0
+msgid "Quantità Totale"
+msgstr "Total Quantity"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+msgid "Recheck Availabilities"
+msgstr "Recheck Availabilities"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.product,requested_qty:0
+msgid "Requested Quantity"
+msgstr "Requested Quantity"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,required_qty:0
+msgid "Required Quantity"
+msgstr "Required Quantity"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,reservation_id:0
+#: field:stock.reservation.product,reservation_id:0
+msgid "Reservation"
+msgstr "Reservation"
+
+#. module: stock_custom_montecristo
+#: model:ir.model,name:stock_custom_montecristo.model_stock_reservation_product
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+msgid "Reservations"
+msgstr "Reservations"
+
+#. module: stock_custom_montecristo
+#: field:stock.template.reservation,reservation_product_ids:0
+msgid "Reservations per Picking"
+msgstr "Reservations per Picking"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+msgid "Reserve All"
+msgstr "Reserve All"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.product,reserved_qty:0
+msgid "Reserved Quantity"
+msgstr "Reserved Quantity"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.availability,residual:0
+msgid "Residual"
+msgstr "Residual"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.product,order_id:0
+msgid "Sale Order"
+msgstr "Sale Order"
+
+#. module: stock_custom_montecristo
+#: model:ir.model,name:stock_custom_montecristo.model_sale_order
+msgid "Sales Order"
+msgstr "Sales Order"
+
+#. module: stock_custom_montecristo
+#: view:sale.order:stock_custom_montecristo.view_sale_order_package
+msgid "Sales Orders"
+msgstr "Sales Orders"
+
+#. module: stock_custom_montecristo
+#: model:ir.actions.act_window,name:stock_custom_montecristo.action_template_reservation
+#: model:ir.ui.menu,name:stock_custom_montecristo.menu_action_template_reservation
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+msgid "Scalature e Divisioni"
+msgstr "Scalature e Divisioni"
+
+#. module: stock_custom_montecristo
+#: view:sale.order:stock_custom_montecristo.view_order_package_filter
+msgid "Search Order Package"
+msgstr "Search Order Package"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_template_reservation_filter
+msgid "Search Template Reservation"
+msgstr "Search Template Reservation"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_template_reservation_filter
+#: field:stock.template.reservation,season_id:0
+#: field:wizard.assign.stock.number,season_id:0
+msgid "Season"
+msgstr "Season"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+msgid "Start"
+msgstr "Start"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_template_reservation_filter
+#: field:stock.template.reservation,state:0
+msgid "State"
+msgstr "State"
+
+#. module: stock_custom_montecristo
+#: model:ir.model,name:stock_custom_montecristo.model_stock_move
+#: model:ir.model,name:stock_custom_montecristo.model_stock_template_reservation
+msgid "Stock Move"
+msgstr "Stock Move"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.product,stock_number:0
+msgid "Stock Number"
+msgstr "Stock Number"
+
+#. module: stock_custom_montecristo
+#: field:stock.template.reservation,product_tmpl_id:0
+msgid "Template"
+msgstr "Template"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation
+msgid "Template Reservations"
+msgstr "Template Reservations"
+
+#. module: stock_custom_montecristo
+#: field:stock.template.reservation,date_to:0
+msgid "To"
+msgstr "To"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+msgid "Transfer"
+msgstr "Transfer"
+
+#. module: stock_custom_montecristo
+#: view:stock.template.reservation:stock_custom_montecristo.view_stock_template_reservation_form
+msgid "Transfer All"
+msgstr "Transfer All"
+
+#. module: stock_custom_montecristo
+#: field:stock.reservation.product,is_transferable:0
+msgid "Transferable"
+msgstr "Transferable"
+
+#. module: stock_custom_montecristo
+#: code:addons/stock_custom_montecristo/stock/stock.py:424
+#, python-format
+msgid "User Error!"
+msgstr "User Error!"
+
+#. module: stock_custom_montecristo
+#: code:addons/stock_custom_montecristo/stock/stock_picking.py:66
+#, python-format
+msgid "Warning!"
+msgstr "Warning!"
+
+#. module: stock_custom_montecristo
+#: constraint:stock.template.reservation:0
+msgid "You already are planning the delivery of these products."
+msgstr "You already are planning the delivery of these products."
+
+#. module: stock_custom_montecristo
+#: code:addons/stock_custom_montecristo/stock/stock.py:527
+#, python-format
+msgid "You are trying to reserve more product than you have in this location."
+msgstr "You are trying to reserve more product than you have in this location."
+
+#. module: stock_custom_montecristo
+#: code:addons/stock_custom_montecristo/stock/stock.py:424
+#, python-format
+msgid "You cannot delete confirmed items."
+msgstr "You cannot delete confirmed items."
+
+#. module: stock_custom_montecristo
+#: view:stock.picking:stock_custom_montecristo.view_picking_form_stock_montecristo
+msgid "onchange_ddt_references(partner_id,supplier_ddt_number,supplier_ddt_date,picking_type_id)"
+msgstr "onchange_ddt_references(partner_id,supplier_ddt_number,supplier_ddt_date,picking_type_id)"
+
+#. module: stock_custom_montecristo
+#: view:wizard.assign.stock.number:stock_custom_montecristo.wizard_assign_stock_number
+msgid "or"
+msgstr "or"
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="mattioli_package_manager_sale_order_view_order_form" model="ir.ui.view">
+            <field name="name">mattioli.package.manager.sale.order.view.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+             	<xpath expr="//field[@name='order_line']/form/group/group/field[@name='price_unit']" position="before">
+                        <field name="package_id" domain="[('quant_ids.product_id','=',product_id)]" on_change="onchange_package_id(product_id, package_id, product_uom_qty)"/>
+             	</xpath>    
+             	<xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="before">
+                        <field name="package_id" domain="[('quant_ids.product_id','=',product_id)]" groups="product.group_stock_packaging" on_change="onchange_package_id(product_id, package_id, product_uom_qty)"/>
+             	</xpath>
+             	<xpath expr="//field[@name='order_line']/tree/field[@name='product_uos_qty']" position="attributes">
+                        <attribute name="invisible">0</attribute>
+             	</xpath>
+             	<xpath expr="//field[@name='order_line']/tree/field[@name='product_uos']" position="attributes">
+                        <attribute name="invisible">0</attribute>
+             	</xpath>             	                 	          
+            </field>
+        </record>               	
+
+        <record id="sale_product_variant_grid_sale_order_view_order_form_group" model="ir.ui.view">
+    		<field name="name">sale.product.variant.grid.sale.order.view.order.form.group</field>
+    		<field name="model">sale.order</field>
+    		<field name="inherit_id" ref="sale_product_variant_grid.sale_product_variant_grid_sale_order_view_order_form"/>
+    		<field name="groups_id" eval="[(6, 0, [ref('product.group_stock_packaging') ])]"/>
+    		<field name="arch" type="xml">
+        		<xpath expr="//widget[@type='sale_grid_widget']" position="attributes">
+            		<attribute name="readonly">1</attribute>
+        		</xpath>
+    		</field>
+		</record>        
+        
+	</data>
+</openerp>

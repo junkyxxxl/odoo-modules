@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem name="Stock" id="portal_stock" parent="portal.portal_menu" sequence="100" groups="base.group_portal"/>
+        	        	        	
+        <record id="action_portal_production_lot_form" model="ir.actions.act_window">
+            <field name="name">Serial Numbers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.production.lot</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="stock.view_production_lot_tree"/>
+            <field name="search_view_id" ref="stock.search_product_lot_filter"/>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem action="action_portal_production_lot_form" id="menu_action_portal_production_lot_form" parent="portal_stock" groups="base.group_portal" sequence="1"/>
+                                
+    </data>
+</openerp>

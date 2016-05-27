@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        <record id="montecriso_start_payment_invoice_form" model="ir.ui.view">
+            <field name="name">montecristo.start.payment.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">             
+            	<xpath expr="//field[@name='date_invoice']" position="after">
+                  	<field name="date_start_payment" attrs="{'readonly':[('state','not in', ['draft'])]}"/>
+				</xpath>								            	
+            </field>
+        </record>
+
+
+        <record id="montecriso_start_payment_invoice_tree" model="ir.ui.view">
+            <field name="name">montecristo.start.payment.invoice.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">        
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>     
+                <xpath expr="//field[@name='origin']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>      
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="payment_term"/>
+                    <field name="date_start_payment"/>
+                </xpath>                                    								            	
+            </field>
+        </record>        
+        
+
+    </data>
+</openerp>

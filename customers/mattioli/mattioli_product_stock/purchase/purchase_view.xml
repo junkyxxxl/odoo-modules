@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="mattioli_purchase_order_form" model="ir.ui.view">
+            <field name="name">mattioli.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+             	<xpath expr="//field[@name='product_uom']" position="after">
+                    <field name="uos_qty" on_change="onchange_uos_qty(product_id, product_qty, uos_qty, parent.date_order, parent.pricelist_id, parent.partner_id, context)"/>
+                    <field name="uos_id"/>
+             	</xpath>
+             	<xpath expr="//field[@name='price_unit']" position="after">
+                    <field name="price_uos" on_change="onchange_price_uos(product_id, price_uos, product_qty, uos_qty)"/>
+             	</xpath>             	
+            </field>  
+		</record>	        
+
+
+    </data>
+</openerp>

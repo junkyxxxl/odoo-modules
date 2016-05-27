@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- we do not use report tag has we can not set header ref -->
+       <record id="registro_iva_vendite_report_id" model="ir.actions.report.xml">
+            <field name="report_type">webkit</field>
+            <field name="report_name">vat_registry_sale_webkit</field>
+            <field eval="[(6,0,[])]" name="groups_id"/>
+            <field eval="0" name="multi"/>
+            <field eval="0" name="auto"/>
+            <field eval="1" name="header"/>
+            <field name="model">account.move</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="name">Registro IVA Fatture Clienti</field>
+            <field name="report_rml">account_vat_registries_report_webkit/report/vat_registry_sale.mako</field>
+            <field name="report_file">account_vat_registries_report_webkit/report/vat_registry_sale.mako</field>
+        </record>
+        <record id="property_registro_iva_vendite_report_id" model="ir.property">
+            <field name="name">property_registro_iva_vendite_report_id</field>
+            <field name="fields_id" ref="report_webkit.field_ir_act_report_xml_webkit_header"/>
+            <field eval="'ir.header_webkit,'+str(ref('account_vat_registries_report_webkit.vat_registries_landscape_header'))" model="ir.header_webkit" name="value"/>
+            <field eval="'ir.actions.report.xml,'+str(ref('registro_iva_vendite_report_id'))" model="ir.actions.report.xml" name="res_id"/>
+        </record>
+
+       <record id="registro_iva_acquisti_report_id" model="ir.actions.report.xml">
+            <field name="report_type">webkit</field>
+            <field name="report_name">vat_registry_purchase_webkit</field>
+            <field eval="[(6,0,[])]" name="groups_id"/>
+            <field eval="0" name="multi"/>
+            <field eval="0" name="auto"/>
+            <field eval="1" name="header"/>
+            <field name="model">account.move</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="name">Registro IVA Fatture Fornitori</field>
+            <field name="report_rml">account_vat_registries_report_webkit/report/vat_registry_purchase.mako</field>
+            <field name="report_file">account_vat_registries_report_webkit/report/vat_registry_purchase.mako</field>
+        </record>
+        <record id="property_registro_iva_acquisti_report_id" model="ir.property">
+            <field name="name">property_registro_iva_acquisti_report_id</field>
+            <field name="fields_id" ref="report_webkit.field_ir_act_report_xml_webkit_header"/>
+            <field eval="'ir.header_webkit,'+str(ref('account_vat_registries_report_webkit.vat_registries_landscape_header'))" model="ir.header_webkit" name="value"/>
+            <field eval="'ir.actions.report.xml,'+str(ref('registro_iva_acquisti_report_id'))" model="ir.actions.report.xml" name="res_id"/>
+        </record>
+
+       <record id="registro_iva_corrispettivi_report_id" model="ir.actions.report.xml">
+            <field name="report_type">webkit</field>
+            <field name="report_name">vat_registry_corrispettivi_webkit</field>
+            <field eval="[(6,0,[])]" name="groups_id"/>
+            <field eval="0" name="multi"/>
+            <field eval="0" name="auto"/>
+            <field eval="1" name="header"/>
+            <field name="model">account.move</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="name">Registro IVA Corrispettivi</field>
+            <field name="report_rml">account_vat_registries_report_webkit/report/vat_registry_corrispettivi.mako</field>
+            <field name="report_file">account_vat_registries_report_webkit/report/vat_registry_corrispettivi.mako</field>
+        </record>
+        <record id="property_registro_iva_corrispettivi_report_id" model="ir.property">
+            <field name="name">property_registro_iva_corrispettivi_report_id</field>
+            <field name="fields_id" ref="report_webkit.field_ir_act_report_xml_webkit_header"/>
+            <field eval="'ir.header_webkit,'+str(ref('account_vat_registries_report_webkit.vat_registries_landscape_header'))" model="ir.header_webkit" name="value"/>
+            <field eval="'ir.actions.report.xml,'+str(ref('registro_iva_corrispettivi_report_id'))" model="ir.actions.report.xml" name="res_id"/>
+        </record>
+        <!-- waiting the fix 
+        <record id="registro_iva_vendite_report_id" model="ir.actions.report.xml">
+            <field name="name">Registro IVA Fatture Clienti</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">account.move</field>
+            <field name="report_name">vat_registry_sale_webkit</field>
+            <field name="report_type">webkit</field>
+            <field name="report_rml">account_vat_registries_report_webkit/report/vat_registry_sale.mako</field>
+            <field name="webkit_header" ref="vat_registries_landscape_header"/>
+        </record>
+        <record id="registro_iva_acquisti_report_id" model="ir.actions.report.xml">
+            <field name="name">Registro IVA Fatture Fornitori</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">account.move</field>
+            <field name="report_name">vat_registry_purchase_webkit</field>
+            <field name="report_type">webkit</field>
+            <field name="report_rml">account_vat_registries_report_webkit/report/vat_registry_purchase.mako</field>
+            <field name="webkit_header" ref="vat_registries_landscape_header"/>
+        </record>
+        <record id="registro_iva_corrispettivi_report_id" model="ir.actions.report.xml">
+            <field name="name">Registro IVA Corrispettivi</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">account.move</field>
+            <field name="report_name">vat_registry_corrispettivi_webkit</field>
+            <field name="report_type">webkit</field>
+            <field name="report_rml">account_vat_registries_report_webkit/report/vat_registry_corrispettivi.mako</field>
+            <field name="webkit_header" ref="vat_registries_landscape_header"/>
+        </record>
+-->
+    </data>
+</openerp>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Accreditation Persons Units Jobs Views -->
+        <record id="view_accreditation_persons_units_jobs" model="ir.ui.view">
+            <field name="name">accreditation.jobs.form</field>
+            <field name="model">accreditation.jobs</field>
+            <field name="arch" type="xml">
+                <form string="Persons Units Jobs">
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Accreditation Persons Units Jobs Lists -->
+        <record id="view_accreditation_persons_units_jobs_list" model="ir.ui.view">
+            <field name="name">accreditation.jobs.list</field>
+            <field name="model">accreditation.jobs</field>
+            <field name="arch" type="xml">
+                <tree string="Persons Units Jobs" toolbar="1">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_accreditation_persons_units_jobs" model="ir.actions.act_window">
+            <field name="name">Persons Units Jobs</field>
+            <field name="res_model">accreditation.jobs</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_accreditation_persons_units_jobs_list"/>
+        </record>
+
+    </data>
+</openerp>

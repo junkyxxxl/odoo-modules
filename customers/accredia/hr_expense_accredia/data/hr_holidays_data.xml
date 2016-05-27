@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<openerp>
+  <data noupdate="0">
+
+        <!-- Missione -->
+        <record model="hr.holidays.status" id="holiday_status_missione">
+            <field name="name">Missione</field>
+            <field name="limit">True</field>
+            <field name="color_name">red</field>
+        </record>
+
+  </data>
+</openerp>

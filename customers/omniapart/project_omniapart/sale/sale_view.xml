@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_order_tree_project_omniapart" model="ir.ui.view">
+            <field name="name">sale.order.tree.project.omniapart</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>            
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="project_id" />
+                </xpath>
+            </field>
+        </record>        
+
+        <record id="view_quotation_tree_project_omniapart" model="ir.ui.view">
+            <field name="name">sale.order.quotation.tree.project.omniapart</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>            
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="project_id" />
+                </xpath>
+            </field>
+        </record>           
+
+        <record id="view_sales_order_filter_project_omniapart" model="ir.ui.view">
+            <field name="name">sale.order.list.select.project.omniapart</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>            
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@string='Customer']" position="after">
+					<filter string="Contratto" domain="[]" context="{'group_by':'project_id'}"/>
+                </xpath>
+            </field>
+        </record>           
+        
+    </data>
+</openerp>

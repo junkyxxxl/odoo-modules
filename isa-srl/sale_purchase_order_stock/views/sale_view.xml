@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="sale_shipping_stock_view_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.shipping.stock.view.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+             <field name="arch" type="xml">
+                <xpath expr="//page[@string='Order Lines']" position="after">
+                    <page string="Transfer State">
+                        <button string="Calcola" name="compute_shipped_quantities" type="object" icon="gtk-ok"  colspan="4"/>
+	                    <field name="shipping_state_ids" readonly="1">
+	                        <tree colors="blue:residual_qty != 0.0;">
+	                            <field name="product_id"/>
+	                            <field name="ordered_qty" sum="Totale Ordinato"/>
+	                            <field name="shipped_qty" sum="Totale Consegnato"/>	                            
+	                            <field name="residual_qty" sum="Totale Residuo"/>
+	                        </tree>
+	                    </field>
+                    </page>
+                </xpath>            
+             </field>
+        </record>
+
+    </data>
+</openerp>

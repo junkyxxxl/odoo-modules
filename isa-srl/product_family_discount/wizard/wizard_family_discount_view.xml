@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Aggiungo il tab "Classificazione prodotto" -->
+         <record id="wizard_family_discount_view" model="ir.ui.view">
+             <field name="name">wizard.family.discount.view</field>
+             <field name="model">wizard.family.discount</field>
+			 <field name="arch" type="xml">
+                 <form string = "Imposta Sconto">
+                     <group>
+                         <field name="type" string="Famiglia"/>
+                         <field name="category"/> <!-- Categoria del cliente-->
+                         <field name="discount" string="Sconto (%)"/>
+                         <field name="check" string="Se presente sovrascrivere"/>
+                     </group>
+                     <footer>
+                        <button name="set_discount" string="Conferma" type="object" class="oe_highlight" id="set_discount"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                 </form>
+
+			 </field>
+         </record>
+    </data>
+</openerp>

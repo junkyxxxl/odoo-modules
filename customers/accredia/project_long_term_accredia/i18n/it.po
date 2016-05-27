@@ -1,0 +1,436 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* project_long_term_accredia
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-17 14:22+0000\n"
+"PO-Revision-Date: 2015-03-17 14:22+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_long_term_accredia
+#: help:project.phase,date_end:0
+msgid " It's computed by the scheduler according to the start date and the duration."
+msgstr " Viene calcolato dal pianificatore secondo la data di inizio e la durata."
+
+#. module: project_long_term_accredia
+#: code:addons/project_long_term_accredia/models/project_phase.py:139
+#, python-format
+msgid "%s (copy)"
+msgstr "%s (copia)"
+
+#. module: project_long_term_accredia
+#: model:ir.actions.act_window,help:project_long_term_accredia.act_project_phase
+msgid "A project can be split into the different phases. For each phase, you can define your users allocation, describe different tasks and link your phase to previous and next phases, add date constraints for the automated scheduling. Use the long term planning in order to planify your available users, convert your phases into a series of tasks when you start working on the project."
+msgstr "A project can be split into the different phases. For each phase, you can define your users allocation, describe different tasks and link your phase to previous and next phases, add date constraints for the automated scheduling. Use the long term planning in order to planify your available users, convert your phases into a series of tasks when you start working on the project."
+
+#. module: project_long_term_accredia
+#: model:ir.model,name:project_long_term_accredia.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Conto Analitico"
+
+#. module: project_long_term_accredia
+#: field:project.phase,user_ids:0
+msgid "Assigned Users"
+msgstr "Utenti assegnati"
+
+#. module: project_long_term_accredia
+#: help:project.phase,duration:0
+msgid "By default in days"
+msgstr "Per default in giorni"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+msgid "Cancel Phase"
+msgstr "Annulla Audit"
+
+#. module: project_long_term_accredia
+#: selection:project.phase,state:0
+msgid "Cancelled"
+msgstr "Annullato"
+
+#. module: project_long_term_accredia
+#: help:account.analytic.account,use_phases:0
+msgid "Check this field if you plan to use phase-based scheduling"
+msgstr "Selezionare questo campo se si prevede di usare una pianificare basata sugli Audit"
+
+#. module: project_long_term_accredia
+#: help:project.phase,progress:0
+msgid "Computed based on related tasks"
+msgstr "Calcolo basato sulle attività collegate"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+msgid "Constraints"
+msgstr "Vincoli"
+
+#. module: project_long_term_accredia
+#: field:project.phase,create_uid:0
+#: field:project.user.allocation,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: project_long_term_accredia
+#: field:project.phase,create_date:0
+#: field:project.user.allocation,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: project_long_term_accredia
+#: field:project.phase,constraint_date_end:0
+msgid "Deadline"
+msgstr "Scadenza"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+#: selection:project.phase,state:0
+msgid "Done"
+msgstr "Completato"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+msgid "Draft"
+msgstr "Bozza"
+
+#. module: project_long_term_accredia
+#: field:project.phase,product_uom:0
+msgid "Duration Unit of Measure"
+msgstr "Unità di Misura Durata"
+
+#. module: project_long_term_accredia
+#: field:project.phase,date_end:0
+#: field:project.user.allocation,date_end:0
+msgid "End Date"
+msgstr "Data fine"
+
+#. module: project_long_term_accredia
+#: help:project.user.allocation,date_end:0
+msgid "Ending Date"
+msgstr "Data fine"
+
+#. module: project_long_term_accredia
+#: field:project.phase,user_force_ids:0
+msgid "Force Assigned Users"
+msgstr "Forza gli Utenti Assegnati"
+
+#. module: project_long_term_accredia
+#: help:project.phase,sequence:0
+msgid "Gives the sequence order when displaying a list of phases."
+msgstr "Fornisce l'ordinamento quando viene visualizzata la lista di Audit."
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+#: view:project.user.allocation:project_long_term_accredia.view_project_user_allocation_search
+msgid "Group By..."
+msgstr "Raggruppa per..."
+
+#. module: project_long_term_accredia
+#: field:project.phase,id:0
+#: field:project.user.allocation,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: project_long_term_accredia
+#: help:project.phase,state:0
+msgid "If the phase is created the status 'Draft'.\n"
+" If the phase is started, the status becomes 'In Progress'.\n"
+" If review is needed the phase is in 'Pending' status.                                  \n"
+" If the phase is over, the status is set to 'Done'."
+msgstr "Se l'audit è creato, lo stato è 'Bozza'. Se l'audit è avviato, lo stato diventa 'In Corso'. Se è necessario revisionarlo, l'audit è in stato 'Sospeso'.                                   Se l'audit è concluso, lo stato è impostato a 'Fatto'."
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+#: selection:project.phase,state:0
+msgid "In Progress"
+msgstr "In corso"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+msgid "In Progress Phases"
+msgstr "Audit di avanzamento"
+
+#. module: project_long_term_accredia
+#: help:project.phase,date_start:0
+msgid "It's computed by the scheduler according the project date or the end date of the previous phase."
+msgstr "Viene calcolato dal pianificatore secondo la data della pratica o la data di fine dell'audit precedente."
+
+#. module: project_long_term_accredia
+#: field:project.phase,write_uid:0
+#: field:project.user.allocation,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: project_long_term_accredia
+#: field:project.phase,write_date:0
+#: field:project.user.allocation,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: project_long_term_accredia
+#: constraint:project.phase:0
+msgid "Loops in phases not allowed"
+msgstr "Gli Audit circolari non sono permessi"
+
+#. module: project_long_term_accredia
+#: field:project.phase,constraint_date_start:0
+msgid "Minimum Start Date"
+msgstr "Data inizio minima"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+msgid "Month"
+msgstr "Mese"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+msgid "My Projects"
+msgstr "Mie pratiche"
+
+#. module: project_long_term_accredia
+#: field:project.phase,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+#: selection:project.phase,state:0
+msgid "New"
+msgstr "Nuovo"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+msgid "New Phases"
+msgstr "Nuovi Audit"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+#: field:project.phase,next_phase_ids:0
+msgid "Next Phases"
+msgstr "Prossimi Audit"
+
+#. module: project_long_term_accredia
+#: field:project.project,phase_count:0
+msgid "Open Phases"
+msgstr "Audit Aperti"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+#: selection:project.phase,state:0
+msgid "Pending"
+msgstr "In sospeso"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+msgid "Pending Phases"
+msgstr "Audit in Sospeso"
+
+#. module: project_long_term_accredia
+#: view:project.project:project_long_term_accredia.view_project_kanban_phase
+#: view:project.user.allocation:project_long_term_accredia.view_project_user_allocation_search
+msgid "Phase"
+msgstr "Audit"
+
+#. module: project_long_term_accredia
+#: model:ir.model,name:project_long_term_accredia.model_project_user_allocation
+msgid "Phase User Allocation"
+msgstr "Phase User Allocation"
+
+#. module: project_long_term_accredia
+#: constraint:project.phase:0
+msgid "Phase start-date must be lower than phase end-date."
+msgstr "La data di inizio dell'audit deve essere precedente alla data di fine."
+
+#. module: project_long_term_accredia
+#: field:account.analytic.account,use_phases:0
+#: model:ir.actions.act_window,name:project_long_term_accredia.act_project_phases
+#: view:project.project:project_long_term_accredia.project_phase_form
+#: view:project.project:project_long_term_accredia.view_project_kanban_phase
+msgid "Phases"
+msgstr "Audit"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+#: field:project.phase,previous_phase_ids:0
+msgid "Previous Phases"
+msgstr "Audit precedenti"
+
+#. module: project_long_term_accredia
+#: field:project.phase,progress:0
+msgid "Progress"
+msgstr "Avanzamento"
+
+#. module: project_long_term_accredia
+#: model:ir.model,name:project_long_term_accredia.model_project_project
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+#: field:project.phase,project_id:0
+#: view:project.user.allocation:project_long_term_accredia.view_project_user_allocation_search
+#: field:project.user.allocation,project_id:0
+msgid "Project"
+msgstr "Pratiche"
+
+#. module: project_long_term_accredia
+#: model:ir.model,name:project_long_term_accredia.model_project_phase
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+#: view:project.task:project_long_term_accredia.view_phase_task_search_form_group
+#: field:project.task,phase_id:0
+#: field:project.user.allocation,phase_id:0
+msgid "Project Phase"
+msgstr "Audit pratica"
+
+#. module: project_long_term_accredia
+#: model:ir.actions.act_window,name:project_long_term_accredia.act_project_phase
+#: model:ir.actions.act_window,name:project_long_term_accredia.act_project_phase_list
+#: model:ir.ui.menu,name:project_long_term_accredia.menu_project_phase
+#: model:ir.ui.menu,name:project_long_term_accredia.menu_project_phase_list
+#: view:project.phase:project_long_term_accredia.view_project_phase_list
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+#: field:project.project,phase_ids:0
+msgid "Project Phases"
+msgstr "Audit pratiche"
+
+#. module: project_long_term_accredia
+#: field:project.phase,task_ids:0
+msgid "Project Tasks"
+msgstr "Attività della Pratica"
+
+#. module: project_long_term_accredia
+#: view:project.user.allocation:project_long_term_accredia.view_project_user_allocation_form
+#: view:project.user.allocation:project_long_term_accredia.view_project_user_allocation_list
+msgid "Project User Allocation"
+msgstr "Assegnazione Utenti alla Pratica"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+msgid "Project Users"
+msgstr "Utenti della pratica"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+msgid "Project's Tasks"
+msgstr "Attività della pratica"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+msgid "Related Tasks"
+msgstr "Attività collegate"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+msgid "Remaining Hours"
+msgstr "Ore Rimanenti"
+
+#. module: project_long_term_accredia
+#: model:ir.ui.menu,name:project_long_term_accredia.menu_view_resource_calendar_leaves
+msgid "Resource Leaves"
+msgstr "Permessi"
+
+#. module: project_long_term_accredia
+#: model:ir.ui.menu,name:project_long_term_accredia.menu_pm_users_project1
+#: model:ir.ui.menu,name:project_long_term_accredia.menu_view_resource
+msgid "Resources"
+msgstr "Risorse"
+
+#. module: project_long_term_accredia
+#: field:project.phase,sequence:0
+msgid "Sequence"
+msgstr "Sequenza"
+
+#. module: project_long_term_accredia
+#: field:project.phase,date_start:0
+#: field:project.user.allocation,date_start:0
+msgid "Start Date"
+msgstr "Data inizio"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+msgid "Start Month"
+msgstr "Mese Iniziale"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+msgid "Start Phase"
+msgstr "Inizia Audit"
+
+#. module: project_long_term_accredia
+#: help:project.user.allocation,date_start:0
+msgid "Starting Date"
+msgstr "Data di inizio"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_search
+#: field:project.phase,state:0
+msgid "Status"
+msgstr "Stato"
+
+#. module: project_long_term_accredia
+#: model:ir.model,name:project_long_term_accredia.model_project_task
+msgid "Task"
+msgstr "Attività"
+
+#. module: project_long_term_accredia
+#: model:ir.actions.act_window,name:project_long_term_accredia.project_phase_task_list
+msgid "Tasks"
+msgstr "Attività"
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+msgid "Tasks Details"
+msgstr "Dettagli Attività"
+
+#. module: project_long_term_accredia
+#: model:ir.actions.act_window,name:project_long_term_accredia.act_resouce_allocation
+#: model:ir.ui.menu,name:project_long_term_accredia.menu_resouce_allocation
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+#: view:project.user.allocation:project_long_term_accredia.view_project_user_allocation_search
+msgid "Team Planning"
+msgstr "Pianificazione Team"
+
+#. module: project_long_term_accredia
+#: help:project.phase,user_ids:0
+msgid "The resources on the project can be computed automatically by the scheduler."
+msgstr "Le risorse sulla pratica possono essere calcolate automaticamente dal pianificatore."
+
+#. module: project_long_term_accredia
+#: view:project.phase:project_long_term_accredia.view_project_phase_form
+msgid "Total Hours"
+msgstr "Ore Totali"
+
+#. module: project_long_term_accredia
+#: help:project.phase,product_uom:0
+msgid "Unit of Measure (Unit of Measure) is the unit of measurement for Duration"
+msgstr "Unità di Misura (Unita di Misura) è l'unità di misura della Durata"
+
+#. module: project_long_term_accredia
+#: view:project.user.allocation:project_long_term_accredia.view_project_user_allocation_search
+#: field:project.user.allocation,user_id:0
+msgid "User"
+msgstr "Utente"
+
+#. module: project_long_term_accredia
+#: view:project.user.allocation:project_long_term_accredia.view_project_user_allocation_calendar
+msgid "Users"
+msgstr "Utenti"
+
+#. module: project_long_term_accredia
+#: model:ir.ui.menu,name:project_long_term_accredia.menu_view_resource_calendar
+msgid "Working Time"
+msgstr "Tempo di lavoro"
+
+#. module: project_long_term_accredia
+#: help:project.phase,constraint_date_end:0
+msgid "force the phase to finish before this date"
+msgstr "forza la fine dell'Audit prima di questa data"
+
+#. module: project_long_term_accredia
+#: help:project.phase,constraint_date_start:0
+msgid "force the phase to start after this date"
+msgstr "forza l'inizio dell'Audit dopo questa data"
+

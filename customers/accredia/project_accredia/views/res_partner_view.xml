@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Accreditation Persons Views -->
+        <record id="view_accreditation_persons_project" model="ir.ui.view">
+            <field name="name">accreditation.persons.project.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="hr_accredia.view_res_partner_accreditation_entity_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Roles']" position="after">
+                    <page string="Competenze" attrs="{'invisible': [('individual','!=', True)]}">
+                        <field name="skill_ids" attrs="{'invisible':[('id','=',False)]}" context="{'view_person': context.get('view_person') or False}">
+                        </field>
+                    </page>
+                    <page string="Autorizzazioni" attrs="{'invisible':[('employee_pa','!=',True)]}">
+                        <field name="auth_ids" context="{'view_person': context.get('view_person') or False}">
+                            <tree string="Autorizzazioni Dipendente P.A." toolbar="1" editable="">
+                                <field name="partner_id" invisible="1" />
+                                <field name="auth_code" />
+                                <field name="auth_type" />
+                                <field name="date_start" />
+                                <field name="date_stop" />
+                                <field name="days" attrs="{'invisible':[('auth_type','!=','D')]}" />
+                                <field name="days_used" attrs="{'invisible':[('auth_type','!=','D')]}" />
+                                <field name="days_remaining" attrs="{'invisible':[('auth_type','!=','D')]}" />
+                            </tree>
+                            <form string="Autorizzazioni Dipendenti P.A.">
+                                <group>
+                                    <group>
+                                        <field name="partner_id" invisible="1" />
+                                        <field name="auth_code" />
+                                        <field name="auth_type" />
+                                        <field name="days" attrs="{'invisible':[('auth_type','!=','D')]}" />
+                                        <field name="days_used" attrs="{'invisible':[('auth_type','!=','D')]}" />
+                                        <field name="days_remaining" attrs="{'invisible':[('auth_type','!=','D')]}" />
+                                    </group>
+                                    <group>
+                                        <field name="date_start" />
+                                        <field name="date_stop" />
+                                    </group>
+                                </group>
+                                <notebook>
+                                    <page string="Dettagli Attività">
+                                        <field name="task_ids">
+                                        </field>
+                                    </page>
+                                </notebook>
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

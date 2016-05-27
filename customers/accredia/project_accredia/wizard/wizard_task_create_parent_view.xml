@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_task_create_parent_form" model="ir.ui.view">
+          <field name="name">wizard.task.create.parent.form</field>
+          <field name="model">wizard.task.create.parent</field>
+          <field name="arch" type="xml">
+            <form string="Crea Attivita Genitore">
+                <group>
+                    <group>
+                        <field name="project_id" invisible="1" />
+                        <field name="task_id" readonly="1" />
+                        <field name="parent_id" required="1" domain="[('id','!=',task_id),('active','=',False),('project_id','=',project_id)]" />
+                    </group>
+                    <group>
+                    </group>
+                </group>
+                <footer>
+                    <button name="do_create"
+							icon="gtk-go-forward"
+							string="Aggiungi"
+                            context="{'parent_id': parent_id, 'task_id': task_id}"
+							type="object"
+							default_focus="1"
+							class="oe_highlight" />
+                    or
+                    <button string="Annulla" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+          </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_production_analysis_confirm" model="ir.ui.view">
+            <field name="name">Production analysis confirmation</field>
+            <field name="model">sale.analysis.production</field>
+            <field name="arch" type="xml">
+              <form string="Production Analysis Confirmation">
+                  <label string="Confirm to process production analysis"/>
+                  <notebook>
+                      <page string="General Selection">
+                          <group>
+                              <field name="quotations" string="Quotations"/>
+                              <field name="orders" string="Orders"/>
+                              <field name="recursive" string="Recursive"/>
+                              <field name="exclude_shipped" />
+                              <field name="print_result"
+                                     string="Generate PDF Report"/>
+                          </group>
+                      </page>
+
+                      <page string="Date Selection">
+                          <group>
+                              <field name="date_begin" string="Start date"/>
+                              <field name="date_end" string="End date"/>
+                          </group>
+                          <group>
+                              <field name="f_delivery_date" />
+                              <field name="t_delivery_date" />
+                          </group>
+                          <group>
+                              <field name="season"/>
+                          </group>
+                          <group>
+                              <field name="document_type"/>
+                              <field name="all_document_type"/>
+                          </group>
+                      </page>
+                      <page string="Product Selection">
+                          <group>
+                              <h4>Parent Product</h4>
+                              <field name="template_ids" colspan="4"
+                                     mode="tree" nolabel="1" />
+                          </group>
+                          <group>
+                              <h4>Product Family</h4>
+                              <field name="family_ids" colspan="4"
+                                     domain="[('type', '=', 'family')]"
+                                     mode="tree" nolabel="1" />
+                          </group>
+                          <group>
+                              <h4>Product Category</h4>
+                              <field name="category_ids" colspan="4"
+                                     domain="[('parent_id', '=', False)]"
+                                     mode="tree" nolabel="1" />
+                          </group>
+                      </page>
+                      <page string="Partner Selection">
+                          <group>
+                              <field name="partner_ids" colspan="4"
+                                     mode="tree" nolabel="1"/>
+                          </group>
+                      </page>
+                      <page string="Order Selection">
+                          <group>
+                              <field name="order_ids" colspan="4"
+                                     mode="tree" nolabel="1"/>
+                          </group>
+                      </page>
+
+                  </notebook>
+                  <footer>
+                      <button name="confirm" string="Confirm"
+                              type="object" class="oe_highlight"/>
+                      or
+                      <button string="Cancel" class="oe_link"
+                              special="cancel" />
+                  </footer>
+            </form>
+            </field>
+        </record>
+
+        <record id="action_production_analysis_confirm2" model="ir.actions.act_window">
+            <field name="name">Production Analysis Confirmation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.analysis.production</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_production_analysis_confirm"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="action_production_analysis_confirm2"
+            id="menu_action_production_analysis_confirm2"
+            parent="stock.menu_stock_sched" sequence="40"
+            groups="stock.group_stock_manager"/>
+
+    </data>
+</openerp>

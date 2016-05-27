@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <!-- Project Task -->
+        <record id="view_project_task_accredia_sale_form" model="ir.ui.view">
+            <field name="name">project.task.accredia.sale.form</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project_accredia.view_project_task_accredia_ext_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//notebook" position="inside">
+                   <page string="Preventivi/Ordini" invisible="1" >
+                       <group string="Preventivi/Ordini">
+                           <field name="sale_order_ids" nolabel="1" readonly="1" />
+                       </group>
+                   </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

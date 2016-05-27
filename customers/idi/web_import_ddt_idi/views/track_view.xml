@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    	
+        <template id="assets_backend" name="web_import_ddt_idi assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+            	<script type="text/javascript" src="/web_import_ddt_idi/static/src/js/import_ddt.js"></script>
+            </xpath>
+        </template>
+    	
+    	<!-- Vista tree per elenco record -->
+    	<record model="ir.ui.view" id="import_ddt_movements_tree_view">
+            <field name="name">import.ddt.movements.tree</field>
+            <field name="model">track.import.ddt</field>
+            <field name="arch" type="xml">
+                <tree string="Import ddt movements" colors="red:state=='except';blue:state=='inprocess';green:state=='done'">
+                    <field name="name"/>
+                    <field name="contractor"/>
+                    <field name="warehouse"/>
+                    <field name="ddt_number"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Vista search -->
+        <record model="ir.ui.view" id="import_ddt_movements_search_view">
+            <field name="name">import.ddt.movements.search</field>
+            <field name="model">track.import.ddt</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="contractor"/>
+                    <field name="warehouse"/>
+                    <field name="ddt_number"/>
+                    <field name="date"/>
+                    <field name="state" widget="selection"/>
+                    <group string="Group By">
+        				<filter name="Group_Contractor" string="Contractor"
+                		 context="{'group_by': 'contractor'}"/>
+                		<filter name="Group_Warehouse" string="Warehouse"
+                		 context="{'group_by': 'warehouse'}"/>
+   					</group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- vista form -->
+        <record model="ir.ui.view" id="import_ddt_movements_form_view">
+        	<field name="name">import.ddt.movements.form</field>
+            <field name="model">track.import.ddt</field>
+            <field name="arch" type="xml">
+	            <form create="false">
+	            	<header>
+	            		<button name="action_ready" class="oe_highlight" type="object"
+                                string="Reset to ready"
+                                states="except"/>          
+	            	 	<field name="state" readonly="1" widget="statusbar" 
+	            	 	 statusbar_visible="ready,inprocess,done"
+	            	 	 />	
+	            	 </header>
+	            	 <sheet>
+	            		<group>
+		            		<group>
+		            			<separator string="Basic information of DDT" colspan="2"/>
+		            			<field name="name"/>
+		            			<field name="contractor"/>
+		            			<field name="warehouse"/>
+		            			<field name="ddt_number"/>
+		            			<field name="date"/>
+		            		</group>
+		            		<group>
+		            			<separator string="Information about sale to customer" colspan="2"/>
+		            			<field name="partner_code" attrs="{'readonly':[('state','in',['inprocess','done'])]}"  />
+		            			<field name="delivery_code" attrs="{'readonly':[('state','in',['inprocess','done'])]}" />
+		            			<field name="store_code" attrs="{'readonly':[('state','in',['inprocess','done'])]}" />
+		            		    <field name="payment_code" attrs="{'readonly':[('state','in',['inprocess','done'])]}" />
+							</group>
+	            		</group>
+						<group>
+							<separator string="Importazioni per materiali campione" colspan="2"/>
+							<field name="sample_movement" />
+							<field name="document_type_sample" 
+                                attrs="{'readonly':['|',('state','in',['inprocess','done']),('sample_movement','=',False)]}" 
+                            />
+						</group>
+	            		<notebook>
+	            			<page string="Elaboration log" autofocus="autofocus">
+	            				<field name="processing_log" />
+	            			</page>
+	            			<page string="Row">
+	            				<field name="ddt_line" attrs="{'readonly':[('state','in',['inprocess','done'])]}">
+	            					<tree string="Registered sessions" colors="red:error==True">
+										<field name="product"/>
+										<field name="qty"/>
+										<field name="free"/>
+										<field name="store_code"/>
+										<field name="lot"/>
+										<field name="expiration_date"/>
+										<field name="error"/>
+                                	</tree>
+                                </field>
+	            			</page>
+	            			<page string="Except information" attrs="{'invisible':[('state','!=','except')]}">
+	            				<field name="status_log"/>
+	            			</page>
+	            			<page string="Process Information">
+	            				<group>
+	            					<field name="order_reference"/>
+	            					<field name="picking_reference">
+	            						<tree>
+	            							<field name="id" />
+	            						</tree>
+	            					</field>
+	            					<field name="ddt_reference"/>
+	            				</group>
+	            			</page>
+	            		</notebook>
+	            	</sheet>
+	            </form>
+	        </field>
+        </record>
+        
+        
+        <!-- vista form per la modifica delle linee -->
+        <record model="ir.ui.view" id="import_ddt_line_movements_form_view">
+        	<field name="name">import.ddt.line.movements.form</field>
+            <field name="model">track.import.ddt.line</field>
+            <field name="arch" type="xml">
+	            <form>
+	           		<group>
+	            		<group>
+	            			<separator string="Information about product" colspan="2"/>
+	            			<field name="product"/>
+	            			<field name="qty"/>
+	            			<field name="lot"/>
+	            			<field name="expiration_date"/>
+	            			<field name="store_code"/>
+	            			<field name="free"/>
+	            		</group>
+	           		</group>
+	            </form>
+	        </field>
+        </record>
+    	
+    
+    	<record id="action_view_import_ddt_movements" model="ir.actions.act_window">
+            <field name="name">Import DDT movements</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">track.import.ddt</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!-- current è il default, altrimenti con new viene visualizzata in un popup -->
+            <field name="target">current</field>
+        </record>
+    
+    
+    	<!-- movimenti di importazione DDT -->
+    	<menuitem
+        action="action_view_import_ddt_movements"
+        name="Import DDT movements"
+        id="menu_view_import_ddt_movements"
+        parent="stock.menu_stock_warehouse_mgmt"
+        />
+        
+        <!-- Aggiungo al "Group By" presente nella ricerca avanzata, il filtro per "Contractor" -->
+        <record id="view_web_ddt_search" model="ir.ui.view">
+            <field name="name">view.web.ddt.search</field>
+            <field name="model">stock.ddt</field>
+            <field name="inherit_id" ref="l10n_it_ddt_makeover.stock_ddt_makeover_search"/>
+            <field name="arch" type="xml"> 
+              
+                <xpath expr="//group/filter[last()]" position="after">
+                   <filter string="Terzista" domain="[]" context="{'group_by':'contractor'}"/>     
+                 </xpath>     
+        
+            </field>
+        </record>        
+        	        	     	                    
+    </data>
+</openerp>

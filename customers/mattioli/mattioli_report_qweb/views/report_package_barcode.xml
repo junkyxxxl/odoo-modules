@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<template id="report_package_barcode">
+		    <t t-call="report.html_container">
+		        <t t-foreach="docs" t-as="d">
+					<t t-set="o" t-value="get_record(d)"/>
+		            <t>
+		                <div class="page">
+		                    <div class="oe_structure"/>
+		                    <div class="row">
+		                        <div class="col-xs-12">
+		                            <table class="table table-condensed" style="border-bottom: 0px solid white !important;">
+		                                <thead>
+		                                    <tr>
+		                                        <th style="text-align: center;" colspan="2"><img t-att-src="'data:image/png;base64,%s' % d.company_id.logo" style="max-height: 45px;"/></th>
+		                                    </tr>
+		                                </thead>
+		                                <tbody>
+		                                    <tr>
+		                                        <td width="50%">
+		                                        	<div>Essenza</div>
+		                                           	<b><div t-esc="get_essence(o[0])"/></b>
+		                                        </td>
+		                                        <td width="50%">
+		                                        	<div>Spessore [cm]</div>
+		                                           	<b><div t-esc="get_thickness(o[0])"/></b>
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td>
+		                                        	<div>Numero pacco</div>
+		                                           	<b><div t-esc="o[0][1]"/></b>
+		                                        </td>
+		                                        <td>
+		                                        	<div>Larghezza [cm]</div>
+		                                           	<b><div t-esc="get_width(o[0])"/></b>
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td>
+		                                        	<div>Data</div>
+		                                           	<b><div t-esc="o[0][2]"/></b>
+		                                        </td>
+		                                        <td>
+		                                        	<div>Lunghezza [cm]</div>
+		                                           	<b><div t-esc="get_length(o[0])"/></b>
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td>
+		                                        	<div>Stato legno</div>
+		                                           	<b><div t-esc="get_wood_type(o[0])"/></b>
+		                                        </td>
+		                                        <td>
+		                                        	<div>N.Pezzi</div>
+		                                           	<b><div t-esc="get_num_pieces(o[0])"/></b>
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td>
+		                                        	<div>Stagionatura</div>
+		                                           	<b><div t-esc="get_seasoning(o[0])"/></b>
+		                                        </td>
+		                                        <td>
+		                                        	<div>Quadratura [mq]</div>
+		                                           	<b><div t-esc="get_surface(o[0])"/></b>
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td>
+		                                        	<div>Classifica</div>
+		                                           	<b><div t-esc="get_wood_quality(o[0])"/></b>
+		                                        </td>
+		                                        <td>
+		                                        	<div>Cubaggio [mc]</div>
+		                                           	<b><div t-esc="get_volume(o[0])"/></b>
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td>
+		                                        	<div>Provenienza</div>
+		                                           	<b><div t-esc="get_supplier(d)"/></b>
+		                                        </td>
+		                                        <td>
+		                                        	<div>Annotazioni</div>
+		                                           	<b><div t-esc="o[0][3]"/></b>
+		                                        </td>
+		                                    </tr>
+		                                </tbody>
+		                            </table>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-xs-12 mt32">
+		                            <table class="table table-condensed" style="border-bottom: 3px solid black !important;"><thead><th> </th></thead></table>
+		                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', get_pack(o), 600, 100)" style="width:300px;height:50px"/>
+		                            <p class="text-center" t-esc="o[0][1]"></p>
+		                        </div>
+		                    </div>
+		                </div>
+		            </t>
+		        </t>
+		    </t>
+		</template>		
+		
+
+</data>
+</openerp>
+								            

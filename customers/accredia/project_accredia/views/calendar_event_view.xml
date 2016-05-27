@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+    <!-- CRM Meetings Form View -->
+    <record model="ir.ui.view" id="view_crm_meeting_accredia_form">
+        <field name="name">CRM - Meetings Form Accredia</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='location']" position="after">
+                <field name="work_id" />
+            </xpath>
+        </field>
+    </record>
+
+    </data>
+</openerp>

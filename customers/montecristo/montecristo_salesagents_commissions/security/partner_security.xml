@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="1">
+
+	<record model="ir.rule" id="sale.sale_order_personal_rule">
+        <field name="name">Personal Orders</field>
+        <field name="model_id" ref="account_discount.model_sale_order"/>        
+        <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+		<field name="groups" eval="[(4, ref('base.group_sale_salesman'))]"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="0" name="perm_write"/>
+        <field eval="0" name="perm_unlink"/>
+        <field eval="1" name="perm_create"/>		
+    </record>
+
+	<record model="ir.rule" id="sale.montecristo_sale_order_personal_rule">
+        <field name="name">Montecristo Personal Orders</field>
+        <field name="model_id" ref="account_discount.model_sale_order"/>        
+        <field name="domain_force">[('confirmed','=',False),'|',('user_id','=',user.id),('user_id','=',False)]</field>
+		<field name="groups" eval="[(4, ref('base.group_sale_salesman'))]"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="1" name="perm_write"/>
+        <field eval="1" name="perm_unlink"/>
+        <field eval="1" name="perm_create"/>		
+    </record>	
+	
+    <record model="ir.rule" id="montecristo_salesagents_partners_rule">
+        <field name="name">Montecristo - Visualizzazione Clienti degli Agenti</field>
+        <field name="model_id" ref="account.model_res_partner"/>        
+        <field name="domain_force">['|','|','|','|',('salesagent_for_customer_id','in',[user.partner_id.id,None,False]),('second_salesagent_for_customer_id','=',user.partner_id.id),('id','=',user.partner_id.id),('id','=',user.company_id.partner_id.id),'&amp;','&amp;',('customer','=',False),('supplier','=',False),('salesagent','=',False)]</field>
+		<field name="groups" eval="[(4, ref('base.group_sale_salesman'))]"/>
+    </record>
+       
+    <record model="ir.rule" id="montecristo_sale_manager_partners_rule">
+        <field name="name">Montecristo - Visualizzazione Clienti Manager Vendite</field>
+        <field name="model_id" ref="account.model_res_partner"/>
+		<field name="groups" eval="[(4, ref('base.group_sale_manager'))]"/>        
+        <field name="domain_force">[(1,'=',1)]</field>
+    </record>
+    
+    <record model="ir.rule" id="montecristo_salesagents_product_template_rule">
+        <field name="name">Montecristo - Product Template Agent</field>
+        <field name="model_id" ref="account.model_product_template"/>
+		<field name="groups" eval="[(4, ref('base.group_sale_salesman'))]"/>        
+        <field name="domain_force">[('produzione.current','=',True)]</field>
+        <field eval="1" name="perm_read"/>
+        <field eval="0" name="perm_write"/>
+        <field eval="0" name="perm_unlink"/>
+        <field eval="0" name="perm_create"/>
+    </record>
+
+    <record model="ir.rule" id="montecristo_salesagents_product_rule">
+        <field name="name">Montecristo - Product Template Agent</field>
+        <field name="model_id" ref="account_invoice_intracee.model_product_product"/>
+		<field name="groups" eval="[(4, ref('base.group_sale_salesman'))]"/>        
+        <field name="domain_force">[('produzione.current','=',True)]</field>
+        <field eval="1" name="perm_read"/>
+        <field eval="0" name="perm_write"/>
+        <field eval="0" name="perm_unlink"/>
+        <field eval="0" name="perm_create"/>
+    </record>    
+    
+<!-- AGGIUNGERE:
+- REGOLA account.account.type: SOLA LETTURA AD AGENTI
+- REGOLA account.tax.code: SOLA LETTURA AD AGENTI    
+- REGOLA sale_journal.invoice.type: SOLA LETTURA AD AGENTI 
+- REGOLA sale.history: SOLA LETTURA AD AGENTI
+- REGOLA Approvigionamenti (procurement.order): SOLA LETTURA A RISORSE UMANE/IMPIEGATO
+- REGOLA Prodotto e Modello Prodotto: SOLA LETTURA A RISORSE UMANE/IMPIEGATO
+-->
+
+</data>
+</openerp>

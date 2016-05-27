@@ -1,0 +1,343 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* doclite_isa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-05 07:50+0000\n"
+"PO-Revision-Date: 2015-03-05 07:50+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: doclite_isa
+#. openerp-web
+#: code:addons/doclite_isa/static/src/xml/url.xml:6
+#, python-format
+msgid "Archivia Documento..."
+msgstr "Archivia Documento..."
+
+#. module: doclite_isa
+#: code:addons/doclite_isa/integration/project_task_work.py:115
+#, python-format
+msgid "Nessun Giornale Analitico definito per Generazione Riga da Fatturare a Cliente"
+msgstr "Nessun Giornale Analitico definito per Generazione Riga da Fatturare a Cliente"
+
+#. module: doclite_isa
+#: field:accreditation.task.work.log,state:0
+msgid "Esito"
+msgstr "Esito"
+
+#. module: doclite_isa
+#: field:accreditation.task.work.log,request_id:0
+msgid "Domanda Accreditamento"
+msgstr "Domanda Accreditamento"
+
+#. module: doclite_isa
+#: model:ir.model,name:doclite_isa.model_doclite_modules
+msgid "Doclite Modules"
+msgstr "Moduli Doclite"
+
+#. module: doclite_isa
+#: field:doclite.document.category,name:0
+#: field:doclite.document.model,name:0
+msgid "Nome"
+msgstr "Nome"
+
+#. module: doclite_isa
+#: view:doclite.document.model:0
+msgid "Document Model Search"
+msgstr "Document Model Search"
+
+#. module: doclite_isa
+#: selection:accreditation.task.work.log,doclite_action_type:0
+msgid "Generazione Domanda Accreditamento"
+msgstr "Generazione Domanda Accreditamento"
+
+#. module: doclite_isa
+#: selection:doclite.server,server_location:0
+#: selection:res.users,server_location:0
+msgid "Roma"
+msgstr "Roma"
+
+#. module: doclite_isa
+#: model:ir.model,name:doclite_isa.model_project_task_work
+msgid "Project Task Work"
+msgstr "Lavoro attività progetto"
+
+#. module: doclite_isa
+#: code:addons/doclite_isa/integration/project_task_work.py:107
+#, python-format
+msgid "Nessun Prodotto definito per Generazione Riga da Fatturare a Cliente"
+msgstr "Nessun Prodotto definito per Generazione Riga da Fatturare a Cliente"
+
+#. module: doclite_isa
+#: field:doclite.document.category,active:0
+#: field:doclite.document.model,active:0
+msgid "Attiva"
+msgstr "Attiva"
+
+#. module: doclite_isa
+#: selection:res.users,server_location:0
+msgid "Torino"
+msgstr "Torino"
+
+#. module: doclite_isa
+#: selection:accreditation.task.work.type,doclite_action_type:0
+msgid "Archivia Documento"
+msgstr "Archivia Documento"
+
+#. module: doclite_isa
+#: view:doclite.document.model:0
+#: model:ir.actions.act_window,name:doclite_isa.action_doclite_document_models
+#: model:ir.ui.menu,name:doclite_isa.menu_doclite_document_models
+msgid "Document Models"
+msgstr "Modelli Documenti"
+
+#. module: doclite_isa
+#: field:doclite.server,server_location:0
+#: field:res.users,server_location:0
+msgid "Location"
+msgstr "Locazione Server"
+
+#. module: doclite_isa
+#: code:addons/doclite_isa/integration/project_task_work.py:130
+#, python-format
+msgid "There is no expense account defined for this product: \"%s\" (id:%d)."
+msgstr "Non c'è alcun conto per le spese definito per questo prodotto: \"%s\" (id:%d)."
+
+#. module: doclite_isa
+#: field:accreditation.task.work.log,meeting_id:0
+msgid "Meeting"
+msgstr "Meeting"
+
+#. module: doclite_isa
+#: view:project.task.work:0
+msgid "Log"
+msgstr "Log"
+
+#. module: doclite_isa
+#: model:ir.model,name:doclite_isa.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: doclite_isa
+#: model:ir.model,name:doclite_isa.model_res_users
+msgid "Users"
+msgstr "Utenti"
+
+#. module: doclite_isa
+#: view:accreditation.task.work.log:0
+#: field:project.task.work,log_ids:0
+msgid "Log Azioni"
+msgstr "Log Azioni"
+
+#. module: doclite_isa
+#: field:accreditation.task.work.log,purchase_order_id:0
+msgid "Preventivo Fornitore"
+msgstr "Preventivo Fornitore"
+
+#. module: doclite_isa
+#: field:accreditation.task.work.log,doclite_action_type:0
+msgid "Tipo Azione"
+msgstr "Tipo Azione"
+
+#. module: doclite_isa
+#: model:ir.model,name:doclite_isa.model_doclite_document_category
+msgid "Doclite Document Category"
+msgstr "Categorie Documenti Doclite"
+
+#. module: doclite_isa
+#: field:accreditation.task.work.type,doclite_action_type:0
+msgid "Tipo Azione DocLite"
+msgstr "Tipo Azione DocLite"
+
+#. module: doclite_isa
+#: view:project.task.work:0
+msgid "Esegui"
+msgstr "Esegui"
+
+#. module: doclite_isa
+#: model:ir.model,name:doclite_isa.model_accreditation_request
+msgid "Email Thread"
+msgstr "Thread Email"
+
+#. module: doclite_isa
+#: field:accreditation.task.work.log,phase_id:0
+msgid "Audit"
+msgstr "Audit"
+
+#. module: doclite_isa
+#: field:accreditation.task.work.type,doclite_action_model:0
+msgid "Modello Documento DocLite"
+msgstr "Modello Documento DocLite"
+
+#. module: doclite_isa
+#: field:accreditation.task.work.log,action_url:0
+msgid "Link DocLite"
+msgstr "Link DocLite"
+
+#. module: doclite_isa
+#: model:ir.model,name:doclite_isa.model_project_task
+msgid "Task"
+msgstr "Attività"
+
+#. module: doclite_isa
+#: field:doclite.document.category,code:0
+#: field:doclite.document.model,code:0
+msgid "Codice"
+msgstr "Codice"
+
+#. module: doclite_isa
+#: selection:accreditation.task.work.log,doclite_action_type:0
+msgid "Generazione Preventivo per Fornitore"
+msgstr "Generazione Preventivo per Fornitore"
+
+#. module: doclite_isa
+#: code:addons/doclite_isa/integration/project_task_work.py:111
+#, python-format
+msgid "Nessun Conto Analitico definito per Generazione Riga da Fatturare a Cliente"
+msgstr "Nessun Conto Analitico definito per Generazione Riga da Fatturare a Cliente"
+
+#. module: doclite_isa
+#: selection:doclite.server,server_location:0
+#: selection:res.users,server_location:0
+msgid "Milano"
+msgstr "Milano"
+
+#. module: doclite_isa
+#: code:addons/doclite_isa/integration/project_task_work.py:102
+#: code:addons/doclite_isa/integration/project_task_work.py:106
+#: code:addons/doclite_isa/integration/project_task_work.py:110
+#: code:addons/doclite_isa/integration/project_task_work.py:114
+#: code:addons/doclite_isa/integration/project_task_work.py:129
+#: code:addons/doclite_isa/integration/project_task_work.py:140
+#: code:addons/doclite_isa/integration/project_task_work.py:194
+#, python-format
+msgid "Error!"
+msgstr "Errore!"
+
+#. module: doclite_isa
+#: model:ir.model,name:doclite_isa.model_doclite_document_line
+msgid "doclite.document.line"
+msgstr "doclite.document.line"
+
+#. module: doclite_isa
+#: code:addons/doclite_isa/integration/project_task_work.py:195
+#, python-format
+msgid "Nessun Prodotto definito per Generazione Preventivo per Fornitore"
+msgstr "Nessun Prodotto definito per Generazione Preventivo per Fornitore"
+
+#. module: doclite_isa
+#: field:accreditation.task.work.log,analytic_line_id:0
+msgid "Attività da Fatturare"
+msgstr "Attività da Fatturare"
+
+#. module: doclite_isa
+#: model:ir.model,name:doclite_isa.model_doclite_server
+msgid "doclite.server"
+msgstr "doclite.server"
+
+#. module: doclite_isa
+#: model:ir.model,name:doclite_isa.model_doclite_document_model
+msgid "Doclite Document Models"
+msgstr "Modelli Documenti Doclite"
+
+#. module: doclite_isa
+#: field:accreditation.task.work.log,work_id:0
+msgid "Azione"
+msgstr "Azione"
+
+#. module: doclite_isa
+#: code:addons/doclite_isa/integration/doclite_server.py:61
+#: code:addons/doclite_isa/integration/doclite_server.py:71
+#, python-format
+msgid "Errore!"
+msgstr "Errore!"
+
+#. module: doclite_isa
+#: view:doclite.document.category:0
+msgid "Document Category Search"
+msgstr "Document Category Search"
+
+#. module: doclite_isa
+#: selection:accreditation.task.work.log,state:0
+msgid "OK"
+msgstr "OK"
+
+#. module: doclite_isa
+#: field:accreditation.task.work.type,doclite_action_category:0
+msgid "Categoria Documento DocLite"
+msgstr "Categoria Documento DocLite"
+
+#. module: doclite_isa
+#. openerp-web
+#: code:addons/doclite_isa/static/src/xml/url.xml:9
+#, python-format
+msgid "Mostra Documenti..."
+msgstr "Mostra Documenti..."
+
+#. module: doclite_isa
+#: selection:accreditation.task.work.type,doclite_action_type:0
+msgid "Generazione Folder Virtuale"
+msgstr "Generazione Folder Virtuale"
+
+#. module: doclite_isa
+#: code:addons/doclite_isa/integration/project_task_work.py:141
+#, python-format
+msgid "There is no income account defined for this product: \"%s\" (id:%d)."
+msgstr "There is no income account defined for this product: \"%s\" (id:%d)."
+
+#. module: doclite_isa
+#: code:addons/doclite_isa/integration/project_task_work.py:103
+#, python-format
+msgid "Nessuna Pratica definita per Generazione Riga da Fatturare a Cliente"
+msgstr "Nessuna Pratica definita per Generazione Riga da Fatturare a Cliente"
+
+#. module: doclite_isa
+#: selection:accreditation.task.work.log,doclite_action_type:0
+msgid "Scrittura su Agenda Ispettore"
+msgstr "Scrittura su Agenda Ispettore"
+
+#. module: doclite_isa
+#: view:doclite.document.category:0
+#: model:ir.actions.act_window,name:doclite_isa.action_doclite_document_category
+#: model:ir.ui.menu,name:doclite_isa.menu_doclite_document_category
+msgid "Document Category"
+msgstr "Categorie Documenti"
+
+#. module: doclite_isa
+#: selection:accreditation.task.work.log,doclite_action_type:0
+msgid "Generazione Attività di Audit"
+msgstr "Generazione Attività di Audit"
+
+#. module: doclite_isa
+#: selection:accreditation.task.work.type,doclite_action_type:0
+msgid "Invio Mail"
+msgstr "Invio Mail"
+
+#. module: doclite_isa
+#: selection:accreditation.task.work.type,doclite_action_type:0
+msgid "Generazione Documento"
+msgstr "Generazione Documento"
+
+#. module: doclite_isa
+#: selection:accreditation.task.work.log,doclite_action_type:0
+msgid "Generazione Riga da Fatturare a Cliente"
+msgstr "Generazione Riga da Fatturare a Cliente"
+
+#. module: doclite_isa
+#: model:ir.model,name:doclite_isa.model_accreditation_task_work_type
+msgid "Type of work"
+msgstr "Tipo di Azione"
+
+#. module: doclite_isa
+#: model:ir.model,name:doclite_isa.model_accreditation_task_work_log
+msgid "accreditation.task.work.log"
+msgstr "accreditation.task.work.log"
+

@@ -1,0 +1,214 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* project_omniapart
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-17 09:16+0000\n"
+"PO-Revision-Date: 2014-09-17 09:16+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_omniapart
+#: view:accreditation.standard:project_omniapart.view_accreditation_standard_search
+msgid "Accreditation Standard"
+msgstr "Accreditation Standard"
+
+#. module: project_omniapart
+#: view:accreditation.standard:project_omniapart.view_accreditation_standard_form
+msgid "Accreditation Standard Form"
+msgstr "Accreditation Standard Form"
+
+#. module: project_omniapart
+#: view:accreditation.standard:project_omniapart.view_accreditation_standard_tree
+msgid "Accreditation Standard Tree"
+msgstr "Accreditation Standard Tree"
+
+#. module: project_omniapart
+#: view:project.task:project_omniapart.view_project_task_omniapart_color_form
+msgid "Close Task"
+msgstr "Close Task"
+
+#. module: project_omniapart
+#: view:project.project:project_omniapart.view_project_project_filter_omniapart
+msgid "Closed"
+msgstr "Closed"
+
+#. module: project_omniapart
+#: view:project.project:project_omniapart.view_project_project_filter_omniapart
+msgid "Closed Projects"
+msgstr "Closed Projects"
+
+#. module: project_omniapart
+#: field:accreditation.schema,schema_code:0
+msgid "Codice Schema"
+msgstr "Codice Schema"
+
+#. module: project_omniapart
+#: field:accreditation.schema,create_uid:0
+#: field:accreditation.standard,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: project_omniapart
+#: field:accreditation.schema,create_date:0
+#: field:accreditation.standard,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: project_omniapart
+#: field:accreditation.standard,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: project_omniapart
+#: view:accreditation.standard:project_omniapart.view_accreditation_standard_form
+msgid "Descrizione"
+msgstr "Descrizione"
+
+#. module: project_omniapart
+#: view:accreditation.schema:project_omniapart.view_accreditation_schema_form
+#: field:accreditation.schema,description:0
+msgid "Descrizione (in italiano)"
+msgstr "Descrizione (in italiano)"
+
+#. module: project_omniapart
+#: view:accreditation.schema:project_omniapart.view_accreditation_schema_form
+msgid "Descrizioni"
+msgstr "Descrizioni"
+
+#. module: project_omniapart
+#: code:addons/project_omniapart/work/project_task_work.py:40
+#: code:addons/project_omniapart/work/project_task_work.py:44
+#: code:addons/project_omniapart/work/project_task_work.py:61
+#: code:addons/project_omniapart/work/project_task_work.py:76
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: project_omniapart
+#: model:ir.model,name:project_omniapart.model_calendar_event
+msgid "Event"
+msgstr "Evento"
+
+#. module: project_omniapart
+#: field:accreditation.schema,id:0
+#: field:accreditation.standard,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: project_omniapart
+#: code:addons/project_omniapart/work/project_task_work.py:62
+#, python-format
+msgid "Il Tempo Impiegato non può essere zero!"
+msgstr "Il Tempo Impiegato non può essere zero!"
+
+#. module: project_omniapart
+#: code:addons/project_omniapart/work/project_task_work.py:45
+#, python-format
+msgid "L'attività è obbligatoria!"
+msgstr "L'attività è obbligatoria!"
+
+#. module: project_omniapart
+#: code:addons/project_omniapart/work/project_task_work.py:41
+#, python-format
+msgid "L'utente è obbligatorio!"
+msgstr "L'utente è obbligatorio!"
+
+#. module: project_omniapart
+#: code:addons/project_omniapart/work/project_task_work.py:77
+#, python-format
+msgid "La persona è già impegnata nella data specificata!"
+msgstr "La persona è già impegnata nella data specificata!"
+
+#. module: project_omniapart
+#: field:accreditation.schema,write_uid:0
+#: field:accreditation.standard,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: project_omniapart
+#: field:accreditation.schema,write_date:0
+#: field:accreditation.standard,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: project_omniapart
+#: field:calendar.event,work_id:0
+msgid "Lavorazione"
+msgstr "Lavorazione"
+
+#. module: project_omniapart
+#: field:project.task.work,meeting_id:0
+msgid "Meeting"
+msgstr "Meeting"
+
+#. module: project_omniapart
+#: field:accreditation.schema,name:0
+#: field:accreditation.standard,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: project_omniapart
+#: field:project.project,standard_id:0
+msgid "Norma"
+msgstr "Norma"
+
+#. module: project_omniapart
+#: view:project.project:project_omniapart.view_project_omniapart_form
+msgid "Norma di Accreditamento"
+msgstr "Norma di Accreditamento"
+
+#. module: project_omniapart
+#: view:accreditation.schema:project_omniapart.view_accreditation_schema_form
+#: field:accreditation.schema,standard_ids:0
+#: model:ir.actions.act_window,name:project_omniapart.action_accreditation_standard
+#: model:ir.ui.menu,name:project_omniapart.accreditation_standard
+msgid "Norme"
+msgstr "Norme"
+
+#. module: project_omniapart
+#: model:ir.model,name:project_omniapart.model_project_project
+msgid "Project"
+msgstr "Progetti"
+
+#. module: project_omniapart
+#: model:ir.model,name:project_omniapart.model_project_task_work
+msgid "Project Task Work"
+msgstr "Lavoro attività progetto"
+
+#. module: project_omniapart
+#: view:accreditation.schema:project_omniapart.view_accreditation_schema_form
+#: view:accreditation.schema:project_omniapart.view_accreditation_schema_tree
+msgid "Schema"
+msgstr "Schema"
+
+#. module: project_omniapart
+#: view:accreditation.schema:project_omniapart.view_accreditation_schema_search
+msgid "Schema Search"
+msgstr "Schema Search"
+
+#. module: project_omniapart
+#: view:accreditation.standard:project_omniapart.view_accreditation_standard_form
+#: field:accreditation.standard,schema_ids:0
+#: model:ir.actions.act_window,name:project_omniapart.action_accreditation_schema
+#: model:ir.ui.menu,name:project_omniapart.accreditation_schema
+msgid "Schemi"
+msgstr "Schemi"
+
+#. module: project_omniapart
+#: field:accreditation.schema,schema_nick:0
+msgid "Sigla Schema"
+msgstr "Sigla Schema"
+
+#. module: project_omniapart
+#: model:ir.model,name:project_omniapart.model_project_task
+msgid "Task"
+msgstr "Attività"
+

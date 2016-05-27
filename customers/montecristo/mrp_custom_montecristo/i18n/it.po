@@ -1,0 +1,238 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mrp_custom_montecristo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-18 07:38+0000\n"
+"PO-Revision-Date: 2015-09-18 07:38+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mrp_custom_montecristo
+#: help:bom.massive.update.line,product_efficiency:0
+msgid "A factor of 0.9 means a loss of 10% within the production process."
+msgstr "Un fattore di 0.9 indica uno spreco del 10% nel corso del processo di produzione."
+
+#. module: mrp_custom_montecristo
+#: sql_constraint:bom.massive.update.line:0
+msgid "All product quantities must be greater than 0.\n"
+""
+msgstr "Tutte le quantità devono essere maggiori di 0.\n"
+""
+
+#. module: mrp_custom_montecristo
+#: help:bom.massive.update.line,attribute_value_column_ids:0
+#: help:bom.massive.update.line,attribute_value_row_ids:0
+msgid "BOM Product Variants needed form apply this line."
+msgstr "BOM Product Variants needed form apply this line."
+
+#. module: mrp_custom_montecristo
+#: model:ir.model,name:mrp_custom_montecristo.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Distinta Base"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update.line,type:0
+msgid "BoM Line Type"
+msgstr "Tipo linea della Di.Ba."
+
+#. module: mrp_custom_montecristo
+#: model:ir.model,name:mrp_custom_montecristo.model_bom_massive_update
+msgid "BoM Massive Update"
+msgstr "Aggiornamento Massivo Di.Ba."
+
+#. module: mrp_custom_montecristo
+#: model:ir.model,name:mrp_custom_montecristo.model_bom_massive_update_line
+msgid "BoM Massive Update Line"
+msgstr "Aggiornamento Massivo line Di.Ba."
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update,bom_ids:0
+msgid "BoMs"
+msgstr "Di.Ba."
+
+#. module: mrp_custom_montecristo
+#: view:mrp.bom:mrp_custom_montecristo.mrp_bom_form_view_montecristo
+msgid "Calcola costi per variante"
+msgstr "Calcola costi per variante"
+
+#. module: mrp_custom_montecristo
+#: view:bom.massive.update:mrp_custom_montecristo.view_bom_massive_update
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update.line,attribute_value_column_ids:0
+msgid "Column Variants"
+msgstr "Varianti Colonna"
+
+#. module: mrp_custom_montecristo
+#: view:mrp.bom:mrp_custom_montecristo.mrp_bom_form_view_montecristo
+msgid "Costi Primi"
+msgstr "Costi Primi"
+
+#. module: mrp_custom_montecristo
+#: view:mrp.bom:mrp_custom_montecristo.mrp_bom_form_view_montecristo
+msgid "Costi per variante"
+msgstr "Costi per variante"
+
+#. module: mrp_custom_montecristo
+#: field:bom.product.price,first_price:0
+msgid "Costo Primo"
+msgstr "Costo Primo"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update,create_uid:0
+#: field:bom.massive.update.line,create_uid:0
+#: field:bom.product.price,create_uid:0
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update,create_date:0
+#: field:bom.massive.update.line,create_date:0
+#: field:bom.product.price,create_date:0
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: mrp_custom_montecristo
+#: field:bom.product.price,bom_id:0
+msgid "Distinta Base"
+msgstr "Distinta Base"
+
+#. module: mrp_custom_montecristo
+#: view:mrp.bom:mrp_custom_montecristo.view_mrp_bom_tree_montecristo
+msgid "Distinte Base"
+msgstr "Distinte Base"
+
+#. module: mrp_custom_montecristo
+#: view:mrp.bom:mrp_custom_montecristo.view_mrp_bom_filter_montecristo
+#: field:mrp.bom,family:0
+msgid "Family"
+msgstr "Famiglia"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update,id:0
+#: field:bom.massive.update.line,id:0
+#: field:bom.product.price,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: mrp_custom_montecristo
+#: view:bom.massive.update:mrp_custom_montecristo.view_bom_massive_update
+msgid "Insert"
+msgstr "Inserisci"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update,write_uid:0
+#: field:bom.massive.update.line,write_uid:0
+#: field:bom.product.price,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultimo Aggiornamento il"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update,write_date:0
+#: field:bom.massive.update.line,write_date:0
+#: field:bom.product.price,write_date:0
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento da"
+
+#. module: mrp_custom_montecristo
+#: view:bom.massive.update:mrp_custom_montecristo.view_bom_massive_update
+#: field:bom.massive.update,line_ids:0
+msgid "Lines"
+msgstr "Linee"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update.line,product_efficiency:0
+msgid "Manufacturing Efficiency"
+msgstr "Efficienza di produzione"
+
+#. module: mrp_custom_montecristo
+#: model:ir.actions.act_window,name:mrp_custom_montecristo.action_bom_massive_update
+msgid "Massive Update"
+msgstr "Aggiornamento massivo"
+
+#. module: mrp_custom_montecristo
+#: selection:bom.massive.update.line,type:0
+msgid "Normal"
+msgstr "Normale"
+
+#. module: mrp_custom_montecristo
+#: view:bom.massive.update:mrp_custom_montecristo.view_bom_massive_update
+msgid "Order Confirm"
+msgstr "Conferma Ordine"
+
+#. module: mrp_custom_montecristo
+#: selection:bom.massive.update.line,type:0
+msgid "Phantom"
+msgstr "Phantom"
+
+#. module: mrp_custom_montecristo
+#: help:bom.massive.update.line,type:0
+msgid "Phantom: this product line will not appear in the raw materials of manufacturing orders,it will be directly replaced by the raw materials of its own BoM, without triggeringan extra manufacturing order."
+msgstr "Phantom: questa linea di prodotto non apparirà nelle materie prime degli ordini di produzione, sarà direttamente rimpiazzata dalle materie prime della sua stessa Di.Ba., senza scatenare ordini di produzione aggiuntivi"
+
+#. module: mrp_custom_montecristo
+#: field:mrp.bom,price_per_variant_ids:0
+msgid "Prezzi per Variante"
+msgstr "Prezzi per Variante"
+
+#. module: mrp_custom_montecristo
+#: field:bom.product.price,product_id:0
+msgid "Prodotto"
+msgstr "Prodotto"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update.line,product_id:0
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update.line,product_qty:0
+msgid "Product Quantity"
+msgstr "Quantità Prodotto"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update.line,product_uom:0
+msgid "Product Unit of Measure"
+msgstr "Unità di Misura prodotto"
+
+#. module: mrp_custom_montecristo
+#: view:bom.massive.update:mrp_custom_montecristo.view_bom_massive_update
+msgid "Remove"
+msgstr "Rimuovi"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update.line,attribute_value_row_ids:0
+msgid "Row Variants"
+msgstr "Varianti di riga"
+
+#. module: mrp_custom_montecristo
+#: view:mrp.bom:mrp_custom_montecristo.view_mrp_bom_filter_montecristo
+#: field:mrp.bom,season:0
+msgid "Season"
+msgstr "Stagionalità"
+
+#. module: mrp_custom_montecristo
+#: help:bom.massive.update.line,product_uom:0
+msgid "Unit of Measure (Unit of Measure) is the unit of measurement for the inventory control"
+msgstr "Unità di misura, è l'unità di misura per il controllo inventariale"
+
+#. module: mrp_custom_montecristo
+#: field:bom.massive.update.line,wizard_id:0
+msgid "Wizard"
+msgstr "Wizard"
+
+#. module: mrp_custom_montecristo
+#: view:bom.massive.update:mrp_custom_montecristo.view_bom_massive_update
+msgid "or"
+msgstr "o"
+

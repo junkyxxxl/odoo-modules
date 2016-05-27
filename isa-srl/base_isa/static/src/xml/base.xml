@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- Templates modified at the web start, before loading of a database. -->
+
+    <!-- Remove the Manage database link, but keep the Powered by OpenERP-->
+
+    <!-- Remove "Your OpenERP is not supported" warning -->
+    <t t-extend="WebClient" >
+        <t t-jquery="td.announcement_bar" t-operation="replace">
+        </t>
+    </t>
+
+</templates>

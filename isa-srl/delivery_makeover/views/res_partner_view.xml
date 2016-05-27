@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_delivery_makeover_res_partner_form2" model="ir.ui.view">
+            <field name="name">delivery.makeover.res.partner.form2</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <page string="Sales &amp; Purchases" position="before">
+                    <page string="Stock Delivery Options">
+                        <group>
+                            <group>
+                                <field name="one_order_one_draft" string="One Order Per Draft" />
+                                <field name="one_product_one_draft" string="One Product Per Draft" />
+                                <field name="print_values" string="Print Values" />
+                                <field name="attach_qc_documents" string="Attach QC Documents" />
+                            </group>
+                            <group>
+                                <field name="delivery_methods" />
+                                <field name="carrier_id" domain="[('carrier_flag', '=', True)]" attrs="{'invisible': [('customer','=', False)]}" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="document_copies" string="Document Copies" />
+                            <field name="packing_notes" string="Additional Information" />
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_partner_stock_carrier_flag_form" model="ir.ui.view">
+            <field name="name">res.partner.stock.carrier_flag.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account_makeover.view_partner_property_form_isa"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Sales &amp; Purchases']/group/group/field[@name='supplier']" position="after">
+                    <field name="carrier_flag" attrs="{'invisible': [('supplier','=', False)]}" on_change="onchange_carrier_flag(supplier, carrier_flag)" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Department View -->
+        <record id="view_accreditation_department_form" model="ir.ui.view">
+            <field name="name">view.accreditation.department.form</field>
+            <field name="model">hr.department</field>
+            <field name="inherit_id" ref="hr.view_department_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group[@col='4']" position="after">
+                    <group name="group_accredia">
+                        <group>
+                            <field name="manage_purchase_requisition"/>
+                            <field name="analytic_account_for_invoicing"/>
+                        </group>
+                        <group>
+                            <field name="department_nick"/>
+                            <field name="project_sequence_id" attrs="{'required': [('parent_id','not in',[False,None])]}" />
+                            <field name="enable_tab_sectors"/>
+                            <field name="enable_tab_tests"/>
+                            <field name="enable_filter_standard_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Users" groups="base.group_hr_manager,account.group_account_manager">
+                            <group>
+                                <field name="user_ids" nolabel="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+                <xpath expr="//form/sheet/group/field[@name='name']" position="after">
+                    <field name="experimental_journal_id" widget="selection" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

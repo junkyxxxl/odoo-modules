@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record model="ir.ui.view" id="view_move_line_form_inherit_accredia">
+        <field name="name">account.move.line.form.inherit.accredia</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_form"/>
+        <field name="arch" type="xml">
+            <field name="analytic_account_id" position="after">
+                <field name="task_id" groups="analytic.group_analytic_accounting"/>
+            </field>
+        </field>
+    </record>
+
+    </data>
+</openerp>

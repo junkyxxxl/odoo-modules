@@ -1,0 +1,97 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_invoice_report_accredia
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-22 12:43+0000\n"
+"PO-Revision-Date: 2014-10-22 12:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:534
+msgid "Ritenuta d'Acconto"
+msgstr "Ritenuta d'Acconto"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:475
+msgid "Descr."
+msgstr "Descr."
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:472
+msgid "Cod. IVA"
+msgstr "Cod. IVA"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:540
+msgid "Netto a Pagare"
+msgstr "Netto a Pagare"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:523
+msgid "Totale Documento"
+msgstr "Totale Documento"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:412
+msgid "Note"
+msgstr "Note"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:511
+msgid "Totale Imponibile"
+msgstr "Totale Imponibile"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:481
+msgid "Imposta"
+msgstr "Imposta"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:437
+msgid "Importo"
+msgstr "Importo"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:505
+msgid "Totale Articoli"
+msgstr "Totale Articoli"
+
+#. module: account_invoice_report_accredia
+#: model:ir.actions.report.xml,name:account_invoice_report_accredia.account_invoice_report_accredia_isa
+msgid "Stampa Fattura Accredia"
+msgstr "Stampa Fattura Accredia"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:517
+msgid "Totale Imposta"
+msgstr "Totale Imposta"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:478
+msgid "Imponibile"
+msgstr "Imponibile"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:434
+msgid "Scadenza"
+msgstr "Scadenza"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:440
+msgid "Tipo Pagamento"
+msgstr "Tipo Pagamento"
+
+#. module: account_invoice_report_accredia
+#: report:addons/account_invoice_report_accredia/report/invoice_accredia.mako:330
+msgid "Rif. DDT n&#176;"
+msgstr "Rif. DDT n&#176;"
+

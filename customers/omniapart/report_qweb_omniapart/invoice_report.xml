@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+            id="qweb_invoice_report_omniapart"
+            string="Fattura Omniapart"
+            model="account.invoice" 
+            report_type="qweb-pdf"
+            file="report_qweb_omniapart.report_invoice_qweb" 
+            name="report_qweb_omniapart.report_invoice_qweb" 
+        />
+    </data>
+</openerp>

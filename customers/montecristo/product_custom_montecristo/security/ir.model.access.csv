@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_family,access_res_family,model_res_family,,1,1,1,1
+access_res_family_category_date,access_res_family_category_date,model_res_family_category_date,,1,1,1,1

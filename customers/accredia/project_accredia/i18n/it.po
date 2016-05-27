@@ -1,0 +1,3154 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* project_accredia
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-01 07:25+0000\n"
+"PO-Revision-Date: 2015-07-01 07:25+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_accredia
+#: field:project.project,enable_tab_sectors:0
+msgid "Abilita Tab Settori"
+msgstr "Abilita Tab Settori"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,accreditation_request_generation:0
+msgid "Generazione Domanda Accreditamento"
+msgstr "Generazione Domanda Accreditamento"
+
+#. module: project_accredia
+#: field:accreditation.project.type,is_extension:0
+msgid "Estensione Accreditamento"
+msgstr "Estensione Accreditamento"
+
+#. module: project_accredia
+#: view:project.phase:0
+msgid "Pianificazione"
+msgstr "Pianificazione"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:160
+#, python-format
+msgid "Non esiste alcuna Unità %d associata al progetto %d!"
+msgstr "Non esiste alcuna Unità %d associata alla Pratica %d!"
+
+#. module: project_accredia
+#: field:account.analytic.account,department_id:0
+#: field:accreditation.request,department_id:0
+#: model:ir.model,name:project_accredia.model_hr_department
+#: field:project.department.schema,department_id:0
+msgid "Department"
+msgstr "Dipartimento"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_project_sector
+msgid "accreditation.project.sector"
+msgstr "accreditation.project.sector"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Modify Work"
+msgstr "Modifica Azione"
+
+#. module: project_accredia
+#. openerp-web
+#: code:addons/project_accredia/static/src/js/formats.js:247
+#, python-format
+msgid "'%s' is not a correct float"
+msgstr "'%s' non è un float corretto"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_task_work.py:154
+#: code:addons/project_accredia/models/project_task_work.py:292
+#: code:addons/project_accredia/wizard/wizard_manage_works.py:120
+#, python-format
+msgid "Add New Work"
+msgstr "Aggiungi Nuova Azione"
+
+#. module: project_accredia
+#: view:accreditation.request.lines:0
+msgid "Accreditation Request Lines Tree"
+msgstr "Lista Richieste Accreditamento"
+
+#. module: project_accredia
+#: field:project.wizard.manage.works,week_day:0
+msgid "Day"
+msgstr "Giorno"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_project_phase
+msgid "Project Phase"
+msgstr "Audit pratica"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_roles
+msgid "accreditation.roles"
+msgstr "accreditation.roles"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_project_user_allocation
+msgid "Phase User Allocation"
+msgstr "Allocazione Utenti per Audit"
+
+#. module: project_accredia
+#: view:res.partner:0
+msgid "Roles"
+msgstr "Ruoli"
+
+#. module: project_accredia
+#: field:accreditation.committees.contact,attendance:0
+#: field:accreditation.person.events,attendance:0
+msgid "Presenza"
+msgstr "Presenza"
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "fix_form_sheet_width"
+msgstr "fix_form_sheet_width"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Fatturazione"
+msgstr "Fatturazione"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/accreditation_project_type.py:148
+#: code:addons/project_accredia/models/accreditation_project_type.py:213
+#, python-format
+msgid "Non è possibile impostare più di un tipo!"
+msgstr "Non è possibile impostare più di un tipo!"
+
+#. module: project_accredia
+#: field:accreditation.task.team,inspection_days:0
+msgid "Giornate Visite Ispettive"
+msgstr "Giornate Visite Ispettive"
+
+#. module: project_accredia
+#: help:accreditation.request,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Se impostato i nuovi messaggi richiedono la tua attenzione."
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "Entity"
+msgstr "Ente"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Conto Analitico"
+
+#. module: project_accredia
+#: help:accreditation.request,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,audit_visit_accompaniment:0
+#: field:project.task.work,audit_visit_accompaniment:0
+msgid "Attività di Visita in Accompagnamento"
+msgstr "Attività di Visita in Accompagnamento"
+
+#. module: project_accredia
+#: field:project.project,project_unit_ids:0
+#: field:res.partner,project_ids:0
+msgid "Projects"
+msgstr "Pratiche"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,create_audit:0
+msgid "Generazione Attività di Audit"
+msgstr "Generazione Attività di Audit"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_wizard_update_state
+msgid "Wizard Update State"
+msgstr "Wizard Aggiorna Stato"
+
+#. module: project_accredia
+#: field:accreditation.request.lines,partner_id:0
+#: field:accreditation.test.temp,partner_id:0
+#: model:ir.model,name:project_accredia.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: project_accredia
+#: view:accreditation.team:0
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_team
+msgid "Accreditation Team"
+msgstr "Team Accreditamento"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,create_line_to_invoice:0
+msgid "Generazione Riga da Fatturare a Cliente"
+msgstr "Generazione Riga da Fatturare a Cliente"
+
+#. module: project_accredia
+#. openerp-web
+#: code:addons/project_accredia/static/src/js/formats.js:315
+#, python-format
+msgid "'%s' is not convertible to date, datetime nor time"
+msgstr "'%s' non è convertibile in date, datetime or time"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_project_project_accredia
+msgid "Accredia Project"
+msgstr "Pratica Accredia"
+
+#. module: project_accredia
+#: field:hr.department,experimental_journal_id:0
+#: help:hr.department,experimental_journal_id:0
+msgid "Sezionale accertamenti sperimentali"
+msgstr "Sezionale accertamenti sperimentali"
+
+#. module: project_accredia
+#: field:accreditation.test.list,state_write_date:0
+msgid "Data/Ora Ultima Modifica"
+msgstr "Data/Ora Ultima Modifica"
+
+#. module: project_accredia
+#: view:account.analytic.account:0
+#: field:accreditation.person.events.temp,department_id:0
+#: field:accreditation.task.work.type,child_project_department_id:0
+#: view:project.project:0
+#: field:project.project,rel_department_id:0
+#: field:project.task.work,department_id:0
+#: field:wizard.project.create.extension,department_id:0
+msgid "Dipartimento"
+msgstr "Dipartimento"
+
+#. module: project_accredia
+#: selection:accreditation.task.work.type,accreditation_request_state:0
+msgid "Rifiutata"
+msgstr "Rifiutata"
+
+#. module: project_accredia
+#: selection:accreditation.request,state:0
+#: selection:accreditation.task.work.type,accreditation_request_state:0
+msgid "Ricevuta"
+msgstr "Ricevuta"
+
+#. module: project_accredia
+#: field:accreditation.persons.auth,partner_id:0
+msgid "Dipendente P.A."
+msgstr "Dipendente P.A."
+
+#. module: project_accredia
+#: view:accreditation.request:0
+msgid "Accreditation Request Form"
+msgstr "Form Richiesta di Accreditamento"
+
+#. module: project_accredia
+#: field:accreditation.test,state:0
+#: field:accreditation.test.list,state:0
+#: field:accreditation.test.temp,state:0
+#: field:wizard.update.state,state:0
+msgid "Stato"
+msgstr "Stato"
+
+#. module: project_accredia
+#: field:accreditation.committees.contact,rel_phone:0
+#: field:accreditation.person.events,fnct_phone:0
+msgid "Telefono"
+msgstr "Telefono"
+
+#. module: project_accredia
+#: field:accreditation.test.change.type,code:0
+#: field:accreditation.test.list.category,code:0
+msgid "Codice"
+msgstr "Codice"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:140
+#, python-format
+msgid "L'autorizzazione per l'ispettore %s supera il limite dei giorni disponibili!"
+msgstr "L'autorizzazione per l'ispettore %s supera il limite dei giorni disponibili!"
+
+#. module: project_accredia
+#: view:project.wizard.manage.works:0
+msgid "Wizard Manage Works"
+msgstr "Wizard Gestione Azioni"
+
+#. module: project_accredia
+#. openerp-web
+#: code:addons/project_accredia/static/src/js/formats.js:258
+#: code:addons/project_accredia/static/src/js/formats.js:288
+#, python-format
+msgid "'%s' is not a correct time"
+msgstr "'%s' non è un formato time corretto"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_project_task_work_form_isa
+#: view:project.task:0
+msgid "New Work"
+msgstr "Nuova Azione"
+
+#. module: project_accredia
+#: selection:accreditation.request,state:0
+msgid "Rejected"
+msgstr "Rigettata"
+
+#. module: project_accredia
+#: view:accreditation.request.lines:0
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_request_lines
+msgid "Accreditation Request Lines"
+msgstr "Linee Domanda Accreditamento"
+
+#. module: project_accredia
+#: view:res.partner:0
+msgid "Persons Roles"
+msgstr "Persone Ruoli"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Today"
+msgstr "Oggi"
+
+#. module: project_accredia
+#: view:accreditation.test:0
+#: view:accreditation.test.list:0
+msgid "Accreditation Test List Form"
+msgstr "Accreditation Test List Form"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.project_task_category_action
+#: model:ir.ui.menu,name:project_accredia.menu_project_task_category_action
+msgid "Categories"
+msgstr "Categorie"
+
+#. module: project_accredia
+#: view:accreditation.request.schema:0
+#: field:accreditation.request.schema,description:0
+#: view:accreditation.sector:0
+#: field:accreditation.sector,description:0
+msgid "Descrizione (in italiano)"
+msgstr "Descrizione (in italiano)"
+
+#. module: project_accredia
+#: field:accreditation.test.list.temp,var_measure:0
+msgid "Variato Campo di misura e/o di prova (Campo boolean)"
+msgstr "Variato Campo di misura e/o di prova (Campo boolean)"
+
+#. module: project_accredia
+#: field:accreditation.test.list.temp,var_type_id:0
+msgid "Variazione richiesta"
+msgstr "Variazione richiesta"
+
+#. module: project_accredia
+#: field:accreditation.person.events.temp,select_from_entities:0
+msgid "Seleziona da Enti"
+msgstr "Seleziona da Enti"
+
+#. module: project_accredia
+#: help:project.task,num_osservazioni:0
+msgid "Numero di Osservazioni"
+msgstr "Numero di Osservazioni"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Delegate"
+msgstr "Delega"
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "[('is_entity', '=',True)]"
+msgstr "[('is_entity', '=',True)]"
+
+#. module: project_accredia
+#: view:accreditation.test:0
+#: view:accreditation.test.temp:0
+msgid "Accreditation Test"
+msgstr "Prova Accreditamento"
+
+#. module: project_accredia
+#: field:accreditation.persons.auth,date_start:0
+msgid "Data Inizio"
+msgstr "Data Inizio"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Raggruppamento"
+msgstr "Raggruppamento"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,create_sale_quotation:0
+msgid "Preventivi clienti"
+msgstr "Preventivi clienti"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_sector
+msgid "accreditation.sector"
+msgstr "accreditation.sector"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project.py:102
+#, python-format
+msgid "Department is not specified for this contract!"
+msgstr "Department is not specified for this contract!"
+
+#. module: project_accredia
+#: view:accreditation.test.temp:0
+msgid "Aggiorna"
+msgstr "Aggiorna"
+
+#. module: project_accredia
+#: view:accreditation.project.type.roles:0
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_project_type_roles
+msgid "Accreditation Project Type Role"
+msgstr "Accreditation Project Type Role"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/accreditation_person_events_temp.py:174
+#, python-format
+msgid "Non è possibile impostare più di un Tipo di Selezione!"
+msgstr "Non è possibile impostare più di un Tipo di Selezione!"
+
+#. module: project_accredia
+#: view:project.wizard.manage.works:0
+msgid "Back"
+msgstr "Indietro"
+
+#. module: project_accredia
+#: field:wizard.task.create.child,task_id:0
+#: field:wizard.task.create.parent,task_id:0
+msgid "Attività Delegata"
+msgstr "Attività Delegata"
+
+#. module: project_accredia
+#: view:accreditation.sector:0
+msgid "Accreditation Sector Tree"
+msgstr "Accreditation Sector Tree"
+
+#. module: project_accredia
+#: field:project.project,serial_number_for_entity:0
+msgid "Serial Number Entity"
+msgstr "Numero Seriale per Ente"
+
+#. module: project_accredia
+#. openerp-web
+#: code:addons/project_accredia/static/src/js/formats.js:272
+#, python-format
+msgid "'%s' is not a correct datetime"
+msgstr "'%s' non è un datetime corretto"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Parent Tasks"
+msgstr "Attività genitore"
+
+#. module: project_accredia
+#: field:accreditation.request,user_id:0
+#: field:accreditation.test.list,state_write_uid:0
+#: view:project.task:0
+msgid "Utente"
+msgstr "Utente"
+
+#. module: project_accredia
+#: field:accreditation.request,date_received:0
+msgid "Received Date"
+msgstr "Data Ricezione"
+
+#. module: project_accredia
+#: view:accreditation.task.team:0
+msgid "Accreditation Task Team Tree"
+msgstr "Accreditation Task Team Tree"
+
+#. module: project_accredia
+#: field:accreditation.request.lines,unit_id:0
+msgid "Accredia Unit"
+msgstr "Unità Accredia"
+
+#. module: project_accredia
+#: field:accreditation.test.temp,legenda:0
+msgid "Legenda"
+msgstr "Legenda"
+
+#. module: project_accredia
+#: field:accreditation.test.list,category_id:0
+#: field:accreditation.test.list.temp,category_id:0
+#: view:project.task:0
+#: field:project.task,category_id:0
+msgid "Categoria"
+msgstr "Categoria"
+
+#. module: project_accredia
+#. openerp-web
+#: code:addons/project_accredia/static/src/js/formats.js:303
+#, python-format
+msgid "'%s' is not a correct date, datetime nor time"
+msgstr "'%s' is not a correct date, datetime nor time"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_persons_auth
+#: model:ir.ui.menu,name:project_accredia.menu_accreditation_persons_auth
+msgid "Autorizzazioni Dip. P.A."
+msgstr "Autorizzazioni Dip. P.A."
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Gantt View"
+msgstr "Vista Gantt"
+
+#. module: project_accredia
+#: view:accreditation.test.temp:0
+msgid "Elabora"
+msgstr "Elabora"
+
+#. module: project_accredia
+#: field:accreditation.request.lines,availability_date:0
+msgid "Availability Date"
+msgstr "Data Disponibilita"
+
+#. module: project_accredia
+#: view:accreditation.request.lines:0
+msgid "Accreditation Request Lines Form"
+msgstr "Accreditation Request Lines Form"
+
+#. module: project_accredia
+#: view:accreditation.test.list.category:0
+msgid "Accreditation Test List Category Form"
+msgstr "Accreditation Test List Category Form"
+
+#. module: project_accredia
+#: view:accreditation.person.events.temp:0
+msgid "Persone Fisiche"
+msgstr "Persone Fisiche"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_project_wizard_manage_works_line
+msgid "Daily Works Line"
+msgstr "Daily Works Line"
+
+#. module: project_accredia
+#: view:accreditation.sector:0
+msgid "Accreditation Sector Form"
+msgstr "Accreditation Sector Form"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Task summary..."
+msgstr "Riepilogo Attività..."
+
+#. module: project_accredia
+#: field:accreditation.request,standard_id:0
+msgid "Norma di accreditamento"
+msgstr "Norma di accreditamento"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:120
+#, python-format
+msgid "Il campo Unità è obbligatorio in ogni riga!"
+msgstr "Il campo Unità è obbligatorio in ogni riga!"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/accreditation_task_work_type.py:120
+#, python-format
+msgid "Non è possibile impostare Accreditamento/Riconoscimento ottenuto!"
+msgstr "Non è possibile impostare Accreditamento/Riconoscimento ottenuto!"
+
+#. module: project_accredia
+#: field:accreditation.project.sector,unit_id:0
+#: field:project.task.work,unit_id:0
+#: field:project.user.allocation,unit_id:0
+msgid "Unità"
+msgstr "Unità"
+
+#. module: project_accredia
+#: field:accreditation.request,request_type:0
+msgid "Request Type"
+msgstr "Tipo Domanda"
+
+#. module: project_accredia
+#: field:project.project,codice_cig:0
+#: field:project.task,codice_cig:0
+msgid "Codice CIG"
+msgstr "Codice CIG"
+
+#. module: project_accredia
+#: field:account.analytic.line,fnct_amount:0
+msgid "Importo"
+msgstr "Importo"
+
+#. module: project_accredia
+#: field:project.wizard.manage.works.line,billable_hours:0
+msgid "Hours Billed"
+msgstr "Ore Fatturate"
+
+#. module: project_accredia
+#: view:project.wizard.manage.works:0
+msgid "Delete Work"
+msgstr "Elimina Lavorazione"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,accreditation_request_state:0
+msgid "Stato Domanda"
+msgstr "Stato Domanda"
+
+#. module: project_accredia
+#: field:accreditation.project.type,is_experimental_verification:0
+#: model:ir.model,name:project_accredia.model_accreditation_experimental_verification
+msgid "Accertamenti sperimentali"
+msgstr "Accertamenti sperimentali"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,type_audit_type_id:0
+#: field:project.phase,type_audit_type_id:0
+msgid "Stadio Attività"
+msgstr "Stadio Attività"
+
+#. module: project_accredia
+#: model:mail.message.subtype,description:project_accredia.acc_request_new
+msgid "Richiesta di Accreditamento Creata"
+msgstr "Richiesta di Accreditamento Creata"
+
+#. module: project_accredia
+#: view:accreditation.standard:0
+#: field:accreditation.standard,schema_ids:0
+#: model:ir.ui.menu,name:project_accredia.accreditation_request_schema
+msgid "Schemi"
+msgstr "Schemi"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_test
+msgid "Testata prove accreditate"
+msgstr "Testata prove accreditate"
+
+#. module: project_accredia
+#: field:accreditation.project.sector,schema_id:0
+#: field:accreditation.request,schema_id:0
+msgid "Schema"
+msgstr "Schema"
+
+#. module: project_accredia
+#: view:project.phase:0
+msgid "{'qualification_ids':parent.qualification_ids,'include_not_available':parent.include_not_available,'t_unit_id':unit_id,'parent_date_start':parent.date_start,'parent_date_end':parent.date_end,'t_date_start':date_start,'t_date_end':date_end}"
+msgstr "{'qualification_ids':parent.qualification_ids,'include_not_available':parent.include_not_available,'t_unit_id':unit_id,'parent_date_start':parent.date_start,'parent_date_end':parent.date_end,'t_date_start':date_start,'t_date_end':date_end}"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,create_child_project:0
+#: code:addons/project_accredia/models/project.py:884
+#, python-format
+msgid "Crea Pratica Collegata"
+msgstr "Crea Pratica Collegata"
+
+#. module: project_accredia
+#: view:accreditation.test:0
+#: view:accreditation.test.list:0
+msgid "Ultima Variazione Stato"
+msgstr "Ultima Variazione Stato"
+
+#. module: project_accredia
+#: field:accreditation.request,first_time:0
+msgid "First Time"
+msgstr "Prima Volta"
+
+#. module: project_accredia
+#: field:project.task,analytic_line_ids:0
+msgid "Attività da Fatturare"
+msgstr "Attività da Fatturare"
+
+#. module: project_accredia
+#: field:accreditation.person.events,unit_id:0
+msgid "Ref. Unit"
+msgstr "Rif. Unità"
+
+#. module: project_accredia
+#: view:project.task.category:0
+msgid "Category of task Tree"
+msgstr "Categoria Attività Tree"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_user_allocation.py:86
+#: code:addons/project_accredia/models/project_user_allocation.py:155
+#, python-format
+msgid "Il ruolo %s non è compatibile con l'ispettore %s!"
+msgstr "Il ruolo %s non è compatibile con l'ispettore %s!"
+
+#. module: project_accredia
+#: selection:accreditation.test,state:0
+#: selection:accreditation.test.temp,state:0
+msgid "Completato"
+msgstr "Completato"
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "Request"
+msgstr "Domanda"
+
+#. module: project_accredia
+#: field:project.task,product_id:0
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: project_accredia
+#: view:accreditation.person.events:0
+msgid "Accreditation Person Event"
+msgstr "Accreditation Person Event"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_committees_contact
+msgid "Contatti Comitati"
+msgstr "Contatti Comitati"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_final_test_accredia
+msgid "Elenco Prove Definitivo"
+msgstr "Elenco Prove Definitivo"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,product_line_id:0
+msgid "Prestazione da Fatturare"
+msgstr "Prestazione da Fatturare"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Delegazione (template)"
+msgstr "Delegazione (template)"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Delegation"
+msgstr "Delegazione"
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "{'invisible':['|',('use_timesheets','=', 0),('accreditation_project_type_new','!=', True),('accreditation_project_type_extension','!=', True),('accreditation_project_type_renew','!=', True)]}"
+msgstr "{'invisible':['|',('use_timesheets','=', 0),('accreditation_project_type_new','!=', True),('accreditation_project_type_extension','!=', True),('accreditation_project_type_renew','!=', True)]}"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Add a Description..."
+msgstr "Aggiungi una Descrizione..."
+
+#. module: project_accredia
+#. openerp-web
+#: code:addons/project_accredia/static/src/js/formats.js:113
+#, python-format
+msgid "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+msgstr "Bytes,Kb,Mb,Gb,Tb,Pb,Eb,Zb,Yb"
+
+#. module: project_accredia
+#: field:accreditation.test,filedata:0
+#: field:accreditation.test.temp,filedata:0
+msgid "File"
+msgstr "File"
+
+#. module: project_accredia
+#: view:accreditation.test.change.type:0
+msgid "Accreditation Test Change Type Form"
+msgstr "Accreditation Test Change Type Form"
+
+#. module: project_accredia
+#: selection:accreditation.standard,standard_type:0
+#: view:project.project:0
+msgid "Norma di Accreditamento"
+msgstr "Norma di Accreditamento"
+
+#. module: project_accredia
+#: field:accreditation.person.events.temp,select_from_persons:0
+msgid "Seleziona da Persone Fisiche"
+msgstr "Seleziona da Persone Fisiche"
+
+#. module: project_accredia
+#: selection:accreditation.test.list,state:0
+#: selection:wizard.update.state,state:0
+msgid "Non accreditato"
+msgstr "Non accreditato"
+
+#. module: project_accredia
+#: view:accreditation.request.schema:0
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_request_schema
+msgid "Accreditation Request Schema"
+msgstr "Schemi Accreditamento"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/accreditation_request.py:286
+#, python-format
+msgid "Name and Surname are mandatory!"
+msgstr "Name and Surname are mandatory!"
+
+#. module: project_accredia
+#: field:accreditation.project.type.roles,project_type_id:0
+#: field:accreditation.standard,standard_type:0
+msgid "Tipo"
+msgstr "Tipo"
+
+#. module: project_accredia
+#: view:project.phase:0
+msgid "Pianificazione Attività"
+msgstr "Pianificazione Attività"
+
+#. module: project_accredia
+#: field:accreditation.project.type,is_renew:0
+msgid "Rinnovo Accreditamento"
+msgstr "Rinnovo Accreditamento"
+
+#. module: project_accredia
+#: field:project.task,auth_ids:0
+#: view:res.partner:0
+#: field:res.partner,auth_ids:0
+msgid "Autorizzazioni"
+msgstr "Autorizzazioni"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_qualifications
+msgid "accreditation.qualifications"
+msgstr "accreditation.qualifications"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project.py:253
+#, python-format
+msgid "Il dipartimento selezionato differisce da quello della pratica padre!"
+msgstr "Il dipartimento selezionato differisce da quello della pratica padre!"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/accreditation_request.py:197
+#: code:addons/project_accredia/models/accreditation_request.py:231
+#, python-format
+msgid "La Data Riufiuto è obbligatoria quando la domanda viene posta nello stato Rifiutata!"
+msgstr "La Data Riufiuto è obbligatoria quando la domanda viene posta nello stato Rifiutata!"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_persons_skills
+msgid "accreditation.persons.skills"
+msgstr "accreditation.persons.skills"
+
+#. module: project_accredia
+#: field:accreditation.test.list.temp,add_row:0
+msgid "Riga aggiunta"
+msgstr "Riga aggiunta"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "If confirmed the record will be saved and the Task will be set to Completed. Confirm?"
+msgstr "Se confermi il record sarà memorizzato e l'Attività sarà impostata come Completata. Confermi?"
+
+#. module: project_accredia
+#: field:accreditation.request,date_denial:0
+msgid "Denial Date"
+msgstr "Data Rifiuto"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project.py:96
+#, python-format
+msgid "Department is not specified for this project!"
+msgstr "Department is not specified for this project!"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_project_type
+msgid "Tipo pratica"
+msgstr "Tipo pratica"
+
+#. module: project_accredia
+#: code:addons/project_accredia/wizard/wizard_final_test.py:119
+#, python-format
+msgid "Resulting Tests"
+msgstr "Prove Risultanti"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,type_audit_doc_review:0
+#: field:project.phase,type_audit_doc_review:0
+msgid "Tipo Attività Esame Documentale"
+msgstr "Tipo Attività Esame Documentale"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_project_task_category
+msgid "Category of task"
+msgstr "Categoria Attività"
+
+#. module: project_accredia
+#: field:accreditation.request,doc_responsible_id:0
+msgid "Funzionario Tecnico"
+msgstr "Funzionario Tecnico"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_hr_timesheet_invoice_factor
+msgid "Invoice Rate"
+msgstr "Tasso di fatturazione"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:123
+#, python-format
+msgid "Il campo Ispettore è obbligatorio in ogni riga!"
+msgstr "Il campo Ispettore è obbligatorio in ogni riga!"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,req_supervision:0
+msgid "Richiesta giorni sorveglianza"
+msgstr "Richiesta giorni sorveglianza"
+
+#. module: project_accredia
+#: view:accreditation.standard:0
+msgid "Accreditation Standard Form"
+msgstr "Accreditation Standard Form"
+
+#. module: project_accredia
+#: field:accreditation.task.team,task_id:0
+#: model:ir.model,name:project_accredia.model_project_task
+#: field:project.wizard.manage.works.line,task_id:0
+msgid "Task"
+msgstr "Attività"
+
+#. module: project_accredia
+#: field:project.user.allocation,is_employee_pa:0
+msgid "Is Employee PA"
+msgstr "E' Dipendente P.A."
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Attività nelle pratiche"
+msgstr "Attività nelle pratiche"
+
+#. module: project_accredia
+#: field:project.project,accreditation_expiry_date:0
+msgid "Accreditation Expiry Date"
+msgstr "Data Fine Accreditamento"
+
+#. module: project_accredia
+#: view:project.task.category:0
+msgid "Category of task Search"
+msgstr "Ricerca Categoria Attività"
+
+#. module: project_accredia
+#: view:accreditation.standard:0
+#: field:accreditation.test.change.type,name:0
+#: field:accreditation.test.list.category,name:0
+msgid "Descrizione"
+msgstr "Descrizione"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,del_obtained_accreditation:0
+msgid "Elimina Accreditamento/Riconoscimento ottenuto"
+msgstr "Elimina Accreditamento/Riconoscimento ottenuto"
+
+#. module: project_accredia
+#: field:accreditation.request,lines_ids:0
+msgid "Accreditations Request lines"
+msgstr "Richieste di Accreditamento"
+
+#. module: project_accredia
+#: help:project.project,certificate_number:0
+msgid "Tramite la funzione di ricerca avanzata, si possono scegliere tutte le pratiche legate allo stesso certificato di accreditamento."
+msgstr "Tramite la funzione di ricerca avanzata, si possono scegliere tutte le pratiche legate allo stesso certificato di accreditamento."
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_accredia_task_work_accredia
+#: model:ir.ui.menu,name:project_accredia.menu_action_accredia_task_work_accredia
+#: model:ir.ui.menu,name:project_accredia.menu_works_config
+#: view:project.task:0
+#: view:project.wizard.manage.works:0
+msgid "Works"
+msgstr "Azioni"
+
+#. module: project_accredia
+#: view:accreditation.persons.auth:0
+#: view:res.partner:0
+msgid "Dettagli Attività"
+msgstr "Dettagli Attività"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_standard
+msgid "accreditation.standard"
+msgstr "accreditation.standard"
+
+#. module: project_accredia
+#: view:accreditation.person.events.temp:0
+msgid "Accreditation Person Event Temp Tree"
+msgstr "Accreditation Person Event Temp Tree"
+
+#. module: project_accredia
+#: field:accreditation.test.list,ref_excel:0
+#: field:accreditation.test.list.temp,ref_excel:0
+msgid "Riferimento di riga (colonna N° modello excel)"
+msgstr "Riferimento di riga (colonna N° modello excel)"
+
+#. module: project_accredia
+#: field:project.unit,fnct_address:0
+msgid "Address Unit"
+msgstr "Indirizzo Unita"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_project_department_schema
+msgid "Department Project Schema"
+msgstr "Schema Dipartimento Pratica"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,help:project_accredia.action_open_view_project_all_accredia
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                  Click to start a new project.\n"
+"                </p><p>\n"
+"                  Projects are used to organize your activities; plan\n"
+"                  tasks, track issues, invoice timesheets. You can define\n"
+"                  internal projects (R&amp;D, Improve Sales Process),\n"
+"                  private projects (My Todos) or customer ones.\n"
+"                </p><p>\n"
+"                  You will be able collaborate with internal users on\n"
+"                  projects or invite customers to share your activities.\n"
+"                </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                  Cliccare per avviare una nuova Pratica.\n"
+"                </p><p>\n"
+"                  I progetti sono usati per organizzare le attività; pianificare attività,\n"
+"                  tracciare problematiche, fatturare timesheet. Puoi definire\n"
+"                  progetti interni (R&amp;D, Miglioramenti Processo Vendite),\n"
+"                  progetti privati (Miei Todo) o quelli per i clienti.\n"
+"                </p><p>\n"
+"                  Potrai collaborare con gli utenti interni sui progetti o\n"
+"                  invitare clienti ai quali condividere le attività.\n"
+"                </p>\n"
+"            "
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/accreditation_person_events_temp.py:204
+#, python-format
+msgid "Non è possibile impostare più di un tipo di selezione!"
+msgstr "Non è possibile impostare più di un tipo di selezione!"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,doclite_action_name:0
+msgid "Nome Azione"
+msgstr "Nome Azione"
+
+#. module: project_accredia
+#: field:accreditation.request,date:0
+msgid "Data della domanda"
+msgstr "Data della domanda"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_request
+msgid "Richiesta di Accreditamento"
+msgstr "Richiesta di Accreditamento"
+
+#. module: project_accredia
+#: field:accreditation.test,test_list_ids:0
+#: field:accreditation.test.temp,test_list_ids:0
+msgid "Righe Prove Accreditate"
+msgstr "Righe Prove Accreditate"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_task.py:96
+#: code:addons/project_accredia/models/project_task.py:668
+#: code:addons/project_accredia/models/project_task.py:692
+#: code:addons/project_accredia/models/project_task.py:716
+#, python-format
+msgid "Attenzione!"
+msgstr "Attenzione!"
+
+#. module: project_accredia
+#: field:accreditation.test.list.temp,test_id:0
+msgid "Prova Accreditata (temporanea)"
+msgstr "Prova Accreditata (temporanea)"
+
+#. module: project_accredia
+#: field:accreditation.test.temp,test_final_id:0
+msgid "Prova Definitiva"
+msgstr "Prova Definitiva"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_project_task_grouping
+msgid "accreditation.project.task.grouping"
+msgstr "accreditation.project.task.grouping"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,type_audit_visit:0
+#: field:project.phase,type_audit_visit:0
+msgid "Tipo Attività Visita"
+msgstr "Tipo Attività Visita"
+
+#. module: project_accredia
+#: view:wizard.final.test:0
+msgid "Elenco prove definitivo"
+msgstr "Elenco prove definitivo"
+
+#. module: project_accredia
+#: field:project.task,dom_analytic_line_ids:0
+msgid "Domain Attività da Fatturare"
+msgstr "Domain Attività da Fatturare"
+
+#. module: project_accredia
+#: view:accreditation.team:0
+msgid "Accreditation Team Tree"
+msgstr "Accreditation Team Tree"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Save"
+msgstr "Salva"
+
+#. module: project_accredia
+#: view:project.wizard.manage.works:0
+msgid "Type"
+msgstr "Tipologia"
+
+#. module: project_accredia
+#: view:project.department.schema:0
+msgid "Numerators Search"
+msgstr "Numerators Search"
+
+#. module: project_accredia
+#: view:accreditation.project.type:0
+msgid "Lista Ruoli"
+msgstr "Lista Ruoli"
+
+#. module: project_accredia
+#: field:accreditation.test,is_last_rev:0
+msgid "Ultima Revisione"
+msgstr "Ultima Revisione"
+
+#. module: project_accredia
+#: field:account.analytic.account,project_state:0
+#: field:project.task.work,project_state:0
+msgid "Project State"
+msgstr "Stato Pratica"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_wizard_experimental_verification
+msgid "Wizard Experimental Verification"
+msgstr "Wizard Accertamenti Sperimentali"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,update_agenda:0
+msgid "Scrittura su Agenda Ispettore"
+msgstr "Scrittura su Agenda Ispettore"
+
+#. module: project_accredia
+#: view:project.wizard.manage.works:0
+msgid "Add Work"
+msgstr "Aggiungi Azione"
+
+#. module: project_accredia
+#: field:project.department.schema,stage_id:0
+msgid "Stage"
+msgstr "Stage"
+
+#. module: project_accredia
+#: view:project.phase:0
+#: view:project.user.allocation:0
+msgid "Ispettore"
+msgstr "Ispettore"
+
+#. module: project_accredia
+#: field:accreditation.committees.contact,register:0
+msgid "Registro Presenze"
+msgstr "Registro Presenze"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_task_work.py:176
+#, python-format
+msgid "Work"
+msgstr "Azione"
+
+#. module: project_accredia
+#: view:project.wizard.manage.works:0
+msgid "Spent"
+msgstr "Impiegate"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_open_view_project_all_accredia
+msgid "Pratiche"
+msgstr "Pratiche"
+
+#. module: project_accredia
+#: view:accreditation.test:0
+msgid "Lista Prove Accreditate"
+msgstr "Lista Prove Accreditate"
+
+#. module: project_accredia
+#: model:ir.ui.menu,name:project_accredia.project_department_schema
+msgid "Department Project"
+msgstr "Dipartimento della Pratica"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Aggiungi Attività Genitore"
+msgstr "Aggiungi Attività Genitore"
+
+#. module: project_accredia
+#: field:accreditation.persons.auth,task_ids:0
+msgid "Attività"
+msgstr "Attività"
+
+#. module: project_accredia
+#: field:crm.meeting,work_id:0
+msgid "Azione"
+msgstr "Azione"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:238
+#, python-format
+msgid "L'ispettore %s non è compatibile con l'ente %s!"
+msgstr "L'ispettore %s non è compatibile con l'ente %s!"
+
+#. module: project_accredia
+#: field:accreditation.sector,sector_code:0
+msgid "Codice Settore"
+msgstr "Codice Settore"
+
+#. module: project_accredia
+#: view:project.phase:0
+msgid "Conferma"
+msgstr "Conferma"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_test_category_list
+#: model:ir.ui.menu,name:project_accredia.accreditation_test_list_category_menu
+msgid "Categorie Prove"
+msgstr "Categorie Prove"
+
+#. module: project_accredia
+#: view:project.project:0
+#: field:project.project,officer_id:0
+msgid "Funzionario"
+msgstr "Funzionario"
+
+#. module: project_accredia
+#: field:accreditation.test.list.temp,var_category:0
+msgid "Variato Categoria"
+msgstr "Variato Categoria"
+
+#. module: project_accredia
+#: view:accreditation.test.temp:0
+msgid "Crea Elenco Prove Definitivo"
+msgstr "Crea Elenco Prove Definitivo"
+
+#. module: project_accredia
+#: field:accreditation.persons.auth,days_remaining:0
+msgid "Giorni Rimanenti"
+msgstr "Giorni Rimanenti"
+
+#. module: project_accredia
+#: field:accreditation.test.list,measure:0
+#: field:accreditation.test.list.temp,measure:0
+msgid "Campo di misura e/o di prova"
+msgstr "Campo di misura e/o di prova"
+
+#. module: project_accredia
+#: view:accreditation.request.schema:0
+#: field:accreditation.request.schema,standard_ids:0
+msgid "Norme di Accreditamento"
+msgstr "Norme di Accreditamento"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_task.py:669
+#, python-format
+msgid "Impossibile completare l'attività. L'attività può essere completata solo a condizione che tutte le azioni previste abbiano la Data Finale impostata."
+msgstr "Impossibile completare l'attività. L'attività può essere completata solo a condizione che tutte le azioni previste abbiano la Data Finale impostata."
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Delegated tasks"
+msgstr "Attività Delegate"
+
+#. module: project_accredia
+#: field:accreditation.project.type,accreditation_request_days:0
+msgid "Giorni anticipo scadenza per invio domanda di accreditamento"
+msgstr "Giorni anticipo scadenza per invio domanda di accreditamento"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_skills
+msgid "accreditation.skills"
+msgstr "accreditation.skills"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_project_task_work
+msgid "Project Task Work"
+msgstr "Lavoro attività Pratica"
+
+#. module: project_accredia
+#: field:accreditation.project.type,is_conferences:0
+msgid "Convegni"
+msgstr "Convegni"
+
+#. module: project_accredia
+#: field:project.user.allocation,auth_id:0
+msgid "Autorizzazione"
+msgstr "Autorizzazione"
+
+#. module: project_accredia
+#: field:accreditation.committees.contact,partner_entity_id:0
+msgid "Rappresentanza"
+msgstr "Rappresentanza"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Work description"
+msgstr "Descrizione lavorazione"
+
+#. module: project_accredia
+#: field:project.task,num_non_conformita:0
+msgid "Non Conformità"
+msgstr "Non Conformità"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Linea conto analitico"
+
+#. module: project_accredia
+#: code:addons/project_accredia/wizard/wizard_manage_works.py:47
+#, python-format
+msgid "Monday"
+msgstr "Lunedì"
+
+#. module: project_accredia
+#: field:project.project,extension_ids_counter:0
+#: field:project.project,team_domain_ids:0
+#: field:project.project,unit_domain_ids:0
+msgid "unknown"
+msgstr "sconosciuto"
+
+#. module: project_accredia
+#: field:project.project,last_accreditation_expiry:0
+msgid "Last Accreditation Expiry"
+msgstr "Scadenza Ultimo Accreditamento"
+
+#. module: project_accredia
+#: view:project.phase:0
+#: view:project.user.allocation:0
+msgid "onchange_user_id(user_id)"
+msgstr "onchange_user_id(user_id)"
+
+#. module: project_accredia
+#: view:accreditation.person.events.temp:0
+msgid "Accreditation Person Event Temp Form"
+msgstr "Accreditation Person Event Temp Form"
+
+#. module: project_accredia
+#: field:accreditation.request,message_is_follower:0
+msgid "Is a Follower"
+msgstr "E' un Follower"
+
+#. module: project_accredia
+#: view:project.task.work:0
+#: field:project.wizard.manage.works,day:0
+#: field:project.wizard.manage.works.line,works_date:0
+#: field:wizard.select.date,day:0
+msgid "Date"
+msgstr "Data"
+
+#. module: project_accredia
+#: field:project.user.allocation,num_days:0
+msgid "Giorni"
+msgstr "Giorni"
+
+#. module: project_accredia
+#: view:project.task.category:0
+msgid "Category of task Form"
+msgstr "Form Categoria Attività"
+
+#. module: project_accredia
+#: field:accreditation.project.type,is_committees_meeting:0
+msgid "Riunione Comitati"
+msgstr "Riunione Comitati"
+
+#. module: project_accredia
+#: field:accreditation.project.type,is_meetings:0
+msgid "Riunioni Varie"
+msgstr "Riunioni Varie"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,journal_id:0
+msgid "Giornale Analitico"
+msgstr "Giornale Analitico"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:221
+#, python-format
+msgid "La data di inizio di ogni riga deve essere compresa nella durata dell'audit!"
+msgstr "La data di inizio di ogni riga deve essere compresa nella durata dell'audit!"
+
+#. module: project_accredia
+#: view:wizard.select.date:0
+msgid "View Day Works"
+msgstr "Visualizza Azioni Giornaliere"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,code:0
+#: field:project.task.category,code:0
+msgid "Code"
+msgstr "Codice"
+
+#. module: project_accredia
+#. openerp-web
+#: code:addons/project_accredia/static/src/js/formats.js:280
+#, python-format
+msgid "'%s' is not a correct date"
+msgstr "'%s' non è una data corretta"
+
+#. module: project_accredia
+#: code:addons/project_accredia/wizard/wizard_select_date.py:94
+#, python-format
+msgid "Day Works"
+msgstr "Day Works"
+
+#. module: project_accredia
+#: view:accreditation.task.team:0
+msgid "Accreditation Task Team Form"
+msgstr "Accreditation Task Team Form"
+
+#. module: project_accredia
+#: field:accreditation.request,state:0
+#: field:project.wizard.manage.works.line,project_task_state:0
+msgid "State"
+msgstr "Stato"
+
+#. module: project_accredia
+#: view:wizard.final.test:0
+#: view:wizard.project.create.extension:0
+#: view:wizard.select.date:0
+#: view:wizard.update.state:0
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: project_accredia
+#: field:project.task,unit_id:0
+msgid "Unit"
+msgstr "Unità"
+
+#. module: project_accredia
+#: view:project.phase:0
+msgid "Totale Giorni"
+msgstr "Totale Giorni"
+
+#. module: project_accredia
+#: field:accreditation.request,proj_dep_schema_id:0
+#: view:project.department.schema:0
+#: field:project.project,proj_dep_schema_id:0
+msgid "Project Department Schema"
+msgstr "Project Department Schema"
+
+#. module: project_accredia
+#: field:project.project,accreditation_due_date:0
+msgid "Data Scadenza Accreditamento"
+msgstr "Data Scadenza Accreditamento"
+
+#. module: project_accredia
+#: field:accreditation.committees.contact,sequence:0
+msgid "Sequenza"
+msgstr "Sequenza"
+
+#. module: project_accredia
+#: field:project.task.work,date_end:0
+msgid "Data Finale"
+msgstr "Data Finale"
+
+#. module: project_accredia
+#: view:accreditation.person.events.temp:0
+msgid "Carica Lista Invitati"
+msgstr "Carica Lista Invitati"
+
+#. module: project_accredia
+#: view:project.project:0
+#: field:project.unit,unit_id:0
+msgid "Units"
+msgstr "Unità"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_update_state_accredia
+#: view:wizard.update.state:0
+msgid "Aggiorna Stato"
+msgstr "Aggiorna Stato"
+
+#. module: project_accredia
+#: help:project.task,num_commenti:0
+msgid "Numero di Commenti"
+msgstr "Numero di Commenti"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Activities"
+msgstr "Attività"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_wizard_project_create_extension
+msgid "Wizard Crea Pratica Collegata"
+msgstr "Wizard Crea Pratica Collegata"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_res_users
+msgid "Users"
+msgstr "Utenti"
+
+#. module: project_accredia
+#: selection:accreditation.test.list,state:0
+#: selection:wizard.update.state,state:0
+msgid "Accreditato"
+msgstr "Accreditato"
+
+#. module: project_accredia
+#: field:project.task.work,not_billing:0
+#: field:project.wizard.manage.works.line,not_billing:0
+msgid "Not Billing"
+msgstr "Non Fatturabile"
+
+#. module: project_accredia
+#: field:accreditation.request,unit_id:0
+#: field:project.project,unit_id:0
+msgid "Unità Principale"
+msgstr "Unità Principale"
+
+#. module: project_accredia
+#: view:accreditation.request.schema:0
+#: field:accreditation.request.schema,description_en:0
+#: view:accreditation.sector:0
+#: field:accreditation.sector,description_en:0
+msgid "Descrizione (in inglese)"
+msgstr "Descrizione (in inglese)"
+
+#. module: project_accredia
+#: view:wizard.task.create.child:0
+#: view:wizard.task.create.parent:0
+msgid "Aggiungi"
+msgstr "Aggiungi"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project.py:126
+#, python-format
+msgid "Partner is not specified for this contract!"
+msgstr "Partner is not specified for this contract!"
+
+#. module: project_accredia
+#: field:project.project,project_number:0
+msgid "Project Number"
+msgstr "Numero Pratica"
+
+#. module: project_accredia
+#: field:accreditation.persons.skills,name:0
+#: field:accreditation.request.schema,name:0
+#: field:accreditation.sector,name:0
+#: field:accreditation.skills,name:0
+#: field:accreditation.standard,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: project_accredia
+#: selection:accreditation.persons.auth,auth_type:0
+msgid "A Giorni"
+msgstr "A Giorni"
+
+#. module: project_accredia
+#: code:addons/project_accredia/wizard/wizard_manage_works.py:159
+#, python-format
+msgid "New Date"
+msgstr "Nuova Data"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_project_task_type
+msgid "Task Stage"
+msgstr "Stadio attività"
+
+#. module: project_accredia
+#: view:project.user.allocation:0
+msgid "{'t_unit_id':unit_id,'t_date_start':date_start,'t_date_end':date_end}"
+msgstr "{'t_unit_id':unit_id,'t_date_start':date_start,'t_date_end':date_end}"
+
+#. module: project_accredia
+#: help:accreditation.request,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: project_accredia
+#: field:project.task,project_partner_id:0
+msgid "Ente"
+msgstr "Ente"
+
+#. module: project_accredia
+#: view:accreditation.person.events.temp:0
+#: field:accreditation.person.events.temp,partner_ids:0
+msgid "Enti"
+msgstr "Enti"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,create_purchase_requisition:0
+msgid "Richiesta ordine di acquisto"
+msgstr "Richiesta ordine di acquisto"
+
+#. module: project_accredia
+#: field:accreditation.request,cab_code:0
+#: field:project.project,cab_code:0
+msgid "Progressivo Codice CAB"
+msgstr "Progressivo Codice CAB"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Filters..."
+msgstr "Filtri..."
+
+#. module: project_accredia
+#: field:accreditation.project.type,is_new:0
+msgid "Nuovo Accreditamento"
+msgstr "Nuovo Accreditamento"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_request
+msgid "Email Thread"
+msgstr "Thread Email"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.accreditation_task_work_type_action
+#: model:ir.model,name:project_accredia.model_accreditation_task_work_type
+#: model:ir.ui.menu,name:project_accredia.menu_accreditation_task_work_type_action
+#: field:project.task.work,type_id:0
+#: field:project.wizard.manage.works.line,type_id:0
+msgid "Type of work"
+msgstr "Tipo di Azione"
+
+#. module: project_accredia
+#: field:accreditation.request.schema,schema_code:0
+msgid "Codice Schema"
+msgstr "Codice Schema"
+
+#. module: project_accredia
+#: field:wizard.task.create.child,parent_id:0
+#: field:wizard.task.create.parent,parent_id:0
+msgid "Attività Genitore"
+msgstr "Attività Genitore"
+
+#. module: project_accredia
+#: field:wizard.final.test,date:0
+msgid "Data di revisione"
+msgstr "Data di revisione"
+
+#. module: project_accredia
+#: code:addons/project_accredia/wizard/wizard_manage_works.py:47
+#, python-format
+msgid "Saturday"
+msgstr "Sabato"
+
+#. module: project_accredia
+#: view:accreditation.persons.skills:0
+msgid "Persons Skills"
+msgstr "Persons Skills"
+
+#. module: project_accredia
+#: view:accreditation.test.list:0
+msgid "Accreditation Test List Tree"
+msgstr "Lista Elenco Prove"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_task.py:97
+#, python-format
+msgid "Per questa funzione è possibile selezionare solamente una Attività per volta."
+msgstr "Per questa funzione è possibile selezionare solamente una Attività per volta."
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Group By..."
+msgstr "Raggruppa Per..."
+
+#. module: project_accredia
+#: view:accreditation.task.team:0
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_task_team
+msgid "Accreditation Task Team"
+msgstr "Team Attività di Accreditamento"
+
+#. module: project_accredia
+#: field:project.task,num_commenti:0
+msgid "Commenti"
+msgstr "Commenti"
+
+#. module: project_accredia
+#: view:project.wizard.manage.works:0
+msgid "Forward"
+msgstr "Avanti"
+
+#. module: project_accredia
+#: field:account.analytic.account,fnct_amount_toinvoice:0
+msgid "Importo da Fatturare"
+msgstr "Importo da Fatturare"
+
+#. module: project_accredia
+#: field:accreditation.project.sector,standard_id:0
+#: selection:accreditation.standard,standard_type:0
+#: view:project.project:0
+msgid "Norma di Certificazione"
+msgstr "Norma di Certificazione"
+
+#. module: project_accredia
+#: field:accreditation.committees.contact,role_id:0
+#: field:accreditation.person.events.temp,role_id:0
+#: field:accreditation.project.type.roles,role_id:0
+#: field:project.user.allocation,role_id:0
+msgid "Ruolo"
+msgstr "Ruolo"
+
+#. module: project_accredia
+#: field:accreditation.task.team,is_employee:0
+#: field:accreditation.team,is_employee:0
+msgid "Is Employee"
+msgstr "E' Dipendente"
+
+#. module: project_accredia
+#: field:project.task,journal_id:0
+msgid "Analytic Journal"
+msgstr "Giornale Analitico"
+
+#. module: project_accredia
+#: field:accreditation.request,message_unread:0
+msgid "Unread Messages"
+msgstr "Messaggi non Letti"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_test_list_category
+msgid "accreditation.test.list.category"
+msgstr "accreditation.test.list.category"
+
+#. module: project_accredia
+#: field:project.task,fnct_state:0
+msgid "Get State"
+msgstr "Ottieni Stato"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:126
+#, python-format
+msgid "Il campo Ruolo è obbligatorio!"
+msgstr "Il campo Ruolo è obbligatorio!"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_team
+msgid "accreditation.team"
+msgstr "accreditation.team"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_task.py:222
+#, python-format
+msgid "Attività Copiate"
+msgstr "Attività Copiate"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Task Completed"
+msgstr "Attività Completata"
+
+#. module: project_accredia
+#: view:wizard.task.create.parent:0
+msgid "Crea Attivita Genitore"
+msgstr "Crea Attivita Genitore"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Aggiungi Attività Delegata"
+msgstr "Aggiungi Attività Delegata"
+
+#. module: project_accredia
+#: field:accreditation.test,test_temp_id:0
+msgid "Rif. Prova Temporanea"
+msgstr "Rif. Prova Temporanea"
+
+#. module: project_accredia
+#: field:accreditation.test,rev_date:0
+msgid "Data Revisione"
+msgstr "Data Revisione"
+
+#. module: project_accredia
+#: view:accreditation.standard:0
+msgid "Accreditation Standard Tree"
+msgstr "Lista Norme"
+
+#. module: project_accredia
+#: field:accreditation.committees.contact,rel_function:0
+msgid "Posizione Lavorativa"
+msgstr "Posizione Lavorativa"
+
+#. module: project_accredia
+#: field:accreditation.test.list.temp,var_technique:0
+msgid "Variato Tecnica di prova (Campo boolean)"
+msgstr "Variato Tecnica di prova (Campo boolean)"
+
+#. module: project_accredia
+#: field:account.analytic.line,task_id:0
+#: field:accreditation.request,task_id:0
+msgid "Riferimento"
+msgstr "Riferimento"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:225
+#, python-format
+msgid "La data di fine di ogni riga deve essere compresa nella durata dell'audit!"
+msgstr "La data di fine di ogni riga deve essere compresa nella durata dell'audit!"
+
+#. module: project_accredia
+#. openerp-web
+#: code:addons/project_accredia/static/src/js/formats.js:185
+#, python-format
+msgid "(%d records)"
+msgstr "(%d record)"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_select_date_accredia
+#: model:ir.ui.menu,name:project_accredia.menu_action_manage_works_accredia
+msgid "Day Works Creation"
+msgstr "Azioni Giornaliere"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_user_allocation.py:121
+#, python-format
+msgid "L'ispettore %s è già impegnato nella data specificata!"
+msgstr "L'ispettore %s è già impegnato nella data specificata!"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Extra Info"
+msgstr "Informazioni Aggiuntive"
+
+#. module: project_accredia
+#: field:accreditation.request.schema,schema_nick:0
+msgid "Sigla Schema"
+msgstr "Sigla Schema"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project.py:792
+#, python-format
+msgid "Add Person Events"
+msgstr "Add Person Events"
+
+#. module: project_accredia
+#: view:accreditation.project.sector:0
+msgid "Project Sector"
+msgstr "Settore Pratica"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_test_change_type
+msgid "accreditation.test.change.type"
+msgstr "accreditation.test.change.type"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_request_lines
+msgid "accreditation.request.lines"
+msgstr "accreditation.request.lines"
+
+#. module: project_accredia
+#: field:accreditation.test.list.temp,var_material_product_matrix:0
+msgid "Variato Materiale/Prodotto/Matrice"
+msgstr "Variato Materiale/Prodotto/Matrice"
+
+#. module: project_accredia
+#: field:project.project,certificate_number:0
+msgid "Numero Certificato"
+msgstr "Numero Certificato"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,get_accreditation_test:0
+msgid "Richiamo Elenco Prove Accreditate"
+msgstr "Richiamo Elenco Prove Accreditate"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_skills
+#: model:ir.ui.menu,name:project_accredia.menu_accreditation_skills
+msgid "Competenze"
+msgstr "Competenze"
+
+#. module: project_accredia
+#: field:project.task,uom_id:0
+msgid "Unit of Measure"
+msgstr "Unità di Misura"
+
+#. module: project_accredia
+#: view:wizard.final.test:0
+#: view:wizard.project.create.extension:0
+msgid "Crea"
+msgstr "Crea"
+
+#. module: project_accredia
+#: view:accreditation.persons.auth:0
+#: model:ir.model,name:project_accredia.model_accreditation_persons_auth
+#: view:res.partner:0
+msgid "Autorizzazioni Dipendenti P.A."
+msgstr "Autorizzazioni Dipendenti P.A."
+
+#. module: project_accredia
+#: field:accreditation.persons.auth,auth_type:0
+msgid "Tipo Autorizzazione"
+msgstr "Tipo Autorizzazione"
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "{'required':[('state','!=', 'template')]}"
+msgstr "{'required':[('state','!=', 'template')]}"
+
+#. module: project_accredia
+#: view:accreditation.standard:0
+msgid "Accreditation Standard"
+msgstr "Norma"
+
+#. module: project_accredia
+#: view:project.task:0
+#: view:project.task.work:0
+#: view:project.wizard.manage.works:0
+#: field:project.wizard.manage.works.line,hours:0
+msgid "Hours"
+msgstr "Ore"
+
+#. module: project_accredia
+#: field:hr_timesheet_invoice.factor,to_be_confirmed:0
+msgid "Da Confermare"
+msgstr "Da Confermare"
+
+#. module: project_accredia
+#: view:accreditation.project.type:0
+#: field:accreditation.project.type,roles_ids:0
+msgid "Ruoli"
+msgstr "Ruoli"
+
+#. module: project_accredia
+#: view:accreditation.request.schema:0
+#: field:accreditation.request.schema,standard_cert_ids:0
+msgid "Norme di Certificazione"
+msgstr "Norme di Certificazione"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_task.py:403
+#, python-format
+msgid "Aggiungi Attivita Delegata"
+msgstr "Aggiungi Attivita Delegata"
+
+#. module: project_accredia
+#: field:project.wizard.manage.works,work_ids:0
+msgid "Work Lines"
+msgstr "Azioni"
+
+#. module: project_accredia
+#: view:project.task:0
+#: view:project.task.work:0
+msgid "Data Iniziale"
+msgstr "Data Iniziale"
+
+#. module: project_accredia
+#: selection:accreditation.test,state:0
+#: selection:accreditation.test.temp,state:0
+msgid "In Elaborazione"
+msgstr "In Elaborazione"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_person_events_temp
+msgid "accreditation.person.events.temp"
+msgstr "accreditation.person.events.temp"
+
+#. module: project_accredia
+#: view:project.project:0
+#: field:project.project,committees_contact_ids:0
+msgid "Contatti"
+msgstr "Contatti"
+
+#. module: project_accredia
+#: field:accreditation.committees.contact,partner_person_id:0
+msgid "Contatto"
+msgstr "Contatto"
+
+#. module: project_accredia
+#: view:project.project:0
+#: field:project.project,team_ids:0
+msgid "Team"
+msgstr "Team"
+
+#. module: project_accredia
+#: help:project.task,product_id:0
+msgid "Specifies employee's designation as a product with type 'service'."
+msgstr "Specifica assegnazione dell'impiegato come prodotto di tipo 'servizio'."
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,doclite_action:0
+msgid "Azione DocLite"
+msgstr "Azione DocLite"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Task Done"
+msgstr "Attività Completata"
+
+#. module: project_accredia
+#: selection:accreditation.standard,standard_scope:0
+msgid "Laboratori"
+msgstr "Laboratori"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/accreditation_request.py:230
+#, python-format
+msgid "La Data Approvazione è obbligatoria quando la domanda viene posta nello stato Accettata!"
+msgstr "La Data Approvazione è obbligatoria quando la domanda viene posta nello stato Accettata!"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_wizard_task_create_child
+msgid "Wizard Crea Attivita Delegata"
+msgstr "Wizard Crea Attivita Delegata"
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "{'invisible':[('accreditation_project_type_new','!=', True),('accreditation_project_type_extension','!=', True),('accreditation_project_type_renew','!=', True)]}"
+msgstr "{'invisible':[('accreditation_project_type_new','!=', True),('accreditation_project_type_extension','!=', True),('accreditation_project_type_renew','!=', True)]}"
+
+#. module: project_accredia
+#: field:accreditation.test.list,method:0
+#: field:accreditation.test.list.temp,method:0
+msgid "Metodo di prova ed anno di emissione"
+msgstr "Metodo di prova ed anno di emissione"
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "Closed Projects"
+msgstr "Pratiche Chiuse"
+
+#. module: project_accredia
+#: view:accreditation.task.work.type:0
+msgid "Type of work activity Form"
+msgstr "Type of work activity Form"
+
+#. module: project_accredia
+#: view:accreditation.request:0
+#: field:accreditation.request,note:0
+#: field:accreditation.test.temp,note:0
+#: view:project.project:0
+#: field:project.project,note:0
+msgid "Note"
+msgstr "Note"
+
+#. module: project_accredia
+#: view:project.phase:0
+msgid "Impostazioni Attività"
+msgstr "Impostazioni Attività"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project.py:172
+#, python-format
+msgid "La persona fisica può essere presente una sola volta nell'elenco dei partecipanti.!"
+msgstr "La persona fisica può essere presente una sola volta nell'elenco dei partecipanti.!"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Timesheets"
+msgstr "Timesheets"
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "Closed"
+msgstr "Chiuso"
+
+#. module: project_accredia
+#: view:accreditation.request.schema:0
+#: field:accreditation.request.schema,standard_extra_ids:0
+msgid "Altre Norme di Accreditamento"
+msgstr "Altre Norme di Accreditamento"
+
+#. module: project_accredia
+#: field:project.task,is_group_duplicated:0
+msgid "Gruppo già duplicato"
+msgstr "Gruppo già duplicato"
+
+#. module: project_accredia
+#: field:accreditation.skills,person_ids:0
+msgid "Skill Lines"
+msgstr "Skill"
+
+#. module: project_accredia
+#: field:accreditation.persons.auth,days_used:0
+msgid "Giorni Utilizzati"
+msgstr "Giorni Utilizzati"
+
+#. module: project_accredia
+#: view:project.project:0
+#: field:project.project,person_events_ids:0
+msgid "Invitati/Partecipanti"
+msgstr "Invitati/Partecipanti"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,type_audit_category_id:0
+#: field:project.phase,type_audit_category_id:0
+msgid "Categoria Attività"
+msgstr "Categoria Attività"
+
+#. module: project_accredia
+#: view:accreditation.test:0
+#: view:project.project:0
+msgid "Form Prove Accreditate"
+msgstr "Form Prove Accreditate"
+
+#. module: project_accredia
+#: field:project.task.work,customer_order_reference:0
+msgid "Riferimento ordine cliente"
+msgstr "Riferimento ordine cliente"
+
+#. module: project_accredia
+#: field:accreditation.test.list.temp,var_method:0
+msgid "Variato Metodo di prova ed anno di emissione"
+msgstr "Variato Metodo di prova ed anno di emissione"
+
+#. module: project_accredia
+#: field:accreditation.persons.skills,skill_id:0
+msgid "Skill"
+msgstr "Competenza"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,child_project_type_id:0
+#: model:ir.ui.menu,name:project_accredia.menu_accreditation_project_type
+#: field:project.project,accreditation_project_type:0
+#: field:wizard.project.create.extension,project_type_id:0
+msgid "Tipo Pratica"
+msgstr "Tipo Pratica"
+
+#. module: project_accredia
+#: view:accreditation.test.temp:0
+msgid "Reimposta a Bozza"
+msgstr "Reimposta a Bozza"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_project_type_roles
+msgid "accreditation.project.type.roles"
+msgstr "accreditation.project.type.roles"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_manage_works
+#: model:ir.model,name:project_accredia.model_project_wizard_manage_works
+msgid "Manage Works"
+msgstr "Gestione Azioni"
+
+#. module: project_accredia
+#: field:project.project,person_events_temp_id:0
+msgid "Wizard Invitati/Partecipanti"
+msgstr "Wizard Invitati/Partecipanti"
+
+#. module: project_accredia
+#: code:addons/project_accredia/wizard/wizard_manage_works.py:47
+#, python-format
+msgid "Thursday"
+msgstr "Giovedì"
+
+#. module: project_accredia
+#: view:accreditation.standard:0
+#: field:accreditation.standard,sector_ids:0
+#: model:ir.ui.menu,name:project_accredia.accreditation_sector
+#: view:project.project:0
+msgid "Settori"
+msgstr "Settori"
+
+#. module: project_accredia
+#: field:project.task.work,req_supervision_days:0
+msgid "Giorni per Sorveglianza"
+msgstr "Giorni per Sorveglianza"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_person_events
+msgid "Accreditation Person Event Temp"
+msgstr "Accreditation Person Event Temp"
+
+#. module: project_accredia
+#: field:project.wizard.manage.works.line,manage_id:0
+msgid "Manage"
+msgstr "Gestione"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Done"
+msgstr "Completato"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,accreditation_request_type:0
+msgid "Tipo Domanda"
+msgstr "Tipo Domanda"
+
+#. module: project_accredia
+#: field:project.project,last_accreditation_date:0
+msgid "Last Accreditation Date"
+msgstr "Ultima Data Accreditamento"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "{'invisible':[('audit_visit_doc_review','in',[None, False]),('audit_visit_accompaniment','in',[None, False])]}"
+msgstr "{'invisible':[('audit_visit_doc_review','in',[None, False]),('audit_visit_accompaniment','in',[None, False])]}"
+
+#. module: project_accredia
+#: selection:accreditation.standard,standard_scope:0
+msgid "Organismi di Certificazione"
+msgstr "Organismi di Certificazione"
+
+#. module: project_accredia
+#: field:accreditation.task.team,task_leader:0
+#: field:project.task,fnct_responsible:0
+msgid "Responsible"
+msgstr "Responsabile"
+
+#. module: project_accredia
+#: view:accreditation.request.schema:0
+#: view:accreditation.sector:0
+msgid "Descrizioni"
+msgstr "Descrizioni"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_wizard_select_date
+#: view:wizard.select.date:0
+msgid "Wizard Select Date"
+msgstr "Wizard Select Date"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "If confirmed the record will be saved once and then you will be able to change anyway. Confirm?"
+msgstr "Se confermi il record verrà salvato una volta e sarai comunque abiltato a modificarlo. Confermi?"
+
+#. module: project_accredia
+#: field:project.project,accreditation_date:0
+msgid "Accreditation Date"
+msgstr "Data Accreditamento"
+
+#. module: project_accredia
+#: field:accreditation.test.list,property:0
+#: field:accreditation.test.list.temp,property:0
+msgid "Misurando/proprietà misurata/Denominazione della prova"
+msgstr "Misurando/proprietà misurata/Denominazione della prova"
+
+#. module: project_accredia
+#: field:project.project,accreditation_project_type_committees_meeting:0
+#: field:project.project,accreditation_project_type_conferences:0
+#: field:project.project,accreditation_project_type_courses:0
+#: field:project.project,accreditation_project_type_extension:0
+#: field:project.project,accreditation_project_type_meetings:0
+#: field:project.project,accreditation_project_type_new:0
+#: field:project.project,accreditation_project_type_renew:0
+#: field:project.task,accreditation_project_type_extension:0
+#: field:project.task,accreditation_project_type_new:0
+#: field:project.task,accreditation_project_type_renew:0
+#: field:project.task.work,display_button:0
+#: field:project.task.work,display_req_supervision_days:0
+msgid "Hidden"
+msgstr "Hidden"
+
+#. module: project_accredia
+#: view:accreditation.test.list.category:0
+msgid "Accreditation Test List Category"
+msgstr "Accreditation Test List Category"
+
+#. module: project_accredia
+#: help:accreditation.standard,standard_scope:0
+msgid "\n"
+"Valori possibili : ODC (Organismi di Certificazione) e LAB (laboratori).\n"
+"I record ODC sono selezionabili solo per le pratiche del dipartimento DC\n"
+"e non sono selezionabili nel catalogo delle prove."
+msgstr "\n"
+"Valori possibili : ODC (Organismi di Certificazione) e LAB (laboratori).\n"
+"I record ODC sono selezionabili solo per le pratiche del dipartimento DC\n"
+"e non sono selezionabili nel catalogo delle prove."
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_task.py:370
+#, python-format
+msgid "Aggiungi Attivita Genitore"
+msgstr "Aggiungi Attivita Genitore"
+
+#. module: project_accredia
+#: view:accreditation.sector:0
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_sector
+msgid "Accreditation Sector"
+msgstr "Accreditation Sector"
+
+#. module: project_accredia
+#: view:accreditation.project.type.roles:0
+msgid "Accreditation Project Type Role Form"
+msgstr "Accreditation Project Type Role Form"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Autorizzazioni dipendenti PA"
+msgstr "Autorizzazioni dipendenti PA"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_test_list
+msgid "Righe prove accreditate"
+msgstr "Righe prove accreditate"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,create_quotation:0
+msgid "Generazione Preventivo per Fornitore"
+msgstr "Generazione Preventivo per Fornitore"
+
+#. module: project_accredia
+#: view:accreditation.test.temp:0
+msgid "Form Prove Accreditate Temporanee"
+msgstr "Form Prove Accreditate Temporanee"
+
+#. module: project_accredia
+#: view:accreditation.request:0
+msgid "Lines"
+msgstr "Unità"
+
+#. module: project_accredia
+#: view:accreditation.test.change.type:0
+msgid "Accreditation Test Change Type Tree"
+msgstr "Accreditation Test Change Type Tree"
+
+#. module: project_accredia
+#: view:accreditation.project.type:0
+msgid "Accreditation Project Type Tree"
+msgstr "Accreditation Project Type Tree"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_test_temp
+msgid "Prove Accreditate Temp"
+msgstr "Prove Accreditate Temp"
+
+#. module: project_accredia
+#: view:wizard.task.create.child:0
+#: view:wizard.task.create.parent:0
+msgid "Annulla"
+msgstr "Annulla"
+
+#. module: project_accredia
+#: field:project.task,delay_deadline:0
+msgid "Giorni Ritardo"
+msgstr "Giorni Ritardo"
+
+#. module: project_accredia
+#: field:accreditation.persons.auth,days:0
+msgid "Numero di Giorni"
+msgstr "Numero di Giorni"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,audit_visit_doc_review:0
+#: field:project.task.work,audit_visit_doc_review:0
+msgid "Attività di Visita/Esame documentale"
+msgstr "Attività di Visita/Esame documentale"
+
+#. module: project_accredia
+#: help:project.project,project_sequence:0
+msgid "Sequence of the Project"
+msgstr "Sequenza della Pratica"
+
+#. module: project_accredia
+#: help:project.task,num_non_conformita:0
+msgid "Numero di Non Conformità"
+msgstr "Numero di Non Conformità"
+
+#. module: project_accredia
+#: field:project.phase,include_not_available:0
+msgid "Includi Non Disponibili"
+msgstr "Includi Non Disponibili"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,to_invoice:0
+msgid "Fatturabile"
+msgstr "Fatturabile"
+
+#. module: project_accredia
+#: field:project.project,project_sequence:0
+msgid "Project Sequence"
+msgstr "Sequenza della Pratica"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,set_obtained_accreditation:0
+msgid "Imposta Accreditamento/Riconoscimento ottenuto"
+msgstr "Imposta Accreditamento/Riconoscimento ottenuto"
+
+#. module: project_accredia
+#: view:accreditation.task.work.type:0
+msgid "Type of work activity Search"
+msgstr "Type of work activity Search"
+
+#. module: project_accredia
+#: view:project.wizard.manage.works:0
+msgid "If confirmed the record will be deleted. Confirm?"
+msgstr "Se confermi la lavorazione verrà eliminata. Confermi?"
+
+#. module: project_accredia
+#: field:hr_timesheet_invoice.factor,not_invoice:0
+msgid "Non Fatturabile"
+msgstr "Non Fatturabile"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project.py:276
+#, python-format
+msgid "La persona fisica può essere presente una sola volta nell'elenco dei partecipanti!"
+msgstr "La persona fisica può essere presente una sola volta nell'elenco dei partecipanti!"
+
+#. module: project_accredia
+#: selection:accreditation.test.list,state:0
+#: selection:wizard.update.state,state:0
+msgid "Sospeso Marchio"
+msgstr "Sospeso Marchio"
+
+#. module: project_accredia
+#: field:project.task.work,project_task_state:0
+msgid "Task State"
+msgstr "Stato Attività"
+
+#. module: project_accredia
+#: field:project.task,request_id:0
+msgid "Domanda Accreditamento"
+msgstr "Domanda Accreditamento"
+
+#. module: project_accredia
+#: field:project.project,test_ids:0
+msgid "Prove"
+msgstr "Prove"
+
+#. module: project_accredia
+#: view:accreditation.request:0
+#: field:accreditation.request.lines,request_id:0
+#: model:ir.ui.menu,name:project_accredia.accreditation_request
+#: field:project.project,request_id:0
+msgid "Accreditation Request"
+msgstr "Domanda Accreditamento"
+
+#. module: project_accredia
+#: field:accreditation.test.list.temp,var_property:0
+msgid "Variato Misurando/proprietà misurata/Denominazione della prova"
+msgstr "Variato Misurando/proprietà misurata/Denominazione della prova"
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "Mostra Pratiche Collegate"
+msgstr "Mostra Pratiche Collegate"
+
+#. module: project_accredia
+#: field:accreditation.test,filename:0
+#: field:accreditation.test.temp,filename:0
+msgid "Filename"
+msgstr "Filename"
+
+#. module: project_accredia
+#: code:addons/project_accredia/wizard/wizard_manage_works.py:47
+#, python-format
+msgid "Sunday"
+msgstr "Sunday"
+
+#. module: project_accredia
+#: model:mail.message.subtype,name:project_accredia.acc_request_new
+msgid "Richiesta Accreditamento Creata"
+msgstr "Richiesta Accreditamento Creata"
+
+#. module: project_accredia
+#: selection:accreditation.test,state:0
+#: selection:accreditation.test.temp,state:0
+#: code:addons/project_accredia/models/accreditation_person_events_temp.py:173
+#: code:addons/project_accredia/models/accreditation_person_events_temp.py:203
+#: code:addons/project_accredia/models/accreditation_project_type.py:147
+#: code:addons/project_accredia/models/accreditation_project_type.py:212
+#: code:addons/project_accredia/models/accreditation_task_work_type.py:119
+#: code:addons/project_accredia/models/accreditation_task_work_type.py:148
+#: code:addons/project_accredia/models/project_user_allocation.py:85
+#: code:addons/project_accredia/models/project_user_allocation.py:99
+#: code:addons/project_accredia/models/project_user_allocation.py:154
+#: code:addons/project_accredia/models/project_user_allocation.py:167
+#, python-format
+msgid "Errore"
+msgstr "Errore"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_user_allocation.py:100
+#: code:addons/project_accredia/models/project_user_allocation.py:168
+#, python-format
+msgid "L'unità %s non è compatibile con l'ispettore %s!"
+msgstr "L'unità %s non è compatibile con l'ispettore %s!"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Remaining"
+msgstr "Rimanente"
+
+#. module: project_accredia
+#: view:accreditation.person.events:0
+msgid "Accreditation Person Event Tree"
+msgstr "Accreditation Person Event Tree"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_project_department_schema
+msgid "project.department.schema"
+msgstr "project.department.schema"
+
+#. module: project_accredia
+#: code:addons/project_accredia/wizard/wizard_manage_works.py:47
+#, python-format
+msgid "Friday"
+msgstr "Venerdì"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Il gruppo di attività sarà duplicato. Confermi?"
+msgstr "Il gruppo di attività sarà duplicato. Confermi?"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_person_events
+msgid "accreditation.person.events"
+msgstr "accreditation.person.events"
+
+#. module: project_accredia
+#: field:accreditation.project.type,is_courses:0
+msgid "Corsi"
+msgstr "Corsi"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Works Search"
+msgstr "Cerca Azioni"
+
+#. module: project_accredia
+#: selection:accreditation.task.work.type,accreditation_request_state:0
+msgid "In esame"
+msgstr "In esame"
+
+#. module: project_accredia
+#: field:accreditation.test.list,technique:0
+#: field:accreditation.test.list.temp,technique:0
+msgid "Tecnica di prova"
+msgstr "Tecnica di prova"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,product_quotation_id:0
+msgid "Prestazione per Preventivo Fornitore"
+msgstr "Prestazione per Preventivo Fornitore"
+
+#. module: project_accredia
+#: field:accreditation.request,message_ids:0
+msgid "Messages"
+msgstr "Messaggi"
+
+#. module: project_accredia
+#: field:accreditation.request,project_id:0
+#: field:accreditation.team,project_id:0
+#: model:ir.model,name:project_accredia.model_project_project
+#: field:project.task.work,project_id:0
+#: field:project.unit,project_id:0
+#: field:project.wizard.manage.works.line,project_id:0
+msgid "Project"
+msgstr "Pratica"
+
+#. module: project_accredia
+#: help:accreditation.committees.contact,sequence:0
+msgid "Consente la visualizzazione dei contatti in ordine di sequenza."
+msgstr "Consente la visualizzazione dei contatti in ordine di sequenza."
+
+#. module: project_accredia
+#: view:wizard.task.create.child:0
+msgid "Crea Attivita Delegata"
+msgstr "Crea Attivita Delegata"
+
+#. module: project_accredia
+#: view:project.task:0
+msgid "Duplicate Task Group"
+msgstr "Duplica Gruppo Attività"
+
+#. module: project_accredia
+#: view:accreditation.test:0
+#: view:project.project:0
+msgid "Crea modello DA02-All.1"
+msgstr "Crea modello DA02-All.1"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_test_temp
+msgid "Testata prove accreditate (Tabella temporanea)"
+msgstr "Testata prove accreditate (Tabella temporanea)"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_project_unit
+msgid "project.unit"
+msgstr "project.unit"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:132
+#, python-format
+msgid "Il campo Autorizzazione è obbligatorio in ogni riga, nel caso l'ispettore sia un dipendente PA!"
+msgstr "Il campo Autorizzazione è obbligatorio in ogni riga, nel caso l'ispettore sia un dipendente PA!"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Duplicate Work"
+msgstr "Duplica Azione"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_task_team
+msgid "accreditation.task.team"
+msgstr "accreditation.task.team"
+
+#. module: project_accredia
+#: selection:accreditation.request,state:0
+msgid "In exam"
+msgstr "In esame"
+
+#. module: project_accredia
+#: view:accreditation.project.type:0
+msgid "Accreditation Project Type Form"
+msgstr "Accreditation Project Type Form"
+
+#. module: project_accredia
+#: field:accreditation.test,unit_id:0
+#: field:accreditation.test.temp,unit_id:0
+#: field:wizard.final.test,unit_id:0
+msgid "Unità di riferimento"
+msgstr "Unità di riferimento"
+
+#. module: project_accredia
+#: field:accreditation.task.work.type,child_project_template_id:0
+#: model:ir.actions.act_window,name:project_accredia.action_project_template_accredia
+#: model:ir.ui.menu,name:project_accredia.menu_project_template_accredia
+#: field:wizard.project.create.extension,template_id:0
+msgid "Template Pratica"
+msgstr "Template Pratica"
+
+#. module: project_accredia
+#: view:accreditation.test.temp:0
+msgid "Lista Prove Accreditate Temporanee"
+msgstr "Lista Prove Accreditate Temporanee"
+
+#. module: project_accredia
+#: field:accreditation.request,message_follower_ids:0
+msgid "Followers"
+msgstr "Follower"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Save and New"
+msgstr "Salva e Nuovo"
+
+#. module: project_accredia
+#: field:accreditation.committees.contact,rel_email:0
+#: field:accreditation.person.events,fnct_email:0
+msgid "Email"
+msgstr "Email"
+
+#. module: project_accredia
+#: field:accreditation.test.list.temp,test_list_id:0
+msgid "Riferimento elenco prove (se proveniente da elenco prove accreditate)"
+msgstr "Riferimento elenco prove (se proveniente da elenco prove accreditate)"
+
+#. module: project_accredia
+#: view:wizard.update.state:0
+msgid "Aggiorna Stato Righe Elenco Prove Definitivo"
+msgstr "Aggiorna Stato Righe Elenco Prove Definitivo"
+
+#. module: project_accredia
+#: view:project.task.work:0
+#: view:project.wizard.manage.works.line:0
+#: field:project.wizard.manage.works.line,task_work:0
+msgid "Task Work"
+msgstr "Esecuzione Attività"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_test_type_change
+#: model:ir.ui.menu,name:project_accredia.accreditation_test_change_type_menu
+msgid "Tipi Variazione Prove"
+msgstr "Tipi Variazione Prove"
+
+#. module: project_accredia
+#: view:accreditation.person.events:0
+msgid "Accreditation Person Event Form"
+msgstr "Accreditation Person Event Form"
+
+#. module: project_accredia
+#: view:accreditation.request.schema:0
+msgid "Accreidtation Request Schema Search"
+msgstr "Accreidtation Request Schema Search"
+
+#. module: project_accredia
+#: selection:accreditation.request,state:0
+msgid "Accepted"
+msgstr "Accettata"
+
+#. module: project_accredia
+#: view:accreditation.test.list.temp:0
+msgid "Accreditation Test List Temp Tree"
+msgstr "Accreditation Test List Temp Tree"
+
+#. module: project_accredia
+#: view:project.unit:0
+msgid "Project Unit Form"
+msgstr "Project Unit Form"
+
+#. module: project_accredia
+#: field:accreditation.person.events,partner_id:0
+#: field:accreditation.persons.skills,partner_id:0
+#: field:accreditation.task.team,partner_id:0
+#: field:accreditation.team,partner_id:0
+#: view:project.task:0
+#: field:project.task.work,person_id:0
+#: field:project.wizard.manage.works,user_id:0
+#: field:project.wizard.manage.works.line,user_id:0
+#: field:wizard.select.date,user_id:0
+msgid "Persona Fisica"
+msgstr "Persona Fisica"
+
+#. module: project_accredia
+#: help:project.project,project_number:0
+#: help:project.project,serial_number_for_entity:0
+msgid "Number of the Project"
+msgstr "Numero della Pratica"
+
+#. module: project_accredia
+#: field:wizard.final.test,test_temp_id:0
+msgid "Elenco Prove"
+msgstr "Elenco Prove"
+
+#. module: project_accredia
+#: field:project.phase,qualification_ids:0
+msgid "Qualifiche"
+msgstr "Qualifiche"
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "pratiche collegate presenti"
+msgstr "pratiche collegate presenti"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_request_schema
+msgid "accreditation.request.schema"
+msgstr "accreditation.request.schema"
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "Carica Contatti"
+msgstr "Carica Contatti"
+
+#. module: project_accredia
+#: field:accreditation.committees.contact,project_id:0
+#: field:accreditation.person.events,project_id:0
+#: field:accreditation.person.events.temp,project_id:0
+#: field:accreditation.project.sector,project_id:0
+#: field:accreditation.sector,project_ids:0
+#: field:accreditation.test,project_id:0
+#: field:accreditation.test.temp,project_id:0
+#: field:wizard.final.test,project_id:0
+#: field:wizard.task.create.child,project_id:0
+#: field:wizard.task.create.parent,project_id:0
+msgid "Pratica"
+msgstr "Pratica"
+
+#. module: project_accredia
+#: selection:accreditation.persons.auth,auth_type:0
+msgid "Per Singolo Incarico"
+msgstr "Per Singolo Incarico"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:242
+#, python-format
+msgid "La somma dei giorni deve essere uguale alla durata dell'audit!"
+msgstr "La somma dei giorni deve essere uguale alla durata dell'audit!"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:136
+#, python-format
+msgid "L'autorizzazione per l'ispettore %s è già stata utilizzata!"
+msgstr "L'autorizzazione per l'ispettore %s è già stata utilizzata!"
+
+#. module: project_accredia
+#: field:project.task.work,project_task_effective_hours:0
+msgid "Task Effective Hours"
+msgstr "Ore Effettive Attività"
+
+#. module: project_accredia
+#: view:wizard.final.test:0
+#: view:wizard.project.create.extension:0
+#: view:wizard.select.date:0
+#: view:wizard.task.create.child:0
+#: view:wizard.task.create.parent:0
+#: view:wizard.update.state:0
+msgid "or"
+msgstr "O"
+
+#. module: project_accredia
+#: field:accreditation.test,active:0
+msgid "Attivo"
+msgstr "Attivo"
+
+#. module: project_accredia
+#: field:accreditation.request,partner_id:0
+msgid "Openerp Partner"
+msgstr "Richiedente"
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "Aggiungi Pratica Collegata"
+msgstr "Aggiungi Pratica Collegata"
+
+#. module: project_accredia
+#: view:accreditation.request.schema:0
+msgid "Accreidtation Request Schema"
+msgstr "Schemi Accreditamento"
+
+#. module: project_accredia
+#: field:project.project,enable_tab_tests:0
+msgid "Abilita Tab Prove Accreditate"
+msgstr "Abilita Tab Prove Accreditate"
+
+#. module: project_accredia
+#: view:accreditation.test:0
+#: view:accreditation.test.temp:0
+msgid "Dettagli"
+msgstr "Dettagli"
+
+#. module: project_accredia
+#: view:project.phase:0
+msgid "Filtro Ispettori"
+msgstr "Filtro Ispettori"
+
+#. module: project_accredia
+#: field:accreditation.test.list,test_id:0
+msgid "Prova Accreditata"
+msgstr "Prova Accreditata"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_crm_meeting
+#: field:project.task.work,meeting_id:0
+msgid "Meeting"
+msgstr "Meeting"
+
+#. module: project_accredia
+#: field:accreditation.skills,standard_id:0
+#: field:project.project,standard_id:0
+msgid "Norma"
+msgstr "Norma"
+
+#. module: project_accredia
+#: view:accreditation.sector:0
+#: field:accreditation.sector,standard_ids:0
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_standard
+#: model:ir.ui.menu,name:project_accredia.accreditation_standard
+msgid "Norme"
+msgstr "Norme"
+
+#. module: project_accredia
+#: view:accreditation.test.list.category:0
+msgid "Accreditation Test List Category Tree"
+msgstr "Accreditation Test List Category Tree"
+
+#. module: project_accredia
+#: field:accreditation.standard,is_voluntary_scheme:0
+msgid "Regime Volontario"
+msgstr "Regime Volontario"
+
+#. module: project_accredia
+#: view:res.partner:0
+msgid "Autorizzazioni Dipendente P.A."
+msgstr "Autorizzazioni Dipendente P.A."
+
+#. module: project_accredia
+#: field:accreditation.test,rev_number:0
+msgid "Numero Revisione"
+msgstr "Numero Revisione"
+
+#. module: project_accredia
+#: field:accreditation.persons.auth,date_stop:0
+msgid "Data Fine"
+msgstr "Data Fine"
+
+#. module: project_accredia
+#: selection:accreditation.task.work.type,accreditation_request_state:0
+msgid "Accettata"
+msgstr "Accettata"
+
+#. module: project_accredia
+#: field:project.project,is_last_test_draft:0
+msgid "Ultima Revisione Draft"
+msgstr "Ultima Revisione Draft"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/accreditation_request.py:195
+#: code:addons/project_accredia/models/accreditation_request.py:229
+#: code:addons/project_accredia/models/accreditation_request.py:238
+#: code:addons/project_accredia/models/accreditation_request.py:285
+#: code:addons/project_accredia/models/project.py:95
+#: code:addons/project_accredia/models/project.py:101
+#: code:addons/project_accredia/models/project.py:125
+#: code:addons/project_accredia/models/project.py:171
+#: code:addons/project_accredia/models/project.py:186
+#: code:addons/project_accredia/models/project.py:252
+#: code:addons/project_accredia/models/project.py:275
+#: code:addons/project_accredia/models/project_phase.py:96
+#: code:addons/project_accredia/models/project_phase.py:119
+#: code:addons/project_accredia/models/project_phase.py:122
+#: code:addons/project_accredia/models/project_phase.py:125
+#: code:addons/project_accredia/models/project_phase.py:131
+#: code:addons/project_accredia/models/project_phase.py:135
+#: code:addons/project_accredia/models/project_phase.py:139
+#: code:addons/project_accredia/models/project_phase.py:159
+#: code:addons/project_accredia/models/project_phase.py:220
+#: code:addons/project_accredia/models/project_phase.py:224
+#: code:addons/project_accredia/models/project_phase.py:228
+#: code:addons/project_accredia/models/project_phase.py:237
+#: code:addons/project_accredia/models/project_phase.py:241
+#: code:addons/project_accredia/models/project_user_allocation.py:120
+#, python-format
+msgid "Error"
+msgstr "Errore"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_task.py:693
+#: code:addons/project_accredia/models/project_task.py:717
+#, python-format
+msgid "Non è possibile impostare contemporaneamente sia i Giorni Ritardo che i Giorni anticipo da scadenza."
+msgstr "Non è possibile impostare contemporaneamente sia i Giorni Ritardo che i Giorni anticipo da scadenza."
+
+#. module: project_accredia
+#: view:project.project:0
+msgid "Seleziona invitati"
+msgstr "Seleziona invitati"
+
+#. module: project_accredia
+#: field:project.project,accreditation_request_due_date:0
+msgid "Data scadenza invio domanda accreditamento"
+msgstr "Data scadenza invio domanda accreditamento"
+
+#. module: project_accredia
+#: model:ir.ui.menu,name:project_accredia.accreditation_test_temp_menu
+#: field:project.project,test_temp_ids:0
+msgid "Prove Temporanee"
+msgstr "Prove Temporanee"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/accreditation_test_temp.py:147
+#, python-format
+msgid "Crea elenco prove definitivo"
+msgstr "Crea elenco prove definitivo"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/accreditation_request.py:239
+#, python-format
+msgid "Non puoi modificare la richiesta perchè la Pratica è già stata creata!"
+msgstr "Non puoi modificare la richiesta perchè la Pratica è già stata creata!"
+
+#. module: project_accredia
+#: view:project.task:0
+#: field:project.task,task_team_ids:0
+msgid "Task Team"
+msgstr "Team Attività"
+
+#. module: project_accredia
+#: field:accreditation.project.sector,standard_extra_id:0
+#: selection:accreditation.standard,standard_type:0
+msgid "Altra Norma di Accreditamento"
+msgstr "Altra Norma di Accreditamento"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Todays' Task Work"
+msgstr "Azioni Odierne"
+
+#. module: project_accredia
+#: code:addons/project_accredia/wizard/wizard_manage_works.py:47
+#, python-format
+msgid "Tuesday"
+msgstr "Martedì"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project.py:833
+#: view:project.project:0
+#, python-format
+msgid "Pratiche Collegate"
+msgstr "Pratiche Collegate"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:229
+#, python-format
+msgid "La data di fine deve essere successiva alla data di inizio!"
+msgstr "La data di fine deve essere successiva alla data di inizio!"
+
+#. module: project_accredia
+#: view:project.wizard.manage.works:0
+msgid "Select New Date/Person"
+msgstr "Selezione nuova data e/o persona"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_experimental_verification_line
+msgid "Centri di taratura da controllare"
+msgstr "Centri di taratura da controllare"
+
+#. module: project_accredia
+#. openerp-web
+#: code:addons/project_accredia/static/src/js/formats.js:232
+#, python-format
+msgid "'%s' is not a correct integer"
+msgstr "'%s' is not a correct integer"
+
+#. module: project_accredia
+#: view:project.task:0
+#: view:project.wizard.manage.works:0
+msgid "Edit Work"
+msgstr "Modifica Lavorazione"
+
+#. module: project_accredia
+#: field:accreditation.project.sector,sector_id:0
+#: field:project.project,sector_ids:0
+msgid "Settore"
+msgstr "Settore"
+
+#. module: project_accredia
+#: view:accreditation.test.change.type:0
+msgid "Accreditation Test Change Type"
+msgstr "Accreditation Test Change Type"
+
+#. module: project_accredia
+#: view:accreditation.task.work.type:0
+msgid "Type of work activity Tree"
+msgstr "Type of work activity Tree"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Work activity Tree"
+msgstr "Work activity Tree"
+
+#. module: project_accredia
+#: view:wizard.project.create.extension:0
+msgid "Crea Pratica Collegata da Template"
+msgstr "Crea Pratica Collegata da Template"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project.py:187
+#, python-format
+msgid "Non puoi rimuovere la richiesta perché è già stata associata a questo progetto!"
+msgstr "Non puoi rimuovere la richiesta perché è già stata associata a questa Pratica!"
+
+#. module: project_accredia
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_test
+#: model:ir.ui.menu,name:project_accredia.accreditation_test_menu
+#: view:project.project:0
+msgid "Prove Accreditate"
+msgstr "Prove Accreditate"
+
+#. module: project_accredia
+#: field:project.task.work,project_task_planned_hours:0
+msgid "Task Planned Hours"
+msgstr "Ore Pianificate"
+
+#. module: project_accredia
+#: field:accreditation.request,date_approved:0
+msgid "Approved Date"
+msgstr "Data Approvazione"
+
+#. module: project_accredia
+#: field:accreditation.test.list,material_product_matrix:0
+#: field:accreditation.test.list.temp,material_product_matrix:0
+msgid "Materiale/Prodotto/Matrice"
+msgstr "Materiale/Prodotto/Matrice"
+
+#. module: project_accredia
+#: view:accreditation.team:0
+msgid "Accreditation Team Form"
+msgstr "Accreditation Team Form"
+
+#. module: project_accredia
+#: field:accreditation.project.task.grouping,name:0
+#: field:accreditation.project.type,name:0
+#: field:accreditation.standard,description:0
+#: field:accreditation.task.work.type,name:0
+#: view:project.task:0
+#: field:project.task.category,name:0
+#: field:project.task.work,description:0
+#: field:project.wizard.manage.works.line,description:0
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: project_accredia
+#: field:accreditation.standard,standard_scope:0
+msgid "Campo di applicazione"
+msgstr "Campo di applicazione"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/accreditation_task_work_type.py:149
+#, python-format
+msgid "Non è possibile impostare più di un ruolo!"
+msgstr "Non è possibile impostare più di un ruolo!"
+
+#. module: project_accredia
+#: view:accreditation.request:0
+msgid "Accreditation Request Tree"
+msgstr "Accreditation Request Tree"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_wizard_task_create_parent
+msgid "Wizard Crea Attivita Genitore"
+msgstr "Wizard Crea Attivita Genitore"
+
+#. module: project_accredia
+#: field:accreditation.person.events,role_id:0
+#: field:accreditation.task.team,role_id:0
+#: field:accreditation.team,role_id:0
+msgid "Role"
+msgstr "Ruolo"
+
+#. module: project_accredia
+#: field:accreditation.qualifications,phase_ids:0
+#: field:project.task.type,audit:0
+msgid "Audit"
+msgstr "Audit"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_accreditation_test_list_temp
+msgid "Righe prove accreditate (Tabella temporanea)"
+msgstr "Righe prove accreditate (Tabella temporanea)"
+
+#. module: project_accredia
+#: view:accreditation.test.list.temp:0
+#: view:accreditation.test.temp:0
+msgid "Accreditation Test List Temp Form"
+msgstr "Accreditation Test List Temp Form"
+
+#. module: project_accredia
+#: view:accreditation.skills:0
+#: field:res.partner,skill_ids:0
+msgid "Skills"
+msgstr "Skills"
+
+#. module: project_accredia
+#: code:addons/project_accredia/wizard/wizard_manage_works.py:47
+#, python-format
+msgid "Wednesday"
+msgstr "Mercoledì"
+
+#. module: project_accredia
+#: view:accreditation.project.type.roles:0
+msgid "Accreditation Person Role Tree"
+msgstr "Accreditation Person Role Tree"
+
+#. module: project_accredia
+#: field:project.task,num_osservazioni:0
+msgid "Osservazioni"
+msgstr "Osservazioni"
+
+#. module: project_accredia
+#: field:accreditation.request,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: project_accredia
+#: model:ir.model,name:project_accredia.model_wizard_final_test
+msgid "Wizard Final Test"
+msgstr "Wizard Final Test"
+
+#. module: project_accredia
+#: selection:accreditation.test,state:0
+#: selection:accreditation.test.temp,state:0
+msgid "Bozza"
+msgstr "Bozza"
+
+#. module: project_accredia
+#: view:project.task.work:0
+msgid "Save and Close"
+msgstr "Salva e Chiudi"
+
+#. module: project_accredia
+#: field:accreditation.persons.auth,auth_code:0
+msgid "Codice Autorizzazione"
+msgstr "Codice Autorizzazione"
+
+#. module: project_accredia
+#: field:accreditation.task.team,doc_review_days:0
+msgid "Giornate Esame Documentale"
+msgstr "Giornate Esame Documentale"
+
+#. module: project_accredia
+#: code:addons/project_accredia/models/project_phase.py:97
+#, python-format
+msgid "Non è stato configurato lo stage per l'Audit!"
+msgstr "Non è stato configurato lo stage per l'Audit!"
+
+#. module: project_accredia
+#: view:accreditation.project.type:0
+#: model:ir.actions.act_window,name:project_accredia.action_accreditation_project_type
+#: view:project.project:0
+msgid "Accreditation Project Type"
+msgstr "Tipo Pratica"
+

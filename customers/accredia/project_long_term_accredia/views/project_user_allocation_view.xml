@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Project User Allocation -->
+        <record id="view_project_user_allocation_gantt" model="ir.ui.view">
+            <field name="name">project.user.allocation.gantt</field>
+            <field name="model">project.user.allocation</field>
+            <field name="arch" type="xml">
+              <gantt date_start="date_start" date_stop="date_end" default_group_by="user_id">
+              </gantt>
+            </field>
+        </record>
+
+        <record id="view_project_user_allocation_calendar" model="ir.ui.view">
+            <field name="name">project.user.allocation.calendar</field>
+            <field name="model">project.user.allocation</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <calendar color="user_id" date_start="date_start" date_stop="date_end" day_length="12" string="Users">
+                    <field name="phase_id"/>
+                    <field name="project_id"/>
+                </calendar>
+            </field>
+        </record>
+
+
+        <record id="view_project_user_allocation_form" model="ir.ui.view">
+            <field name="name">project.user.allocation.form</field>
+            <field name="model">project.user.allocation</field>
+            <field name="arch" type="xml">
+                <form string="Project User Allocation">
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="phase_id" required="1"/>
+                            <field name="project_id"/>
+                        </group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_project_user_allocation_list" model="ir.ui.view">
+            <field name="name">project.user.allocation.list</field>
+            <field name="model">project.user.allocation</field>
+            <field name="priority" eval="5"/>
+            <field name="arch" type="xml">
+                <tree editable="bottom" string="Project User Allocation">
+                    <field name="user_id"/>
+                    <field name="phase_id" required="1"/>
+                    <field name="project_id"/>
+                </tree>
+            </field>
+        </record>
+
+       <record id="view_project_user_allocation_search" model="ir.ui.view">
+            <field name="name">project.user.allocation.search</field>
+            <field name="model">project.user.allocation</field>
+            <field name="arch" type="xml">
+                <search string="Team Planning">
+                    <field name="user_id"/>
+                    <field name="phase_id"/>
+                    <field name="project_id"/>
+                    <group expand="0" string="Group By...">
+                        <filter name="user" string="User" icon="terp-personal" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Project" icon="terp-folder-violet" domain="[]" context="{'group_by':'project_id'}"/>
+                        <filter string="Phase" icon="terp-project" domain="[]" context="{'group_by':'phase_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="act_resouce_allocation" model="ir.actions.act_window">
+            <field name="name">Team Planning</field>
+            <field name="res_model">project.user.allocation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">gantt,tree,form,calendar</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="view_project_user_allocation_search"/>
+        </record>
+
+    </data>
+</openerp>

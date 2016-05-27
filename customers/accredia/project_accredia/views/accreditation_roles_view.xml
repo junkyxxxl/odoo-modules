@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+	 <!-- Accreditation roles Form View -->
+     <record model="ir.ui.view" id="view_accreditation_roles_project_form">
+            <field name="name">accreditation.roles.project.form</field>
+            <field name="model">accreditation.roles</field>
+            <field name="inherit_id" ref="hr_accredia.view_accreditation_roles_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='billable']" position="after">
+                    <field name="exclude_type_audit_visit"/>
+                    <field name="exclude_type_audit_doc_review"/>
+                </xpath>
+            </field>
+     </record>
+
+    </data>
+</openerp>

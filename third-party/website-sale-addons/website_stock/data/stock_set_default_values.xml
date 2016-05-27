@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <function model="ir.values" name="set_default">
+            <value>product.product</value>
+            <value>wk_display_qty</value>
+            <value>True</value>
+        </function>
+
+        <function model="ir.values" name="set_default">
+            <value>product.product</value>
+            <value>wk_in_stock_msg</value>
+            <value>Product In Stock</value>
+        </function>
+
+        <function model="ir.values" name="set_default">
+            <value>product.product</value>
+            <value>wk_out_of_stock_msg</value>
+            <value>Product Out of Stock</value>
+        </function>
+        <function model="ir.values" name="set_default">
+            <value>product.product</value>
+            <value>wk_stock_type</value>
+            <value>on_hand</value>
+        </function>
+        <function model="ir.values" name="set_default">
+            <value>product.product</value>
+            <value>wk_warehouse_type</value>
+            <value>all</value>
+        </function>
+        <!-- <function model="ir.values" name="set_default">
+            <value>product.product</value>
+            <value>wk_stock_location</value>
+            <value>12</value>
+        </function> -->
+        <!-- <function model="ir.values" name="set_default">
+            <value>product.product</value>
+            <value>wk_warehouse_name</value>
+            <value>Payment Option</value>
+        </function> -->
+        <!-- <function model="ir.values" name="set_default">
+            <value>product.product</value>
+            <value>wk_minimum_qty</value>
+            <value>3</value>
+        </function> -->
+        <function model="ir.values" name="set_default">
+            <value>product.product</value>
+            <value>wk_custom_message</value>
+            <value>Last In Stock</value>
+        </function>
+        <function model="ir.values" name="set_default">
+            <value>product.product</value>
+            <value>wk_deny_order</value>
+            <value>True</value>
+        </function>
+    </data>
+</openerp>

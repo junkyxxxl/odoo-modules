@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Company inheritancy -->
+        <record id="res_company_ext_isa_form" model="ir.ui.view">
+            <field name="name">res.company_closure</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook" position="inside">
+                    <page string="Closing and festivities">
+                        <separator string="Business closure" colspan="4"/>
+                        <field name="closed_days" colspan="4" nolabel="1">
+                            <form string="Comment">
+                                <group string="Select day and hours"> 								
+                                	<field name="day" colspan="2"/>
+                                	<field name="hours" colspan="2"/>
+                                </group>
+                            </form>
+                            <tree string="Closed days">
+                                <field name="day"/>
+                                <field name="hours"/>
+                            </tree>
+                        </field>
+                        <field name="festivities" nolabel="1">
+                            <form string="Comment">
+									<group string="Enter the details of the festivity">
+										<field name="name"/>                           
+                                    	<field name="day"/>
+                                    	<field name="month"/>
+                                    	<field name="year"/>
+                                    </group>                                
+                            </form>
+                            <tree string="Festivities">
+                                <field name="name"/>
+                                <field name="day"/>
+                                <field name="month"/>
+                                <field name="year"/>
+                            </tree>
+                        </field>
+                        <newline/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

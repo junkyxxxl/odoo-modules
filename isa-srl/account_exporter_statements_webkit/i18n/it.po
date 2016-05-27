@@ -1,0 +1,206 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_exporter_statements_webkit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 8.0alpha1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-03 14:22+0000\n"
+"PO-Revision-Date: 2014-06-03 14:22+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_exporter_statements_webkit
+#: selection:account.exporter.statements,letter_status:0
+msgid "Active"
+msgstr "Attiva"
+
+#. module: account_exporter_statements_webkit
+#: view:wizard.exporter.statements:0
+msgid "Cancel"
+msgstr "Chiudi"
+
+#. module: account_exporter_statements_webkit
+#: field:account.exporter.statements,name:0
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: account_exporter_statements_webkit
+#: code:addons/account_exporter_statements_webkit/exporter_statements/account_exporter_statements.py:79
+#: code:addons/account_exporter_statements_webkit/report/webkit_parser_header_fix.py:189
+#, python-format
+msgid "Error!"
+msgstr "Errore!"
+
+#. module: account_exporter_statements_webkit
+#: selection:account.exporter.statements,letter_status:0
+msgid "Expired"
+msgstr "Scaduta"
+
+#. module: account_exporter_statements_webkit
+#: view:account.exporter.statements:0
+#: model:ir.actions.act_window,name:account_exporter_statements_webkit.action_account_exporter_statements
+#: model:ir.actions.act_window,name:account_exporter_statements_webkit.action_exporter_statements
+#: model:ir.ui.menu,name:account_exporter_statements_webkit.account_exporter_statements
+#: model:ir.ui.menu,name:account_exporter_statements_webkit.account_exporter_statements2
+#: view:wizard.exporter.statements:0
+#: field:wizard.exporter.statements,exporter_id:0
+msgid "Exporter Statements"
+msgstr "Lettere d'Intento"
+
+#. module: account_exporter_statements_webkit
+#: view:account.exporter.statements:0
+msgid "Exporter Statements Search"
+msgstr "Ricerca Lettere d'Intento"
+
+#. module: account_exporter_statements_webkit
+#: field:account.exporter.statements,letter_date:0
+msgid "Letter Date"
+msgstr "Data Lettera"
+
+#. module: account_exporter_statements_webkit
+#: field:account.exporter.statements,letter_number:0
+msgid "Letter Number"
+msgstr "Numero Lettera"
+
+#. module: account_exporter_statements_webkit
+#: field:account.exporter.statements,letter_status:0
+msgid "Letter Status"
+msgstr "Stato Lettera"
+
+#. module: account_exporter_statements_webkit
+#: field:account.exporter.statements,letter_type:0
+msgid "Letter Type"
+msgstr "Tipo Lettera"
+
+#. module: account_exporter_statements_webkit
+#: model:ir.model,name:account_exporter_statements_webkit.model_account_exporter_statements
+msgid "Lettera d'intento"
+msgstr "Lettera d'intento"
+
+#. module: account_exporter_statements_webkit
+#: field:account.exporter.statements,max_amount:0
+msgid "Max Amount"
+msgstr "Importo Limite"
+
+#. module: account_exporter_statements_webkit
+#: code:addons/account_exporter_statements_webkit/report/webkit_parser_header_fix.py:142
+#, python-format
+msgid "No diagnosis message was provided"
+msgstr "Nessun messaggio d'errore pervenuto"
+
+#. module: account_exporter_statements_webkit
+#: code:addons/account_exporter_statements_webkit/report/webkit_parser_header_fix.py:194
+#, python-format
+msgid "No header defined for this Webkit report!"
+msgstr "Nessun header definito per questo report Webkit!"
+
+#. module: account_exporter_statements_webkit
+#: field:account.exporter.statements,partner_id:0
+#: field:wizard.exporter.statements,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_exporter_statements_webkit
+#: selection:account.exporter.statements,letter_type:0
+msgid "Period"
+msgstr "Periodo"
+
+#. module: account_exporter_statements_webkit
+#: field:account.exporter.statements,period_end:0
+msgid "Period End"
+msgstr "Fine Periodo"
+
+#. module: account_exporter_statements_webkit
+#: field:account.exporter.statements,period_start:0
+msgid "Period Start"
+msgstr "Inizio Periodo"
+
+#. module: account_exporter_statements_webkit
+#: code:addons/account_exporter_statements_webkit/report/webkit_parser_header_fix.py:195
+#, python-format
+msgid "Please set a header in company settings"
+msgstr "Please set a header in company settings"
+
+#. module: account_exporter_statements_webkit
+#: model:ir.actions.report.xml,name:account_exporter_statements_webkit.ir_webkit_exporter_statements_report
+#: model:ir.ui.menu,name:account_exporter_statements_webkit.exporter_statements
+#: view:wizard.exporter.statements:0
+msgid "Print Exporter Statements"
+msgstr "Stampa Lettere d'Intento"
+
+#. module: account_exporter_statements_webkit
+#: selection:account.exporter.statements,letter_status:0
+msgid "Revocated"
+msgstr "Revocata"
+
+#. module: account_exporter_statements_webkit
+#: selection:account.exporter.statements,letter_type:0
+msgid "Single Operation"
+msgstr "Singola Operazione"
+
+#. module: account_exporter_statements_webkit
+#: code:addons/account_exporter_statements_webkit/report/webkit_parser_header_fix.py:147
+#, python-format
+msgid "The command 'wkhtmltopdf' failed with error code = %s. Message: %s"
+msgstr "The command 'wkhtmltopdf' failed with error code = %s. Message: %s"
+
+#. module: account_exporter_statements_webkit
+#: code:addons/account_exporter_statements_webkit/report/webkit_parser_header_fix.py:144
+#, python-format
+msgid "The following diagnosis message was provided:\n"
+""
+msgstr "The following diagnosis message was provided:\n"
+""
+
+#. module: account_exporter_statements_webkit
+#: code:addons/account_exporter_statements_webkit/exporter_statements/account_exporter_statements.py:79
+#, python-format
+msgid "This Partner already has an active exporter statements"
+msgstr "Questo Partner ha già una lettera d'intento attiva"
+
+#. module: account_exporter_statements_webkit
+#: selection:account.exporter.statements,letter_type:0
+msgid "Till Import"
+msgstr "Fino ad Importo"
+
+#. module: account_exporter_statements_webkit
+#: field:account.exporter.statements,vat_code_id:0
+msgid "VAT Exemption Code"
+msgstr "Codice Esenzione Iva"
+
+#. module: account_exporter_statements_webkit
+#: code:addons/account_exporter_statements_webkit/report/webkit_parser_header_fix.py:189
+#, python-format
+msgid "Webkit Report template not found !"
+msgstr "Webkit Report template not found !"
+
+#. module: account_exporter_statements_webkit
+#: code:addons/account_exporter_statements_webkit/report/webkit_parser_header_fix.py:146
+#, python-format
+msgid "Webkit error"
+msgstr "Webkit error"
+
+#. module: account_exporter_statements_webkit
+#: code:addons/account_exporter_statements_webkit/report/webkit_parser_header_fix.py:218
+#: code:addons/account_exporter_statements_webkit/report/webkit_parser_header_fix.py:229
+#: code:addons/account_exporter_statements_webkit/report/webkit_parser_header_fix.py:244
+#, python-format
+msgid "Webkit render"
+msgstr "Webkit render"
+
+#. module: account_exporter_statements_webkit
+#: view:wizard.exporter.statements:0
+msgid "or"
+msgstr "o"
+
+#. module: account_exporter_statements_webkit
+#: model:ir.model,name:account_exporter_statements_webkit.model_wizard_exporter_statements
+msgid "wizard.exporter.statements"
+msgstr "wizard.exporter.statements"
+

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="project_issue_isa_form_view">
+            <field name="name">Project Issue Tracker Form</field>
+            <field name="model">project.issue</field>
+            <field name="inherit_id" ref="project_issue.project_issue_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_ids']" position="replace">
+                    <field name="categ_ids" invisible="1"/>
+                    <field name="issue_categ_ids" widget="many2many_tags"/>
+                </xpath>
+                <xpath expr="//field[@name='version_id']" position="attributes">
+                   <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='description']" position="attributes">
+                   <attribute name="groups"></attribute>
+                </xpath>
+            </field>
+        </record>
+
+	    <record id="view_issue_search_form_ext_isa" model="ir.ui.view">
+            <field name="name">project.issue.search.form.ext.isa</field>
+            <field name="model">project.issue</field>
+            <field name="inherit_id" ref="project_issue.view_project_issue_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='project_id']" position="after">
+                    <field name="task_id" widget="selection"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_feature_search_form_ext_isa" model="ir.ui.view">
+            <field name="name">project.feature.search.form.ext.isa</field>
+            <field name="model">project.issue</field>
+            <field name="inherit_id" ref="project_issue.view_project_issue_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@string='Create Day']" position="replace">
+                </xpath>
+            </field>
+        </record>
+
+        <record id="act_project_task_2_project_issue_all" model="ir.actions.act_window">
+            <field name="res_model">project.issue</field>
+            <field name="view_type">form</field>
+            <field name="name">Task Issues</field>
+            <field name="view_mode">kanban,tree,form,calendar,graph</field>
+            <field name="context">{'search_default_task_id': active_id, 'default_task_id': active_id}</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_invoice_classification,account.invoice.classification,model_account_invoice_classification,,1,1,1,1
+access_accreditation_group_charges,access_accreditation_group_charges,model_accreditation_group_charges,,1,1,1,1
+access_accreditation_small_lab,access_accreditation_small_lab,model_accreditation_small_lab,,1,1,1,1
+access_accreditation_invoiced_schema,access_accreditation_invoiced_schema,model_accreditation_invoiced_schema,,1,1,1,1
+access_vat_registries_accredia,vat.registries.accredia,account_vat_registries_report.model_vat_registries_isa,,1,1,1,1

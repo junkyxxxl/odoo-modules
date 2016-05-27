@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_accreditation_sector_ea,access_accreditation_sector_ea,model_accreditation_sector_ea,,1,1,1,1
+access_accreditation_sector_ea_nace,access_accreditation_sector_ea_nace,model_accreditation_sector_ea_nace,,1,1,1,1

@@ -1,0 +1,527 @@
+id,code,name,parent_id:id,user_type:id,type,reconcile
+acc_0,0,PRIMAPAINT,,account.data_account_type_view,view,TRUE
+acc_01,01,PATRIMONIALE ATTIVO,acc_0,account.data_account_type_view,view,TRUE
+acc_0101,0101,CASSA,acc_01,account.data_account_type_view,view,TRUE
+acc_010101,010101,CASSA,acc_0101,account.data_account_type_view,view,TRUE
+acc_010101000001,010101000001,CASSA CONTANTI,acc_010101,account.data_account_type_asset,other,TRUE
+acc_010101000002,010101000002,ASSEGNI,acc_010101,account.data_account_type_asset,other,TRUE
+acc_010101000003,010101000003,BANCOMAT-CARTE DI CREDITO,acc_010101,account.data_account_type_asset,other,TRUE
+acc_0105,0105,RAPPORTI BANCARI,acc_01,account.data_account_type_view,view,TRUE
+acc_010505,010505,C/C ORDINARIO,acc_0105,account.data_account_type_view,view,TRUE
+acc_010505000005,010505000005,BANCA DI ROMA,acc_010505,account.data_account_type_asset,other,TRUE
+acc_010505000010,010505000010,COMIT,acc_010505,account.data_account_type_asset,other,TRUE
+acc_010505000015,010505000015,CARIVIT,acc_010505,account.data_account_type_asset,other,TRUE
+acc_010505000020,010505000020,CREDITO ITALIANO,acc_010505,account.data_account_type_asset,other,TRUE
+acc_010505000025,010505000025,BANCO DI BRESCIA,acc_010505,account.data_account_type_asset,other,TRUE
+acc_010505000030,010505000030,CREDEM,acc_010505,account.data_account_type_asset,other,TRUE
+acc_010505000035,010505000035,CREDEM C/C 619 FINANZIAMENTO,acc_010505,account.data_account_type_asset,other,TRUE
+acc_010505000040,010505000040,CARIVIT C/C 126,acc_010505,account.data_account_type_asset,other,TRUE
+acc_010510,010510,C/C SBF,acc_0105,account.data_account_type_view,view,TRUE
+acc_010510000005,010510000005,BANCA DI ROMA C/C SBF,acc_010510,account.data_account_type_asset,other,TRUE
+acc_010510000006,010510000006,BANCA DI ROMA SBF S.BANCA,acc_010510,account.data_account_type_asset,other,TRUE
+acc_010510000007,010510000007,BANCA DI ROMA SBF EFFETTI,acc_010510,account.data_account_type_asset,other,TRUE
+acc_010510000010,010510000010,COMIT C/C SBF,acc_010510,account.data_account_type_asset,other,TRUE
+acc_010510000015,010510000015,CARIVIT C/C SBF,acc_010510,account.data_account_type_asset,other,TRUE
+acc_010510000020,010510000020,CREDITO ITALIANO C/C,acc_010510,account.data_account_type_asset,other,TRUE
+acc_010510000025,010510000025,BANCO DI BRESCIA C/C SBF,acc_010510,account.data_account_type_asset,other,TRUE
+acc_010510000030,010510000030,MEDIOCREDITO CENTRALE,acc_010510,account.data_account_type_asset,other,TRUE
+acc_010510001330,010510001330,BASF COATNGS SPA,acc_010510,account.data_account_type_asset,other,TRUE
+acc_010511,010511,C/UNICO SBF,acc_0105,account.data_account_type_view,view,TRUE
+acc_010511000015,010511000015,CARIVIT CARTACEO SBF C/UNICO,acc_010511,account.data_account_type_asset,other,TRUE
+acc_010511000016,010511000016,CARIVIT SBF C/UNICO S/BANCA,acc_010511,account.data_account_type_asset,other,TRUE
+acc_010511000017,010511000017,CONTO TRANSITORIO,acc_010511,account.data_account_type_asset,other,TRUE
+acc_010511000030,010511000030,CREDEM SBF C/UNICO,acc_010511,account.data_account_type_asset,other,TRUE
+acc_010511000035,010511000035,CREDEM CARTACEO SBF C/UNICO,acc_010511,account.data_account_type_asset,other,TRUE
+acc_0108,0108,PORTAFOGLIO ATTIVO,acc_01,account.data_account_type_view,view,TRUE
+acc_010801,010801,PORTAFOGLIO ATTIVO,acc_0108,account.data_account_type_view,view,TRUE
+acc_010801000001,010801000001,EFFETTI ATTIVI,acc_010801,account.data_account_type_asset,other,TRUE
+acc_010801000002,010801000002,C/INSOLUTI TRANSITORIO,acc_010801,account.data_account_type_asset,other,TRUE
+acc_0110,0110,CLIENTI,acc_01,account.data_account_type_view,view,TRUE
+acc_011001,011001,CLIENTI,acc_0110,account.data_account_type_view,view,TRUE
+acc_011001000000,011001000000,CREDITI V/CLIENTI,acc_011001,account.data_account_type_asset,other,TRUE
+acc_0115,0115,ERARIO CONTO IVA,acc_01,account.data_account_type_view,view,TRUE
+acc_011505,011505,ERARIO CONTO IVA,acc_0115,account.data_account_type_view,view,TRUE
+acc_011505000005,011505000005,ERARIO CONTO IVA,acc_011505,account.data_account_type_asset,other,TRUE
+acc_0120,0120,CREDITI VERSO PERSONALE,acc_01,account.data_account_type_view,view,TRUE
+acc_012005,012005,CREDITI VERSO PERSONALE,acc_0120,account.data_account_type_view,view,TRUE
+acc_012005000005,012005000005,ANTICIPI RETRIBUZIONI PERSONALE,acc_012005,account.data_account_type_asset,other,TRUE
+acc_012005000010,012005000010,ANTICIPI IND.ANZ.PERSONALE,acc_012005,account.data_account_type_asset,other,TRUE
+acc_0125,0125,IVA,acc_01,account.data_account_type_view,view,TRUE
+acc_012505,012505,IVA,acc_0125,account.data_account_type_view,view,TRUE
+acc_012505000005,012505000005,IVA SU FATTURE PERVENUTE,acc_012505,account.data_account_type_asset,other,TRUE
+acc_012505000010,012505000010,IVA SU FATTURE EMESSE,acc_012505,account.data_account_type_asset,other,TRUE
+acc_012505000015,012505000015,IVA SU RETTIF.FATT.PERVENUTE,acc_012505,account.data_account_type_asset,other,TRUE
+acc_012505000020,012505000020,IVA SU RETTIF.FATT.EMESSE,acc_012505,account.data_account_type_asset,other,TRUE
+acc_012505000025,012505000025,IVA CORRISPETTIVI,acc_012505,account.data_account_type_asset,other,TRUE
+acc_012505000030,012505000030,IVA INTRACOMUNITARIA,acc_012505,account.data_account_type_asset,other,TRUE
+acc_0130,0130,CREDITI DIVERSI,acc_01,account.data_account_type_view,view,TRUE
+acc_013005,013005,CREDITI DIVERSI,acc_0130,account.data_account_type_view,view,TRUE
+acc_013005000005,013005000005,ANTICIPI A FORNITORI,acc_013005,account.data_account_type_asset,other,TRUE
+acc_013005000010,013005000010,DEBITORI DIVERSI,acc_013005,account.data_account_type_asset,other,TRUE
+acc_013005000015,013005000015,ERARIO IMP.C/ANTICIPAZIONI,acc_013005,account.data_account_type_asset,other,TRUE
+acc_013005000020,013005000020,ACCONTO IRPEG,acc_013005,account.data_account_type_asset,other,TRUE
+acc_013005000025,013005000025,ACCONTO IRAP,acc_013005,account.data_account_type_asset,other,TRUE
+acc_013005000030,013005000030,ERARIO C/RITENUTE ANT.TFR,acc_013005,account.data_account_type_asset,other,TRUE
+acc_013005000035,013005000035,ACCONTO COMPENSO AMM.RE,acc_013005,account.data_account_type_asset,other,TRUE
+acc_013005000040,013005000040,ACCONTO IRES,acc_013005,account.data_account_type_asset,other,TRUE
+acc_013005000045,013005000045,CAR SOLUTION TEAM,acc_013005,account.data_account_type_asset,other,TRUE
+acc_013005000050,013005000050,CREDITO SERIT S.P.A,acc_013005,account.data_account_type_asset,other,TRUE
+acc_013005000055,013005000055,CREDEMVITA,acc_013005,account.data_account_type_asset,other,TRUE
+acc_013005000060,013005000060,PORTA LUCA,acc_013005,account.data_account_type_asset,other,TRUE
+acc_013005000060,013005000060,CREDITO DL 66/14,acc_013005,account.data_account_type_asset,other,TRUE
+acc_0135,0135,RATEI E RISCONTI ATTIVI,acc_01,account.data_account_type_view,view,TRUE
+acc_013505,013505,RATEI E RISCONTI ATTIVI,acc_0135,account.data_account_type_view,view,TRUE
+acc_013505000005,013505000005,RATEI ATTIVI,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000010,013505000010,FATTURE DA EMETTERE,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000015,013505000015,RISCONTI ATTIVI,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000020,013505000020,NOTE CREDITO DA RICEVERE,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000025,013505000025,CAN.LEASING COMP.2005,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000030,013505000030,CAN.LEASING COMP.2006,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000035,013505000035,ASSISTENZA HARDWARE COMP.2003,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000040,013505000040,CAN.LEASING COMP.2007,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000045,013505000045,CONTR.INSTALLAZ.DOS.COMP.2002,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000050,013505000050,'PUBBLICITA'' COMP.2002',acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000055,013505000055,MAXI CAN.LEAS.COMP.2002 PUNTO&DUCAT,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000060,013505000060,MAXI CAN.LEAS.COMP.2003 PUNTO&DUCAT,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000065,013505000065,MAXI CAN.LEAS.COMP.2004 PUNTO&DUCAT,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000070,013505000070,MAXI CAN.LEAS.COMP.2003 MERCEDES,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000075,013505000075,MAXI CAN.LEAS.COMP.2004 MERCEDES,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000080,013505000080,MAXI CAN.LEAS.COMP.2005 MERCEDES,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000085,013505000085,'COMP.2003 PUBBLICITA''',acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000090,013505000090,'COMP.2004 PUBBLICITA''',acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000095,013505000095,ASS.HARDWARE COMP.2004,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000100,013505000100,ASS.HARDWARE COMP.2005,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000105,013505000105,ASS.SOFTWARE COMP.2005,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000106,013505000106,ASS.HARDWARE COMP.2006,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000107,013505000107,ASS.SOFTWARE COMP.2006,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000108,013505000108,CONTRIBUTI A CLIENTI COMP.2006,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000109,013505000109,CONTRIBUTI A CLIENTI COMP.2007,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000110,013505000110,ESERCIZIO AUTOM.COMP.2005,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000111,013505000111,ASSICURAZIONI AUTOM.COMP.2005,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000112,013505000112,SPESE TELEFONICHE COMP.2005,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000113,013505000113,ASS.HARDWARE COMP.2007,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000114,013505000114,ASS.TELEF.COMP.2007,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000115,013505000115,ASS.HARDAWARE COMP.2008,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000120,013505000120,CONTRIBUTO SVILUPPO COMM.LE 2008,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000125,013505000125,CONTR.INST.DOSATORE 2008,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000130,013505000130,CONTR.INST.DOSATORE 2009,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000135,013505000135,CONTRIBUTI A CLI.COMP.2009,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000140,013505000140,CONTRIBUTI A CLI.COMP.2010,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000145,013505000145,ASS.HARDWARE COMP.2009,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000150,013505000150,CONTR.INST.DOSATORE 2010,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000155,013505000155,CONTR.INST.DOSATORE 2011,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000160,013505000160,CONTR.INST.DOSATORE 2012,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000165,013505000165,CONTR.INST.DOSATORE 2013,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000170,013505000170,ASS.HARDWARE COMP.2010,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000175,013505000175,ASS.SOFTWARE COMP.2010,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000180,013505000180,ASSISTENZA TELEF.COMP.2010,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000185,013505000185,ASS.HARDWARE COMP.2011,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000190,013505000190,ASS.SOFTWARE COMP.2011,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000195,013505000195,ASS.TELEF.COMP.2011,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000200,013505000200,ASS.HARDWARE COMP.2012,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000205,013505000205,ASS.HARDWARE COMP.2013,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000210,013505000210,ASS.HARDWARE COMP.2014,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000215,013505000215,'PUBBLICITA'' COMP.2013',acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000220,013505000220,ASS.SOFTWARE COMP.2013,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000225,013505000225,ASS.SOFTWARE COMP.2014,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000230,013505000230,ASS.HARDWARE COMP.2015,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000235,013505000235,ASS.HARDWARE COMP.2016,acc_013505,account.data_account_type_asset,other,TRUE
+acc_013505000240,013505000240,ASS.HARDWARE COMP.2017,acc_013505,account.data_account_type_asset,other,TRUE
+acc_0140,0140,RIMANENZE FINALI,acc_01,account.data_account_type_view,view,TRUE
+acc_014005,014005,RIMANENZE FINALI,acc_0140,account.data_account_type_view,view,TRUE
+acc_014005000005,014005000005,RIMANENZE FINALI,acc_014005,account.data_account_type_asset,other,TRUE
+acc_0145,0145,CAUZIONI ATTIVE,acc_01,account.data_account_type_view,view,TRUE
+acc_014505,014505,CAUZIONI ATTIVE,acc_0145,account.data_account_type_view,view,TRUE
+acc_014505000005,014505000005,CAUZIONI DIVERSE,acc_014505,account.data_account_type_asset,other,TRUE
+acc_014505000010,014505000010,CAUZIONI A FORNITORI,acc_014505,account.data_account_type_asset,other,TRUE
+acc_014505000015,014505000015,QUOTE ASSOCIATIVE,acc_014505,account.data_account_type_asset,other,TRUE
+acc_014505000020,014505000020,DEPOSITO CAUZIONALE AXUS,acc_014505,account.data_account_type_asset,other,TRUE
+acc_0150,0150,IMMOBILIZZAZIONI IMMATERIALI,acc_01,account.data_account_type_view,view,TRUE
+acc_015005,015005,IMMOBILIZZAZIONI IMMATERIALI,acc_0150,account.data_account_type_view,view,TRUE
+acc_015005000005,015005000005,SPESE IMPIANTO ED AMPLIAMENTO,acc_015005,account.data_account_type_asset,other,TRUE
+acc_015005000010,015005000010,MANUTENZIONI ECC.5%,acc_015005,account.data_account_type_asset,other,TRUE
+acc_0155,0155,IMMOBILIZZAZIONI MATERIALI,acc_01,account.data_account_type_view,view,TRUE
+acc_015505,015505,IMMOBILIZZAZIONI MATERIALI,acc_0155,account.data_account_type_view,view,TRUE
+acc_015505000005,015505000005,MACCHINE APP.ATTR.VARIE,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000010,015505000010,MEZZI SOLL.CAR.SCAR.INTERNO,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000015,015505000015,MOBILI ARREDI MACC.UFFICI,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000020,015505000020,SIST.AUTOM.ELETTRONICI,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000025,015505000025,AUTOMEZZI,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000030,015505000030,MOBILI ARREDI MAGAZZINO,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000035,015505000035,DIME DA NOLEGGIO,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000040,015505000040,ATTR.IN COMODATO ATT.A CLI,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000045,015505000045,PROGRAMMI APPLICATIVI,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000050,015505000050,AMMODERNAMENTI,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000055,015505000055,IMPIANTI,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000060,015505000060,REGISTRATORE DI CASSA,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000065,015505000065,IMMOBILI,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000070,015505000070,SISTEMA HARDWARE,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000075,015505000075,INSEGNA,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000080,015505000080,MOTOCICLO,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000085,015505000085,ATTR.IN COMODATO PASS.DA FORN.,acc_015505,account.data_account_type_asset,other,TRUE
+acc_015505000090,015505000090,XXXXXXXXXXXXXXXX,acc_015505,account.data_account_type_asset,other,TRUE
+acc_20,20,PATRIMONIALE PASSIVO,acc_0,account.data_account_type_view,view,TRUE
+acc_2005,2005,FORNITORI,acc_20,account.data_account_type_view,view,TRUE
+acc_200505,200505,FORNITORI,acc_2005,account.data_account_type_view,view,TRUE
+acc_200505000000,200505000000,DEBITI V/FORNITORI,acc_200505,account.data_account_type_liability,other,TRUE
+acc_2010,2010,EFFETTI PASSIVI,acc_20,account.data_account_type_view,view,TRUE
+acc_201005,201005,EFFETTI PASSIVI,acc_2010,account.data_account_type_view,view,TRUE
+acc_201005000005,201005000005,EFFETTI COMMERCIALI,acc_201005,account.data_account_type_liability,other,TRUE
+acc_201005000010,201005000010,EFFETTI FINANZIARI,acc_201005,account.data_account_type_liability,other,TRUE
+acc_2015,2015,DEBITI VERSO ERARIO,acc_20,account.data_account_type_view,view,TRUE
+acc_201505,201505,DEBITI VERSO ERARIO,acc_2015,account.data_account_type_view,view,TRUE
+acc_201505000005,201505000005,RITENUTE FISCALI,acc_201505,account.data_account_type_liability,other,TRUE
+acc_201505000010,201505000010,'RITENUTE D''ACCONTO',acc_201505,account.data_account_type_liability,other,TRUE
+acc_201505000015,201505000015,ENASARCO,acc_201505,account.data_account_type_liability,other,TRUE
+acc_201505000020,201505000020,ADDIZIONALE IRPEF,acc_201505,account.data_account_type_liability,other,TRUE
+acc_201505000025,201505000025,RITENUTE FISCALI CO.CO.CO.,acc_201505,account.data_account_type_liability,other,TRUE
+acc_2020,2020,DEBITI VERSO ISTITUTI PREVIDENZIALI,acc_20,account.data_account_type_view,view,TRUE
+acc_202005,202005,DEBITI VERSO ISTITUTI PREVIDENZIALI,acc_2020,account.data_account_type_view,view,TRUE
+acc_202005000005,202005000005,INPS A CARICO DIPENDENTI,acc_202005,account.data_account_type_liability,other,TRUE
+acc_202005000010,202005000010,INAIL,acc_202005,account.data_account_type_liability,other,TRUE
+acc_202005000015,202005000015,INPS,acc_202005,account.data_account_type_liability,other,TRUE
+acc_202005000020,202005000020,INPS CO.CO.CO.,acc_202005,account.data_account_type_liability,other,TRUE
+acc_202005000025,202005000025,INAIL COLLABORATORI,acc_202005,account.data_account_type_liability,other,TRUE
+acc_2025,2025,DEBITI DIVERSI,acc_20,account.data_account_type_view,view,TRUE
+acc_202505,202505,DEBITI DIVERSI,acc_2025,account.data_account_type_view,view,TRUE
+acc_202505000005,202505000005,DEBITI DIVERSI,acc_202505,account.data_account_type_liability,other,TRUE
+acc_202505000010,202505000010,CLIENTI CONTO ANTICIPI,acc_202505,account.data_account_type_liability,other,TRUE
+acc_202505000015,202505000015,PERSONALE NOSTRO DIPENDENTE,acc_202505,account.data_account_type_liability,other,TRUE
+acc_202505000020,202505000020,INSOLUTI DA PERVENIRE,acc_202505,account.data_account_type_liability,other,TRUE
+acc_202505000030,202505000030,PROVVIGIONI 2001 DA LIQUIDARE,acc_202505,account.data_account_type_liability,other,TRUE
+acc_202505000035,202505000035,PROVVIGIONI 2002 DA LIQUIDARE,acc_202505,account.data_account_type_liability,other,TRUE
+acc_202505000040,202505000040,PROVVIGIONI 2003 DA LIQUIDARE,acc_202505,account.data_account_type_liability,other,TRUE
+acc_202505000045,202505000045,PROVVIGIONI 2007 DA LIQUIDARE,acc_202505,account.data_account_type_liability,other,TRUE
+acc_202505000050,202505000050,PROVVIGIONI 2008 DA LIQUIDARE,acc_202505,account.data_account_type_liability,other,TRUE
+acc_202505000055,202505000055,PROVVIGIONI 2009 DA LIQUIDARE,acc_202505,account.data_account_type_liability,other,TRUE
+acc_202505000060,202505000060,PROVVIGIONI 2010 DA LIQUIDARE,acc_202505,account.data_account_type_liability,other,TRUE
+acc_202510,202510,DEBITI VERSO PERSONALE DIPENDENTE,acc_2025,account.data_account_type_view,view,TRUE
+acc_202510000005,202510000005,DIPENDENTI C/RETRIBUZIONI,acc_202510,account.data_account_type_liability,other,TRUE
+acc_202510000010,202510000010,EMOLUMENTI AMMINISTRATORI,acc_202510,account.data_account_type_liability,other,TRUE
+acc_2030,2030,RATEI E RISCONTI PASSIVI,acc_20,account.data_account_type_view,view,TRUE
+acc_203005,203005,RATEI E RISCONTI PASSIVI,acc_2030,account.data_account_type_view,view,TRUE
+acc_203005000005,203005000005,RATEI PASSIVI,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000010,203005000010,FATTURE DA RICEVERE,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000015,203005000015,RISCONTI PASSIVI,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000016,203005000016,RISCONTI PASSIVI INTERESSI ATT.2002,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000017,203005000017,RISCONTI PASSIVI INTERESSI ATT.2003,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000020,203005000020,NOTE CREDITO DA EMETTERE,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000025,203005000025,INTERESSI ATTIVI COMP.2003,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000030,203005000030,INTERESSI ATTIVI COMP.2004,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000035,203005000035,INTERESSI ATTIVI COMP.2005,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000040,203005000040,INTERESSI ATTIVI COMP.2006,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000045,203005000045,INTERESSI ATTIVI COMP.2007,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000050,203005000050,INTERESSI ATTIVI COMP.2008,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000055,203005000055,INTERESSI ATTIVI COMP.2009,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000060,203005000060,INTERESSI ATTIVI COMP.2010,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000065,203005000065,INTERESSI ATTIVI COMP.2011,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000070,203005000070,INTERESSI ATTIVI COMP.2012,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000075,203005000075,INTERESSI ATTIVI COMP.2013,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000080,203005000080,INTERESSI ATTIVI COMP.2014,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000085,203005000085,INTERESSI ATTIVI COMP.2015,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000090,203005000090,INTERESSI ATTIVI COMP.2016,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000095,203005000095,INTERESSI ATTIVI COMP.2017,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000100,203005000100,INTERESSI ATTIVI COMP.2018,acc_203005,account.data_account_type_liability,other,TRUE
+acc_203005000105,203005000105,INTERESSI ATTIVI COMP.2019,acc_203005,account.data_account_type_liability,other,TRUE
+acc_2035,2035,MUTUI PASSIVI,acc_20,account.data_account_type_view,view,TRUE
+acc_203505,203505,MUTUI PASSIVI,acc_2035,account.data_account_type_view,view,TRUE
+acc_203505000005,203505000005,MUTUO CARIVIT,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000010,203505000010,MUTUO BANCA DI ROMA,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000015,203505000015,CCIAA FINANZ. BANCA DI ROMA,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000020,203505000020,FINRENAULT S.P.A.,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000025,203505000025,518875 FINANZ.BANCA DI ROMA,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000030,203505000030,518874 FINANZ.BANCA DI ROMA,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000035,203505000035,41432 BMW FINANZIAMENTO,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000040,203505000040,IBM SEMEA SPA FINAN.9N1GE359,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000045,203505000045,DAILY TRANSOLVERFINANCE,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000050,203505000050,01013366 FINANZ.BANCA DI ROMA,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000055,203505000055,PSA 3126830 FINANZ.PEUGEOT,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000060,203505000060,456042 CENTRO LEASING X AUTOLINER,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000065,203505000065,9N1GN730 IBM ITALIA SERV.FIN.SPA,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000070,203505000070,FINANZIAMENTO CARIVIT 16877/7,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000075,203505000075,FINANZ.CARIVIT 18972/3,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000080,203505000080,FINANZ.CARIVIT 60020756,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000085,203505000085,FINANZ.CENTRO LEAS.492732,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000090,203505000090,FINANZ.CARIVIT 60024463,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000095,203505000095,PSA 8135514 FIN.PEUGEOT 407 SW,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000100,203505000100,BMW GROUP FIN.1906563,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000105,203505000105,FINANZIAMENTO CREDEM,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000110,203505000110,FINANZ.CREDEM 6655688 01/12/2011,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000115,203505000115,FINANZ.CREDEM 6721231 08/11/2012,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000120,203505000120,FINANZ.CREDEM 6843958 10/12/2013,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000130,203505000130,FINANZ.CREDEM 6942524 15/12/2014,acc_203505,account.data_account_type_liability,other,TRUE
+acc_203505000140,203505000140,FINANZ.CARIVIT 064045312 18/12/2014,acc_203505,account.data_account_type_liability,other,TRUE
+acc_2040,2040,FONDO AMMORTAMENTO,acc_20,account.data_account_type_view,view,TRUE
+acc_204005,204005,FONDO AMMORTAMENTO,acc_2040,account.data_account_type_view,view,TRUE
+acc_204005000005,204005000005,MACCHINE APP.ATTR.VARIE,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000010,204005000010,MEZZI SOLLEVAMENTO,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000015,204005000015,MOBILI ARREDI MACCHINE UFFICIO,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000020,204005000020,SISTEMI AUTOM.ELETTRONICI,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000025,204005000025,AUTOMEZZI,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000030,204005000030,MANUTENZIONI ECC.5%,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000035,204005000035,MOBILI ARREDI MAGAZZINO,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000040,204005000040,DIME DA NOLEGGIO,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000045,204005000045,ATTREZZATURE IN COMODATO,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000050,204005000050,PROGRAMMI APPLICATIVI,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000055,204005000055,AMMODERNAMENTI,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000060,204005000060,IMPIANTI,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000065,204005000065,REGISTRATORE DI CASSA,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000070,204005000070,IMMOBILI,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000075,204005000075,INSEGNA,acc_204005,account.data_account_type_liability,other,TRUE
+acc_204005000080,204005000080,SISTEMA HARDWARE,acc_204005,account.data_account_type_liability,other,TRUE
+acc_2045,2045,ALTRI FONDI,acc_20,account.data_account_type_view,view,TRUE
+acc_204505,204505,ALTRI FONDI,acc_2045,account.data_account_type_view,view,TRUE
+acc_204505000005,204505000005,FONDO SVALUTAZIONE CREDITI,acc_204505,account.data_account_type_liability,other,TRUE
+acc_204505000010,204505000010,FONDO IRPEG,acc_204505,account.data_account_type_liability,other,TRUE
+acc_204505000015,204505000015,FONDO ILOR,acc_204505,account.data_account_type_liability,other,TRUE
+acc_204505000020,204505000020,FILP,acc_204505,account.data_account_type_liability,other,TRUE
+acc_204505000025,204505000025,'FONDO IN SOSP.D''IMPOSTA',acc_204505,account.data_account_type_liability,other,TRUE
+acc_204505000030,204505000030,FONDO T.F.R.,acc_204505,account.data_account_type_liability,other,TRUE
+acc_204505000035,204505000035,FONDO IRES,acc_204505,account.data_account_type_liability,other,TRUE
+acc_204505000040,204505000040,FONDO RISCHI DIVERSI,acc_204505,account.data_account_type_liability,other,TRUE
+acc_2050,2050,'SOGGETTI A RITENUTA D''ACCONTO',acc_20,account.data_account_type_view,view,TRUE
+acc_205005,205005,'SOGGETTI A RITENUTE D''ACCONTO',acc_2050,account.data_account_type_view,view,TRUE
+acc_205005000005,205005000005,ONORINI MORENO,acc_205005,account.data_account_type_liability,other,TRUE
+acc_205005000010,205005000010,MICCI TIZIANO,acc_205005,account.data_account_type_liability,other,TRUE
+acc_2055,2055,SOCI CONTO FINANZIAMENTO,acc_20,account.data_account_type_view,view,TRUE
+acc_205505,205505,SOCI CONTO FINANZIAMENTO,acc_2055,account.data_account_type_view,view,TRUE
+acc_205505000005,205505000005,ONORINI MORENO,acc_205505,account.data_account_type_liability,other,TRUE
+acc_205505000010,205505000010,MICCI TIZIANO,acc_205505,account.data_account_type_liability,other,TRUE
+acc_2060,2060,CAPITALE SOCIALE,acc_20,account.data_account_type_view,view,TRUE
+acc_206005,206005,CAPITALE SOCIALE,acc_2060,account.data_account_type_view,view,TRUE
+acc_206005000005,206005000005,CAPITALE SOCIALE,acc_206005,account.data_account_type_liability,other,TRUE
+acc_2065,2065,FONDI DI RISERVA,acc_20,account.data_account_type_view,view,TRUE
+acc_206505,206505,FONDI DI RISERVA,acc_2065,account.data_account_type_view,view,TRUE
+acc_206505000005,206505000005,FONDO RISERVA ORDINARIA,acc_206505,account.data_account_type_liability,other,TRUE
+acc_206505000010,206505000010,FONDO RISERVA STRAORDINARIA,acc_206505,account.data_account_type_liability,other,TRUE
+acc_206505000015,206505000015,'UTILE D''ESERCIZIO',acc_206505,account.data_account_type_liability,other,TRUE
+acc_30,30,COSTI,acc_0,account.data_account_type_view,view,TRUE
+acc_3005,3005,RIMANENZE INIZIALI,acc_30,account.data_account_type_view,view,TRUE
+acc_300505,300505,RIMANENZE INIZIALI,acc_3005,account.data_account_type_view,view,TRUE
+acc_300505000005,300505000005,RIMANENZE INIZIALI,acc_300505,account.data_account_type_expense,other,TRUE
+acc_3010,3010,MERCI C/ACQUISTI,acc_30,account.data_account_type_view,view,TRUE
+acc_301005,301005,MERCI C/ACQUISTI,acc_3010,account.data_account_type_view,view,TRUE
+acc_301005000005,301005000005,MERCI C/ACQUISTI,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000010,301005000010,ACQUISTI OMAGGI,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000015,301005000015,TRASPORTI,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000020,301005000020,ONERI VARI,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000025,301005000025,NOLEGGI,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000030,301005000030,COMPONENTI DOSATORE,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000035,301005000035,RIPARAZIONI,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000040,301005000040,IMBALLI,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000050,301005000050,MERCI C/ACQUISTI A,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000055,301005000055,MERCI C/ACQUISTI 2,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000060,301005000060,MONTAGGI,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000065,301005000065,ECO-CONTRIBUTO RAEE,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000070,301005000070,CONSULENZE TECNICHE,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000075,301005000075,C.O.U.COBAT+ADD.PIOMBO,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000085,301005000085,LICENZE/ABBON.SISTEMA TINTOMETRICO,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000090,301005000090,ECO CONTRIBUTO BATTERIE,acc_301005,account.data_account_type_expense,other,TRUE
+acc_301005000095,301005000095,PELLICOLE C/ACQUISTI,acc_301005,account.data_account_type_expense,other,TRUE
+acc_3015,3015,COSTI DEL PERSONALE,acc_30,account.data_account_type_view,view,TRUE
+acc_301505,301505,COSTI DEL PERSONALE,acc_3015,account.data_account_type_view,view,TRUE
+acc_301505000005,301505000005,RETRIBUZIONE LORDA,acc_301505,account.data_account_type_expense,other,TRUE
+acc_301505000010,301505000010,CONTRIBUTI INPS,acc_301505,account.data_account_type_expense,other,TRUE
+acc_301505000015,301505000015,CONTRIBUTI INAIL,acc_301505,account.data_account_type_expense,other,TRUE
+acc_301505000020,301505000020,RETRIBUZIONE LORDA RATEO 14.MA,acc_301505,account.data_account_type_expense,other,TRUE
+acc_301505000025,301505000025,CONTRIBUTI INPS RATEO 14.MA,acc_301505,account.data_account_type_expense,other,TRUE
+acc_301505000030,301505000030,CONTRIBUTI INAIL RATEO 14.MA,acc_301505,account.data_account_type_expense,other,TRUE
+acc_301505000035,301505000035,'INDENNITA'' LIC.PERSONALE Q.ANNUA',acc_301505,account.data_account_type_expense,other,TRUE
+acc_301505000040,301505000040,TRATTAMENTO FINE MANDATO AMM.RI,acc_301505,account.data_account_type_expense,other,TRUE
+acc_301505000045,301505000045,FRINGE BENEFITS,acc_301505,account.data_account_type_expense,other,TRUE
+acc_3020,3020,COSTI GENERALI,acc_30,account.data_account_type_view,view,TRUE
+acc_302005,302005,COSTI GENERALI,acc_3020,account.data_account_type_view,view,TRUE
+acc_302005000005,302005000005,AFFITTI PASSIVI,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000010,302005000010,ENERGIA ELETTRICA,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000015,302005000015,ACQUA,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000020,302005000020,SPESE TELEFONICHE,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000030,302005000030,SPESE DIVERSE,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000035,302005000035,RIMB.SPESE RISTOR.HOTEL,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000040,302005000040,TASSA SMALTIMENTO RIFIUTI,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000045,302005000045,ARROTONDAMENTI,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000050,302005000050,IVA INDETRAIBILE,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000055,302005000055,AMMODERNAMENTI,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000060,302005000060,VIGILANZA,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000065,302005000065,PULIZIE,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000070,302005000070,ABBUONI PASSIVI,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000075,302005000075,BENI AMM.LI ESERCIZIO INF. 51,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000080,302005000080,RISCALDAMENTO,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000085,302005000085,SMALTIMENTO RIFIUTI,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000095,302005000095,MANUTENZIONI,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000100,302005000100,ACQ.BEVANDE X DISTRI.AUTOM.,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000105,302005000105,PRESTAZIONI DI TERZI,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000110,302005000110,RIMB.SPESE RIST.DETR.75%,acc_302005,account.data_account_type_expense,other,TRUE
+acc_302005000115,302005000115,FURTI/AMMANCAMENTI,acc_302005,account.data_account_type_expense,other,TRUE
+acc_3025,3025,COSTI AMMINISTRATIVI,acc_30,account.data_account_type_view,view,TRUE
+acc_302505,302505,COSTI AMMINISTRATIVI,acc_3025,account.data_account_type_view,view,TRUE
+acc_302505000005,302505000005,CONSULENZE,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000010,302505000010,SPESE DI RAPPRESENTANZA,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000015,302505000015,POSTALI,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000020,302505000020,CANCELLERIA E STAMPATI,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000025,302505000025,VIDIMAZIONI CERTIFICATI,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000030,302505000030,VALORI BOLLATI,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000035,302505000035,ABBONAMENTI,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000040,302505000040,OMAGGI CON RIVALSA IVA,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000041,302505000041,OMAGGI SENZA RIVALSA IVA,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000042,302505000042,OMAGGI RIVALSA IVA PREST.SERVIZI,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000045,302505000045,CANONI LEASING,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000050,302505000050,PROVVIGIONI PASSIVE,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000055,302505000055,COMPENSI AMMINISTRATORI,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000060,302505000060,ENASARCO,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000065,302505000065,IMPOSTE/TASSE E CONC.GOVERNATIVE,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000070,302505000070,ASSISTENZA SOFTWARE,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000075,302505000075,ASSISTENZA HARDWARE,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000080,302505000080,ACC.TO LIQUIDAZIONE AMM.RI,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000085,302505000085,VISITE MEDICHE,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000090,302505000090,COMPENSI A TERZI,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000095,302505000095,IRAP,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000100,302505000100,SPESE PROMOZIONALI,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000105,302505000105,ASSICURAZIONI,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000110,302505000110,ELABORAZIONE PAGHE,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000115,302505000115,POLIZZA TFM,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000120,302505000120,SPESE D.GLS 81/2008,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000125,302505000125,ASSISTENZA TELEFONICA,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000130,302505000130,QUOTE ASSOCIATIVE,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000135,302505000135,SPESE D.LGS 193/03 PRIVACY,acc_302505,account.data_account_type_expense,other,TRUE
+acc_302505000140,302505000140,OFFERTE ART.10C.1 L.G.,acc_302505,account.data_account_type_expense,other,TRUE
+acc_3030,3030,COSTI COMMERCIALI,acc_30,account.data_account_type_view,view,TRUE
+acc_303005,303005,COSTI COMMERCIALI,acc_3030,account.data_account_type_view,view,TRUE
+acc_303005000005,303005000005,'PUBBLICITA''',acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000010,303005000010,RIMBORSI SPESE,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000015,303005000015,CARBURANTI E LUBRIFICANTI,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000020,303005000020,ESERCIZIO AUTOMEZZI,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000025,303005000025,SCONTI E ABBUONI A CLIENTI,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000030,303005000030,COSTI FORMAZIONE CLIENTI,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000035,303005000035,MATERIALE DIMOSTRATIVO,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000040,303005000040,COSTO MERCE COMODATO ATTIVO A CLI,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000045,303005000045,ASSICURAZIONI AUTOMEZZI,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000050,303005000050,OMAGGI A CLIENTI,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000055,303005000055,CONTRIBUTI A CLIENTI,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000060,303005000060,NOLEGGIO AUTOMEZZI,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000065,303005000065,PERDITE MERCE DANNEGGIATA,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000070,303005000070,CANONI NOLEGGIO AUTO,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000075,303005000075,COSTI FORMAZIONE PERSONALE,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000080,303005000080,SPESE DI VIAGGIO,acc_303005,account.data_account_type_expense,other,TRUE
+acc_303005000085,303005000085,INDENNIZZO FRANCHIGIE ASSICURAZIONE,acc_303005,account.data_account_type_expense,other,TRUE
+acc_3035,3035,ONERI FINANZIARI,acc_30,account.data_account_type_view,view,TRUE
+acc_303505,303505,ONERI FINANZIARI,acc_3035,account.data_account_type_view,view,TRUE
+acc_303505000005,303505000005,INTERESSI PASSIVI C/C,acc_303505,account.data_account_type_expense,other,TRUE
+acc_303505000010,303505000010,INTERESSI PASSIVI FORNITORI,acc_303505,account.data_account_type_expense,other,TRUE
+acc_303505000015,303505000015,ONERI BANCARI,acc_303505,account.data_account_type_expense,other,TRUE
+acc_303505000020,303505000020,PRESTAZIONI DI GARANZIA,acc_303505,account.data_account_type_expense,other,TRUE
+acc_303505000025,303505000025,INTERESSI PASSIVI MUTUO,acc_303505,account.data_account_type_expense,other,TRUE
+acc_303505000030,303505000030,PERDITE SU CAMBI,acc_303505,account.data_account_type_expense,other,TRUE
+acc_303505000035,303505000035,INTERESSI PASSIVI DIVERSI,acc_303505,account.data_account_type_expense,other,TRUE
+acc_303505000040,303505000040,ARROTONDAMENTI PASSIVI EURO,acc_303505,account.data_account_type_expense,other,TRUE
+acc_303505000045,303505000045,INTERESSI RATEIZ.IMPOSTE,acc_303505,account.data_account_type_expense,other,TRUE
+acc_3040,3040,RETTIFICHE SU VENDITE,acc_30,account.data_account_type_view,view,TRUE
+acc_304005,304005,RETTIFICHE SU VENDITE,acc_3040,account.data_account_type_view,view,TRUE
+acc_304005000005,304005000005,BONUS E PREMI A CLIENTI,acc_304005,account.data_account_type_expense,other,TRUE
+acc_3045,3045,COSTI INDEDUCIBILI,acc_30,account.data_account_type_view,view,TRUE
+acc_304505,304505,COSTI INDEDUCIBILI,acc_3045,account.data_account_type_view,view,TRUE
+acc_304505000005,304505000005,COSTI INDEDUCIBILI,acc_304505,account.data_account_type_expense,other,TRUE
+acc_304505000010,304505000010,I.C.I.,acc_304505,account.data_account_type_expense,other,TRUE
+acc_304505000015,304505000015,IRAP,acc_304505,account.data_account_type_expense,other,TRUE
+acc_304505000020,304505000020,IMPOSTE E TASSE INDEDUCIBILI,acc_304505,account.data_account_type_expense,other,TRUE
+acc_304505000025,304505000025,IMU,acc_304505,account.data_account_type_expense,other,TRUE
+acc_3050,3050,COSTI MANUT/RIP/AMMOD.,acc_30,account.data_account_type_view,view,TRUE
+acc_305005,305005,COSTI MANUT/RIP/AMMOD.,acc_3050,account.data_account_type_view,view,TRUE
+acc_305005000005,305005000005,MACCH.APP.ATTR. VARIE,acc_305005,account.data_account_type_expense,other,TRUE
+acc_305005000010,305005000010,MEZZI SOLLEVAMENTO,acc_305005,account.data_account_type_expense,other,TRUE
+acc_305005000015,305005000015,MOBILI ARREDI MACCH UFFICIO,acc_305005,account.data_account_type_expense,other,TRUE
+acc_305005000020,305005000020,SIST. AUTOM. ELETTRONICI,acc_305005,account.data_account_type_expense,other,TRUE
+acc_305005000025,305005000025,AUTOMEZZI,acc_305005,account.data_account_type_expense,other,TRUE
+acc_305005000030,305005000030,MOBILI ARREDI MAGAZZINO,acc_305005,account.data_account_type_expense,other,TRUE
+acc_3055,3055,AMMORTAMENTO STRUMENTALI,acc_30,account.data_account_type_view,view,TRUE
+acc_305505,305505,AMMORTAMENTO STRUMENTALI,acc_3055,account.data_account_type_view,view,TRUE
+acc_305505000005,305505000005,MACCHINE APP.ATTR.VARIE,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000010,305505000010,MEZZI DI SOLLEVAMENTO,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000015,305505000015,MOBILI ARREDI MACCHINE UFFICIO,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000020,305505000020,SISTEMI AUTOM.ELETTRONICI,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000025,305505000025,AUTOMEZZI,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000030,305505000030,MOBILI ARREDI MAGAZZINO,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000035,305505000035,DIME DA NOLEGGIO,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000040,305505000040,ATTREZZATURE IN COMODATO,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000045,305505000045,PROGRAMMI APPLICATIVI,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000050,305505000050,AMMODERNAMENTI,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000055,305505000055,IMPIANTI,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000060,305505000060,REGISTRATORE DI CASSA,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000065,305505000065,MANUTENZIONI ECC.5%,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000070,305505000070,IMMOBILI,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000075,305505000075,INSEGNA,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000080,305505000080,SISTEMA HARDWARE,acc_305505,account.data_account_type_expense,other,TRUE
+acc_305505000085,305505000085,MINUSVALENZE,acc_305505,account.data_account_type_expense,other,TRUE
+acc_3060,3060,ONERI DIVERSI,acc_30,account.data_account_type_view,view,TRUE
+acc_306005,306005,ONERI DIVERSI,acc_3060,account.data_account_type_view,view,TRUE
+acc_306005000005,306005000005,PERDITE PRESUNTE SU CREDITI,acc_306005,account.data_account_type_expense,other,TRUE
+acc_306005000010,306005000010,DANNI E SINISTRI DIVERSI,acc_306005,account.data_account_type_expense,other,TRUE
+acc_306005000015,306005000015,PERDITE SU CREDITI,acc_306005,account.data_account_type_expense,other,TRUE
+acc_306005000020,306005000020,SOPRAVVENIENZE PASSIVE,acc_306005,account.data_account_type_expense,other,TRUE
+acc_306005000025,306005000025,SMALTIMENTO MERCE AVARIATA,acc_306005,account.data_account_type_expense,other,TRUE
+acc_306005000030,306005000030,SOPRAVV.PASS.TRANSAZIONI,acc_306005,account.data_account_type_expense,other,TRUE
+acc_3065,3065,IMPOSTE A CARICO ESERCIZI,acc_30,account.data_account_type_view,view,TRUE
+acc_306505,306505,IMPOSTE A CARICO ESERCIZIO,acc_3065,account.data_account_type_view,view,TRUE
+acc_306505000005,306505000005,IRPEG,acc_306505,account.data_account_type_expense,other,TRUE
+acc_306505000010,306505000010,ILOR,acc_306505,account.data_account_type_expense,other,TRUE
+acc_306505000015,306505000015,IRES,acc_306505,account.data_account_type_expense,other,TRUE
+acc_306510,306510,IRES,acc_3065,account.data_account_type_view,view,TRUE
+acc_3070,3070,UTILE DI ESERCIZIO,acc_30,account.data_account_type_view,view,TRUE
+acc_307005,307005,UTILE DI ESERCIZIO,acc_3070,account.data_account_type_view,view,TRUE
+acc_307005000005,307005000005,UTILE DI ESERCIZIO,acc_307005,account.data_account_type_expense,other,TRUE
+acc_40,40,RICAVI,acc_0,account.data_account_type_view,view,TRUE
+acc_4005,4005,MERCI C/VENDITE,acc_40,account.data_account_type_view,view,TRUE
+acc_400505,400505,MERCI C/VENDITE,acc_4005,account.data_account_type_view,view,TRUE
+acc_400505000005,400505000005,MERCI CONTO VENDITE,acc_400505,account.data_account_type_income,other,TRUE
+acc_400505000010,400505000010,NOLEGGI,acc_400505,account.data_account_type_income,other,TRUE
+acc_400505000015,400505000015,VENDITE AL DETTAGLIO,acc_400505,account.data_account_type_income,other,TRUE
+acc_400505000020,400505000020,RIPARAZIONI,acc_400505,account.data_account_type_income,other,TRUE
+acc_400505000025,400505000025,SCONTO IN MERCE,acc_400505,account.data_account_type_income,other,TRUE
+acc_400505000050,400505000050,MERCI C/VENDITE A,acc_400505,account.data_account_type_income,other,TRUE
+acc_400505000055,400505000055,NOLEGGIO AUTOVETTURE,acc_400505,account.data_account_type_income,other,TRUE
+acc_400505000060,400505000060,PRESTAZIONE DI SERVIZI,acc_400505,account.data_account_type_income,other,TRUE
+acc_4010,4010,PROVENTI DIVERSI,acc_40,account.data_account_type_view,view,TRUE
+acc_401005,401005,PROVENTI DIVERSI,acc_4010,account.data_account_type_view,view,TRUE
+acc_401005000005,401005000005,PROVVIGIONI ATTIVE,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000010,401005000010,PROVENTI DIVERSI,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000015,401005000015,RECUPERO SPESE DI TRASPORTO,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000020,401005000020,INTERESSI ATTIVI BANCARI,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000025,401005000025,RIVALSA SPESE E INTERESSI,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000030,401005000030,RECUPERO SPESE BANCARIE,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000035,401005000035,RECUPERO VALORI BOLLATI,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000040,401005000040,ABBUONI ATTIVI,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000045,401005000045,PLUSVALENZE,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000050,401005000050,SOPRAVVENIENZE ATTIVE,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000055,401005000055,UTILE SU CAMBI,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000060,401005000060,'INDENNITA'' RISARCIMENTO ASSICURAZ.',acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000065,401005000065,ARROTONDAMENTI ATTIVI,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000070,401005000070,'CREDITO D''IMPOSTA L.449 27/12/97',acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000075,401005000075,CONTRIBUTI PROMOZIONALI,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000080,401005000080,SUPPORTO LOGISTICO FORNITORE BASF,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000085,401005000085,INTERESSI ATTIVI DIVERSI,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000090,401005000090,CONVENZIONE TRIENNALE BOMBOLE GAS,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000095,401005000095,RIMBORSO FORMAZIONE CLIENTI,acc_401005,account.data_account_type_income,other,TRUE
+acc_401005000100,401005000100,LICENZE/ABBON.SISTEMA TINTOMETRICO,acc_401005,account.data_account_type_income,other,TRUE
+acc_401010,401010,NULL,acc_4010,account.data_account_type_view,view,TRUE
+acc_4015,4015,RETTIFICHE ACQUISTI,acc_40,account.data_account_type_view,view,TRUE
+acc_401505,401505,RETTIFICHE ACQUISTI,acc_4015,account.data_account_type_view,view,TRUE
+acc_401505000005,401505000005,BONUS E PREMI DA FORNITORI,acc_401505,account.data_account_type_income,other,TRUE
+acc_4020,4020,RIMANENZE FINALI,acc_40,account.data_account_type_view,view,TRUE
+acc_402005,402005,RIMANENZE FINALI,acc_4020,account.data_account_type_view,view,TRUE
+acc_402005000005,402005000005,RIMANENZE FINALI,acc_402005,account.data_account_type_income,other,TRUE
+acc_50,50,'CONTI D''ORDINE',acc_0,account.data_account_type_view,view,TRUE
+acc_5005,5005,BILANCIO DI APERTURA,acc_50,account.data_account_type_view,view,TRUE
+acc_500505,500505,BILANCIO DI APERTURA,acc_5005,account.data_account_type_view,view,TRUE
+acc_500505000005,500505000005,BILANCIO DI APERTURA,acc_500505,account.data_account_type_asset,other,TRUE
+acc_5010,5010,BILANCIO DI CHIUSURA,acc_50,account.data_account_type_view,view,TRUE
+acc_501005,501005,BILANCIO DI CHIUSURA,acc_5010,account.data_account_type_view,view,TRUE
+acc_501005000005,501005000005,BILANCIO DI CHIUSURA,acc_501005,account.data_account_type_asset,other,TRUE
+acc_5015,5015,PROFITTI E PERDITE,acc_50,account.data_account_type_view,view,TRUE
+acc_501505,501505,PROFITTI E PERDITE,acc_5015,account.data_account_type_view,view,TRUE
+acc_501505000005,501505000005,PROFITTI E PERDITE,acc_501505,account.data_account_type_asset,other,TRUE
+acc_5020,5020,RESTITUZIONE EFFETTI,acc_50,account.data_account_type_view,view,TRUE
+acc_502005,502005,REST.EFFETTI,acc_5020,account.data_account_type_view,view,TRUE
+acc_502005000005,502005000005,RESTITUZIONE EFFETTI,acc_502005,account.data_account_type_asset,other,TRUE
+acc_55,55,CONTI TRANSITORI,acc_0,account.data_account_type_view,view,TRUE
+acc_5505,5505,CONTI TRANSITORI,acc_55,account.data_account_type_view,view,TRUE
+acc_550505,550505,CONTI TRANSITORI,acc_5505,account.data_account_type_view,view,TRUE
+acc_550505000010,550505000010,CONTO TRANSITORIO CESPITI,acc_550505,account.data_account_type_asset,other,TRUE

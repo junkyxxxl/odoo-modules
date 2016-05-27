@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<!--
+ account.journal
+-->
+     <record id="view_account_journal_formxc" model="ir.ui.view">
+        <field name="name">view.account.journal.formxc</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <field name="type" position="after">
+                <field name="xcash_vat" />
+            </field>
+        </field>
+    </record>
+
+
+<!--
+ account.fiscal.position
+-->
+     <record id="view_account_position_formxc" model="ir.ui.view">
+        <field name="name">view.account.position.formxc</field>
+        <field name="model">account.fiscal.position</field>
+        <field name="inherit_id" ref="account.view_account_position_form"/>
+        <field name="arch" type="xml">
+            <field name="active" position="after">
+                <field name="xcash_vat" />
+                <field name="check_enforceability_vat" />
+            </field>
+        </field>
+    </record>
+
+<!--
+ account.tax.code
+-->
+     <record id="view_tax_code_formxc" model="ir.ui.view">
+        <field name="name">view.tax.code.formxc</field>
+        <field name="model">account.tax.code</field>
+        <field name="inherit_id" ref="account.view_tax_code_form"/>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="xcash_vat" />
+                <field name='xcash_tax_code' />
+            </field>
+        </field>
+    </record>
+
+<!--
+ account.tax
+-->
+     <record id="view_tax_formxc" model="ir.ui.view">
+        <field name="name">view.tax.formxc</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_form"/>
+        <field name="arch" type="xml">
+            <field name="description" position="after">
+                <field name="xcash_vat" />
+            </field>
+        </field>
+    </record>
+
+
+<!--
+ res.company
+-->
+     <record id="view_company_formxc" model="ir.ui.view">
+        <field name="name">view.company.formxc</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Vat per cash configuration">
+                    <group>
+                        <group>
+                            <field name="xcash_vat" readonly="True"/>
+                            <button string="Start" name="start_xcash" type="object" class="oe_highlight" colspan="2" attrs="{'invisible': [('xcash_vat','=', True)]}"/>
+                            <field name="date_start_xcash" />
+                            <button string="Stop" name="stop_xcash" type="object" class="oe_highlight" colspan="2" attrs="{'invisible': [('xcash_vat','=', False)]}"/>
+                            <field name="date_stop_xcash" />
+                        </group>
+                        <group>
+                            <field name="fiscal_position_id" />
+                            <field name="journal_purch_xcash_id" />
+                            <field name="journal_sale_xcash_id" />
+                            <field name="journal_purch_xcash_matured_id" />
+                            <field name="journal_sale_xcash_matured_id" />
+                        </group>
+                    </group>
+                    <group string="Account Maps">
+                        <field name="accounts_xcashids" widget="one2many_list" context="{'show_attribute': False}" nolabel="1">
+                            <tree string="Variants" editable="bottom">
+                                <field name="account_xcash_id"/>
+                                <field name="account_id" />
+                            </tree>
+                        </field>
+
+                     </group>
+                </page>
+
+
+
+            </notebook>
+        </field>
+    </record>
+
+
+
+
+</data>
+</openerp>

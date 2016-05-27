@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Project Project -->
+
+        <record id="view_project_kanban_phase" model="ir.ui.view">
+            <field name="name">project.project.kanban.inherited</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_kanban"/>
+            <field name="arch" type="xml">
+                <field name="use_tasks" position="after">
+                    <field name="use_phases"/>
+                    <field name="phase_count"/>
+                </field>
+                <xpath expr="//div[contains(@class, 'oe_kanban_project_list')]" position="inside">
+                    <a t-if="record.use_phases.raw_value"
+                        name="%(act_project_phases)d" type="action">
+                        <span t-if="record.phase_count.raw_value gt 1"><field name="phase_count"/> Phases</span>
+                        <span t-if="record.phase_count.raw_value lt 2"><field name="phase_count"/> Phase</span>
+                    </a>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="project_phase_form" model="ir.ui.view">
+            <field name="name">Inherit project form : Phase</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='options_active']" position='inside'>
+                       <field name="use_phases" class="oe_inline"/>
+                       <label for="use_phases"/>
+                </xpath>
+                <xpath expr="//div[@name='buttons']" position='inside'>
+                        <button class="oe_inline oe_stat_button"
+                                icon="fa-tasks"
+                                name="%(act_project_phases)d"
+                                string="Phases" type="action"
+                                attrs="{'invisible':['|',('state','=', 'template'),('use_phases','=', 0)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+      <record id="Wk_website_stock_product" model="ir.ui.view">
+      <field name="name">product_product_form</field>
+      <field name="model">product.product</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">  
+          <notebook position='inside'>
+            <page string='Website Settings'>
+              <group>
+                <p> <b>When Product is out of Stock:</b><span><field name="wk_order_allow"/></span></p>
+              </group>
+              <group>
+                <field name='wk_override_default' />
+              </group>
+              <group attrs="{'invisible':[('wk_override_default','=',False)]}">
+                <p> <b>Message to be displayed when Product is in Stock:</b><span><field name="wk_in_stock_msg"/></span></p>
+              </group>
+              <group attrs="{'invisible':[('wk_override_default','=',False)]}">
+                <p> <b>Message to be displayed when Product is out of Stock:</b><span><field name="wk_out_of_stock_msg"/></span></p>
+              </group>            
+            </page>
+          </notebook>
+        </field>
+      </record>
+
+  </data>
+</openerp>

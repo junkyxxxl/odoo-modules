@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Accreditation Qualifications Views -->
+        <record id="view_accreditation_qualifications_form" model="ir.ui.view">
+            <field name="name">accreditation.qualifications.form</field>
+            <field name="model">accreditation.qualifications</field>
+            <field name="arch" type="xml">
+                <form string="Qualifications">
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="team_member" />
+                        </group>
+                    </group>
+                    <group string="Persone Fisiche">
+                        <field name="partner_ids" nolabel="1" domain="[('individual', '=', True)]" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Accreditation Qualifications Lists -->
+        <record id="view_accreditation_qualifications_list" model="ir.ui.view">
+            <field name="name">accreditation.qualifications.list</field>
+            <field name="model">accreditation.qualifications</field>
+            <field name="arch" type="xml">
+                <tree string="Qualifications" toolbar="1">
+                    <field name="name" />
+                    <field name="team_member" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_accreditation_qualifications" model="ir.actions.act_window">
+            <field name="name">Qualifications</field>
+            <field name="res_model">accreditation.qualifications</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_accreditation_qualifications_list"/>
+        </record>
+
+    </data>
+</openerp>

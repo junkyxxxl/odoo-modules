@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<!-- product -->
+        <record model="ir.ui.view" id="view_product_withholding_form_isa">
+            <field name="name">product.withholding.form.isa</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="model">product.product</field>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/group/group/field[@name='taxes_id']" position="before" >
+                  <field name="has_wht"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

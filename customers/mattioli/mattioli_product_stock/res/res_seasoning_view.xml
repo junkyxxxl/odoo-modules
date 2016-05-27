@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_seasoning_tree" model="ir.ui.view">
+            <field name="name">res.seasoning.tree</field>
+            <field name="model">res.seasoning</field>
+            <field name="arch" type="xml">
+                <tree string="seasoning">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_seasoning_form" model="ir.ui.view">
+            <field name="name">res.seasoning.form</field>
+            <field name="model">res.seasoning</field>
+            <field name="arch" type="xml">
+                <form string="seasoning">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_seasoning" model="ir.actions.act_window">
+            <field name="name">Seasonings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.seasoning</field>
+            <field name="view_type">form</field>
+            <field name="help">Display and manage the list of all seasonings that can be assigned to your product records.</field>
+        </record>
+		
+        <menuitem action="action_seasoning" id="menu_seasoning" parent="stock.menu_product_in_config_stock" sequence="21" groups="base.group_no_one"/>
+
+    </data>
+</openerp>

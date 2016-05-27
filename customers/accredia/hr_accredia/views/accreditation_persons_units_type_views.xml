@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Accreditation Persons Units Type Views -->
+        <record id="view_accreditation_persons_units_type" model="ir.ui.view">
+            <field name="name">accreditation.persons.units.type.form</field>
+            <field name="model">accreditation.persons.units.type</field>
+            <field name="arch" type="xml">
+                <form string="Persons Units Type">
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Accreditation Persons Units Type Lists -->
+        <record id="view_accreditation_persons_units_type_list" model="ir.ui.view">
+            <field name="name">accreditation.persons.units.type.list</field>
+            <field name="model">accreditation.persons.units.type</field>
+            <field name="arch" type="xml">
+                <tree string="Persons Units Type" toolbar="1">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_accreditation_persons_units_type" model="ir.actions.act_window">
+            <field name="name">Persons Units Type</field>
+            <field name="res_model">accreditation.persons.units.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_accreditation_persons_units_type_list"/>
+        </record>
+
+    </data>
+</openerp>

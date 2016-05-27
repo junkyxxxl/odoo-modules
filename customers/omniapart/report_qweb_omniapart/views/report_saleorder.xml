@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+     <template id="report_saleorder_makeover">
+      <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="o">
+		<t t-set="o" t-value="get_record(o)"/>
+	      <t t-call="report.external_layout">
+	        <div class="page">
+	          <style type="text/css">
+	            html, body {
+	                height: 100%;
+	            }
+	            
+	            .c14 {border: 1px solid black; padding: 0in}
+	            .c23 {border: none; padding: 0.25in}
+	            .c4 {margin-bottom: -0.17in; margin-top: 0in; margin-left: 0.1in;
+	            margin-right: -0in;}
+	            .c41 {margin-bottom: -0.17in; margin-top: -0.1in; margin-left: 0.1in;
+	            margin-right: -0in;}
+	            .c5 {margin-top: -0.1in; margin-left: 0.1in; margin-right: 1in;
+	            padding-left: 100pt;}
+	            .c3 {margin-left: 0.1in; margin-right: -0in; margin-top: -0.1in;
+	            font-style: normal; font-weight: normal}
+	            .c2 {margin-left: 0.11in; margin-bottom: 0in; font-style: normal;
+	            font-weight: normal}
+	            .c1 {margin-left: 0in; margin-right: 0in; font-style: normal}
+	            .c6 {font-family: Arial, sans-serif; font-style: normal; font-weight:
+	            normal; font-size: 28pt;}
+	            .c7 {font-family: Arial, sans-serif; font-style: normal; font-weight:
+	            normal; font-size: 10pt; }
+	            .c121 {background: transparent; font-family: Arial, sans-serif;
+	            font-size: 24pt; font-style: normal; font-weight: bold}
+	            .c91 {font-family: Arial; font-size: 24pt; font-style: normal;
+	            font-weight: bold}
+	            .c22 {font-family: Arial, sans-serif; margin-left: 0.1in;
+	            margin-right: -0in; text-align: left}
+	            .c44 {font-family: Arial, sans-serif; font-weight: normal; text-align: left}
+	            .c25 {font-size: 16pt; text-align: left}
+	            .c441 {border-top: none; border-bottom: 1px solid black; border-left:
+	            1px solid black; border-right: none; padding-top: 0in; padding-bottom:
+	            0.04in; padding-left: 0.04in; padding-right: 0in}
+	            .c411 {border: 1px solid black; padding: 0.04in; width: 1155px;}
+	            .c412 {border-top: none; border-bottom: none; border-left: 1px solid
+	            black; border-right: 1px solid black; padding: 0.04in}
+	            .c401 {border-top: 1px solid black; border-bottom: 1px solid black;
+	            border-left: 1px solid black; border-right: none; padding-top: 0.04in;
+	            padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in}
+	            .c45 {border-top: none; border-bottom: 1px solid black; border-left:
+	            1px solid black; border-right: 1px solid black; padding-top: 0in;
+	            padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in}
+	            .c27 {font-family: Arial, sans-serif; padding-left: 5pt; padding-right: 5pt; }
+	            .c26 {font-size: 10pt; padding-left: 5pt; padding-right: 5pt;}
+	            .c20 {font-size: 13pt; font-weight: normal; font-style: normal;text-decoration: none; text-align: left; padding-left: 5pt; padding-right: 5pt; }
+	            .c21 {font-size: 24pt; font-weight: normal; font-style: normal;text-decoration: none; text-align: right; padding-left: 5pt; padding-right: 5pt; }
+	            
+	            .table_header {
+	                color: black;
+	                font-size: 11pt;
+	                font-family: "Arial";
+	                font-weight: bold;
+	                font-style: normal;
+	                text-decoration: none;
+	                text-align: left;
+	                word-spacing: 0pt;
+	                letter-spacing: 0pt;
+	                white-space: pre-wrap;
+	                border-top: 0.8pt solid black;
+	                border-bottom: 0.9pt solid black;
+	                border-left: 0pt;
+	                border-right: 0pt;
+	                padding: 0pt;
+	            }
+	            
+	            .table_row_grey {
+	                color: black;
+	                padding-right: 0pt;
+	                font-size: 11pt;
+	                font-family: "Arial" [Seleziona data];
+	                font-weight: normal;
+	                font-style: normal;
+	                text-decoration: none;
+	                text-align: right;
+	                word-spacing: 0pt;
+	                letter-spacing: 0pt;
+	                background-color: #efefef;
+	                padding: 0pt;
+	            }
+	            
+	            .table_row_white {
+	                color: black;
+	                padding-left: 0pt;
+	                font-size: 11pt;
+	                font-family: "Arial" [Seleziona data] ;
+	                font-weight: normal;
+	                font-style: normal;
+	                text-decoration: none;
+	                text-align: right;
+	                word-spacing: 0pt;
+	                letter-spacing: 0pt;
+	                background-color: transparent;
+	                padding: 0pt;
+	            }
+	            
+	            .style-0 {
+	                table-layout: fixed;
+	                width: 180pt
+	            }
+	            
+	            .style-01 {
+	                border-bottom: 1 pt solid black;
+	                border-left: 1 pt solid black;
+	                border-right: none;
+	                border-top: 1 pt solid black;
+	            }
+	            
+	            .style-011 {
+	                border-bottom: 1 pt solid black;
+	                border-right: 1 pt solid black;
+	                border-left: 1 pt solid black;
+	                border-top: 1 pt solid black;
+	            }
+	            
+	            .style-02 {
+	                width: 1155px;
+	                margin-left: 15px;
+	                page-break-inside: auto;
+	                page-break-before: auto;
+	                page-break-after: avoid;
+	            }
+	            
+	            .footer_tot{
+	                width: 700px;
+	                margin-left:450px;
+	                position: relative;
+	                bottom: 0;
+	            }
+	            
+	            .tab_doc{
+	             width: 550px;
+	             height: 200px;
+	            }
+	            
+	            .tab_street {
+	             width: 540px;
+	             height: 200px;
+	            }
+				.div_image{
+					background-image: url('/sale_order_report_qweb/static/img/draft.png');
+					background-repeat: no-repeat;
+					background-position: center center;
+				}
+				
+				.div_noimage{
+					background-image: none;
+							}
+	            .note {
+	                border-right: 0.8pt solid black;
+	                border-left: 0.8pt solid black;
+	                border-top: 0.8pt solid black;
+	                border-bottom: 0.8pt solid black;
+	                width: 1155px;
+	                margin-left: 0.00in;
+	            }</style>
+	          <div class="oe_structure" />
+              <t t-set="t_limit" t-value="39"/>
+              <t t-set="t_limit_last" t-value="20"/>
+	          <t t-esc="setLang(o.partner_id.lang)" />
+			  <t t-if="not o.state in ['draft']"> 
+				<t t-set="div_style" t-value="'div_image'"/>
+			  </t>
+			  <t t-if="o.state in ['draft']">
+				<t t-set="div_style" t-value="'div_noimage'"/>
+			  </t>	
+	          <div class="container">
+	            <div class="row">
+<!-- Qui inizia l'header-->		            	
+		          <div  t-att-class="div_style">
+	            	<t t-set="num_pages" t-value="get_num_pages(o.id,t_limit,t_limit_last)"/>
+	              	<t t-foreach="num_pages" t-as="actual_page">
+	                <div>		          		          			          		
+	              <div>
+	                <br />
+	                <table width="580" cellpadding="0" cellspacing="0">
+	                  <tr valign="top">
+	                    <td class="c23">
+	                      <table width="100%" cellpadding="11" cellspacing="0" class="tab_doc">
+	                        <tr>
+	                          <td colspan="2" height="40" class="c401" style="border-bottom: none;">
+	                            <p class="c27">
+	                              <span class="c26">Documento</span>
+	                            </p>
+	                            <t t-if="o.state in ['draft','sent','cancel']">
+	                              <span class="c20">Preventivo</span>
+	                            </t>
+	                            <t t-if="o.state not in ['draft','sent','cancel']">
+	                              <span class="c20">Preventivo</span>
+	                            </t>
+	                          </td>
+	                          <td colspan="1" height="40" class="c401" style="border-bottom: none;">
+	                            <p class="c27">
+	                              <span class="c26">Numero</span>
+	                            </p>
+	                            <t t-if="o.state in ['draft']">
+	                              <span class="c20">BOZZA</span>
+	                            </t>
+	                            <t t-if="o.state not in ['draft']">
+	                              <span class="c20" t-field="o.name" />
+	                            </t>
+	                          </td>
+	                          <td colspan="1" height="40" class="c411" style="border-bottom: none;">
+	                            <p class="c27">
+	                              <span class="c26">Data</span>
+	                            </p>
+	                            <span class="c20" t-esc="(formatLang(o.date_order, date=True))" />
+	                          </td>
+	                        </tr>
+	                        <tr>
+	                          <td colspan="2" height="40" class="c401" style="border-bottom: none;">
+	                            <p class="c27">
+	                              <span class="c26">Partita IVA</span>
+	                            </p>
+	                            <span class="c20" t-field="o.partner_id.vat" />
+	                          </td>
+	                          <td colspan="2" height="40" class="c411" style="border-bottom: none;">
+	                            <p class="c27">
+	                              <span class="c26">Codice Fiscale</span>
+	                            </p>
+	                            <span class="c20" t-field="o.partner_id.fiscalcode" />
+	                          </td>
+	                        </tr>
+	                        <tr>
+	                          <td colspan="4" height="40" class="c411" style="border-bottom: none;">
+	                            <p class="c27">
+	                              <span class="c26">Pagamento</span>
+	                            </p>
+	                            <span class="c20" t-field="o.payment_term.name" />
+	                          </td>
+	                        </tr>
+	                        <tr>
+	                          <td colspan="4" height="40" class="c411">
+	                            <p class="c27">
+	                              <span class="c26">Ref. commerciale</span>
+	                            </p>
+	                            <span class="c20" t-field="o.user_id.name" />
+	                          </td>
+	                        </tr>
+	                      </table>
+	                    </td>
+	                    <td class="c23">
+	                      <table width="100%" cellpadding="11" cellspacing="0" class="tab_street">
+	                        <tr width="100%" height="100%">
+	                          <td width="100%" height="100%" valign="top" class="c14">
+	                            <t t-if="o.partner_shipping_id and o.partner_shipping_id.id != o.partner_id.id">
+	                              <p class="c4">
+	                                <span class="c7">Spett.le</span>
+	                              </p>
+	                              <br />
+	                              <br />
+	                              <p class="c5">
+	                                <span class="c6" style="font-size: 18pt;">
+	                                  <t t-if="o.partner_id.title">
+	                                    <span t-field="o.partner_id.title and o.partner_id.title.name" />
+	                                  </t>
+	                                  <span t-field="o.partner_id.name" />
+	                                  <t t-if="o.partner_id.parent_id">
+	                                    <span t-field="o.partner_id.parent_id.name" />
+	                                  </t>
+	                                </span>
+	                              </p>
+	                              <p class="c5">
+	                                <span class="c6" style="font-size: 12pt;" t-field="o.partner_id.street" />
+	                                <span class="c6" style="font-size: 12pt;" t-field="o.partner_id.street2" />
+	                              </p>
+	                              <p class="c5">
+	                                <span class="c6" style="font-size: 12pt;" t-field="o.partner_id.zip" />
+	                                <span class="c6" style="font-size: 12pt;" t-field="o.partner_id.city" />
+	                              </p>
+	                              <p class="c4">
+	                                <span class="c7">Destinazione Merce (se diversa dal committente)</span>
+	                              </p>
+	                              <br />
+	                              <br />
+	                              <t t-if="o.partner_shipping_id.title">
+	                                <p class="c5">
+	                                  <span class="c6" style="font-size: 12pt;" t-field="o.partner_shipping_id.title.name" />
+	                                </p>
+	                              </t>
+	                              <p class="c5">
+	                                <span class="c6" style="font-size: 12pt;" t-field="o.partner_shipping_id.street" />
+	                                <span class="c6" style="font-size: 12pt;" t-field="o.partner_shipping_id.street2" />
+	                              </p>
+	                              <p class="c5">
+	                                <span class="c6" style="font-size: 12pt;" t-field="o.partner_shipping_id.zip" />
+	                                <span class="c6" style="font-size: 12pt;" t-field="o.partner_shipping_id.city" />
+	                              </p>
+	                            </t>
+	                            <t t-if="not o.partner_shipping_id or o.partner_shipping_id.id == o.partner_id.id">
+	                              <p class="c4">
+	                                <span class="c7">Spett.le</span>
+	                              </p>
+	                              <br />
+	                              <br />
+	                              <p class="c5">
+	                                <span class="c6" style="font-size: 18pt;">
+	                                  <t t-if="o.partner_id.title">
+	                                    <span t-field="o.partner_id.title.name" />
+	                                  </t>
+	                                  <span t-field="o.partner_id.name" />
+	                                  <t t-if="o.partner_id.parent_id">
+	                                    <span t-field="o.partner_id.parent_id.name" />
+	                                  </t>
+	                                </span>
+	                              </p>
+	                              <p class="c5">
+	                                <span class="c6" style="font-size: 12pt;" t-field="o.partner_id.street" />
+	                                <span class="c6" style="font-size: 12pt;" t-field="o.partner_id.street2" />
+	                              </p>
+	                              <p class="c5">
+	                                <span class="c6" style="font-size: 12pt;" t-field="o.partner_id.zip" />
+	                                <span class="c6" style="font-size: 12pt;" t-field="o.partner_id.city" />
+	                              </p>
+	                            </t>
+	                          </td>
+	                        </tr>
+                 	        <t t-if="o.part_payment">
+		                        <tr width="100%" height="100%">
+		                          <td width="100%" height="100%" class="c14">
+		                              <p/>
+		                              <p class="c5">
+		                                <span class="c6" style="font-size: 12pt;">Acconto alla firma: </span>  
+		                                <span class="c6" style="font-size: 12pt;" t-esc="formatLang(o.part_payment)"/>
+		                                <span class="c6" style="font-size: 12pt;">% - €</span>
+		                                <span class="c6" style="font-size: 12pt;" t-esc="formatLang(o.part_payment_amount)"/>
+		                              </p>   
+		                            </td>
+		                        </tr>
+	                        </t>
+	                      </table>
+	                    </td>
+	                  </tr>
+	                </table>
+	                <p class="c24">
+	                  <br />
+	                </p>
+	              </div>
+	              <br />
+<!-- Qui inizia la tabella -->	              
+	              <table width="580" cellpadding="2" cellspacing="0" class="style-02">
+	                <thead>
+	                  <tr valign="top">
+	                    <td valign="middle" class="table_header" width="7%" style="border-left: 0.8pt solid black; border-right: 0pt; padding-left: 10pt;">Cod.</td>
+	                    <td valign="middle" class="table_header" width="35%">Articolo</td>
+	                    <td valign="middle" class="table_header" width="7%" style="text-align: right;">UM</td>
+	                    <td valign="middle" class="table_header" width="9%" style="text-align: right;">Quantità</td>
+	                    <td valign="middle" class="table_header" width="9%" style="text-align: right;">Prezzo<br />Unitario</td>
+	                    <td valign="middle" class="table_header" width="9%" style="text-align: right;">Sconto</td>
+	                    <td valign="middle" class="table_header" width="9%" style="text-align: right;">Importo<br />Netto</td>
+	                    <td valign="middle" class="table_header" width="15%" style="text-align: right; border-right:0.8pt solid black; padding-right: 10pt;">Imposta</td>
+	                  </tr>
+	                </thead>
+	                <tbody>
+	                  <tr t-foreach="get_order_line(o.id,t_limit,t_limit*actual_page)" t-as="l" valign="top">
+	                    <t t-set="style" t-value="'table_row_'" />
+	                    <t t-if="l_index % 2 == 0">
+	                      <t t-set="style" t-value="style+'white'" />
+	                    </t>
+	                    <t t-if="l_index % 2 !=  0">
+	                      <t t-set="style" t-value="style+'grey'" />
+	                    </t>
+	                    <td valign="middle" t-att-class="style" style="border-left: 0.8pt solid black; border-right: none; text-align: left; padding-left: 5px;">
+	                      <span t-field="l.product_id.code" />
+	                    </td>
+	                    <td valign="middle" t-att-class="style" style="border-left: none; border-right: none; text-align: left;">
+	                      <t t-if="l.product_id.type=='service'">
+	                        <t t-if="l.name">
+	                          <span t-field="l.name" />
+	                        </t>
+	                        <t t-if="not l.name">
+	                          <span t-field="l.product_id.name" />
+	                        </t>
+	                      </t>
+	                      <t t-if="l.product_id.type != 'service'">
+	                        <t t-if="l.product_id.name">
+	                          <span t-field="l.product_id.name" />
+	                        </t>
+	                        <t t-if="not l.product_id.name">
+	                          <span t-field="l.name" />
+	                        </t>
+	                      </t>
+	                    </td>
+	                    <td valign="middle" t-att-class="style" style="border-left: none; border-right: none; text-align: right;">
+	                      <span t-field="l.product_uom.name" />
+	                    </td>
+	                    <td valign="middle" t-att-class="style" style="border-left: none; border-right: none; text-align: right;">
+	                      <span t-esc="formatLang(l.product_uom_qty) or'0.00'" />
+	                    </td>
+	                    <td valign="middle" t-att-class="style" style="border-left: none; border-right: none; text-align: right;">
+	                      <span t-esc="formatLang(l.price_unit) " />
+	                    </td>
+	                    <td valign="middle" t-att-class="style" style="border-left: none; border-right: none; text-align: right;">
+	                      <span t-esc="l.discount and formatLang(l.discount)" />
+	                    </td>
+	                    <td valign="middle" t-att-class="style" style="border-left: none; border-right: none; text-align: right;">
+	                      <span t-esc="formatLang(l.price_subtotal)" />
+	                    </td>
+	                    <td valign="middle" t-att-class="style" style="border-left: none; border-right: 0.8pt solid black; text-align: right; text-align: right;padding-right: 5px;">
+	                      <span t-esc="','.join(map( lambda x: x.name, l.tax_id))" />
+	                    </td>
+	                  </tr>
+                    <t t-set="t_max_range" t-value="t_limit_last - get_order_line_length(o.id,t_limit,t_limit*actual_page)"/>
+	                  <t t-if="t_max_range&gt;0 ">
+	                    <t t-foreach="range(t_max_range)" t-as="nb">
+	                      <tr style="height: 26pt">
+	                        <td valign="middle" class="table_row_white" style="border-bottom: none; border-left: 0.8pt solid black; border-right: none">
+	                          <div><br /></div>
+	                        </td>
+	                        <td valign="middle" class="table_row_white" style="border-bottom: none; border-left: none; border-right: none">
+	                          <div><br /></div>
+	                        </td>
+	                        <td valign="middle" class="table_row_white" style="border-bottom: none; border-left: none; border-right: none">
+	                          <div><br /></div>
+	                        </td>
+	                        <td valign="middle" class="table_row_white" style="border-bottom: none; border-left: none; border-right: none">
+	                          <div><br /></div>
+	                        </td>
+	                        <td valign="middle" class="table_row_white" style="border-bottom: none; border-left: none; border-right: none">
+	                          <div><br /></div>
+	                        </td>
+	                        <td valign="middle" class="table_row_white" style="border-bottom: none; border-left: none; border-right: none">
+	                          <div><br /></div>
+	                        </td>
+	                        <td valign="middle" class="table_row_white" style="border-bottom: none; border-left: none; border-right: none">
+	                          <div><br /></div>
+	                        </td>
+	                        <td valign="middle" class="table_row_white" style="border-bottom: none; border-left: none; border-right: 0.8pt solid black">
+	                          <div><br /></div>
+	                        </td>
+	                      </tr>
+	                    </t>
+	                  </t>
+	                  <tr valign="top">
+	                    <td colspan="8" valign="middle" class="table_header" style="border: 0.8pt solid black; border-bottom: none; padding-left: 10pt;">Note</td>
+	                  </tr>	
+	                  <tr valign="top">
+	                    <td colspan="8" valign="top" class="table_header" style="border: 0.8pt solid black; border-top: none; padding-left: 10pt;">
+       		            	<span t-esc="carriage_returns(o.note)" />
+                 			<t t-if="not o.note"> 
+                      			<span><br /></span>
+                  			</t>
+                        </td>
+	                  </tr>	 	                                    
+	                </tbody>
+	              </table>              	              
+	            </div>
+                <t t-if="num_pages != actual_page+1">
+            	    <p style="margin-bottom: 0in; page-break-before: always"></p>
+                </t>		            
+                </t>	            
+	            <br />
+	            <br />
+	            </div>	            
+	          </div>
+	          <div>
+	            <table width="100%" cellpadding="4" cellspacing="0" class="footer_tot">
+	              <tr valign="top">
+	                <td width="25%" class="c50" style="border-top: 0.8pt solid black; border-bottom: 0.8pt                                     solid black; border-left: 0.8pt solid black; border-right: none;">
+	                  <p class="c27">
+	                    <span class="c26">Totale Imponibile</span>
+	                  </p>
+	                  <p class="c20" style="text-align: right;" t-esc="amount(formatLang(o.amount_untaxed, dp='Account', currency_obj=o.pricelist_id.currency_id))  " />
+	                </td>
+	                <td width="25%" class="c50" style="border-top: 0.8pt solid black; border-bottom: 0.8pt                                     solid black; border-left: 0.8pt solid black; border-right: none;">
+	                  <p class="c27">
+	                    <span class="c26">Totale Imposta</span>
+	                  </p>
+	                  <p class="c20" style="text-align: right;" t-esc="amount(formatLang(o.amount_tax, dp='Account', currency_obj=o.pricelist_id.currency_id)) " />
+	                </td>
+	                <td width="25%" class="c50" style="border-top: 0.8pt solid black; border-bottom: 0.8pt                                     solid black; border-left: 0.8pt solid black; border-right: 0.8pt solid black;">
+	                  <p class="c27">
+	                    <span class="c26">Totale Documento</span>
+	                  </p>
+	                  <p class="c20" style="text-align: right;">
+	                    <b t-esc="amount(formatLang(o.amount_total, dp='Account', currency_obj=o.pricelist_id.currency_id))" />
+	                  </p>
+	                </td>
+	              </tr>
+	            </table>
+	          </div>
+	          <div class="oe_structure" />
+	        </div>
+	        </div>
+	      </t>
+        </t>
+      </t>
+    </template>
+  </data>
+</openerp>

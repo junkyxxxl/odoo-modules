@@ -1,0 +1,57 @@
+@charset "utf-8";
+.openerp .oe_quantities_per_template {
+  overflow-x: auto;
+}
+.openerp .oe_quantities_per_template table {
+  width: 100%;
+}
+.openerp .oe_quantities_per_template td {
+  padding: 3px;
+  text-align: right;
+}
+.openerp .oe_quantities_per_template th {
+  text-align: center;
+  color: #006699;
+  font-family: "Helvetica Neue", Arial, Verdana, "Nimbus Sans L", sans-serif;
+  font-size: 11px;
+  background: #eeeeee;
+  min-width: 47px;
+  font-weight: bold;
+}
+.openerp .oe_quantities_per_template .oe_quantities_total {
+  background: #eeeeee;
+}
+.openerp .oe_quantities_per_template .oe_quantities_per_template_row {
+  text-align: center;
+  color: #006699;
+  font-family: "Helvetica Neue", Arial, Verdana, "Nimbus Sans L", sans-serif;
+  font-size: 11px;
+  background: #eeeeee;
+  font-weight: bold;
+}
+.openerp .oe_quantities_per_template td input.oe_quantities_per_template_input {
+  padding-right: 2px !important;
+  width: 100%;
+  text-align: right;
+  min-width: 40px !important;
+}
+.openerp .oe_quantities_per_template td.oe_quantities_total {
+  font-weight: bold;
+  padding: 5px 3px !important;
+  text-align: right;
+}
+.openerp .oe_quantities_per_template .oe_quantities_per_template_adding_tot {
+  display: table;
+  width: 100%;
+}
+.openerp .oe_quantities_per_template .oe_quantities_per_template_tottot {
+  display: table-cell;
+  font-size: 11px;
+  text-align: right;
+  color: #006699;
+  font-family: "Helvetica Neue", Arial, Verdana, "Nimbus Sans L", sans-serif;
+  font-weight: bold;
+}
+.openerp .oe_quantities_per_template .oe_quantities_per_template_head{
+  height: 24px;
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_partner_tree">
+            <field name="name">res.partner.tree.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/> 
+            <field name="arch" type="xml">
+                <field name="user_id" position="replace" />
+                <field name="display_name" position="after" >
+                    <field string="Company" name="commercial_partner_id" domain="[('is_company', '=', True)]" context="{'default_is_company': True, 'default_supplier': supplier}" attrs="{'invisible': [('is_company','=', True),('parent_id', '=', False)]}"/>
+                    <field name="user_id" />
+                </field>
+                <field name="is_company" position="before" >
+                    <field name="city"/>
+                    <field name="zip"/>
+                    <field name="bec_code_province"/>
+                    <field name="region"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_partner_form">
+            <field name="name">res.partner.form.inherited</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="active" position="after">
+                    <field name="bec_send_magazine"/>
+                    <field name="bec_send_data_comparison"/>
+                </field>
+                <xpath expr="//notebook/page[@string='Internal Notes']/field[@name='comment']" position="after">
+                    <group>
+                        <group col="2">
+                            <field name="bec_state"/>
+                            <field name="bec_is_modify" on_change="onchange_is_modify(bec_is_modify)"/>
+                        </group>
+                        <group col="2" >
+                                <field name="bec_is_modify_why" attrs="{'readonly':[('bec_is_modify','=',False)],'required':[('bec_is_modify','=',True)]}"/>
+                                <field name="bec_is_modify_date"/>
+                        </group>
+                        <group colspan="4">
+                            <field name="bec_comment_fm"/>
+                        </group>
+                        <group col="2">
+                            <field name="bec_create_date"/>
+                            <field name="bec_create_user"/>
+                        </group>
+                        <group col="2" >
+                            <field name="bec_modify_date"/>
+                            <field name="bec_modify_user"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

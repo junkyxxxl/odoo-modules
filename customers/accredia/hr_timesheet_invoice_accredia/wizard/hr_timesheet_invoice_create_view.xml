@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_hr_timesheet_invoice_create_accredia" model="ir.ui.view">
+            <field name="name">hr.timesheet.invoice.create.form.accredia</field>
+            <field name="model">hr.timesheet.invoice.create</field>
+            <field name="inherit_id" ref="hr_timesheet_invoice.view_hr_timesheet_invoice_create"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@string='Force to use a specific product']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@string='Billing Data']" position="inside">
+                   <group cols="2">
+                       <group string="Date" colspan="1" cols="2">
+                           <field name="date_invoice"/>
+                       </group>
+                       <group>
+                       </group>
+                   </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

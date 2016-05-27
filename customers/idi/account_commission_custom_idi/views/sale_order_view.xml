@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>     
+      
+    <record id="view_order_commission_form_idi" model="ir.ui.view">
+        <field name="name">view.order.commission.idi.form</field>
+        <field name="model">sale.order</field>
+		<field name="groups_id" eval="[(6, 0, [ref('account_commission.group_salesagent') ])]"/>         
+        <field name="inherit_id" ref="delivery_makeover.view_order_line_delivery_makeover_form"/>
+        <field name="arch" type="xml">
+
+                <xpath expr='//field[@name="order_line"]/form//field[@name="delivery_date"]' position="attributes">
+					<attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='delivery_date']" position="attributes">
+					<attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr='//field[@name="order_line"]/form/group/group/field[@name="product_id"]' position="attributes">
+                	<attribute name="options">{'create':false,'create_edit':false,'no_open':True}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="attributes">
+                	<attribute name="options">{'create':false,'create_edit':false,'no_open':True}</attribute>
+                </xpath>                 
+        </field>
+    </record>   
+    
+  </data>
+</openerp>

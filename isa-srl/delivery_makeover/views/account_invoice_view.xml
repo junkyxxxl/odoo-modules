@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Invoice View -->
+        <record id="view_account_invoice_supplier_picking_stock_makeover" model="ir.ui.view">
+            <field name="name">view.account.invoice.supplier.picking.stock.makeover.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <!-- Decommentare per forzare la vista di invoice_line in una popup
+                <xpath expr="//form/sheet/notebook/page/field/tree[@string='Invoice lines']" position="attributes">
+                    <attribute name="editable"></attribute>
+                </xpath>
+                -->
+                <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='product_id']" position="after">
+                    <field name="ddt_origin" />
+                </xpath>
+            </field>
+        </record>
+        <record id="view_account_invoice_picking_stock_makeover" model="ir.ui.view">
+            <field name="name">view.account.invoice.picking.stock.makeover.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+				<!-- Decommentare per forzare la vista di invoice_line in una popup
+                <xpath expr="//form/sheet/notebook/page/field/tree[@string='Invoice Lines']" position="attributes">
+                    <attribute name="editable"></attribute>
+                </xpath>
+				-->   
+                <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='product_id']" position="after">
+                    <field name="ddt_origin" />
+                </xpath>
+                <xpath expr="//sheet/notebook/page[@string='Payments']" position="after">
+                    <newline/>
+                    <page string="Consegna" attrs="{'invisible':[('is_shipping_invoice','=',False)]}" groups="base.group_user">
+                        <group>
+                            <group>
+                                <field name="is_shipping_invoice" invisible="1" />
+                                <field name="shipping_invoice_delivery_methods" />
+                                <field name="shipping_invoice_carrier_id" />
+                                <field name="shipping_invoice_picking_type_id" />
+                                <field name="shipping_invoice_incoterm_id" />
+                                <field name="shipping_invoice_min_date" />
+                            </group>
+                            <group>
+                                <field name="shipping_invoice_number_of_packages" />
+                                <field name="shipping_invoice_weight" />
+                                <field name="shipping_invoice_weight_net" />
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+     </data>
+</openerp>

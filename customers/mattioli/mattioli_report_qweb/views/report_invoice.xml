@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<template id="mattioli_report_invoice">
+		    <t t-call="report.html_container">
+		        <t t-foreach="docs" t-as="o">
+	                <t t-esc="setLang(o.partner_id.lang)"/>		        	
+		        	<div class="header">
+		        		<div class="row">
+		        			
+		        			<!--LOGO-->
+		        			
+		        			<div class="col-xs-6" style="text-align:center;">
+		        				<img src="/mattioli_report_qweb/static/img/mattioli_logo.png" style="max-width: 100%; max-height: 152px; margin-top: 20px; margin-bottom: 20px;"/>
+		        			</div>
+		        			
+		        			<!--DATI AZIENDA-->
+		        			
+		        			<div class="col-xs-6" style="font-size: small; margin-top: 36px; margin-bottom: 20px;">
+    							<div>
+    								<span style="font-weight:bold;" t-esc="o.company_id.name"/>
+								</div>
+								<div>
+									<span t-esc="o.company_id.zip"/>
+									<span t-esc="o.company_id.city"/>
+									<span t-esc="o.company_id.street"/>
+								</div>
+								<div>
+									<span>Sede Operativa: 01100 Viterbo Strada Tuscanese, 23</span>
+								</div>								
+								<t t-if="o.company_id.phone or o.company_id.fax">
+									<div>
+										<t t-if="o.company_id.phone">
+											<span>Tel.</span>
+											<span t-esc="o.company_id.phone"/>
+										</t>
+										<t t-if="o.company_id.fax">
+											<span t-if="o.company_id.phone"> - </span>
+											<span>Fax</span>
+											<span t-esc="o.company_id.fax"/>
+										</t>										
+									</div>
+								</t>
+								<t t-if="o.company_id.email">
+									<div>
+										<span>E-mail:</span>
+										<span t-esc="o.company_id.email"/>
+									</div>
+								</t>
+								<t t-if="o.company_id.website">
+									<div>
+										<span>Sito Web:</span>
+										<span t-esc="o.company_id.website"/>
+									</div>
+								</t>									
+								<t t-if="o.company_id.company_registry">
+									<div>
+										<span>Reg.Impr.</span>
+										<span t-esc="o.company_id.company_registry"/>
+									</div>
+								</t>	
+								<t t-if="o.company_id.vat">
+									<div>
+										<span>Cod. Fisc. e Part. IVA</span>
+										<span t-esc="o.company_id.vat"/>
+									</div>
+								</t>															
+		        			</div>
+		        		</div>
+		        		<div class="row">
+		        			
+		        			<!--DATI FATTURA-->
+		        			
+		        			<div class="col-xs-6">
+		        				<table width="100%" style="height:120px; border: 1px solid black;">
+		        					<tr style="font-size: xx-small; padding-left: 5px; border: 1px solid black; border-bottom: none;">
+		        						<td colspan="2">
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;">TIPO DOCUMENTO</span>
+		        							</div>
+		        						</td>
+		        						<td>
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;">NUMERO</span>
+		        							</div>
+		        						</td>		
+		        						<td>
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;">DATA</span>
+		        							</div>
+		        						</td>
+		        						<td>
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;">PAGINA</span>
+		        							</div>
+		        						</td>			        									        						        						
+		        					</tr>
+		        					<tr style="font-size: small; padding-left: 5px; border: 1px solid black; border-top: none;">
+		        						<td colspan="2">
+		        							<div style="font-weight: bold;">
+		        								<span t-if="o.type != 'out_refund' and o.type != 'in_refund'" style="text-align: left; padding-left: 5px;">FATTURA</span>
+                                                <span t-if="o.type == 'out_refund' or o.type == 'in_refund'" style="text-align: left; padding-left: 5px;">NOTA DI CREDITO</span>			        								
+		        							</div>	        							
+		        						</td>
+		        						<td>
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;" t-esc="o.number"/>
+		        							</div>
+		        						</td>		
+		        						<td>
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;" t-esc="formatLang(o.date_invoice, date=True)"/>
+		        							</div>
+		        						</td>
+		        						<td>
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;" class="page"/>
+		        							</div>
+		        						</td>			        									        						        						
+		        					</tr>	
+
+		        					<tr style="font-size: xx-small; padding-left: 5px; border: 1px solid black; border-bottom: none;">
+		        						<td>
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;">CODICE</span>
+		        							</div>
+		        						</td>
+		        						<td>
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;">AGENTE</span>
+		        							</div>
+		        						</td>	
+		        						<td colspan="3">
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;">TERMINI DI PAGAMENTO</span>
+		        							</div>
+		        						</td>			        								        									        						        						
+		        					</tr>
+		        					<tr style="font-size: small; padding-left: 5px; border: 1px solid black; border-top: none;">
+		        						<td>
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;" t-esc="get_customer_code(o.partner_id)"/>
+		        							</div>
+		        						</td>
+		        						<td>
+		        							<div>
+		        								<t t-if="'salesagent_id' in o">
+		        									<span style="text-align: left; padding-left: 5px;" t-esc="o.salesagent_id.id"/>
+		        								</t>
+		        							</div>
+		        						</td>
+		        						<td colspan="3">
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;" t-if="o.payment_term" t-esc="o.payment_term.name"/>
+		        								<span style="text-align: left; padding-left: 5px;" t-if="not o.payment_term"><br /></span>
+		        							</div>
+		        						</td>		        									        									        						        						
+		        					</tr>
+		        						        							        							        
+		        					<tr style="font-size: xx-small; padding-left: 5px; border: 1px solid black; border-bottom: none;">
+		        						<td colspan="5">
+		        							<div>
+		        								<span style="text-align: left; padding-left: 5px;">BANCA D'APPOGGIO</span>
+		        							</div>
+		        						</td>		        									        						        						
+		        					</tr>
+		        					<tr style="font-size: small; border: 1px solid black; border-top: none;">
+		        						<td colspan="2">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left; padding-left: 5px;" t-esc="o.partner_bank_id.acc_number"/>
+		        							</div>
+		        						</td>
+		        						<td colspan="3">
+		        							<div style="padding-left: 5px;">
+	                            				<span  style="text-align: left; padding-left: 5px;" t-esc="o.partner_bank_id.bank_name"/>
+                            					<span  style="text-align: left; padding-left: 5px;"  t-esc="o.partner_bank_id.city"/>
+		        							</div>
+		        						</td>		        									        									        						        						
+		        					</tr>			        					
+		        												        						        					
+		        				</table>
+		        			</div>
+		        			
+		        			<!--DATI CLIENTE-->
+		        			
+		        			<div class="col-xs-6" style="height: inherit;">
+		        				<table style="width:100%; height:120px; border: 1px solid black;">
+		        					<tr style="font-size: small;">
+		        						<td style="font-size: small; vertical-align:top;">
+		        							<div style="padding-left: 5px; font-size: xx-small;">
+		        								<span>SPETT</span>
+	        								</div>
+		        							<div style="padding-left: 35px;">
+		        								<span t-esc="o.partner_id.name"/>
+	        								</div>
+		        							<div style="padding-left: 35px;">
+		        								<span t-esc="o.partner_id.street"/>
+		        								<span t-esc="o.partner_id.zip"/>
+		        								<span t-esc="o.partner_id.city"/>
+		        								<t t-if="'province' in o.partner_id and o.partner_id.province">
+		        									<span t-esc="o.partner_id.province.code"/>	
+		        								</t>	        								
+	        								</div>
+	        								<t t-if="not has_delivery_address(o)">
+		        								<br />
+	        								</t>
+		        							<div t-if="o.partner_id.vat" style="padding-left: 35px;">
+		        								<span>P.IVA:</span>
+		        								<span t-esc="o.partner_id.vat"/>
+	        								</div>	 
+		        							<div t-if="o.partner_id.fiscalcode" style="padding-left: 35px;">
+		        								<span>C.F.:</span>
+		        								<span t-esc="o.partner_id.fiscalcode"/>
+	        								</div>
+	        								
+	        								<t t-if="has_delivery_address(o)">
+	        									<t t-set="del_address" t-value="get_delivery_address(o)" />
+			        							<div style="padding-left: 5px; font-size: xx-small;">
+			        								<span>DEST.</span>
+		        								</div>	        									
+			        							<div style="padding-left: 35px; font-size: x-small;">
+			        								<span t-esc="del_address.name"/>
+		        								</div>
+			        							<div style="padding-left: 35px; font-size: x-small;">
+			        								<span t-esc="del_address.street"/>
+			        								<span t-esc="del_address.zip"/>
+			        								<span t-esc="del_address.city"/>
+			        								<t t-if="'province' in del_address and del_address.province">
+			        									<span t-esc="del_address.province.code"/>	
+			        								</t>			        								
+		        								</div>	        								
+	        								</t>	        								       								        									        									        									        								
+		        						</td>
+		        					</tr>       					      							        							        					
+		        				</table>
+		        			</div>
+		        		</div>
+		        		
+		        		<!--HEADER DEL CORPO FATTURA-->
+		        		
+		        		<div class="row">
+		        			<div class="col-xs-12">
+		        				<table style="width:100%; border: 1px solid black; margin-top:10px;">
+		        					<tr style="font-size: 5pt; border: 1px solid black;">
+		        						<td style="width: 8%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left;">CODICE</span>
+		        							</div>		        							
+		        						</td>
+		        						<td style="width: 30%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left;">DESCRIZIONE</span>
+		        							</div>		        							
+		        						</td>
+		        						<td style="width: 6%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left;">N.PEZZI</span>
+		        							</div>	
+		        						</td>		 
+		        						<td style="width: 6%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left;">LARGHEZZA [cm]</span>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 6%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left;">LUNGHEZZA [cm]</span>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 6%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left;">SPESSORE [cm]</span>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 3%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left;">U.M.</span>
+		        							</div>	
+		        						</td>		
+		        						<td style="width: 8%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left;">QUANTITA' ~</span>
+		        							</div>	
+		        						</td>		       
+		        						<td style="width: 8%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left;">PREZZO</span>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 6%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left;">SCONTO</span>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 8%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left;">IMPORTO</span>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 5px;">
+		        								<span style="text-align: left;">IVA</span>
+		        							</div>	
+		        						</td>	 								        								        						      								        						
+		        					</tr>
+		        				</table>
+		        			</div>
+		        		</div>
+		        	</div>	        
+		        	
+		        	<!--CORPO FATTURA-->
+
+	        		<t t-set="style" t-value="'height: 680px; min-height: 680px !important;'"/>			        				        	
+		        	<t t-if="o.is_shipping_invoice">
+		        		<t t-set="style" t-value="'height: 640px; min-height: 640px !important;'"/>
+		        	</t>
+		        	<t t-if="not o.is_shipping_invoice and not o.is_ddt_invoice">
+		        		<t t-set="style" t-value="'height: 620px; min-height: 620px !important;'"/>		        		
+		        	</t>		
+		        			
+	                <div class="page" t-att-style="style">
+	                    <div class="oe_structure" style="min-height: 100%; height: 100% !important;">	                    
+		                    <div class="row" style="min-height: 100%; height: 100% !important;">								
+		                        <div class="col-xs-12" style="min-height: 100%; height: 100% !important;">
+			        				<table style="width:100%; height:100%; min-height:100%; border: 1px solid black;">
+			        					<t t-foreach="get_records(o)" t-as="line">
+				        					<tr style="font-size: small; vertical-align: middle;">
+				        						<td style="width: 8%; border-left: 1px solid black; border-right: 1px solid black; ">
+				        							<div style="padding-left: 5px;">
+				        								<span t-esc="line[0]"/>
+				        							</div>		        							
+				        						</td>
+				        						<td style="width: 30%; border-left: 1px solid black; border-right: 1px solid black; ">
+			        								<t t-if="not line[12]">
+					        							<div style="padding-left: 5px;">
+															<span t-esc="line[1]"/>
+					        							</div>	
+				        							</t>
+			        								<t t-if="line[12]">
+					        							<div style="text-align: center; font-weight: bold;">
+															<span t-esc="line[1]"/>
+					        							</div>	
+				        							</t>				        								        							
+				        						</td>
+				        						<td style="width: 6%; border-left: 1px solid black; border-right: 1px solid black; text-align: right;">
+				        							<div style="padding-right: 5px;">
+				        								<span t-esc="line[2]"/>
+				        							</div>	
+				        						</td>		 
+				        						<td style="width: 6%; border-left: 1px solid black; border-right: 1px solid black; text-align: right;">
+				        							<div style="padding-right: 5px;">
+				        								<t t-if="line[3]">
+				        									<span t-esc="line[3]"/>
+				        								</t>
+				        							</div>	
+				        						</td>	
+				        						<td style="width: 6%; border-left: 1px solid black; border-right: 1px solid black; text-align: right;">
+				        							<div style="padding-right: 5px;">
+				        								<t t-if="line[4]">
+				        									<span t-esc="line[4]"/>
+				        								</t>
+				        							</div>	
+				        						</td>	
+				        						<td style="width: 6%; border-left: 1px solid black; border-right: 1px solid black; text-align: right;">
+				        							<div style="padding-right: 5px;">
+				        								<t t-if="line[5]">
+				        									<span t-esc="line[5]"/>
+				        								</t>
+				        							</div>	
+				        						</td>	
+				        						<td style="width: 3%; border-left: 1px solid black; border-right: 1px solid black; ">
+				        							<div style="padding-left: 5px;">
+				        								<span t-esc="line[6]"/>
+				        							</div>	
+				        						</td>		
+				        						<td style="width: 8%; border-left: 1px solid black; border-right: 1px solid black; text-align: right;">
+				        							<div style="padding-right: 5px;">
+				        								<t t-if="line[7]">
+					        								<span t-esc="formatLang(line[7], digits=3)"/>
+				        								</t>
+				        							</div>	
+				        						</td>		       
+				        						<td style="width: 8%; border-left: 1px solid black; border-right: 1px solid black; text-align: right;">
+				        							<div style="padding-right: 5px;">
+				        								<span t-esc="formatLang(line[8])"/>
+				        							</div>	
+				        						</td>	
+				        						<td style="width: 6%; border-left: 1px solid black; border-right: 1px solid black; text-align: right;">
+				        							<div style="padding-right: 5px;">
+				        								<span t-esc="line[9]"/>
+				        							</div>	
+				        						</td>	
+				        						<td style="width: 8%; border-left: 1px solid black; border-right: 1px solid black; text-align: right;">
+				        							<div style="padding-right: 5px;">
+				        								<span t-esc="formatLang(line[10])"/>
+				        							</div>	
+				        						</td>	
+				        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; ">
+				        							<div style="padding-left: 5px;">
+				        								<span t-esc="line[11]"/>
+				        							</div>	
+				        						</td>	 								        								        						      								        						
+				        					</tr>
+			        					</t>
+			        					<tr style="width: 100%; height: 100%; min-height:100%; font-size: xx-small;" >
+			        						<td style="border-left: 1px solid black; border-right: 1px solid black; "><br /></td> 
+			        						<td style="border-left: 1px solid black; border-right: 1px solid black; "/>
+			        						<td style="border-left: 1px solid black; border-right: 1px solid black; "/> 
+			        						<td style="border-left: 1px solid black; border-right: 1px solid black; "/>
+			        						<td style="border-left: 1px solid black; border-right: 1px solid black; "/> 
+			        						<td style="border-left: 1px solid black; border-right: 1px solid black; "/>	
+			        						<td style="border-left: 1px solid black; border-right: 1px solid black; "/> 
+			        						<td style="border-left: 1px solid black; border-right: 1px solid black; "/>
+			        						<td style="border-left: 1px solid black; border-right: 1px solid black; "/> 
+			        						<td style="border-left: 1px solid black; border-right: 1px solid black; "/>
+			        						<td style="border-left: 1px solid black; border-right: 1px solid black; "/> 
+			        						<td style="border-left: 1px solid black; border-right: 1px solid black; "/>			        									        									        						 
+			        					</tr>
+			        					<tr style="width: 100%; height: 100%; min-height:100%; font-size: xx-small;" >
+			        						<td colspan="12">
+			        							<div style="padding-left: 5px;">
+			        								<span>Contributo Conai assolto ove dovuto</span>
+			        								<t t-if="o.fiscal_position and o.fiscal_position.note">
+			        									<span> - </span>
+			        									<span style="padding-right: 5px; text-align: right;" t-esc="o.fiscal_position.note" />
+			        								</t>
+		        								</div>
+	        								</td>		        									        									        						 
+			        					</tr>			        					
+			        				</table>
+			        				
+			        				<table style="width: 100%">
+			        					<tr style="font-size: xx-small; border: 1px solid black;">
+			        						<td colspan="7" style="border: 1px solid black;">
+			        							<div style="padding-left: 5px; padding-right: 5px; text-align: justify;">
+			        								<span>NOTE</span>
+			        							</div>
+			        							<div style="padding-left: 5px; padding-right: 5px; text-align: justify;">
+			        								<t t-if="o.comment">
+				        								<span t-esc="o.comment"/>
+				        							</t>
+				        							<t t-if="not o.comment">
+				        								<span><br /></span>
+				        							</t>	
+			        							</div>
+			        						</td>
+		        						</tr>
+		        						<t t-if="o.is_shipping_invoice">
+				        					<tr style="font-size: xx-small; border: 1px solid black;">
+				        						<td colspan="3" style="border: 1px solid black;">
+				        							<div style="padding-left: 5px; padding-right: 5px; text-align: justify;">
+				        								<span>VETTORE</span>
+				        							</div>
+				        							<div style="padding-left: 5px;">
+				                            			<t t-if="o.shipping_invoice_carrier_id">
+				                            				<span t-esc="o.shipping_invoice_carrier_id.name"/>	
+				                            			</t>
+				        							</div>
+				        						</td>
+				        						<td colspan="2" style="border: 1px solid black;">
+				        							<div style="padding-left: 5px; padding-right: 5px; text-align: justify;">
+				        								<span>DATA CONSEGNA</span>
+				        							</div>
+				        							<div style="padding-left: 5px;">
+														<span t-esc="formatLang(o.shipping_invoice_min_date, date=True)"/>
+				        							</div>
+				        						</td>
+				        						<td style="border: 1px solid black;">
+				        							<div style="padding-left: 5px; padding-right: 5px; text-align: justify;">
+				        								<span>NUMERO COLLI</span>
+				        							</div>
+				        							<div style="text-align: center; font-size: x-small;">
+				        								<t t-if="o.shipping_invoice_number_of_packages">
+					        								<span t-esc="o.shipping_invoice_number_of_packages"/>
+					        							</t>
+					        							<t t-if="not o.shipping_invoice_number_of_packages">
+					        								<span t-esc="get_num_pieces(o)"/>
+					        							</t>	
+				        							</div>
+				        						</td>	
+				        						<td style="border: 1px solid black;">
+				        							<div style="padding-left: 5px; padding-right: 5px; text-align: justify;">
+				        								<span>FIRMA VETTORE</span>
+				        							</div>
+				        							<div style="padding-left: 5px;">
+														<span><br /></span>	
+				        							</div>
+				        						</td>				        									        										        						
+			        						</tr>
+				        					<tr style="font-size: xx-small; border: 1px solid black;">
+				        						<td colspan="3" style="border: 1px solid black;">
+				        							<div style="padding-left: 5px; padding-right: 5px; text-align: justify;">
+				        								<span>PORTO</span>
+				        							</div>
+				        							<div style="padding-left: 5px;">
+				                            			<t t-if="o.shipping_invoice_incoterm_id">
+				                            				<span t-esc="o.shipping_invoice_incoterm_id.name"/>	
+				                            			</t>
+				        							</div>
+				        						</td>
+				        						<td colspan="2" style="border: 1px solid black;">
+				        							<div style="padding-left: 5px; padding-right: 5px; text-align: justify;">
+				        								<span>CAUSALE</span>
+				        							</div>
+				        							<div style="padding-left: 5px;">
+														<span t-esc="o.shipping_invoice_picking_type_id"/>
+				        							</div>
+				        						</td>
+				        						<td style="border: 1px solid black;">
+				        							<div style="padding-left: 5px; padding-right: 5px; text-align: justify;">
+				        								<span>PESO</span>
+				        							</div>
+				        							<div style="padding-left: 5px;">
+														<span t-esc="o.shipping_invoice_weight"/>	
+				        							</div>
+				        						</td>	
+				        						<td style="border: 1px solid black;">
+				        							<div style="padding-left: 5px; padding-right: 5px; text-align: justify;">
+				        								<span>FIRMA DESTINATARIO</span>
+				        							</div>
+				        							<div style="padding-left: 5px;">
+														<span><br /></span>	
+				        							</div>
+				        						</td>				        									        										        						
+			        						</tr>				        								        							
+		        						</t>
+			        					<tr style="font-size: xx-small; border: 1px solid black; border-bottom:none;">
+			        						<td colspan="2" style="vertical-align: bottom; border-left: 1px solid black; border-right: 1px solid black; width:18%;">
+			        							<div style="padding-left: 5px;">
+			        								<span>SCADENZE</span>
+			        							</div>
+			        						</td>
+			        						<td colspan="2" style="vertical-align: bottom; border-left: 1px solid black; border-right: 1px solid black; width: 25%">
+			        							<div style="padding-left: 5px;">
+			        								<span>COD. IVA</span>
+			        							</div>
+			        						</td>
+			        						<td style="vertical-align: bottom; border-left: 1px solid black; border-right: 1px solid black; width: 14%">
+			        							<div style="padding-left: 5px;">
+			        								<span>IMPONIBILI</span>
+			        							</div>
+			        						</td>
+			        						<td style="vertical-align: bottom; border-left: 1px solid black; border-right: 1px solid black; width: 14%">
+			        							<div style="padding-left: 5px;">
+			        								<span>IMPOSTA</span>
+			        							</div>
+			        						</td>
+			        						<td style="border: 1px solid black; border-bottom: none; width: 16%;">
+			        							<div style="padding-left: 5px;">
+			        								<span>TOTALE MERCE</span>
+			        							</div>		        								
+			        						</td>			        								        									        						
+			        					</tr>
+			        					<tr style="font-size: xx-small;">
+			        						<td rowspan="5" style="text-align: top; border:1px solid black; border-top: none; border-right: none;" >
+			        							<div style="padding-left: 5px;">
+			        								<span>DATA</span>
+			        							</div>
+			        							<t t-foreach="get_move_line(o.move_id.id)" t-as="maturity">
+				        							<div style="padding-left: 5px; font-size: small;">
+				        								<span t-esc="formatLang(maturity.date_maturity, date=True)"/>
+				        							</div>			        								
+			        							</t>
+			        						</td>
+			        						<td rowspan="5" style="text-align: top; border:1px solid black; border-top: none; border-left: none;">
+			        							<div style="padding-right: 5px; text-align: right;">
+			        								<span>IMPORTO</span>
+			        							</div>
+			        							<t t-foreach="get_move_line(o.move_id.id)" t-as="maturity">
+				        							<div style="padding-right: 5px; text-align: right; font-size: small;">
+				        								<span t-esc="formatLang(maturity.debit + maturity.credit)"/>
+				        							</div>			        								
+			        							</t>
+			        						</td>	
+			        						<td colspan="2" rowspan="5" style="text-align: top; border-left: 1px solid black; border-right: 1px solid black;">
+			        							<t t-foreach="o.tax_line" t-as="tax">
+				        							<div style="padding-left: 5px; font-size: small;" >
+				        								<span t-esc="tax.tax_code_id.code"/>
+				        								<span>-</span>
+				        								<span t-esc="tax.tax_code_id.name"/>
+				        							</div>			        								
+			        							</t>
+			        						</td>
+			        						<td rowspan="5" style="text-align: top; border-left: 1px solid black; border-right: 1px solid black;">
+			        							<t t-foreach="o.tax_line" t-as="tax">
+				        							<div style="padding-right: 5px; text-align: right; font-size: small;">
+				        								<span t-esc="formatLang(tax.base)"/>
+				        							</div>			        								
+			        							</t>
+			        						</td>
+			        						<td rowspan="5" style="text-align: top; border-left: 1px solid black; border-right: 1px solid black;">
+			        							<t t-foreach="o.tax_line" t-as="tax">
+				        							<div style="padding-right: 5px; text-align: right; font-size: small;">
+				        								<span t-esc="formatLang(tax.amount)"/>
+				        							</div>			        								
+			        							</t>
+			        						</td>
+			        						<td style="border: 1px solid black; border-top: none;">
+			        							<div style="padding-right: 5px; text-align: right; font-size: small;">
+			        								<span t-esc="formatLang(o.amount_untaxed-get_shipping_costs(o))"/>
+			        							</div>	
+			        						</td>			        						
+			        					</tr>
+			        					<tr style="font-size: xx-small;">			        									        									        									        							        									        						
+			        						<td style="border: 1px solid black; width: 16%">
+			        							<div style="padding-left: 5px;">
+			        								<span>TRASPORTO E BOLLI</span>
+			        							</div>
+			        							<div style="padding-right: 5px; text-align: right; font-size: small;">
+			        								<span t-esc="formatLang(get_shipping_costs(o))"/>
+			        							</div>			        								
+			        						</td>					        									        									        						
+			        					</tr>
+			        					<tr style="font-size: xx-small;">
+			        						<td style="background-color: #dddddd; border: 1px solid black; width: 16%">
+			        							<div style="padding-left: 5px;">
+			        								<span>TOTALE IMPONIBILE</span>
+			        							</div>
+			        							<div style="padding-right: 5px; text-align: right; font-size: small; font-weight: bold;">
+			        								<span t-esc="formatLang(o.amount_untaxed)"/>
+			        							</div>			        								
+			        						</td>				        						
+			        					</tr>
+			        					<tr style="font-size: xx-small;">
+			        						<td style="background-color: #dddddd; border: 1px solid black; width: 16%">
+			        							<div style="padding-left: 5px;">
+			        								<span>TOTALE DOCUMENTO</span>
+			        							</div>
+			        							<div style="padding-right: 5px; text-align: right; font-size: small; font-weight: bold;">
+			        								<span t-esc="formatLang(o.amount_total)"/>
+			        								<span t-esc="o.currency_id.symbol"/>
+			        							</div>			        								
+			        						</td>				        						
+			        					</tr>
+			        					<tr style="font-size: xx-small;">
+			        						<td style="background-color: #dddddd; border: 1px solid black; width: 16%">
+			        							<div style="padding-left: 5px;">
+			        								<span>NETTO A PAGARE</span>
+			        							</div>
+			        							<div style="padding-right: 5px; text-align: right; font-size: small; font-weight: bold;">
+			        								<t t-if="not o.journal_id.e_invoice" >
+			        									<span t-esc="formatLang(o.amount_total)"/>
+			        								</t>
+			        								<t t-if="o.journal_id.e_invoice" >
+			        									<span t-esc="formatLang(o.amount_untaxed)"/>
+			        								</t>			        								
+			        								<span t-esc="o.currency_id.symbol"/>
+			        							</div>			        								
+			        						</td>				        						
+			        					</tr>			        								        					
+			        					<tr style="font-size: xx-small; border: 1px solid black;">
+			        						<td colspan="7">
+			        							<div style="padding-left: 5px; padding-right: 5px; text-align: justify;">
+			        								<span>La merce viaggia a rischio e pericolo del committente anche se resa franco destino. Eventuali errori e vizi qualitativi e/o quantitativi della merce dovranno essere denunciati dal Compratore al venditore per iscritto entro otto giorni dalla consegna della merce stessa e non si accettano contestazioni o resi in ordine a merce previamente visionata o collaudata dal Compratore , nonché in ipotesi di uso inidoneo del materiale ovvero di materiale già sottoposto a lavorazione. In ipotesi di ritardo nel pagamento delle fatture verranno applicati gli interessi commerciali di legge, per qualsiasi controversia nascente fra le parti è competente soltanto l’autorità giudiziaria del foro di Viterbo.L’indicazione del quantitativo della merce ceduta viene espresso in metri cubi circa, tale previsione contrattuale comporta che il venditore può consegnare il 10% in più o in meno della quantità indicata. Vogliate riscontrare l’esatta indicazione della Vs ragione sociale e partita IVA, eventuali inesattezze devono esserci comunicate entro il mese di emissione della fattura.</span>
+			        							</div>
+			        						</td>
+			        					</tr>			        								        								        					
+			        				</table>
+
+								<t t-if="not o.is_shipping_invoice and not o.is_ddt_invoice">	
+									<div style="text-align: right; padding-top: 25px; padding-right: 50px; font-size: xx-small;">
+										<span>
+											FIRMA DESTINATARIO
+										</span>
+									</div>
+									<div style="text-align: right; padding-top: 15px; padding-right: 50px; font-size: xx-small;">
+										<span>
+											___________________
+										</span>
+									</div>									
+								</t>		        				
+			        							        				
+		                        </div>			                        		                        
+		                    </div>
+		                </div>
+	                </div>
+
+        		</t>
+        	</t>
+		</template>		
+		
+	</data>
+</openerp>
+								            

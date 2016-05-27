@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_config_settings_accredia" model="ir.ui.view">
+            <field name="name">Project Application</field>
+            <field name="model">project.config.settings</field>
+            <field name="inherit_id" ref="project.view_config_settings"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='module_project_timesheet']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+               </xpath>
+                <xpath expr="//label[@for='module_project_timesheet']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+               </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

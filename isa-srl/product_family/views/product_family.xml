@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+   <data>
+      
+         <!-- Aggiungo il tab "Classificazione prodotto" -->
+         <record id="view_product_information_form" model="ir.ui.view">
+           <field name="name">view.product.information.form</field>
+           <field name="model">product.template</field>
+           <field name="inherit_id" ref="product.product_template_form_view"/>
+              <field name="arch" type="xml">    
+              	 <xpath expr="//notebook/page[@string='Accounting']/group" position="replace" />
+                 <xpath expr="//page[@string='Information']" position="after">
+	    	        <page string='Classificazione prodotto'>
+	    	        	<group>
+                            <label for="categ_id" string="Internal Category"/>
+                            <div><field name="categ_id" colspan="3" nolabel="1"/></div>
+                            <field name="subgroup" domain="[('type', '=', 'subgroup')]"/>
+                        </group>
+	    	             <group>
+	    	                  <field name="family" domain="[('type', '=', 'family')]"/>
+	    	                  <field name="subfamily" domain="[('type', '=', 'subfamily')]"/>
+                         </group>
+	    	             <group>
+	    	                  <field name="classifier1" domain="[('type', '=', 'classifier1')]"/>
+	    	                  <field name="classifier2" domain="[('type', '=', 'classifier2')]"/>
+	    	                  <field name="classifier3" domain="[('type', '=', 'classifier3')]"/>
+                         </group>
+	    	        </page>    
+	             </xpath> 
+	          </field>
+         </record>  
+          
+      
+         <!-- Creo ora l'azione che dovrà avere il menuitem per fare riferimento -->
+         <record model="ir.actions.act_window" id="product_family_action">
+             <field name="name">Qualificatori prodotto</field> 
+             <field name="res_model">product.family</field>
+             <field name="view_mode">tree,form</field>
+         </record>
+         
+         
+         <!-- Creo la voce nel menù a sinistra !-->
+         <menuitem
+            action="product_family_action" id="menu_product_family_config_stock"
+            parent="stock.menu_product_in_config_stock" sequence="4"/>
+
+    
+         <!-- Modifico la vista tree, aggiungengo come colonna il code e il type -->
+         <record id="product_family_view_tree" model="ir.ui.view">
+            <field name="name">product.family.view.tree</field>
+            <field name="model">product.family</field>
+            <field name="arch" type="xml">
+                <tree string="Product family tree">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+         </record>
+    
+        
+         <!-- Modifico la vista search, aggiungendo la possibilità di ricercare per codice -->
+         <record id="product_family_view_search" model="ir.ui.view">
+            <field name="name">product.family.view.search</field>
+            <field name="model">product.family</field>
+            <field name="arch" type="xml">
+                <search string="Product family search">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <filter name="typefamily" string="Famiglia" domain="[('type','=','family')]"/>
+                    <filter name="typesubfamily" string="Sottofamiglia" domain="[('type','=','subfamily')]"/>
+                </search>
+            </field>
+         </record>
+    
+    
+         <!-- Modifico la vista form -->
+         <record id="product_family_view_form" model="ir.ui.view">
+            <field name="name">product.family.view.form</field>
+            <field name="model">product.family</field>
+            <field name="arch" type="xml">
+                <form string="Product family form">
+                    <sheet>                    
+                         <group>
+                            <group>
+                                <field name="code"/>
+                                <field name="name" />
+                                <field name="type" />
+                            </group>
+                         </group>
+                    </sheet>
+                </form>
+            </field>
+         </record> 
+ 
+              
+  </data>
+</openerp>          
+          

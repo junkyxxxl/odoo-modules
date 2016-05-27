@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+        	id="qweb_riba_report" 
+        	string="Print Ri.Ba." 
+           	model="riba.distinta" 
+        	report_type="qweb-pdf" 
+        	name="account_ricevute_bancarie.report_riba" 
+        	file="account_ricevute_bancarie.report_riba" 
+        />
+        <record id="qweb_riba_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="account_ricevute_bancarie.paperformat_riba"/>
+        </record>    
+    </data>
+</openerp>

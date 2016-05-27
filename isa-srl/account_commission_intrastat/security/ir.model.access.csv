@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acc_user_intrastat_invoice_readonly,account_intrastat_invoice user readonly,l10n_it_intrastat.model_account_invoice_intrastat,,1,0,0,0

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- aggiunta campo per forzare il numero fattura -->
+        <record model="ir.ui.view" id="account_invoice_form_int_number_isa">
+            <field name="name">account.invoice.form.int_number_isa</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='internal_number']" position="after">
+                    <newline/>
+                    <field name="internal_number_visible" invisible="1" />
+                    <field name="internal_number_isa_visible" invisible="1" />
+                    <field name="internal_number_isa" on_change="onchange_internal_number(internal_number_isa)" attrs="{'invisible':['|',('state','!=','draft'),('internal_number_isa_visible','in',[False,None])]}" domain="[('journal_id', '=', journal_id)]" string="Retrieve Number" help="Select invoice number. Use this field if you don't want to use the default numbering"/>
+                </xpath>
+                <xpath expr="//field[@name='internal_number']" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                    <attribute name="attrs">{'invisible':['|',('state','!=','draft'),('internal_number_visible','in',[False,None])]}</attribute>
+                    <attribute name="string">Force Number</attribute>
+                    <attribute name="help">Force invoice number. Use this field if you don't want to use the default numbering</attribute>
+                    <attribute name="groups">account_invoice_management_isa.account_invoice_management_customer</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- sostituzione pulsante per type action-->
+        <record model="ir.ui.view" id="account_invoice_form_management_isa">
+            <field name="name">account.invoice.form.management.isa</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/header/button[@name='invoice_open']" position="replace">
+                    <button name="invoice_open" states="draft" string="Validate" type="object" class="oe_highlight" groups="base.group_user"/>
+                    <button name="invoice_open" states="proforma2" string="Validate" type="object" groups="base.group_user"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

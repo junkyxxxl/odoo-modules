@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <!--   Product Price List -->
+
+        <record id="view_wizard_print_pricelist" model="ir.ui.view">
+              <field name="name">Print pricelist</field>
+              <field name="model">wizard.print.pricelist</field>
+              <field name="arch" type="xml">
+                <form string="Price List">
+                    <group string="Calculate Product Price per Unit Based on Pricelist Version.">
+                        <field name="pricelist"/>
+                        <field name="family"/>
+                        <field name="subfamily"/>
+                        <field name="show_onhand"/>
+                        <field name="stock_location_ids" attrs="{'invisible':[('show_onhand','=',False)]}"/>
+                    </group>
+                    <footer>
+                        <button name="print_report" string="Print"  type="object" class="oe_highlight"  />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+              </field>
+        </record>
+
+        <act_window id="action_wizard_print_pricelist"
+            name="Print Price List"
+            res_model="wizard.print.pricelist"
+            src_model="product.pricelist"
+            groups="product.group_sale_pricelist"
+            view_mode="form" target="new" view_type="form" /> 
+
+        <menuitem action="action_wizard_print_pricelist"
+        		  name="Print Price List"
+                  id="menu_action_pricelist_report"
+                  parent="product.menu_product_pricelist_main"
+                  sequence="8"/>                     	
+            	
+</data>
+</openerp>

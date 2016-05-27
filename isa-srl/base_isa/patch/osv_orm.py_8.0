@@ -1,0 +1,22 @@
+=== modified file 'src/openerp-8.0/openerp/osv/orm.py'
+--- src/openerp-8.0/openerp/osv/orm.py	2014-03-14 07:43:34 +0000
++++ src/openerp-8.0/openerp/osv/orm.py	2014-03-14 07:47:16 +0000
+@@ -4662,13 +4662,10 @@
+ 
+         blacklist_given_fields(self)
+ 
+-
+-        fields_to_copy = dict((f,fi) for f, fi in self._all_columns.iteritems()
+-                                     if f not in default
+-                                     if f not in blacklist
+-                                     if not isinstance(fi.column, fields.function))
+-
+-        data = self.read(cr, uid, [id], fields_to_copy.keys(), context=context)
++        fields_to_read = [f for f in self.check_field_access_rights(cr, uid, 'read', None)
++                          if f not in blacklist]
++
++        data = self.read(cr, uid, [id], fields_to_read, context=context)
+         if data:
+             data = data[0]
+         else:
+

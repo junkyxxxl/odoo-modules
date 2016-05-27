@@ -1,0 +1,44 @@
+.wk_notify_main{
+	height:70px;
+	width:100%;
+	margin-top: 2%;
+}
+.wk_input_email{
+	margin-top:3%;
+	width:60% !important;
+	display: inline;
+	border-radius:5px 0px 0px 5px !important;
+}
+.wk_text{
+	color:blue;
+}
+.wk_submit_div
+{
+	width:20% !important;
+	float:right;
+	margin-top:3%;
+	margin-right:20%;
+	border-radius:0px 5px 5px 0px;
+	background-color: #428bca;
+	cursor: pointer;
+}
+.wk_span_notify
+{
+color:white;
+}
+.div_message_notify{
+	color:#0d47a1;
+	height:20px;
+	width:90%;
+	display:none;
+	line-height: 15px;
+	padding:5px;
+}
+.span_undo
+{
+text-decoration: underline;
+color:#303F9F;
+margin-left: 10px;
+cursor: pointer;
+}
+

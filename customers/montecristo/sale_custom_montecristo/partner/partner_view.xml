@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        <record id="view_partner_form_history" model="ir.ui.view">
+            <field name="name">res.partner.form.history</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales_purchases']" position="after">
+                    <page string="Storico">
+                        <field name="sale_history">
+                            <tree>
+                                <field name="partner_id"/>
+                                <field name="production_id"/>
+                                <field name="salesagent_id"/>
+                                <field name="pieces"/>
+                                <field name="amount"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>                                    		            	        	            	            	           		                
+            </field>
+        </record>        
+        
+    </data>
+</openerp>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_final_test_accredia_view" model="ir.ui.view">
+          <field name="name">wizard.final.test.form</field>
+          <field name="model">wizard.final.test</field>
+          <field name="arch" type="xml">
+            <form string="Elenco prove definitivo">
+                <group>
+                    <group>
+                        <field name="dateCert" required="1" />
+                    </group>
+                    <group>
+                        <field name="test_temp_id" invisible="1" />
+                        <field name="project_id" invisible="1" />
+                        <field name="unit_id" invisible="1" />                        
+                    </group>
+                </group>
+                <footer>
+                    <button name="create_final_test"
+							icon="gtk-go-forward"
+							string="Crea"
+							type="object"
+							default_focus="1"
+							class="oe_highlight" />
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+          </field>
+        </record>
+
+        <!-- Action menu -->
+        <record id="action_final_test_accredia" model="ir.actions.act_window">
+            <field name="name">Elenco Prove Definitivo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.final.test</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_final_test_accredia_view"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+         <!--Form View -->
+         <record model="ir.ui.view" id="view_accreditation_invoiced_schema_form">
+                <field name="name">accreditation.invoiced.schema.form</field>
+                <field name="model">accreditation.invoiced.schema</field>
+                <field name="arch" type="xml">
+                    <form string="Fatturato per Schema">
+                        <group>
+                            <group>
+                                <field name="name" readonly="1" />
+                                <field name="customer_id" required="1" />
+                                <field name="schema" />
+                                <field name="year" />
+                                <field name="invoiced_amount" />
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </form>
+                </field>
+         </record>
+
+        <!--Tree View -->
+        <record model="ir.ui.view" id="view_accreditation_invoiced_schema_tree">
+                <field name="name">accreditation.invoiced.schema.tree</field>
+                <field name="model">accreditation.invoiced.schema</field>
+                <field name="arch" type="xml">
+                    <tree string="Fatturato per Schema">
+                        <field name="name" />
+                        <field name="customer_id" />
+                        <field name="schema" />
+                        <field name="year" />
+                        <field name="invoiced_amount" />
+                    </tree>
+                </field>
+        </record>
+
+        <!--Search View-->
+        <record model="ir.ui.view" id="view_accreditation_invoiced_schema_search">
+            <field name="name">accreditation.invoiced.schema.search</field>
+            <field name="model">accreditation.invoiced.schema</field>
+            <field name="arch" type="xml">
+                <search string="Fatturato per Schema Search">     
+                    <field name="name" />
+                </search>
+            </field>
+        </record>
+
+        <!--Fatturato per Schema Action -->
+        <record model="ir.actions.act_window" id="action_accreditation_invoiced_schema">
+            <field name="name">Fatturato per Schema</field>
+            <field name="res_model">accreditation.invoiced.schema</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_accreditation_invoiced_schema_search"/>
+        </record>
+
+    </data>
+</openerp>

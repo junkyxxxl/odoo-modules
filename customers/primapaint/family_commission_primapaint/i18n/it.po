@@ -1,0 +1,150 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* family_commission_primapaint
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-25 14:02+0000\n"
+"PO-Revision-Date: 2016-02-25 14:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: family_commission_primapaint
+#: field:product.family,family_commission_perc:0
+#: field:product.family.category.commission,family_category_commission_perc:0
+#: field:product.family.commission.discount,family_discount_commission_perc:0
+msgid "Commission [%]"
+msgstr "Provvigione [%]"
+
+#. module: family_commission_primapaint
+#: code:addons/family_commission_primapaint/models/product_family.py:13
+#: code:addons/family_commission_primapaint/models/product_family.py:27
+#: code:addons/family_commission_primapaint/models/product_family.py:86
+#, python-format
+msgid "Commission should be between 0 and 100!"
+msgstr "La provvigione deve essere compresa tra 0 e 100!"
+
+#. module: family_commission_primapaint
+#: model:ir.model,name:family_commission_primapaint.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: family_commission_primapaint
+#: field:product.family.category.commission,create_uid:0
+#: field:product.family.commission.discount,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: family_commission_primapaint
+#: field:product.family.category.commission,create_date:0
+#: field:product.family.commission.discount,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: family_commission_primapaint
+#: code:addons/family_commission_primapaint/models/product_family.py:29
+#, python-format
+msgid "Discount should be between 0 and 100!"
+msgstr "Lo sconto dovrebbe essere tra 0 e 100!"
+
+#. module: family_commission_primapaint
+#: view:product.family:family_commission_primapaint.product_family_commission_view_form
+#: field:product.family,commission_discount_ids:0
+msgid "Discount/Commission Lines"
+msgstr "Linee Sconto/Provvigione"
+
+#. module: family_commission_primapaint
+#: field:product.family.category.commission,family_id:0
+#: field:product.family.commission.discount,family_id:0
+msgid "Family"
+msgstr "Famiglia"
+
+#. module: family_commission_primapaint
+#: view:account.invoice:family_commission_primapaint.account_invoice_form_discount_family_line
+#: view:account.invoice:family_commission_primapaint.account_invoice_supplier_form_discount_family_line
+#: view:sale.order:family_commission_primapaint.view_order_form_discount_family_line
+msgid "Family Discount"
+msgstr "Sconto Famiglia"
+
+#. module: family_commission_primapaint
+#: field:product.family.category.commission,id:0
+#: field:product.family.commission.discount,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: family_commission_primapaint
+#: model:ir.model,name:family_commission_primapaint.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Righe Fattura"
+
+#. module: family_commission_primapaint
+#: code:addons/family_commission_primapaint/models/res_company.py:79
+#: code:addons/family_commission_primapaint/models/res_company.py:82
+#: code:addons/family_commission_primapaint/models/res_company.py:85
+#: code:addons/family_commission_primapaint/models/res_company.py:88
+#, python-format
+msgid "It's not possible to have duplicate values of priority!"
+msgstr "Non è possibile avere valori di priorità duplicati!"
+
+#. module: family_commission_primapaint
+#: code:addons/family_commission_primapaint/models/product_family.py:108
+#, python-format
+msgid "It's not possible to set more than one commission for each category; Duplicated category on this family is: "
+msgstr "Non è possibile impostare più di una provvigione per ciascuna categoria; La categoria duplicata su questa famiglia è: "
+
+#. module: family_commission_primapaint
+#: field:product.family.category.commission,write_uid:0
+#: field:product.family.commission.discount,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: family_commission_primapaint
+#: field:product.family.category.commission,write_date:0
+#: field:product.family.commission.discount,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: family_commission_primapaint
+#: field:product.family.commission.discount,discount:0
+msgid "Max. Discount [%]"
+msgstr "Sconto Massimo [%]"
+
+#. module: family_commission_primapaint
+#: code:addons/family_commission_primapaint/models/account_invoice.py:87
+#: code:addons/family_commission_primapaint/models/sale_order.py:65
+#, python-format
+msgid "Maximum Discount Exceeded','message':'You cannot set a total discount greater than what is allowed for this customer"
+msgstr "Sconto Massimo Superato','message':'Non è possibile impostare uno sconto totale maggiore di quello accettato per questo cliente"
+
+#. module: family_commission_primapaint
+#: model:ir.model,name:family_commission_primapaint.model_product_pricelist_item
+msgid "Pricelist item"
+msgstr "Oggetto Listino"
+
+#. module: family_commission_primapaint
+#: field:res.company,commission_priority5:0
+msgid "Priority #5"
+msgstr "Priorità #5"
+
+#. module: family_commission_primapaint
+#: model:ir.model,name:family_commission_primapaint.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Linea d'ordine di vendita"
+
+#. module: family_commission_primapaint
+#: view:product.family:family_commission_primapaint.product_family_commission_view_form
+#: field:product.family,category_commission_ids:0
+msgid "Special Commissions for Category"
+msgstr "Provvigioni Speciali per Categorie"
+
+#. module: family_commission_primapaint
+#: field:product.family.category.commission,special_partner_category_id:0
+msgid "Special Partner Category"
+msgstr "Categoria Partner Speciale"
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_res_users_accredia" model="ir.ui.view">
+            <field name="name">res.users.accredia.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Departments" groups="base.group_hr_manager,account.group_account_manager">
+                        <group>
+                            <field name="department_ids" />
+                            <field name="department_id" string="Dipartimento preferenziale" context="{'t_obj': True}" domain="[('id', 'in', department_ids)]" />
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="person_name" placeholder="Nome..." required="1" />
+                    <field name="person_surname" placeholder="Cognome..." required="1" />
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+           </field>
+        </record>
+
+    </data>
+</openerp>

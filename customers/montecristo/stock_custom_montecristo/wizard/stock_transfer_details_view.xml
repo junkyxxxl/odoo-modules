@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_stock_enter_transfer_details_enhanced" model="ir.ui.view">
+            <field name="name">Enter transfer details enhanced</field>
+            <field name="model">stock.transfer_details</field>
+            <field name="inherit_id" ref="stock_picking_transfer_enhanced.view_stock_enter_transfer_details_enhanced"/>  
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='item_ids']/.." position="before">
+                    <group string="Filters">
+	                    <field name="product_tmpl_id" domain="[('id','in', product_tmpl_ids)]" context="{'t_check':True}"/>
+                    </group>	                    
+                    
+					<button name="button_dummy" type="object" string="Filtra"/> 
+					<button name="button_clear_filter" type="object" string="Clear"/>										                    	                    
+					
+					<field name="product_tmpl_ids" invisible="1"/>
+					
+                    <group>
+	                    <field name="view_item_ids" context="{'default_sourceloc_id':picking_source_location_id, 'default_destinationloc_id':picking_destination_location_id}" nolabel="1">
+	                        <tree string="Inventory Details" editable="bottom">
+	                            <field name="selected" string="" />
+	                            <field name="package_id" groups="stock.group_tracking_lot"/>
+	                            <field name="product_id" required="True" context="{'uom':product_uom_id}" on_change="product_id_change(product_id,product_uom_id,context)"/>
+	                            <field name="quantity" sum="Total"/>
+	                            <button name="split_quantities" string="Split" type="object" icon="STOCK_PREFERENCES" attrs="{'invisible': [('quantity', '=', 1)]}"/>
+	                            <field name="product_uom_id" options="{&quot;no_open&quot;: True}" groups="product.group_uom"/>
+	                            <field name="sourceloc_id" domain="[('id', 'child_of', parent.picking_source_location_id)]"/>
+	                            <field name="destinationloc_id" domain="[('id', 'child_of', parent.picking_destination_location_id)]"/>
+	                            <field name="result_package_id" groups="stock.group_tracking_lot" context="{'location_id': destinationloc_id}"/>
+	                            <button name="put_in_pack" string="Pack" type="object" icon="terp-product" attrs="{'invisible': [('result_package_id', '!=', False)]}" groups="stock.group_tracking_lot"/>
+	                            <field name="lot_id" groups="stock.group_production_lot" domain="[('product_id','=?', product_id)]" context="{'product_id': product_id}"/>
+	                        </tree>
+	                    </field>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='item_ids']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

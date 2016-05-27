@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="wk_addons_onpage_checkout_config" model="ir.ui.view">
+            <field name="name">Addons Setting</field>
+            <field name="model">webkul.website.addons</field>
+            <field name="inherit_id" ref="website_webkul_addons.config_webkul_website_addons_form"  />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='module_website_stock_notifiy']" position="after">
+                    <button type="action" name="%(website_stock_notifiy.action_website_stock_notifiy)d" string="Configuration" class="oe_link oe_inline"></button>
+                </xpath>  
+            </field>
+        </record>
+    </data>
+</openerp>

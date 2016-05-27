@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="summary_requirement_qweb">
+    <t t-call="report.external_layout">
+        <div class="page">
+            <div class="row">
+                <p class="col-xs-12">
+                    RIEPILOGO FABBISOGNO
+                </p>
+            </div>
+            <hr />
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Cod Prodotto</th>
+                        <th>Descrizione</th>
+                        <th>UM</th>
+                        <th>Giacenza</th>
+                        <th>Qta Prod</th>
+                        <th>Residuo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="lines" t-as="line">
+                        <td><span t-esc="line.product_id and line.product_id.default_code or ''"/></td>
+                        <td><span t-esc="line.product_id and line.product_id.name or ''"/></td>
+                        <td><span t-esc="line.uom and line.uom.name or ''"/></td>
+                        <td><spam t-esc="line.qty_available"/></td>
+                        <td><span t-esc="line.qty"/></td>
+                        <td><span t-esc="line.residual"/></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </t>
+</template>
+
+</data>
+</openerp>

@@ -1,0 +1,163 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* hr_employee_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20131119-002500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-19 17:18+0000\n"
+"PO-Revision-Date: 2013-11-19 17:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_report
+#: field:hr.employee.report.summary.month,print_overtime:0
+msgid "Print Overtime"
+msgstr "Stampa Straordinari"
+
+#. module: hr_employee_report
+#: field:hr.employee.report.summary.month,print_holidays:0
+msgid "Print Holidays"
+msgstr "Stampa Permessi e Ferie"
+
+#. module: hr_employee_report
+#: model:ir.actions.report.xml,name:hr_employee_report.action_summary_report_id
+#: model:ir.actions.report.xml,name:hr_employee_report.summary_employee_report
+msgid "Print Summary"
+msgstr "Stampa Riepilogo"
+
+#. module: hr_employee_report
+#: view:hr.employee.report.summary.month:0
+#: view:hr.employee.report.summary_self.month:0
+msgid "Print Summary Report Monthly"
+msgstr "Stampa Riepilogo Mensile Impiegati"
+
+#. module: hr_employee_report
+#: view:hr.employee.report.summary.month:0
+#: view:hr.employee.report.summary_self.month:0
+msgid "Print"
+msgstr "Stampa"
+
+#. module: hr_employee_report
+#: model:ir.actions.report.xml,name:hr_employee_report.hol_remaining_report
+msgid "Print Holidays Rem"
+msgstr "Stampa Permessi e Ferie Rimanenti"
+
+#. module: hr_employee_report
+#: selection:hr.employee.report.summary.month,month:0
+#: selection:hr.employee.report.summary_self.month,month:0
+msgid "March"
+msgstr "Marzo"
+
+#. module: hr_employee_report
+#: selection:hr.employee.report.summary.month,month:0
+#: selection:hr.employee.report.summary_self.month,month:0
+msgid "August"
+msgstr "Agosto"
+
+#. module: hr_employee_report
+#: selection:hr.employee.report.summary.month,month:0
+#: selection:hr.employee.report.summary_self.month,month:0
+msgid "May"
+msgstr "Maggio"
+
+#. module: hr_employee_report
+#: selection:hr.employee.report.summary.month,month:0
+#: selection:hr.employee.report.summary_self.month,month:0
+msgid "June"
+msgstr "Giugno"
+
+#. module: hr_employee_report
+#: selection:hr.employee.report.summary.month,month:0
+#: selection:hr.employee.report.summary_self.month,month:0
+msgid "July"
+msgstr "Luglio"
+
+#. module: hr_employee_report
+#: field:hr.employee.report.summary.month,print_attendances:0
+msgid "Print Attendances"
+msgstr "Stampa Presenze"
+
+#. module: hr_employee_report
+#: selection:hr.employee.report.summary.month,month:0
+#: selection:hr.employee.report.summary_self.month,month:0
+msgid "February"
+msgstr "Febbraio"
+
+#. module: hr_employee_report
+#: selection:hr.employee.report.summary.month,month:0
+#: selection:hr.employee.report.summary_self.month,month:0
+msgid "October"
+msgstr "Ottobre"
+
+#. module: hr_employee_report
+#: selection:hr.employee.report.summary.month,month:0
+#: selection:hr.employee.report.summary_self.month,month:0
+msgid "January"
+msgstr "Gennaio"
+
+#. module: hr_employee_report
+#: selection:hr.employee.report.summary.month,month:0
+#: selection:hr.employee.report.summary_self.month,month:0
+msgid "April"
+msgstr "Aprile"
+
+#. module: hr_employee_report
+#: model:ir.model,name:hr_employee_report.model_hr_employee_report_summary_month
+#: model:ir.model,name:hr_employee_report.model_hr_employee_report_summary_self_month
+msgid "Print Monthly Holidays Report"
+msgstr "Stampa report permessi mensili"
+
+#. module: hr_employee_report
+#: selection:hr.employee.report.summary.month,month:0
+#: selection:hr.employee.report.summary_self.month,month:0
+msgid "November"
+msgstr "Novembre"
+
+#. module: hr_employee_report
+#: selection:hr.employee.report.summary.month,month:0
+#: selection:hr.employee.report.summary_self.month,month:0
+msgid "September"
+msgstr "Settembre"
+
+#. module: hr_employee_report
+#: selection:hr.employee.report.summary.month,month:0
+#: selection:hr.employee.report.summary_self.month,month:0
+msgid "December"
+msgstr "Dicembre"
+
+#. module: hr_employee_report
+#: field:hr.employee.report.summary.month,month:0
+#: field:hr.employee.report.summary_self.month,month:0
+msgid "Month"
+msgstr "Mese"
+
+#. module: hr_employee_report
+#: field:hr.employee.report.summary.month,year:0
+#: field:hr.employee.report.summary_self.month,year:0
+msgid "Year"
+msgstr "Anno"
+
+#. module: hr_employee_report
+#: view:hr.employee.report.summary.month:0
+#: view:hr.employee.report.summary_self.month:0
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: hr_employee_report
+#: view:hr.employee.report.summary.month:0
+msgid "or"
+msgstr "o"
+
+#. module: hr_employee_report
+#: model:ir.actions.act_window,name:hr_employee_report.action_hr_employee_report_summary_month
+#: model:ir.actions.act_window,name:hr_employee_report.action_hr_employee_report_summary_self_month
+#: model:ir.ui.menu,name:hr_employee_report.menu_hr_employee_report_summary_self_month
+msgid "Employee Summary Monthly"
+msgstr "Riepilogo Mensile Impiegati"
+

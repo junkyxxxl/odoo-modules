@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_order_form_delivery_makeover" model="ir.ui.view">
+            <field name="name">sale.order.form.sale.stock.delivery.makeover</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="delivery.view_order_withcarrier_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <label for="carrier_id" position="before">
+                        <field name="delivery_methods" />
+                    </label>
+                    <label for="carrier_id" position="attributes">
+                        <attribute name="string">Trasportatore</attribute>
+                    </label>
+                    <field name="carrier_id" position="attributes">
+                        <attribute name="domain">[('carrier_flag', '=', True)]</attribute>
+                        <attribute name="string">Trasportatore</attribute>
+                    </field>
+                    <field name="partner_id" position="after">
+                    </field>
+                </data>
+           </field>
+        </record>
+
+  		<record id="view_order_line_delivery_makeover_form" model="ir.ui.view">
+            <field name="name">sale.order.line.makeover.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']" position="attributes">
+                       <attribute name="context">{'default_delivery_date': date_order} </attribute>
+                 </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='tax_id']" position="after">
+                       <field name="delivery_date"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='delay']" position="attributes">
+                       <attribute name="on_change">onchange_delay(delay, delivery_date)</attribute>
+                </xpath>
+                <xpath expr="//field[@name='incoterm']" position="attributes">
+                       <attribute name="string">Condizione di Consegna</attribute>
+                </xpath>
+                <xpath expr="//tree[@string='Sales Order Lines']/field[@name='name']" position="after">
+                       <field name="delivery_date"/>
+                </xpath>
+           </field>
+        </record>
+
+    </data>
+</openerp>

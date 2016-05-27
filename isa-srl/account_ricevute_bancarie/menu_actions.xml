@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- RIBA -->
+        <menuitem name="Ri.Ba." parent="account.menu_finance" id="menu_riba" />
+
+        <menuitem id="menu_action_account_moves_riba"
+                  action="action_account_moves_riba"
+                  parent="menu_riba"
+                  sequence="1"
+                  />
+
+        <menuitem name="Distinte" parent="menu_riba" 
+            id="menu_riba_distinte" action="distinta_riba_action" />
+
+        <menuitem name="Issue Ri.Ba." parent="menu_riba" 
+            id="menu_riba_da_emettere" action="action_riba_da_emettere" />
+
+        <menuitem name="Fatture Insolute" parent="menu_riba" 
+            id="menu_invoices" action="action_invoice_tree1" />
+
+        <menuitem id="menu_action_ricerca_riba" 
+                  name="Ricerca Ri.Ba." 
+                  parent="menu_riba" 
+                  sequence="10" 
+                  action="action_ricerca_riba"/>   
+
+        <!-- Configurazione -->
+        <menuitem id="menu_riba_configurazione"
+                  action="action_riba_configurazione"
+                  name="Ri.Ba. Configuration"
+                  parent="account.menu_configuration_misc" />
+
+    </data>
+</openerp>

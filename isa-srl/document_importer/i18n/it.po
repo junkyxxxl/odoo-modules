@@ -1,0 +1,85 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* document_importer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-18 08:08+0000\n"
+"PO-Revision-Date: 2014-08-18 08:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: document_importer
+#: view:wizard.document.importer:document_importer.wizard_document_importer
+msgid "Annulla"
+msgstr "Annulla"
+
+#. module: document_importer
+#: field:wizard.document.importer,create_uid:0
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: document_importer
+#: field:wizard.document.importer,create_date:0
+msgid "Created on"
+msgstr "Creato su"
+
+#. module: document_importer
+#: code:addons/document_importer/document_importer.py:95
+#: code:addons/document_importer/document_importer.py:98
+#: code:addons/document_importer/document_importer.py:107
+#, python-format
+msgid "Error!"
+msgstr "Errore!"
+
+#. module: document_importer
+#: view:wizard.document.importer:document_importer.wizard_document_importer
+msgid "Esegui"
+msgstr "Esegui"
+
+#. module: document_importer
+#: field:wizard.document.importer,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: document_importer
+#: model:ir.actions.act_window,name:document_importer.action_import_attachments
+#: model:ir.ui.menu,name:document_importer.menu_import_attachments
+#: view:wizard.document.importer:document_importer.wizard_document_importer
+msgid "Import attachments"
+msgstr "Importa allegati"
+
+#. module: document_importer
+#: field:wizard.document.importer,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultimo Aggiornamento di"
+
+#. module: document_importer
+#: field:wizard.document.importer,write_date:0
+msgid "Last Updated on"
+msgstr "Ultimo Aggiornamento su"
+
+#. module: document_importer
+#: code:addons/document_importer/document_importer.py:95
+#: code:addons/document_importer/document_importer.py:98
+#: code:addons/document_importer/document_importer.py:107
+#, python-format
+msgid "Operation Failed !"
+msgstr "Operazione Fallita!"
+
+#. module: document_importer
+#: field:wizard.document.importer,root_id:0
+msgid "Root"
+msgstr "Root"
+
+#. module: document_importer
+#: field:wizard.document.importer,url:0
+msgid "Url"
+msgstr "Url"
+

@@ -1,0 +1,529 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* report_qweb_montecristo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-01 09:12+0000\n"
+"PO-Revision-Date: 2015-04-01 09:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "%SCONTO %DISCOUNT"
+msgstr "%SCONTO %DISCOUNT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "ABI"
+msgstr "ABI"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "ADVANCE"
+msgstr "ADVANCE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "AGENTE/AGENT"
+msgstr "AGENTE/AGENT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "AL.IVA"
+msgstr "AL.IVA"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "ALL"
+msgstr "ALL"
+
+#. module: report_qweb_montecristo
+#: model:ir.actions.report.xml,name:report_qweb_montecristo.qweb_montecristo_sale_order_preview
+msgid "Anteprima Ordine di Vendita"
+msgstr "Anteprima Ordine di Vendita"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "BANCA D'APPOGGIO / BANK"
+msgstr "BANCA D'APPOGGIO / BANK"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "CAB"
+msgstr "CAB"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "CAUSALE DEL TRASPORTO/CAUSE"
+msgstr "CAUSALE DEL TRASPORTO/CAUSE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+#: view:website:report_qweb_montecristo.report_sale_order_preview
+msgid "COD.ART/CODE"
+msgstr "COD.ART/CODE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_product_barcode
+msgid "CODE:"
+msgstr "CODE:"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+#: view:website:report_qweb_montecristo.report_sale_order_preview
+msgid "COL."
+msgstr "COL."
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "COLLI/PARCEL N."
+msgstr "COLLI/PARCEL N."
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_product_barcode
+msgid "COLOUR:"
+msgstr "COLOUR:"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "CONDIZIONI DI PAGAMENTO - DECORRENZA / PAYMENT - FROM"
+msgstr "CONDIZIONI DI PAGAMENTO - DECORRENZA / PAYMENT - FROM"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+msgid "CONDIZIONI DI PAGAMENTO / PAYMENT"
+msgstr "CONDIZIONI DI PAGAMENTO / PAYMENT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "CONDIZIONI GENERALI DI VENDITA: 1. Non si accettano reclami trascorsi otto giorni dal ricevimento di quanto fornito. 2. La merce viaggia a rischio e pericolo del cliente anche se convenuto franco destino. 3. Salvo patto espresso, tutti i prezzi si intendono franco sede della ditta venditrice. 4. In caso di ritardo del pagamento decorreranno gli interessi commerciali nella misura del tasso ufficiale di sconto aumentato di 3 punti. 5. Per qualsiasi controversia si adirà all'autorità giudiziaria competente nel territorio della ditta venditrice. 6. Comunicateci eventuali errori/omissioni relativi ai vs dati anagrafici e fiscali."
+msgstr "CONDIZIONI GENERALI DI VENDITA: 1. Non si accettano reclami trascorsi otto giorni dal ricevimento di quanto fornito. 2. La merce viaggia a rischio e pericolo del cliente anche se convenuto franco destino. 3. Salvo patto espresso, tutti i prezzi si intendono franco sede della ditta venditrice. 4. In caso di ritardo del pagamento decorreranno gli interessi commerciali nella misura del tasso ufficiale di sconto aumentato di 3 punti. 5. Per qualsiasi controversia si adirà all'autorità giudiziaria competente nel territorio della ditta venditrice. 6. Comunicateci eventuali errori/omissioni relativi ai vs dati anagrafici e fiscali."
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "CONDIZIONI GENERALI DI VENDITA: 1. Non si accettano reclami trascorsi otto giorni dal ricevimento di quanto fornito. 2. La merce viaggia a rischio e pericolo del cliente anche se convenuto franco destino. 3. Salvo patto espresso, tutti i prezzi si intendono franco sede della ditta venditrice. 4. In caso di ritardo del pagamento decorreranno gli interessi commerciali nella misura del tasso ufficiale di sconto aumentato di 3 punti. 5. Per qualsiasi controversia si adirà all'autorità giudiziaria competente nel territorio della ditta venditrice. 6. Comunicateci eventuali errori/omissioni relativi ai vs dati anagrafici e fiscali. Senza la Vs. comunicazione resteranno validi quelli qui riportati e ci riterremo liberi da ogni responsabilità o sanzione. 7. La MONTECRISTO srl si riserva la facoltà di revocare la presente conferma d'ordine in caso di inadempienza, anche parziale, del committente rispetto ai pagamenti delle forniture, che si manifesti tra la data della presente e la consegna della merce di cui alla presente conferma d'ordine, e ciò senza dover alcun indennizzo, risarcimento o quant'altro a favore del committente."
+msgstr "CONDIZIONI GENERALI DI VENDITA: 1. Non si accettano reclami trascorsi otto giorni dal ricevimento di quanto fornito. 2. La merce viaggia a rischio e pericolo del cliente anche se convenuto franco destino. 3. Salvo patto espresso, tutti i prezzi si intendono franco sede della ditta venditrice. 4. In caso di ritardo del pagamento decorreranno gli interessi commerciali nella misura del tasso ufficiale di sconto aumentato di 3 punti. 5. Per qualsiasi controversia si adirà all'autorità giudiziaria competente nel territorio della ditta venditrice. 6. Comunicateci eventuali errori/omissioni relativi ai vs dati anagrafici e fiscali. Senza la Vs. comunicazione resteranno validi quelli qui riportati e ci riterremo liberi da ogni responsabilità o sanzione. 7. La MONTECRISTO srl si riserva la facoltà di revocare la presente conferma d'ordine in caso di inadempienza, anche parziale, del committente rispetto ai pagamenti delle forniture, che si manifesti tra la data della presente e la consegna della merce di cui alla presente conferma d'ordine, e ciò senza dover alcun indennizzo, risarcimento o quant'altro a favore del committente."
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "CONFERMA D'ORDINE"
+msgstr "CONFERMA D'ORDINE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "CONTRIBUTO CONAI ASSOLTO"
+msgstr "CONTRIBUTO CONAI ASSOLTO"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "DATA DOCUMENTO/DATE"
+msgstr "DATA DOCUMENTO/DATE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "DATA INIZIO TRASPORTO/PICKING UP DATE"
+msgstr "DATA INIZIO TRASPORTO/PICKING UP DATE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "DATE DI CONSEGNA / DELIVERY DATES"
+msgstr "DATE DI CONSEGNA / DELIVERY DATES"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "DEC"
+msgstr "DEC"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+#: view:website:report_qweb_montecristo.report_sale_order_preview
+msgid "DESCRIZIONE / DESCRIPTION"
+msgstr "DESCRIZIONE / DESCRIPTION"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+msgid "DOCUMENTO DI TRASPORTO"
+msgstr "DOCUMENTO DI TRASPORTO"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "Destinazione merce / Delivery address"
+msgstr "Destinazione merce / Delivery address"
+
+#. module: report_qweb_montecristo
+#: model:ir.actions.report.xml,name:report_qweb_montecristo.qweb_montecristo_product_report
+msgid "Extended Product BarCode"
+msgstr "Extended Product BarCode"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "FATTURA/INVOICE"
+msgstr "FATTURA/INVOICE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "FIRMA DEL DESTINATARIO/RECIPIENT SIGNATURE"
+msgstr "FIRMA DEL DESTINATARIO/RECIPIENT SIGNATURE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "FIRMA DEL VETTORE/SHIPPING AGENT SIGNATURE"
+msgstr "FIRMA DEL VETTORE/SHIPPING AGENT SIGNATURE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "IBAN: IT64G0200814303000003689750"
+msgstr "IBAN: IT64G0200814303000003689750"
+
+#. module: report_qweb_montecristo
+#: field:report.report_qweb_montecristo.report_ddt,id:0
+#: field:report.report_qweb_montecristo.report_invoice,id:0
+#: field:report.report_qweb_montecristo.report_order_package,id:0
+#: field:report.report_qweb_montecristo.report_product_barcode,id:0
+#: field:report.report_qweb_montecristo.report_sale_order,id:0
+#: field:report.report_qweb_montecristo.report_sale_order_preview,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "IMP.SCONTO/DISCOUNT AMOUNT"
+msgstr "IMP.SCONTO/DISCOUNT AMOUNT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+#: view:website:report_qweb_montecristo.report_sale_order_preview
+msgid "IMPONIBILE / AMOUNT"
+msgstr "IMPONIBILE / AMOUNT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "IMPONIBILE OMAGGI/FREE"
+msgstr "IMPONIBILE OMAGGI/FREE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "IMPONIBILE/SUBTOTAL"
+msgstr "IMPONIBILE/SUBTOTAL"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "IMPOSTA"
+msgstr "IMPOSTA"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "IVA / VAT"
+msgstr "IVA / VAT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "Il compratore - Timbro e firma / The buyer - Stamp and signature"
+msgstr "Il compratore - Timbro e firma / The buyer - Stamp and signature"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "Il venditore Montecristo Srl - un amministratore / The Seller Montecristo Srl - a manager"
+msgstr "Il venditore Montecristo Srl - un amministratore / The Seller Montecristo Srl - a manager"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_order_package
+msgid "Montecristo srl via Topazio 7/c 58100 Grosseto"
+msgstr "Montecristo srl via Topazio 7/c 58100 Grosseto"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "N. PZ. / N. PCS"
+msgstr "N. PZ. / N. PCS"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "N.DOCUMENTO/DOC.N."
+msgstr "N.DOCUMENTO/DOC.N."
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_product_barcode
+msgid "NAME:"
+msgstr "NAME:"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "NETTO A PAGARE/BALANCE"
+msgstr "NETTO A PAGARE/BALANCE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "NETTO MERCE/NET AMOUNT"
+msgstr "NETTO MERCE/NET AMOUNT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "NOTA DI CREDITO/REFUND INVOICE"
+msgstr "NOTA DI CREDITO/REFUND INVOICE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "NOTE"
+msgstr "NOTE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "NOTE / NOTES"
+msgstr "NOTE / NOTES"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "NUMERO DOCUMENTO/DOC.NUMBER"
+msgstr "NUMERO DOCUMENTO/DOC.NUMBER"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "Nulla ricevendo entro tale data il tutto si intende facilmente accettato."
+msgstr "Nulla ricevendo entro tale data il tutto si intende facilmente accettato."
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "OMAGGI/FREE"
+msgstr "OMAGGI/FREE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "ORDER CONFIRMATION"
+msgstr "ORDER CONFIRMATION"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "ORDER PROPOSAL"
+msgstr "ORDER PROPOSAL"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_order_package
+msgid "Odoo"
+msgstr "Odoo"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "PAG."
+msgstr "PAG."
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "PARTITA IVA/VAT/TVA code"
+msgstr "PARTITA IVA/VAT/TVA code"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "PESO KG/WEIGHT"
+msgstr "PESO KG/WEIGHT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "PORTO / FREIGHT"
+msgstr "PORTO / FREIGHT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "PORTO/FREIGHT"
+msgstr "PORTO/FREIGHT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+#: view:website:report_qweb_montecristo.report_sale_order_preview
+msgid "PREZZO UNITARIO / UNIT PRICE"
+msgstr "PREZZO UNITARIO / UNIT PRICE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "PROPOSTA D'ORDINE"
+msgstr "PROPOSTA D'ORDINE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "Per accettazione anche delle condizioni di vendita indicate sul foglio allegato. Duplo a renderci debitamente firmato entro 8 giorni."
+msgstr "Per accettazione anche delle condizioni di vendita indicate sul foglio allegato. Duplo a renderci debitamente firmato entro 8 giorni."
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "SCADENZE / TOTAL AMOUNT TO BE PAID"
+msgstr "SCADENZE / TOTAL AMOUNT TO BE PAID"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order_preview
+msgid "SCONTO / DISC."
+msgstr "SCONTO / DISC."
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "SCONTO / DISCOUNT [%]"
+msgstr "SCONTO / DISCOUNT [%]"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "SCONTO DISC."
+msgstr "SCONTO DISC."
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_product_barcode
+msgid "SIZE:"
+msgstr "SIZE:"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "SPESE TRASP./SHIPP.COST"
+msgstr "SPESE TRASP./SHIPP.COST"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "SWIFT CODE/BIC: UNCRITM1528"
+msgstr "SWIFT CODE/BIC: UNCRITM1528"
+
+#. module: report_qweb_montecristo
+#: model:ir.actions.report.xml,name:report_qweb_montecristo.qweb_montecristo_order_package_report
+msgid "Sale Package Label"
+msgstr "Sale Package Label"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "Spett.le/Bill to:"
+msgstr "Spett.le/Bill to:"
+
+#. module: report_qweb_montecristo
+#: model:ir.actions.report.xml,name:report_qweb_montecristo.qweb_montecristo_ddt_report
+msgid "Stampa DDT Montecristo"
+msgstr "Stampa DDT Montecristo"
+
+#. module: report_qweb_montecristo
+#: model:ir.actions.report.xml,name:report_qweb_montecristo.qweb_montecristo_invoice_report
+msgid "Stampa Fattura Montecristo"
+msgstr "Stampa Fattura Montecristo"
+
+#. module: report_qweb_montecristo
+#: model:ir.actions.report.xml,name:report_qweb_montecristo.qweb_montecristo_sale_order_report
+msgid "Stampa Ordine di vendita Montecristo"
+msgstr "Stampa Ordine di vendita Montecristo"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "TOT"
+msgstr "TOT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+#: view:website:report_qweb_montecristo.report_sale_order
+#: view:website:report_qweb_montecristo.report_sale_order_preview
+msgid "TOT QT."
+msgstr "TOT QT."
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "TOTALE / AMOUNT"
+msgstr "TOTALE / AMOUNT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "TOTALE FATTURA/TOTAL"
+msgstr "TOTALE FATTURA/TOTAL"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+#: view:website:report_qweb_montecristo.report_sale_order_preview
+msgid "TOTALE IMPONIBILE / UNTAXED AMOUNT"
+msgstr "TOTALE IMPONIBILE / UNTAXED AMOUNT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "TOTALE MERCE/TOTAL AMOUNT"
+msgstr "TOTALE MERCE/TOTAL AMOUNT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "TOTALE ORDINE/TOTAL"
+msgstr "TOTALE ORDINE/TOTAL"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order_preview
+msgid "TOTALE PZ. / TOT.PCS"
+msgstr "TOTALE PZ. / TOT.PCS"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "TOTALE PZ./TOT.PCS"
+msgstr "TOTALE PZ./TOT.PCS"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "TOTALE SCONTO / DISCOUNT AMOUNT"
+msgstr "TOTALE SCONTO / DISCOUNT AMOUNT"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_sale_order
+msgid "TOTALE/BALANCE"
+msgstr "TOTALE/BALANCE"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "TRASPORTO A CURA DEL/SHIPPING BY"
+msgstr "TRASPORTO A CURA DEL/SHIPPING BY"
+
+#. module: report_qweb_montecristo
+#: view:website:report_qweb_montecristo.report_ddt
+#: view:website:report_qweb_montecristo.report_invoice
+msgid "VETTORE/SHIPPING AGENT"
+msgstr "VETTORE/SHIPPING AGENT"
+

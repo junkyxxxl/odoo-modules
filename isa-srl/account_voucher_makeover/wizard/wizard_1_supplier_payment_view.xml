@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_action_payment_account_voucher_makeover_view" model="ir.ui.view">
+          <field name="name">wizard.supplier.payment.form</field>
+          <field name="model">wizard.supplier.payment</field>
+          <field name="arch" type="xml">
+            <form string="Wizard Payment" version="7.0">
+                <group>
+                    <group>
+                        <field name="partner_id" domain="[('supplier','=',True)]"/>
+                        <field name="maturity"/>
+                        <field name="it_supplier" attrs="{'invisible': [('partner_id','!=',False)]}"/>
+                        <field name="ext_supplier" attrs="{'invisible': [('partner_id','!=',False)]}"/>
+                        <field name="include_customers" invisible="1"/>
+                        <field name="journal_id" invisible="1"/>
+                        <field name="bank_id" widget="selection" required="1"/>
+                        <field name="authorization" invisible="1"/>
+                    </group>
+                    
+                </group>
+                <footer>
+                    <button name="view_report" icon="gtk-go-forward" string="View Payments" type="object" default_focus="1" class="oe_highlight" />
+                    or 
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+               
+            </form>
+            </field>
+        </record>
+
+        <!-- Action menu -->
+        <record id="action_payment_account_voucher_makeover" model="ir.actions.act_window">
+            <field name="name">Payment Creation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.supplier.payment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_action_payment_account_voucher_makeover_view"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

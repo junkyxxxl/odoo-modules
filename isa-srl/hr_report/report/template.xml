@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="hr_report.print_attendance">
+            <t t-call="report.html_container">
+                <t t-set="data_report_margin_top" t-value="12"/>
+                <t t-set="data_report_header_spacing" t-value="9"/>
+                <t t-set="data_report_dpi" t-value="110"/>
+                <t t-foreach="docs" t-as="o"/>
+                <t t-if="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id"></t>
+                </t>
+                <t t-if="not o or not 'company_id' in o">
+                    <t t-set="company" t-value="res_company"></t>
+                </t>
+                <div class="page">
+                    <style type="text/css">
+                        .c23 {
+                        display: block; page-break-inside: avoid;
+                        border-color : black
+                        }
+                        h2 {
+                        font-family: verdana;
+                        }
+                    </style>
+
+
+                    <div class="oe_structure">
+                        <div>
+                            <h3 align="right">
+                                <span t-esc="company.name"/>
+                            </h3>
+                            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+                                 style="max-height: 150px;width: auto;height: auto;" class="img-responsive"
+                                 alt="Logo Azienda"/>
+
+                        </div>
+                        <h2 align="center">Report Presenze Mensili</h2>
+                        <h3 align="center">
+                            <t t-esc="data['month']"/>
+                            <t t-esc="data['year']"/>
+                        </h3>
+
+                        <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-3"></div>
+                                    <div class="col-xs-3"></div>
+                                    <div class="col-xs-3"></div>
+                                    <div class="col-xs-3">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <h4 style="font-weight: bold" align="center">Legenda</h4>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="danger">Assenza</td>
+                                                    <td class="success">Presenza</td>
+                                                    <td class="info">Permesso/
+                                                        Straordinario</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="danger">Sabato e Domenica; Festività; Permesso</td>
+                                                    <td class="success">Prevista da contratto; Normatizzata sui permessi</td>
+                                                </tr>
+                                                <tr>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div>
+                            <t t-foreach="list_employee" t-as="e">
+                                <div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="c23">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <h4 style="font-weight: bold" t-esc="e.name_related"></h4>
+                                                        <h4 style="font-weight: bold"> <t t-esc="e.name_related"></t></h4>
+                                                        <br/>
+                                                    </thead>
+
+
+                                                    <tbody>
+                                                        <tr class="warning">
+                                                            <td style="font-weight: bold">
+                                                                Giorni
+                                                            </td>
+                                                            <t t-foreach="days" t-as="d">
+                                                                <td align="center">
+                                                                    <span t-esc="d"/>
+                                                                </td>
+                                                            </t>
+                                                            <td style="font-weight: bold">
+                                                                Ore Totali
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="success" style="font-weight: bold">
+                                                                Presenze Contrattuali
+                                                            </td>
+
+                                                            <t t-foreach="works_contract.get(e.id)" t-as="o">
+                                                                <t t-if="o_value=='0.00'">
+                                                                    <td class="danger">
+                                                                        <span t-esc="o_value"/>
+                                                                    </td>
+                                                                </t>
+                                                                <t t-if="o_value!='0.00'">
+                                                                    <td class="success">
+                                                                        <span t-esc="o_value"/>
+                                                                    </td>
+                                                                </t>
+
+                                                            </t>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="success" style="font-weight: bold">
+                                                                Presenze Normalizzate
+                                                            </td>
+
+                                                            <t t-foreach="test.get(e.id)" t-as="o">
+                                                                <t t-if="o_value=='0.00'">
+                                                                    <td class="danger">
+                                                                        <span t-esc="o_value"/>
+                                                                    </td>
+                                                                </t>
+                                                                <t t-if="o_value!='0.00'">
+                                                                    <td class="success">
+                                                                        <span t-esc="o_value"/>
+                                                                    </td>
+                                                                </t>
+
+                                                            </t>
+                                                        </tr>
+
+                                                        <t t-if="data['print_attendances']==True">
+                                                            <tr>
+                                                                <td class="success" style="font-weight: bold">
+                                                                    Presenze Effettive
+                                                                </td>
+
+                                                                <t t-foreach="real_hour.get(e.id)" t-as="h">
+                                                                    <t t-if="h_value=='0.00'">
+                                                                        <td class="danger">
+                                                                            <span t-esc="h_value"/>
+                                                                        </td>
+                                                                    </t>
+                                                                    <t t-if="h_value!='0.00'">
+                                                                        <td class="success">
+                                                                            <span t-esc="h_value"/>
+                                                                        </td>
+                                                                    </t>
+
+                                                                </t>
+                                                            </tr>
+                                                        </t>
+
+                                                        <t t-if="data['print_holidays']==True">
+                                                            <tr>
+                                                                <t t-foreach="holidays.get(e.id)" t-as="hol">
+                                                                    <tr>
+                                                                        <td style="font-weight: bold">
+                                                                            <t t-esc="hol.name"></t>
+                                                                        </td>
+                                                                        <t t-foreach="hol_value" t-as="aa">
+                                                                            <t t-if="aa!='0.00'">
+                                                                                <td class="info">
+                                                                                    <span t-esc="aa"/>
+                                                                                </td>
+                                                                            </t>
+                                                                            <t t-if="aa=='0.00'">
+                                                                                <td class="active">
+                                                                                    <span t-esc="aa"/>
+                                                                                </td>
+                                                                            </t>
+                                                                        </t>
+                                                                    </tr>
+                                                                </t>
+
+                                                            </tr>
+                                                        </t>
+
+                                                        <t t-if="data['print_overtime']==True">
+                                                            <tr>
+                                                                <t t-if="overtime.get(e.id)!= [-1]">
+                                                                    <td class="active" style="font-weight: bold">
+                                                                        Straordinari
+                                                                    </td>
+                                                                </t>
+
+                                                                <t t-foreach="overtime.get(e.id)" t-as="over">
+                                                                    <t t-if="over_value !=-1">
+                                                                        <t t-if="over_value=='0.00'">
+                                                                            <td class="active">
+                                                                                <span t-esc="over_value"/>
+                                                                            </td>
+                                                                        </t>
+                                                                        <t t-if="over_value!='0.00'">
+                                                                            <td class="info">
+                                                                                <span t-esc="over_value"/>
+                                                                            </td>
+                                                                        </t>
+                                                                    </t>
+
+                                                                </t>
+
+                                                            </tr>
+                                                        </t>
+
+                                                    </tbody>
+
+                                                </table>
+                                                <br/>
+                                                <br/>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </t>
+            <div class="footer" style="padding-top:60px;">
+                <div class="text-center" style="border-top: 1px solid black;">
+                    <ul class="list-inline">
+                        <li>Page:</li>
+                        <li>
+                            <span class="page"/>
+                        </li>
+                        <li>/</li>
+                        <li>
+                            <span class="topage"/>
+                        </li>
+                        <li>
+                            <t t-esc="data['month']"/>
+                            <t t-esc="data['year']"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    
+
+        <record id="view_create_picking_from_quants" model="ir.ui.view">
+            <field name="name">Create Picking From Quants</field>
+            <field name="model">wizard.create.picking.from.quants</field>
+            <field name="arch" type="xml">
+                <form string="Create Picking From Quants">
+                    <group>
+	                    <field name="partner_id" required="1"/>
+	                    <field name="picking_type_id" required="1"/>
+	                    <field name="company_id" invisible="1" required="1"/>
+                    </group>
+                    <separator colspan="4" string="Lines" />                    
+                    <field name="quant_ids" readonly="1">
+                        <tree editable="bottom">
+                            <field name="product_id"/>
+                            <field name="qty"/>
+                            <field name="location_id"/>
+                            <field name="lot_id"/>                           
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="create_picking" string="Create" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+        <record id="action_create_picking_from_quants" model="ir.actions.act_window">
+            <field name="name">Create Picking From Quants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.create.picking.from.quants</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_create_picking_from_quants"/>
+            <field name="target">new</field>
+            <field name="multi">True</field>
+        </record>
+
+        <record model="ir.values" id="create_picking_from_quants">
+            <field name="name">Create Picking From Quants</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_create_picking_from_quants'))" />
+            <field name="key">action</field>
+            <field name="model">stock.quant</field>         
+        </record>
+    </data>
+</openerp>

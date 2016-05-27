@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="montecristo_ddt_view_order_form" model="ir.ui.view">
+            <field name="name">montecristo.ddt.view.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="l10n_it_ddt.sale_order_form_view_ddt"/>
+             <field name="arch" type="xml">
+                <xpath expr='//field[@name="transportation_reason_id"]' position="replace">
+                </xpath>
+             </field>
+        </record>
+
+        <record id="montecristo_stock_view_order_form_inherit" model="ir.ui.view">
+            <field name="name">montecristo.stock.view.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+             <field name="arch" type="xml">
+                <xpath expr='//field[@name="incoterm"]' position="before">
+                    <field name="stock_number"/>
+                    <field name="package_number" readonly="1"/>
+                </xpath>
+                <xpath expr="//field[@name='warehouse_id']" position="after">
+                    <field name="transportation_reason_id" string="Causale" />
+                </xpath>           
+             </field>
+        </record>
+
+        <record id="view_sale_order_package" model="ir.ui.view">
+            <field name="name">view.sale.order.package</field>
+            <field name="model">sale.order</field>
+            <field name="priority">3</field>
+            <field name="arch" type="xml">
+                <tree string="Sales Orders" editable="bottom">
+                    <field name="stock_number_txt"/>                    
+                    <field name="partner_id"/>                    
+                    <field name="name" string="Order Number"/>
+                    <field name="package_number"/>
+                    <field name="state" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_order_package_filter" model="ir.ui.view">
+            <field name="name">sale.order.package.filter</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <search string="Search Order Package">
+                    <group expand="0" string="Group By">
+                        <!-- 
+                        <filter string="Stock Number" domain="[]" context="{'group_by':'stock_number'}"/>
+                        -->
+                        <filter string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>        
+
+        <record id="action_order_package" model="ir.actions.act_window">
+            <field name="name">Pianificazione Magazzino</field>
+            <field name="res_model">sale.order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_sale_order_package"/>
+            <field name="search_view_id" ref="view_order_package_filter"/>            
+            <field name="domain" eval="[('document_type_id','=',None),('state', 'not in', ['draft', 'sent', 'cancel','shipping_except','invoice_except','done'])]"/>
+        </record>                 
+
+        <menuitem action="action_order_package"
+        		  name="Pianificazione Magazzino"
+                  id="menu_action_order_package"
+                  parent="l10n_it_ddt_makeover.menu_stock_products_moves"
+                  sequence="1"/>                
+
+    </data>
+</openerp>

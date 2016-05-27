@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <!-- Top menu item -->
+        <menuitem name="Pratiche"
+            id="base.menu_main_pm"
+            groups="project.group_project_manager,project.group_project_user"
+            sequence="40"/>
+
+        <!-- Menu Management Items Persons Qualifications Skills -->
+        <menuitem action="action_accreditation_skills"
+            id="menu_accreditation_skills"
+            parent="hr_accredia.menu_management_accreditation_qualifications_skills_folder"
+            sequence="1"/>
+
+	    <menuitem id="menu_works_config"
+                  name="Works"
+                  parent="base.menu_definitions"
+                  sequence="1" />
+
+        <menuitem id="project_timesheet.menu_project_billing_line"
+                  name="Attività da Fatturare"
+                  parent="project_timesheet.menu_project_billing"
+                  action="project_timesheet.action_project_timesheet_bill_task"/>
+
+        <!-- Menu Management Items Autorizzazioni Dipendenti P.A. -->
+        <menuitem action="action_accreditation_persons_auth"
+            id="menu_accreditation_persons_auth"
+            parent="hr_accredia.menu_hr_accredia_persons"
+            sequence="2"/>
+
+        <!-- Menu Items Tipo Pratica -->
+        <menuitem id="menu_accreditation_project_type"
+                  name="Tipo Pratica"
+                  parent="project.menu_project_management"
+                  action="action_accreditation_project_type"
+                  sequence="24"/> 
+
+        <!-- Menu Items Template Pratica -->
+        <menuitem id="menu_project_template_accredia"
+                  name="Template Pratica"
+                  action="action_project_template_accredia"
+                  parent="project.menu_project_management"
+                  groups="template_changes_group"
+                  sequence="25"/>
+
+	    <menuitem id="project_long_term_accredia.menu_compute_phase" name="Remove" />
+		<delete model="ir.ui.menu" id="project_long_term_accredia.menu_compute_phase"></delete>
+
+	    <menuitem id="project_long_term_accredia.menu_compute_tasks" name="Remove" />
+		<delete model="ir.ui.menu" id="project_long_term_accredia.menu_compute_tasks"></delete>
+
+	    <menuitem id="project_long_term_accredia.menu_phase_schedule" name="Remove" />
+		<delete model="ir.ui.menu" id="project_long_term_accredia.menu_phase_schedule"></delete>
+
+        <menuitem id="project_timesheet.menu_invoicing_contracts" name="Remove" />
+        <delete model="ir.ui.menu" id="project_timesheet.menu_invoicing_contracts"></delete>
+
+        <menuitem action="action_open_view_project_all_accredia" id="project.menu_projects" name="Projects" parent="project.menu_project_management" sequence="1"/>
+
+        <menuitem id="menu_accreditation_task_plan"
+                  action="action_accreditation_task_plan"
+                  name="Giorni Predefiniti Pianificazione"
+                  parent="base.menu_definitions"
+                  sequence="90"/>
+
+        <!-- Request -->
+        <menuitem name="Accreditamento" parent="base.menu_main_pm"
+             id="base.menu_accreditation_request_top" 
+             sequence="50" />
+        <menuitem name="Accreditation Request" parent="base.menu_accreditation_request_top" id="accreditation_request" action="action_accreditation_request" sequence="22"/> 
+    
+        <!-- Schemi -->
+        <menuitem name="Schemi" parent="base.menu_accreditation_request_top" id="accreditation_request_schema" action="action_accreditation_request_schema" sequence="23"/> 
+
+        <!-- Settori -->
+        <menuitem name="Settori" parent="base.menu_accreditation_request_top" id="accreditation_sector" action="action_accreditation_sector" sequence="22"/> 
+
+        <!-- Norme -->
+        <menuitem name="Norme" parent="base.menu_accreditation_request_top" id="accreditation_standard" action="action_accreditation_standard" sequence="22"/>
+
+        <!-- menu task work type -->
+        <menuitem id="menu_works_config"
+                  name="Works"
+                  parent="base.menu_definitions"
+                  sequence="1" />
+        <menuitem id="menu_accreditation_task_work_type_action"
+                  parent="menu_works_config"
+                  action="accreditation_task_work_type_action" />
+
+        <!-- Prove -->
+        <menuitem name="Tipi Variazione Prove"
+                  parent="base.menu_accreditation_request_top"
+                  id="accreditation_test_change_type_menu"
+                  action="action_accreditation_test_type_change"
+                  sequence="42"/>
+    
+        <menuitem name="Categorie Prove"
+                  parent="base.menu_accreditation_request_top"
+                  id="accreditation_test_list_category_menu"
+                  action="action_accreditation_test_category_list"
+                  sequence="41"/>
+    
+        <menuitem name="Prove Temporanee"
+                  parent="base.menu_accreditation_request_top"
+                  id="accreditation_test_temp_menu"
+                  action="action_accreditation_test_temp"
+                  sequence="40"/>
+    
+        <menuitem name="Prove Accreditate"
+                  parent="base.menu_accreditation_request_top"
+                  id="accreditation_test_menu"
+                  action="action_accreditation_test"
+                  sequence="40"/>
+
+        <!-- menu task category -->
+        <menuitem id="menu_project_task_category_action"
+                  parent="project.menu_tasks_config"
+                  action="project_task_category_action" />
+
+        <!-- menu works -->
+        <menuitem action="action_accredia_task_work_accredia"
+                  id="menu_action_accredia_task_work_accredia"
+                  parent="project.menu_project_management"
+                  sequence="6" />
+
+    </data>
+</openerp>

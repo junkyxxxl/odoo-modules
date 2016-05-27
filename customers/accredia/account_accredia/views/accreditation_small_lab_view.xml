@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+         <!--Form View -->
+         <record model="ir.ui.view" id="view_accreditation_small_lab_form">
+                <field name="name">accreditation.small.lab.form</field>
+                <field name="model">accreditation.small.lab</field>
+                <field name="arch" type="xml">
+                    <form string="Piccolo laboratorio">
+                        <group>
+                            <group>
+                                <field name="name" readonly="1" />
+                                <field name="customer_id" />
+                                <field name="year" />
+                                <field name="is_small_lab" />
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </form>
+                </field>
+         </record>
+
+        <!--Tree View -->
+        <record model="ir.ui.view" id="view_accreditation_small_lab_tree">
+                <field name="name">accreditation.small.lab.tree</field>
+                <field name="model">accreditation.small.lab</field>
+                <field name="arch" type="xml">
+                    <tree string="Piccolo laboratorio">
+                        <field name="name" />
+                        <field name="customer_id" />
+                        <field name="year" />
+                        <field name="is_small_lab" />
+                    </tree>
+                </field>
+        </record>
+
+        <!--Search View-->
+        <record model="ir.ui.view" id="view_accreditation_small_lab_search">
+            <field name="name">accreditation.small.lab.search</field>
+            <field name="model">accreditation.small.lab</field>
+            <field name="arch" type="xml">
+                <search string="Piccolo laboratorio Search">     
+                    <field name="name" />        
+                </search>
+            </field>
+        </record>
+
+        <!--Piccolo laboratorio Action -->
+        <record model="ir.actions.act_window" id="action_accreditation_small_lab">
+            <field name="name">Piccolo laboratorio</field>
+            <field name="res_model">accreditation.small.lab</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_accreditation_small_lab_search"/>
+        </record>
+
+    </data>
+</openerp>

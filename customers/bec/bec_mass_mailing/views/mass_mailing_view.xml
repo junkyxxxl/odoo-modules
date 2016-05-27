@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_mass_mailing_bec_form">
+            <field name="name">mail.mass_mailing.bec.form</field>
+            <field name="model">mail.mass_mailing</field>
+            <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='mailing_domain']" position="after">
+                    <div attrs="{'invisible': [('mailing_model', '=', 'mail.mass_mailing.contact')]}">
+                        <button name="set_domain" type='object'
+                                string="Seleziona Partner" class="oe_highlight" />
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='mailing_domain']" position="before">
+                    <field name="prev_mailing_domain" invisible="1" />
+                </xpath>
+                <xpath expr="//field[@name='mailing_domain']" position="attributes">
+                    <attribute name="domain">prev_mailing_domain</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

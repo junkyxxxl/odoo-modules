@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <!-- Menu item -->
+    <menuitem name="DocLite"
+              parent="base.menu_administration"
+              id="base.menu_doclite_top" 
+              groups="group_doclite_isa"
+              sequence="50" />
+
+    <menuitem name="Tables"
+              parent="base.menu_doclite_top"
+              id="menu_doclite"
+              sequence="50" />
+
+    <menuitem name="Offices"
+              parent="menu_doclite"
+              id="doclite_configuration_offices"
+              action="action_doclite_offices"
+              sequence="26"/> 
+
+    <menuitem name="Server"
+              parent="base.menu_doclite_top"
+              id="doclite_configuration_server"
+              action="action_doclite_server"
+              sequence="22"/> 
+
+     </data>
+</openerp>

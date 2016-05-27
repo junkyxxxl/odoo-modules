@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="matuerd_line_account_invoice_form" model="ir.ui.view">
+        <field name="name">matured.line.account.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Matured Line - Vat x Cash">
+                    <field name="matured_line_ids" nolabel="True"
+                           readonly="True"
+                           domain="[('matured_move', '=', True),('credit', '=', 0.0)]">
+                        <tree>
+                            <field name="date"/>
+                            <field name="name"/>
+                            <field name="ref"/>
+                            <field name="account_id"/>
+                            <field name="account_tax_id"/>
+                            <field name="debit" sum="Total Debit"/>
+                            <field name="credit" sum="Total Credit"/>
+                            <field name="tax_amount"/>
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="matuerd_line_account_supplier_invoice_form" model="ir.ui.view">
+        <field name="name">matured.line.account.supplier.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Matured Line - Vat x Cash">
+                    <field name="matured_line_ids" nolabel="True"
+                           readonly="True"
+                           domain="[('matured_move', '=', True),('debit', '=', 0.0)]">
+                        <tree>
+                            <field name="date"/>
+                            <field name="name"/>
+                            <field name="ref"/>
+                            <field name="account_id"/>
+                            <field name="account_tax_id"/>
+                            <field name="debit" sum="Total Debit"/>
+                            <field name="credit" sum="Total Credit"/>
+                            <field name="tax_amount"/>
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</data>
+</openerp>

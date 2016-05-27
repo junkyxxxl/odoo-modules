@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Holiday lines -->
+        <record id="view_holiday_line_tree_accredia" model="ir.ui.view">
+            <field name="name">hr.holidays.line.tree</field>
+            <field name="model">hr.holidays.line</field>
+            <field name="arch" type="xml">
+                <tree string="Holiday Lines">
+                    <field name="product_id" domain="[('hr_expense_ok','=',True),('type','=','service'),('expense_type','!=',None),('expense_type','!=',False)]" />
+                    <field name="name"/>
+                    <field name="info"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="place"/>
+                    <field name="partner_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</openerp>

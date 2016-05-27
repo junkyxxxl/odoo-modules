@@ -1,0 +1,5 @@
+import product_ean13
+import product_product
+import res_company
+import product_template
+import sale_order_line

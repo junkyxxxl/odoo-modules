@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- Partner subtypes for messaging / Chatter -->
+        <record id="partner_new" model="mail.message.subtype">
+            <field name="name">Nuovo Partner Creato</field>
+            <field name="res_model">res.partner</field>
+            <field name="default" eval="True"/>
+            <field name="description">Nuovo Partner Creato</field>
+        </record>
+
+        <!-- Sale Order subtypes for messaging / Chatter -->
+        <record id="sale_order_new" model="mail.message.subtype">
+            <field name="name">Nuova Proposta d'Ordine</field>
+            <field name="res_model">sale.order</field>
+            <field name="default" eval="True"/>
+            <field name="description">Creata Nuova Proposta d'Ordine</field>
+        </record>
+
+    </data>
+</openerp>

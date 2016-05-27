@@ -1,0 +1,146 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* base_res_company_isa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130615-231352\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-17 09:04+0000\n"
+"PO-Revision-Date: 2013-06-17 09:04+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_res_company_isa
+#: selection:res.company.closed.day,day:0
+msgid "Thursday"
+msgstr "Giovedì"
+
+#. module: base_res_company_isa
+#: field:res.company.closed.day,day:0
+msgid "Day of the week"
+msgstr "Giorno della settimana"
+
+#. module: base_res_company_isa
+#: selection:res.company.closed.day,day:0
+msgid "Sunday"
+msgstr "Domenica"
+
+#. module: base_res_company_isa
+#: selection:res.company.closed.day,day:0
+msgid "Monday"
+msgstr "Lunedì"
+
+#. module: base_res_company_isa
+#: selection:res.company.closed.day,day:0
+msgid "Friday"
+msgstr "Venerdì"
+
+#. module: base_res_company_isa
+#: field:res.company.closed.day,hours:0
+msgid "Number of hours"
+msgstr "Numero di ore"
+
+#. module: base_res_company_isa
+#: model:ir.model,name:base_res_company_isa.model_res_company_closed_day
+#: view:res.company:0
+#: field:res.company,closed_days:0
+msgid "Closed days"
+msgstr "Giorni di chiusura"
+
+#. module: base_res_company_isa
+#: view:res.company:0
+msgid "Business closure"
+msgstr "Chiusura aziendale"
+
+#. module: base_res_company_isa
+#: field:res.company.festivity,day:0
+msgid "Day"
+msgstr "Giorno"
+
+#. module: base_res_company_isa
+#: field:res.company.closed.day,company_id:0
+#: field:res.company.festivity,company_id:0
+msgid "Company Reference"
+msgstr "Azienda di riferimento"
+
+#. module: base_res_company_isa
+#: view:res.company:0
+msgid "Select day and hours"
+msgstr "Seleziona il giorno e l'ammontare delle ore"
+
+#. module: base_res_company_isa
+#: model:ir.model,name:base_res_company_isa.model_res_company_festivity
+msgid "Day of festivity"
+msgstr "Giorno di festività"
+
+#. module: base_res_company_isa
+#: field:res.company.festivity,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: base_res_company_isa
+#: model:ir.model,name:base_res_company_isa.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: base_res_company_isa
+#: selection:res.company.closed.day,day:0
+msgid "Wednesday"
+msgstr "Mercoledì"
+
+#. module: base_res_company_isa
+#: view:res.company:0
+msgid "Enter the details of the festivity"
+msgstr "Inserisci gli estremi della festività"
+
+#. module: base_res_company_isa
+#: view:res.company:0
+#: field:res.company,festivities:0
+msgid "Festivities"
+msgstr "Festività"
+
+#. module: base_res_company_isa
+#: view:res.company:0
+msgid "Comment"
+msgstr "Commento"
+
+#. module: base_res_company_isa
+#: view:res.company:0
+msgid "Closing and festivities"
+msgstr "Chiusura e festività"
+
+#. module: base_res_company_isa
+#: help:res.company,closed_days:0
+msgid "Identify the days of the week when the company closes"
+msgstr "Indica i giorni in cui l'azienda è chiusa"
+
+#. module: base_res_company_isa
+#: field:res.company.festivity,month:0
+msgid "Month"
+msgstr "Mese"
+
+#. module: base_res_company_isa
+#: field:res.company.festivity,year:0
+msgid "Year"
+msgstr "Anno"
+
+#. module: base_res_company_isa
+#: selection:res.company.closed.day,day:0
+msgid "Tuesday"
+msgstr "Martedì"
+
+#. module: base_res_company_isa
+#: help:res.company,festivities:0
+msgid "Indicate the days of the festivities"
+msgstr "Indica i giorni delle festività"
+
+#. module: base_res_company_isa
+#: selection:res.company.closed.day,day:0
+msgid "Saturday"
+msgstr "Sabato"
+

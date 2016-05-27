@@ -1,0 +1,167 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* accredia_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-23 07:32+0000\n"
+"PO-Revision-Date: 2014-09-23 07:32+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: accredia_custom
+#: view:accreditation.request:0
+#: view:project.project:0
+#: view:project.task:0
+#: view:res.partner:0
+#: field:res.partner,document_lines:0
+msgid "Documents"
+msgstr "Documenti"
+
+#. module: accredia_custom
+#: code:addons/accredia_custom/doclite_integration/wizard_2_customer_payment_reminder_specification.py:38
+#, python-format
+msgid "Selezionare almeno una riga se presente"
+msgstr "Selezionare almeno una riga se presente"
+
+#. module: accredia_custom
+#: model:ir.model,name:accredia_custom.model_doclite_modules
+msgid "Doclite Modules"
+msgstr "Moduli Doclite"
+
+#. module: accredia_custom
+#: selection:res.users,server_location:0
+msgid "Torino"
+msgstr "Torino"
+
+#. module: accredia_custom
+#: model:ir.model,name:accredia_custom.model_project_task_work
+msgid "Project Task Work"
+msgstr "Lavoro attività progetto"
+
+#. module: accredia_custom
+#: model:ir.model,name:accredia_custom.model_doclite_document_line
+msgid "doclite.document.line"
+msgstr "doclite.document.line"
+
+#. module: accredia_custom
+#: field:doclite.server,server_location:0
+#: field:res.users,server_location:0
+msgid "Location"
+msgstr "Locazione Server"
+
+#. module: accredia_custom
+#: view:res.partner:0
+msgid "Document Url"
+msgstr "Url Documento"
+
+#. module: accredia_custom
+#: field:project.project,documenti_ids:0
+#: field:project.task,documenti_ids:0
+msgid "Documenti"
+msgstr "Documenti"
+
+#. module: accredia_custom
+#: field:project.task.work,action_url:0
+msgid "Documento Azione"
+msgstr "Documento Azione"
+
+#. module: accredia_custom
+#: view:accreditation.request:0
+msgid "Archiviazione documenti"
+msgstr "Archiviazione documenti"
+
+#. module: accredia_custom
+#: model:ir.model,name:accredia_custom.model_res_users
+msgid "Users"
+msgstr "Utenti"
+
+#. module: accredia_custom
+#: model:ir.model,name:accredia_custom.model_doclite_server
+msgid "doclite.server"
+msgstr "doclite.server"
+
+#. module: accredia_custom
+#: model:ir.model,name:accredia_custom.model_hr_timesheet_sheet_sheet
+msgid "Timesheet"
+msgstr "Timesheet"
+
+#. module: accredia_custom
+#: view:wizard.customer.payment.reminder.specification:0
+msgid "Print Reminders"
+msgstr "Stampa Solleciti"
+
+#. module: accredia_custom
+#: model:ir.model,name:accredia_custom.model_wizard_customer_payment_reminder_specification
+msgid "Wizard Customer Payment Reminders Specification"
+msgstr "Wizard Customer Payment Reminders Specification"
+
+#. module: accredia_custom
+#: model:ir.model,name:accredia_custom.model_project_task
+msgid "Task"
+msgstr "Attività"
+
+#. module: accredia_custom
+#: selection:doclite.server,server_location:0
+#: selection:res.users,server_location:0
+msgid "Milano"
+msgstr "Milano"
+
+#. module: accredia_custom
+#: model:ir.model,name:accredia_custom.model_project_project
+msgid "Project"
+msgstr "Progetto"
+
+#. module: accredia_custom
+#: code:addons/accredia_custom/doclite_integration/wizard_2_customer_payment_reminder_specification.py:38
+#, python-format
+msgid "Error!"
+msgstr "Errore!"
+
+#. module: accredia_custom
+#: selection:doclite.server,server_location:0
+#: selection:res.users,server_location:0
+msgid "Roma"
+msgstr "Roma"
+
+#. module: accredia_custom
+#: code:addons/accredia_custom/doclite_integration/doclite_server.py:74
+#: code:addons/accredia_custom/doclite_integration/doclite_server.py:84
+#: code:addons/accredia_custom/doclite_integration/entity.py:78
+#: code:addons/accredia_custom/doclite_integration/hr_timesheet_sheet.py:49
+#, python-format
+msgid "Errore!"
+msgstr "Errore!"
+
+#. module: accredia_custom
+#: model:ir.model,name:accredia_custom.model_accreditation_request
+msgid "accreditation.request"
+msgstr "accreditation.request"
+
+#. module: accredia_custom
+#: field:doclite.document.line,entity_id:0
+msgid "Entity"
+msgstr "Ente"
+
+#. module: accredia_custom
+#: field:hr_timesheet_sheet.sheet,upload_url:0
+#: field:res.partner,upload_url:0
+msgid "Archivia documento"
+msgstr "Archivia documento"
+
+#. module: accredia_custom
+#: view:res.partner:0
+msgid "(update)"
+msgstr "(aggiorna)"
+
+#. module: accredia_custom
+#: model:ir.model,name:accredia_custom.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+

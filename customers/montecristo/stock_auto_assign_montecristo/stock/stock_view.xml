@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_stock_template_reservation_form_enhanced" model="ir.ui.view">
+            <field name="name">view.stock.template.reservation.form.enhanced</field>
+            <field name="model">stock.template.reservation</field>
+            <field name="inherit_id" ref="stock_custom_montecristo.view_stock_template_reservation_form"/>            
+            <field name="arch" type="xml">
+                <xpath expr='//field[@name="reservation_product_ids"]/tree/field[@name="requested_qty"]' position="after">
+	                <field name="rating" readonly="1"/>
+    	            <field name="delivery_date" readonly="1"/>                     
+                </xpath>
+
+                <xpath expr='//field[@name="view_reservation_product_ids"]/tree/field[@name="requested_qty"]' position="after">
+	                <field name="rating" readonly="1"/>
+    	            <field name="delivery_date" readonly="1" />                     
+                </xpath>                
+            </field>
+        </record>           
+        
+    </data>
+</openerp>

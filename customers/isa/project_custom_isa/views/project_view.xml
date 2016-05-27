@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <record id="view_project_isa_graph" model="ir.ui.view">
+            <field name="name">project.project.isa.graph</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <graph string="Project Graph" type="pie">
+                    <field name="name"/>
+                    <field name="billing_hours_project" operator="+"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_project_search_isa" model="ir.ui.view">
+            <field name="name">project.search.isa</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_project_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="billing_year" string="Billing Year"/>
+                </xpath>
+                <xpath expr="//filter[@name='Parent']" position="after">
+                    <filter string="Billing Month" name="Billing Month" domain="[]" context="{'group_by':'billing_month'}"/>
+                </xpath>
+                
+            </field>
+        </record>
+
+        <record id="view_project_form_ext_isa" model="ir.ui.view">
+            <field name="name">project.form.ext.isa</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project_issue.view_project_form_inherited"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="contact_id" domain="[('parent_id', '=', partner_id)]" />
+                </field>
+                <field name="partner_id" position="attributes">
+                    <attribute name="domain">[('parent_id', 'in', [False,None])]</attribute>
+                </field>
+                <xpath expr="//sheet[@string='Project']" position="attributes">
+                    <attribute name="class">fix_form_sheet_width</attribute>
+                </xpath>
+                <xpath expr="//page[@string='Team']" position="after">
+                        <page string="Tasks">
+                            <div class="oe_left oe_button_box" name="buttons" groups="base.group_user">
+                                <button class="oe_inline oe_stat_button"
+                                        name="%(project.act_project_project_2_project_task_all)d"
+                                        type="action"
+                                        icon="fa-tasks"
+                                        attrs="{'invisible':[('use_tasks','=', 0)]}">
+                                    <field string="Tasks" name="task_count" widget="statinfo"/>
+                                </button>
+                            </div>
+                            <field name="id" invisible="1" />
+                            <field name="tasks" nolabel="1" context="{'default_project_id' : id}"/>
+                        </page>
+                        <page string="ISA">
+                            <group>
+                                <group>
+                                    <field name="billing_hours_project" string='Hours Billed' />
+                                    <field name="effective_hours_project" string='Effective Hours' />
+                                    <field name="budget_hours" />
+                                    <field name="category_id" required="1" on_change="onchange_project_category(category_id)"/>
+                                    <field name="billing_state" />
+                                    <field name="billing_month" />
+                                    <field name="billing_year" />
+                                    <field name="area_hb_ids" widget="many2many_tags" />
+                                </group>
+                                <group>
+                                    <field name="billing_as400" />
+                                    <field name="included_package" />
+                                    <field name="contract" on_change="onchange_contract()"/>
+                                    <field name="contract_line" on_change="onchange_contract()" domain="[('contract_id','=',contract)]" />
+                                    <field name="billing_as400_date" invisible="1" />
+                                    <field name="contract_mod_date" invisible="1" />
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Open Notes">
+                            <field colspan="4" name="description" nolabel="1"/>
+                        </page>
+                        <page string="Closed Notes">
+                            <group>
+                                <field name="closing_category_id"/>
+                                <field name="close_description"/>
+                            </group>
+                        </page>
+                </xpath>
+                <xpath expr="//field[@string='End Date']" position="after">
+                    <field name="datetime_end" string="Project Closing Date Time"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_project_tree_ext_isa" model="ir.ui.view">
+            <field name="name">project.tree.ext.isa</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project"/>
+            <field name="arch" type="xml">
+                <field name="progress_rate" position="after">
+                    <field name="billing_hours_project" widget="float_time" />                    
+                    <field name="billing_state" string="Bill State"/>
+                    <field name="billing_month" string="Bill Month"/>
+                    <field name="billing_year" string="Bill Year"/>
+                </field>
+                <field name="partner_id" position="after">
+                    <field name="contact_id" />
+                </field>
+                <field name="partner_id" position="attributes">
+                    <attribute name="string">Cliente</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="action_open_view_project_all_isa" model="ir.actions.act_window">
+            <field name="name">Lista Progetti</field>
+            <field name="res_model">project.project</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form,gantt,graph</field>
+            <field name="view_id" ref="view_project_tree_ext_isa"/>
+            <field name="search_view_id" ref="view_project_search_isa"/>
+            <field name="context">{'search_default_Current': 1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                  Click to start a new project.
+                </p><p>
+                  Projects are used to organize your activities; plan
+                  tasks, track issues, invoice timesheets. You can define
+                  internal projects (R&amp;D, Improve Sales Process),
+                  private projects (My Todos) or customer ones.
+                </p><p>
+                  You will be able collaborate with internal users on
+                  projects or invite customers to share your activities.
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="action_open_view_project_all_isa" id="project.menu_projects" name="Projects" parent="project.menu_project_management" sequence="1"/>
+
+    </data>
+</openerp>

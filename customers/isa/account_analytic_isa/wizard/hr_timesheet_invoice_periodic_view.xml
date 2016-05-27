@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_hr_timesheet_invoice_periodic" model="ir.ui.view">
+            <field name="name">hr.timesheet.invoice.periodic.form</field>
+            <field name="model">hr.timesheet.invoice.periodic</field>
+            <field name="arch" type="xml">
+            <form string="Fattura Periodica">
+                <group>
+                    <group>
+                        <field name="period_id" required="1" />
+                    </group>
+                    <group>
+                        <field name="is_test" />
+                    </group>
+                </group>
+                <footer>
+                    <button name="do_create" string="Crea" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+            </field>
+        </record>
+
+        <record id="action_hr_timesheet_invoice_periodic" model="ir.actions.act_window">
+            <field name="name">Fattura Periodica</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.timesheet.invoice.periodic</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="hr_timesheet_invoice_periodic_values">
+            <field name="model_id" ref="model_account_analytic_account" />
+            <field name="name">Fattura Periodica</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_hr_timesheet_invoice_periodic'))" />
+            <field name="key">action</field>
+            <field name="model">account.analytic.account</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_wood_quality_tree" model="ir.ui.view">
+            <field name="name">res.wood.quality.tree</field>
+            <field name="model">res.wood.quality</field>
+            <field name="arch" type="xml">
+                <tree string="Wood Quality">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_wood_quality_form" model="ir.ui.view">
+            <field name="name">res.wood.quality.form</field>
+            <field name="model">res.wood.quality</field>
+            <field name="arch" type="xml">
+                <form string="Wood Quality">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_wood_quality" model="ir.actions.act_window">
+            <field name="name">Wood Qualities</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.wood.quality</field>
+            <field name="view_type">form</field>
+            <field name="help">Display and manage the list of all wood qualities that can be assigned to your product records.</field>
+        </record>
+		
+        <menuitem action="action_wood_quality" id="menu_wood_quality" parent="stock.menu_product_in_config_stock" sequence="22" groups="base.group_no_one"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_reservation_availability,access_stock_reservation_availability all,model_stock_reservation_availability,,1,1,1,1
+access_stock_reservation_product,access_stock_reservation_product all,model_stock_reservation_product,,1,1,1,1
+access_stock_template_reservation,access_stock_template_reservation all,model_stock_template_reservation,,1,1,1,1

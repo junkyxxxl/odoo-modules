@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="free_invoice_line_form" model="ir.ui.view">
+            <field name="name">account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <field name="discount" position="after">
+                    <field name="free" />
+                </field>
+            </field>
+        </record>
+
+        <record id="free_invoice_line_form_line" model="ir.ui.view">
+            <field name="name">account.invoice.line.free.form</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account.view_invoice_line_form"/>
+            <field name="arch" type="xml">
+                <field name="discount" position="after">
+                    <field name="free"/>
+
+                </field>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,320 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* res_partner_omniapart
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-05 15:01+0000\n"
+"PO-Revision-Date: 2014-09-05 15:01+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "1st Office address"
+msgstr "Indirizzo Ufficio Principale"
+
+#. module: res_partner_omniapart
+#: view:omniapart.partner.installer:res_partner_omniapart.view_omniapart_partner_configuration_installer
+msgid "Accounting Application Configuration"
+msgstr "Applicazione configurazione conti"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Address"
+msgstr "Indirizzo"
+
+#. module: res_partner_omniapart
+#: field:res.partner,average_sales_volume:0
+msgid "Average sales volume"
+msgstr "Volume medio di vendita"
+
+#. module: res_partner_omniapart
+#: field:res.partner,standard_ids:0
+msgid "Certificazione Richiesta"
+msgstr "Certificazione Richiesta"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Certificazioni"
+msgstr "Certificazioni"
+
+#. module: res_partner_omniapart
+#: help:res.partner,is_group:0
+msgid "Check this box if this company is joined to a group."
+msgstr "Spunta questa casella se l'azienda fa parte di un gruppo."
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "City"
+msgstr "Città"
+
+#. module: res_partner_omniapart
+#: model:ir.actions.act_window,name:res_partner_omniapart.action_level2_partner_form
+#: model:ir.ui.menu,name:res_partner_omniapart.menu_level2_partner_form
+msgid "Clienti Attività"
+msgstr "Prospects"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Compute FC"
+msgstr "Calcola C.F."
+
+#. module: res_partner_omniapart
+#: model:ir.actions.act_window,name:res_partner_omniapart.action_omniapart_partner_configuration_installer
+msgid "Configure Partner Data"
+msgstr "Configura dati partner"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Contact"
+msgstr "Contatto"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Contacts"
+msgstr "Contatti"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Contacts responsible"
+msgstr "Responsabile dei contatti"
+
+#. module: res_partner_omniapart
+#: view:omniapart.partner.installer:res_partner_omniapart.view_omniapart_partner_configuration_installer
+msgid "Continue"
+msgstr "Continua"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Country"
+msgstr "Nazione"
+
+#. module: res_partner_omniapart
+#: field:omniapart.partner.installer,create_uid:0
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: res_partner_omniapart
+#: field:omniapart.partner.installer,create_date:0
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: res_partner_omniapart
+#: field:res.partner,det_period_employees:0
+msgid "Determined"
+msgstr "Determinato"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Fax:"
+msgstr "Fax:"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Fiscal code"
+msgstr "Codice fiscale"
+
+#. module: res_partner_omniapart
+#: field:res.partner,parent_name:0
+msgid "Group Name"
+msgstr "Group Nome"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Group name"
+msgstr "Nome gruppo"
+
+#. module: res_partner_omniapart
+#: field:omniapart.partner.installer,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Indicare le attività (progettazione, produzione, installazione, assistenza, ecc.) ed i prodotti/servizi (ad esempio: progettazione e produzione di giocattoli,...)"
+msgstr "Indicare le attività (progettazione, produzione, installazione, assistenza, ecc.) ed i prodotti/servizi (ad esempio: progettazione e produzione di giocattoli,...)"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Inserisci una nota..."
+msgstr "Inserisci una nota..."
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Internal Notes"
+msgstr "Note Interne"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Is joined to a group?"
+msgstr "Fa parte di un gruppo?"
+
+#. module: res_partner_omniapart
+#: field:omniapart.partner.installer,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento da"
+
+#. module: res_partner_omniapart
+#: field:omniapart.partner.installer,write_date:0
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Mobile:"
+msgstr "Cellulare:"
+
+#. module: res_partner_omniapart
+#: field:res.partner,subcontractors_number:0
+msgid "N. Subcontractors"
+msgstr "N. Sottoclienti"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "NACE"
+msgstr "NACE"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Name"
+msgstr "Nome"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Number of employees"
+msgstr "Numero di impiegati"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Other Informations"
+msgstr "Altre informazioni"
+
+#. module: res_partner_omniapart
+#: field:res.partner,is_group:0
+msgid "Part of a Group"
+msgstr "Parte di un Gruppo"
+
+#. module: res_partner_omniapart
+#: field:res.partner,part_time_employees:0
+msgid "Part-time"
+msgstr "Part-time"
+
+#. module: res_partner_omniapart
+#: model:ir.model,name:res_partner_omniapart.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: res_partner_omniapart
+#: field:res.partner,is_partner_level2:0
+msgid "Partner Level 2"
+msgstr "Prospect"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Partners"
+msgstr "Partners"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Phone:"
+msgstr "Telefono:"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Province"
+msgstr "Provincia"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Region"
+msgstr "Regione"
+
+#. module: res_partner_omniapart
+#: field:res.partner,date_certification:0
+msgid "Required Certification Date"
+msgstr "Data di certificazione richiesta"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Scopo/Campo di applicazione della certificazione (ed eventuali esclusioni)"
+msgstr "Scopo/Campo di applicazione della certificazione (ed eventuali esclusioni)"
+
+#. module: res_partner_omniapart
+#: view:omniapart.partner.installer:res_partner_omniapart.view_omniapart_partner_configuration_installer
+msgid "Select a configuration package to setup automatically your\n"
+"                        taxes and chart of accounts."
+msgstr "Seleziona un pacchetto di configurazione per impostare automaticamente\n"
+"                        tasse e piano dei conti."
+
+#. module: res_partner_omniapart
+#: field:res.partner,ea_sector_ids:0
+msgid "Settori EA"
+msgstr "Settori EA"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Street..."
+msgstr "Strada..."
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "Street2..."
+msgstr "Strada2..."
+
+#. module: res_partner_omniapart
+#: field:res.partner,temporary_omniapart_payable:0
+msgid "Temporary Omniapart Payable"
+msgstr "Temporary Omniapart Payable"
+
+#. module: res_partner_omniapart
+#: field:res.partner,temporary_omniapart_receivable:0
+msgid "Temporary Omniapart Receivable"
+msgstr "Temporary Omniapart Receivable"
+
+#. module: res_partner_omniapart
+#: field:res.partner,total_employees:0
+msgid "Total"
+msgstr "Totale"
+
+#. module: res_partner_omniapart
+#: field:res.partner,undet_period_employees:0
+msgid "Undetermined"
+msgstr "Indeterminato"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "VAT"
+msgstr "P.IVA"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "ZIP"
+msgstr "CAP"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "e.g. +32.81.81.37.00"
+msgstr "e.g. +32.81.81.37.00"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "e.g. Sales Director"
+msgstr "e.g. Direttore delle vendite"
+
+#. module: res_partner_omniapart
+#: view:res.partner:res_partner_omniapart.view_level2_partner_form
+msgid "e.g. www.isa.it"
+msgstr "e.g. www.isa.it"
+
+#. module: res_partner_omniapart
+#: view:omniapart.partner.installer:res_partner_omniapart.view_omniapart_partner_configuration_installer
+msgid "title"
+msgstr "titolo"
+

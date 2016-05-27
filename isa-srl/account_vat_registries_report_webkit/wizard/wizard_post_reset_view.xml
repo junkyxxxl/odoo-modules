@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="post_reset_view" model="ir.ui.view">
+            <field name="name">wizard.post.reset.form</field>
+            <field name="model">wizard.post.reset</field>
+            <field name="arch" type="xml">
+                <form string="Post Reset" version="7.0" >
+                    <group>   
+                		<div align="center">Operation completed successfully.</div>
+                	</group>
+                	<footer>
+                       <button string="Continue" class="oe_link" special="cancel" />
+					</footer>                       
+               	</form>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <!-- accreditation Task Work Types -->
+        <record model="ir.ui.view" id="doclite_accreditation_task_work_type_form">
+            <field name="name">doclite.accreditation.task.work.type.form</field>
+            <field name="model">accreditation.task.work.type</field>
+            <field name="inherit_id" ref="project_accredia.accreditation_task_work_type_form"/>
+            <field name="arch" type="xml">
+                <field name="update_agenda" position="after">
+                    <field name="doclite_action"/>
+                    <field name="doclite_action_type" attrs="{'invisible':[('doclite_action','!=',True)]}" />
+                    <field name="doclite_action_model" attrs="{'invisible':['|',('doclite_action_type','=','archive'),('doclite_action','!=',True)]}" />
+                    <field name="doclite_action_category" attrs="{'required':[('doclite_action_type','=','archive'),('doclite_action','=',True)],'invisible':['|',('doclite_action_type','!=','archive'),('doclite_action','!=',True)]}" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_project_manage_works_view_accredia" model="ir.ui.view">
+            <field name="name">project.wizard.manage.works.accredia</field>
+            <field name="model">project.wizard.manage.works</field>
+            <field name="inherit_id" ref="project_work_daily.wizard_project_manage_works_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='work_ids']/tree/field[@name='works_date']" position="after">
+                    <field name="type_id" string="Type" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

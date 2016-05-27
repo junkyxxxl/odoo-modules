@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Account Invoice Customer -->
+        <record id="account_invoice_account_exporter_statements_form_view" model="ir.ui.view">
+            <field name="name">account.invoice.account.exporter.statements.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account_makeover.account_invoice_makeover_form_view"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='partner_id']" position="after">
+                       <field name='exporter_id' on_change="onchange_exporter_id(exporter_id, registration_date, invoice_line)" domain="[('partner_id','=',partner_id), ('letter_status','=','A')]" context="{'default_partner_id': partner_id}" />    
+                 </xpath>
+                <xpath expr="//field[@name='invoice_line']" position="attributes">
+                    <attribute name="context">{'partner_id': partner_id, 'price_type': context.get('price_type') or False, 'type': type, 'exporter_id': exporter_id, 'registration_date': registration_date, 'fiscal_position': fiscal_position, 'company_id': company_id, 'date': date_invoice, 'user_id':user_id}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="account_invoice_account_exporter_statements_form_view2" model="ir.ui.view">
+            <field name="name">account.invoice.account.exporter.statements.form2</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//page[@string='Invoice Lines']/field[@name='invoice_line']/tree/field[@name='account_id']" position="attributes">
+                    <attribute name="context">{'exporter_id': exporter_id, 'registration_date': registration_date}</attribute>
+                 </xpath>
+            </field>
+        </record>        
+        
+        <record id="account_invoice_line_account_exporter_statements_form_view" model="ir.ui.view">
+            <field name="name">account.invoice.line.account.exporter.statements.form2</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account.view_invoice_line_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='account_id']" position="attributes">
+                    <attribute name="context">{'exporter_id': parent.exporter_id, 'registration_date': parent.registration_date}</attribute>
+                    <attribute name="on_change">onchange_account_id(product_id, parent.partner_id, parent.type, parent.fiscal_position,account_id,context)</attribute>                    
+                 </xpath>
+            </field>
+        </record>            
+
+        <!-- Account Invoice Supplier -->
+        <record id="view_invoice_supplier_account_exporter_statements_form" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.account.exporter.statements.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account_makeover.view_invoice_supplier_makeover_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name='exporter_id' domain="[('partner_id','=',partner_id)]" context="{'default_partner_id': partner_id}" />    
+                </xpath>
+                <xpath expr="//field[@name='invoice_line']" position="attributes">
+                    <attribute name="context">{'partner_id': partner_id, 'price_type': context.get('price_type') or False, 'type': type, 'exporter_id': exporter_id, 'registration_date': registration_date, 'fiscal_position': fiscal_position, 'company_id': company_id, 'date': date_invoice, 'user_id':user_id}</attribute>
+                </xpath>              
+            </field>
+        </record>
+
+     </data>
+</openerp>

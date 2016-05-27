@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+   <data>
+         <!-- Aggiungo il tab "Classificazione prodotto" -->
+         <record id="view_order_form_lot" model="ir.ui.view">
+           <field name="name">view.order.form.lot</field>
+           <field name="model">sale.order</field>
+           <field name="inherit_id" ref="sale.view_order_form"/>
+              <field name="arch" type="xml">
+              	<xpath expr="//form//label[@for='product_uom_qty']" position="before">
+                    <label for="lot_id" groups="stock.group_production_lot"/>
+                    <div groups="stock.group_production_lot">
+                      <!--
+                        Impostando un dominio del tipo =? al posto di =
+                        viene fatto vedere comunque il lotto anche se non selezionato
+                        il codice del prodotto
+                       -->
+                      <field name="lot_id" class="oe_inline"
+                             groups="stock.group_production_lot"
+                             domain="[('product_id','=', product_id)]"
+                             context="{'product_id': product_id}"
+                      />
+                      <field name="use_date" class="oe_inline" />
+                    </div>
+                </xpath>
+	          </field>
+         </record>
+  </data>
+</openerp>

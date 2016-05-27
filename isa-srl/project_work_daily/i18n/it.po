@@ -1,0 +1,236 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* project_work_daily
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-10 07:24+0000\n"
+"PO-Revision-Date: 2015-08-10 07:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_work_daily
+#: code:addons/project_work_daily/wizard/wizard_manage_works.py:53
+#, python-format
+msgid "Sunday"
+msgstr "Sunday"
+
+#. module: project_work_daily
+#: code:addons/project_work_daily/wizard/wizard_manage_works.py:50
+#, python-format
+msgid "Thursday"
+msgstr "Giovedì"
+
+#. module: project_work_daily
+#: field:project.wizard.manage.works.line,project_task_state:0
+msgid "State"
+msgstr "Stato"
+
+#. module: project_work_daily
+#: model:ir.model,name:project_work_daily.model_wizard_select_date
+#: view:wizard.select.date:0
+msgid "Wizard Select Date"
+msgstr "Wizard Select Date"
+
+#. module: project_work_daily
+#: view:project.wizard.manage.works:0
+msgid "Forward"
+msgstr "Avanti"
+
+#. module: project_work_daily
+#: field:project.wizard.manage.works.line,description:0
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: project_work_daily
+#: code:addons/project_work_daily/wizard/wizard_manage_works.py:47
+#, python-format
+msgid "Monday"
+msgstr "Lunedì"
+
+#. module: project_work_daily
+#: view:project.wizard.manage.works.line:0
+#: field:project.wizard.manage.works.line,task_work:0
+msgid "Task Work"
+msgstr "Esecuzione Attività"
+
+#. module: project_work_daily
+#: code:addons/project_work_daily/wizard/wizard_manage_works.py:51
+#, python-format
+msgid "Friday"
+msgstr "Venerdì"
+
+#. module: project_work_daily
+#: field:project.wizard.manage.works.line,not_billing:0
+msgid "Not Billing"
+msgstr "Non Fatturabile"
+
+#. module: project_work_daily
+#: view:project.wizard.manage.works:0
+#: field:project.wizard.manage.works.line,hours:0
+msgid "Hours"
+msgstr "Ore"
+
+#. module: project_work_daily
+#: code:addons/project_work_daily/wizard/wizard_manage_works.py:124
+#, python-format
+msgid "Add New Work"
+msgstr "Add New Work"
+
+#. module: project_work_daily
+#: view:project.wizard.manage.works:0
+msgid "Add Work"
+msgstr "Aggiungi Azione"
+
+#. module: project_work_daily
+#: field:project.wizard.manage.works,day:0
+#: field:project.wizard.manage.works.line,works_date:0
+#: field:wizard.select.date,day:0
+msgid "Date"
+msgstr "Data"
+
+#. module: project_work_daily
+#: field:project.wizard.manage.works,week_day:0
+msgid "Day"
+msgstr "Giorno"
+
+#. module: project_work_daily
+#: field:project.wizard.manage.works,user_id:0
+#: field:project.wizard.manage.works.line,user_id:0
+#: field:wizard.select.date,user_id:0
+msgid "Persona Fisica"
+msgstr "Persona Fisica"
+
+#. module: project_work_daily
+#: field:project.wizard.manage.works.line,task_id:0
+msgid "Task"
+msgstr "Attività"
+
+#. module: project_work_daily
+#: field:project.wizard.manage.works,work_ids:0
+msgid "Work Lines"
+msgstr "Azioni"
+
+#. module: project_work_daily
+#: model:ir.model,name:project_work_daily.model_project_wizard_manage_works_line
+msgid "Daily Works Line"
+msgstr "Daily Works Line"
+
+#. module: project_work_daily
+#: model:ir.actions.act_window,name:project_work_daily.action_manage_works
+#: model:ir.model,name:project_work_daily.model_project_wizard_manage_works
+msgid "Manage Works"
+msgstr "Gestione Azioni"
+
+#. module: project_work_daily
+#: field:project.wizard.manage.works.line,project_id:0
+msgid "Project"
+msgstr "Pratica"
+
+#. module: project_work_daily
+#: code:addons/project_work_daily/wizard/wizard_manage_works.py:160
+#, python-format
+msgid "New Date"
+msgstr "Nuova Data"
+
+#. module: project_work_daily
+#: code:addons/project_work_daily/wizard/wizard_manage_works.py:49
+#, python-format
+msgid "Wednesday"
+msgstr "Mercoledì"
+
+#. module: project_work_daily
+#: view:project.wizard.manage.works:0
+msgid "Works"
+msgstr "Azioni"
+
+#. module: project_work_daily
+#: view:project.wizard.manage.works:0
+msgid "Edit Work"
+msgstr "Modifica Lavorazione"
+
+#. module: project_work_daily
+#: view:project.wizard.manage.works:0
+msgid "Spent"
+msgstr "Impiegate"
+
+#. module: project_work_daily
+#: view:wizard.select.date:0
+msgid "View Day Works"
+msgstr "Visualizza"
+
+#. module: project_work_daily
+#: code:addons/project_work_daily/wizard/wizard_select_date.py:91
+#, python-format
+msgid "Day Works"
+msgstr "Day Works"
+
+#. module: project_work_daily
+#: code:addons/project_work_daily/wizard/wizard_manage_works.py:48
+#, python-format
+msgid "Tuesday"
+msgstr "Martedì"
+
+#. module: project_work_daily
+#: field:project.wizard.manage.works.line,manage_id:0
+msgid "Manage"
+msgstr "Gestione"
+
+#. module: project_work_daily
+#: view:project.wizard.manage.works:0
+msgid "Back"
+msgstr "Indietro"
+
+#. module: project_work_daily
+#: view:wizard.select.date:0
+msgid "or"
+msgstr "O"
+
+#. module: project_work_daily
+#: model:ir.actions.act_window,name:project_work_daily.action_select_date
+#: model:ir.ui.menu,name:project_work_daily.menu_action_manage_works
+msgid "Day Works Creation"
+msgstr "Azioni Giornaliere"
+
+#. module: project_work_daily
+#: view:project.wizard.manage.works:0
+msgid "Select New Date/Person"
+msgstr "Selezione nuova data e/o persona"
+
+#. module: project_work_daily
+#: view:wizard.select.date:0
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: project_work_daily
+#: view:project.wizard.manage.works:0
+msgid "If confirmed the record will be deleted. Confirm?"
+msgstr "Se confermi la lavorazione verrà eliminata. Confermi?"
+
+#. module: project_work_daily
+#: field:project.wizard.manage.works.line,billable_hours:0
+msgid "Hours Billed"
+msgstr "Ore Fatturate"
+
+#. module: project_work_daily
+#: view:project.wizard.manage.works:0
+msgid "Wizard Manage Works"
+msgstr "Wizard Gestione Azioni"
+
+#. module: project_work_daily
+#: code:addons/project_work_daily/wizard/wizard_manage_works.py:52
+#, python-format
+msgid "Saturday"
+msgstr "Sabato"
+
+#. module: project_work_daily
+#: view:project.wizard.manage.works:0
+msgid "Delete Work"
+msgstr "Elimina Lavorazione"
+

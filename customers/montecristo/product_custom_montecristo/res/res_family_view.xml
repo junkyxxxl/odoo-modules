@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_family_tree" model="ir.ui.view">
+            <field name="name">res.family.tree</field>
+            <field name="model">res.family</field>
+            <field name="arch" type="xml">
+                <tree string="Classificazione">
+                	<field name="type" readonly="1"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_family_form" model="ir.ui.view">
+            <field name="name">res.family.form</field>
+            <field name="model">res.family</field>
+            <field name="arch" type="xml">
+                <form string="Classificazione">
+                    <group>
+                        <group>
+                        	<field name="type" readonly="1"/>
+                            <field name="name"/>
+                            <field name="code"/>
+		                    <field name="date_start" attrs="{'invisible':[('type','!=','production')], 'required':[('type','=','production')]}"/>
+		                    <field name="date_end" attrs="{'invisible':[('type','!=','production')], 'required':[('type','=','production')]}"/> 
+		                    <field name="previous_ref" attrs="{'invisible':[('type','!=','production')]}"/>	
+		                    <field name="current" attrs="{'invisible':[('type','!=','production')]}"/>                                          
+                        </group>
+                    </group>
+                    <field name="category_dates_id" attrs="{'invisible':[('type','!=','production')]}">
+                        <tree editable="bottom">
+                            <field name="category_id"/>
+                            <field name="begin_date" required="1" />
+                            <field name="end_date" required="1" />
+                            <field name="information" placeholder="max 20 characters"/>
+                        </tree>
+                    </field>                        
+                </form>
+            </field>
+        </record>           
+
+        <record id="family_action" model="ir.actions.act_window">
+            <field name="name">Famiglie</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.family</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('type','=','family')]</field>
+            <field name="context">{'default_type': 'family'}</field>			            
+        </record>     
+
+        <record id="subfamily_action" model="ir.actions.act_window">
+            <field name="name">Sottofamiglie</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.family</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('type','=','subfamily')]</field>
+            <field name="context">{'default_type': 'subfamily'}</field>			            
+        </record>
+
+        <record id="subgroup_action" model="ir.actions.act_window">
+            <field name="name">Sottogruppi</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.family</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('type','=','subgroup')]</field>
+            <field name="context">{'default_type': 'subgroup'}</field>			            
+        </record>
+
+        <record id="composition_action" model="ir.actions.act_window">
+            <field name="name">Composizioni</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.family</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('type','=','composition')]</field>
+            <field name="context">{'default_type': 'composition'}</field>            
+        </record>        
+
+        <record id="origin_action" model="ir.actions.act_window">
+            <field name="name">Origini</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.family</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('type','=','origin')]</field>
+            <field name="context">{'default_type': 'origin'}</field>            
+        </record>        
+
+        <record id="production_action" model="ir.actions.act_window">
+            <field name="name">Produzioni</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.family</field>
+            <field name="view_type">form</field>
+			<field name="domain">[('type','=','production')]</field> 
+            <field name="context">{'default_type': 'production'}</field>           
+        </record>        
+                                                           	        	       	   
+        <menuitem action="family_action" id="menu_family_action" parent="product.prod_config_main" sequence="15" />	 
+        <menuitem action="subfamily_action" id="menu_subfamily_action" parent="product.prod_config_main" sequence="16" />	 
+        <menuitem action="subgroup_action" id="menu_subgroup_action" parent="product.prod_config_main" sequence="18" />	 
+        <menuitem action="composition_action" id="menu_composition_action" parent="product.prod_config_main" sequence="19" />	 
+        <menuitem action="origin_action" id="menu_origin_action" parent="product.prod_config_main" sequence="20" />	 
+        <menuitem action="production_action" id="menu_production_action" parent="product.prod_config_main" sequence="21" />	 
+        	        	        	        	        	     	                    
+    </data>
+</openerp>

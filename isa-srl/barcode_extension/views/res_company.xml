@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+      <!-- Aggiungo un tab e all interno due campi booleani -->
+   		<record id="view_res_company_sound" model="ir.ui.view">
+            <field name="name">view.res.company.sound</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[last()]" position="after">
+                  <page string='Configurazione barcode'>
+                  	  <group string="Alert e messaggi di avviso">
+                            <field name="larger_amount" string="Emetti suono per quantità da evadere maggiore di pianificata." />
+                            <field name="article_not_available" string="Emetti suono per articolo non presente in lista"/>
+                            <field name="confirmation_article_not_available" string="Richiesta di conferma per aggiunta articolo non presente in lista"/>
+                      </group>
+                      <group string="Distinta di prelievo">
+                          <field name="picking_list_type_id" string="Picking type utilizzato per lista prelievo"/>
+                          <field name="check_quantity"/>
+                          <field name="force_check_quantity"/>
+                      </group>
+                  </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

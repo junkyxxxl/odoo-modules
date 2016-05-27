@@ -1,0 +1,72 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_makeover
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-21 08:07+0000\n"
+"PO-Revision-Date: 2015-05-21 08:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_makeover
+#: field:sale.document.type,code:0
+msgid "Codice"
+msgstr "Codice"
+
+#. module: sale_makeover
+#: field:sale.document.type,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: sale_makeover
+#: field:sale.document.type,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: sale_makeover
+#: field:sale.document.type,name:0
+msgid "Descrizione"
+msgstr "Descrizione"
+
+#. module: sale_makeover
+#: field:sale.document.type,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: sale_makeover
+#: field:sale.document.type,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: sale_makeover
+#: field:sale.document.type,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: sale_makeover
+#: model:ir.model,name:sale_makeover.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: sale_makeover
+#: field:sale.document.type,sequence_id:0
+msgid "Sequenza"
+msgstr "Sequenza"
+
+#. module: sale_makeover
+#: field:sale.order,document_type_id:0
+msgid "Tipo Documento"
+msgstr "Tipo Documento"
+
+#. module: sale_makeover
+#: model:ir.model,name:sale_makeover.model_sale_document_type
+msgid "sale.document.type"
+msgstr "sale.document.type"
+

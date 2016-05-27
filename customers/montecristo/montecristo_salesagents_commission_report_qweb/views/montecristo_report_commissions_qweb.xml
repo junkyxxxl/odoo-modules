@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+	<template id="montecristo_report_commissions_qweb" inherit_id="salesagent_commissions_report_qweb.report_commissions_qweb">
+	    <xpath expr='//t[@t-if="agent.id == object.salesagent_id.id"]' position="attributes">
+	    	<attribute name="t-if">agent.id == object.salesagent_id.id or agent.id == object.salesagent_id_base.id</attribute>
+	    </xpath>
+
+	    <xpath expr='//span[@id="calculate_values"]' position="attributes">
+	    	<attribute name="t-if">agent.id == object.salesagent_id.id</attribute>
+	    </xpath>
+
+	    <xpath expr='//span[@id="calculate_values"]' position="after">
+			<span t-if="agent.id != object.salesagent_id.id">
+				<t t-if="object.commission_base and object.commission_base != 0">
+					<t t-set="commission" t-value="object.commission_base"/>
+				</t>
+				<t t-if="not object.commission_base or object.commission_base == 0">
+					<t t-set="commission" t-value="0.0"/>
+				</t>
+
+				<t t-if="object.paid_commission_base and object.paid_commission_value_base != 0">
+					<t t-set="paid" t-value="object.paid_commission_value_base"/>
+				</t>
+				<t t-if="not object.paid_commission_base or object.paid_commission_value_base == 0">
+					<t t-set="paid" t-value="0.0"/>
+				</t>										
+			</span>
+	    </xpath>	    	    	    
+	</template>				
+	
+	</data>
+</openerp>
+								            

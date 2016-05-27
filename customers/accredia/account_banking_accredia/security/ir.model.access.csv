@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_italian_banks_abi,account.italian.banks.abi,model_account_italian_banks_abi,,1,1,1,1
+access_account_italian_banks_cab,account.italian.banks.cab,model_account_italian_banks_cab,,1,1,1,1

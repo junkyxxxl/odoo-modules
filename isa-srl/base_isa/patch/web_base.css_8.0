@@ -1,0 +1,12 @@
+=== modified file '/src/odoo-8.0/addons/web/static/src/css/base.css'
+--- src/odoo-8.0/addons/web/static/src/css/base.css	2015-04-09 15:32:15.362801491 +0200
++++ src/odoo-8.0/addons/web/static/src/css/base.css	2015-04-09 15:31:52.666901347 +0200
+@@ -1867,7 +1867,7 @@
+ }
+ .openerp .oe_form_sheet_width {
+   min-width: 650px;
+-  max-width: 860px;
++  max-width: 1260px;
+   margin: 0 auto;
+ }
+ .openerp .oe_form_sheet {

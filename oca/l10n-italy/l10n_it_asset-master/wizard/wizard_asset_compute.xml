@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+        
+         <record model="ir.ui.view" id="view_asset_depreciation_confirmation_wizardit">
+            <field name="name">view.asset_depreciation_confirmation_wizardit</field>
+            <field name="model">asset.depreciation.confirmation.wizard</field>
+            <field name="inherit_id" ref="account_asset.view_asset_depreciation_confirmation_wizard"/>
+                <field name="arch" type="xml">
+					<field name="period_id" position="after">
+						<field name="at_day"/>
+						<field name="to_day"/>
+					</field>
+                </field>
+        </record>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Vista search -->
+        <record model="ir.ui.view" id="salesagent_target_search">
+            <field name="name">salesagent.target.search</field>
+            <field name="model">salesagent.target</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="salesagent_id"/>
+                    <field name="year_id"/>
+                    <field name="categ_id"/>
+                    <group string="Group By">
+                        <filter name="Group_Salesagent" string="Salesagent"
+                         context="{'group_by': 'salesagent_id'}"/>
+                        <filter name="Group_Year" string="Year"
+                         context="{'group_by': 'year_id'}"/>
+                        <filter name="Group_Category" string="Category"
+                         context="{'group_by': 'categ_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Vista tree per elenco record -->
+        <record model="ir.ui.view" id="salesagent_target_tree">
+            <field name="name">salesagent.target.tree</field>
+            <field name="model">salesagent.target</field>
+            <field name="arch" type="xml">
+                <tree string="Salesagent target">
+                    <field name="name"/>
+                    <field name="salesagent_id"/>
+                    <field name="categ_id"/>
+                    <field name="year_id"/>
+                    <field name="threshold"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- vista form -->
+        <record model="ir.ui.view" id="salesagent_target_form">
+            <field name="name">salesagent.target.form</field>
+            <field name="model">salesagent.target</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="%(salesagent_target_primapaint.action_wizard_copy_target)d" 
+                            string="_Duplicate to another salesagent" 
+                            type='action'
+                            class="oe_highlight"
+                            context="{
+                                'default_salesagent_target_id': active_id,
+                                'default_salesagent_from_id': salesagent_id,
+                                'default_year_from_id': year_id,
+                                'default_categ_from_id': categ_id,
+                            }"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <separator colspan="4" string="Salesagent target"/>
+                            <group>
+                                <separator colspan="2"/>
+                                <field name="salesagent_id"/>
+                                <field name="categ_id"/>
+                            </group>
+                            <group>
+                                <separator colspan="2"/>
+                                <field name="year_id"/>
+                                <field name="threshold" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                            <button class="oe_stat_button" name="load_months" string="_Load Months" type="object" icon="fa-calendar-o"/>
+                        </group>
+                        <field name="salesagent_target_line_ids">
+                            <tree string="Months" editable="bottom">
+                                <field name="month" sum="Totale"/>
+                                <field name="target" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- azione per anagrafica -->
+        <record id="action_salesagent_target" model="ir.actions.act_window">
+            <field name="name">Salesagent target</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">salesagent.target</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+        <!-- menu item -->
+        <menuitem
+        action="action_salesagent_target"
+        name="Salesagent target"
+        id="menu_view_salesagent_target"
+        parent="account.menu_finance_payables"
+        sequence="120"
+        />
+        
+        <menuitem
+        action="action_salesagent_target"
+        name="Salesagent target"
+        id="menu_view_salesagent_target_2"
+        parent="account_commission.menu_salesagent_finance_receivables"
+        sequence="120"
+        />
+
+
+    </data>
+</openerp>

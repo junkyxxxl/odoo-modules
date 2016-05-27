@@ -1,0 +1,13 @@
+=== modified file 'src/odoo-8.0/setup.py'
+--- src/odoo-8.0/setup.py       2014-12-18 10:03:44 +0000
++++ src/odoo-8.0/setup.py       2014-12-18 10:08:59 +0000
+@@ -115,7 +115,7 @@
+ 
+ 
+ setup(
+-    name='odoo',
++    name='openerp',
+     version=version,
+     description=description,
+     long_description=long_desc,
+

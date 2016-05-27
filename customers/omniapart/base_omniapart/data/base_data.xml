@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="base.main_partner" model="res.partner" context="{'default_is_company': True}">
+            <field name="name">Omniapart S.r.l.</field>
+            <field name="company_id" eval="None"/>
+            <field name="image" eval="False"/>
+            <field name="customer" eval="False"/>
+            <field name="is_company" eval="True"/>
+            <field name="street"></field>
+            <field name="city"></field>
+            <field name="zip"></field>
+            <field name="phone"></field>
+            <field name="email">info@omniapart.it</field>
+            <field name="website">www.omniapart.it</field>
+        </record>
+        <record id="equalitate_partner" model="res.partner" context="{'default_is_company': True}">
+            <field name="name">Equalitate S.r.l.</field>
+            <field name="company_id" eval="None"/>
+            <field name="image" eval="False"/>
+            <field name="customer" eval="False"/>
+            <field name="is_company" eval="True"/>
+            <field name="street"></field>
+            <field name="city"></field>
+            <field name="zip"></field>
+            <field name="phone"></field>
+            <field name="email">info@yourcompany.com</field>
+            <field name="website">www.yourcompany.com</field>
+        </record>
+        <record id="sisa_partner" model="res.partner" context="{'default_is_company': True}">
+            <field name="name">SISA&#038;PARTNERS S.r.l.</field>
+            <field name="company_id" eval="None"/>
+            <field name="image" eval="False"/>
+            <field name="customer" eval="False"/>
+            <field name="is_company" eval="True"/>
+            <field name="street"></field>
+            <field name="city"></field>
+            <field name="zip"></field>
+            <field name="phone"></field>
+            <field name="email">info@yourcompany.com</field>
+            <field name="website">www.yourcompany.com</field>
+        </record>
+
+        <!-- Basic Company  -->
+        <record id="base.main_company" model="res.company">
+            <field name="name">Omniapart S.r.l.</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="rml_header1">Guided by strategy</field>
+            <field name="currency_id" ref="base.EUR"/>
+        </record>
+        <record id="equalitate_company" model="res.company">
+            <field name="name">Equalitate S.r.l.</field>
+            <field name="partner_id" ref="equalitate_partner"/>
+            <field name="rml_header1">Equalitate Tagline</field>
+            <field name="currency_id" ref="base.EUR"/>
+        </record>
+        <record id="sisa_company" model="res.company">
+            <field name="name">SISA&#038;PARTNERS S.r.l.</field>
+            <field name="partner_id" ref="sisa_partner"/>
+            <field name="rml_header1">SISA Tagline</field>
+            <field name="currency_id" ref="base.EUR"/>
+        </record>
+
+    </data>
+</openerp>

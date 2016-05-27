@@ -1,0 +1,28 @@
+<openerp>
+  <data>
+  	<template id="assets_frontend" inherit_id="website.assets_frontend" name="Website Sales Count">
+    <xpath expr="." position="inside">
+       <script type="text/javascript" src='/website_stock_notifiy/static/src/js/notify.js'>
+       </script>
+      <link rel='stylesheet' href='/website_stock_notifiy/static/src/css/wk_stock_notify.css'/> 
+    </xpath>
+  </template>
+
+  <template id="website_stock_notify" inherit_id="website_stock.product_stock">
+      <xpath expr="//div/t/div/span/div[@class='out-of-stock-status']" position="after">
+          <t t-if="website.get_product_qty(product.id) &lt; 1"> 
+               <div class="wk_notify_main" t-att-id="product.id" t-att-object="product._name" t-att-uid="'%s' % website.get_uid()">
+                    <span class="wk_text">Inviami una email quando il prodotto diventa disponibile</span>
+                    <input type="text" class="js_quantity form-control wk_input_email" name="stok_notify" placeholder="enter your email"/>
+                    <div class="form-control wk_submit_div" >
+                    <span class="wk_span_notify">INVIA</span>
+                    </div>
+               </div>
+               <div class="div_message_notify">
+               </div>
+          </t>
+      </xpath>
+   </template>
+ 
+</data>
+</openerp>

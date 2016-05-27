@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="wk_product_category_voucher" model="product.category">
+            <field name="name">Gift Voucher</field>
+        </record>
+
+         <record id="wk_product_uom_categ_voucher" model="product.uom">
+            <field name="category_id" ref="product.product_uom_categ_unit"/>
+            <field name="name">Gift Voucher</field>
+            <field name="factor" eval="1.0"/>
+            <field name="rounding" eval="4.0"/>
+
+        </record>
+
+        <record id="wk_product_template_gift_voucher" model="product.template">
+            <field name="name">Gift Voucher</field>
+            <field name="categ_id" ref="wk_product_category_voucher"/>
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="type">service</field>
+            <field name="uom_id" ref="wk_product_uom_categ_voucher"/>
+            <field name="uom_po_id" ref="wk_product_uom_categ_voucher"/>
+            <field name="taxes_id">[(6, 0, [])]</field>
+            <field name="supplier_taxes_id">[(6, 0, [])]</field>
+            <field name="image" type="base64" file="website_voucher/static/src/img/icon.png"/>
+            <field name="image_small" type="base64" file="website_voucher/static/src/img/icon.png"/>
+            
+        </record>
+
+        <record id="product_product_voucher1" model="product.product">
+            <field name="name">Gift Voucher</field>
+            <field name="product_tmpl_id" ref="wk_product_template_gift_voucher"/>
+        </record>
+        <record id="wk_voucher_config" model="website.voucher.config">
+            <field name="product_id" ref="product_product_voucher1"></field>
+            <field name="max_expiry_date">5/5/2016</field>
+            <field name="max_amount">9999</field>
+            <field name="default_name">Default Name</field>
+        </record>
+
+    </data>
+</openerp>

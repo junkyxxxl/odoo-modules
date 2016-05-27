@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+
+    <!--
+        mail.compose_message template
+        adds the subject field
+        -->
+    <t t-extend="mail.compose_message">
+      <t t-jquery = ".oe_msg_center .oe_msg_content" t-operation="prepend">
+                    Oggetto:	
+                    <input type="text" t-att-value="widget.context.nome"/>
+      </t>
+    </t>
+
+
+</template>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report
+        	id="qweb_payment_term_preview"
+        	string="Anteprima Pagamenti"
+           	model="account.invoice"
+        	report_type="qweb-html"
+        	name="account_payment_term_preview.report_invoice_payment_term_preview"
+        	file="account_payment_term_preview.report_invoice_payment_term_preview"
+        />   
+        	        
+    </data>
+</openerp>

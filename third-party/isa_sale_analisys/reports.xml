@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <report
+        string="Riepologo Fabbisogno"
+        id="print_summary_requirement_qweb"
+        model="sale.analysis"
+        report_type="qweb-pdf"
+        name="isa_sale_analisys.summary_requirement_qweb"
+        file="isa_sale_analisys.summary_requirement_qweb"
+        />
+
+    </data>
+</openerp>

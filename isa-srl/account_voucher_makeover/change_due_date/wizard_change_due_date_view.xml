@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_change_due_date_view" model="ir.ui.view">
+            <field name="name">wizard.change.due.date.form</field>
+            <field name="model">wizard.change.due.date</field>
+            <field name="arch" type="xml">
+                <form string="Wizard Customer Payment Specification">
+                    <group>
+                        <field name="move_id" readonly="1"/>
+                        <field name="partner_id" readonly="1"/>
+                    </group>
+                    <field name="old_ids">
+                        <tree string="Old Move Lines" toolbar="1">
+                            <field name="partner_id" readonly="1"/>
+                            <field name="account_id"/>
+                            <field name="move_line_id"/>
+                            <field name="date_original"/>
+                            <field name="amount" sum="Total Amount"/>
+                            <field name="date_original"/>
+                            <field name="document_number"/>
+                            <field name="date_due"/>
+                        </tree>
+                    </field>
+                    <group>
+                        <field name="amount_to_complete"/>
+                    </group>
+                    <field name="new_ids" context="{'default_partner_id':partner_id}">
+                        <tree string="New Move Lines" toolbar="1">
+                            <field name="account_id"/>
+                            <field name="date_due"/>
+                            <field name="amount" sum="Total Amount"/>
+                            <field name="payment_type"/>
+                        </tree>
+                    </field>
+
+
+                    <footer>
+                        <button name="confirm" string="Confirm" type="object" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="wizard_change_due_date_view_form" model="ir.ui.view">
+            <field name="name">wizard.change.due.date.view.form</field>
+            <field name="model">wizard.change.due.date.line</field>
+            <field name="arch" type="xml">
+                <form string="Wizard Customer Payment Specification">
+                    <group>
+                        <field name="account_id" invisible="1"/>
+                        <field name="partner_id" on_change="onchange_partner_id(partner_id)" invisible="1"/>
+                        <field name="date_due" required="1"/>
+                        <field name="amount" sum="Total Amount" required="1"/>
+                        <field name="payment_type"/>
+                        <field name="line_state" invisible="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_open_wizard_change_due_date" model="ir.actions.act_window">
+            <field name="name">Action wizard change due date</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.change.due.date.line</field>
+        </record>
+
+    </data>
+</openerp>

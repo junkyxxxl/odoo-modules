@@ -1,0 +1,18 @@
+=== modified file 'src/odoo-8.0/addons/base_iban/base_iban.py'
+--- src/odoo-8.0/addons/base_iban/base_iban.py	2015-12-02 11:35:20.659342247 +0100
++++ src/odoo-8.0/addons/base_iban/base_iban.py	2015-12-02 11:46:22.656309213 +0100
+@@ -70,13 +70,7 @@
+     return res
+ 
+ def _pretty_iban(iban_str):
+-
+-    "return iban_str in groups of four characters separated by a single space"
+-    res = []
+-    while iban_str:
+-        res.append(iban_str[:4])
+-        iban_str = iban_str[4:]
+-    return ' '.join(res)
++    return iban_str
+ 
+ class res_partner_bank(osv.osv):
+     _inherit = "res.partner.bank"

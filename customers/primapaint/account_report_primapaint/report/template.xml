@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="account_report_primapaint.print_budget">
+            <t t-call="report.html_container">
+                <t t-set="data_report_margin_top" t-value="12"/>
+                <t t-set="data_report_header_spacing" t-value="9"/>
+                <t t-set="data_report_dpi" t-value="110"/>
+                <t t-foreach="docs" t-as="o"/>
+
+                <div class="page">
+                    <style type="text/css">
+                        .c23 {
+                        display: block; page-break-inside: avoid;
+                        border-color : black
+                        }
+                        h2 {
+                        font-family: verdana;
+                        }
+                    </style>
+
+
+                    <div class="oe_structure">
+                        <h2 align="center">Report Budget Mensile Per Agenti</h2>
+
+                        <!--Vado a prendere tutti i dati del budget, per ogni agente selezionato-->
+                        <tr t-foreach="list_salesagent" t-as="s">
+                            <td align="center">
+                                <h4>AGENTE: <t t-esc="s.salesagent_code"/> <t t-esc="s.name"/></h4>
+                                <h4>CATEGORIA MERCEOLOGICA: <t t-esc="category[1]"/></h4>
+                            </td>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                               <div class="col-xs-12">
+
+                                   <!--<table class="table table-bordered table-condensed" style="width:100%">-->
+                                   <table class="table table-bordered table-condensed">
+                                        <body style="font-size: 10px;">
+                                            <thead>
+                                              <tr>
+                                                    <th colspan="1"></th>
+                                                    <th colspan="2">FATTURATO ANNO PRECEDENTE <t t-esc="last_year"/> </th>
+                                                    <th colspan="2">FATTURATO ANNO IN CORSO <t t-esc="budget_year"/> </th>
+                                                    <th colspan="2">SCOSTAMENTO FATT. <t t-esc="invoice_deviation"/> </th>
+                                                    <th colspan="2">BUDGET ANNO PRECEDENTE <t t-esc="last_year"/> </th>
+                                                    <th colspan="2">BUDGET ANNO IN CORSO <t t-esc="budget_year"/> </th>
+                                                    <th colspan="2">SCOSTAMENTO BUDGET/FATT. <t t-esc="budget_year"/></th>
+                                                </tr>
+                            	                <tr>
+                                                    <th colspan="1"></th>
+                                                    <th colspan="1">Mese</th>
+                                                    <th colspan="1">Progressivo</th>
+                                                    <th colspan="1">Mese</th>
+	                                                <th colspan="1">Progressivo</th>
+                                                    <th colspan="1">Mese</th>
+                                                    <th colspan="1">Prog</th>
+                                                    <th colspan="1">Mese</th>
+                                                    <th colspan="1">Progressivo</th>
+                                                    <th colspan="1">Mese</th>
+                                                    <th colspan="1">Progressivo</th>
+                                                    <th colspan="1">Mese</th>
+                                                    <th colspan="1">Prog</th>
+                                                </tr>
+                                            </thead>
+	                                            <tbody>
+	                                                <tr>
+	                                                    <td>GEN</td>
+                                                          <th colspan="1">VALORE1</th>
+                                                          <th colspan="1">VALORE2</th>
+                                                          <th colspan="1">VALORE3</th>
+                                                          <th colspan="1">VALORE4</th>
+	                                                      <th colspan="1">VALORE5</th>
+	                                                      <th colspan="1">VALORE6</th>
+	                                                      <th colspan="1">VALORE7</th>
+	                                                      <th colspan="1">VALORE8</th>
+	                                                      <th colspan="1">VALORE9</th>
+	                                                      <th colspan="1">VALORE10</th>
+                                                          <th colspan="1">VALORE11</th>
+	                                                      <th colspan="1">VALORE12</th>
+                                                    </tr>
+                                                    <tr>
+	                                                    <td>FEB</td>
+                                                          <th colspan="1">VALORE1</th>
+                                                          <th colspan="1">VALORE2</th>
+                                                          <th colspan="1">VALORE3</th>
+                                                          <th colspan="1">VALORE4</th>
+	                                                      <th colspan="1">VALORE5</th>
+	                                                      <th colspan="1">VALORE6</th>
+	                                                      <th colspan="1">VALORE7</th>
+	                                                      <th colspan="1">VALORE8</th>
+	                                                      <th colspan="1">VALORE9</th>
+	                                                      <th colspan="1">VALORE10</th>
+                                                          <th colspan="1">VALORE11</th>
+	                                                      <th colspan="1">VALORE12</th>
+                                                    </tr>
+                                                    <tr>
+	                                                    <td>MAR</td>
+                                                          <th colspan="1">VALORE1</th>
+                                                          <th colspan="1">VALORE2</th>
+                                                          <th colspan="1">VALORE3</th>
+                                                          <th colspan="1">VALORE4</th>
+	                                                      <th colspan="1">VALORE5</th>
+	                                                      <th colspan="1">VALORE6</th>
+	                                                      <th colspan="1">VALORE7</th>
+	                                                      <th colspan="1">VALORE8</th>
+	                                                      <th colspan="1">VALORE9</th>
+	                                                      <th colspan="1">VALORE10</th>
+                                                          <th colspan="1">VALORE11</th>
+	                                                      <th colspan="1">VALORE12</th>
+                                                    </tr>
+                                                    <tr>
+	                                                    <td>APR</td>
+                                                          <th colspan="1">VALORE1</th>
+                                                          <th colspan="1">VALORE2</th>
+                                                          <th colspan="1">VALORE3</th>
+                                                          <th colspan="1">VALORE4</th>
+	                                                      <th colspan="1">VALORE5</th>
+	                                                      <th colspan="1">VALORE6</th>
+	                                                      <th colspan="1">VALORE7</th>
+	                                                      <th colspan="1">VALORE8</th>
+	                                                      <th colspan="1">VALORE9</th>
+	                                                      <th colspan="1">VALORE10</th>
+                                                          <th colspan="1">VALORE11</th>
+	                                                      <th colspan="1">VALORE12</th>
+                                                    </tr>
+	                                                <tr>
+	                                                    <td>MAG</td>
+                                                    </tr>
+                                                    <tr>
+	                                                    <td>GIU</td>
+                                                    </tr>
+	                                                <tr>
+	                                                    <td>LUG</td>
+                                                    </tr>
+                                                    <tr>
+	                                                    <td>AGO</td>
+                                                    </tr>
+                                                    <tr>
+	                                                    <td>SET</td>
+                                                    </tr>
+                                                    <tr>
+	                                                    <td>OTT</td>
+                                                    </tr>
+	                                                <tr>
+	                                                    <td>NOV</td>
+                                                    </tr>
+                                                    <tr>
+	                                                    <td>DIC</td>
+                                                    </tr>
+	                                            </tbody>
+
+
+
+                                                <!--
+
+
+                                                  <tr>
+                                                        <t t-foreach="months" t-as="m">
+
+                                                                <t t-esc="m"/>
+
+                                                        </t>
+                                                  </tr>
+                                            -->
+
+                                        </body>
+                                   </table>
+                              </div>
+                            </div>
+                         </div>
+                        </tr>
+                        </div>
+                </div>
+            </t>
+
+
+
+        </template>
+    </data>
+</openerp>

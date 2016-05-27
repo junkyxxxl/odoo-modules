@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+<data>
+
+    <!-- ====================================================== -->
+    <!--                         WIZARD                         -->
+    <!-- ====================================================== -->
+    <record id="form_calc_ammort" model="ir.ui.view">
+        <field name="name">form.calc.ammort</field>
+        <field name="model">calc.ammort.year</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Calculate Ammortizations">
+                <group>
+                    <field name="fiscal_year"/>
+                    <field name="date"/>
+                </group>
+                <group>
+                    <field name="flag_all"/>
+                    <field name="category"/>
+                    <field name="flag_overw"/>
+                </group>
+                <group>
+                    <button string="Cancel" special="cancel"
+                        icon="gtk-cancel" colspan="2"/>
+                    <button string="Calculate Ammortization"
+                        name="calculate_ammortization"
+                        type="object" icon="gtk-ok" colspan="2"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- ====================================================== -->
+    <!--                         BUTTON                         -->
+    <!-- ====================================================== -->
+     <act_window name="Calculate Ammortizations for Period"
+        view_mode="form"
+        target="new"
+        key2="client_action_multi"
+        res_model="calc.ammort.year"
+        src_model="account.asset.asset"
+        view_id= "form_calc_ammort"
+        id="action_form_calc_ammort"/>
+
+    <!-- ====================================================== -->
+    <!--                         WIZARD                         -->
+    <!-- ====================================================== -->
+    <record id="form_delete_ammort" model="ir.ui.view">
+        <field name="name">form.delete.ammort</field>
+        <field name="model">calc.ammort.year</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Delete Ammortizations">
+                <group>
+                    <field name="fiscal_year"/>
+                    <field name="date"/>
+                </group>
+                <group>
+                    <button string="Annulla" special="cancel"
+                        icon="gtk-cancel" colspan="2"/>
+                    <button string="Delete Ammortization"
+                        name="delete_ammortization"
+                        type="object" icon="gtk-ok" colspan="2"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- ====================================================== -->
+    <!--                         BUTTON                         -->
+    <!-- ====================================================== -->
+    <act_window name="Delete Ammortizations for Period"
+        view_mode="form"
+        target="new"
+        key2="client_action_multi"
+        res_model="calc.ammort.year"
+        src_model="account.asset.asset"
+        view_id= "form_delete_ammort"
+        id="action_form_delete_ammort"/>
+
+</data>
+</openerp>

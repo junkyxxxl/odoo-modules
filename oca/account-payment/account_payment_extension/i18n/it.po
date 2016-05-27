@@ -1,0 +1,434 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_payment_extension
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140503-231235\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-05 14:31+0000\n"
+"PO-Revision-Date: 2014-05-05 14:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_payment_extension
+#: selection:payment.line,type:0
+#: selection:payment.order,type:0
+msgid "Receivable"
+msgstr "Ricevibile"
+
+#. module: account_payment_extension
+#: view:payment.order.create:0
+msgid "Extra message of payment communication"
+msgstr "Messaggio Extra di comunicazione pagamento"
+
+#. module: account_payment_extension
+#: selection:payment.order,create_account_moves:0
+msgid "Direct Payment"
+msgstr "Pagamento Diretto"
+
+#. module: account_payment_extension
+#: field:payment.mode,require_received_check:0
+msgid "Require Received Check"
+msgstr "Richiedi Controllo Ricevuto"
+
+#. module: account_payment_extension
+#: field:payment.line,payment_move_id:0
+msgid "Payment Move"
+msgstr "Movimento Pagamento"
+
+#. module: account_payment_extension
+#: help:payment.mode,require_bank_account:0
+msgid "Ensure all lines in the payment order have a bank\n"
+"                account when proposing lines to be added in the\n"
+"                payment order."
+msgstr "Assicurarsi che tutte le righe nell'ordine di pagamento abbiano un conto bancario\n"
+"                al momento di proporre le righe da aggiungere nell'\n"
+"                Ordine di pagamento."
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Pay"
+msgstr "Paga"
+
+#. module: account_payment_extension
+#: model:ir.model,name:account_payment_extension.model_payment_order
+msgid "Payment Order"
+msgstr "Ordine di pagamento"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Receive"
+msgstr "Ricevi"
+
+#. module: account_payment_extension
+#: model:ir.actions.act_window,name:account_payment_extension.action_payment_type
+#: model:ir.ui.menu,name:account_payment_extension.menu_action_payment_type
+#: view:payment.type:0
+#: help:payment.type,name:0
+msgid "Payment Type"
+msgstr "Tipo Pagamento"
+
+#. module: account_payment_extension
+#: field:payment.mode,require_bank_account:0
+msgid "Require Bank Account"
+msgstr "Richiedi Conto Bancario"
+
+#. module: account_payment_extension
+#: help:payment.type,note:0
+msgid "Description of the payment type that will be shown in\n"
+"                the invoices"
+msgstr "Descrizione del tipo di pagamento che verrà mostrato\n"
+"                nelle fatture"
+
+#. module: account_payment_extension
+#: model:ir.actions.act_window,name:account_payment_extension.action_rec_payment_order_tree
+#: model:ir.ui.menu,name:account_payment_extension.menu_action_rec_payment_order_form
+msgid "Rec. payment order"
+msgstr "Ric. ordine di pagamento"
+
+#. module: account_payment_extension
+#: help:payment.order,create_account_moves:0
+msgid "Indicates when account moves should be created for\n"
+"            order payment lines. 'Bank Statement' will wait until user\n"
+"            introduces those payments in bank a bank statement.\n"
+"            'Direct Payment' will mark all payment lines as payied once\n"
+"            the order is done."
+msgstr "Indica quando dovrebbero essere creati i movimenti per\n"
+"            le righe dell'ordine di pagamento. Se impostato Estratto Conto Bancario rimarrà in attesa fino a che l'utente\n"
+"            non inserisca quei pagamenti in banca un estratto conto bancario.\n"
+"            Se 'Pagamento Diretto' imposterà tutte le righe di pagamento come pagate una volta\n"
+"            che l'ordine è completato."
+
+#. module: account_payment_extension
+#: model:ir.model,name:account_payment_extension.model_payment_line
+msgid "Payment Line"
+msgstr "Riga pagamento"
+
+#. module: account_payment_extension
+#: help:payment.type,code:0
+msgid "Specify the Code for Payment Type"
+msgstr "Specificare il Codice per il Tipo di Pagamento"
+
+#. module: account_payment_extension
+#: model:ir.model,name:account_payment_extension.model_payment_mode
+msgid "Payment Mode"
+msgstr "Modalità Pagamento"
+
+#. module: account_payment_extension
+#: field:payment.order.create,communication2:0
+msgid "Communication 2"
+msgstr "Comunicazione 2"
+
+#. module: account_payment_extension
+#: field:payment.line,type:0
+#: field:payment.order,type:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Search Invoice Payments"
+msgstr "Cerca Fattura Pagamenti"
+
+#. module: account_payment_extension
+#: view:payment.type:0
+#: field:payment.type,note:0
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: account_payment_extension
+#: field:payment.type,company_id:0
+msgid "Company"
+msgstr "Azienda"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Unreconciled payments"
+msgstr "Pagamenti non riconciliati"
+
+#. module: account_payment_extension
+#: field:payment.order,payment_type_name:0
+msgid "Payment type name"
+msgstr "Nome Tipo Pagamento"
+
+#. module: account_payment_extension
+#: selection:payment.line,type:0
+#: selection:payment.order,type:0
+msgid "Payable"
+msgstr "Pagabile"
+
+#. module: account_payment_extension
+#: field:res.partner,payment_type_customer:0
+msgid "Customer Payment Type"
+msgstr "Tipo di Flusso SEPA per Cliente"
+
+#. module: account_payment_extension
+#: field:payment.mode,require_same_bank_account:0
+msgid "Require the Same Bank Account"
+msgstr "Richiede lo stesso conto bancario"
+
+#. module: account_payment_extension
+#: field:res.partner,payment_type_supplier:0
+msgid "Supplier Payment Type"
+msgstr "Tipo di Flusso SEPA per Fornitore"
+
+#. module: account_payment_extension
+#: view:payment.order.create:0
+msgid "Entries"
+msgstr "Movimenti"
+
+#. module: account_payment_extension
+#: field:payment.type,active:0
+msgid "Active"
+msgstr "Attivo"
+
+#. module: account_payment_extension
+#: view:payment.order:0
+msgid "Select invoices to pay/receive payment"
+msgstr "Selezionare le fatture da pagare o di cui ricevere il pagamento"
+
+#. module: account_payment_extension
+#: help:payment.line,payment_move_id:0
+msgid "Account move that pays this debt."
+msgstr "Movimento Contabile che paga questo debito."
+
+#. module: account_payment_extension
+#: help:account.move.line,received_check:0
+msgid "To write down that a check in paper support has\n"
+"                been received, for example."
+msgstr "Per annotare che un controllo in supporto cartaceo sia\n"
+"                stato ricevuto, per esempio."
+
+#. module: account_payment_extension
+#: help:payment.order.create,communication2:0
+msgid "The successor message of payment communication."
+msgstr "Il messaggio successivo di comunicazione pagamento."
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Total Credit"
+msgstr "Credito Totale"
+
+#. module: account_payment_extension
+#: field:payment.order,create_account_moves:0
+msgid "Create Account Moves"
+msgstr "Crea Movimenti Contabili"
+
+#. module: account_payment_extension
+#: help:payment.mode,require_same_bank_account:0
+msgid "Ensure all lines in the\n"
+"                payment order and the payment mode have the same\n"
+"                account number."
+msgstr "Assicurarsi che tutte le linee dell'ordine\n"
+"                di pagamento e la modalità di pagamento abbiano lo stesso\n"
+"                numero di conto."
+
+#. module: account_payment_extension
+#: field:payment.line,account_id:0
+msgid "Account"
+msgstr "Conto"
+
+#. module: account_payment_extension
+#: field:payment.type,suitable_bank_types:0
+msgid "Suitable bank types"
+msgstr "Tipi bancari idonei"
+
+#. module: account_payment_extension
+#: field:payment.order,name:0
+#: field:payment.type,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Receivable payments"
+msgstr "Pagamenti su crediti"
+
+#. module: account_payment_extension
+#: field:res.partner.bank,default_bank:0
+msgid "Default"
+msgstr "Default"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Total Amount to Pay"
+msgstr "Importo totale da pagare"
+
+#. module: account_payment_extension
+#: field:account.move.line,partner_bank_id:0
+msgid "Bank Account"
+msgstr "Conto Bancario"
+
+#. module: account_payment_extension
+#: field:payment.order.create,show_refunds:0
+msgid "Show Refunds"
+msgstr "Mostra Rimborsi"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Effective date"
+msgstr "Data Effettiva"
+
+#. module: account_payment_extension
+#: model:ir.actions.act_window,name:account_payment_extension.action_create_payment_extension_order
+msgid "Seleccionar facturas a Pagar/Cobrar"
+msgstr "Selezionare le fatture da pagare/Crediti"
+
+#. module: account_payment_extension
+#: model:ir.model,name:account_payment_extension.model_account_move_line
+msgid "Journal Items"
+msgstr "Voci sezionale"
+
+#. module: account_payment_extension
+#: field:payment.order.create,amount:0
+msgid "Amount"
+msgstr "Importo"
+
+#. module: account_payment_extension
+#: help:payment.mode,type:0
+msgid "Select the Payment Type for the Payment Mode."
+msgstr "Selezionare il Tipo di Pagamento per la Modalità di Pagamento."
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Payments"
+msgstr "Pagamenti"
+
+#. module: account_payment_extension
+#: model:ir.model,name:account_payment_extension.model_payment_order_create
+msgid "payment.order.create"
+msgstr "payment.order.create"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Payable payments"
+msgstr "Payable payments"
+
+#. module: account_payment_extension
+#: help:res.partner,payment_type_customer:0
+msgid "Payment type of the customer"
+msgstr "Tipo di pagamento del cliente"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Total Debit"
+msgstr "Debito Totale"
+
+#. module: account_payment_extension
+#: model:ir.actions.act_window,name:account_payment_extension.action_invoice_payments
+#: model:ir.ui.menu,name:account_payment_extension.menu_action_invoice_payments
+msgid "Invoice payments"
+msgstr "Pagamenti di Fattura"
+
+#. module: account_payment_extension
+#: help:payment.mode,require_received_check:0
+msgid "Ensure all lines in the payment order have the\n"
+"                Received Check flag set."
+msgstr "Assicurarsi che tutte le linee l'ordine di pagamento abbiano il\n"
+"                flag Controllo Ricevuto impostato."
+
+#. module: account_payment_extension
+#: model:ir.actions.act_window,name:account_payment_extension.action_done_payments
+#: model:ir.ui.menu,name:account_payment_extension.menu_action_done_payments
+msgid "Done payments"
+msgstr "Pagamenti effettuati"
+
+#. module: account_payment_extension
+#: field:account.invoice,payment_type:0
+#: model:ir.model,name:account_payment_extension.model_payment_type
+#: field:payment.mode,type:0
+msgid "Payment type"
+msgstr "Tipo pagamento"
+
+#. module: account_payment_extension
+#: field:payment.type,code:0
+msgid "Code"
+msgstr "Codice"
+
+#. module: account_payment_extension
+#: view:res.partner:0
+msgid "Bank Details"
+msgstr "Dettagli anagrafiche bancarie"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "State"
+msgstr "Stato"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Group By..."
+msgstr "Raggruppa per..."
+
+#. module: account_payment_extension
+#: help:payment.order.create,amount:0
+msgid "Next step will automatically select payments up to this amount as long as account moves have bank account if that is required by the selected payment mode."
+msgstr "Il passo successivo seleziona automaticamente i pagamenti fino a tale importo purché i movimenti contabili abbiano il conto bancario, se richiesto dalla modalità di pagamento selezionata."
+
+#. module: account_payment_extension
+#: help:payment.order.create,show_refunds:0
+msgid "Indicates if search should include refunds."
+msgstr "Indica se la ricerca deve includere i rimborsi."
+
+#. module: account_payment_extension
+#: model:ir.model,name:account_payment_extension.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Conti Bancari"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+#: field:payment.order,period_id:0
+msgid "Period"
+msgstr "Periodo"
+
+#. module: account_payment_extension
+#: selection:payment.order,create_account_moves:0
+msgid "Bank Statement"
+msgstr "Estratto Conto Bancario"
+
+#. module: account_payment_extension
+#: help:res.partner,payment_type_supplier:0
+msgid "Payment type of the supplier"
+msgstr "Tipo di pagamento del fornitore"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Unreconciled"
+msgstr "Non riconciliate"
+
+#. module: account_payment_extension
+#: model:ir.model,name:account_payment_extension.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: account_payment_extension
+#: view:payment.order:0
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+#: model:ir.model,name:account_payment_extension.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_payment_extension
+#: view:payment.type:0
+msgid "Suitable Bank Types"
+msgstr "Tipi di Banca idonei"
+
+#. module: account_payment_extension
+#: view:account.move.line:0
+msgid "Journal"
+msgstr "Sezionale"
+
+#. module: account_payment_extension
+#: field:account.move.line,received_check:0
+msgid "Received check"
+msgstr "Assegno ricevuto"
+

@@ -1,0 +1,8 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"hr_user_contract","hr.contract","hr_contract.model_hr_contract","base.group_hr_user",1,0,0,0
+"hr_user_contract","hr.contract","hr_contract.model_hr_contract",,1,0,0,0
+"hr_user_resource_calendar","resource.calendar","resource.model_resource_calendar","base.group_hr_user",1,0,0,0
+"hr_user_resource_calendar_attendance","resource.calendar.attendance","resource.model_resource_calendar_attendance","base.group_hr_user",1,0,0,0
+"hr_user_resource_calendar_attendance","resource.calendar.attendance","resource.model_resource_calendar_attendance",,1,0,0,0
+"hr_user_festivity","res.company.festivity","base_res_company_isa.model_res_company_festivity","base.group_hr_user",1,0,0,0
+"hr_user_closed_day","res.company.closed.day","base_res_company_isa.model_res_company_closed_day","base.group_hr_user",1,0,0,0

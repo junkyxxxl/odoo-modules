@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="sale_analysis_form" model="ir.ui.view">
+        <field name="name">sale.analysis.form</field>
+        <field name="model">sale.analysis</field>
+        <field name="arch" type="xml">
+            <form string="Sale Analysis">
+                <sheet>
+                    <field name="product_id" />
+                    <field name="uom" />
+                    <field name="qty" />
+                    <field name="type" />
+                    <field name="order_id" />
+                    <field name="bom_id" />
+                    <field name="date_begin" />
+                    <field name="date_end" />
+                    <field name="user_id" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="sale_analysis_tree" model="ir.ui.view">
+        <field name="name">sale.analysis.tree</field>
+        <field name="model">sale.analysis</field>
+        <field name="arch" type="xml">
+            <tree string="Sale Analysis">
+                <field name="product_id" />
+                <field name="uom" />
+                <field name="qty" />
+                <field name="qty_available" />
+                <field name="residual"/>
+                <field name="order_qty" />
+                <!--field name="type" /-->
+                <!--<field name="order_id" />-->
+                <field name="bom_id" />
+                <field name="date_begin" />
+                <field name="date_end" />
+                <field name="user_id" />
+            </tree>
+        </field>
+    </record>
+    
+    <record id="sale_analysis_search" model="ir.ui.view">
+        <field name="name">sale.analysis.search</field>
+        <field name="model">sale.analysis</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <!--<field name="bom_id" />-->
+                <field name="product_id" />
+                <field name="user_id" />
+                <filter string="My" domain="[('user_id','=',uid)]" name="my_analysis"/>
+                <group expand="0" string="Group By">
+                    <filter name="bom" string="Bom" context="{'group_by':'bom_id'}"/>
+                    <!--filter name="ordertype" string="Order Type" context="{'group_by':'type'}"/-->
+                    <!--<filter name="order" string="Order" context="{'group_by':'order_id'}"/>-->
+                </group>
+            </search>
+        </field>
+    </record>
+    
+    <record id="sale_analysis_action" model="ir.actions.act_window">
+        <field name="name">Last Sale Analysis</field>
+        <field name="res_model">sale.analysis</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="sale_analysis_search"/>
+        <field name="context">{'search_default_my_analysis': 1}</field>
+        <field name="domain">[('analysis_type', '=', 'sale')]</field>
+    </record>
+
+    <menuitem action="sale_analysis_action"
+        id="menu_action_sale_analysis_tree"
+        parent="stock.menu_stock_sched" sequence="50"
+        groups="stock.group_stock_manager"/>
+
+    <record id="purchase_analysis_action" model="ir.actions.act_window">
+        <field name="name">Last Purchase Analysis</field>
+        <field name="res_model">sale.analysis</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="sale_analysis_search"/>
+        <field name="context">{'search_default_my_analysis': 1}</field>
+        <field name="domain">[('analysis_type', '=', 'purchase')]</field>
+    </record>
+
+    <menuitem action="purchase_analysis_action"
+        id="menu_action_purchase_analysis_tree"
+        parent="stock.menu_stock_sched" sequence="51"
+        groups="stock.group_stock_manager"/>
+
+</data>
+</openerp>

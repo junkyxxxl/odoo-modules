@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        <!--         ANNULLA PAGAMENTO DAI DETTAGLI WIZARD            -->
+        <record id="wzd_payment_cancellation_view" model="ir.ui.view">
+            <field name="name">wzd.payment_cancellation.wizard</field>
+            <field name="model">wzd.payment_cancellation</field>
+            <field name="inherit_id" ref="salesagent_commissions.wzd_payment_cancellation_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='note_cancellation']" position="replace">
+                	<field name="salesagent_id" domain="[('salesagent', '=', True)]" colspan="4"/>
+                </xpath>  
+            </field>
+        </record>
+
+    </data>
+</openerp>

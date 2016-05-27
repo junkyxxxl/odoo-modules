@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<template id="assets_frontend" name="FAQ assets_frontend" inherit_id="website.assets_frontend">
+            <xpath expr="." position="inside">
+                 <script type="text/javascript" src="/website_voucher/static/src/js/voucher.js"/>         
+        	</xpath>
+        </template>
+        <template id="voucher_code" inherit_id="website_sale.cart" active="False" customize_show="True" name="Voucher Code">
+		  <xpath expr="//div[@id='right_column']" position="inside">
+		      <h4>Voucher Code</h4>
+		      <p>
+		          If your have a voucher code? Enter in this field and apply.
+		      </p>
+		      <form t-if="website_sale_order and website_sale_order.website_order_line" action="/shop/pricelist" method="post" class="mb32">
+		          <div class="input-group">
+		              <input name="promo" class='form-control' id="voucher_13d_code" type="text" placeholder="code..." t-att-value="website_sale_order.pricelist_id.code or ''"/>
+		              <div class="input-group-btn">
+		                  <a class="btn btn-submit btn-default wk_voucher" type="submit">Apply</a>
+		              </div>
+		          </div>
+		           <div style="display:none;" class="alert alert-danger error_msg"/>
+		           <div style="display:none;" class="alert alert-success success_msg"/>
+		         <b style="display:none;" class="wk_def_pro_id" t-attf-id="#{website.wk_get_default_product()}"/>
+		      </form>
+		  </xpath>
+		  <xpath expr="//div//table//tbody//td[@class='text-center']//del[@class='text-danger']" position="replace">
+            <t t-if='line.product_id.id != website.wk_get_default_product()'>
+              <del class="text-danger" t-att-style="'' if (compute_currency(line.product_id.lst_price) - line.price_unit) &gt; 1 else 'display: none;'" style="text-decoration: line-through; white-space: nowrap;"
+                t-field="line.product_id.lst_price" t-field-options='{
+                    "widget": "monetary",
+                    "from_currency": "line.company_id.currency_id",
+                    "display_currency": "user_id.partner_id.property_product_pricelist.currency_id"
+                }'/>
+           	</t>
+	       
+      	  </xpath>
+		  <xpath expr="//div//table//tbody//td//div[@class='input-group oe_website_spinner']" position="after">
+	        <t>
+
+            	
+		        <span class="voucher-remove" style="display:none;" >
+		        	  <t t-set="temp" t-value="line.id"/>
+		              <a type="button" t-att-href="'/shop/cart/voucher_remove/'+str(temp)" class=" btn btn-danger glyphicon glyphicon-trash" ></a>
+		        </span>
+	    	</t>
+	       
+      </xpath>
+		</template>
+
+    </data>
+</openerp>

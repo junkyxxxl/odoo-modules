@@ -1,0 +1,76 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_picking_transfer_enhanced
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-28 08:41+0000\n"
+"PO-Revision-Date: 2015-05-28 08:41+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_picking_transfer_enhanced
+#: view:stock.picking:0
+#: view:stock.transfer_details:0
+msgid "Delete Selected"
+msgstr "Azzera Selezionati"
+
+#. module: stock_picking_transfer_enhanced
+#: field:stock.move,orig_quants:0
+msgid "Initial Quantity"
+msgstr "Quantità Iniziale"
+
+#. module: stock_picking_transfer_enhanced
+#: view:stock.picking:0
+#: view:stock.transfer_details:0
+msgid "Invert Selection"
+msgstr "Inverti Selezione"
+
+#. module: stock_picking_transfer_enhanced
+#: model:ir.model,name:stock_picking_transfer_enhanced.model_stock_picking
+msgid "Picking List"
+msgstr "Lista Picking"
+
+#. module: stock_picking_transfer_enhanced
+#: model:ir.model,name:stock_picking_transfer_enhanced.model_stock_transfer_details
+msgid "Picking wizard"
+msgstr "Picking wizard"
+
+#. module: stock_picking_transfer_enhanced
+#: model:ir.model,name:stock_picking_transfer_enhanced.model_stock_transfer_details_items
+msgid "Picking wizard items"
+msgstr "Picking wizard items"
+
+#. module: stock_picking_transfer_enhanced
+#: view:stock.picking:0
+msgid "Restore Selected"
+msgstr "Reimposta Selezionati"
+
+#. module: stock_picking_transfer_enhanced
+#: view:stock.move:0
+#: field:stock.move,selected:0
+msgid "Select"
+msgstr "Seleziona"
+
+#. module: stock_picking_transfer_enhanced
+#: view:stock.picking:0
+#: view:stock.transfer_details:0
+msgid "Select All"
+msgstr "Seleziona Tutti"
+
+#. module: stock_picking_transfer_enhanced
+#: model:ir.model,name:stock_picking_transfer_enhanced.model_stock_move
+msgid "Stock Move"
+msgstr "Movimento di magazzino"
+
+#. module: stock_picking_transfer_enhanced
+#: view:stock.move:0
+msgid "Unselect"
+msgstr "Deseleziona"
+

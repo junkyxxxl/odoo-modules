@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem id="menu_stock_products_moves" name="Receive/Deliver Products" parent="stock.menu_stock_root" sequence="2"/>
+        <menuitem action="action_customer_delivery_makeover_view"
+        		  name="Spedizioni da impegni di consegna"
+                  id="menu_action_customer_delivery_makeover_view"
+                  parent="menu_stock_products_moves"
+                  sequence="16"/>
+
+        <record id="action_picking_ddt_form" model="ir.actions.act_window">
+            <field name="name">Documenti di Trasporto</field>
+            <field name="res_model">stock.picking.ddt</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="delivery_makeover.view_picking_isa_tree"/>
+            <field name="domain" eval="[('picking_type_id.code','in',['outgoing','internal'])]"/>
+        </record> 
+
+        <menuitem
+            action="action_picking_ddt_form"
+            id="menu_action_picking_ddt_form"
+            parent="stock.menu_stock_warehouse_mgmt" sequence="2"/>
+    </data>
+</openerp>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+   		<record id="view_partner_property_form_isa" model="ir.ui.view">
+            <field name="name">partner.property.form.isa</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+             	<xpath expr="//form/sheet/notebook/page[@string='Accounting']" position="after">
+                    <page string="Exporter Statements" attrs="{'invisible':[('customer','!=',True),('supplier','!=',True)]}">
+                            <field name="exporter_statements_ids" context=" {'default_partner_id':id}">
+                                <tree>
+                                   <field name="letter_number" />
+        						   <field name="letter_date" />      
+     		    	 			   <field name="name" />       
+     		    				   <field name="letter_status"/>  
+        			               <field name="period_start" /> 
+								   <field name="period_end" />    
+                                </tree>
+                            </field>
+                    </page>
+                 </xpath>   
+            </field>
+        </record>
+        
+    </data>
+</openerp>

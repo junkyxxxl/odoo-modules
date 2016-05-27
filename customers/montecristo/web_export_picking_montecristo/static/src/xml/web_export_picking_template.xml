@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+<t t-name="AddExportPickingMain">
+        <button class="oe_button" id="export_picking">Export Current Pickings</button>
+        <!--  
+        <ul class="oe_dropdown_menu">
+            <li class="oe_sidebar_export_view_xls"><span>Excel</span></li>
+        </ul>
+        -->
+</t>
+</templates>

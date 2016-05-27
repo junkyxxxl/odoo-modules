@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_hr_accredia_changes_entity_form" model="ir.ui.view">
+            <field name="name">hr.accredia.changes.entity.form</field>
+            <field name="model">hr.accredia.changes.entity</field>
+            <field name="arch" type="xml">
+              <form string="Inserisci Variazione Anagrafica">
+                <group>
+                    <group>
+                        <field name="subaccount_auto_generation_customer" invisible="1"/>
+                        <field name="subaccount_auto_generation_supplier" invisible="1"/> 
+                        <field name="customer" invisible="1"/>
+                        <field name="supplier" invisible="1"/>
+                        <field name="is_entity" invisible="1"/>
+                        <field name="individual" invisible="1"/>
+                        <field name="legal_name" required="1"/>
+                    </group>
+                    <group>
+                        <field name="validity_date" required="1"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                	    <field name="vat_code" required="1"/>
+                    </group>
+                    <group>
+                	    <button name="button_check_vat"
+                	            string="Check Validity"
+                                type="object"
+                                icon="gtk-execute"
+                                context="'vat_code': vat_code"/>
+                    </group>
+                </group>
+                <group colspan="2">
+                	<field name="fiscal_code" attrs="{'required': [('individual','=',True)]}" />
+                	<field name="entity_id" readonly="True" invisible="1"/>
+                </group>
+                <group>
+                    <group>
+                        <field name="street" required="1"/>
+                        <field name="city" required="1"/>
+                        <field name="zip" required="1"/>
+                    </group>
+                    <group>
+                        <field name="province" required="1"/>
+                        <field name="region" required="1"/>
+                        <field name="country_id" required="1"/>
+                    </group>
+                </group>
+                <group colspan="2">
+                    <!--  <field name="accounting_receivable_code"
+                           attrs="{'invisible': ['|',('customer','=',False),('subaccount_auto_generation_customer','=',False)]}" readonly="1" /> -->
+                    <field name="accounting_receivable_code_id" 
+                           attrs="{'invisible': ['|',('customer','=',False),('subaccount_auto_generation_customer','=',True)],'required': [('customer','=',True),('subaccount_auto_generation_customer','=',False)]}"/>
+
+                    <!--  <field name="accounting_payable_code"
+                           attrs="{'invisible': ['|',('supplier','=',False),('subaccount_auto_generation_supplier','=',False)]}" readonly="1" /> -->
+                    <field name="accounting_payable_code_id"
+                           attrs="{'invisible': ['|',('supplier','=',False),('subaccount_auto_generation_supplier','=',True)],'required': [('supplier','=',True),('subaccount_auto_generation_supplier','=',False)]}"/>
+                    <field name="reason" required="1"/>
+                </group>
+                <footer>
+                	<button name="confirm" string="Submit" type="object" icon="gtk-apply" default_focus="1" class="oe_highlight" />
+                    or 
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+              </form>
+            </field>
+        </record>
+    </data>
+</openerp>

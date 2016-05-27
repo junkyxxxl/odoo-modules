@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="FieldBinaryFile">
+        <t t-jquery="input.field_binary" t-operation="replace">
+            <input type="text" size="1" readonly="readonly"
+                    t-att-name="widget.name"
+                    t-att-tabindex="widget.node.attrs.tabindex"
+                    t-att-autofocus="widget.node.attrs.autofocus"
+                    class="field_binary"
+                    style="width: 250px;"
+                />
+        </t>
+    </t>
+</templates>

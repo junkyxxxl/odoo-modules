@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_add_new_line_view" model="ir.ui.view">
+          <field name="name">wizard.add.new.line.form</field>
+          <field name="model">wizard.add.new.line</field>
+          <field name="arch" type="xml">
+            <form string="Wizard Payment" version="7.0">
+                <group>
+                    <group>
+                        <field name="amount" required="1"/>
+                        <field name="payment_type" required="1"/>
+                        <field name="date_due" required="1"/>
+                    </group>
+                    
+                </group>
+                <footer>
+                    <button name="confirm" string="Save" type="object" default_focus="1" class="oe_highlight" />
+                    or 
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+               
+            </form>
+            </field>
+        </record>
+    
+    </data>
+</openerp>

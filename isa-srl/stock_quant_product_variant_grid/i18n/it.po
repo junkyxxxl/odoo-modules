@@ -1,0 +1,130 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* stock_quant_product_variant_grid
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 8.0alpha1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-18 10:06+0000\n"
+"PO-Revision-Date: 2014-06-18 10:06+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_quant_product_variant_grid
+#: view:wizard.product.variant.selection:0
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: stock_quant_product_variant_grid
+#: field:wizard.product.variant.quantities,company_id:0
+#: field:wizard.product.variant.selection,company_id:0
+msgid "Company"
+msgstr "Azienda"
+
+#. module: stock_quant_product_variant_grid
+#: view:wizard.product.variant.quantities:0
+msgid "Details"
+msgstr "Dettagli"
+
+#. module: stock_quant_product_variant_grid
+#: field:wizard.product.variant.quantities,location_id:0
+#: field:wizard.product.variant.selection,location_id:0
+msgid "Location"
+msgstr "Magazzino"
+
+#. module: stock_quant_product_variant_grid
+#: code:addons/stock_quant_product_variant_grid/wizard/wizard_product_variant_selection.py:64
+#, python-format
+msgid "Product Quantities for Template"
+msgstr "Product Quantities for Template"
+
+#. module: stock_quant_product_variant_grid
+#: model:ir.actions.act_window,name:stock_quant_product_variant_grid.action_product_variant_multi_qty_view
+msgid "Product per Templates"
+msgstr "Product per Templates"
+
+#. module: stock_quant_product_variant_grid
+#: field:wizard.product.variant.quantities,stock_quant_ids:0
+msgid "Products"
+msgstr "Prodotti"
+
+#. module: stock_quant_product_variant_grid
+#: view:wizard.product.variant.quantities:0
+msgid "Quantities per Template"
+msgstr "Quantità Prodotti del Template"
+
+#. module: stock_quant_product_variant_grid
+#: model:ir.model,name:stock_quant_product_variant_grid.model_stock_quant
+msgid "Quants"
+msgstr "Quantità"
+
+#. module: stock_quant_product_variant_grid
+#: view:wizard.product.variant.quantities:0
+msgid "Salva"
+msgstr "Salva"
+
+#. module: stock_quant_product_variant_grid
+#: view:product.template:0
+msgid "Set Quantities"
+msgstr "Quantità"
+
+#. module: stock_quant_product_variant_grid
+#: view:wizard.product.variant.quantities:0
+msgid "Stock Quantities"
+msgstr "Quantità in Magazzino"
+
+#. module: stock_quant_product_variant_grid
+#: view:wizard.product.variant.quantities:0
+msgid "Summary"
+msgstr "Sommario"
+
+#. module: stock_quant_product_variant_grid
+#: field:stock.quant,product_tmpl_id:0
+#: field:wizard.product.variant.quantities,template_id:0
+#: field:wizard.product.variant.selection,template_id:0
+msgid "Template"
+msgstr "Template"
+
+#. module: stock_quant_product_variant_grid
+#. openerp-web
+#: code:addons/stock_quant_product_variant_grid/static/src/xml/stock_quant_product_variant_grid.xml:15
+#: code:addons/stock_quant_product_variant_grid/static/src/xml/stock_quant_product_variant_grid.xml:35
+#, python-format
+msgid "Total"
+msgstr "Totale"
+
+#. module: stock_quant_product_variant_grid
+#: view:wizard.product.variant.selection:0
+msgid "View Quantities"
+msgstr "Mostra Quantità"
+
+#. module: stock_quant_product_variant_grid
+#: field:stock.quant,wizard_id:0
+msgid "Wizard"
+msgstr "Wizard"
+
+#. module: stock_quant_product_variant_grid
+#: model:ir.model,name:stock_quant_product_variant_grid.model_wizard_product_variant_quantities
+msgid "Wizard Product Variant Quantities"
+msgstr "Wizard Product Variant Quantities"
+
+#. module: stock_quant_product_variant_grid
+#: model:ir.model,name:stock_quant_product_variant_grid.model_wizard_product_variant_selection
+msgid "Wizard Product Variant Selection"
+msgstr "Wizard Product Variant Selection"
+
+#. module: stock_quant_product_variant_grid
+#: view:wizard.product.variant.selection:0
+msgid "Wizard Template Quantities"
+msgstr "Wizard Template Quantities"
+
+#. module: stock_quant_product_variant_grid
+#: view:wizard.product.variant.selection:0
+msgid "or"
+msgstr "oppure"
+

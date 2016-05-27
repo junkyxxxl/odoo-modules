@@ -1,0 +1,456 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* _isa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20140129-002604\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-29 15:06+0000\n"
+"PO-Revision-Date: 2014-01-29 15:06+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: _isa
+#: field:res.company,intracee_journal_id:0
+msgid "Sezionale Autofattura"
+msgstr "Sezionale Autofattura"
+
+#. module: _isa
+#: field:res.company,intracee_giro_credit:0
+msgid "Sezionale Giroconto"
+msgstr "Sezionale Giroconto"
+
+#. module: _isa
+#: selection:res.company,period_disposals_goods:0
+#: selection:res.company,period_disposals_services:0
+#: selection:res.company,period_purchase_goods:0
+#: selection:res.company,period_purchase_services:0
+msgid "Monthly"
+msgstr "Mensile"
+
+#. module: _isa
+#: view:account.voucher:0
+msgid "Pay"
+msgstr "Paga"
+
+#. module: _isa
+#: field:account.cee.combined.nomenclature,add_entry:0
+msgid "Additional Entry"
+msgstr "Unità supplementare"
+
+#. module: _isa
+#: view:account.cee.combined.nomenclature:0
+#: field:account.invoice.line,combined_nomenclature:0
+#: model:ir.actions.act_window,name:_isa.action_account_cee_combined_nomenclature
+#: model:ir.ui.menu,name:_isa.account_cee_combined_nomenclature
+#: field:product.product,combined_nomenclature:0
+msgid "Combined Nomenclature"
+msgstr "Nomenclatura Combinata"
+
+#. module: _isa
+#: field:account.cee.nat.of.trans,code_alpha:0
+#: field:account.cee.payment.methods,code_alpha:0
+msgid "Code Alpha"
+msgstr "Codice Alfabetico"
+
+#. module: _isa
+#: field:account.invoice.line,flow_number:0
+msgid "Flusso Intrastat"
+msgstr "Flusso Intrastat"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,create_date:0
+msgid "Create date"
+msgstr "Data Creazione"
+
+#. module: _isa
+#: field:product.product,uom_secondary_coeff:0
+msgid "Secondary UoM Coefficient"
+msgstr "Coefficiente Un. Misura Secondaria"
+
+#. module: _isa
+#: field:res.company,period_purchase_goods:0
+msgid "Periodicity flow purchase goods"
+msgstr "Periodicità flusso acquisto beni"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_number:0
+msgid "Numero del flusso"
+msgstr "Numero del flusso"
+
+#. module: _isa
+#: field:res.company,period_disposals_goods:0
+msgid "Periodicity flow disposals goods"
+msgstr "Periodicità flusso cessione beni"
+
+#. module: _isa
+#: field:account.invoice.line,qty_uom_secondary:0
+msgid "Quantity in Secondary UOM"
+msgstr "Quantità in Un. di Misura Secondaria"
+
+#. module: _isa
+#: view:account.cee.payment.methods:0
+#: model:ir.actions.act_window,name:_isa.action_account_cee_payment_methods
+#: model:ir.ui.menu,name:_isa.account_cee_payment_methods
+msgid "Payment methods"
+msgstr "Metodi di pagamento"
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_account_cee_delivery
+msgid "account.cee.delivery"
+msgstr "account.cee.delivery"
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_account_cee_combined_nomenclature
+msgid "account.cee.combined.nomenclature"
+msgstr "account.cee.combined.nomenclature"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_rows_count4:0
+msgid "Righe sezione 4"
+msgstr "Righe sezione 4"
+
+#. module: _isa
+#: field:product.product,service_codes:0
+msgid "Nomenclatura combinata per servizi"
+msgstr "Nomenclatura combinata per servizi"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_rows_count1:0
+msgid "Righe sezione 1"
+msgstr "Righe sezione 1"
+
+#. module: _isa
+#: field:account.cee.combined.nomenclature,description:0
+#: field:account.cee.delivery,description:0
+#: field:account.cee.nat.of.trans,description:0
+#: field:account.cee.payment.methods,description:0
+#: field:account.cee.service.codes,description:0
+#: field:account.cee.way.of.freight,description:0
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: _isa
+#: field:res.company,code_ua:0
+msgid "Enabled User Code"
+msgstr "CodiceUA (codice utente abilitato)"
+
+#. module: _isa
+#: view:res.company:0
+msgid "Accounting Intracee"
+msgstr "Contabilità Intracee"
+
+#. module: _isa
+#: view:account.invoice:0
+msgid "{'partner_id': partner_id, 'price_type': context.get('price_type') or False, 'type': type, 'fiscal_position': fiscal_position, 'company_id': company_id}"
+msgstr "{'partner_id': partner_id, 'price_type': context.get('price_type') or False, 'type': type, 'fiscal_position': fiscal_position, 'company_id': company_id}"
+
+#. module: _isa
+#: field:account.invoice.line,delivery:0
+#: field:res.partner,delivery:0
+msgid "Delivery"
+msgstr "Condizioni di Consegna"
+
+#. module: _isa
+#: field:account.cee.combined.nomenclature,code_number:0
+#: field:account.cee.nat.of.trans,code_number:0
+#: field:account.cee.service.codes,code_number:0
+#: field:account.cee.way.of.freight,code_number:0
+msgid "Code Number"
+msgstr "Codice Numerico"
+
+#. module: _isa
+#: field:account.invoice.line,country_origin:0
+#: field:res.partner,country_origin:0
+msgid "Origin Country"
+msgstr "Paese di Origine"
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_account_cee_way_of_freight
+msgid "account.cee.way.of.freight"
+msgstr "account.cee.way.of.freight"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,write_uid:0
+msgid "Write user"
+msgstr "Utente Modifica"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_period_type:0
+msgid "M=Mensile T=Trimest."
+msgstr "M=Mensile T=Trimest."
+
+#. module: _isa
+#: field:res.partner,payment_methods:0
+msgid "Payment Methods"
+msgstr "Metodi di Pagamento"
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_account_cee_service_codes
+msgid "account.cee.service.codes"
+msgstr "account.cee.service.codes"
+
+#. module: _isa
+#: view:account.cee.delivery:0
+#: model:ir.actions.act_window,name:_isa.action_account_cee_delivery
+#: model:ir.ui.menu,name:_isa.account_cee_delivery
+msgid "Condizioni di consegna intracee"
+msgstr "Condizioni di consegna intracee"
+
+#. module: _isa
+#: field:res.company,period_disposals_services:0
+msgid "Periodicity flow disposals services"
+msgstr "Periodicità flusso cessione servizi"
+
+#. module: _isa
+#: field:product.product,statistical_value:0
+msgid "Statistical Value"
+msgstr "Valore Statistico"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_total_2:0
+msgid "Totale sezione 2"
+msgstr "Totale sezione 2"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_total_3:0
+msgid "Totale sezione 3"
+msgstr "Totale sezione 3"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_total_1:0
+msgid "Totale sezione 1"
+msgstr "Totale sezione 1"
+
+#. module: _isa
+#: field:account.invoice.line,province_destination:0
+#: field:res.company,province_destination:0
+msgid "Province destination"
+msgstr "Provincia di destinazione"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_total_4:0
+msgid "Totale sezione 4"
+msgstr "Totale sezione 4"
+
+#. module: _isa
+#: view:product.product:0
+#: view:res.company:0
+#: view:res.partner:0
+msgid "Intracee"
+msgstr "Intracee"
+
+#. module: _isa
+#: model:res.groups,name:_isa._group_isa
+msgid "Account Invoice Intracee Group Isa "
+msgstr "Account Invoice Intracee Group Isa "
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_account_cee_nat_of_trans
+msgid "account.cee.nat.of.trans"
+msgstr "account.cee.nat.of.trans"
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_product_product
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_month_quarter:0
+msgid "Mese o trimestre"
+msgstr "Mese o trimestre"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,write_date:0
+msgid "Write date"
+msgstr "Data Scrittura"
+
+#. module: _isa
+#: field:res.company,period_purchase_services:0
+msgid "Periodicity flow purchase services"
+msgstr "Periodicità flusso acquisto servizi"
+
+#. module: _isa
+#: field:account.invoice.line,total_statistical_value:0
+msgid "Total Statistical Value"
+msgstr "Valore Statistico Totale"
+
+#. module: _isa
+#: field:account.invoice.line,unit_net_mass:0
+msgid "Unit Net Mass"
+msgstr "Massa netta unitaria"
+
+#. module: _isa
+#: view:account.cee.nat.of.trans:0
+#: model:ir.actions.act_window,name:_isa.action_account_cee_nat_of_trans
+#: model:ir.ui.menu,name:_isa.account_cee_nat_of_trans
+msgid "Nature of transactions"
+msgstr "Natura delle transazioni"
+
+#. module: _isa
+#: model:ir.ui.menu,name:_isa.account_cee_tables_folder
+msgid "Cee Tables"
+msgstr "Tabelle Cee"
+
+#. module: _isa
+#: field:product.product,net_mass:0
+msgid "Net Mass"
+msgstr "Massa Netta"
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_account_cee_intrastat_flows
+msgid "account.cee.intrastat.flows"
+msgstr "account.cee.intrastat.flows"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_rows_count2:0
+msgid "Righe sezione 2"
+msgstr "Righe sezione 2"
+
+#. module: _isa
+#: field:account.invoice.line,uom_secondary:0
+msgid "Secondary UOM"
+msgstr "Unità di Misura Secondaria"
+
+#. module: _isa
+#: field:account.cee.delivery,code_incoterms:0
+msgid "Code Incoterms"
+msgstr "Codice Incoterms"
+
+#. module: _isa
+#: field:account.invoice.line,total_net_mass:0
+msgid "Total Net Mass"
+msgstr "Massa Totale Netta"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_rows_count3:0
+msgid "Righe sezione 3"
+msgstr "Righe sezione 3"
+
+#. module: _isa
+#: view:account.invoice:0
+msgid "{'type': type, 'partner_id': partner_id, 'fiscal_position': fiscal_position, 'company_id': company_id}"
+msgstr "{'type': type, 'partner_id': partner_id, 'fiscal_position': fiscal_position, 'company_id': company_id}"
+
+#. module: _isa
+#: field:res.company,province_origin:0
+msgid "Province origin"
+msgstr "Provincia di origine"
+
+#. module: _isa
+#: field:account.invoice.line,unit_statistical_value:0
+msgid "Unit Statistical Value"
+msgstr "Valore Statistico Unitario"
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_account_cee_payment_methods
+msgid "account.cee.payment.methods"
+msgstr "account.cee.payment.methods"
+
+#. module: _isa
+#: field:account.invoice.line,is_intracee:0
+msgid "Is Intracee"
+msgstr "E' Intracee"
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Voucher contabile"
+
+#. module: _isa
+#: view:account.cee.intrastat.flows:0
+#: model:ir.actions.act_window,name:_isa.action_account_cee_intrastat_flows
+#: model:ir.ui.menu,name:_isa.account_cee_intrastat_flows
+msgid "Flussi intrastat"
+msgstr "Flussi intrastat"
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Righe Fattura"
+
+#. module: _isa
+#: selection:res.company,period_disposals_goods:0
+#: selection:res.company,period_disposals_services:0
+#: selection:res.company,period_purchase_goods:0
+#: selection:res.company,period_purchase_services:0
+msgid "Quarterly"
+msgstr "Trimestrale"
+
+#. module: _isa
+#: field:account.invoice.line,country_provenance:0
+#: field:res.partner,country_provenance:0
+msgid "Provenance Country"
+msgstr "Paese di Provenienza"
+
+#. module: _isa
+#: field:product.product,uom_secondary:0
+msgid "Secondary Unit of Measure"
+msgstr "Unità di Misura Secondaria"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_year:0
+msgid "Anno di riferimento"
+msgstr "Anno di riferimento"
+
+#. module: _isa
+#: field:res.company,vat_delegated_person:0
+msgid "VAT delegated person"
+msgstr "Partita Iva soggetto delegato"
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: _isa
+#: field:account.cee.delivery,code_group:0
+msgid "Code Group"
+msgstr "Codice Gruppo"
+
+#. module: _isa
+#: model:ir.model,name:_isa.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: _isa
+#: view:account.cee.way.of.freight:0
+#: model:ir.actions.act_window,name:_isa.action_account_cee_way_of_freight
+#: model:ir.ui.menu,name:_isa.account_cee_way_of_freight
+msgid "Modo di trasporto"
+msgstr "Modo di trasporto"
+
+#. module: _isa
+#: field:account.invoice.line,way_of_freight:0
+#: field:res.partner,way_of_freight:0
+msgid "Way of freight"
+msgstr "Modo di Trasporto"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,flow_type:0
+msgid "A=Acquisti V=Vendite"
+msgstr "A=Acquisti V=Vendite"
+
+#. module: _isa
+#: field:account.cee.intrastat.flows,create_uid:0
+msgid "Create user"
+msgstr "Utente Creazione"
+
+#. module: _isa
+#: view:account.cee.service.codes:0
+#: field:account.invoice.line,service_codes:0
+#: model:ir.actions.act_window,name:_isa.action_account_cee_service_codes
+#: model:ir.ui.menu,name:_isa.account_cee_service_codes
+msgid "Combined Nomenclature for Services"
+msgstr "Nomenclatura Combinata per Servizi"
+

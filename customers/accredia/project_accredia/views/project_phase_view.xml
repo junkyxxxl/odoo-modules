@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+	 <!-- Project Phase Form View -->
+     <record id="view_project_phase_form_accredia" model="ir.ui.view">
+            <field name="name">view.project.phase.form.accredia</field>
+            <field name="model">project.phase</field>
+            <field name="inherit_id" ref="project_long_term_accredia.view_project_phase_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='project_id']" position="after">
+                    <field name="audit_task_type" widget="radio" />
+                </xpath>
+
+                <xpath expr="//field[@name='user_ids']/tree/field[@name='user_id']" position="before">
+                    <field name="unit_id" context="{'default_project_id':parent.project_id}" />
+                    <field name="is_main" readonly="1" />
+                    <field name="phase_id" invisible="1" />
+                </xpath>
+                <xpath expr="//field[@name='user_ids']/form/group/field[@name='user_id']" position="before">
+                    <field name="unit_id" context="{'default_project_id':parent.project_id}" />
+                    <field name="phase_id" invisible="1" />
+                </xpath>
+
+                <xpath expr="//field[@name='user_ids']/tree/field[@name='date_end']" position="after">
+                    <field name="num_days" sum="Totale Giorni" />
+                    <field name="role_id" context="{'default_user_id':user_id}" />
+                    <field name="task_audit_type_id" domain="['|',('audit_visit_accompaniment', '=',True),('audit_visit_doc_review', '=',True)]" />
+                </xpath>
+                <xpath expr="//field[@name='user_ids']/form/group/field[@name='date_end']" position="after">
+                    <field name="num_days"/>
+                    <field name="role_id" context="{'default_user_id':user_id}" />
+                    <field name="task_audit_type_id" domain="['|',('audit_visit_accompaniment', '=',True),('audit_visit_doc_review', '=',True)]" />
+                </xpath>
+
+                <xpath expr="//field[@name='user_ids']/tree/field[@name='user_id']" position="attributes">
+                    <attribute name="context">{'enable_filter_standard_id':parent.enable_filter_standard_id,'filter_standard_id':parent.filter_standard_id,'include_not_available':parent.include_not_available,'t_unit_id':unit_id,'parent_date_start':parent.date_start,'parent_date_end':parent.date_end,'t_date_start':date_start,'t_date_end':date_end, 't_project_id': parent.project_id}</attribute>
+                    <attribute name="string">Ispettore</attribute>
+                </xpath>
+                <xpath expr="//field[@name='user_ids']/form/group/field[@name='user_id']" position="attributes">
+                    <attribute name="context">{'enable_filter_standard_id':parent.enable_filter_standard_id,'filter_standard_id':parent.filter_standard_id,'include_not_available':parent.include_not_available,'t_unit_id':unit_id,'parent_date_start':parent.date_start,'parent_date_end':parent.date_end,'t_date_start':date_start,'t_date_end':date_end, 't_project_id': parent.project_id}</attribute>
+                    <attribute name="string">Ispettore</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='user_ids']/form/group/field[@name='user_id']" position="after">
+                    <field name="is_employee_pa" invisible="1" />
+                    <field name="auth_id"
+                           context="{'default_user_id':user_id}"
+                           attrs="{'required':[('is_employee_pa','=',True)],'invisible':[('is_employee_pa','!=',True)]}"
+                           />
+                </xpath>
+
+                <xpath expr="//field[@name='user_ids']" position="before">
+                    <group string="Filtro Ispettori">
+                        <group>
+                            <field name="filter_standard_id" invisible="1" />
+                            <field name="enable_filter_standard_id" invisible="1" />
+                            <field name="include_not_available" />
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <group string="Impostazioni Attività">
+                        <group>
+                            <field name="type_audit_visit" domain="[('audit_visit_accompaniment', '=',True)]" />
+                            <field name="type_audit_doc_review" domain="[('audit_visit_doc_review', '=',True)]" />
+                        </group>
+                        <group>
+                            <field name="type_audit_type_id" domain="[('audit', '=',True)]" />
+                            <field name="type_audit_category_id"/>
+                        </group>
+                    </group>
+                    <group string="Pianificazione Attività">
+                        <group>
+                            <button string="Pianificazione" name="do_plan" type="object" states="draft"/>
+                            <button string="Conferma" name="do_confirm" type="object"
+                                    attrs="{'invisible':['|',('state','not in',['draft']),('audit_task_type','=','foreseen')]}" />
+                            <button string="Imposta Date" name="do_set_date" type="object" states="draft"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>

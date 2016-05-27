@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+
+        <!-- Update user form !-->
+        <record id="view_doclite_res_users_form" model="ir.ui.view">
+            <field name="name">res.doclite.res.users.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+            <data>
+                <field name="partner_id" position="before">
+                    <field name="doclite_office_id" string="Gruppo Doclite" groups="doclite.group_doclite_isa"/>
+                    <field name="super_user" groups="doclite.group_doclite_isa"/>
+           	    </field>
+            </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>

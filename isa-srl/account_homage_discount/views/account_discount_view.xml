@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+        <record id="tree_account_discount_type" model="ir.ui.view">
+            <field name="name">account.discount.type.tree</field>
+            <field name="model">account.discount.type</field>
+            <field name="arch" type="xml">
+                <tree string="Tipologie Sconto" editable="bottom">
+	                <field name="name"/>
+	                <!-- 
+	                <field name="application"/>
+	                -->
+	                <field name="type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="form_account_discount_type" model="ir.ui.view">
+            <field name="name">account.discount.type.form</field>
+            <field name="model">account.discount.type</field>
+            <field name="arch" type="xml">
+                <form string="Tipologia Sconto">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <!-- 
+                            <field name="application"/>
+                            -->
+                            <field name="type"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_discount_type" model="ir.actions.act_window">
+            <field name="name">Tipologie Sconto</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.discount.type</field>
+            <field name="view_type">form</field>
+            <field name="help">Mostra e gestisci la lista delle tipologie di sconto applicabili globalmente ad un documento.</field>
+        </record>
+		
+        <menuitem action="action_discount_type" id="menu_discount_type" parent="account.menu_finance_configuration" sequence="27"/>
+      
+  </data>
+</openerp>

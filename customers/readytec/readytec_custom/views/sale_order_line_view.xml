@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="view_order_line_form_readytec" model="ir.ui.view">
+            <field name="name">sale.order.line.form.readytec</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/form//field[@name='product_id']" position="after">
+                    <field name="related_qty_available" readonly="1"/>
+                    <field name="related_incoming_qty" readonly="1"/>
+                    <field name="related_outgoing_qty" readonly="1"/>
+                    <field name="related_virtual_available" readonly="1"/>
+                    <field name="related_discount_preview" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

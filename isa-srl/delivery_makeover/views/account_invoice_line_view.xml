@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="account_invoice_picking_ref_tree_view" model="ir.ui.view">
+            <field name="name">view.account.invoice.line.picking.ref.form</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account.view_invoice_line_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <group>
+                        <group>
+                            <field name="ddt_origin" readonly="1" />
+                        </group>
+                    </group>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

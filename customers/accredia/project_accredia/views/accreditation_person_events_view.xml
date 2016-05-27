@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- Accreditation Person Event Search View-->
+        <record model="ir.ui.view" id="view_accreditation_person_events_search">
+            <field name="name">accreditation.person.events.search</field>
+            <field name="model">accreditation.person.events</field>
+            <field name="arch" type="xml">
+                <search string="Accreditation Person Event">     
+            		<field name="partner_id" />
+                </search>
+            </field>
+        </record>
+
+    	 <!-- Accreditation TeamForm View -->
+         <record model="ir.ui.view" id="view_accreditation_person_events_form">
+                <field name="name">accreditation.person.events.form</field>
+                <field name="model">accreditation.person.events</field>
+                <field name="arch" type="xml">
+                    <form string="Accreditation Person Event Form">
+                        <group>
+                            <field name="project_id" />
+                            <field name="partner_id" required="1" context="{'view_person': True, 'default_is_entity': 0, 'default_is_company': 0, 'default_customer':0, 'default_supplier':0, 'default_individual':True, 'search_default_individual':1}" domain="[('individual', '=', True),'|',('parent_id','=',None),('parent_id','=',False)]" />
+                            <field name="role_id" context="{'default_partner_id':partner_id}" />
+                            <field name="fnct_email" />
+                            <field name="fnct_phone" />
+                            <field name="attendance" />
+                            <field name="unit_id" context="{'default_project_id':project_id}" />
+                        </group>
+                    </form>
+                </field>
+         </record>
+
+        <!-- Accreditation Team Tree View -->
+        <record model="ir.ui.view" id="view_accreditation_person_events_tree">
+                <field name="name">accreditation.person.events.tree</field>
+                <field name="model">accreditation.person.events</field>
+                <field name="arch" type="xml">
+                    <tree string="Accreditation Person Event Tree">
+                        <field name="project_id" />
+                        <field name="partner_id" on_change="onchange_partner_id(partner_id, role_id)" required="1" context="{'view_person': True, 'default_is_entity': 0, 'default_is_company': 0, 'default_customer':0, 'default_supplier':0, 'default_individual':True, 'search_default_individual':1}" domain="[('individual', '=', True),'|',('parent_id','=',None),('parent_id','=',False)]" />
+                        <field name="role_id" context="{'default_partner_id':partner_id}" />
+                        <field name="fnct_email" />
+                        <field name="fnct_phone" />
+                        <field name="attendance" />
+                        <field name="unit_id" context="{'default_project_id':project_id}" />
+                    </tree>
+                </field>
+        </record>
+
+        <!-- Accreditation Person Event Action -->
+        <record model="ir.actions.act_window" id="action_accreditation_person_events">
+            <field name="name">Accreditation Person Event</field>
+            <field name="res_model">accreditation.person.events</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_accreditation_person_events_search"/>
+        </record>
+
+    </data>
+</openerp>

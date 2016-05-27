@@ -1,0 +1,264 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* montecristo_salesagents_commissions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-19 09:18+0000\n"
+"PO-Revision-Date: 2014-12-19 09:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: montecristo_salesagents_commissions
+#: model:res.groups,name:montecristo_salesagents_commissions.group_sale_agent
+#: view:res.partner:montecristo_salesagents_commissions.montecristo_view_res_partner_filter
+#: field:res.partner,is_current_salesagent:0
+#: field:sale.order,salesagent:0
+#: field:sale.order.line,salesagent:0
+msgid "Agente"
+msgstr "Agent"
+
+#. module: montecristo_salesagents_commissions
+#: field:account.invoice.line,commission_percentage_base:0
+msgid "Comm. Percentage Base"
+msgstr "Comm. Percentage Base"
+
+#. module: montecristo_salesagents_commissions
+#: model:mail.message.subtype,description:montecristo_salesagents_commissions.sale_order_new
+msgid "Creata Nuova Proposta d'Ordine"
+msgstr "New Order Proposal Created"
+
+#. module: montecristo_salesagents_commissions
+#: model:ir.model,name:montecristo_salesagents_commissions.model_salesagent_common
+msgid "Generic Utilities"
+msgstr "Generic Utilities"
+
+#. module: montecristo_salesagents_commissions
+#: code:addons/montecristo_salesagents_commissions/wizard/wizard_commissions_payment.py:41
+#: code:addons/montecristo_salesagents_commissions/wizard/wizard_invoice_commissions_payment.py:41
+#: code:addons/montecristo_salesagents_commissions/wizard/wizard_invoice_payment_cancellation.py:40
+#: code:addons/montecristo_salesagents_commissions/wizard/wizard_payment_cancellation.py:40
+#, python-format
+msgid "Invalid Operation!"
+msgstr "Invalid Operation!"
+
+#. module: montecristo_salesagents_commissions
+#: model:ir.model,name:montecristo_salesagents_commissions.model_account_invoice
+msgid "Invoice"
+msgstr "Invoice"
+
+#. module: montecristo_salesagents_commissions
+#: model:ir.model,name:montecristo_salesagents_commissions.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Invoice Line"
+
+#. module: montecristo_salesagents_commissions
+#: model:mail.message.subtype,name:montecristo_salesagents_commissions.sale_order_new
+msgid "Nuova Proposta d'Ordine"
+msgstr "New Order Proposal"
+
+#. module: montecristo_salesagents_commissions
+#: model:mail.message.subtype,description:montecristo_salesagents_commissions.partner_new
+#: model:mail.message.subtype,name:montecristo_salesagents_commissions.partner_new
+msgid "Nuovo Partner Creato"
+msgstr "New Partner Created"
+
+#. module: montecristo_salesagents_commissions
+#: field:account.invoice.line,paid_commission_base:0
+msgid "Paid"
+msgstr "Paid"
+
+#. module: montecristo_salesagents_commissions
+#: field:account.invoice.line,paid_commission_value_base:0
+msgid "Paid Commission Base"
+msgstr "Paid Commission Base"
+
+#. module: montecristo_salesagents_commissions
+#: field:account.invoice.line,paid_commission_percentage_value_base:0
+msgid "Paid Commission Percentage Base"
+msgstr "Paid Commission Percentage Base"
+
+#. module: montecristo_salesagents_commissions
+#: model:ir.model,name:montecristo_salesagents_commissions.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: montecristo_salesagents_commissions
+#: field:account.invoice.line,payment_commission_date_base:0
+msgid "Payment Commission Base Date"
+msgstr "Payment Commission Base Date"
+
+#. module: montecristo_salesagents_commissions
+#: field:account.invoice.line,payment_commission_note_base:0
+msgid "Payment Commission Base Note"
+msgstr "Payment Commission Base Note"
+
+#. module: montecristo_salesagents_commissions
+#: field:product.category,subagent_commission_reduction:0
+#: field:product.product,subagent_commission_reduction:0
+#: field:res.partner,subagent_commission_reduction:0
+msgid "Percentuale abbattimento subagente %"
+msgstr "Subagent Reduction Percentage %"
+
+#. module: montecristo_salesagents_commissions
+#: field:partner.product_category_commission,subagent_category_commission_reduction:0
+#: field:res.partner,subagent_category_commission_reduction:0
+msgid "Percentuale abbattimento subagente per categoria %"
+msgstr "Subagent Reduction Percentage per Category %"
+
+#. module: montecristo_salesagents_commissions
+#: field:partner.product_commission,subagent_product_commission_reduction:0
+#: field:res.partner,subagent_product_commission_reduction:0
+msgid "Percentuale abbattimento subagente per prodotto %"
+msgstr "Subagent Reduction Percentage per Product %"
+
+#. module: montecristo_salesagents_commissions
+#: model:ir.model,name:montecristo_salesagents_commissions.model_product_product
+msgid "Product"
+msgstr "Product"
+
+#. module: montecristo_salesagents_commissions
+#: model:ir.model,name:montecristo_salesagents_commissions.model_product_category
+msgid "Product Category"
+msgstr "Product Category"
+
+#. module: montecristo_salesagents_commissions
+#: field:account.invoice.line,commission_base:0
+msgid "Provv. Total Base"
+msgstr "Provv. Total Base"
+
+#. module: montecristo_salesagents_commissions
+#: model:ir.model,name:montecristo_salesagents_commissions.model_partner_product_category_commission
+msgid "Relation for Partner, category of products and commissions"
+msgstr "Relation for Partner, category of products and commissions"
+
+#. module: montecristo_salesagents_commissions
+#: model:ir.model,name:montecristo_salesagents_commissions.model_partner_product_commission
+msgid "Relation for Partner, products and commissions"
+msgstr "Relation for Partner, products and commissions"
+
+#. module: montecristo_salesagents_commissions
+#: model:ir.model,name:montecristo_salesagents_commissions.model_sale_order
+msgid "Sales Order"
+msgstr "Sales Order"
+
+#. module: montecristo_salesagents_commissions
+#: model:ir.model,name:montecristo_salesagents_commissions.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Sales Order Line"
+
+#. module: montecristo_salesagents_commissions
+#: view:wzd.commissions_payment:montecristo_salesagents_commissions.wzd_commissions_payment_view
+#: field:wzd.commissions_payment,salesagent_id:0
+#: view:wzd.invoice_commissions_payment:montecristo_salesagents_commissions.wzrd_invoice_commissions_payment_view
+#: field:wzd.invoice_commissions_payment,salesagent_id:0
+#: field:wzd.invoice_payment_cancellation,salesagent_id:0
+#: field:wzd.payment_cancellation,salesagent_id:0
+msgid "Salesagent"
+msgstr "Salesagent"
+
+#. module: montecristo_salesagents_commissions
+#: field:account.invoice.line,salesagent_id_base:0
+msgid "Salesagent Base"
+msgstr "Salesagent Base"
+
+#. module: montecristo_salesagents_commissions
+#: code:addons/montecristo_salesagents_commissions/wizard/wizard_commissions_payment.py:41
+#: code:addons/montecristo_salesagents_commissions/wizard/wizard_invoice_commissions_payment.py:41
+#: code:addons/montecristo_salesagents_commissions/wizard/wizard_invoice_payment_cancellation.py:40
+#: code:addons/montecristo_salesagents_commissions/wizard/wizard_payment_cancellation.py:40
+#, python-format
+msgid "Select at least one line!"
+msgstr "Select at least one line!"
+
+#. module: montecristo_salesagents_commissions
+#: view:res.partner:montecristo_salesagents_commissions.montecristo_view_res_partner_filter
+#: field:res.partner,second_salesagent_for_customer_id:0
+msgid "Subagente"
+msgstr "Subagent"
+
+#. module: montecristo_salesagents_commissions
+#: model:res.groups,comment:montecristo_salesagents_commissions.group_sale_agent
+msgid "The user has specific restrictions for agents."
+msgstr "The user has specific restrictions for agents."
+
+#. module: montecristo_salesagents_commissions
+#: view:account.invoice.line:montecristo_salesagents_commissions.view_invoice_provvigioni_tree_montecristo
+msgid "commissions_base"
+msgstr "commissions_base"
+
+#. module: montecristo_salesagents_commissions
+#: view:account.invoice.line:montecristo_salesagents_commissions.view_invoice_provvigioni_tree_montecristo
+msgid "darkorange:paid_commission != False and paid_commission_base != False"
+msgstr "darkorange:paid_commission != False and paid_commission_base != False"
+
+#. module: montecristo_salesagents_commissions
+#: view:res.partner:montecristo_salesagents_commissions.view_res_partner_salesagent_commission_montecristo
+msgid "e.g. BE0477472701"
+msgstr "e.g. BE0477472701"
+
+#. module: montecristo_salesagents_commissions
+#: view:res.partner:montecristo_salesagents_commissions.view_res_partner_salesagent_commission_montecristo
+msgid "onchange_salesagent_for_customer_id()"
+msgstr "onchange_salesagent_for_customer_id()"
+
+#. module: montecristo_salesagents_commissions
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_salesagent_view_order_form_inherit
+msgid "{'invisible':['|','|',('salesagent','=',True),('picking_ids','=',False),('picking_ids','=',[])]}"
+msgstr "{'invisible':['|','|',('salesagent','=',True),('picking_ids','=',False),('picking_ids','=',[])]}"
+
+#. module: montecristo_salesagents_commissions
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_salesagent_view_order_form
+msgid "{'invisible':['|',('salesagent','=',True),('invoice_exists','=',False)]}"
+msgstr "{'invisible':['|',('salesagent','=',True),('invoice_exists','=',False)]}"
+
+#. module: montecristo_salesagents_commissions
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_salesagent_view_order_form
+msgid "{'invisible':['|',('salesagent','=',True)]}"
+msgstr "{'invisible':['|',('salesagent','=',True)]}"
+
+#. module: montecristo_salesagents_commissions
+#: view:res.partner:montecristo_salesagents_commissions.view_delivery_makeover_res_partner_form2_montecristo
+#: view:res.partner:montecristo_salesagents_commissions.view_res_partner_intracee_montecristo
+#: view:res.partner:montecristo_salesagents_commissions.view_res_partner_salesagent_commission_montecristo
+msgid "{'invisible':[('is_current_salesagent','=',True)]}"
+msgstr "{'invisible':[('is_current_salesagent','=',True)]}"
+
+#. module: montecristo_salesagents_commissions
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_salesagent_view_order_form
+msgid "{'invisible':[('salesagent','=',True)]}"
+msgstr "{'invisible':[('salesagent','=',True)]}"
+
+#. module: montecristo_salesagents_commissions
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_salesagent_view_order_form
+msgid "{'readonly':['|',('state','not in',['draft','sent']),('salesagent','=',True)], 'required':False}"
+msgstr "{'readonly':['|',('state','not in',['draft','sent']),('salesagent','=',True)], 'required':False}"
+
+#. module: montecristo_salesagents_commissions
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_salesagent_view_order_form
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_salesagent_view_order_form2
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_salesagent_view_order_form_inherit
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_view_sale_delivery_makeover_form
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_view_sale_journal_form
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_view_sale_salesagent_commissions_form_crm
+msgid "{'readonly':[('salesagent','=',True),('state','not in',['draft','sent'])]}"
+msgstr "{'readonly':[('salesagent','=',True),('state','not in',['draft','sent'])]}"
+
+#. module: montecristo_salesagents_commissions
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_salesagent_view_order_form2
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_salesagent_view_order_form_inherit
+#: view:sale.order:montecristo_salesagents_commissions.montecristo_view_sale_salesagent_commissions_form
+msgid "{'readonly':[('salesagent','=',True)]}"
+msgstr "{'readonly':[('salesagent','=',True)]}"
+
+#. module: montecristo_salesagents_commissions
+#: view:res.partner:montecristo_salesagents_commissions.view_res_partner_salesagent_commission_montecristo
+msgid "{'required': [('is_company','=',True)]}"
+msgstr "{'required': [('is_company','=',True)]}"
+

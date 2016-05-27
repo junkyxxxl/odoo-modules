@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+	 <!-- Invoice Classification Form View -->
+     <record model="ir.ui.view" id="view_account_invoice_classification_form">
+            <field name="name">account.invoice.classification.form</field>
+            <field name="model">account.invoice.classification</field>
+            <field name="arch" type="xml">
+                <form string="Invoice Classification">
+                 	<field name="code" required="1"/>        
+     		    	<field name="description" required="1"/>
+                </form>
+            </field>
+     </record>
+
+    <!-- Invoice Classification Tree View -->
+    <record model="ir.ui.view" id="view_account_invoice_classification_tree">
+            <field name="name">account.invoice.classification.tree</field>
+            <field name="model">account.invoice.classification</field>
+            <field name="arch" type="xml">
+                <tree string="Invoice Classification">
+					<field name="code" />        
+     		    	<field name="description" />                  
+                </tree>
+            </field>
+    </record>
+
+    <!-- Invoice Classification Search View-->
+    <record model="ir.ui.view" id="view_account_invoice_classification_search">
+        <field name="name">account.invoice.classification.search</field>
+        <field name="model">account.invoice.classification</field>
+        <field name="arch" type="xml">
+            <search string="Invoice Classification Search">     
+				<field name="code" />        
+     		    <field name="description" />
+            </search>
+        </field>
+    </record>
+
+    <!-- Invoice Classification Action -->
+    <record model="ir.actions.act_window" id="action_account_invoice_classification">
+        <field name="name">Offices</field>
+        <field name="res_model">account.invoice.classification</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_account_invoice_classification_search"/>
+    </record>
+    
+	<!-- Menu item -->
+	<menuitem name="Invoice Classification" parent="account.menu_finance"
+         id="account_invoice_classification_menu" sequence="11" />
+
+    <menuitem name="Invoice Classification" parent="account_invoice_classification_menu" id="account_invoice_classification" action="action_account_invoice_classification" sequence="22"/> 
+
+    </data>
+</openerp>

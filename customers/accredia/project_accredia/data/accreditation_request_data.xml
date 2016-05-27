@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- Request-related subtypes for messaging / Chatter -->
+        <record id="acc_request_new" model="mail.message.subtype">
+            <field name="name">Richiesta Accreditamento Creata</field>
+            <field name="res_model">accreditation.request</field>
+            <field name="default" eval="True"/>
+            <field name="description">Richiesta di Accreditamento Creata</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<record id="view_pee_res_company_inherit_form" model="ir.ui.view">
+			<field name="name">Company Form view</field>
+			<field name="model">res.company</field>
+			<field name="inherit_id" ref="base.view_company_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//page[@string='Configuration']" position="inside">
+				 	 <group>
+				 	   <group name="barcode" string="Barcode"> 
+				 	       <field name="barcode_at_product_create"/> 
+				 	   </group> 
+				 	  </group>
+                </xpath>      
+			</field>
+		</record>
+</data>
+</openerp>

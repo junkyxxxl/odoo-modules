@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_essence_tree" model="ir.ui.view">
+            <field name="name">res.essence.tree</field>
+            <field name="model">res.essence</field>
+            <field name="arch" type="xml">
+                <tree string="Essence">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_essence_form" model="ir.ui.view">
+            <field name="name">res.essence.form</field>
+            <field name="model">res.essence</field>
+            <field name="arch" type="xml">
+                <form string="Essence">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_essence" model="ir.actions.act_window">
+            <field name="name">Essences</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.essence</field>
+            <field name="view_type">form</field>
+            <field name="help">Display and manage the list of all essences that can be assigned to your product records.</field>
+        </record>
+		
+        <menuitem action="action_essence" id="menu_essence" parent="stock.menu_product_in_config_stock" sequence="20" groups="base.group_no_one"/>
+
+    </data>
+</openerp>

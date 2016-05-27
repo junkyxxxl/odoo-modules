@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Stock Sheet Result View -->
+
+        <record id="view_stock_sheet_result_form" model="ir.ui.view">
+            <field name="name">wizard.stock.sheet.result.form</field>
+            <field name="model">wizard.stock.sheet.result</field>
+            <field name="arch" type="xml">
+                <form string="Stock Sheet Result" version="7.0">
+                     <group>
+                     	<field name="company_id" readonly="1" />
+                        <field name="product_id" readonly="1" />
+                        <field name="warehouse_id" readonly="1" />
+                        <field name="date_from" readonly="1" />
+                        <field name="date_to" readonly="1" />
+                    </group>
+                    <field name="line_ids" readonly="1">
+                        <tree>
+                            <field name="result_id" invisible="1"/>
+                            <field name="date" />
+                            <field name="document_number"/>
+                            <field name="document_origin"/>
+                            <field name="partner_id" />
+                            <field name="move_id" invisible="1"/>
+                            <field name="unit_of_measure" />
+                            <field name="cause" />
+                            <field name="sign" />
+                            <field name="quantity" invisible="1"/>
+                            <field name="fnct_quantity" />
+                            <field name="warehouse_id" />
+                            <button name="view_stock_move" icon="gtk-edit" string="View" type="object" context="{'move_id': move_id}" attrs="{'invisible': [('move_id', 'in', [False,None])]}"/>
+                        </tree>
+                    </field>
+                    <footer>
+                         <button name="print_report_pdf2"
+                                string="Print"
+                                icon="gtk-print"
+                                type="object"
+                                default_focus="1"
+                                class="oe_highlight"/>
+                        
+                        <button name="view_new_report"
+                                context="{'default_product_id': product_id, 'default_date_from': date_from, 'default_date_to': date_to}"
+                                string="New Report"
+                                icon="gtk-new"
+                                type="object"/>
+                    </footer>
+                   </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

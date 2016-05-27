@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<template id="report_pricelist">
+		    <t t-call="report.html_container">
+
+                <t t-esc="setLang('it_IT')"/>
+                
+				<t t-set="family" t-value="get_family(data)"/>	 
+				<t t-set="subfamily" t-value="get_subfamily(data)"/>
+				<t t-set="pricelist" t-value="get_pricelist(data)"/>  
+				<t t-set="location_names" t-value="get_location_names(data)"/>     
+				<t t-set="locations" t-value="get_locations(data)"/>
+				<t t-set="show_onhand" t-value="get_show_hand(data)"/>
+					       		    	
+	        	<div class="header">
+	        		<!--HEADER DEL DOCUMENTO-->		        		
+	        		<div class="row">
+	        			<div class="col-xs-12" style="font-size: small; margin-top: 36px; margin-bottom: 12px; height: 62px; min-height: 62px !important;">
+	        				<table width="100%">
+	        					<tr style="font-size: small; padding-left: 1px;">
+	        						<td colspan="4"><b><span>*** STAMPA LISTINO - </span><span t-esc="pricelist.name"/><span> ***</span></b></td>
+	        					</tr>
+	        					<tr>	
+	        						<td>
+	        							<span><b>Famiglia:</b></span>
+	        							<t t-if="family">
+		        							<span t-esc="family.name"/>
+		        						</t>
+		        						<t t-if="not family">
+		        							<span> - </span>
+		        						</t>
+	        						</td>
+	        						<td>
+	        							<span><b>Sottofamiglia:</b></span>
+	        							<t t-if="subfamily">
+		        							<span t-esc="subfamily.name"/>
+		        						</t>
+		        						<t t-if="not subfamily">
+		        							<span> - </span>
+		        						</t>		        						
+        							</td>
+	        						<td><span><b>Data:</b></span><span t-esc="get_date_today()"/></td>
+	        						<td><span><b>Pag.:</b></span><span style="text-align: left; padding-left: 5px;" class="page"/></td>
+	        					</tr>	        							        							        												        					
+	        				</table> 
+						</div>
+					</div>
+	        		<!--HEADER DEL CORPO DOCUMENTO-->
+
+					<t t-if="show_onhand">	        			
+		        		<div class="row">
+		        			<div class="col-xs-12">
+		        				<table style="width:100%; border: 1px solid black; table-layout:fixed;">
+		        					<tr style="font-size: small; border: 1px solid black;">
+		        						<td style="width: 15%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">CODICE ARTICOLO</span>
+		        							</div>		        							
+		        						</td>
+		        						<td style="width: 40%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">DESCRIZIONE</span>
+		        							</div>		        							
+		        						</td>
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">UN. MS.</span>
+		        							</div>		        							
+		        						</td>	        						
+		        						<td style="width: 10%; border: 1px solid black; vertical-align: middle; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="location_names[0]"/>
+		        							</div>	
+		        						</td>		 
+		        						<td style="width: 10%; border: 1px solid black; vertical-align: middle; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;" t-esc="location_names[1]"/>
+		        							</div>	
+		        						</td>				
+		        						<td style="width: 10%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">QTA' MINIMA</span>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 10%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">PREZZO</span>
+		        							</div>	
+		        						</td>				        								        								        								        									        											        								        						      								        						
+		        					</tr>
+		        				</table>
+		        			</div>
+		        		</div>						
+					</t>
+												        				        		
+					<t t-if="not show_onhand">	        			
+		        		<div class="row">
+		        			<div class="col-xs-12">
+		        				<table style="width:100%; border: 1px solid black; table-layout:fixed;">
+		        					<tr style="font-size: small; border: 1px solid black;">
+		        						<td style="width: 15%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">CODICE ARTICOLO</span>
+		        							</div>		        							
+		        						</td>
+		        						<td style="width: 60%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">DESCRIZIONE</span>
+		        							</div>		        							
+		        						</td>
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">UN. MS.</span>
+		        							</div>		        							
+		        						</td>	        									
+		        						<td style="width: 10%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">QTA' MINIMA</span>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 10%; border: 1px solid black; vertical-align: middle;">
+		        							<div style="padding-left: 1px;">
+		        								<span style="text-align: left;">PREZZO</span>
+		        							</div>	
+		        						</td>				        								        								        								        									        											        								        						      								        						
+		        					</tr>
+		        				</table>
+		        			</div>
+		        		</div>						
+					</t>
+					
+	        	</div>	        
+	        	
+	        	<!--CORPO DOCUMENTO-->
+	        		
+                <div class="page" >
+                    <div class="oe_structure" >
+                    	
+						<t t-if="show_onhand">
+		                    <div class="row" >								
+		                        <div class="col-xs-12" >
+			        				<table style="width:100%; height:100%; border: 0px; table-layout:fixed;">
+			        					<tr style="height: 0px;">
+			        						<td style="width: 15%;"/>
+			        						<td style="width: 40%;"/>
+			        						<td style="width: 5%;"/>
+			        						<td style="width: 10%;"/>
+											<td style="width: 10%;"/>
+											<td style="width: 10%;"/>
+											<td style="width: 10%;"/>			        						
+			        					</tr>
+			        					<t t-foreach="get_records(pricelist, family, subfamily, locations, data['form']['show_onhand'])" t-as="line">
+			        						
+			        						<t t-if="line[8]==0">
+					        					<tr t-att-style="'page-break-inside:avoid; font-size: small; background-color: '+line[7]+';'">
+					        						<td style="width: 15%; border: 1px solid black; vertical-align: middle;">
+					        							<div style="padding-left: 1px;">
+					        								<span style="text-align: left;" t-esc="line[0]"/>
+					        							</div>		        							
+					        						</td>
+					        						<td style="width: 40%; border: 1px solid black; vertical-align: middle;">
+					        							<div style="padding-left: 1px;">
+					        								<span style="text-align: left;" t-esc="line[1]"/>
+					        							</div>		        							
+					        						</td>
+					        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+					        							<div style="padding-left: 1px;">
+					        								<span style="text-align: left;" t-esc="line[2]"/>
+					        							</div>		        							
+					        						</td>	        					
+					        						<td style="text-align: right; width: 10%; border: 1px solid black; vertical-align: middle; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+					        							<div style="padding-right: 3px;">
+					        								<span style="text-align: right;" t-esc="line[3]"/>
+					        							</div>	
+					        						</td>		 
+					        						<td style="text-align: right; width: 10%; border: 1px solid black; vertical-align: middle; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;">
+					        							<div style="padding-right: 3px;">
+					        								<span style="text-align: right;" t-esc="line[4]"/>
+					        							</div>	
+					        						</td>				
+					        						<td style="text-align: right; width: 10%; border: 1px solid black; vertical-align: middle;">
+					        							<div style="padding-right: 3px;">
+					        								<span style="text-align: right;" t-esc="line[5]"/>
+					        							</div>	
+					        						</td>	
+					        						<td style="text-align: right; width: 10%; border: 1px solid black; vertical-align: middle;">
+					        							<div style="padding-right: 3px;">
+					        								<span style="text-align: right;" t-esc="line[6]"/>
+					        							</div>	
+					        						</td>
+					        					</tr>
+				        					</t>
+
+			        						<t t-if="line[8]==1">
+					        					<tr style="page-break-inside:avoid; font-size: small; background-color: #FFFFFF; border: 0px ;">
+			        								<td colspan="7" style="border: 0px ;">
+			        									<br />
+			        								</td>
+			        							</tr>			        							
+					        					<tr style="page-break-inside:avoid; font-size: small; background-color: #EEEEEE; border: 0px ;">
+					        						<td colspan="2" style="width: 55%; border: 1px solid black; border-right: 0px; vertical-align: middle;">
+					        							<div style="padding-left: 1px;">
+					        								<span style="text-align: left;" t-esc="line[0]"/>
+					        							</div>		        							
+					        						</td>
+					        						<td colspan="5" style="width: 45%; border: 1px solid black; border-left: 0px; vertical-align: middle;">
+					        							<div style="padding-left: 1px;">
+					        								<span style="text-align: left;" t-esc="line[1]"/>
+					        							</div>		        							
+					        						</td>
+					        					</tr>				        					
+				        					</t>				        									        					
+				        					
+			        					</t>
+			        				</table>
+		                        </div>			                        		                        
+		                    </div>                    		                    
+						</t>
+						<t t-if="not show_onhand">
+		                    <div class="row" >								
+		                        <div class="col-xs-12" >
+			        				<table style="width:100%; height:100%; border: 0px; table-layout:fixed;">
+			        					<tr style="height: 0px;">
+			        						<td style="width: 15%;"/>
+			        						<td style="width: 60%;"/>
+			        						<td style="width: 5%;"/>
+			        						<td style="width: 10%;"/>
+											<td style="width: 10%;"/>			        						
+			        					</tr>			        					
+			        					<t t-foreach="get_records(pricelist, family, subfamily, locations, show_onhand)" t-as="line">
+			        						
+			        						<t t-if="line[8]==0">
+					        					<tr t-att-style="'page-break-inside:avoid; font-size: small; background-color: '+line[7]+';'">
+					        						<td style="width: 15%; border: 1px solid black; vertical-align: middle;">
+					        							<div style="padding-left: 1px;">
+					        								<span style="text-align: left;" t-esc="line[0]"/>
+					        							</div>		        							
+					        						</td>
+					        						<td style="width: 60%; border: 1px solid black; vertical-align: middle;">
+					        							<div style="padding-left: 1px;">
+					        								<span style="text-align: left;" t-esc="line[1]"/>
+					        							</div>		        							
+					        						</td>
+					        						<td style="width: 5%; border: 1px solid black; vertical-align: middle;">
+					        							<div style="padding-left: 1px;">
+					        								<span style="text-align: left;" t-esc="line[2]"/>
+					        							</div>		        							
+					        						</td>	        									
+					        						<td style="text-align: right; width: 10%; border: 1px solid black; vertical-align: middle;">
+					        							<div style="padding-right: 3px;">
+					        								<span style="text-align: right;" t-esc="line[5]"/>
+					        							</div>	
+					        						</td>	
+					        						<td style="text-align: right; width: 10%; border: 1px solid black; vertical-align: middle;">
+					        							<div style="padding-right: 3px;">
+					        								<span style="text-align: right;" t-esc="line[6]"/>
+					        							</div>	
+					        						</td>
+					        					</tr>
+				        					</t>
+				        					
+			        						<t t-if="line[8]==1">
+					        					<tr style="page-break-inside:avoid; font-size: small; background-color: #FFFFFF; border: 0px ;">
+			        								<td colspan="5" style="border: 0px ;">
+			        									<br />
+			        								</td>
+			        							</tr>
+					        					<tr style="page-break-inside:avoid; font-size: small; background-color: #EEEEEE; border: 0px ;">
+					        						<td colspan="2" style="width: 75%; border: 1px solid black; border-right: 0px; vertical-align: middle;">
+					        							<div style="padding-left: 1px;">
+					        								<span style="text-align: left;" t-esc="line[0]"/>
+					        							</div>		        							
+					        						</td>
+					        						<td colspan="3" style="width: 75%; border: 1px solid black; border-left: 0px; vertical-align: middle;">
+					        							<div style="padding-left: 1px;">
+					        								<span style="text-align: left;" t-esc="line[1]"/>
+					        							</div>		        							
+					        						</td>
+					        					</tr>				        					
+				        					</t>
+				        									        					
+			        					</t>
+			        				</table>
+		                        </div>			                        		                        
+		                    </div>                    		                    
+						</t>						
+
+	                    
+	                </div>
+                </div>
+
+        	</t>
+		</template>		
+		
+	</data>
+</openerp>

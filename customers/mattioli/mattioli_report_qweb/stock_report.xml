@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+        	id="qweb_stock_report" 
+        	string="Package BarCode" 
+           	model="stock.quant.package" 
+        	report_type="qweb-pdf" 
+        	name="mattioli_report_qweb.report_package_barcode" 
+        	file="mattioli_report_qweb.report_package_barcode" 
+        />
+        <record id="qweb_stock_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="mattioli_report_qweb.paperformat_mattioli_package"/>
+        </record>    
+
+        <report 
+        	id="mattioli_qweb_product_report" 
+        	string="Product BarCode" 
+           	model="product.product" 
+        	report_type="qweb-pdf" 
+        	name="mattioli_report_qweb.mattioli_report_product_barcode" 
+        	file="mattioli_report_qweb.mattioli_report_product_barcode" 
+        />
+        <record id="mattioli_qweb_product_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="mattioli_report_qweb.paperformat_mattioli_product"/>
+        </record>           
+
+        <report
+        	id="qweb_mattioli_invoice_report"
+        	string="Stampa Fattura Mattioli"
+           	model="account.invoice"
+        	report_type="qweb-pdf"
+        	name="mattioli_report_qweb.mattioli_report_invoice"
+        	file="mattioli_report_qweb.mattioli_report_invoice"
+        />
+        <record id="qweb_mattioli_invoice_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="mattioli_report_qweb.paperformat_mattioli_euro"/>
+        </record> 
+
+        <report
+        	id="qweb_mattioli_saleorder_report"
+        	string="Stampa Ordine di Vendita Mattioli"
+           	model="sale.order"
+        	report_type="qweb-pdf"
+        	name="mattioli_report_qweb.mattioli_report_saleorder"
+        	file="mattioli_report_qweb.mattioli_report_saleorder"
+        />
+        <record id="qweb_mattioli_saleorder_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="mattioli_report_qweb.paperformat_mattioli_euro"/>
+        </record>         
+       
+        <report
+        	id="qweb_mattioli_ddt_report"
+        	string="Stampa DDT Mattioli"
+           	model="stock.picking.ddt"
+        	report_type="qweb-pdf"
+        	name="mattioli_report_qweb.mattioli_report_ddt"
+        	file="mattioli_report_qweb.mattioli_report_ddt"
+        />
+        <record id="qweb_mattioli_ddt_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="mattioli_report_qweb.paperformat_mattioli_euro"/>
+        </record>           
+        
+    </data>
+</openerp>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Company View -->
+        <record id="view_res_company_account_makeover_readytec" model="ir.ui.view">
+            <field name="name">view.res.company.account.makeover.readytec.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="account_makeover.view_res_company_account_makeover"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@string='Sub-Accounting Generation']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+     </data>
+</openerp>

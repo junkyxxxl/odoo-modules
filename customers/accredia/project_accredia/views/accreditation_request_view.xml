@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+    <!-- Accreditation Request Search View-->
+    <record model="ir.ui.view" id="view_accreditation_request_search">
+        <field name="name">accreditation.request.search</field>
+        <field name="model">accreditation.request</field>
+        <field name="arch" type="xml">
+            <search string="Accreditation Request">
+                <field name="partner_id"  />
+                <field name="department_id" />
+                <field name="standard_id" />
+                <field name="user_id" domain="[('is_technical_officer','=',True)]" />
+            </search>
+        </field>
+    </record>
+
+     <!-- Accreditation Request Form View -->
+     <record model="ir.ui.view" id="view_accreditation_request_form">
+            <field name="name">accreditation.request.form</field>
+            <field name="model">accreditation.request</field>
+            <field name="arch" type="xml">
+                <form string="Accreditation Request Form">
+                    <header>
+                        <button name="action_E" class="oe_highlight" type="object"
+                                string="Imposta in Esame"
+                                states="G"/>
+                        <button name="action_R" class="oe_highlight" type="object"
+                                string="Rigetta"
+                                states="E"/>
+                        <field name="state" widget="statusbar" statusbar_visible="G,E"/>
+                    </header>
+                <sheet string="Accreditation Request">
+                    <div class="oe_title">
+                        <group>
+                            <group>
+                                <field name="request_type" required="1" />
+                                <field name="department_id" />
+                                <field name="standard_id" />
+                                <field name="first_time" invisible="1" />
+                                <field name="project_id" attrs="{'invisible': [('state','!=', 'A')]}"/>
+                                <field name="partner_id"
+                                       domain="[('is_entity','=',True)]"
+                                       context="{'default_is_entity': True}" />
+                                <field name="unit_id" context="{'default_partner_id':partner_id}" />
+                                <field name="task_id" invisible="1" />
+                                <field name="cab_code" attrs="{'required': [('state','=', 'A')]}" />
+                                <field name="unit_acronym" />
+                            </group>
+                        </group>
+                    </div>
+                    <div class="oe_right oe_button_box" name="buttons"> </div>
+                    <group>
+                        <group>
+                            <field name="user_id" domain="[('is_technical_officer','=',True)]" />
+                        </group>
+                        <group>
+                            <field name="date" />
+                            <field name="date_received" />
+                            <field name="date_approved" />
+                            <field name="date_denial" />
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Lines">
+                            <group>
+                                <field name="lines_ids" colspan="4" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="unit_id" domain="[('partner_id','=',parent.partner_id)]"/>
+                                        <field name="availability_date" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Note">
+                            <field name="note" colspan="4" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+     </record>
+
+    <!-- Accreditation Request Tree View -->
+    <record model="ir.ui.view" id="view_accreditation_request_tree">
+            <field name="name">accreditation.request.tree</field>
+            <field name="model">accreditation.request</field>
+            <field name="arch" type="xml">
+                <tree string="Accreditation Request Tree">
+                    <field name="request_type" required="1" />
+                    <field name="partner_id" />
+                    <field name="department_id" />
+                    <field name="standard_id" />
+                    <field name="user_id" domain="[('is_technical_officer','=',True)]" />
+                    <field name="first_time" invisible="1" />
+                    <field name="state" />
+                    <field name="project_id" attrs="{'invisible': [('state','!=', 'A')]}"/>
+                    <field name="date" />
+                    <field name="date_received" />
+                    <field name="date_approved" />
+                    <field name="date_denial" />
+                </tree>
+            </field>
+    </record>
+
+    <!-- Accreditation Request Action -->
+    <record model="ir.actions.act_window" id="action_accreditation_request">
+        <field name="name">Richiesta di Accreditamento</field>
+        <field name="res_model">accreditation.request</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_accreditation_request_search"/>
+    </record>
+
+    </data>
+</openerp>

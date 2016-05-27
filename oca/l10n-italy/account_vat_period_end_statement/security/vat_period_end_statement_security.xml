@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="0">
+	<record model="ir.rule" id="account_vat_period_end_statement_multicompany_rule">
+        <field name="name">account.vat.period.end.statement multi company</field>
+        <field name="model_id" ref="account_vat_period_end_statement.model_account_vat_period_end_statement"/>        
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+        <field eval="1" name="perm_read"/>
+        <field eval="1" name="perm_write"/>
+        <field eval="1" name="perm_unlink"/>
+        <field eval="1" name="perm_create"/>		
+    </record>        
+</data>
+</openerp>

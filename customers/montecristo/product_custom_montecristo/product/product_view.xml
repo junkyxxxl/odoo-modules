@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="montecristo_product_template_kanban_view" model="ir.ui.view">
+            <field name="name">montecristo.product.template.product.kanban</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_kanban_view"/>            
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace"> 
+                	<field name="showed_name" />
+                </xpath> 
+                <xpath expr="//ul/li/field[@name='lst_price']/.." position="replace" /> 
+            </field>
+        </record>        
+        
+         <record id="montecristo_product_template_tree_view" model="ir.ui.view">
+            <field name="name">montecristo.product.template.tree.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+             <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace"> 
+                	<field name="tmpl_default_code"/>
+                	<field name="showed_name" />
+                </xpath>                                   
+             </field>
+        </record>       
+        
+        <record id="montecristo_product_view_form" model="ir.ui.view">
+            <field name="name">montecristo.product.form.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+             <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@string='Accounting']/group/div/field[@name='categ_id']" position="replace" />
+                <xpath expr="//notebook/page[@string='Accounting']/group/label[@for='categ_id']" position="replace" />                  
+                <xpath expr="//notebook/page[@string='Accounting']" position="after">
+                	<page string="Classificatori Articoli">
+                		<group>
+							<field name="famiglia" domain="[('type','=','family')]" context="{'default_type': 'family'}"/>
+							<field name="sottofamiglia" domain="[('type','=','subfamily')]" context="{'default_type': 'subfamily'}"/>
+		        			<field name="categ_id"  filter_domain="[('categ_id', 'child_of', self)]" string="Gruppo"/>						
+							<field name="sottogruppo" domain="[('type','=','subgroup')]" context="{'default_type': 'subgroup'}"/>
+							<field name="composizione" domain="[('type','=','composition')]" context="{'default_type': 'composition'}"/>			
+							<field name="origine" domain="[('type','=','origin')]" context="{'default_type': 'origin'}"/>
+							<field name="produzione" required="1" domain="[('type','=','production')]" context="{'default_type': 'production'}"/>	                			
+                		</group>
+                	</page>																																	
+                </xpath>
+                <xpath expr="//field[@name='active']" position="after"> 
+                	<field name="is_shipping"/>
+                </xpath>            
+                <xpath expr="//label[@for='sale_ok']" position="after"> 
+                      <button string="Elimina da Preventivi" name="remove_from_quotation" type="object"/>
+                </xpath>                  
+             </field>
+        </record>
+
+        <record id="montecristo_product_template_only_view_form" model="ir.ui.view">
+            <field name="name">montecristo.product.template.only.form.view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+             <field name="arch" type="xml">
+                <xpath expr='//field[@name="default_code"]' position="after">
+                    <field name="tmpl_default_code" required="True"/>                	
+                </xpath>
+                <xpath expr='//field[@name="default_code"]' position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>               	
+                </xpath>
+                <xpath expr='//field[@name="ean13"]' position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>               	
+                </xpath>                       
+                <xpath expr='//field[@name="attribute_id"]' position="attributes">
+                    <attribute name="on_change">onchange_attribute_id(attribute_id)</attribute>               	                
+                </xpath>
+                <xpath expr='//page[@string="Sales"]' position="after">
+                    <page string="Sale Pricelists">                    
+	                    <field groups="base.group_sale_manager" name="pricelist_ids">
+	                        <tree>
+	                            <field name="name"/>
+	                            <field name="price_version_id"/>
+	                            <field name="price_surcharge" string="Price"/>
+	                        </tree>
+	                        <form>
+			                    <label for="name" class="oe_edit_only"/>
+			                    <h1><field colspan="4" name="name"/></h1>
+								<group col="2">
+								    <field name="price_version_id"/>
+								</group>
+			                    <group col="4">
+			                        <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+			                        <field name="min_quantity"/>
+			                        <field name="sequence"/>
+			                    </group>
+			                    <separator string="Price Computation"/>
+			                    <div class="oe_grey" groups="product.group_uom">
+			                        <p>The computed price is expressed in the default Unit of Measure of the product.</p>
+			                    </div>
+			                    <group col="4">
+			                        <field name="base"/>
+			                        <field name="base_pricelist_id" attrs="{'invisible':[('base', '!=', -1)],'required': [('base','=', -1)], 'readonly': [('base','!=', -1)]}"/>
+			                    </group>
+			                    <group col="6" colspan="5">
+			                        <label string="New Price ="/>
+			                        <label string="Base Price"/>
+			                        <label string="* ( 1 + "/>
+			                        <field name="price_discount" nolabel="1"/>
+			                        <label string=" ) + "/>
+			                        <field name="price_surcharge" nolabel="1"/>
+			                        <newline/>
+			                        <field name="price_round" string="Rounding Method"/>
+			                        <field name="price_min_margin" string="Min. Margin"/>
+			                        <field name="price_max_margin" string="Max. Margin"/>
+			                    </group>		
+			                </form>
+	                    </field> 	                    
+                    </page>                   	
+                </xpath>                                                     
+             </field>
+        </record>        
+        
+        <record id="product_template_montecristo_search_view" model="ir.ui.view">
+            <field name="name">product.template.montecristo.search</field>
+            <field name="model">product.template</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="showed_name"/>
+                </field>
+                <field name="categ_id" position="after">
+                    <field name="default_code"/>
+                </field>
+            </field>
+        </record> 
+        
+
+        <record id="montecristo_product_normal_form_view" model="ir.ui.view">
+            <field name="name">montecristo.product.normal.form.view</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+             <field name="arch" type="xml">
+                <xpath expr='//group[@name="website_and_pos"]' position="after">                    
+                    <h1 groups="base.group_sale_manager">Listini</h1>
+                    <field name="id" invisible="1"/>
+                    <field groups="base.group_sale_manager" name="pricelist_ids">
+                        <tree>
+                            <field name="name"/>
+                            <field name="price_version_id"/>
+                            <field name="final_price"/>
+                        </tree>
+                        <form>
+		                    <label for="name" class="oe_edit_only"/>
+		                    <h1><field colspan="4" name="name"/></h1>
+							<group col="2">
+							    <field name="price_version_id"/>
+							</group>
+		                    <group col="4">
+		                        <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+		                        <field name="min_quantity"/>
+		                        <field name="sequence"/>
+		                    </group>
+		                    <separator string="Price Computation"/>
+		                    <div class="oe_grey" groups="product.group_uom">
+		                        <p>The computed price is expressed in the default Unit of Measure of the product.</p>
+		                    </div>
+		                    <group col="4">
+		                        <field name="base"/>
+		                        <field name="base_pricelist_id" attrs="{'invisible':[('base', '!=', -1)],'required': [('base','=', -1)], 'readonly': [('base','!=', -1)]}"/>
+		                    </group>
+		                    <group col="6" colspan="5">
+		                        <label string="New Price ="/>
+		                        <label string="Base Price"/>
+		                        <label string="* ( 1 + "/>
+		                        <field name="price_discount" nolabel="1"/>
+		                        <label string=" ) + "/>
+		                        <field name="price_surcharge" nolabel="1"/>
+		                        <newline/>
+		                        <field name="price_round" string="Rounding Method"/>
+		                        <field name="price_min_margin" string="Min. Margin"/>
+		                        <field name="price_max_margin" string="Max. Margin"/>
+		                    </group>		
+		                </form>
+                    </field>
+                    <field groups="base.group_sale_manager" name="template_pricelist_ids" context="{'parent_id':id}">
+                        <tree>
+                            <field name="name"/>
+                            <field name="price_version_id"/>
+                            <field name="final_price"/>
+                        </tree>
+                        <form>
+		                    <label for="name" class="oe_edit_only"/>
+		                    <h1><field colspan="4" name="name"/></h1>
+							<group col="2">
+							    <field name="price_version_id"/>
+							</group>
+		                    <group col="4">
+		                        <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+		                        <field name="min_quantity"/>
+		                        <field name="sequence"/>
+		                    </group>
+		                    <separator string="Price Computation"/>
+		                    <div class="oe_grey" groups="product.group_uom">
+		                        <p>The computed price is expressed in the default Unit of Measure of the product.</p>
+		                    </div>
+		                    <group col="4">
+		                        <field name="base"/>
+		                        <field name="base_pricelist_id" attrs="{'invisible':[('base', '!=', -1)],'required': [('base','=', -1)], 'readonly': [('base','!=', -1)]}"/>
+		                    </group>
+		                    <group col="6" colspan="5">
+		                        <label string="New Price ="/>
+		                        <label string="Base Price"/>
+		                        <label string="* ( 1 + "/>
+		                        <field name="price_discount" nolabel="1"/>
+		                        <label string=" ) + "/>
+		                        <field name="price_surcharge" nolabel="1"/>
+		                        <newline/>
+		                        <field name="price_round" string="Rounding Method"/>
+		                        <field name="price_min_margin" string="Min. Margin"/>
+		                        <field name="price_max_margin" string="Max. Margin"/>
+		                    </group>		
+		                </form>
+                    </field>                                        	
+                </xpath>                                     
+             </field>
+        </record>            
+             
+
+        <record id="variants_tree_view_montecristo" model="ir.ui.view">
+            <field name="name">product.attribute.value.tree.montecristo</field>
+            <field name="model">product.attribute.value</field>
+            <field name="inherit_id" ref="product.variants_tree_view"/>            
+            <field name="arch" type="xml"> 
+            	<xpath expr='field[@name="name"]' position="after"> 
+            		<field name="description"/>
+            	</xpath>
+            </field>
+        </record>        
+        
+        <menuitem action="product.product_category_action_form"
+            groups="base.group_no_one"
+            id="product.menu_product_category_action_form"
+            parent="product.prod_config_main" sequence="17"/>        
+                                                       
+    </data>
+</openerp>

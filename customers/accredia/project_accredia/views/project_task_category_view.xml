@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <!-- Project Task Categories -->
+        <record model="ir.ui.view" id="project_task_category_form">
+            <field name="name">project.task.category.form</field>
+            <field name="model">project.task.category</field>
+            <field name="arch" type="xml">
+                <form string="Category of task Form">
+                    <group>
+                        <group>
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_task_category_tree">
+            <field name="name">project.task.category.tree</field>
+            <field name="model">project.task.category</field>
+            <field name="arch" type="xml">
+                <tree string="Category of task Tree">
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_task_category_search">
+            <field name="name">project.task.category.search</field>
+            <field name="model">project.task.category</field>
+            <field name="arch" type="xml">
+                <search string="Category of task Search">
+                    <field name="code"/>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="project_task_category_action">
+            <field name="name">Categories</field>
+            <field name="res_model">project.task.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="project_task_category_search"/>
+        </record>
+
+    </data>
+</openerp>

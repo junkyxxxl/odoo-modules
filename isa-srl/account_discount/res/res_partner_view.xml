@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="view_partner_form_discount" model="ir.ui.view">
+        <field name="name">res.partner.discount.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='active']/../.." position="after" >
+			    <h1 id="global_discount">Sconti globali</h1>				
+				<field name="global_discount_lines">
+	                <tree string="Sconti globali" editable="bottom">
+	                    <field name="sequence" widget="handle"/>
+	                    <field name="name"/>
+	                    <field name="value"/>
+	                    <field name="type"/>
+	                    <field name="application" invisible="1"/>	                    
+	                </tree>
+			    </field>				    
+            </xpath>
+        </field>
+    </record>
+  </data>
+</openerp>

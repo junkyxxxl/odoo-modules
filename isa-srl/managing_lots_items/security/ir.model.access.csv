@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"stock_config_settings_user","stock.config.settings.user","model_stock_config_settings","stock.group_production_lot",1,1,1,1
+
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Department View -->
+        <record id="view_accreditation_department_form_account" model="ir.ui.view">
+            <field name="name">view.accreditation.department.form.account</field>
+            <field name="model">hr.department</field>
+            <field name="inherit_id" ref="hr_accredia.view_accreditation_department_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='analytic_account_for_invoicing']" position="after">
+                    <field name="sale_journal_id" attrs="{'required': [('parent_id','not in',[False,None])]}" />
+                    <field name="purchase_journal_id" attrs="{'required': [('parent_id','not in',[False,None])]}" />
+                    <field name="maintenance_rights_journal_id" />
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Diritti Mantenimento DC" attrs="{'invisible': [('department_nick','!=', 'DC')]}">
+                        <group string="Regime Volontario">
+                            <group string="Primo anno">
+                                <field name="product_debit"/>
+                                <field name="annual_fee_for_debit"/>
+                            </group>
+                            <group string="Anni successivi">
+                                <field name="product_charged_in_advance"/>
+                                <field name="product_debit_balance"/>
+                                <field name="minimum_quota"/>
+                                <field name="group_for_charges_id"/>
+                            </group>
+                        </group>
+                        <group string="Regime Regolamentato">
+                            <group>
+                                <field name="product_debit"/>
+                            </group>
+                            <group>
+                                <field name="amount_first_rule_accredited"/>
+                                <field name="amount_subsequent_accreditation"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Diritti Mantenimento DL" attrs="{'invisible': [('department_nick','!=', 'DL')]}">
+                        <group>
+                            <group>
+                                <field name="product_annual_quota_maintenance"/>
+                                <field name="product_annual_quota_maintenance_small_labs"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Diritti Mantenimento DT" attrs="{'invisible': [('department_nick','!=', 'DT')]}">
+                        <group>
+                            <group>
+                                <field name="product_fixed_fee_accredited_laboratory"/>
+                                <field name="product_fee_accredited_accredited_metrology"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="product_category_form_view_omniapart" model="ir.ui.view">
+            <field name="name">product.category.form.omniapart</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>            
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_title']" position="after">
+        	        <group name="parent" col="2">
+        	        	<field name="company_id" required="1"/>
+        	        </group>	
+				</xpath>
+            </field>
+        </record>
+
+        <record id="product_category_tree_view_omniapart" model="ir.ui.view">
+            <field name="name">product.category.tree.omniapart</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_tree_view"/>  
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+        	        <field name="company_id"/>
+				</xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>          
+        
+        <record id="wizard_migration_province" model="ir.ui.view">
+            <field name="name">Migrate Province</field>
+            <field name="model">wizard.migration.province</field>
+            <field name="arch" type="xml">
+                <form string="Migrate Province" version="7.0">
+  	              <div>Allinea la gestione delle province alle direttive dell'OCA</div>
+                  <footer>
+                      <button string="Execute" name="migrate_province" type="object" class="oe_highlight"/>
+                      	or
+                      <button string="Cancel" class="oe_link" special="cancel"/>
+                  </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_migrate_province" model="ir.actions.act_window">
+            <field name="name">Migrate Province</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.migration.province</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+	
+        <menuitem 
+        	id="menu_migrate_province" 
+        	name="Migrate Province" 
+        	parent="base.menu_localisation"  
+        	sequence="51" 
+        	action="action_migrate_province"/>               
+        
+    </data>
+</openerp>

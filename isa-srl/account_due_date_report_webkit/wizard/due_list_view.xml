@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+     
+        <record id="view_due_list_report" model="ir.ui.view">
+            <field name="name">Print Account Due List Report</field>
+            <field name="model">account.due.list.report</field>
+            <field name="arch" type="xml">
+            <form string="Print Account Due List Report" version="7.0">
+                <group>
+                	<group>
+                        <field name="company_id" required="1" groups="base.group_multi_company"/>  
+                        <field name="print_customers"/>
+                        <field name="print_suppliers"/>
+                	</group>
+                    <group>
+                    	<field name="mode"/>
+                        <field name="date_maturity"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="partner_ids"/>
+                </group>
+                <footer>
+                    <button name="print_report_pdf" string="Stampa" type="object" class="oe_highlight" />
+                    or 
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+            </field>
+        </record>
+        
+        <!--action -->        
+        <record id="action_due_list_report" model="ir.actions.act_window">
+            <field name="name">Print Account Due List Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.due.list.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>  
+        
+        <!--ir set
+        <record model="ir.values" id="due_list_report">
+            <field name="model_id" ref="account_due_list.model_account_move_line" />
+            <field name="name">Account Due List Report</field>
+            <field name="key2">client_print_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_due_list_report'))" />
+            <field name="key">action</field>
+            <field name="model">res.partner</field>
+        </record>
+		 -->
+		 
+    </data>
+</openerp>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Menu Items -->
+        <menuitem id="base.menu_project_long_term" name="Long Term Planning" parent="base.menu_main_pm" sequence="3"/>
+
+        <menuitem action="act_project_phase_list"
+            id="menu_project_phase_list" parent="project.menu_project_management" sequence="2"/>
+
+        <menuitem action="act_project_phase"
+            icon="STOCK_INDENT"
+            id="menu_project_phase"   parent="base.menu_project_long_term" sequence="1"/>
+
+        <menuitem id="menu_resouce_allocation" action="act_resouce_allocation"
+            icon="STOCK_INDENT"
+            parent="base.menu_project_long_term" sequence="2"/>
+
+        <menuitem id="menu_pm_users_project1"
+            name="Resources" parent="base.menu_definitions" sequence="3"/>
+
+        <menuitem action="resource.action_resource_resource_tree" id="menu_view_resource" parent="menu_pm_users_project1" sequence="2"/>
+        <menuitem action="resource.action_resource_calendar_form" id="menu_view_resource_calendar" parent="menu_pm_users_project1" sequence="5"/>
+        <menuitem action="resource.action_resource_calendar_leave_tree" id="menu_view_resource_calendar_leaves" parent="menu_pm_users_project1" sequence="3"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- Purchase Requisition-related subtypes for messaging / Chatter -->
+        <record id="purchase_requisition_new" model="mail.message.subtype">
+            <field name="name">Richiesta di Acquisto Creata</field>
+            <field name="res_model">purchase.requisition</field>
+            <field name="default" eval="True"/>
+            <field name="description">Richiesta di Acquisto Creata</field>
+        </record>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="hr_timesheet_line_form_accredia" model="ir.ui.view">
+            <field name="name">hr.analytic.timesheet.form.accredia</field>
+            <field name="model">hr.analytic.timesheet</field>
+            <field name="inherit_id" ref="hr_timesheet_invoice.hr_timesheet_line_form"/>
+            <field name="arch" type="xml">
+                <field name="to_invoice" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="account_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="required">1</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="hr_timesheet_line_form_accredia2" model="ir.ui.view">
+            <field name="name">hr.analytic.timesheet.form.accredia2</field>
+            <field name="model">hr.analytic.timesheet</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_form"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="task_id" required="1" context="{'t_user_id': user_id,'t_obj': 'mission'}" on_change="onchange_task(task_id)" domain="[('phase_id','!=',None),('phase_id','!=',False),('fnct_state','not in',['done','cancelled'])]"/>
+                    <field name="timesheet_line_type" required="1" />
+                </field>
+            </field>
+        </record>
+
+        <record id="hr_timesheet_line_tree_accredia" model="ir.ui.view">
+            <field name="name">hr.analytic.timesheet.tree.accredia</field>
+            <field name="model">hr.analytic.timesheet</field>
+            <field name="inherit_id" ref="hr_timesheet_invoice.hr_timesheet_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes" >
+                    <attribute name="editable"></attribute>
+                </xpath>
+                <field name="to_invoice" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="account_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                    <attribute name="required">1</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="hr_timesheet_line_tree_accredia2" model="ir.ui.view">
+            <field name="name">hr.analytic.timesheet.tree.accredia2</field>
+            <field name="model">hr.analytic.timesheet</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="task_id" required="1" context="{'t_user_id': user_id,'t_obj': 'mission'}" on_change="onchange_task(task_id)" domain="[('phase_id','!=',None),('phase_id','!=',False),('state','not in',['done','cancelled'])]" />
+                    <field name="timesheet_line_type" required="1" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

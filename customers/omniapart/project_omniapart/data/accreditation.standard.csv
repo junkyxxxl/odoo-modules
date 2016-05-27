@@ -1,0 +1,140 @@
+id,description,schema_ids:id,name
+accreditation_standard_1,Requisiti per gli Organismi che forniscono audit e certificazione di sistemi di gestione ----- Requirements for bodies providing audit and certification of management systems,accreditation_schema_2,UNI CEI EN ISO/IEC 17021
+accreditation_standard_2,Sistemi di Gestione per la Qualità- Requisiti ----- Quality Management System- Requirements,accreditation_schema_2,UNI EN ISO 9001:2008
+accreditation_standard_3,Sistemi di gestione ambientale- Requisiti e guida per l'uso ----- Environmental management systems- Requirements and guidance for use,accreditation_schema_3,UNI EN ISO 14001:2004
+accreditation_standard_4,Occupational Health and Safety Management ,accreditation_schema_4,BS OHSAS 18001.2007
+accreditation_standard_5,Tecnologie informatiche - Tecniche per la sicurezza - Sistemi di gestione per la sicurezza delle informazioni - Requisiti -----  Information technology -- Security techniques -- Information security management systems -- Requirements,accreditation_schema_5,UNI CEI EN ISO/IEC 27001:2014
+accreditation_standard_6,Information technology -- Service management -- Part 1: Service management system requirements,accreditation_schema_6,ISO/IEC 20000-1:2011
+accreditation_standard_7,Sistemi di gestione dell'energia - Requisiti e linee guida per l'uso ----- Energy management systems -- Requirements with guidance for use ,accreditation_schema_7,UNI CEI EN ISO 50001:2011
+accreditation_standard_8,Sistemi di gestione per la sicurezza alimentare - Requisiti per qualsiasi organizzazione nella filiera alimentare ----- Food safety management systems -- Requirements for any organization in the food chain ,accreditation_schema_8,UNI EN ISO 22000:2005
+accreditation_standard_9,Valutazione della conformità - Requisiti generali per organismi che eseguono la certificazione di persone ----- Conformity assessment -- General requirements for bodies operating certification of persons,accreditation_schema_9,UNI CEI EN ISO IEC 17024:2012
+accreditation_standard_10,APAT CNR IRSA 2010  Man 29 2003,,APAT CNR IRSA 2010  Man 29 2003
+accreditation_standard_11,APAT CNR IRSA 2020 A  Man 29 2003,,APAT CNR IRSA 2020 A  Man 29 2003
+accreditation_standard_12,APAT CNR IRSA 2020 B  Man 29 2003,,APAT CNR IRSA 2020 B  Man 29 2003
+accreditation_standard_13,APAT CNR IRSA 2020 C Man 29 2003,,APAT CNR IRSA 2020 C Man 29 2003
+accreditation_standard_14,APAT CNR IRSA 2030  Man 29 2003,,APAT CNR IRSA 2030  Man 29 2003
+accreditation_standard_15,APAT CNR IRSA 2040 B Man 29 2003,,APAT CNR IRSA 2040 B Man 29 2003
+accreditation_standard_16,APAT CNR IRSA 2050  Man 29 2003,,APAT CNR IRSA 2050  Man 29 2003
+accreditation_standard_17,APAT CNR IRSA 2060  Man 29 2003,,APAT CNR IRSA 2060  Man 29 2003
+accreditation_standard_18,APAT CNR IRSA 2070  Man 29 2003,,APAT CNR IRSA 2070  Man 29 2003
+accreditation_standard_19,APAT CNR IRSA 2080  Man 29 2003,,APAT CNR IRSA 2080  Man 29 2003
+accreditation_standard_20,APAT CNR IRSA 2090 A  Man 29 2003,,APAT CNR IRSA 2090 A  Man 29 2003
+accreditation_standard_21,APAT CNR IRSA 2090 B  Man 29 2003,,APAT CNR IRSA 2090 B  Man 29 2003
+accreditation_standard_22,APAT CNR IRSA 2090 C  Man 29 2003,,APAT CNR IRSA 2090 C  Man 29 2003
+accreditation_standard_23,APAT CNR IRSA 2090 D  Man 29 2003,,APAT CNR IRSA 2090 D  Man 29 2003
+accreditation_standard_24,APAT CNR IRSA 2100  Man 29 2003,,APAT CNR IRSA 2100  Man 29 2003
+accreditation_standard_25,APAT CNR IRSA 2110  Man 29 2003,,APAT CNR IRSA 2110  Man 29 2003
+accreditation_standard_26,APAT CNR IRSA 2120  Man 29 2003,,APAT CNR IRSA 2120  Man 29 2003
+accreditation_standard_27,APAT CNR IRSA 3020  Man 29 2003,,APAT CNR IRSA 3020  Man 29 2003
+accreditation_standard_28,APAT CNR IRSA 3030  Man 29 2003,,APAT CNR IRSA 3030  Man 29 2003
+accreditation_standard_29,APAT CNR IRSA 3050 Man 29 2003,,APAT CNR IRSA 3050 Man 29 2003
+accreditation_standard_30,APAT CNR IRSA 3060 B Man 29 2003,,APAT CNR IRSA 3060 B Man 29 2003
+accreditation_standard_31,APAT CNR IRSA 3070 A Man 29 2003,,APAT CNR IRSA 3070 A Man 29 2003
+accreditation_standard_32,APAT CNR IRSA 3070 B Man 29 2003,,APAT CNR IRSA 3070 B Man 29 2003
+accreditation_standard_33,APAT CNR IRSA 3080 A Man 29 2003,,APAT CNR IRSA 3080 A Man 29 2003
+accreditation_standard_34,APAT CNR IRSA 3080 B Man 29 2003,,APAT CNR IRSA 3080 B Man 29 2003
+accreditation_standard_35,APAT CNR IRSA 3090 Man 29 2003,,APAT CNR IRSA 3090 Man 29 2003
+accreditation_standard_36,APAT CNR IRSA 3100  Man 29 2003,,APAT CNR IRSA 3100  Man 29 2003
+accreditation_standard_37,APAT CNR IRSA 3110 A1 Man 29 2003,,APAT CNR IRSA 3110 A1 Man 29 2003
+accreditation_standard_38,APAT CNR IRSA 3110 A2 Man 29 2003,,APAT CNR IRSA 3110 A2 Man 29 2003
+accreditation_standard_39,APAT CNR IRSA 3120 Man 29 2003,,APAT CNR IRSA 3120 Man 29 2003
+accreditation_standard_40,APAT CNR IRSA 3130  Man 29 2003,,APAT CNR IRSA 3130  Man 29 2003
+accreditation_standard_41,APAT CNR IRSA 3130 Man 29 2003 ,,APAT CNR IRSA 3130 Man 29 2003 
+accreditation_standard_42,APAT CNR IRSA 3180 ,,APAT CNR IRSA 3180 
+accreditation_standard_43,APAT CNR IRSA 3140  Man 29 2003,,APAT CNR IRSA 3140  Man 29 2003
+accreditation_standard_44,APAT CNR IRSA 3150 A/B1 Man 29 2003,,APAT CNR IRSA 3150 A/B1 Man 29 2003
+accreditation_standard_45,APAT CNR IRSA 3150 B2/C Man 29 2003,,APAT CNR IRSA 3150 B2/C Man 29 2003
+accreditation_standard_46,APAT CNR IRSA 3150 B3 Man 29 2003,,APAT CNR IRSA 3150 B3 Man 29 2003
+accreditation_standard_47,APAT CNR IRSA 3150 B4 Man 29 2003,,APAT CNR IRSA 3150 B4 Man 29 2003
+accreditation_standard_48,APAT CNR IRSA 3160 Man 29 2003,,APAT CNR IRSA 3160 Man 29 2003
+accreditation_standard_49,APAT CNR IRSA 3170  Man 29 2003,,APAT CNR IRSA 3170  Man 29 2003
+accreditation_standard_50,APAT CNR IRSA 3180  Man 29 2003,,APAT CNR IRSA 3180  Man 29 2003
+accreditation_standard_51,APAT CNR IRSA 3190 Man 29 2003,,APAT CNR IRSA 3190 Man 29 2003
+accreditation_standard_52,APAT CNR IRSA 3200 Man 29 2003,,APAT CNR IRSA 3200 Man 29 2003
+accreditation_standard_53,APAT CNR IRSA 3210  Man 29 2003,,APAT CNR IRSA 3210  Man 29 2003
+accreditation_standard_54,APAT CNR IRSA 3220 Man 29 2003,,APAT CNR IRSA 3220 Man 29 2003
+accreditation_standard_55,APAT CNR IRSA 3230 Man 29 2003,,APAT CNR IRSA 3230 Man 29 2003
+accreditation_standard_56,APAT CNR IRSA 3240  Man 29 2003,,APAT CNR IRSA 3240  Man 29 2003
+accreditation_standard_57,APAT CNR IRSA 3250 A/B Man 29 2003,,APAT CNR IRSA 3250 A/B Man 29 2003
+accreditation_standard_58,APAT CNR IRSA 3250 C Man 29 2003,,APAT CNR IRSA 3250 C Man 29 2003
+accreditation_standard_59,APAT CNR IRSA 3260 A Man 29 2003,,APAT CNR IRSA 3260 A Man 29 2003
+accreditation_standard_60,APAT CNR IRSA 3260 B Man 29 2003,,APAT CNR IRSA 3260 B Man 29 2003
+accreditation_standard_61,APAT CNR IRSA 3270  Man 29 2003,,APAT CNR IRSA 3270  Man 29 2003
+accreditation_standard_62,APAT CNR IRSA 3280 A/B Man 29 2003,,APAT CNR IRSA 3280 A/B Man 29 2003
+accreditation_standard_63,APAT CNR IRSA 3280 C Man 29 2003,,APAT CNR IRSA 3280 C Man 29 2003
+accreditation_standard_64,APAT CNR IRSA 3290 A Man 29 2003,,APAT CNR IRSA 3290 A Man 29 2003
+accreditation_standard_65,APAT CNR IRSA 3290 B Man 29 2003,,APAT CNR IRSA 3290 B Man 29 2003
+accreditation_standard_66,APAT CNR IRSA 3300  Man 29 2003,,APAT CNR IRSA 3300  Man 29 2003
+accreditation_standard_67,APAT CNR IRSA 3310 A Man 29 2003,,APAT CNR IRSA 3310 A Man 29 2003
+accreditation_standard_68,APAT CNR IRSA 3310 B Man 29 2003,,APAT CNR IRSA 3310 B Man 29 2003
+accreditation_standard_69,APAT CNR IRSA 3320  Man 29 2003,,APAT CNR IRSA 3320  Man 29 2003
+accreditation_standard_70,APAT CNR IRSA 4010  Man 29 2003,,APAT CNR IRSA 4010  Man 29 2003
+accreditation_standard_71,APAT CNR IRSA 4020  Man 29 2003,,APAT CNR IRSA 4020  Man 29 2003
+accreditation_standard_72,APAT CNR IRSA 4030 A1/A2/B/C Man 29 2003,,APAT CNR IRSA 4030 A1/A2/B/C Man 29 2003
+accreditation_standard_73,APAT CNR IRSA 4040 A1 Man 29 2003,,APAT CNR IRSA 4040 A1 Man 29 2003
+accreditation_standard_74,APAT CNR IRSA 4040 A2 Man 29 2003,,APAT CNR IRSA 4040 A2 Man 29 2003
+accreditation_standard_75,APAT CNR IRSA 4050  Man 29 2003,,APAT CNR IRSA 4050  Man 29 2003
+accreditation_standard_76,APAT CNR IRSA 4060  Man 29 2003,,APAT CNR IRSA 4060  Man 29 2003
+accreditation_standard_77,APAT CNR IRSA 4070  Man 29 2003,,APAT CNR IRSA 4070  Man 29 2003
+accreditation_standard_78,APAT CNR IRSA 4080  Man 29 2003,,APAT CNR IRSA 4080  Man 29 2003
+accreditation_standard_79,APAT CNR IRSA 4090 Man 29 2003,,APAT CNR IRSA 4090 Man 29 2003
+accreditation_standard_80,APAT CNR IRSA 4100 A  Man 29 2003,,APAT CNR IRSA 4100 A  Man 29 2003
+accreditation_standard_81,APAT CNR IRSA 4100 B  Man 29 2003,,APAT CNR IRSA 4100 B  Man 29 2003
+accreditation_standard_82,APAT CNR IRSA 4110 Man 29 2003,,APAT CNR IRSA 4110 Man 29 2003
+accreditation_standard_83,APAT CNR IRSA 4120 A1/A2/A3 Man 29 2003,,APAT CNR IRSA 4120 A1/A2/A3 Man 29 2003
+accreditation_standard_84,APAT CNR IRSA 4120 A4  Man 29 2003,,APAT CNR IRSA 4120 A4  Man 29 2003
+accreditation_standard_85,APAT CNR IRSA 4130  Man 29 2003,,APAT CNR IRSA 4130  Man 29 2003
+accreditation_standard_86,APAT CNR IRSA 4140 Man 29 2003,,APAT CNR IRSA 4140 Man 29 2003
+accreditation_standard_87,APAT CNR IRSA 4150 Man 29 2003,,APAT CNR IRSA 4150 Man 29 2003
+accreditation_standard_88,APAT CNR IRSA 4160  Man 29 2003,,APAT CNR IRSA 4160  Man 29 2003
+accreditation_standard_89,APAT CNR IRSA 5010A  Man 29 2003,,APAT CNR IRSA 5010A  Man 29 2003
+accreditation_standard_90,APAT CNR IRSA 5010B1/B2  Man 29 2003,,APAT CNR IRSA 5010B1/B2  Man 29 2003
+accreditation_standard_91,APAT CNR IRSA 5020 Man 29 2003,,APAT CNR IRSA 5020 Man 29 2003
+accreditation_standard_92,APAT CNR IRSA 5030 Man 29 2003,,APAT CNR IRSA 5030 Man 29 2003
+accreditation_standard_93,APAT CNR IRSA 5040 Man 29 2003,,APAT CNR IRSA 5040 Man 29 2003
+accreditation_standard_94,APAT CNR IRSA 5050 Man 29 2003,,APAT CNR IRSA 5050 Man 29 2003
+accreditation_standard_95,APAT CNR IRSA 5060 Man 29 2003,,APAT CNR IRSA 5060 Man 29 2003
+accreditation_standard_96,APAT CNR IRSA 5070 A1/A2 Man 29 2003,,APAT CNR IRSA 5070 A1/A2 Man 29 2003
+accreditation_standard_97,APAT CNR IRSA 5070 B Man 29 2003,,APAT CNR IRSA 5070 B Man 29 2003
+accreditation_standard_98,APAT CNR IRSA 5080 Man 29 2003,,APAT CNR IRSA 5080 Man 29 2003
+accreditation_standard_99,APAT CNR IRSA 5090 Man 29 2003,,APAT CNR IRSA 5090 Man 29 2003
+accreditation_standard_100,APAT CNR IRSA 5100 Man 29 2003,,APAT CNR IRSA 5100 Man 29 2003
+accreditation_standard_101,APAT CNR IRSA 5110 Man 29 2003,,APAT CNR IRSA 5110 Man 29 2003
+accreditation_standard_102,APAT CNR IRSA 5120 A Man 29 2003,,APAT CNR IRSA 5120 A Man 29 2003
+accreditation_standard_103,APAT CNR IRSA 5120 B1 Man 29 2003,,APAT CNR IRSA 5120 B1 Man 29 2003
+accreditation_standard_104,APAT CNR IRSA 5120 B2 Man 29 2003,,APAT CNR IRSA 5120 B2 Man 29 2003
+accreditation_standard_105,APAT CNR IRSA 5130 Man 29 2003,,APAT CNR IRSA 5130 Man 29 2003
+accreditation_standard_106,APAT CNR IRSA 5140 Man 29 2003,,APAT CNR IRSA 5140 Man 29 2003
+accreditation_standard_107,APAT CNR IRSA 5150 Man 29 2003,,APAT CNR IRSA 5150 Man 29 2003
+accreditation_standard_108,APAT CNR IRSA 5160 A1 Man 29 2003,,APAT CNR IRSA 5160 A1 Man 29 2003
+accreditation_standard_109,APAT CNR IRSA 5160 A2 Man 29 2003,,APAT CNR IRSA 5160 A2 Man 29 2003
+accreditation_standard_110,APAT CNR IRSA 5160 B1 Man 29 2003,,APAT CNR IRSA 5160 B1 Man 29 2003
+accreditation_standard_111,APAT CNR IRSA 5160 B2 Man 29 2003,,APAT CNR IRSA 5160 B2 Man 29 2003
+accreditation_standard_112,APAT CNR IRSA 5170 Man 29 2003,,APAT CNR IRSA 5170 Man 29 2003
+accreditation_standard_113,APAT CNR IRSA 5180 Man 29 2003,,APAT CNR IRSA 5180 Man 29 2003
+accreditation_standard_114,APAT CNR IRSA 7130  Man 29 2003,,APAT CNR IRSA 7130  Man 29 2003
+accreditation_standard_115,APAT CNR IRSA 7060 Man 29 2003,,APAT CNR IRSA 7060 Man 29 2003
+accreditation_standard_116,APAT CNR IRSA 8010  Man 29 2003,,APAT CNR IRSA 8010  Man 29 2003
+accreditation_standard_117,APAT CNR IRSA 8020  Man 29 2003,,APAT CNR IRSA 8020  Man 29 2003
+accreditation_standard_118,APAT CNR IRSA 8030  Man 29 2003,,APAT CNR IRSA 8030  Man 29 2003
+accreditation_standard_119,APAT CNR IRSA 8040 Cap 4 Man 29 2003,,APAT CNR IRSA 8040 Cap 4 Man 29 2003
+accreditation_standard_120,APAT CNR IRSA 8040 Cap 5 Man 29 2003,,APAT CNR IRSA 8040 Cap 5 Man 29 2003
+accreditation_standard_121,APAT CNR IRSA 8050 Cap 4 Man 29 2003,,APAT CNR IRSA 8050 Cap 4 Man 29 2003
+accreditation_standard_122,APAT CNR IRSA 8050 Cap 5 Man 29 2003,,APAT CNR IRSA 8050 Cap 5 Man 29 2003
+accreditation_standard_123,APAT CNR IRSA 8060 Man 29 2003,,APAT CNR IRSA 8060 Man 29 2003
+accreditation_standard_124,APAT CNR IRSA 8070 Cap 4 Man 29 2003,,APAT CNR IRSA 8070 Cap 4 Man 29 2003
+accreditation_standard_125,APAT CNR IRSA 8070 Cap 5 Man 29 2003,,APAT CNR IRSA 8070 Cap 5 Man 29 2003
+accreditation_standard_126,APAT CNR IRSA 8080 Cap 4 Man 29 2003,,APAT CNR IRSA 8080 Cap 4 Man 29 2003
+accreditation_standard_127,APAT CNR IRSA 8080 Cap 5 Man 29 2003,,APAT CNR IRSA 8080 Cap 5 Man 29 2003
+accreditation_standard_128,APAT CNR IRSA 8090 Cap 4 Man 29 2003,,APAT CNR IRSA 8090 Cap 4 Man 29 2003
+accreditation_standard_129,APAT CNR IRSA 8090 Cap 5 Man 29 2003,,APAT CNR IRSA 8090 Cap 5 Man 29 2003
+accreditation_standard_130,APAT CNR IRSA 8100 Cap 4 Man 29 2003,,APAT CNR IRSA 8100 Cap 4 Man 29 2003
+accreditation_standard_131,APAT CNR IRSA 8100 Cap 5 Man 29 2003,,APAT CNR IRSA 8100 Cap 5 Man 29 2003
+accreditation_standard_132,APAT CNR IRSA 8110 Cap 4 Man 29 2003,,APAT CNR IRSA 8110 Cap 4 Man 29 2003
+accreditation_standard_133,APAT CNR IRSA 8110 CAp 5 Man 29 2003,,APAT CNR IRSA 8110 CAp 5 Man 29 2003
+accreditation_standard_134,APAT CNR IRSA 8120 Cap 4 Man 29 2003,,APAT CNR IRSA 8120 Cap 4 Man 29 2003
+accreditation_standard_135,APAT CNR IRSA 8120 Cap 5 Man 29 2003,,APAT CNR IRSA 8120 Cap 5 Man 29 2003
+accreditation_standard_136,APAT CNR IRSA 9010 Man 29 2003,,APAT CNR IRSA 9010 Man 29 2003
+accreditation_standard_137,APAT CNR IRSA 9020 Man 29 2003,,APAT CNR IRSA 9020 Man 29 2003
+accreditation_standard_138,APAT CNR IRSA 9030 Man 29 2003,,APAT CNR IRSA 9030 Man 29 2003
+accreditation_standard_139,APAT CNR IRSA 9040 Man 29 2003,,APAT CNR IRSA 9040 Man 29 2003

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="config_onepage_checkout_form" model="ir.ui.view">
+            <field name="name">Onepage Checkout Form</field>
+            <field name="model">website.config.onepage.checkout</field>
+            <field name="arch" type="xml">
+               <form string="Onepage Checkout Configuration" class="oe_form_configuration">
+                    <group string="Onepage Checkout Configuration" >
+                        <label for="wk_address_panel" string="Customer Address Panel"/>
+                        <div name="wk_address_panel">
+                            <div class="oe_inline">
+                                <field name="wk_address_panel" style="width:3%" attrs="{'readonly':[('wk_address_panel','==',True)]}"/>
+                                <field name="wk_address_panel_name" style="width:97%" attrs="{'invisible':[('wk_address_panel','==',False)], 'required':[('wk_address_panel','==',True)]}"/>
+                                <div>
+                                <field name="wk_billing_information" attrs="{'readonly':[('wk_billing_information','==',True)]}"/>
+                                <label for="wk_billing_information" style="font-weight:bold;"/></div>
+                                <div>
+                                <field name="wk_shipping_information"/>
+                                <label for="wk_shipping_information" style="font-weight:bold;"/></div>
+                            </div>
+                        </div>
+
+                        <label for="wk_orderreview_panel" string="Delivery Method Panel"/>
+                        <div name="wk_orderreview_panel">
+                            <div class="oe_inline">
+                                <field name="wk_orderreview_panel" style="width:3%"/>
+                                <field name="wk_orderreview_panel_name" style="width:97%" attrs="{'invisible':[('wk_orderreview_panel','==',False)], 'required':[('wk_orderreview_panel','==',True)]}"/>
+                            </div>
+                        </div>
+
+                        <label for="wk_payment_panel" string="Payment Method Panel"/>
+                        <div name="wk_payment_panel">
+                            <div class="oe_inline">
+                                <field name="wk_payment_panel" style="width:3%" attrs="{'readonly':[('wk_payment_panel','==',True)]}" />
+                                <field name="wk_payment_panel_name" style="width:97%" attrs="{'invisible':[('wk_payment_panel','==',False)], 'required':[('wk_payment_panel','==',True)]}"/>
+                            </div>
+                        </div>
+                    </group>
+                    <group string="Other Setting">
+                        <label for="wk_billing_required" string="Required Fields for Billing Address" />
+                        <div name="wk_billing_required">
+                            <div class="oe_inline">
+                                <field name="wk_billing_required" widget="many2many_tags" options="{ 'no_quick_create': true, 'no_create_edit ': true, 'no_create':true}"/>
+                            </div>
+                        </div>
+
+                        <label for="wk_shipping_required" string="Required Fields for Shipping Address"/>
+                        <div name="wk_shipping_required">
+                            <div class="oe_inline">
+                                <field name="wk_shipping_required" widget="many2many_tags" options="{ 'no_quick_create': true, 'no_create_edit ': true, 'no_create':true}"/>
+                            </div>
+                        </div>
+                    </group>
+                   <!--  <group string="Other Modules">
+                        <label for="module_website_terms_conditions" />
+                        <div name="module_website_terms_conditions">
+                            <div class="oe_inline">
+                                <field name="module_website_terms_conditions"/>
+                            </div>
+                        </div>
+
+                        <label for="module_website_order_notes" />
+                        <div name="module_website_order_notes">
+                            <div class="oe_inline">
+                                <field name="module_website_order_notes"/>
+                            </div>
+                        </div>
+                        <label for="module_website_country_restriction" />
+                        <div name="module_website_country_restriction">
+                            <div class="oe_inline">
+                                <field name="module_website_country_restriction"/>
+                            </div>
+                        </div>
+                    </group> -->
+                    <footer>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="button" name="cancel" class="oe_link"/>
+                    </footer>
+                </form> 
+            </field>
+        </record>
+
+        <record id="action_website_onepage_checkout" model="ir.actions.act_window">
+            <field name="name">Onepage Checkout Configuration</field>
+            <field name="res_model">website.config.onepage.checkout</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id = "onepage_checkout_configuration_installer_todo" model = "ir.actions.todo">
+			<field name = "action_id" ref = "website_onepage_checkout.action_website_onepage_checkout"/>
+			<field name = "sequence">14</field>
+			<field name = "type">automatic</field>
+		</record>
+    </data>
+</openerp>

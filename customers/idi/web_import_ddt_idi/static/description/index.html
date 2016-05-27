@@ -1,0 +1,306 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Importazione DDT idi</h2>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row">
+    	<div class="oe_span12">
+        	<h2>Scopo principale della funzione</h2>
+        </div>
+        <div class="oe_span12">
+        	Questa fuzione permette di importare, all'interno di Odoo, i ddt provenienti dall'esterno.
+        	<p>
+        	La vendita dei prodotti &eacute; affidata a terzisti. Ogni terzista dispone di un proprio magazzino.
+        	idi si occupa dell'approvvigionamento dei terzisti sulla base di date regole di approvvigionamento (scorta minima, ecc...).
+        	<p>
+        	I terzisti si occupano della vendita fisica dei prodotti ai clienti finali producendo DDT (al di fuori di Odoo) che inviano ai 
+        	clienti, ed in copia a idi.
+        	I DDT, ricevuti dai terzisti, vengono importati nel sistema che in maniera del tutto automatica genera:
+	        	<ul>
+	        		<li>Ordine di Vendita gi&aacute; in stato Confermato.</li>
+	        		<li>Ordine di Consegna (Picking in uscita).</li>
+	        		<li>DDT gi&aacute; confermato con numerazione acquisita  dal DDT ricevuto.</li>
+	        	</ul>
+        </div>        
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row">
+    	<div class="oe_span12">
+        	<h2>Decrizione della procedura di importazione DDT</h2>
+        </div>
+        <div class="oe_span12">
+        	All'interno del men&uacute; <strong>Magazzino</strong>, sotto la voce <strong><font color="#7C7BAD">Operazioni</font></strong> &eacute; stata
+        	introdotta la nuova funzione <u>Importa movimenti DDT.</u>
+        	Utilizzando tale funzione viene visualizzata una lista con tutti i movimenti importati e relativo status (o in alternativa la lista vuota se non 
+        	sono presenti movimenti). Tali movimenti <strong>NON</strong> rappresentano i DDT ma sono soltanto dati riepilogativi ed organizzati che sono stati
+        	reperiti dal file csv importato.
+        	<p> Per importare un file csv &eacute; presente in alto, <strong><font color="#7C7BAD">Importa DDT</font></strong>.
+        	La funzione, si aspetta un file CSV congruente alle specifiche descritte nella sezione <a href="#specifiche_CSV">Specifiche formato file CSV</a>
+        	I movimenti di importazione ddt possono assumere 4 stati:
+        	<ul>
+        		<li>ready (pronto)</li>
+        		<li><font color="red">except (in erorre)</font></li>
+        		<li><font color="blue">in process (in elaborazione)</font></li>
+        		<li><font color="green">done (elaborato)</font></li>
+        	</ul>
+        	&Eacute; possibile importare nuovamente un file CSV gi&aacute; importato, per modificare i dati dei movimenti. L'importazione del file tiene 
+        	conto della chiave "numero ddt" ed aggiorna le righe che si riferiscono a tali valori. <strong>Se all'interno del file CSV che deve essere 
+        	reimportato &eacute; presente un movimento per numero ddt che si trova in status "in process" o "done" la funzione non consente l'importazione del file.</strong>
+        	Per reimportare il file CSV occorre eliminare le righe che si riferiscono al movimento gi&aacute; elaborato.
+        	I possibili errori di elaborazione (con relativa correzione) sono descritti nella sezione <a href="#errori_elaborazione">Principali errori di elaborazione</a>
+        	<p>
+        	In alternativa, &eacute; possibile modificare i dati manualmente all'interno di ogni singolo movimento. I dati disponibili per la modifica sono:
+        	<ul>
+        		<li>Codice partner</li>
+        		<li>Codice di spedizione</li>
+        		<li>Codice magazzino</li>
+        		<li>Righe di prodotti (presenti nel tab righe).</li>
+        	</ul>
+        	Un movimento di importazione non pu&oacute; essere copiato e cancellato.
+        	All'interno del movimento di importazione sono presenti le seguenti informazioni:
+        	<p>
+        		<div class="oe_row">
+	        		<div class="oe_span6">
+		        		<ul>
+		        			<h3>Informazioni base sul ddt <small>(per le quali non &eacute; abilitata la modifica):</small></h3>
+							<li>Nome (composto da terzista /numero ddt)</li>
+							<li>Terzista</li>
+							<li>Numero del DDT</li>
+							<li>Data del DDT</li>
+						</ul>
+					</div>
+					<div class="oe_span6">
+		        		<ul>
+		        			<h3>Informazioni sulla vendita al cliente:</h3>
+							<li>Codice cliente al quale &eacute; stata venduta la merce</li>
+							<li>Codice di spedizione</li>
+							<li>Codice del magazzino</li>
+						</ul>
+					</div>
+				</div>
+			<div class="oe_span12">
+            	<img class="oe_picture oe_screenshot" src="ddt_movement.png">
+        	</div>
+        	
+        	Se il movimento, durante l'elaborazione v&aacute; in errore (status except), viene visualizzato di colore <font color="red">rosso</font> nella lista.
+        	All'interno del movimento in errore, si attiva un nuovo tab (Except Information) che descrive la causa dell'errore che impedisce la creazione del DDT.
+        	Se l'errore si riferisce ad una riga di prodotto, all'interno del tab delle righe viene evidenziata la riga in errore.
+        	Se un movimento si trova in stato di except si deve procedere nel seguente modo: 
+        	<ul>
+        		<li>Verificare all'interno del tab Except Information a cosa &eacute; dovuto l'errore.</li>
+        		<li>Correggere l'errore modificando il movimento o reimportando il file CSV corretto.</li>
+        		<li>Utilizzare il pulsante <font color="red"><b>Reset to Ready</b></font> per cambiare lo stato del movimento
+        		riportandolo allo stato di pronto.</li>
+        		<li>Rielaborare il movimento.</li>
+        	</ul>
+        	
+        	<div class="oe_span12">
+            	<img class="oe_picture oe_screenshot" src="workflow_except.png">
+        	</div>
+        	
+        	&Eacute; possibile rielaborare il movimento selezionandolo dalla vista lista ed utilizzando il pulsante Altro <i class="fa fa-long-arrow-right"></i> 
+        	<i class="fa fa-cog"></i>Elabora movimenti.
+        	
+        	<div class="oe_span12">
+            	<img class="oe_picture oe_screenshot" src="process_movement.png">
+        	</div>
+
+			<br>Inoltre &eacute; stato aggiunto il campo "codice pagamento" sotto: Contabilit&aacute; -> Termini di pagamento.
+        	
+        	<h3><i class="fa fa-exclamation-triangle"></i>ATTENZIONE!!</h3>
+        	La procedura di Elaborazione dei movimenti, tiene in cosiderazione <u>solo i movimenti con status ready (pronto)</u>.
+        	<b>Non verranno elaborati, anche se selezionati, movimenti con stato diverso da pronto.</b> Ricordarsi di utilizzare il pulsante 
+        	<font color="red"><b>Reset to Ready</b></font>, presente all'intero del movimento, per resettare lo stato da errore a pronto.
+        	
+        	<p>I movimenti che vengono elaborati senza errori assumono lo stato di <font color="green">pronto (ready)</font>.
+        	All'interno di questi movimenti, nel tab "Process Information" sono presenti i riferimenti a:
+        	<ul>
+        		<li>Oridne di vendita (in stato confermato)</li>
+        		<li>Ordine di consegna (Con movimenti gi&aacute; trasferiti <b>In caso di giacenze non disponibili viene forzato il trasferimento</b>)</li>
+        		<li>DDT in stato confermato</li>
+        	</ul>
+        	
+        	<div class="oe_span12">
+            	<img class="oe_picture oe_screenshot" src="order_information.png">
+        	</div>
+			
+        	
+        </div>        
+    </div>
+</section>
+
+<section id="errori_elaborazione" class="oe_container oe_dark">
+    <div class="oe_row">
+    	<div class="oe_span12">
+	    <h2>Principali errori di elaborazione</h2>
+	    <h3>E relativa correzione</h3>
+        Durante l'elaborazione i movimeni possono assumere lo stato di <font color="red">errore (except)</font>. Gli errori, principalmente, sono dovuti 
+        a disallineamenti delle anagrafiche.
+        Di seguito una lista dei principali errori e le relative descrizioni
+        <p>
+        <dl>
+	        <dt><u>Errore:</u> Non esiste in anagrafica un cliente con codice: <code>codice cliente</code></dt>
+	        <dd><u>Soluzione:</u> In anagrafica clienti, non esiste un cliente che ha come riferimento il codice indicato nel file
+	        CSV. Inserire il cliente in anagrafica o, in alternativa, assegnare il codice ad un cliente gi&aacute; esistente.</dd>
+	        <br>
+	        <dt><u>Errore:</u> Per il cliente <code>descrizione cliente</code> non esiste un contatto di tipo spedizione con codice destinazione 
+	        uguale a <code>codice destinazione</code></dt>
+	        <dd><u>Soluzione:</u> In anagrafica cliente, per il cliente considerato, non esiste tra i contatti un codice destinazione di tipo spedizione
+	         uguale a quello richiesto. I codici di destinazione validi devono avere come tipo <b>spedizione</b>.</dd>
+	        <br>
+	        <dt><u>Errore:</u> Il <code>codice destinazione</code> &eacute; presente pi&uacute; di una volta per il cliente <code>descrizione cliente</code></dt>
+	        <dd><u>Soluzione:</u> In anagrafica cliente, per il cliente considerato, esiste pi&uacute; di un contatto con codice destinazione di tipo spedizione
+	         uguale a quello richiesto. Non &eacute; possibile associare la destinazione in modo univoco.</dd>
+	        <br>
+	        <dt><u>Errore:</u> Non esiste in anagrafica un magazzino con codice <code>codice magazzino</code></dt>
+	        <dd><u>Soluzione:</u> Non &eacute; possibile trovare in anagrafica un magazzino con short code uguale a quello richiesto. 
+	        Creare un nuovo magazzino settando il codice o indicare il codice richiesto su un magazzino.</dd>
+	        <br>
+	        <dt><u>Errore:</u> Il codice magazzino <code>codice magazzino</code> &eacute; presente su pi&uacute; magazzini in anagrafica.</dt>
+	        <dd><u>Soluzione:</u> In anagrafica sono presenti due magazzini con lo stesso codice. Il codice magazzino deve essere univoco ed assegnato
+	        ad un unico magazzino.</dd>
+	        <br>
+	        <dt><u>Errore:</u> Non esiste in anagrafica un pagamento con codice <code>codice pagamento</code></dt>
+	        <dd><u>Soluzione:</u> Non &eacute; possibile trovare in anagrafica un pagamento con payment code uguale a quello richiesto.
+	        Creare un nuovo pagamento settando il codice o indicare il codice richiesto su un pagamento.</dd>
+	        <br>
+        </dl>
+        
+        </div>
+   </div>
+</section>
+
+<section id="specifiche_CSV" class="oe_container oe_dark">
+    <div class="oe_row">
+        <div class="oe_span12">
+	    	<h2>Specifiche file CSV</h2>
+	    	Il file csv, utilizzato per importare i ddt, deve corrispondere ai requisiti elencati di seguito.
+	    	La prima colonna del CSV deve contenere il tipo record che pu&oacute; assumere come valori:
+	    	<ul>
+	    		<li>TESTA - Se si tratta di un dato di testata</li>
+	    		<li>RIGA - Se si tratta di un dato di riga</li>
+	    	</ul>
+	    	<div class="oe_row">
+	    		<div class="oe_span6">
+	    			<div class="oe_quote">
+	    				<h3>Dati di testata</h3>
+	    				I dati di testata utili all'importazione sono i seguenti:
+	    				<ul>
+	    					<li>Colonna 05: Numero del DDT</li>
+	    					<li>Colonna 06: Codice del partner</li>
+							<li>Colonna 14: Codice del pagamento</li>
+	    					<li>Colonna 16: Codice deposito</li>
+	    					<li>Colonna 17: Data del DDT</li>
+	    					<li>Colonna 23: Codice di spedizione</li>
+	    				</ul>
+	    			</div>
+	    		</div>
+	    		<div class="oe_span6">
+	    			<div class="oe_quote">
+	    				<h3>Dati di riga</h3>
+	    				I dati di riga utili all'importazione sono i seguenti:
+	    				<ul>
+	    					<li>Colonna 05: Numero del DDT</li>
+	    					<li>Colonna 06: Codice del prodotto</li>
+	    					<li>Colonna 09: Quantit&agrave;(viene diviso il valore per 1000 es.: 24000 diventa 24,000)</li>
+	    					<li>Colonna 10: Omaggio(0 nessun omaggio, 2 omaggio, 1 omaggio con rivalsa)</li>
+	    					<li>Colonna 13: Codice lotto</li>
+	    					<li>Colonna 14: Data scadenza</li>
+	    				</ul>
+	    			</div>
+	    		</div>
+	    	</div> 
+        </div>
+   </div>
+</section>
+
+<section id="raggruppamento_terzisti" class="oe_container oe_dark">
+    <div class="oe_row">
+        <div class="oe_span12">
+	    	<h2>Raggruppamento Ddt per terzisti</h2>
+	    	Nella ricerca avanzata, oltre che in base al Partner, Corriere e Data consegna, &eacute; possibile 
+	    	effettuare il raggruppamento dei Ddt in base ai terzisti.
+
+            <div class="oe_span12">
+            	<img class="oe_picture oe_screenshot" src="screen_ddt_group_by.png">
+        	</div>
+	
+        </div>
+   </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row">
+        <div class="oe_span12">
+            <h2>Importazioni materiali campioni</h2>
+            E' possibile eseguire l'importazione dei ddt specificando che si tratta di materiali campione.
+            Se si esegue l'importazione in modalit&aacute; campione, i ddt generati assumerano lo stato di non faturabili. 
+            Per eseguire un'importazione campioni &eacute; sufficiente impostare il flag "Importazione materiali campione":
+            <div class="oe_span12">
+                <img class="oe_picture oe_screenshot" src="flag_campioni.png">
+            </div>
+            Il programma richiede la conferma.
+            La struttura del file deve essere congruente al tipo di operazione richiesta (se campioni oppure no), infatti alla colonna numero 24, se specificata una C deve essere necessariamente selezionato il flag di importazione campioni.
+            Sul magazzino deve essere specificato il tipo documento materiale campione. Il tipo documento deve avere le seguenti caratteristiche:
+            <ul>
+            <li>Deve essere configurata la rotta</li>
+            <li>La rotta deve avere una sola regola di PULL</li>
+            <li>La regola di PULL deve avere Stato Fattura "Non Applicabile"</li>
+            </ul>
+            Il tipo documento impostato nel magazzino verrà utilizzato sull'ordine creato per gestire la corretta movimentazione di magazzino.
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row">
+        <div class="oe_span12">
+	    	<h2>Note tecniche</h2>
+	    	E' stato eseguito l'override del metodo <code>do_enter_transfer_details</code> del modello
+	    	<code>stock.picking</code>. Tale override è stato eseguito per permettere di non visualizzare il wizard di richiesta dati per 
+	    	il transfer delle righe d'ordine. I dati, già reperiti a monte, sono automaticamente scritti sulle righe del wizard che poi è 
+	    	automaticamente inviato.
+	    	il contesto è composto da:
+	    	<br>
+	    	<code>
+	    		context = {
+	    		<br>
+	    		<span style="margin-left:5em">'submit_type': 'batch'</span>
+	    		<br>
+	    		<span style="margin-left:5em">'lots': '{'</span>
+	    		<br>
+	    		<span style="margin-left:10em">'lots': '{'</span>
+	    		<br>
+	    		<span style="margin-left:15em">'product_id': lot_id</span>
+	    		<br>
+	    		<span style="margin-left:10em">}</span>
+	    		<br> 
+	    		<span style="margin-left:5em">}</span>
+	    		<br> 
+	    		}
+	    	</code>
+	    	
+	    	<p>
+	      	E' stato inserito il metodo <code>_get_contractor</code> del modello <code>stock.ddt</code>.
+	      	Questo metodo serve per riempire il campo calcolato <code>contractor</code>, ed il valore di questo
+	      	viene reperito partendo dalle righe di un qualsiasi Ddt, che a loro volta contengono il picking_type
+	      	e da ci&oacute; viene preso il magazzino di riferimento che conterr&aacute; il terzista (che risulta
+	      	essere appartenente al modello <code>res.partner</code>).
+	        	<div class="oe_span12">
+            		<img class="oe_picture oe_screenshot" src="computed_field.png">
+        		</div>
+	      	</p>
+	    	
+	    </div>
+   </div>
+</section>
+
+
+<section class="oe_container oe_separator">
+</section>

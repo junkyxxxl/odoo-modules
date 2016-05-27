@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+
+VXC xcash_link_account, xcash_link_account gen,model_xcash_link_account,,1,1,1,1

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>	
+    <t t-name="stock_quant_product_variant_grid.qtyWidget">
+    	<t t-if="widget.num_dims!=0">
+	    	<div class="oe_quantities_per_template">
+	            <table>
+	                <tr>
+	                    <th></th>
+	                    <t t-foreach="widget.columns_name" t-as="column">
+	                        <th class="oe_quantities_per_template_head">
+	                            <t t-esc="column.toString()"/><br />
+	                        </th>
+	                    </t>
+	                    <th class="oe_quantities_per_template_head">Total</th>
+	                </tr>
+	                
+	                <tr t-foreach="widget.rows_name" t-as="row">
+	                    <td class="oe_quantities_per_template_row"><t t-esc="row.toString()"/></td>
+	                    <t t-foreach="widget.columns_name" t-as="column">
+	                    		<td>
+		                            <input class="oe_quantities_per_template_input" t-att-data-row="row"
+		                                t-att-data-column="column" type="text"/>
+		                            <span  class="oe_quantities_per_template_box" t-att-data-row="row"
+		                                t-att-data-column="column"/>
+	                        	</td>
+	                    </t>
+	                    <td t-att-data-row-total="row" class="oe_quantities_total"> </td>
+	                </tr>
+					
+	                <t t-if="widget.num_dims==2">                
+	                <tr class="oe_quantities_total">
+	                    <td>
+	                        <div class="oe_quantities_per_template_adding_tot">
+	                            <div class="oe_quantities_per_template_tottot"><span>Total</span></div>
+	                        </div>
+	                    </td>
+						                   
+	                    <t t-foreach="widget.columns_name" t-as="column">
+	                        <td class="oe_quantities_total">
+	                            <span class="oe_quantities_per_template_box" t-att-data-column-total="column">
+	                            </span>
+	                        </td>
+	                    </t>
+	                    <td class="oe_quantities_superTotal oe_quantities_total"></td>
+	                </tr>
+	                </t>
+	            </table>
+	        </div>
+        </t>
+    </t>
+</templates>
