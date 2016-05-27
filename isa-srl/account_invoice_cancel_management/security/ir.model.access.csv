@@ -1,4 +1,0 @@
-"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-"account_invoice_management_1","account.invoice.management.invoice","model_account_invoice_cancel_isa","account.group_account_invoice",1,1,1,1
-"account_invoice_management_2","account.invoice.management.user","model_account_invoice_cancel_isa","account.group_account_user",1,1,1,1
-"account_invoice_management_3","account.invoice.management.manager","model_account_invoice_cancel_isa","account.group_account_manager",1,1,1,1

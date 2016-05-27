@@ -1,8 +1,0 @@
-.openerp .oe_mail .oe_msg .oe_msg_icons .oe_attach:hover a{
-    color: #bbbaff;
-    text-shadow: 0px 1px #7c7bad,0px -1px #7c7bad, -1px 0px #7c7bad, 1px 0px #7c7bad, 0px 3px 3px rgba(0,0,0,0.1);
-}
-.openerp.openerp_ie .oe_mail .oe_msg .oe_msg_icons .oe_attach:hover a{
-    color: #7C7BAD;
-    text-shadow: none;
-}
