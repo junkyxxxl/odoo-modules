@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_payment_wht_specification_view" model="ir.ui.view">
+          <field name="name">wizard.payment.wht.specification.form</field>
+          <field name="model">wizard.payment.wht.specification</field>
+          <field name="arch" type="xml">
+            <form string="Wizard Payment Wht Specification" version="7.0">
+               <group>
+                   <field name="id" invisible="1" />
+                   <field name="journal_id" invisible="1" />
+                   <field name="maturity" readonly="1" />
+                   <field name="actual_page" invisible="1" />
+                   <field name="total_pages" invisible="1" />
+                   <field name="is_last_page" invisible="1" />
+               </group>
+               <group col="4" colspan="3">
+                    <button name="move_page" icon="gtk-go-back" string="Previous Page" type="object" context="{'t_skip': -1}"
+                            attrs="{'invisible': [('actual_page', '=', 1)]}"/>
+                    <field name="pages_resume" />
+                    <button name="move_page" icon="gtk-go-forward" string="Next Page" type="object" context="{'t_skip': 1}"
+                            attrs="{'invisible': [('is_last_page', '=', True)]}"/>
+                </group>
+            <field name="confirmed_ids">
+                    <tree string="Payment Confirmed" toolbar="1">
+                        <field name="move_line_id"/>
+                        <field name="partner_id"/>
+                        <field name="account_id"/>
+                        <field name="state" />
+                        <field name="amount" />
+                        <button name="move_draft_forward" icon="gtk-go-forward" string="Forward" type="object" context="{'line_id': id}" />
+                    </tree>                
+             </field>
+             <button name="action_move_all_backward"
+                     string="Deselect All"
+                     icon="gtk-go-back"
+                     type="object"/>
+             <button name="action_move_all_forward"
+                     string="Select All"
+                     icon="gtk-go-forward"
+                     type="object"/>
+        
+             <field name="selected_ids">
+                    <tree string="Payment Selected" toolbar="1">
+                        <field name="move_line_id"/>
+                        <field name="partner_id"/>
+                        <field name="account_id"/>
+                        <field name="state" />
+                        <field name="amount" />
+                       <button name="move_draft_backward" icon="gtk-go-back" string="Back" type="object" context="{'line_id': id}" />
+                    </tree>
+             </field>
+             <footer>
+                    <button name="view_new_report"
+                            string="New Search"
+                            icon="gtk-new"
+                            type="object"/>
+                    <button name="view_confirm_payment"
+                            context="{'journal_id': journal_id}"
+                            string="Confirm Payment"
+                            icon="gtk-yes"
+                            type="object"/>
+                </footer>
+             
+             </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

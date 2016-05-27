@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="account_cancel_isa_form_view">
+            <field name="name">account.invoice.cancel.isa.form</field>
+            <field name="model">account.invoice.cancel.isa</field>
+            <field name="arch" type="xml">
+                <form string="Cancelled Customer Invoice" create="false" edit="false">
+                    <field name="number"/>
+                    <field name="journal_id" />
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="account_cancel_isa_tree_view">
+            <field name="name">account.invoice.cancel.isa.tree</field>
+            <field name="model">account.invoice.cancel.isa</field>
+            <field name="arch" type="xml">
+                <tree string="Cancelled Customer Invoices List" create="false">
+                    <field name="number"/>
+                    <field name="journal_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="account_cancel_isa_search_view">
+            <field name="name">account.invoice.cancel.isa.search</field>
+            <field name="model">account.invoice.cancel.isa</field>
+            <field name="arch" type="xml">
+                <search string="Cancelled Customer Invoices Search">
+                    <field name="number"/>
+                    <field name="journal_id" />
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="account_cancel_invoice_customer_action">
+            <field name="name">Cancelled Customer Invoices</field>
+            <field name="res_model">account.invoice.cancel.isa</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>   
+
+     </data>
+</openerp>

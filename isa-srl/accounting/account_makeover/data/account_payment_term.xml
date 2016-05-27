@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!--
+        Payment term
+        -->
+        <record id="account_payment_term_16th_next_month" model="account.payment.term">
+            <field name="name">16th Next Month</field>
+            <field name="note">16th Next Month</field>
+        </record>
+
+        <record id="account_payment_term_line_16th_next_month" model="account.payment.term.line">
+            <field name="value">balance</field>
+            <field eval="0" name="days"/>
+            <field eval="16" name="days2"/>
+            <field eval="account_payment_term_16th_next_month" name="payment_id"/>
+        </record>
+
+    </data>
+</openerp>

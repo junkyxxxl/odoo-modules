@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"res_zone_user","res.zone.user","model_res_zone","base.group_sale_salesman",1,0,0,0
+"res_zone_manager","res.zone.manager","model_res_zone","base.group_sale_manager",1,1,1,1
+"category_partner_user","category.partner.user","model_category_partner","base.group_sale_salesman",1,0,0,0
+"category_partner_manager","category.partner.manager","model_category_partner","base.group_sale_manager",1,1,1,1

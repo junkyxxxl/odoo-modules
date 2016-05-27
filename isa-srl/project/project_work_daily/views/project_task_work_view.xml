@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <!-- Project Task Work -->
+        <record id="view_project_task_work_daily_form" model="ir.ui.view">
+            <field name="name">project.task.work.daily.form</field>
+            <field name="model">project.task.work</field>
+            <field name="inherit_id" ref="project.view_task_work_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group[@col='4']" position="before">
+                    <header>
+                        <button icon="gtk-ok"
+                                confirm="If confirmed the record will be saved once and then you will be able to change anyway. Confirm?"
+                                name="duplicate_work"
+                                string="Duplicate Work"
+                                context="{'user_id': user_id}"
+                                invisible="context.get('wizard_view',False)"
+                                type="object"/>
+                        
+                        <button icon="gtk-go-forward"
+                                name="view_work"
+                                string="Modify Work"
+                                invisible="not context.get('readonly_view',False)"
+                                context="{'modify_view': True,'line_id': id}"
+                                type="object" />
+
+                        <button icon="gtk-ok"
+                                name="save_work"
+                                string="Save"
+                                context="{'user_id': user_id}"
+                                invisible="not context.get('modify_view',False)"
+                                type="object"/>
+
+                        <button icon="gtk-ok"
+                                name="save_work"
+                                string="Save and Close"
+                                context="{'user_id': user_id}"
+                                invisible="not context.get('wizard_view',False)"
+                                type="object"/>
+
+                        <button icon="terp-gtk-go-back-rtl"
+                                name="save_work_and_next"
+                                string="Save and New"
+                                context="{'user_id': user_id}"
+                                invisible="not context.get('wizard_view',False)"
+                                type="object"/>
+
+                        <button icon="terp-check"
+                                confirm="If confirmed the record will be saved and the Task will be set to Completed. Confirm?"
+                                name="save_work_complete_task"
+                                string="Task Completed"
+                                context="{'user_id': user_id}"
+                                invisible="not context.get('wizard_view',False)"
+                                type="object"/>
+                    </header>
+                </xpath>
+                <field name="name" position="after">
+                    <field name="project_id"
+                           on_change="onchange_project(project_id,task_id)"
+                           required="1"
+                           options="{'create': false, 'create_edit': false, 'no_open': True}"
+                           readonly="context.get('default_project_id',False)"/>
+                    <newline />
+                    <field name="task_id"
+                           domain="[('project_id', '=', project_id)]"
+                           readonly="context.get('default_task_id',False)"
+                           context="{'default_project_id':project_id}" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

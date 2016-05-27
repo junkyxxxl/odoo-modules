@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="group_doclite_isa" model="res.groups">
+           <field name="name">Doclite DMS</field>
+        </record>
+    </data>
+</openerp>

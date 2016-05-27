@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <!-- Sale Document Type Tree -->
+        <record id="view_sale_document_type_tree" model="ir.ui.view">
+            <field name="name">sale.document.type.tree</field>
+            <field name="model">sale.document.type</field>
+            <field name="arch" type="xml">
+                <tree string="Tipo Documento">
+                    <field name="name" required="1" />
+                    <field name="code" required="1" />
+                </tree>
+            </field>
+        </record>
+    
+        <!-- Sale Document Type Form -->
+        <record id="sale_document_type_form" model="ir.ui.view">
+            <field name="name">sale.document.type.form</field>
+            <field name="model">sale.document.type</field>
+            <field name="arch" type="xml">
+                <form string="Tipo Documento">
+                    <group>
+                        <group>
+                            <field name="name" required="1" />
+                            <field name="code" required="1" />
+                            <field name="allow_confirm" />
+                        </group>
+                        <group>
+                            <field name="sequence_id" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sale_document_type_tree" model="ir.actions.act_window">
+            <field name="name">Tipo Documento</field>
+            <field name="res_model">sale.document.type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem action="action_sale_document_type_tree"
+                  name="Tipo Documento"
+                  id="menu_sale_document_type"
+                  parent="base.menu_base_config"
+                  sequence="23" />
+
+    </data>
+</openerp>

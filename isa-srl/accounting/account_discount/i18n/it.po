@@ -1,0 +1,187 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_discount
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-21 10:26+0000\n"
+"PO-Revision-Date: 2015-01-21 10:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_discount
+#: field:account.discount.type,create_uid:0
+#: field:account.invoice.discount,create_uid:0
+#: field:sale.order.discount,create_uid:0
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: account_discount
+#: field:account.discount.type,create_date:0
+#: field:account.invoice.discount,create_date:0
+#: field:sale.order.discount,create_date:0
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: account_discount
+#: code:addons/account_discount/stock/stock.py:70
+#: code:addons/account_discount/stock/stock.py:76
+#: code:addons/account_discount/stock/stock.py:78
+#, python-format
+msgid "Discount Mismatch!"
+msgstr "Incongruenza Sconti!"
+
+#. module: account_discount
+#: field:account.invoice.discount,account_id:0
+msgid "Fattura"
+msgstr "Fattura"
+
+#. module: account_discount
+#: selection:account.discount.type,type:0
+#: selection:account.invoice.discount,type:0
+#: selection:sale.order.discount,type:0
+msgid "Fisso"
+msgstr "Fisso"
+
+#. module: account_discount
+#: field:account.discount.type,id:0
+#: field:account.invoice.discount,id:0
+#: field:sale.order.discount,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: account_discount
+#: model:ir.model,name:account_discount.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: account_discount
+#: code:addons/account_discount/stock/stock.py:70
+#: code:addons/account_discount/stock/stock.py:76
+#: code:addons/account_discount/stock/stock.py:78
+#, python-format
+msgid "It's not possible to group pickings that refers to sale orders with different global discounts."
+msgstr "Non è possibile raggruppare picking che si riferiscono ad ordini di vendita con sconti globali differenti."
+
+#. module: account_discount
+#: field:account.discount.type,write_uid:0
+#: field:account.invoice.discount,write_uid:0
+#: field:sale.order.discount,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultimo aggiornamento da"
+
+#. module: account_discount
+#: field:account.discount.type,write_date:0
+#: field:account.invoice.discount,write_date:0
+#: field:sale.order.discount,write_date:0
+msgid "Last Updated on"
+msgstr "Ultimo aggiornamento il"
+
+#. module: account_discount
+#: model:ir.actions.act_window,help:account_discount.action_discount_type
+msgid "Mostra e gestisci la lista delle tipologie di sconto applicabili globalmente ad un documento."
+msgstr "Mostra e gestisci la lista delle tipologie di sconto applicabili globalmente ad un documento."
+
+#. module: account_discount
+#: field:account.discount.type,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: account_discount
+#: field:account.invoice.discount,name:0
+#: field:sale.order.discount,name:0
+msgid "Nome"
+msgstr "Nome"
+
+#. module: account_discount
+#: field:sale.order.discount,sale_id:0
+msgid "Ordine"
+msgstr "Ordine"
+
+#. module: account_discount
+#: model:ir.model,name:account_discount.model_stock_picking
+msgid "Picking List"
+msgstr "Lista di Picking"
+
+#. module: account_discount
+#: model:ir.model,name:account_discount.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: account_discount
+#: field:account.invoice,global_discount_lines:0
+#: field:sale.order,global_discount_lines:0
+msgid "Sconti Globali"
+msgstr "Sconti Globali"
+
+#. module: account_discount
+#: view:account.invoice:account_discount.account_invoice_discount_view
+#: view:sale.order:account_discount.view_order_form_discount
+msgid "Sconti globali"
+msgstr "Sconti globali"
+
+#. module: account_discount
+#: field:sale.order,discount_per_template_ids:0
+msgid "Sconti per modello prodotto"
+msgstr "Sconti per modello prodotto"
+
+#. module: account_discount
+#: model:ir.model,name:account_discount.model_account_invoice_discount
+#: model:ir.model,name:account_discount.model_sale_order_discount
+msgid "Sconto Globale"
+msgstr "Sconto Globale"
+
+#. module: account_discount
+#: field:account.invoice.discount,sequence:0
+#: field:sale.order.discount,sequence:0
+msgid "Sequence"
+msgstr "Sequence"
+
+#. module: account_discount
+#: help:sale.order,global_discount_total:0
+msgid "The amount without tax."
+msgstr "L'imponibile."
+
+#. module: account_discount
+#: field:account.discount.type,type:0
+#: field:account.invoice.discount,type:0
+#: field:sale.order.discount,type:0
+msgid "Tipo"
+msgstr "Tipo"
+
+#. module: account_discount
+#: view:account.discount.type:account_discount.form_account_discount_type
+#: model:ir.model,name:account_discount.model_account_discount_type
+msgid "Tipologia Sconto"
+msgstr "Tipologia Sconto"
+
+#. module: account_discount
+#: view:account.discount.type:account_discount.tree_account_discount_type
+#: model:ir.actions.act_window,name:account_discount.action_discount_type
+#: model:ir.ui.menu,name:account_discount.menu_discount_type
+msgid "Tipologie Sconto"
+msgstr "Tipologie Sconto"
+
+#. module: account_discount
+#: field:account.invoice,global_discount_total:0
+#: field:sale.order,global_discount_total:0
+msgid "Totale Sconti"
+msgstr "Totale Sconti"
+
+#. module: account_discount
+#: field:account.invoice,global_discount_percentual:0
+msgid "Totale Sconti (%)"
+msgstr "Totale Sconti (%)"
+
+#. module: account_discount
+#: field:account.invoice.discount,value:0
+#: field:sale.order.discount,value:0
+msgid "Valore"
+msgstr "Valore"
+

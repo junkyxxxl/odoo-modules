@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="wizard_split_maturity_form" model="ir.ui.view">
+        <field name="name">Split maturity wizard form</field>
+        <field name="model">account.move.line.split</field>
+        <field name="arch" type="xml">
+            <form string="Split wizard" >
+                <field name="move_id" invisible="1" />
+                <group col="2">
+                    <field name="debit1" required="1" on_change="onchange_debit1(move_id,debit1)" />
+                    <field name="credit1" required="1" on_change="onchange_credit1(move_id,credit1)" />
+                    <field name="date_maturity1" required="1" />
+                </group>
+                <group col="2">
+                    <field name="debit2" required="1" on_change="onchange_debit2(move_id,debit2)" />
+                    <field name="credit2" required="1" on_change="onchange_credit2(move_id,credit2)" />
+                    <field name="date_maturity2" required="1" />
+                </group>
+                <newline/>
+                <group col="2">
+                    <button icon="gtk-cancel" special="cancel" string="Cancel" colspan="1"/>
+                    <button icon="gtk-ok" name="split_maturities" string="Split" type="object" colspan="1" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+  </data>
+</openerp>

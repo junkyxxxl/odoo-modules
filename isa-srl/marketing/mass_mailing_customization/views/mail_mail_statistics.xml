@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record model='ir.ui.view' id='mail_statistics_customization_form'>
+            <field name='name'>mail.statistics.customization.form</field>
+            <field name='model'>mail.mail.statistics</field>
+            <field name="inherit_id" ref="mass_mailing.view_mail_mail_statistics_form"/>
+            <field name='arch' type='xml'>                
+                <xpath expr="//field[@name='res_id']" position="after">
+                    <field name="resource_reference" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model='ir.ui.view' id='mail_statistics_customization_tree'>
+            <field name='name'>mail.statistics.customization.tree</field>
+            <field name='model'>mail.mail.statistics</field>
+            <field name="inherit_id" ref="mass_mailing.view_mail_mail_statistics_tree"/>
+            <field name='arch' type='xml'>
+                <xpath expr="//field[@name='message_id']" position="after">
+                    <field name='resource_reference'/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

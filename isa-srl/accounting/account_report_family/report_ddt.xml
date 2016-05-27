@@ -1,0 +1,21 @@
+<openerp>
+    <data>
+        
+        <template id="report_ddt_family" inherit_id="account_report.report_ddt">
+            <xpath expr="//t[@t-foreach='o.ddt_lines']" position="before">
+                <!-- Verifico se devo stampare le annotazioni in base alle famiglie dei prodotti -->
+                <t t-set="product_family" t-value="o.ddt_lines.mapped('product_id').mapped('family').mapped('code')" />
+                <t t-if="company._print_shipping_notes(product_family)">
+                    <tr>
+                        <td colspan="4">
+                            <div class="alert alert-info alert-invoice-line">
+                                <b><span t-field="company.shipping_notes"/></b>
+                            </div>
+                        </td>
+                    </tr>
+                </t>
+            </xpath>
+        </template>
+        
+    </data>
+</openerp>

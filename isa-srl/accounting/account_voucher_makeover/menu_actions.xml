@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <menuitem action="action_payment_wht_account_voucher_makeover"
+        		  name="Withholding Payments"
+                  id="menu_action_payment_wht_account_voucher_makeover"
+                  parent="account.menu_finance_payables"
+                  sequence="17"/>
+
+    </data>
+</openerp>

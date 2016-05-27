@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Shop payment">
+      <xpath expr="." position="inside">
+        <script type="text/javascript" src="/payment_extra_cost/static/src/js/extra_cost.js"></script>
+      </xpath>
+    </template>
+
+    <template id="payment_extra_cost_acquire" inherit_id="website_sale.payment" name="Payment extra cost">
+        <xpath expr="//ul[@class='list-unstyled']//li[@t-foreach='acquirers or []']" position="replace">
+            <li t-foreach="acquirers or []" t-as="acquirer">
+                <label t-if="acquirer.button">
+                    <input t-att-value="acquirer.id" type="radio" name="acquirer" t-att-checked="order.payment_acquirer_id.id == acquirer.id"/>
+                    <img class="media-object" style="width: 60px; display: inline-block;"
+                      t-att-title="acquirer.name"
+                      t-att-src="'/payment_%s/static/src/img/%s_icon.png' % (acquirer.provider, acquirer.provider)"/>
+                    <span t-field="acquirer.name"/>
+                    <span class="badge" t-field="acquirer.product_id.lst_price"
+                                        t-field-options='{
+                                            "widget": "monetary",
+                                            "display_currency": "website.pricelist_id.currency_id"
+                                        }'/>
+              </label>
+            </li>
+        </xpath>
+    </template>
+
+</data>
+</openerp>

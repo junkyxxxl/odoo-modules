@@ -1,0 +1,347 @@
+<openerp>
+    <data>
+        <template id="ddt_layout">
+            <t t-call="account_report.ddt_layout_header" />
+            <t t-raw="0" />
+            <t t-call="account_report.ddt_layout_footer" />
+        </template>
+
+        <!-- Intestazione ddt -->
+        <template id="ddt_layout_header">
+            <div class="header" style="margin-top: 10px !important;">
+                <div class="row row-eq-height head">
+                    <div class="col-xs-7">
+                        <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 65px; max-width: 370px; width: auto;height: auto;" class="img-responsive" alt="Logo Azienda" />
+                        <div style="font-size: 12px; color: #0F4A9E;">
+                            <p style="margin: 0 0 0px;">
+                                <br/>
+                                <b>
+                                    <font color="red">SEDE</font><br/>
+                                    <t t-esc="company.zip"/> <t t-esc="company.city" /> - <t t-esc="company.state_id.name"/>
+                                    <t t-esc="company.street"/><br/>
+                                    Tel. <t t-esc="company.phone" /> - Fax <t t-esc="company.fax" />
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    
+                                    <t t-if="company.partner_id.child_ids and company.print_contacts">
+                                        <t t-set="contact" t-value="company.partner_id.child_ids[0]" />
+                                        <font color="red"><t t-esc="contact.name" /></font><br/>
+                                        <t t-esc="contact.zip"/> <t t-esc="contact.city" /> - <t t-esc="contact.state_id.name"/>
+                                        <t t-esc="contact.street"/><br/>
+                                         Tel. <t t-esc="contact.phone" /> - Fax <t t-esc="contact.fax" />
+                                    </t>
+                                </b>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-5" style="margin-top: 15px;">
+                        <div class="panel panel-default" style="margin-bottom: 2%; min-height: 160px; max-height: 160px;">
+                            <div class="panel-body">
+                                <dl class="dl-horizontal">
+                                    <dt>Spett.le</dt>
+                                    <t t-set="partner" t-value="o.partner_id" />
+                                    <dd><b><t t-esc="partner.name"/></b><br/>
+                                        <t t-esc="partner.street"/><br/>
+                                        <t t-esc="partner.zip"/> <t t-esc="partner.city"/> 
+                                    </dd>
+                                </dl>
+                                <p>
+                                    <t t-if="o.delivery_address_id">
+                                        <dl class="dl-horizontal">
+                                            <dt>Spedizione 1</dt>
+                                            <dd><t t-esc="o.delivery_address_id.name"/><br/>
+                                                <t t-esc="o.delivery_address_id.street"/><br/>
+                                                <t t-esc="o.delivery_address_id.zip"/> <t t-esc="o.delivery_address_id.city"/>
+                                            </dd>
+                                        </dl>
+                                    </t>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <address>
+                            <t t-esc="company.rml_footer_readonly" />
+                        </address>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- Campi che mi servono per visualizzare le informazioni sulla stampa -->
+                        <t t-set="order" t-value="False" />
+                        <t t-if="o.picking_ids">
+                            <t t-set="order" t-value="o.picking_ids[0].sale_id" />
+                        </t>
+                        <table class="table table-bordered table-condensed" style="width:100%">
+                            <body style="font-size: 10px;">
+                                <tr>
+                                    <td style="width:15%">
+                                        <b>Partita Iva</b>
+                                        <br/>
+                                        <t t-esc="o.partner_id.vat" />
+                                    </td>
+                                    <td style="width:15%">
+                                        <t t-if="o.partner_id.fiscalcode">
+                                            <b>Codice Fiscale</b>
+                                            <t t-esc="o.partner_id.fiscalcode" />
+                                        </t>
+                                    </td>
+                                    <td style="width:70%; vertical-align: middle;" class="text-center" colspan="4">
+                                        <b style="font-size: 14px;">DOCUMENTO DI TRASPORTO</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>COD. CLIENTE</b>
+                                        <br/><t t-esc="o.partner_id.customer_code" />
+                                    </td>
+                                    <td>
+                                        <b>AGENTE</b>
+                                        <br/>
+                                            <t t-if="order">
+                                                <t t-esc="order.user_id.name" />
+                                            </t>
+                                    </td>
+                                    <td>
+                                        <b>CONDIZIONI DI VENDITA</b>
+                                        <br/><t t-esc="o.transportation_reason_id.name"/>
+                                    </td>
+                                    <td>
+                                        <b>MODALITA' DI CONSEGNA</b>
+                                        <br/><t t-esc="o.incoterm_id.name"/>
+                                    </td>
+                                    <td>
+                                        <b>DATA</b>
+                                        <br/><span t-field="o.ddt_date" t-field-options='{"format": "dd-MM-yyyy"}'/>
+                                    </td>
+                                    <td>
+                                        <b>NUMERO</b>
+                                        <br/><t t-esc="o.name" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><b>Termine pagamento:</b> <t t-esc="o.payment_term.name" /></td>
+                                    <td colspan="3"><b>VOSTRO IBAN:</b>
+                                        <t t-if="o.partner_id.bank_ids">
+                                            <span t-field="o.partner_id.bank_ids[0].acc_number" />
+                                        </t>
+                                    </td>
+                                </tr>
+                            </body>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </template>
+        
+        <!-- piede ddt -->
+        <template id="ddt_layout_footer">
+            <div class="footer">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table class="table table-bordered table-condensed" style="width:100%">
+                            <body style="font-size: 10px;">
+                                <tr style="height: 45px;">
+                                    <td colspan="5">
+                                        <span style="font-size: 6px;">ANNOTAZIONI E VARIAZIONI</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Porto</b>
+                                        <br/>
+                                        <span class="last-page" t-field="o.carriage_condition_id.name" />
+                                    </td>
+                                    <td>
+                                        <b>TRASPORTO A CURA</b>
+                                        <br/>
+                                        <span class="last-page" t-field="o.transportation_method_id.name" />
+                                    </td>
+                                    <td>
+                                        <b>ASPETTO DEI BENI</b>
+                                        <br/>
+                                        <span class="last-page" t-field="o.goods_description_id.name" />
+                                    </td>
+                                    <td style="width: 160px;"></td>
+                                    <td>
+                                        <b>COLLI</b>
+                                        <br/>
+                                        <span class="last-page" t-field="o.parcels" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">
+                                        <b>VETTORE</b>
+                                        <t t-set="carrier" t-value="o.carrier_id.partner_id">
+                                            
+                                        </t>
+                                        <br/><span class="last-page" t-field="carrier.name"/>
+                                        <br/><span class="last-page" t-field="carrier.street"/> <span class="last-page">-</span> <span t-field="carrier.city"/> 
+                                        <br/><span class="last-page" t-field="carrier.state_id.name"/>
+                                    </td>
+                                    <td rowspan="2">
+                                        <b>DATA E ORA</b>
+                                        <div>
+                                            <span class="last-page" t-field="o.delivery_date"/>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <b>FIRMA MAGAZZINIERE</b>
+                                    </td>
+                                    <td colspan="2">
+                                        <small>
+                                            <b>Dichiaro di aver ricevuto la merce e di non aver pagato alla consegna</b>
+                                            <br/>
+                                            Firma
+                                        </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <small>Firma dell'incaricato al trasporto</small>
+                                        <p/> 
+                                        
+                                    </td>
+                                    <td colspan="2">
+                                        <small>Firma per ricevuta del cessionario</small>
+                                        <p/>
+                                    </td>
+                                </tr>
+                            </body>
+                        </table>
+                        <t t-if="company.disclaimer">
+                            <div class="text-center advertise">
+                                <t t-esc="company.disclaimer" />
+                            </div>
+                        </t>
+                        <t t-if="company.privacy_info">
+                            <div style="font-size: 6px;" class="text-center">
+                                <t t-esc="company.privacy_info" />
+                            </div>
+                        </t>
+                        <div class="text-right">
+                            Pag. <span class="page"/> di <span class="topage"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    
+        <!-- report ddt corpo -->
+        <template id="report_ddt">
+            <t t-call="account_report.report_css"/>
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <!-- Multicompany -->
+                    <t t-if="o and 'company_id' in o">
+                        <t t-set="company" t-value="o.company_id"></t>
+                    </t>
+                    <t t-if="not o or not 'company_id' in o">
+                        <t t-set="company" t-value="res_company"></t>
+                    </t>
+                    <t t-call="account_report.ddt_layout">
+                        <div class="page">
+                            <span t-field="o.name" style="display: none;"/>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <table class="table invoice-header">
+                                        <thead>
+                                            <tr>
+                                                <th>Codice</th>
+                                                <th>Descrizione</th>
+                                                <th>UM</th>
+                                                <th class="text-right">Qtà</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Verifico se devo stampare delle note aggiuntive -->
+                                            <t t-if="company.invoice_notes">
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <div class="alert alert-warning alert-invoice-line">
+                                                            <span t-field="company.invoice_notes" />
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                            <t t-foreach="o.ddt_lines" t-as="ddt_line">
+                                                <t t-set="free" t-value="ddt_line.procurement_id.sale_line_id.free" />
+                                                <tr>
+                                                    <td>
+                                                        <t t-esc="ddt_line.product_id.default_code"/>
+                                                    </td>
+                                                    <td>
+                                                        <t t-esc="ddt_line.sanitize_description()"/> 
+                                                        <t t-if="free">
+                                                         - <i>(Omaggio)</i>
+                                                        </t>
+                                                    </td>
+                                                    <td><t t-esc="ddt_line.product_uom.name"/></td>
+                                                    <td class="text-right"><span t-field="ddt_line.product_uom_qty"/></td>
+                                                </tr>
+                                            </t>
+                                            <!-- Verifico se devo stampare le note dei ddt -->
+                                            <t t-if="o.note">
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <div class="alert alert-warning alert-invoice-line">
+                                                            <b><span t-field="o.note"/></b>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                            <!-- Verifico se devo stampare le informazioni delle location -->
+                                            <t t-if="company.print_location_information">
+                                                <t t-if="o.picking_ids">
+                                                    <t t-set="first_picking" t-value="o.picking_ids[0]"/>
+                                                    <tr>
+                                                        <td colspan="4">
+                                                            <div class="alert alert-info alert-invoice-line">
+                                                                <b>
+                                                                    da: <span t-field="first_picking.location_id.name"/>
+                                                                    <i class="fa fa-arrow-right"></i>
+                                                                    a: <span t-field="first_picking.location_dest_id.name"/>
+                                                                </b>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+        
+        <!-- Report ddt -->
+        <report
+            id="report_standard_ddt"
+            model="stock.ddt"
+            string="DDT (standard)"
+            report_type="qweb-pdf"
+            name="account_report.report_ddt"
+            file="account_report.report_ddt"
+            attachment_use="True"
+            attachment="(object.state in ('confirmed')) and
+            ('DDT'+(object.name or '').replace('/','')+'.pdf')"
+        />
+        
+        <!-- Formato carta ddt -->
+        <record id="report_standard_ddt" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="account_report.paperformat_account_report"/>
+        </record>
+
+        <!-- Eliminazione stampe non utilizzate -->
+        <delete id="l10n_it_ddt.action_report_ddt" model="ir.actions.report.xml"/>
+        <delete id="l10n_it_ddt_makeover.stock_ddt_makeover" model="ir.actions.report.xml"/>  
+        
+    </data>
+</openerp>

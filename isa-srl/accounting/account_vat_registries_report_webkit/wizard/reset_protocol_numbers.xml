@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_reset_protocol_numbers" model="ir.ui.view">
+            <field name="name">Reset Protocol Numbers</field>
+            <field name="model">wizard.reset.protocol.numbers</field>
+            <field name="arch" type="xml">
+                <form string="Registro IVA" version="7.0">
+                    <group>
+                        <group>
+                            <field name="journal_id" required="1"/>
+                            <field name="fiscalyear_id" required="1"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Calcola" name="reset_protocol_numbers" type="object" class="oe_highlight"/>
+                        	or
+                        <button string="Annulla" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_reset_registry" model="ir.actions.act_window">
+            <field name="name">Registri IVA</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.reset.protocol.numbers</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+            	
+        <menuitem 
+        	id="menu_reset_protocol_numbers" 
+        	name="Reset Protocol Numbers" 
+        	parent="account.menu_finance_entries"  
+        	sequence="5" 
+        	groups="account_reset_protocol_numbers_group_isa"
+        	action="action_reset_registry"/>            	
+    </data>
+</openerp>

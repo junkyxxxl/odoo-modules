@@ -1,0 +1,241 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_due_list_ext_isa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130326-002357\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-27 11:01+0000\n"
+"PO-Revision-Date: 2013-03-27 11:01+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_due_list_ext_isa
+#: model:ir.actions.act_window,name:account_due_list_ext_isa.action_invoice_payments_ext_isa
+#: model:ir.ui.menu,name:account_due_list_ext_isa.menu_action_invoice_maturities_ext_isa
+msgid "Maturities"
+msgstr "Scadenzario"
+
+#. module: account_due_list_ext_isa
+#: field:account.move.line.split,date_maturity_previous2:0
+msgid "New previous due date"
+msgstr "Scadenza precedente"
+
+#. module: account_due_list_ext_isa
+#: field:account.move.line.split,credit2:0
+msgid "New Credit"
+msgstr "Nuovo credito"
+
+#. module: account_due_list_ext_isa
+#: code:addons/account_due_list_ext_isa/wizard/account_due_list_ext_isa_wizard.py:107
+#, python-format
+msgid "Values cannot be negative!"
+msgstr "Valore negativo non ammesso!"
+
+#. module: account_due_list_ext_isa
+#: field:account.move.line,date_maturity_previous:0
+#: field:account.move.line.split,date_maturity_previous1:0
+msgid "Previous due date"
+msgstr "Scadenza precedente"
+
+#. module: account_due_list_ext_isa
+#: field:account.move.line.split,date_maturity1:0
+msgid "Date maturity"
+msgstr "Data scadenza"
+
+#. module: account_due_list_ext_isa
+#: code:addons/account_due_list_ext_isa/wizard/account_due_list_ext_isa_wizard.py:173
+#, python-format
+msgid "You have to define an analytic journal on the '%s' journal!"
+msgstr "Devi prima definire un giornale analitico per il giornale '%s' !"
+
+#. module: account_due_list_ext_isa
+#: view:account.move.line.split:0
+msgid "Split"
+msgstr "Split"
+
+#. module: account_due_list_ext_isa
+#: field:account.move.line.split,debit1:0
+msgid "Debit"
+msgstr "Debito"
+
+#. module: account_due_list_ext_isa
+#: code:addons/account_due_list_ext_isa/wizard/account_due_list_ext_isa_wizard.py:99
+#, python-format
+msgid "Sum of Credit and New Credit must be equal to original Credit!"
+msgstr "La somma di Credito e Nuovo Credito deve essere uguale al Credito originaria!"
+
+#. module: account_due_list_ext_isa
+#: code:addons/account_due_list_ext_isa/account_move_line_isa.py:73
+#, python-format
+msgid "Split maturity"
+msgstr "Split scadenza"
+
+#. module: account_due_list_ext_isa
+#: model:ir.model,name:account_due_list_ext_isa.model_account_move_line_split
+msgid "account.move.line.split"
+msgstr "account.move.line.split"
+
+#. module: account_due_list_ext_isa
+#: field:account.move.line.split,debit2:0
+msgid "New Debit"
+msgstr "Nuovo debito"
+
+#. module: account_due_list_ext_isa
+#: view:account.move.line:0
+msgid "Document date"
+msgstr "Data documento"
+
+#. module: account_due_list_ext_isa
+#: field:account.move.line.split,date_maturity_temp2:0
+msgid "New Temporary due date"
+msgstr "Nuova data scadenza temporanea"
+
+#. module: account_due_list_ext_isa
+#: help:account.move.line,date_maturity_previous:0
+msgid "This field contains previous maturity due date."
+msgstr "Questo campo mostra la data di scadenza precedente."
+
+#. module: account_due_list_ext_isa
+#: view:account.move.line.split:0
+msgid "Split wizard"
+msgstr "Split wizard"
+
+#. module: account_due_list_ext_isa
+#: view:account.move.line:0
+msgid "Split maturities"
+msgstr "Split scadenze"
+
+#. module: account_due_list_ext_isa
+#: field:account.move.line,date_maturity_temp:0
+#: field:account.move.line.split,date_maturity_temp1:0
+msgid "Temporary due date"
+msgstr "Data scadenza temporanea"
+
+#. module: account_due_list_ext_isa
+#: field:account.move.line,move_lines_isa:0
+msgid "Move lines"
+msgstr "Movimenti"
+
+#. module: account_due_list_ext_isa
+#: code:addons/account_due_list_ext_isa/wizard/account_due_list_ext_isa_wizard.py:97
+#: code:addons/account_due_list_ext_isa/wizard/account_due_list_ext_isa_wizard.py:99
+#: code:addons/account_due_list_ext_isa/wizard/account_due_list_ext_isa_wizard.py:102
+#: code:addons/account_due_list_ext_isa/wizard/account_due_list_ext_isa_wizard.py:104
+#: code:addons/account_due_list_ext_isa/wizard/account_due_list_ext_isa_wizard.py:107
+#, python-format
+msgid "Error!"
+msgstr "Errore!"
+
+#. module: account_due_list_ext_isa
+#: code:addons/account_due_list_ext_isa/wizard/account_due_list_ext_isa_wizard.py:104
+#, python-format
+msgid "Credit values cannot be negative!"
+msgstr "Il credito non può essere negativo!"
+
+#. module: account_due_list_ext_isa
+#: field:account.move.line.split,credit1:0
+msgid "Credit"
+msgstr "Credito"
+
+#. module: account_due_list_ext_isa
+#: field:account.move.line.split,move_id:0
+msgid "Move id"
+msgstr "Id movimento"
+
+#. module: account_due_list_ext_isa
+#: field:account.move.line.split,date_maturity2:0
+msgid "New Date maturity"
+msgstr "Nuova data scadenza"
+
+#. module: account_due_list_ext_isa
+#: code:addons/account_due_list_ext_isa/wizard/account_due_list_ext_isa_wizard.py:173
+#, python-format
+msgid "No Analytic Journal !"
+msgstr "Nessun giornale analitico !"
+
+#. module: account_due_list_ext_isa
+#: code:addons/account_due_list_ext_isa/wizard/account_due_list_ext_isa_wizard.py:97
+#, python-format
+msgid "Sum of Debit and New Debit must be equal to original Debit!"
+msgstr "La somma di Debito e Nuovo Debito deve essere uguale al Debito originario!"
+
+#. module: account_due_list_ext_isa
+#: view:account.move.line.split:0
+msgid "Cancel"
+msgstr "Cancella"
+
+#. module: account_due_list_ext_isa
+#: code:addons/account_due_list_ext_isa/wizard/account_due_list_ext_isa_wizard.py:102
+#, python-format
+msgid "Debit values cannot be negative!"
+msgstr "Il debito non può essere negativo!"
+
+#. module: account_due_list_ext_isa
+#: model:ir.model,name:account_due_list_ext_isa.model_account_move_line
+msgid "Journal Items"
+msgstr "Voci sezionale"
+
+
+#. module: account_due_list_ext_isa
+#: model:ir.module.module,shortdesc:account_due_list_ext_isa.module_meta_information
+msgid "Payments Due list Report"
+msgstr "Report Scadenzario Pagamenti"
+
+#. module: account_due_list_ext_isa
+#: field:account.due.list.report,date_maturity_from:0
+msgid "Due Date From"
+msgstr "Data di Scadenza Da"
+
+#. module: account_due_list_ext_isa
+#: view:account.due.list.report:0
+#: model:ir.actions.act_window,name:account_due_list_ext_isa.action_due_list_report
+#: model:ir.model,name:account_due_list_ext_isa.model_account_due_list_ext_isa
+msgid "Print Account Due List Report"
+msgstr "Stampa Report Scadenzario Pagamenti"
+
+#. module: account_due_list_ext_isa
+#: model:ir.actions.report.xml,name:account_due_list_ext_isa.aeroo_report_due_list_ods
+msgid "Due List ods"
+msgstr "Scadenzario in ods"
+
+#. module: account_due_list_ext_isa
+#: model:ir.actions.report.xml,name:account_due_list_ext_isa.aeroo_report_due_list_odt
+msgid "Due List odt"
+msgstr "Scadenziario in odt"
+
+#. module: account_due_list_ext_isa
+#: model:ir.module.module,description:account_due_list_ext_isa.module_meta_information
+msgid "Reportt of a due list of pending payments. The list contains every expected payment, generated by invoices. The list is fully     filterable."
+msgstr "Report dello Scadenzario pagamenti."
+
+#. module: account_due_list_ext_isa
+#: view:account.due.list.report:0
+msgid "Print odt"
+msgstr "Stampa odt"
+
+#. module: account_due_list_ext_isa
+#: view:account.due.list.report:0
+msgid "Print ods"
+msgstr "Stampa ods"
+
+#. module: account_due_list_ext_isa
+#: view:account.due.list.report:0
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: account_due_list_ext_isa
+#: field:account.due.list.report,partner_wizard:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_due_list_ext_isa
+#: field:account.due.list.report,date_maturity_to:0
+msgid "Due Date To"
+msgstr "Data di Scadenza A"
+

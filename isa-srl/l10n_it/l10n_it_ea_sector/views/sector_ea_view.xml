@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_sector_ea_tree" model="ir.ui.view">
+            <field name="name">accreditation.sector.ea.tree</field>
+            <field name="model">accreditation.sector.ea</field>
+            <field name="arch" type="xml">
+                <tree string="EA Sector">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_sector_ea_form" model="ir.ui.view">
+            <field name="name">accreditation.sector.ea.form</field>
+            <field name="model">accreditation.sector.ea</field>
+            <field name="arch" type="xml">
+                <form string="EA">
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                    </group>
+                    <group>
+                        <field name="related_nace_ids">
+                        	<tree>
+                            	<field name="nace_parent_id"/>
+                            </tree>
+                        </field> 
+                    </group>                    
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sector_ea" model="ir.actions.act_window">
+            <field name="name">Settori EA</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">accreditation.sector.ea</field>
+            <field name="view_type">form</field>
+            <field name="help">Display and manage the list of all EA sector that can be required to your company.</field>
+        </record>
+		
+        <menuitem action="action_sector_ea" string="Settori EA" id="menu_sector_ea" parent="base.menu_sales" sequence="20" groups="base.group_no_one"/>
+
+    </data>
+</openerp>

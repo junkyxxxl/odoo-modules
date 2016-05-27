@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_confirm_payment_view" model="ir.ui.view">
+          <field name="name">wizard.confirm.payment.form</field>
+          <field name="model">wizard.confirm.payment</field>
+          <field name="arch" type="xml">
+            <form string="Wizard Payment Confirm" version="7.0" >
+               <group>
+                   <field name='id' invisible="1"/>
+                   <group>
+                       <field name="operation_date" />
+                       <field name="currency_date" />
+                       <field name="period_id" domain="[('state','!=','done')]" />
+                       <field name="bank_id" />
+                       <field name="journal_id" invisible="1" />
+                   </group>
+                   <group>
+                        <field name="partner_id" readonly="1" />
+                        <field name="all_supplier" readonly="1"/>
+                        <field name="it_supplier" readonly="1"/>
+                        <field name="ext_supplier" readonly="1"/>
+                   </group>
+                   
+                   <button name="set_confirm_values" icon="gtk-properties" string="Set Values" type="object" default_focus="1" class="oe_highlight" 
+                   		   context = "{'wizard_id': id,'partner_id': partner_id, 'journal_id': journal_id, 'period_id': period_id, 'operation_date': operation_date, 'currency_date': currency_date, 'bank_id': bank_id, 'all_supplier': all_supplier, 'it_supplier': it_supplier, 'ext_supplier': ext_supplier, 'operation_date': operation_date}"/>
+               </group>
+            <field name="line_ids" readonly="1">
+                <tree>
+                    <field name='id' />
+                    <field name="partner_id" readonly="1" />
+                    <field name="amount" />
+                    <field name="fnct_amount" sum="Total Amount"/>
+                    <field name="amount_partial" invisible="1"/>
+                    <button name="set_partial_amount" icon="gtk-open" string="Partial" type="object" context="{'line_id': id, 'amount_partial': amount_partial, 'amount_initial': amount_partial, 'amount_residual': amount_partial}"/>
+                    <field name="payment_type" />
+                    <field name="partner_bank_id" />
+                    <field name="document_number" />
+                    <field name="currency_date" invisible="1"/>
+                    <field name="allowance" />
+                    <field name="amount_allowance" attrs="{'invisible': [('allowance','!=',True)]}"/>
+                    <field name="state" />
+                    <button name="delete_payment" icon="gtk-stop" string="Delete" type="object" context="{'line_id': id}"/>
+               </tree>
+             </field>
+             <button name="create_voucher"
+                            context = "{'wizard_id': id,'partner_id': partner_id, 'journal_id': journal_id, 'period_id': period_id, 'bank_id': bank_id, 'operation_date': operation_date, 'currency_date': currency_date}"
+                            string="Confirm"
+                            icon="gtk-yes"
+                            attrs="{'invisible': ['|',('bank_id','=',False),('period_id','=',False)]}"
+                            type="object"/>
+
+             </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

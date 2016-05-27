@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+    <record id="filter_isale_report_template" model="ir.filters">
+        <field name="name">By Document Type</field>
+        <field name="model_id">sale.report</field>
+        <field name="user_id" eval="False"/>
+        <field name="context">{'group_by': ['date:month', 'document_type_id']}</field>
+    </record>    
+    
+    <record id="view_order_product_search_doctype" model="ir.ui.view">
+        <field name="name">sale.report.search.doctype</field>
+        <field name="model">sale.report</field>
+        <field name="inherit_id" ref="sale.view_order_product_search"/>
+        <field name="arch" type="xml">
+       	    <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="document_type_id"/>              
+            </xpath> 
+       	    <xpath expr="//filter[@string='Status']" position="after">
+                <filter string="Tipo Documento" name="Document Type" context="{'group_by':'document_type_id'}"/>             
+            </xpath>             
+        </field>
+    </record>    
+    
+</data>
+</openerp>

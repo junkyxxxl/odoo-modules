@@ -1,0 +1,40 @@
+id,code,name
+ea_1,1,"Agricoltura, silvicoltura e pesca"
+ea_2,2,Industria mineraria e cave
+ea_3,3,"Industrie alimentari, delle bevande e del tabacco"
+ea_4,4,Tessuti e prodotti tessili
+ea_5,5,Cuoio e prodotti in cuoio
+ea_6,6,Legno e prodotti in legno
+ea_7,7,"Pasta per carta, carta e prodotti in carta"
+ea_8,8,Case editrici
+ea_9,9,Tipografie
+ea_10,10,Fabbricazione di coke e di prodotti petroliferi raffinati
+ea_11,11,Energia nucleare
+ea_12,12,"Chimica di base, prodotti chimici e fibre"
+ea_13,13,Prodotti farmaceutici
+ea_14,14,Prodotti in gomma e materie plastiche
+ea_15,15,Prodotti minerali non metallici
+ea_16,16,"Calce, gesso, calcestruzzo, cemento e prodotti affini"
+ea_17,17,Metalli e prodotti in metallo
+ea_18,18,Macchine ed apparecchiature
+ea_19,19,Apparecchiature elettriche ed ottiche
+ea_20,20,Costruzioni navali
+ea_21,21,Industria aerospaziale
+ea_22,22,Altri mezzi di trasporto
+ea_23,23,Produzioni non altrimenti specificate
+ea_24,24,Riciclaggio
+ea_25,25,Rifornimento di energia elettrica
+ea_26,26,Rifornimento di gas
+ea_27,27,Rifornimento di acqua
+ea_28,28,Costruzione
+ea_29,29,"Commercio all'ingrosso, al dettaglio e intermediari del commercio; Riparazione di cicli, motocicli, autoveicoli, beni personali e per la casa"
+ea_30,30,Alberghi e ristoranti
+ea_31,31,"Trasporti, logistica e comunicazioni"
+ea_32,32,"Intermediazione finanziaria, attività immobiliari, noleggio"
+ea_33,33,Tecnologia dell'informazione
+ea_34,34,Servizi d?ingegneria
+ea_35,35,Altri servizi
+ea_36,36,Pubblica amministrazione
+ea_37,37,Istruzione
+ea_38,38,Sanità ed altri servizi sociali
+ea_39,39,Altri servizi sociali

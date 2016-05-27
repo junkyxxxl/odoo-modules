@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+      
+    <record id="view_order_bill_form" model="ir.ui.view">
+        <field name="name">view.order.bill.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_button_confirm']" position="after">
+            	<button name="action_print_bill" states="draft,sent" string="Print Bill" class="oe_highlight" type="object" groups="base.group_user" context="{'default_sale_id': id}" />
+            </xpath>      	        	  
+        </field>
+    </record>   
+    
+  </data>
+</openerp>

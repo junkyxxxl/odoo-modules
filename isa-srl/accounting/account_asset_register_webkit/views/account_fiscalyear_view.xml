@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Account Assets Register -->
+        <record id="account_asset_register_form_view" model="ir.ui.view">
+            <field name="name">account.asset.register.form</field>
+            <field name="model">account.fiscalyear</field>
+            <field name="inherit_id" ref="account.view_account_fiscalyear_form"/>
+            <field name="arch" type="xml">
+                <field name="end_journal_period_id" position="after">
+                    <separator colspan="4" string="Assets Register info"/>
+                    <field name="date_last_print_asset_register"/>
+                </field>
+            </field>
+        </record>
+
+     </data>
+</openerp>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		
+		<template id="report_riba">
+		    <t t-call="report.html_container">
+		        <t t-foreach="docs" t-as="o">	  
+	                <t t-esc="setLang(o.user_id.lang)"/>			        	      	
+		        	<div class="header">
+		        		
+		        		<!--HEADER -->
+		        		
+		        		<div class="row">
+		        			<div class="col-xs-12">
+		        				<div style="padding-top:20px;">
+			        				<span t-esc="o.company_id.name + ' - DISTINTA Ri.Ba. '+o.name+' del: '+ formatLang(o.registration_date, date=True) + ' - ' + o.config.name"/>
+		        				</div>
+	        				</div>
+		        		</div>
+		        		
+		        		<div class="row" style="width:100%;">
+		        			<div class="col-xs-12" style="width:100%;">
+		        				<table style="width:100%; border: 1px solid black; margin-top:10px;">
+		        					<tr style="font-size: x-small; border: 1px solid black; font-weight: bold;">
+		        						<td style="width: 5%; border: 1px solid black; vertical-align: middle; text-align: center;">
+		        							<div>
+		        								<span style="text-align: left;">N.RIGA</span>
+		        							</div>		        							
+		        						</td>		        						
+		        						<td style="width: 11%; border: 1px solid black; vertical-align: middle; text-align: center;">
+		        							<div>
+		        								<span style="text-align: left;">NUMERO FATTURA</span>
+		        							</div>		        							
+		        						</td>
+		        						<td style="width: 11%; border: 1px solid black; vertical-align: middle; text-align: center;">
+		        							<div>
+		        								<span style="text-align: left;">DATA FATTURA</span>
+		        							</div>		        							
+		        						</td>
+		        						<td style="width: 42%; border: 1px solid black; vertical-align: middle; text-align: center;">
+		        							<div>
+		        								<span style="text-align: left;">CLIENTE</span>
+		        							</div>	
+		        						</td>		 
+		        						<td style="width: 17%; border: 1px solid black; vertical-align: middle; text-align: center;">
+		        							<div>
+		        								<span style="text-align: left;">IBAN</span>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 7%; border: 1px solid black; vertical-align: middle; text-align: center;">
+		        							<div>
+		        								<span style="text-align: left;">IMPORTO</span>
+		        							</div>	
+		        						</td>	
+		        						<td style="width: 7%; border: 1px solid black; vertical-align: middle; text-align: center;">
+		        							<div>
+		        								<span style="text-align: left;">SCADENZA</span>
+		        							</div>	
+		        						</td>		        								        						      								        						
+		        					</tr>
+		        				</table>
+		        			</div>
+		        		</div>
+		        	</div>	        
+		        	
+		        	<!--BODY-->
+		        		
+	                <div class="page" style="height: 730px; min-height: 730px !important;">
+	                    <div class="oe_structure" style="width:100%; height: 100% !important;">	                    
+		                    <div class="row" style="width:100%; height: 100% !important;">								
+		                        <div class="col-xs-12" style="width:100%; height: 100% !important;">
+			        				<table style="width:100%; height:100%; border-top: 1px solid black; table-layout:fixed;">
+			        					<t t-foreach="get_records(o)" t-as="line">
+			        						<t t-if="line[0]==0">
+					        					<tr t-att-style="'page-break-inside:avoid; font-size: x-small; table-layout:fixed; vertical-align: middle; background-color: '+line[1]+';'">
+					        						<td style="width: 5%; border-left: 1px solid black; border-right: 1px solid black; text-align: right;">
+					        							<div style="padding-right: 5px;">
+					        								<span t-esc="line[8]"/>
+					        							</div>		        							
+					        						</td>						        						
+					        						<td style="width: 11%; border-left: 1px solid black; border-right: 1px solid black; ">
+					        							<div style="padding-left: 5px;">
+					        								<span t-esc="line[2]"/>
+					        							</div>		        							
+					        						</td>
+					        						<td style="width: 11%; border-left: 1px solid black; border-right: 1px solid black; ">
+					        							<div style="padding-left: 5px;">
+					        							    <t t-if="line[3]">
+						        								<span t-esc="formatLang(line[3], date=True)"/>
+						        							</t>	
+					        							</div>		        							
+					        						</td>
+					        						<td style="width: 42%; border-left: 1px solid black; border-right: 1px solid black;">
+					        							<div style="padding-left: 5px;">
+					        								<span t-esc="line[4]"/>
+					        							</div>	
+					        						</td>		 
+					        						<td style="width: 17%; border-left: 1px solid black; border-right: 1px solid black;">
+					        							<div style="padding-left: 5px;">
+					        								<t t-if="line[3]">
+					        									<span t-esc="line[5]"/>
+					        								</t>
+					        							</div>	
+					        						</td>	
+					        						<td style="width: 7%; border-left: 1px solid black; border-right: 1px solid black; text-align: right;">
+					        							<div style="padding-right: 5px;">
+					        								<t t-if="line[4]">
+					        									<span t-esc="formatLang(line[6], digits=2)"/>
+					        								</t>
+					        							</div>	
+					        						</td>	
+					        						<td style="width: 7%; border-left: 1px solid black; border-right: 1px solid black;">
+					        							<div style="padding-left: 5px;">
+					        								<t t-if="line[5]">
+					        									<span t-esc="formatLang(line[7], date=True)"/>
+					        								</t>
+					        							</div>	
+					        						</td>						        								        						      								        						
+					        					</tr>
+				        					</t>
+			        						<t t-if="line[0]==1">
+					        					<tr t-att-style="'page-break-inside:avoid; border: none; border-top: 1px solid black; table-layout:fixed; font-weight: bold; font-size: x-small; vertical-align: middle; background-color: #FFFFFF;'">
+					        						<td style="width: 5%;">
+					        							<div style="padding-left: 5px;"><br /></div>		        							
+					        						</td>
+					        						<td style="width: 11%;">
+					        							<div style="padding-left: 5px;"><br /></div>		        							
+					        						</td>
+					        						<td style="width: 11%;">
+					        							<div style="padding-left: 5px;"><br /></div>		        							
+					        						</td>
+					        						<td style="width: 42%;">
+					        							<div style="padding-right: 5px;"><br /></div>	
+					        						</td>		 
+					        						<td style="width: 17%;">
+					        							<div style="padding-right: 5px;"><br /></div>	
+					        						</td>	
+					        						<td style="width: 7%;">
+					        							<div style="padding-right: 5px;"><br /></div>	
+					        						</td>	
+					        						<td style="width: 7%;">
+					        							<div style="padding-right: 5px;"><br /></div>	
+					        						</td>						        								        						      								        						
+					        					</tr>			        								
+					        					<tr t-att-style="'page-break-inside:avoid; border: none; font-weight: bold; table-layout:fixed; font-size: x-small; vertical-align: middle; background-color: #FFFFFF;'">
+					        						<td style="width: 5%;">
+					        							<div style="padding-left: 5px;">
+					        								<span t-esc="line[2]"/>
+					        							</div>		        							
+					        						</td>
+					        						<td style="width: 11%;">
+					        							<div style="padding-left: 5px;">
+					        								<span t-esc="line[2]"/>
+					        							</div>		        							
+					        						</td>
+					        						<td style="width: 11%;">
+					        							<div style="padding-left: 5px;">
+					        								<span t-esc="line[3]"/>
+					        							</div>		        							
+					        						</td>
+					        						<td style="width: 42%;">
+					        							<div style="padding-left: 5px;">
+					        								<span t-esc="line[4]"/>
+					        							</div>	
+					        						</td>		 
+					        						<td style="width: 17%;">
+					        							<div style="padding-right: 5px; text-align: right;">
+					        								<t t-if="line[3]">
+					        									<span t-esc="line[5]"/>
+					        								</t>
+					        							</div>	
+					        						</td>	
+					        						<td style="width: 7%; border-bottom: 1px solid black;">
+					        							<div style="padding-right: 5px; text-align: right;">
+					        								<t t-if="line[4]">
+					        									<span t-esc="formatLang(line[6], digits=2)"/>
+					        								</t>
+					        							</div>	
+					        						</td>	
+					        						<td style="width: 7%;">
+					        							<div style="padding-right: 5px;">
+					        								<t t-if="line[5]">
+					        									<span t-esc="line[7]"/>
+					        								</t>
+					        							</div>	
+					        						</td>						        								        						      								        						
+					        					</tr>
+				        					</t>				        					
+			        					</t>			        					
+			        				</table>
+
+		                        </div>			                        		                        
+		                    </div>
+		                </div>
+	                </div>
+	                
+	        		<!--HEADER -->	                
+	                
+					<div class="footer">
+		        		<div class="row">
+		        			<div class="col-xs-12">
+		        				<table style="width:100%; border-top: 1px solid black; border:none; margin-top:0px;">
+		        					<tr style="font-size: x-small; border: none; border-top: 1px solid black; font-weight: bold;">
+		        						<td colspan="7" style="border: none; vertical-align: middle; text-align: center;">
+		        							<div>
+		        								<span>Pag. </span>
+		        								<span class="page"/>
+		        								<span>/</span>
+		        								<span class="topage"/>
+		        							</div>		        							
+		        						</td>		        								        						      								        						
+		        					</tr>
+		        				</table>
+	        				</div>
+		        		</div>						
+					</div>
+        		</t>
+        	</t>
+		</template>		
+		
+	</data>
+</openerp>
+								            

@@ -1,0 +1,44 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Gestione dei clienti/fornitori per la contabilit&aacute;</h2>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row">
+    	<div class="oe_span12">
+        	<h2>Scopo principale della funzione</h2>
+        </div>
+        <div class="oe_span12">
+        	Questo modulo permette di reperire in automatico la numerazione del sottoconto quando si crea un conto sul piano dei conti 
+        	(reperendo il primo disponibile senza salti di numerazione).
+        	Quando si crea/aggiorna un cliente/fornitore, se come conto di credito/debito &eacute; presente il conto di default, viene creato
+        	il conto cliente/fornitore in automatico sul piano dei conti ed associato al cliente/fornitore che si st&aacute; manutenendo.
+        </div>        
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row">
+        <div class="oe_span12">
+	    	<h2>Note tecniche</h2>
+	    	Questo modulo riporta la funzionalit&aacute; presente in <b>account_makeover</b> di reperimento automatico sottoconto.
+	    	In ogni modo, &eacute; possibile utilizzare i due moduli contemporaneamente.
+	    	Se utilizzati contemporaneamente:
+	    	<ol>
+	    		<li>Il modulo <b>account_makeover</b> &eacute; responsabile del reperimento del numero di conto durante la creazione di 
+	    		un conto sul piano dei conti (La funzione <code>onchange</code> definita a livello di vista ha la priorit&aacute; rispetto 
+	    		alla funzione definita a livello di modello tramite il decoratore <code>@api.onchange</code>)</li>
+	    		<li>Il modulo <b>account_account_partner</b> &eacute; responsabile della creazione autmatica conto cliente/fornitore, quando si crea un partner (in questo caso 
+	    		non viene considerata il valore impostato in configurazione per <code>account_makeover</code> ma il codice viene sempre reperito 
+	    		senza salti di numerazione.)</li>
+	    	</ol> 
+	    </div>
+   </div>
+</section>
+
+
+<section class="oe_container oe_separator">
+</section>

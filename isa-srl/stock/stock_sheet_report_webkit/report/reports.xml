@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+        
+		<report
+            auto="False"
+            id="ir_webkit_stock_sheet_report"
+            model="stock.move"
+            name="stock.sheet"
+            file="stock_sheet_report_webkit/report/stock_sheet.mako"
+            string="Print Stock Sheet"
+            report_type="webkit"
+            menu="False"
+            webkit_header="stock_landscape_header" />
+
+    </data>
+</openerp>
+

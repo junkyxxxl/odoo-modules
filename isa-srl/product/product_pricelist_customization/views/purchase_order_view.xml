@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="view_purchase_order_form_discount_line" model="ir.ui.view">
+        <field name="name">purchase.order.discount.view.line</field>
+        <field name="model">purchase.order</field>
+        <field name="priority">17</field>
+        <field name="inherit_id" ref="purchase_discount.purchase_discount_order_form"/>
+        <field name="groups_id" eval="[(6,0,[ref('product_pricelist_customization.group_multiple_discount_per_line')])]"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//field[@name='discount']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>  
+             <xpath expr="//field[@name='discount']" position="after">
+                <field name="discount1" />
+                <field name="discount2" />
+                <field name="discount3" />
+                <field name="max_discount" invisible="1" />
+            </xpath>         
+
+        </field>
+    </record>
+  </data>
+</openerp>

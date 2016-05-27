@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--  Wizard for DocLite server configuration -->
+        <record id="view_wizard_doclite_server" model="ir.ui.view">
+            <field name="name">Set DocLite Server parameters</field>
+            <field name="model">doclite.wizard.server</field>
+            <field name="inherit_id" ref="base.res_config_view_base"/>
+            <field name="arch" type="xml">
+                <form string="Configuration" position="attributes">
+                    <attribute name="string">DocLite Application Configuration</attribute>
+                </form>
+                <group string="res_config_contents" position="replace">
+                    <group col="1">
+                        <group>
+                            <field name="ip_address" class="oe_inline"/>
+                            <field name="port" class="oe_inline"/>
+                            <field name="base_path" class="oe_inline"/>
+                        </group>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <record id="action_wizard_doclite_server" model="ir.actions.act_window">
+            <field name="name">Set DocLite Server parameters</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">doclite.wizard.server</field>
+            <field name="view_id" ref="view_wizard_doclite_server"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="action_wizard_doclite_server_todo" model="ir.actions.todo">
+            <field name="name">Set DocLite Server parameters</field>
+            <field name="action_id" ref="action_wizard_doclite_server"/>
+            <field name="type">automatic</field>
+        </record>
+		
+		
+    </data>
+</openerp>

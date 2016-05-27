@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_payment_specification_line_view" model="ir.ui.view">
+          <field name="name">wizard.payment.specification.line.form</field>
+          <field name="model">wizard.payment.specification.line</field>
+          <field name="arch" type="xml">
+            <form string="Wizard Payment Specification Line" version="7.0">
+               <group>
+                <group>
+                    <field name="date_due" />
+                    <field name="date_original" />
+                    <field name="state" />
+                    <field name="document_number" />
+                    <field name="payment_type" />
+                </group>
+                <group>
+                    <field name="partner_id" readonly="1" />
+                    <field name="account_id" />
+                    <field name="move_line_id"/>
+                    <field name="amount"/>
+                </group>
+               </group>
+             </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

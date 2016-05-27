@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Invoice View -->
+        <record id="view_account_invoice_supplier_intracee_form" model="ir.ui.view">
+            <field name="name">view.account.invoice.supplier.intracee.form</field>
+            <field name="priority">3</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page/field/tree[@string='Invoice lines']" position="attributes">
+                    <attribute name="editable"></attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_invoice_intracee_form" model="ir.ui.view">
+            <field name="name">view.account.invoice.intracee.form</field>
+            <field name="priority">3</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page/field/tree[@string='Invoice Lines']" position="attributes">
+                    <attribute name="editable"></attribute>
+                </xpath>
+            </field>
+        </record>
+     </data>
+</openerp>

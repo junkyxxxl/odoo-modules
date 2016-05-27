@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+       <record id="view_company_discount_form" model="ir.ui.view">
+            <field name="name">res.company.discount.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="free_invoice_line.view_company_homage_form"/>
+            <field name="arch" type="xml">
+	            <page string="Homage configuration" position="inside">
+	                <div>
+	                    <label for="discount_untaxed_account_id" />
+	                    <field name="discount_untaxed_account_id" required="1"/>
+	                    <label for="discount_tax_account_id" />
+	                    <field name="discount_tax_account_id" required="1"/>
+	                </div>
+	            </page>
+            </field>
+        </record>
+    </data>
+</openerp>

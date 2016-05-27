@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+        <report
+            id="hr_report"
+            model="hr.employee"
+            string="Report Mensile"
+            report_type="qweb-pdf"
+            name="hr_report.print_attendance"
+            file="hr_report.print_attendance"
+            attachment_use="True"
+            menu="False"
+        />
+
+        <record id="hr_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="hr_report.paperformat_hr_report"/>
+        </record>
+    </data>
+</openerp>

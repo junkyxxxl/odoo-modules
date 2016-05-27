@@ -1,0 +1,45 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Impostostazione automatica sezionale in fatturazione ddt</h2>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row">
+    	<div class="oe_span12">
+        	<h2>Scopo principale della funzione</h2>
+        </div>
+        <div class="oe_span12">
+            Durante la creazione della fattura differita da DDT, viene richiesto il sezionale sul quale imputare la registrazione contabile della fattura:
+            <br>
+            <div class="oe_span12">
+                <img class="oe_picture oe_screenshot" src="ddt_create_invoice.png">
+            </div>
+            <br>
+            Il sezionale indicato, viene impostato su tutti i DDT selezionati. In alcuni casi &eacute; necessario impostare sezionali diversi in base a determinate caratteristiche del ddt.
+            A tale scopo deve essere possibile indicare il reperimento automatico del sezionale, da impostare sul DDT tramite apposito flag <b>Impostazione automatica sezionale</b>.
+            Se valorizzato tale flag, il campo Journal verr&aacute; nascosto ed il sezionale da imputare allla fattura ddt verr&aacute; ricavato automaticamente.
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row">
+    	<div class="oe_span12">
+        	<h2>Reperimento automatico sezionale</h2>
+        </div>
+        <div class="oe_span12">
+        	All' interno del picking_type &eacute; stato previsto un nuovo campo sotto <b>Sequenza DDT</b>:
+            <b>Sezionale di default DDT</b>.
+            Tale valore verr&aacute; imputato automaticamente alla fattura ddt se in fase di creazione viene spuntato il flag
+            <b>Impostazione automatica sezionale</b>.
+            Nel momento in cui viene lanciata la procedura di creazione fatture da ddt viene eseguito il seguente controllo:
+            Se &eacute; stato spuntato il flag <b>Impostazione automatica sezionale</b>, viene verificato che per ogni picking_type utilizzato per la fatturazione sia specificato il sezionale di default, altrimenti la procedura segnala un errore.
+			<div class="oe_span12">
+            	<img class="oe_picture oe_screenshot" src="error.png">
+        	</div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="account_reset_protocol_numbers_group_isa" context="{'noadmin':True}" model="res.groups">
+           <field name="name">Reset Protocol Numbers</field>
+        </record>
+    </data>
+</openerp>

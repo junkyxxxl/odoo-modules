@@ -1,0 +1,37 @@
+<openerp>
+    <data>
+
+        <template id="sale_checkout" inherit_id="website.layout" name="Sale checkout">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/website_sale_checkout/static/src/js/sale_checkout.js"></script>
+            </xpath>
+        </template>
+
+        <template id="website_sale_checkout" name="Website sale checkout" inherit_id="website_sale.checkout">
+            <xpath expr="//div[contains(@t-attf-class,'name')]" position="after">
+                <div t-attf-class="form-group #{error.get('is_company') and 'has-error' or ''} col-lg-6">
+                    <label class="control-label col-lg-12" for="">Tipo cliente</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="is_company" id="is_company" t-att-value="1"
+                               t-att-checked="checkout.get('is_company') == True or checkout.get('is_company')=='1'" /> Società
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="is_company" id="is_user" t-att-value="2"
+                               t-att-checked="checkout.get('is_company') == None or checkout.get('is_company')=='2'"/> Cliente privato
+                    </label>
+                  </div>
+            </xpath>
+            <xpath expr="//div[contains(@t-attf-class,'vat')]" position="after">
+                <div t-attf-class="form-group #{error.get('person_surname') and 'has-error' or ''} col-lg-6">
+                    <label class="control-label" for="person_surname">Cognome</label>
+                    <input type="text" name="person_surname" class="form-control" t-att-value="checkout.get('person_surname')"/>
+                </div>
+                <div t-attf-class="form-group #{error.get('fiscalcode') and 'has-error' or ''} col-lg-6">
+                    <label class="control-label" for="fiscalcode">Codice Fiscale</label>
+                    <input type="text" name="fiscalcode" class="form-control" t-att-value="checkout.get('fiscalcode')"/>
+                </div>
+            </xpath>
+        </template>
+
+    </data>
+</openerp>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+	 <!-- DocLite Server Form View -->
+     <record model="ir.ui.view" id="view_doclite_server_form">
+            <field name="name">doclite.server.form</field>
+            <field name="model">doclite.server</field>
+            <field name="arch" type="xml">
+                <form string="Server" version="7.0">
+                    <group>
+                        <group>
+                            <field name="ip_address"/>
+                            <field name="port"/>
+                            <field name="base_path"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>    
+                </form>
+            </field>
+     </record>
+
+    <!-- DocLite Server Tree View -->
+    <record model="ir.ui.view" id="view_doclite_server_tree">
+            <field name="name">doclite.server.tree</field>
+            <field name="model">doclite.server</field>
+            <field name="arch" type="xml">
+                <tree string="Server">
+					<field name="ip_address"/>
+                    <field name="port"/>
+                    <field name="base_path"/>              
+                </tree>
+            </field>
+    </record>
+
+    <!-- DocLite Server Search View-->
+    <record model="ir.ui.view" id="view_doclite_server_search">
+        <field name="name">doclite.server.search</field>
+        <field name="model">doclite.server</field>
+        <field name="arch" type="xml">
+            <search string="Server Search">     
+				<field name="ip_address"/>
+                <field name="port"/>
+                <field name="base_path"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- DocLite Server Action -->
+    <record model="ir.actions.act_window" id="action_doclite_server">
+        <field name="name">Server</field>
+        <field name="res_model">doclite.server</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_doclite_server_search"/>
+    </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+    <!--    <record model="ir.actions.act_window" id="base_partner_merge_automatic_act">
+            <field name="name">Deduplicate Contacts</field>
+            <field name="res_model">base.partner.merge.automatic.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{'active_test': False}</field>
+        </record>-->
+
+        <record id="action_wizard_family_discount" model="ir.actions.act_window">
+            <field name="name">Imposta Sconto Famiglia</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.family.discount</field>
+            <field name="src_model">product.family</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{'active_test': False}</field>
+        </record>
+
+        <menuitem id='partner_merge_automatic_menu'
+            action='action_wizard_family_discount'
+            groups='base.group_system'
+            parent='crm.root_menu' />
+
+
+        <act_window id="action_family_discount" res_model="wizard.family.discount" src_model="res.partner"
+            target="new" multi="True" key2="client_action_multi" view_mode="form" name="Automatic Merge"/>
+
+    </data>
+
+</openerp>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+            id="qweb_invoice_report"
+            string="Fattura Immediata/Differita"
+            model="account.invoice" 
+            report_type="qweb-pdf"
+            file="account_invoice_report_qweb.report_invoice_qweb" 
+            name="account_invoice_report_qweb.report_invoice_qweb" 
+        />
+    </data>
+</openerp>

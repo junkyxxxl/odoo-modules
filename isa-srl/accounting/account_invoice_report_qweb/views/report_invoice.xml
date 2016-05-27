@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_invoice_document_makeover" inherit_id="account.report_invoice_document">
+            <xpath expr="//span[@t-field='o.partner_id.vat']" position="after">
+                <div class ="header">
+                    <span t-field="o.partner_id.fiscalcode"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_einvoice_history_salesagent,access_einvoice_history salesagent users,l10n_it_e_invoice.model_einvoice_history,account_commission.group_salesagent_invoice,1,0,0,0

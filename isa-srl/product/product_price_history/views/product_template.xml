@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>  
+        
+        <!-- Aggiunge al product.template il pulsante per visualizzare la storia delle modifiche relative al prezzo di acquisto-->
+        <record model="ir.ui.view" id="product_template_form_view_price_history_button">
+            <field name="name">product.template.form.view.price.history.button</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="groups_id" eval="[(4, ref('purchase.group_purchase_user'))]"/>
+            <field name="arch" type="xml">
+                <div name="buttons" position="inside">
+                    <button class="oe_inline oe_stat_button" name="%(history_price_tree_action)d" 
+                        context="{
+                            'search_default_product_template_id': active_id,
+                            'search_default_company_id': context.get('company_id', False) 
+                        }"
+                        type="action" 
+                        icon="fa-history">
+                        <field string="History Price" name="price_history_count" widget="statinfo" />
+                    </button>
+                </div>
+            </field>
+        </record>
+    </data>
+</openerp>

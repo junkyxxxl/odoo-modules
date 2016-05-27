@@ -1,0 +1,132 @@
+<openerp>
+    <data>
+        
+        <!-- stile report -->
+        <template id="report_css">
+            <style>
+                body{
+                    font-size: 10px;
+                }
+
+                .row-eq-height {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display:  flex;
+                }
+
+                div.head{
+                line-height: 1.5em;
+                font-size: 10px;
+                }
+
+                .table-bordered,
+                .table-bordered>tbody>tr>td, 
+                .table-bordered>tbody>tr>th, 
+                .table-bordered>tfoot>tr>td, 
+                .table-bordered>tfoot>tr>th, 
+                .table-bordered>thead>tr>td, 
+                .table-bordered>thead>tr>th {
+                border: 1px solid #333;
+                }
+
+                .invoice-header>tbody>tr>td, 
+                .invoice-header>tbody>tr>th, 
+                .invoice-header>tfoot>tr>td, 
+                .invoice-header>tfoot>tr>th, 
+                .invoice-header>thead>tr>td, 
+                .invoice-header>thead>tr>th {
+                padding: 0.1em;
+                border-bottom: none !important;
+                border-top: none !important;
+                }
+                
+                .invoice-header>thead>tr>td, 
+                .invoice-header>thead>tr>th {
+                border-bottom: 1px solid #333 !important;
+                border-top: 1px solid #333 !important;
+                }
+
+                div.advertise{
+                border: 1px solid #0F4A9E;
+                color: white;
+                font-size: 8px;
+                font-weight: bold;
+                background-color: #0F4A9E; 
+                }
+
+                tr, td {
+                page-break-inside: avoid !important;
+                }
+
+                address{
+                margin-bottom: 5px;
+                }
+
+                .alert-invoice-line{
+                    padding: 5px !important;
+                    margin-bottom: 0px !important;
+                }
+
+            </style>
+        </template>
+    
+        <!-- Classi specifiche per le pagine -->
+        <template id="minimal_layout" inherit_id="report.minimal_layout" priority="100">
+            <xpath expr="//head/t/script" position="replace">
+                <script>
+                function subst() {
+                    var vars = {};
+                        var x = document.location.search.substring(1).split('&amp;');
+                        for (var i in x) {
+                            var z = x[i].split('=', 2);
+                            vars[z[0]] = unescape(z[1]);
+                        }
+                        var x=['frompage', 'topage', 'page', 'webpage', 'section', 'subsection', 'subsubsection'];
+                        for (var i in x) {
+                            var y = document.getElementsByClassName(x[i]);
+                            for (var j=0; j&lt;y.length; ++j)
+                                y[j].textContent = vars[x[i]];
+                    }
+                    var operations = {
+                      'not-first-page': function (elt) {
+                          elt.style.visibility = (vars.page === vars.frompage) ? "hidden" : "visible";
+                      },
+                      'not-last-page': function (elt) {
+                          elt.style.visibility = (vars.page === vars.topage) ? "hidden" : "visible";
+                      },
+                      'first-page': function (elt) {
+                          elt.style.visibility = (vars.page === vars.frompage) ? "visible" : "hidden";
+                      },
+                      'last-page': function (elt) {
+                          elt.style.visibility = (vars.page === vars.topage) ? "visible" : "hidden";
+                      },
+                    };
+                    for (var klass in operations) {
+                    var y = document.getElementsByClassName(klass);
+                    for (var j=0; j&lt;y.length; ++j)
+                        operations[klass](y[j]);
+                    }
+                }
+                </script>
+            </xpath>
+        </template>
+
+        <!-- Formato carta -->
+        <record id="paperformat_account_report" model="report.paperformat">
+            <field name="name">Default DDT</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">100</field>
+            <field name="margin_bottom">66</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">95</field>
+            <field name="dpi">90</field>
+        </record>
+
+
+    </data>
+</openerp>

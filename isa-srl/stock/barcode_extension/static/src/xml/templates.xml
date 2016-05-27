@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend="PickingEditorWidget">
+        <!-- aggiunta del select ai lotti -->
+        <t t-jquery="input[class*=js_lot_scan]" t-operation="replace">
+            <select class="col-xs-6 js_lot_scan">
+                <option value=""></option>
+            </select>
+        </t>
+
+        <!-- aggiunta dell'icona + alla riga del pacco -->
+        <t t-jquery="t[t-esc*='row.cols.product']" t-operation="prepend">
+            <t t-if="row.cols.from_package_id">
+                    <i data-role="show-pack" t-att-data-package_id="row.cols.from_package_id" class="fa fa-plus-square" style="cursor: pointer;"></i>
+            </t>
+        </t>
+    </t>
+
+    <!-- Visualizzazione contenuto del pacco -->
+    <t t-name="package-content">
+        <t t-foreach="pack_quants" t-as="pack_quant">
+        <tr class="warning" t-att-data-group_pack="group_id">
+            <td><i class="fa fa-level-up"></i><t t-esc="pack_quant.product_id[1]" /></td>
+            <td></td>
+            <td><t t-esc="pack_quant.display_name"/></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </t>
+    </t>
+</templates>

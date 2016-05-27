@@ -1,0 +1,92 @@
+@charset "utf-8";
+.openerp .oe_purchase_order_grid {
+  overflow-x: auto;
+}
+.openerp .oe_purchase_order_grid table {
+  width: 100%;
+}
+.openerp .oe_purchase_order_grid td {
+  padding: 3px;
+  text-align: right;
+}
+.openerp .oe_purchase_order_grid th {
+  text-align: center;
+  color: #006699;
+  font-family: "Helvetica Neue", Arial, Verdana, "Nimbus Sans L", sans-serif;
+  font-size: 11px;
+  background: #eeeeee;
+  min-width: 47px;
+  font-weight: bold;
+}
+.openerp .oe_purchase_order_grid .oe_quantities_total {
+  background: #eeeeee;
+}
+.openerp .oe_purchase_order_grid .oe_copy_paste_ico {
+  vertical-align: middle;
+  cursor:pointer;
+  min-width: 18px;
+  width: 18px;
+  border-width:1px;  
+  border-color: #ffffff;
+}
+.openerp .oe_purchase_order_grid .oe_copy_paste_ico:active {
+  cursor:wait;	
+  border-style:inset; 
+  border-color: #dddddd;  
+}
+.openerp .oe_purchase_order_grid .oe_purchase_order_grid_row {
+  text-align: center;
+  color: #006699;
+  font-family: "Helvetica Neue", Arial, Verdana, "Nimbus Sans L", sans-serif;
+  font-size: 11px;
+  background: #eeeeee;
+  font-weight: bold;
+}
+.openerp .oe_purchase_order_grid td input.oe_purchase_order_grid_input {
+  padding-right: 2px !important;
+  width: 100%;
+  text-align: right;
+  min-width: 40px !important;
+  background: #ffffff;
+}
+.openerp .oe_purchase_order_grid td input.oe_purchase_order_grid_input_focused {
+  padding-right: 2px !important;
+  width: 100%;
+  text-align: right;
+  min-width: 40px !important;
+  background: #9FC99F;
+}
+.openerp .oe_purchase_order_grid td div.oe_purchase_order_grid_box {
+  padding-right: 2px !important;
+  width: 100%;
+  text-align: right;
+  min-width: 40px !important;
+  border:1px solid #eeeeee;
+}
+.openerp .oe_purchase_order_grid td div.oe_purchase_order_grid_box_focused {
+  padding-right: 2px !important;
+  width: 100%;
+  text-align: right;
+  min-width: 40px !important;
+  background: #9FC99F;
+}
+.openerp .oe_purchase_order_grid td.oe_quantities_superTotal {
+  font-weight: bold;
+  padding: 5px 3px !important;
+  text-align: right;
+}
+.openerp .oe_purchase_order_grid .oe_purchase_order_grid_adding_tot {
+  display: table;
+  width: 100%;
+}
+.openerp .oe_purchase_order_grid .oe_purchase_order_grid_tottot {
+  display: table-cell;
+  font-size: 11px;
+  text-align: right;
+  color: #006699;
+  font-family: "Helvetica Neue", Arial, Verdana, "Nimbus Sans L", sans-serif;
+  font-weight: bold;
+}
+.openerp .oe_purchase_order_grid .oe_purchase_order_grid_head{
+  height: 24px;
+}

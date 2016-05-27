@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Withholding Tax ISA -->
+        <record id="account_withholding_tax_isa_1038" model="account.withholding.tax.isa">
+            <field name="name">1038</field>
+            <field name="description">Provvigioni per rapporti di agenzia di mediazione e di rappresentanza</field>
+            <field name="wht_payment_term" eval="account_payment_term_16th_next_month" />
+            <field name="wht_tax_rate" eval="23.0" />
+            <field name="wht_base_amount" eval="50.0" />
+        </record>
+
+        <record id="account_withholding_tax_isa_1040" model="account.withholding.tax.isa">
+            <field name="name">1040</field>
+            <field name="description">Lavoro autonomo: arti e professioni</field>
+            <field name="wht_payment_term" eval="account_payment_term_16th_next_month" />
+            <field name="wht_tax_rate" eval="20.0" />
+            <field name="wht_base_amount" eval="100.0" />
+        </record>
+
+        <record id="account_withholding_tax_isa_1043" model="account.withholding.tax.isa">
+            <field name="name">1043</field>
+            <field name="description">Lav.autonomo: sogg. Esteri</field>
+            <field name="wht_payment_term" eval="account_payment_term_16th_next_month" />
+            <field name="wht_tax_rate" eval="30.0" />
+            <field name="wht_base_amount" eval="100.0" />
+        </record>
+
+    </data>
+</openerp>

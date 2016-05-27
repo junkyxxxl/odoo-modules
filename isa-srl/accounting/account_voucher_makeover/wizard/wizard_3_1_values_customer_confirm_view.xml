@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_values_customer_confirm_view" model="ir.ui.view">
+          <field name="name">wizard.values.customer.confirm.form</field>
+          <field name="model">wizard.values.customer.confirm</field>
+          <field name="arch" type="xml">
+            <form string="Wizard Payment" version="7.0">
+                <group>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="maturity"/>
+                        <field name="all_customer"/>
+                        <field name="riba"/>
+                        <field name="bank_id"  widget="selection"/>
+                        <field name="journal_id"/>
+                        <field name="account_id"/>
+                        <field name="operation_date" on_change="onchange_operation_date(operation_date)"/>
+                   		<field name="currency_date" />
+                        <field name="period_id" domain="[('state','!=','done')]" />
+                    </group>
+                    
+                </group>
+                <footer>
+                    <button name="confirm" icon="gtk-yes" string="Save" type="object" default_focus="1" class="oe_highlight" />
+                    or 
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+               
+            </form>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

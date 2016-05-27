@@ -1,0 +1,1337 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_it_ddt_makeover
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-24 07:51+0000\n"
+"PO-Revision-Date: 2015-04-24 07:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/models/account_invoice_line.py:41
+#, python-format
+msgid " of "
+msgstr " del "
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.selection,actual_page:0
+#: field:wizard.order.delivery.specification,actual_page:0
+msgid "Actual Page"
+msgstr "Pagina Attuale"
+
+#. module: l10n_it_ddt_makeover
+#: view:res.partner:0
+#: field:res.partner,packing_notes:0
+msgid "Additional Information"
+msgstr "Informazioni Aggiuntive"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Articolo"
+msgstr "Articolo"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Aspetto esteriore dei beni"
+msgstr "Aspetto esteriore dei beni"
+
+#. module: l10n_it_ddt_makeover
+#: view:res.partner:0
+#: field:res.partner,attach_qc_documents:0
+msgid "Attach QC Documents"
+msgstr "Allegare certificati qualità ai DDT"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "BOZZA"
+msgstr "BOZZA"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.order.delivery.specification:0
+msgid "Back"
+msgstr "Indietro"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "C. IVA"
+msgstr "C. IVA"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "CF:"
+msgstr "CF:"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.customer.delivery.makeover:0
+#: view:wizard.uom.values.confirm:0
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_delivery_carrier
+#: field:res.partner,carrier_flag:0
+#: selection:stock.picking,delivery_methods:0
+msgid "Carrier"
+msgstr "Trasportatore"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+#: field:account.invoice,shipping_invoice_picking_type_id:0
+msgid "Causale Trasporto"
+msgstr "Causale Trasporto"
+
+#. module: l10n_it_ddt_makeover
+#: help:res.partner,carrier_flag:0
+msgid "Check this box if this contact is a carrier"
+msgstr "Spunta se questo partner è un vettore"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.selection.line,city:0
+msgid "City & Province"
+msgstr "Località e Provincia"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Cod."
+msgstr "Cod."
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Cod.IVA"
+msgstr "Cod.IVA"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Codice"
+msgstr "Codice"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Codice Fiscale"
+msgstr "Codice Fiscale"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+#: selection:wizard.customer.delivery.selection,uom_selection:0
+#: selection:wizard.order.delivery.specification,uom_selection:0
+#: selection:wizard.uom.values.confirm,uom_selection:0
+msgid "Colli"
+msgstr "Colli"
+
+#. module: l10n_it_ddt_makeover
+#: field:stock.ddt,user_id:0
+msgid "Commerciale"
+msgstr "Commerciale"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.makeover,company_id:0
+#: field:wizard.order.delivery.specification,company_id:0
+msgid "Company"
+msgstr "Azienda"
+
+#. module: l10n_it_ddt_makeover
+#: view:sale.order:0
+#: field:stock.picking,incoterm_id:0
+msgid "Condizione di Consegna"
+msgstr "Condizione di Consegna"
+
+#. module: l10n_it_ddt_makeover
+#: field:stock.ddt,incoterm_id:0
+msgid "Condizione di Consegna (Incoterm)"
+msgstr "Condizione di Consegna (Incoterm)"
+
+#. module: l10n_it_ddt_makeover
+#: field:account.invoice,shipping_invoice_incoterm_id:0
+msgid "Condizioni di Consegna"
+msgstr "Condizioni di Consegna"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.actions.act_window,name:l10n_it_ddt_makeover.action_config_ddt_sequence
+#: view:stock.makeover.configuration:0
+msgid "Configure DDT Sequence"
+msgstr "Configura Sequenza DDT"
+
+#. module: l10n_it_ddt_makeover
+#: selection:sale.order.line,delivery_selection_state:0
+#: field:wizard.order.delivery.specification,confirmed_ids:0
+#: selection:wizard.order.delivery.specification.line,delivery_selection_state:0
+msgid "Confirmed"
+msgstr "Confermato"
+
+#. module: l10n_it_ddt_makeover
+#: view:account.invoice:0
+msgid "Consegna"
+msgstr "Consegna"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.order.delivery.specification:0
+msgid "Create Order"
+msgstr "Crea Ordine di Consegna"
+
+#. module: l10n_it_ddt_makeover
+#: selection:sale.order.line,delivery_selection_state:0
+msgid "Created"
+msgstr "Creato"
+
+#. module: l10n_it_ddt_makeover
+#: field:stock.makeover.configuration,create_uid:0
+#: field:wizard.customer.delivery.makeover,create_uid:0
+#: field:wizard.customer.delivery.selection,create_uid:0
+#: field:wizard.customer.delivery.selection.line,create_uid:0
+#: field:wizard.order.delivery.specification,create_uid:0
+#: field:wizard.order.delivery.specification.line,create_uid:0
+#: field:wizard.post.order.creation,create_uid:0
+#: field:wizard.uom.values.confirm,create_uid:0
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: l10n_it_ddt_makeover
+#: field:stock.makeover.configuration,create_date:0
+#: field:wizard.customer.delivery.makeover,create_date:0
+#: field:wizard.customer.delivery.selection,create_date:0
+#: field:wizard.customer.delivery.selection.line,create_date:0
+#: field:wizard.order.delivery.specification,create_date:0
+#: field:wizard.order.delivery.specification.line,create_date:0
+#: field:wizard.post.order.creation,create_date:0
+#: field:wizard.uom.values.confirm,create_date:0
+msgid "Created on"
+msgstr "Creato su"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.makeover,customer_id:0
+#: field:wizard.customer.delivery.selection.line,customer_id:0
+#: field:wizard.order.delivery.specification.line,customer_id:0
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_2_1_customer_delivery_selection.py:83
+#, python-format
+msgid "Customer Delivery Makeover"
+msgstr "Customer Delivery Makeover"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_1_customer_delivery_makeover.py:259
+#: field:wizard.order.delivery.specification.line,order_delivery_id:0
+#, python-format
+msgid "Customer Order Specification"
+msgstr "Ordine Cliente"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_1_customer_delivery_makeover.py:239
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_2_2_uom_values_confirm.py:55
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_2_2_uom_values_confirm.py:82
+#, python-format
+msgid "Customer Selection"
+msgstr "Selezione Cliente"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+#: field:account.invoice.line,ddt_origin:0
+#: model:ir.actions.report.xml,name:l10n_it_ddt_makeover.stock_ddt_makeover
+#: field:stock.picking,supplier_ddt_number:0
+msgid "DDT"
+msgstr "DDT"
+
+#. module: l10n_it_ddt_makeover
+#: view:stock.makeover.configuration:0
+msgid "DDT Sequence Configuration"
+msgstr "Configurazione Sequenza DDT "
+
+#. module: l10n_it_ddt_makeover
+#: view:stock.ddt:0
+msgid "DDT da fatturare"
+msgstr "DDT da fatturare"
+
+#. module: l10n_it_ddt_makeover
+#: field:stock.picking,supplier_ddt_date:0
+#: help:stock.picking,supplier_ddt_date:0
+msgid "DDT date"
+msgstr "Data DDT"
+
+#. module: l10n_it_ddt_makeover
+#: help:stock.picking,supplier_ddt_number:0
+msgid "DDT number"
+msgstr "Numero DDT"
+
+#. module: l10n_it_ddt_makeover
+#: field:stock.picking.type,ddt_sequence_id:0
+msgid "DDT sequence"
+msgstr "Sequenza DDT"
+
+#. module: l10n_it_ddt_makeover
+#: view:stock.ddt:0
+msgid "Da Fatturare"
+msgstr "Da Fatturare"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Data"
+msgstr "Dati"
+
+#. module: l10n_it_ddt_makeover
+#: field:stock.ddt,date_done:0
+msgid "Data consegna"
+msgstr "Data consegna"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_stock_ddt
+msgid "DdT"
+msgstr "DdT"
+
+#. module: l10n_it_ddt_makeover
+#: field:sale.order.line,delivery_date:0
+#: field:wizard.customer.delivery.makeover,delivery_date:0
+#: field:wizard.customer.delivery.selection,delivery_date:0
+#: field:wizard.order.delivery.specification,delivery_date:0
+#: field:wizard.order.delivery.specification.line,delivery_date:0
+#: field:wizard.uom.values.confirm,delivery_date:0
+msgid "Delivery Date"
+msgstr "Data di Consegna"
+
+#. module: l10n_it_ddt_makeover
+#: field:sale.order.line,delivery_selection_state:0
+msgid "Delivery Selection State"
+msgstr "Delivery Selection State"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.order.delivery.specification.line,delivery_selection_state:0
+msgid "Delivery State"
+msgstr "Stato Consegna"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Descr."
+msgstr "Descr."
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.order.delivery.specification:0
+msgid "Deselect All"
+msgstr "Deseleziona Tutto"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Destinazione Merce (se diversa dal committente)"
+msgstr "Destinazione Merce (se diversa dal committente)"
+
+#. module: l10n_it_ddt_makeover
+#: view:res.partner:0
+#: field:res.partner,document_copies:0
+msgid "Document Copies"
+msgstr "Copie Documento"
+
+#. module: l10n_it_ddt_makeover
+#: field:account.invoice.line,document_reference_id:0
+msgid "Document Reference"
+msgstr "Documento di Riferimento"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Documento"
+msgstr "Documento"
+
+#. module: l10n_it_ddt_makeover
+#: field:account.invoice,is_shipping_invoice:0
+msgid "E' Fattura Accompagnatoria"
+msgstr "E' Fattura Accompagnatoria"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.post.order.creation:0
+msgid "Effettua Nuovo Ordine"
+msgstr "Effettua Nuovo Ordine"
+
+#. module: l10n_it_ddt_makeover
+#: help:stock.picking.type,ddt_sequence_id:0
+msgid "Entry a valid DDT sequence"
+msgstr "Inserisci una sequenza DDT valida"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_2_1_customer_delivery_selection.py:197
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_2_1_customer_delivery_selection.py:200
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:119
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:125
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:131
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:137
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:152
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:262
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:265
+#, python-format
+msgid "Error!"
+msgstr "Errore!"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/ddt_create_invoice.py:104
+#, python-format
+msgid "Errore nel raggruppamento delle fatture!"
+msgstr "Errore nel raggruppamento delle fatture!"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/models/stock_ddt.py:69
+#, python-format
+msgid "Errore!"
+msgstr "Errore!"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.selection.line,expired:0
+msgid "Expired"
+msgstr "Scadute"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.selection.line,expiring_today:0
+msgid "Expiring"
+msgstr "In Scadenza"
+
+#. module: l10n_it_ddt_makeover
+#: field:stock.ddt,invoice_id:0
+msgid "Fattura"
+msgstr "Fattura"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+#: model:ir.actions.report.xml,name:l10n_it_ddt_makeover.account_invoice_delivery_report
+#: field:stock.picking,use_shipping_invoice:0
+msgid "Fattura Accompagnatoria"
+msgstr "Fattura Accompagnatoria"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Firma Conducente (o Vettore)"
+msgstr "Firma Conducente (o Vettore)"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Firma Conducente(o Vettore)"
+msgstr "Firma Conducente(o Vettore)"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Firma destinatario"
+msgstr "Firma destinatario"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.customer.delivery.selection:0
+#: view:wizard.order.delivery.specification:0
+msgid "Forward"
+msgstr "Avanti"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_2_1_customer_delivery_selection.py:200
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:265
+#, python-format
+msgid "Hai raggiunto l'ultima pagina!"
+msgstr "Hai raggiunto l'ultima pagina!"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/ddt_create_invoice.py:73
+#, python-format
+msgid "I DDT selezionati hanno il riferimento a movimenti di magazzino che appartengono a Company diverse!"
+msgstr "I DDT selezionati hanno il riferimento a movimenti di magazzino che appartengono a Company diverse!"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/ddt_create_invoice.py:71
+#, python-format
+msgid "I DDT selezionati sono di diverso tipo!"
+msgstr "I DDT selezionati sono di diverso tipo!"
+
+#. module: l10n_it_ddt_makeover
+#: field:report.l10n_it_ddt_makeover.report_ddt_makeover,id:0
+#: field:report.l10n_it_ddt_makeover.report_delivery_invoice,id:0
+#: field:stock.makeover.configuration,id:0
+#: field:wizard.customer.delivery.makeover,id:0
+#: field:wizard.customer.delivery.selection,id:0
+#: field:wizard.customer.delivery.selection.line,id:0
+#: field:wizard.order.delivery.specification,id:0
+#: field:wizard.order.delivery.specification.line,id:0
+#: field:wizard.post.order.creation,id:0
+#: field:wizard.uom.values.confirm,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_it_ddt_makeover
+#: help:res.partner,attach_qc_documents:0
+msgid "If checked attach quality documents "
+msgstr "Se impostato, allega documenti Qualità"
+
+#. module: l10n_it_ddt_makeover
+#: help:res.partner,one_order_one_draft:0
+msgid "If checked one order per draft"
+msgstr "ISe impostato, un ordine per bozza"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/ddt_create_invoice.py:51
+#, python-format
+msgid "Il DDT %s è stato già fatturato!"
+msgstr "Il DDT %s è stato già fatturato!"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Imponibile"
+msgstr "Imponibile"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Importo"
+msgstr "Importo"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Imposta"
+msgstr "Imposta"
+
+#. module: l10n_it_ddt_makeover
+#: field:account.invoice,shipping_invoice_min_date:0
+msgid "Inizio Trasferimento"
+msgstr "Inizio Trasferimento"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Inizio Trasporto"
+msgstr "Inizio Trasporto"
+
+#. module: l10n_it_ddt_makeover
+#: help:stock.ddt,incoterm_id:0
+#: help:stock.picking,incoterm_id:0
+msgid "International Commercial Terms are a series of predefined commercial terms used in international transactions."
+msgstr "International Commercial Terms are a series of predefined commercial terms used in international transactions."
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Righe Fattura"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Inzio trasporto"
+msgstr "Inzio trasporto"
+
+#. module: l10n_it_ddt_makeover
+#: field:delivery.carrier,carrier_flag:0
+msgid "Is Carrier Partner"
+msgstr "E' un Partner Vettore"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.selection,is_last_page:0
+#: field:wizard.order.delivery.specification,is_last_page:0
+msgid "Is Last Page"
+msgstr "Ultima Pagina"
+
+#. module: l10n_it_ddt_makeover
+#: selection:wizard.customer.delivery.selection,uom_selection:0
+#: selection:wizard.order.delivery.specification,uom_selection:0
+#: selection:wizard.uom.values.confirm,uom_selection:0
+msgid "Kg"
+msgstr "Kg"
+
+#. module: l10n_it_ddt_makeover
+#: field:stock.makeover.configuration,write_uid:0
+#: field:wizard.customer.delivery.makeover,write_uid:0
+#: field:wizard.customer.delivery.selection,write_uid:0
+#: field:wizard.customer.delivery.selection.line,write_uid:0
+#: field:wizard.order.delivery.specification,write_uid:0
+#: field:wizard.order.delivery.specification.line,write_uid:0
+#: field:wizard.post.order.creation,write_uid:0
+#: field:wizard.uom.values.confirm,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultimo Aggiornamento da"
+
+#. module: l10n_it_ddt_makeover
+#: field:stock.makeover.configuration,write_date:0
+#: field:wizard.customer.delivery.makeover,write_date:0
+#: field:wizard.customer.delivery.selection,write_date:0
+#: field:wizard.customer.delivery.selection.line,write_date:0
+#: field:wizard.order.delivery.specification,write_date:0
+#: field:wizard.order.delivery.specification.line,write_date:0
+#: field:wizard.post.order.creation,write_date:0
+#: field:wizard.uom.values.confirm,write_date:0
+msgid "Last Updated on"
+msgstr "Ultimo Aggiornamento"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.selection,line_ids:0
+msgid "Lines"
+msgstr "Righe"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Modalità di Consegna"
+msgstr "Modalità di Consegna"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/ddt_create_invoice.py:66
+#, python-format
+msgid "Move %s is not invoiceable"
+msgstr "Il Movimento %s non è Fatturabile"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Netto"
+msgstr "Netto"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Netto a Pagare"
+msgstr "Netto a Pagare"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.customer.delivery.selection:0
+msgid "New Search"
+msgstr "Nuova Ricerca"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.customer.delivery.selection:0
+#: view:wizard.order.delivery.specification:0
+msgid "Next Page"
+msgstr "Pagina Successiva"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:126
+#, python-format
+msgid "Non esiste Condizione di consegna."
+msgstr "Non esiste Condizione di consegna."
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:120
+#, python-format
+msgid "Non esiste alcuna causale di Uscita."
+msgstr "Non esiste alcuna causale di Uscita."
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:138
+#, python-format
+msgid "Non esiste luogo di stoccaggio clienti."
+msgstr "Non esiste luogo di stoccaggio clienti."
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:132
+#, python-format
+msgid "Non esiste luogo di stoccaggio."
+msgstr "Non esiste luogo di stoccaggio."
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_2_1_customer_delivery_selection.py:197
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:262
+#, python-format
+msgid "Non puoi andare indietro!"
+msgstr "Non puoi andare indietro!"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/models/stock_ddt.py:70
+#, python-format
+msgid "Non puoi confermare un DDT senza righe!"
+msgstr "Non puoi confermare un DDT senza righe!"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.selection.line,not_expired:0
+msgid "Not Expired"
+msgstr "Scadenze Future"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Nota di credito"
+msgstr "Nota di credito"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Note"
+msgstr "Note"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.order.delivery.specification.line,packages_qty:0
+msgid "Nr. Colli"
+msgstr "Nr. Colli"
+
+#. module: l10n_it_ddt_makeover
+#: help:res.partner,document_copies:0
+msgid "Number of document copies"
+msgstr "Numero di copie del documento"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Numero"
+msgstr "Numero"
+
+#. module: l10n_it_ddt_makeover
+#: field:account.invoice,shipping_invoice_number_of_packages:0
+msgid "Numero Colli"
+msgstr "Numero Colli"
+
+#. module: l10n_it_ddt_makeover
+#: view:res.partner:0
+#: field:res.partner,one_order_one_draft:0
+msgid "One Order Per Draft"
+msgstr "Un Ordine Per DDT"
+
+#. module: l10n_it_ddt_makeover
+#: view:res.partner:0
+#: field:res.partner,one_product_one_draft:0
+msgid "One Product Per Draft"
+msgstr "Un prodotto per DDT"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.order.delivery.specification:0
+msgid "Order Confirmed"
+msgstr "Ordine Confermato"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.order.delivery.specification.line,order_line_id:0
+msgid "Order Line"
+msgstr "Riga Ordine"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.order.delivery.specification.line,order_number:0
+msgid "Order Number"
+msgstr "Nr. Ordine"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.post.order.creation:0
+msgid "Order registered successfully."
+msgstr "Ordine registrato con successo."
+
+#. module: l10n_it_ddt_makeover
+#: field:account.invoice,ddt_ids:0
+msgid "Origine DDT"
+msgstr "Origine DDT"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "P.IVA:"
+msgstr "P.IVA:"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Pagamento"
+msgstr "Pagamento"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.selection,pages_resume:0
+#: field:wizard.order.delivery.specification,pages_resume:0
+msgid "Page"
+msgstr "Pagina"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Partita IVA"
+msgstr "Partita IVA"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.order.delivery.specification:0
+msgid "Payment Accepted"
+msgstr "Pagamento Accettato"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.customer.delivery.selection:0
+msgid "Payment Drafts"
+msgstr "Payment Drafts"
+
+#. module: l10n_it_ddt_makeover
+#: field:account.invoice,shipping_invoice_weight:0
+#: field:stock.ddt,weight:0
+msgid "Peso"
+msgstr "Peso"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Peso Lordo"
+msgstr "Peso Lordo"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+#: field:account.invoice,shipping_invoice_weight_net:0
+#: field:stock.ddt,weight_net:0
+msgid "Peso Netto"
+msgstr "Peso Netto"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/add_picking_to_ddt.py:64
+#: code:addons/l10n_it_ddt_makeover/wizard/ddt_from_pickings.py:42
+#, python-format
+msgid "Picking %s already in ddt"
+msgstr "Picking %s già presente nel ddt"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/ddt_create_invoice.py:58
+#, python-format
+msgid "Picking %s riservato per Fattura Accompagnatoria"
+msgstr "Picking %s riservato per Fattura Accompagnatoria"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/add_picking_to_ddt.py:58
+#: code:addons/l10n_it_ddt_makeover/wizard/ddt_from_pickings.py:45
+#, python-format
+msgid "Picking %s riservato per fattura Accompagnatoria"
+msgstr "Picking %s riservato per fattura Accompagnatoria"
+
+#. module: l10n_it_ddt_makeover
+#: view:stock.ddt:0
+msgid "Picking Cliente"
+msgstr "Picking Cliente"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_stock_picking
+msgid "Picking List"
+msgstr "Lista di Picking"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/models/stock_ddt.py:99
+#, python-format
+msgid "Picking del Cliente"
+msgstr "Picking del Cliente"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.post.order.creation:0
+msgid "Post Order"
+msgstr "Post Ordine di Consegna"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.customer.delivery.selection:0
+#: view:wizard.order.delivery.specification:0
+msgid "Previous Page"
+msgstr "Pagina Precedente"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Prezzo"
+msgstr "Prezzo"
+
+#. module: l10n_it_ddt_makeover
+#: view:res.partner:0
+#: field:res.partner,print_values:0
+msgid "Print Values"
+msgstr "DDT Valorizzati"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.order.delivery.specification.line,product_id:0
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.order.delivery.specification.line,description:0
+msgid "Product Description"
+msgstr "Descrizione Prodotto"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.order.delivery.specification.line,product_uom:0
+msgid "Product UoM"
+msgstr "UoM Prodotto"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_purchase_order
+msgid "Purchase Order"
+msgstr "Ordine Acquisto"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.order.delivery.specification.line,product_uom_qty:0
+msgid "Quantity"
+msgstr "Quantità"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.selection,uom_selection:0
+#: field:wizard.order.delivery.specification,uom_selection:0
+#: field:wizard.uom.values.confirm,uom_selection:0
+msgid "Quantity for"
+msgstr "Mostra Quantità Per"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Quantità"
+msgstr "Quantità"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.ui.menu,name:l10n_it_ddt_makeover.menu_stock_products_moves
+msgid "Receive/Deliver Products"
+msgstr "Recevi/Consegna Prodotti"
+
+#. module: l10n_it_ddt_makeover
+#: selection:stock.picking,delivery_methods:0
+msgid "Receiver"
+msgstr "Destinatario"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Resa merce"
+msgstr "Resa merce"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Ritenuta d'Acconto"
+msgstr "Ritenuta d'Acconto"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Ritiro"
+msgstr "Ritiro"
+
+#. module: l10n_it_ddt_makeover
+#: view:res.partner:0
+msgid "Sales & Purchases"
+msgstr "Vendite e Acquisti"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Linea d'ordine di vendita"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.uom.values.confirm:0
+msgid "Save"
+msgstr "Salva"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Scadenza"
+msgstr "Scadenza"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Sconto"
+msgstr "Sconto"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.order.delivery.specification:0
+msgid "Select All"
+msgstr "Seleziona Tutto"
+
+#. module: l10n_it_ddt_makeover
+#: selection:sale.order.line,delivery_selection_state:0
+#: field:wizard.order.delivery.specification,selected_ids:0
+#: selection:wizard.order.delivery.specification.line,delivery_selection_state:0
+msgid "Selected"
+msgstr "Selezionato"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/add_picking_to_ddt.py:110
+#: code:addons/l10n_it_ddt_makeover/wizard/ddt_from_pickings.py:54
+#, python-format
+msgid "Selected DDTs have different payment terms"
+msgstr "I DDT selezionati hanno termini di pagamento differenti"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/add_picking_to_ddt.py:108
+#: code:addons/l10n_it_ddt_makeover/wizard/ddt_from_pickings.py:52
+#, python-format
+msgid "Selected DDTs have different type"
+msgstr "I DDT selezionati sono di tipo differente"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/add_picking_to_ddt.py:67
+#, python-format
+msgid "Selected Picking %s have different Partner"
+msgstr "I Picking selezionati %s hanno Partner differenti"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/add_picking_to_ddt.py:78
+#, python-format
+msgid "Selected Picking %s have different carriage condition"
+msgstr "I Picking selezionati %s hanno resa merce differenti"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/add_picking_to_ddt.py:83
+#, python-format
+msgid "Selected Picking %s have different goods description"
+msgstr "I Picking selezionati %s hanno descrizioni dei beni differenti"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/add_picking_to_ddt.py:73
+#, python-format
+msgid "Selected Picking %s have different parcels"
+msgstr "I Picking selezionati %s hanno parcels differenti"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/add_picking_to_ddt.py:98
+#, python-format
+msgid "Selected Picking %s have different payment terms"
+msgstr "I Picking selezionati %s hanno termini di pagamento differenti"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/add_picking_to_ddt.py:93
+#, python-format
+msgid "Selected Picking %s have different transportation method"
+msgstr "I Picking selezionati %s hanno trasporto a mezzo differenti"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/add_picking_to_ddt.py:88
+#, python-format
+msgid "Selected Picking %s have different transportation reason"
+msgstr "I Picking selezionati %s hanno causali di trasporto differenti"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.selection.line,selection_id:0
+msgid "Selection"
+msgstr "Selezione"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:152
+#, python-format
+msgid "Selezionare almeno una riga se presente"
+msgstr "Selezionare almeno una riga se presente"
+
+#. module: l10n_it_ddt_makeover
+#: selection:stock.picking,delivery_methods:0
+msgid "Sender "
+msgstr "Mittente "
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.customer.delivery.selection:0
+#: view:wizard.order.delivery.specification:0
+msgid "Set Unit of Measure"
+msgstr "Imposta Unità di Misura"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_2_1_customer_delivery_selection.py:108
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:242
+#, python-format
+msgid "Set UoM Confirm Values"
+msgstr "Set UoM Confirm Values"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.actions.act_window,name:l10n_it_ddt_makeover.action_customer_delivery_makeover_view
+#: model:ir.ui.menu,name:l10n_it_ddt_makeover.menu_action_customer_delivery_makeover_view
+msgid "Spedizioni da impegni di consegna"
+msgstr "Spedizioni da impegni di consegna"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Spett.le"
+msgstr "Spett.le"
+
+#. module: l10n_it_ddt_makeover
+#: view:res.partner:0
+msgid "Stock Delivery Options"
+msgstr "Opzioni di consegna"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_stock_makeover_configuration
+msgid "Stock Makeover Configuration"
+msgstr "Stock Makeover Configuration"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_stock_move
+msgid "Stock Move"
+msgstr "Movimento di magazzino"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.post.order.creation,stock_picking_out_id:0
+msgid "Stock Out"
+msgstr "Stock Out"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_4_post_order_creation.py:47
+#, python-format
+msgid "Stock Picking Out"
+msgstr "Stock Picking Out"
+
+#. module: l10n_it_ddt_makeover
+#: field:stock.ddt,payment_term:0
+msgid "Termine di Pagamento"
+msgstr "Termine di Pagamento"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_stock_picking_type
+msgid "The picking type determines the picking view"
+msgstr "The picking type determines the picking view"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Tipo Pagamento"
+msgstr "Tipo Pagamento"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.order.delivery.specification:0
+msgid "Total Packages"
+msgstr "Colli Totali"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.customer.delivery.selection,total_pages:0
+#: field:wizard.order.delivery.specification,total_pages:0
+msgid "Total Pages"
+msgstr "Pagine Totali"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.order.delivery.specification:0
+msgid "Total Weight"
+msgstr "Peso Totale"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Totale Articoli"
+msgstr "Totale Articoli"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Totale Documento"
+msgstr "Totale Documento"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Totale Imponibile"
+msgstr "Totale Imponibile"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Totale Imposta"
+msgstr "Totale Imposta"
+
+#. module: l10n_it_ddt_makeover
+#: field:account.invoice,shipping_invoice_carrier_id:0
+msgid "Trasportatore"
+msgstr "Trasportatore"
+
+#. module: l10n_it_ddt_makeover
+#: field:res.partner,carrier_id:0
+msgid "Trasportatore Abituale"
+msgstr "Trasportatore Abituale"
+
+#. module: l10n_it_ddt_makeover
+#: field:account.invoice,shipping_invoice_delivery_methods:0
+msgid "Trasporto a Cura"
+msgstr "Trasporto a Cura"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+#: field:stock.picking,delivery_methods:0
+msgid "Trasporto a cura"
+msgstr "Trasporto a cura"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/ddt_create_invoice.py:47
+#, python-format
+msgid "Tutti i DDT selezionati devono avere almeno una riga!"
+msgstr "Tutti i DDT selezionati devono avere almeno una riga!"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "U.M."
+msgstr "U.M."
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "UM"
+msgstr "UM"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/models/purchase_order.py:54
+#, python-format
+msgid "Unable to cancel this purchase order."
+msgstr "Unable to cancel this purchase order."
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.uom.values.confirm:0
+msgid "Unit of Measure Selection"
+msgstr "Selezione Unita di Misura"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Unitario"
+msgstr "Unitario"
+
+#. module: l10n_it_ddt_makeover
+#: selection:wizard.customer.delivery.selection,uom_selection:0
+#: selection:wizard.order.delivery.specification,uom_selection:0
+#: selection:wizard.uom.values.confirm,uom_selection:0
+msgid "Uom del Prodotto"
+msgstr "Uom del Prodotto"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.post.order.creation:0
+msgid "Vedi Ordine Consegna Appena Creato"
+msgstr "Vedi Ordine Consegna Appena Creato"
+
+#. module: l10n_it_ddt_makeover
+#: view:False:0
+msgid "Vettore"
+msgstr "Vettore"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.customer.delivery.makeover:0
+msgid "Visualizza"
+msgstr "Visualizza"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_stock_warehouse
+msgid "Warehouse"
+msgstr "Magazzino"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.order.delivery.specification.line,weight:0
+msgid "Weight"
+msgstr "Peso"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_wizard_customer_delivery_makeover
+msgid "Wizard Customer Delivery Makeover"
+msgstr "Wizard Customer Delivery Makeover"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_wizard_customer_delivery_selection
+msgid "Wizard Customer Delivery Selection"
+msgstr "Wizard Customer Delivery Selection"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_wizard_customer_delivery_selection_line
+msgid "Wizard Customer Delivery Selection Line"
+msgstr "Wizard Customer Delivery Selection Line"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_2_1_customer_delivery_selection_line.py:119
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification_line.py:204
+#, python-format
+msgid "Wizard Customer Order Delivery Specification"
+msgstr "Wizard Customer Order Delivery Specification"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_wizard_order_delivery_specification_line
+msgid "Wizard Customer Order Specification Line"
+msgstr "Wizard Customer Order Specification Line"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.customer.delivery.selection:0
+#: view:wizard.order.delivery.specification:0
+msgid "Wizard Customer Payment Specification"
+msgstr "Wizard Customer Payment Specification"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:216
+#, python-format
+msgid "Wizard Customer Post Order Delivery Specification"
+msgstr "Wizard Customer Post Order Delivery Specification"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_2_1_customer_delivery_selection.py:220
+#, python-format
+msgid "Wizard Customer Selection"
+msgstr "Wizard Customer Selection"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/wizard/wizard_3_order_delivery_specification.py:286
+#, python-format
+msgid "Wizard Delivery Order Specification"
+msgstr "Wizard Delivery Order Specification"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_wizard_order_delivery_specification
+msgid "Wizard Order Delivery Specification"
+msgstr "Wizard Order Delivery Specification"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.customer.delivery.makeover:0
+msgid "Wizard Payment"
+msgstr "Wizard Pagamenti"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_wizard_post_order_creation
+msgid "Wizard Post Order Creation"
+msgstr "Wizard Post Order Creation"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_wizard_uom_values_confirm
+msgid "Wizard Unit of Measure Confirm Values"
+msgstr "Wizard Unit of Measure Confirm Values"
+
+#. module: l10n_it_ddt_makeover
+#: code:addons/l10n_it_ddt_makeover/models/purchase_order.py:55
+#, python-format
+msgid "You must first cancel all invoices related to this purchase order."
+msgstr "You must first cancel all invoices related to this purchase order."
+
+#. module: l10n_it_ddt_makeover
+#: view:stock.ddt:0
+msgid "['|',('parent_id', '=', None),('parent_id', '=', False)]"
+msgstr "['|',('parent_id', '=', None),('parent_id', '=', False)]"
+
+#. module: l10n_it_ddt_makeover
+#: view:delivery.carrier:0
+#: view:delivery.grid:0
+#: view:sale.order:0
+#: view:stock.picking:0
+msgid "[('carrier_flag', '=', True)]"
+msgstr "[('carrier_flag', '=', True)]"
+
+#. module: l10n_it_ddt_makeover
+#: view:stock.ddt:0
+msgid "[('parent_id', '=', partner_id)]"
+msgstr "[('parent_id', '=', partner_id)]"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_add_pickings_to_ddt
+msgid "add.pickings.to.ddt"
+msgstr "add.pickings.to.ddt"
+
+#. module: l10n_it_ddt_makeover
+#: field:wizard.order.delivery.specification,customer_id:0
+msgid "customer"
+msgstr "Cliente"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_ddt_create_invoice
+msgid "ddt.create.invoice"
+msgstr "ddt.create.invoice"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_ddt_from_pickings
+msgid "ddt.from.pickings"
+msgstr "ddt.from.pickings"
+
+#. module: l10n_it_ddt_makeover
+#: help:res.partner,one_product_one_draft:0
+msgid "if checked one product per draft"
+msgstr "se selezionato un prodotto per DDT"
+
+#. module: l10n_it_ddt_makeover
+#: help:res.partner,print_values:0
+msgid "if checked print values"
+msgstr "se spuntato stampa i valori"
+
+#. module: l10n_it_ddt_makeover
+#: view:sale.order:0
+msgid "onchange_delay(delay, delivery_date)"
+msgstr "onchange_delay(delay, delivery_date)"
+
+#. module: l10n_it_ddt_makeover
+#: view:wizard.customer.delivery.makeover:0
+#: view:wizard.uom.values.confirm:0
+msgid "or"
+msgstr "O"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_report_l10n_it_ddt_makeover_report_ddt_makeover
+msgid "report.l10n_it_ddt_makeover.report_ddt_makeover"
+msgstr "report.l10n_it_ddt_makeover.report_ddt_makeover"
+
+#. module: l10n_it_ddt_makeover
+#: model:ir.model,name:l10n_it_ddt_makeover.model_report_l10n_it_ddt_makeover_report_delivery_invoice
+msgid "report.l10n_it_ddt_makeover.report_delivery_invoice"
+msgstr "report.l10n_it_ddt_makeover.report_delivery_invoice"
+
+#. module: l10n_it_ddt_makeover
+#: view:stock.makeover.configuration:0
+msgid "res_config_contents"
+msgstr "res_config_contents"
+
+#. module: l10n_it_ddt_makeover
+#: view:sale.order:0
+msgid "{'default_delivery_date': date_order}"
+msgstr "{'default_delivery_date': date_order}"
+
+#. module: l10n_it_ddt_makeover
+#: view:stock.ddt:0
+msgid "{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}"
+msgstr "{'readonly':[('invoice_id','!=',False),('invoice_id','!=',None)]}"
+

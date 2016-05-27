@@ -1,0 +1,159 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Barcode Extension</h2>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row">
+    	<div class="oe_span12">
+        	<h2>Scopo principale del modulo</h2>
+        </div>
+        <div class="oe_span12">
+            Lo scopo principale del modulo riguarda la modifica dell'interfaccia barcode.
+        	In particolar modo permette di aggiungere o rimuovere la quantit&aacute; per ogni singolo prodotto 
+        	selezionato durante un ordine di vendita o un ordine di acquisto.
+        	<p>
+        </div>        
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row">
+    	<div class="oe_span12">
+        	<h2>Decrizione inserimento per Barcode</h2>
+        </div>
+        <div class="oe_span12">
+            
+            <div class="oe_span12">
+            	<img class="oe_picture oe_screenshot" src="first_screen.png">
+        	</div>
+        	
+        	Dopo aver inserito tutti i prodotti relativi ad un ordine, tramite il pulsante Barcode, viene aperta una schermata con tutti i prodotti
+        	selezionati nell ordine; 
+        	
+        	<p>
+        	A questo punto si ha la lista dei prodotti, in cui:
+        	<ul>
+        		<li>La colonna<font color="blue"> "Da fare"</font> contiene la quantit&aacute; massima disponibile per prodotto</li>
+        		<li>Il riquadro<font color="blue"> "Scanned"</font> indica la quantit&aacute; richiesta per prodotto</li>
+        	</ul>        	
+        	
+            <div class="oe_span12">
+            	<img class="oe_picture oe_screenshot" src="second_screen.png">
+        	</div>
+        	
+        	<p>
+        	<ul>
+        	   <li>Una volta che viene acquisito il codice, la riga relativa al prodotto si posiziona automaticamente
+        	       e se la quantit&aacute; richiesta risulta minore o uguale a quella disponibile, la riga verr&aacute; lampeggiata
+        	       e sar&aacute; visualizzata in verde.
+        	   </li>
+        	</ul>     
+        	   	
+        	<div class="oe_span12">
+            	<img class="oe_picture oe_screenshot" src="third_screen.png">
+        	</div>
+        	
+        	<p>
+        	<ul>
+        	   <li>Se invece la quantit&aacute; richiesta risulta maggiore di quella disponibile, la riga verr&aacute; 
+        	       visualizzata in rosso.
+        	   </li>
+        	</ul>     
+        	   	
+        	<div class="oe_span12">
+            	<img class="oe_picture oe_screenshot" src="fourth_screen.png">
+        	</div>    
+        	
+        	<p>
+        	<ul>
+        	   <li>Se invece viene acquisito il codice di un prodotto non presente nell ordine di vendita, 
+        	       verr&aacute; data la possibilit&aacute; di aggiungere il prodotto alla lista.
+        	   </li>
+        	</ul>   
+        	
+        	<div class="oe_span12">
+            	<img class="oe_picture oe_screenshot" src="fifth_screen.png">
+        	</div>       
+        	
+        	<p>
+        	<ul>
+        	   <strong>Inizialmente bisogna impostare dei parametri sotto: "Configurazione" -> "Aziende" -> "Configurazione barcode" :
+        	           e riguardano i suoni emessi se un prodotto non esiste nell ordine di vendita e se la quantit&aacute; da evadere
+        	           risulta maggiore di quella pianificata.
+        	   </strong>
+        	</ul>   
+        	
+        	<div class="oe_span12">
+            	<img class="oe_picture oe_screenshot" src="sixth_screen.png">
+        	</div>        
+        	 	        	
+        </div>        
+    </div>
+</section>
+
+<section id="distinta di prelievo" class="oe_container oe_dark">
+    <div class="oe_row">
+    	<div class="oe_span12">
+	    <h2>Distinta di prelievo</h2>
+        Le distinte di prelievo riguardano gli ordini di acquisto.
+        Una volta inserito un ordine di acquisto, si procede alla stessa maniera degli ordini di vendita.
+        In particolar modo bisogna configurare i seguenti parametri: sotto "Configurazione" -> "Aziende" -> "Configurazione barcode" :
+        
+        <div class="oe_span12">
+            <img class="oe_picture oe_screenshot" src="seventh_screen.png">
+        </div> 
+      
+        <p>
+        <dl>
+	        <dt><u>Picking type utilizzato per lista prelievo:</u> Questo flag viene attivato solamente sulle distinte ed &eacute;
+	               specificato in base alle informazioni generali presenti sugli ordini di acquisto e pi&uacute; precisamente il campo <code>Picking Type</code>:</dt>
+	     
+        		   <div class="oe_span12">
+            			<img class="oe_picture oe_screenshot" src="eigth_screen.png">
+        		   </div> 
+	               
+	        <br>
+	        <dt><u>Controlla quantit&aacute; richieste:</u> Rappresenta il controllo sulla quantit&aacute; minima da soddisfare.
+	       
+	        <dt><u>Abilita forzatura su controllo quantit&aacute; in evasione ordine:</u> Libera il pulsante "Create backorder" in cui anche se tutte le quantit&aacute;
+	               minime non vengano soddisfatte, verr&aacute; permessa, tramite forzatura, una richiesta di conferma  
+	               
+	               <div class="oe_span12">
+            			<img class="oe_picture oe_screenshot" src="eleventh_screen.png">
+        		   </div>      
+	       	        
+	               <div class="oe_span12">
+            			<img class="oe_picture oe_screenshot" src="ninth_screen.png">
+        		   </div> 
+        		   
+        		   <div class="oe_span12">
+            			<img class="oe_picture oe_screenshot" src="tenth_screen.png">
+        		   </div> 
+	       
+	       
+        </dl>
+        
+        </div>
+   </div>
+</section>
+
+
+<section class="oe_container oe_dark">
+    <div class="oe_row">
+        <div class="oe_span12">
+	    	<h2>Note tecniche</h2>
+	    	E' stato tolto il metodo <code>get_precision</code> ed &eacute; stata aggiunta una funzione javascript
+	    	chiamata <strong>"fixedDecimal"</strong> per sistemare la visualizzazione dei decimali riguardante la quantit&aacute;.
+            Questo controllo &eacute; stato gestito solo per il tipo quantit&aacute; che risulta essere unit&aacute;. 
+            	    		    
+	    </div>
+   </div>
+</section>
+
+
+<section class="oe_container oe_separator">
+</section>

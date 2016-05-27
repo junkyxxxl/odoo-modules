@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <!-- Aggiungo il campo: tipo spedizione -->
+   		<record id="view_stock_ddt_dhl" model="ir.ui.view">
+            <field name="name">view.stock.ddt.dhl</field>
+            <field name="model">stock.ddt</field>
+            <field name="inherit_id" ref="l10n_it_ddt.stock_ddt_form"/>
+            <field name="arch" type="xml">
+               <xpath expr="//field[@name='delivery_address_id']" position="after">
+                      <field name="product_code_dhl" domain="[('classifier1.code', '=', 'DHL')]"/>
+                      <field name="shipping_type"/>
+	           </xpath>   
+            </field>
+        </record>  
+        
+     
+    </data>
+</openerp>
+
+
+
+

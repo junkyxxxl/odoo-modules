@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_sale_print_bill_view" model="ir.ui.view">
+            <field name="name">Print Bill from Sale Order</field>
+            <field name="model">wizard.sale.print.bill</field>
+            <field name="arch" type="xml">
+                <form string="Print Bill from Sale Order">
+                	<div>
+                		This order is not collectable, therefore there is no need to select a payment method
+                	</div>
+                    <group>
+	                    <group>
+	                        <field name="sale_id" invisible="1"/>
+	                        <field name="not_collected" invisible="1"/>
+	                        <field name="payment_method" attrs="{'invisible':[('not_collected','=',True)]}"/>
+	                    	<field name="document_amount" readonly="1"/>	                        
+	                    </group>
+	                    <group>
+	                    	<field name="discounted_document_amount" attrs="{'invisible':['|',('not_collected','=',True),('payment_method','=','online')]}"/>                       
+	                        <field name="payment_amount" attrs="{'invisible':['|',('not_collected','=',True),('payment_method','=','online')]}"/>
+	                        <field name="discount_amount" attrs="{'invisible':['|',('not_collected','=',True),('payment_method','=','online')]}"/>    
+	                        <field name="rest" readonly="1" attrs="{'invisible':['|',('not_collected','=',True),('payment_method','=','online')]}"/>                   
+						</group>
+					</group>
+                    <footer>
+                        <button name="print_bill" string="Print Bill" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

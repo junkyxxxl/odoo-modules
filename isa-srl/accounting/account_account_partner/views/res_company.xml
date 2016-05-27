@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+               
+        <record id="view_company_from_code" model="ir.ui.view">
+            <field name="name">view.company.from.code</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Configuration']//group[last()]" position="after">
+                    <group string="Reperimento automatico codice partner">
+                        <field name="start_new_partner_code_from" />
+                        <field name="start_new_supplier_code_from" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

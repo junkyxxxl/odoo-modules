@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_cashing_fees
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-13 10:02+0000\n"
+"PO-Revision-Date: 2015-11-13 10:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_cashing_fees
+#: field:product.template,is_cashing_fees:0
+msgid "Cashing Fees"
+msgstr "Spese d'Incasso"
+
+#. module: account_cashing_fees
+#: field:res.company,cashing_fees_default_product:0
+msgid "Cashing Fees Product"
+msgstr "Articolo Spese d'Incasso"
+
+#. module: account_cashing_fees
+#: model:ir.model,name:account_cashing_fees.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: account_cashing_fees
+#: help:res.partner,no_cashing_fees:0
+msgid "If flagged, cashing fees won't be added to this partner's invoices."
+msgstr "Se spuntato, non saranno addebitate spese d'incasso alle fatture di questo partner."
+
+#. module: account_cashing_fees
+#: help:product.template,is_cashing_fees:0
+msgid "If flagged, this product will be considered as cashing fees"
+msgstr "Se spuntato, questo prodotto sarà considerato una spesa d'incasso"
+
+#. module: account_cashing_fees
+#: model:ir.model,name:account_cashing_fees.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: account_cashing_fees
+#: field:res.partner,no_cashing_fees:0
+msgid "No Cashing Fee"
+msgstr "No Spese d'Incasso"
+
+#. module: account_cashing_fees
+#: model:ir.model,name:account_cashing_fees.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_cashing_fees
+#: model:ir.model,name:account_cashing_fees.model_product_template
+msgid "Product Template"
+msgstr "Modello Prodotto"
+
+#. module: account_cashing_fees
+#: help:res.company,cashing_fees_default_product:0
+msgid "The product used for cashing fees"
+msgstr "Il prodotto usato come spese d'incasso"
+

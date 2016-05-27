@@ -1,0 +1,480 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-16 09:53+0000\n"
+"PO-Revision-Date: 2016-05-16 09:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_report
+#: view:website:account_report.report_ddt
+msgid "(Omaggio)"
+msgstr "(Omaggio)"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "- Fax"
+msgstr "- Fax"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "AGENTE"
+msgstr "AGENTE"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "ANNOTAZIONI E VARIAZIONI"
+msgstr "ANNOTAZIONI E VARIAZIONI"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+msgid "ASPETTO DEI BENI"
+msgstr "ASPETTO DEI BENI"
+
+#. module: account_report
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "ASPETTO ESTERIORI DEI BENI"
+msgstr "ASPETTO ESTERIORI DEI BENI"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "C.IVA"
+msgstr "C.IVA"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "COD. CLIENTE"
+msgstr "COD. CLIENTE"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+msgid "COLLI"
+msgstr "COLLI"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "CONDIZIONI DI VENDITA"
+msgstr "CONDIZIONI DI VENDITA"
+
+#. module: account_report
+#: view:website:account_report.report_ddt
+#: view:website:account_report.standard_delay_invoice
+#: view:website:account_report.standard_shipping_invoice
+msgid "Codice"
+msgstr "Codice"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "Codice Fiscale"
+msgstr "Codice Fiscale"
+
+#. module: account_report
+#: model:ir.model,name:account_report.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "Condizioni generali di vendita:"
+msgstr "Condizioni generali di vendita:"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "Contributo ambientale CONAI assolto ove dovuto"
+msgstr "Contributo ambientale CONAI assolto ove dovuto"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "DATA"
+msgstr "DATA"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "DATA E ORA"
+msgstr "DATA E ORA"
+
+#. module: account_report
+#: model:ir.actions.report.xml,name:account_report.report_standard_ddt
+msgid "DDT (standard)"
+msgstr "DDT (standard)"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "DESCRIZIONE"
+msgstr "DESCRIZIONE"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+msgid "DOCUMENTO DI TRASPORTO"
+msgstr "DOCUMENTO DI TRASPORTO"
+
+#. module: account_report
+#: view:website:account_report.report_ddt
+#: view:website:account_report.standard_delay_invoice
+#: view:website:account_report.standard_shipping_invoice
+msgid "Descrizione"
+msgstr "Descrizione"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "Dichiaro di aver ricevuto la merce e di non aver pagato alla consegna"
+msgstr "Dichiaro di aver ricevuto la merce e di non aver pagato alla consegna"
+
+#. module: account_report
+#: field:res.company,disclaimer:0
+msgid "Disclaimer"
+msgstr "Disclaimer"
+
+#. module: account_report
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "FATTURA ACCOMPAGNATORIA"
+msgstr "FATTURA ACCOMPAGNATORIA"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_header
+msgid "FATTURA DIFFERITA"
+msgstr "FATTURA DIFFERITA"
+
+#. module: account_report
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "FIRMA DELL'INCARICATO AL TRASPORTO"
+msgstr "FIRMA DELL'INCARICATO AL TRASPORTO"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "FIRMA MAGAZZINIERE"
+msgstr "FIRMA MAGAZZINIERE"
+
+#. module: account_report
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "FIRMA PER RICEVUTA DEL CESSIONARIO"
+msgstr "FIRMA PER RICEVUTA DEL CESSIONARIO"
+
+#. module: account_report
+#: field:res.company,family_shipping_notes:0
+msgid "Family shipping notes"
+msgstr "Famiglie per note in fattura"
+
+#. module: account_report
+#: model:ir.actions.report.xml,name:account_report.report_standard_invoice
+msgid "Fattura (standard)"
+msgstr "Fattura (standard)"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "Firma"
+msgstr "Firma"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+msgid "Firma dell'incaricato al trasporto"
+msgstr "Firma dell'incaricato al trasporto"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+msgid "Firma per ricevuta del cessionario"
+msgstr "Firma per ricevuta del cessionario"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "I PAGAMENTI DEVONO ESSERE FATTI DIRETTAMENTE NON AVRANNO EFFETTO LIBERATORIO. IN CASO DI RITARDO PAGAMENTO SARANNO DOVUTI GLI INTERESSI MORATORI DI CUI AL D.Lgs. 231/2002 E SUCCESSIVE MODIFICHE E INTEGRAZIONI. QUALSIASI RECLAMO DEVE ESSERE INVIATO A MEZZO FAX AL N. 0761-271155 ENTRO IL TERMINE MASSIMO DI 8 GIORNI DALLA CONSEGNA DELLE MERCI. PER OGNI CONTROVERSIA SARÀ COMPETENTE IL FORO DI VITERBO."
+msgstr "I PAGAMENTI DEVONO ESSERE FATTI DIRETTAMENTE NON AVRANNO EFFETTO LIBERATORIO. IN CASO DI RITARDO PAGAMENTO SARANNO DOVUTI GLI INTERESSI MORATORI DI CUI AL D.Lgs. 231/2002 E SUCCESSIVE MODIFICHE E INTEGRAZIONI. QUALSIASI RECLAMO DEVE ESSERE INVIATO A MEZZO FAX AL N. 0761-271155 ENTRO IL TERMINE MASSIMO DI 8 GIORNI DALLA CONSEGNA DELLE MERCI. PER OGNI CONTROVERSIA SARÀ COMPETENTE IL FORO DI VITERBO."
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "IMPONIBILI"
+msgstr "IMPONIBILI"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "IMPORTO IVA"
+msgstr "IMPORTO IVA"
+
+#. module: account_report
+#: view:website:account_report.standard_delay_invoice
+#: view:website:account_report.standard_shipping_invoice
+msgid "Importo"
+msgstr "Importo"
+
+#. module: account_report
+#: model:ir.model,name:account_report.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: account_report
+#: model:ir.model,name:account_report.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Righe Fattura"
+
+#. module: account_report
+#: field:res.company,invoice_notes:0
+msgid "Invoice notes"
+msgstr "Note fattura"
+
+#. module: account_report
+#: view:website:account_report.standard_delay_invoice
+#: view:website:account_report.standard_shipping_invoice
+msgid "Iva"
+msgstr "Iva"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "Logo Azienda"
+msgstr "Logo Azienda"
+
+#. module: account_report
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "Luogo destinazione"
+msgstr "Luogo destinazione"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "MERCE IN CESSIONE GRATUITA ART. 2, N.4, DPR 633/72 CON OBBLIGO DI RIVALSA IVA AI SENSI DELL III COMMA, ART. 18, DPR 633/72."
+msgstr "MERCE IN CESSIONE GRATUITA ART. 2, N.4, DPR 633/72 CON OBBLIGO DI RIVALSA IVA AI SENSI DELL III COMMA, ART. 18, DPR 633/72."
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "MODALITA' DI CONSEGNA"
+msgstr "MODALITA' DI CONSEGNA"
+
+#. module: account_report
+#: help:res.company,shipping_notes:0
+msgid "Message to print if ddt/invoice contains product with specified family"
+msgstr "Messaggio da stampare se il ddt/fattura contiene prodotti con le famiglie specificate"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "NETTO A PAGARE"
+msgstr "NETTO A PAGARE"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "NETTO MERCE"
+msgstr "NETTO MERCE"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "NOTA DI CREDITO"
+msgstr "NOTA DI CREDITO"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "NUMERO"
+msgstr "NUMERO"
+
+#. module: account_report
+#: help:res.company,invoice_notes:0
+msgid "Notes that will be print as the first line in invoice body"
+msgstr "Note che verranno stampate nel corpo della fattura"
+
+#. module: account_report
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "Numero colli"
+msgstr "Numero colli"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "Pag."
+msgstr "Pag."
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "Partita Iva"
+msgstr "Partita Iva"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+msgid "Porto"
+msgstr "Porto"
+
+#. module: account_report
+#: view:website:account_report.standard_delay_invoice
+#: view:website:account_report.standard_shipping_invoice
+msgid "Prezzo"
+msgstr "Prezzo"
+
+#. module: account_report
+#: field:res.company,print_contacts:0
+msgid "Print contacts"
+msgstr "Stampa contatti"
+
+#. module: account_report
+#: help:res.company,print_contacts:0
+msgid "Print contacts in ddt header"
+msgstr "Stampa contatti nella testata del documento"
+
+#. module: account_report
+#: field:res.company,print_location_information:0
+msgid "Print location information"
+msgstr "Stampa informazioni sulle location"
+
+#. module: account_report
+#: field:res.company,privacy_info:0
+msgid "Privacy info"
+msgstr "Privacy info"
+
+#. module: account_report
+#: view:website:account_report.report_ddt
+#: view:website:account_report.standard_delay_invoice
+#: view:website:account_report.standard_shipping_invoice
+msgid "Qtà"
+msgstr "Qtà"
+
+#. module: account_report
+#: view:website:account_report.standard_delay_invoice
+msgid "Riferimento DDT numero:"
+msgstr "Riferimento DDT numero:"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+msgid "SCADENZE"
+msgstr "SCADENZE"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "SEDE"
+msgstr "SEDE"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "SPESE INC."
+msgstr "SPESE INC."
+
+#. module: account_report
+#: view:website:account_report.standard_delay_invoice
+#: view:website:account_report.standard_shipping_invoice
+msgid "Sconti"
+msgstr "Sconti"
+
+#. module: account_report
+#: field:res.company,shipping_notes:0
+msgid "Shipping notes"
+msgstr "Note per la spedizione"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+msgid "Spedizione 1"
+msgstr "Spedizione 1"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "Spett.le"
+msgstr "Spett.le"
+
+#. module: account_report
+#: model:ir.model,name:account_report.model_stock_move
+msgid "Stock Move"
+msgstr "Movimento di magazzino"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "TOTALE FATTURA"
+msgstr "TOTALE FATTURA"
+
+#. module: account_report
+#: view:website:account_report.delay_invoice_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "TOTALE IVA"
+msgstr "TOTALE IVA"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+#: view:website:account_report.shipping_invoice_layout_footer
+msgid "TRASPORTO A CURA"
+msgstr "TRASPORTO A CURA"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "Tel."
+msgstr "Tel."
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "Termine pagamento:"
+msgstr "Termine pagamento:"
+
+#. module: account_report
+#: field:account.invoice,amount_cashing_fees:0
+msgid "Total account cashing fees"
+msgstr "Total account cashing fees"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_footer
+msgid "VETTORE"
+msgstr "VETTORE"
+
+#. module: account_report
+#: view:website:account_report.ddt_layout_header
+#: view:website:account_report.delay_invoice_layout_header
+#: view:website:account_report.shipping_invoice_layout_header
+msgid "VOSTRO IBAN:"
+msgstr "VOSTRO IBAN:"
+
+#. module: account_report
+#: help:res.company,print_location_information:0
+msgid "if selected , you will print the locations moves.\n"
+"        Valid only for DDT."
+msgstr "Se selezionato, verranno stampate le informazioni sulle locazioni.\n"
+"Valido solo per i DDT."
+
+#. module: account_report
+#: view:website:sale.report_saleorder_document
+msgid "o.order_line.sorted(lambda li: li.name)"
+msgstr "o.order_line.sorted(lambda li: li.name)"
+

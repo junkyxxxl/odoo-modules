@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="view_ddt_sequence_config_form" model="ir.ui.view">
+        <field name="name">Auto Configure DDT Sequence</field>
+        <field name="model">stock.makeover.configuration</field>
+        <field name="inherit_id" ref="base.res_config_view_base"/>
+        <field name="arch" type="xml">
+          <data>
+            <form position="attributes">
+                <attribute name="string">DDT Sequence Configuration</attribute>
+            </form>
+            <group string="res_config_contents" position="replace">
+                <separator string="Configure DDT Sequence"/>
+            </group>
+          </data>
+        </field>
+    </record>
+
+    <record id="action_config_ddt_sequence" model="ir.actions.act_window">
+        <field name="name">Configure DDT Sequence</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">stock.makeover.configuration</field>
+        <field name="view_id" ref="view_ddt_sequence_config_form"/>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record model="ir.actions.todo" id="config_ddt_sequence">
+        <field name="action_id" ref="action_config_ddt_sequence"/>
+        <field name="state">open</field>
+        <field name="type">manual</field>
+    </record>
+  </data>
+</openerp>

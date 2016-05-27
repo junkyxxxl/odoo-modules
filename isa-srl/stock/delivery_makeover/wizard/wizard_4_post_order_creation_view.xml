@@ -1,0 +1,22 @@
+<openerp>
+    <data>
+        <record id="post_order_creation_view" model="ir.ui.view">
+            <field name="name">wizard.post.order.creation.form</field>
+            <field name="model">wizard.post.order.creation</field>
+            <field name="arch" type="xml">
+                <form string="Post Order" version="7.0" >
+                       <h1>Order registered successfully.</h1>
+                       <button name="%(action_customer_delivery_makeover_view)d"
+                            string="Effettua Nuovo Ordine"
+                            icon="gtk-yes"
+                            type="action" />
+                       <button name="view_order_created"
+                            string="Vedi Ordine Consegna Appena Creato"
+                            icon="gtk-no"
+                            type="object"/>
+                </form>
+            </field>
+        </record>
+        
+    </data>
+</openerp>
