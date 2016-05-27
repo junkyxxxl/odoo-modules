@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-	    <menuitem name="GecomTeamsystem" parent="account.menu_finance"
-	         groups="account.group_account_invoice" id="stampe_amministrazione" sequence="5" />
-	    <menuitem name="Esporta Dati Contabili" parent="stampe_amministrazione" id="readytec_open_invoices" action="account_export_teamsystem_readytec.action_wizard_accountingdata_file_export" sequence="1"/> 	   
-    </data>
-</openerp>

@@ -1,9 +1,0 @@
-id,schema_code,description,name,schema_nick
-accreditation_schema_2,A,Certificazione di sistemi di gestione per la qualità,Sistemi di Gestione per la Qualità,SGQ
-accreditation_schema_3,D,Certificazione di sistemi di gestione ambientale,Sistemi di Gestione Ambientale,SGA
-accreditation_schema_4,F,Certificazione di sistemi di gestione per la salute e sicurezza sul lavoro,Sistemi di Gestione per la Salute e Sicurezza sul Lavoro,SCR
-accreditation_schema_5,G,Certificazione di sistemi di gestione per la sicurezza delle informazioni,Sistemi di Gestione per la Sicurezza delle Informazioni,SSI
-accreditation_schema_6,L,Certificazione di sistemi di gestione servizi informatici,Sistemi di Gestione Servizi Informatici,ITX
-accreditation_schema_7,M,Certificazione di sistemi di gestione dell’energia,Sistemi di Gestione dell’Energia,SGE
-accreditation_schema_8,I,Certificazione di sistemi di gestione per la sicurezza alimentare,Sistemi di Gestione per la Sicurezza Alimentare,FSM
-accreditation_schema_9,C,Certificazione di personale,Personale,PRS

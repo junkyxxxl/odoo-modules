@@ -1,6 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_res_essence,access_res_essence,model_res_essence,,1,1,1,1
-access_res_seasoning,access_res_seasoning,model_res_seasoning,,1,1,1,1
-access_res_wood_quality,access_res_wood_quality,model_res_wood_quality,,1,1,1,1
-access_res_wood_type,access_res_wood_type,model_res_wood_type,,1,1,1,1
-access_res_finiture,access_res_finiture,model_res_finiture,,1,1,1,1

@@ -1,4 +1,0 @@
-"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-access_sale_history,access_sale_history,model_sale_history,,1,1,1,1
-access_sale_date_category,access_sale_date_category,model_sale_date_category,,1,1,1,1
-access_sale_discount_template,access_sale_discount_template,model_sale_discount_template,,1,1,1,1
