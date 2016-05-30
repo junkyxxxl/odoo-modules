@@ -110,7 +110,7 @@ Summary: Modules for Odoo for customer Nabla Srl.
 Modules for Odoo for customer Nabla Srl.
 
 %prep
-%setup -q -n src
+%setup -q -n odoo-modules
 
 %install
 
