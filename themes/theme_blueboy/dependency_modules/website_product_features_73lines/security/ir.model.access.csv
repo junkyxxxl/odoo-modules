@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_feature,access_product_feature,model_product_feature,,1,0,0,0
+access_product_feature_value,access_product_feature_value,model_product_feature_value,,1,0,0,0
+access_product_feature_line,access_product_feature_line,model_product_feature_line,,1,0,0,0

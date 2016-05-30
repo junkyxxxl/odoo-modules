@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+	<data>
+
+		<template id="website.layout_logo_show" inherit_id="website.layout"
+			customize_show="False" name="Show Logo">
+		</template>
+
+		<!-- To Remove Logo from Nav Bar -->
+		<template id="logo_text_remove" inherit_id="website.layout"
+			name="logo Text Remove" priority="100">
+			<xpath expr="//div[@class='navbar-header']/a[@class='navbar-brand']"
+				position="replace">
+			</xpath>
+		</template>
+
+		<template id="navbar_mid_menu" inherit_id="website.layout"
+			name="Show Mid Menu" priority="100" active="True" customize_show="True">
+			<xpath expr="//div[@id='wrapwrap']/header/div[1]" position="before">
+				<t t-call="website_mid_header_73lines.mid_header" />
+			</xpath>
+		</template>
+
+		<!-- Mid Header Template -->
+
+		<template id="mid_header" name="Mid Header" active="True">
+			<div id="row1">
+				<div class="container" id="mid_info_price_lang">
+					<div class="row">
+						<div class="col-md-4 oe_structure" id="col-row1-left">
+
+						</div>
+						<div class="col-md-4 oe_structure" id="col-row1-center">
+
+						</div>
+						<div class="col-md-4 mt8 oe_structure" id="col-row1-right">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="row2">
+				<div class="container mb16">
+					<div class="row">
+						<div class="col-md-4 oe_structure" id="col-row2-left">
+
+						</div>
+						<div class="col-md-3 oe_structure" id="col-row2-center">
+							<!-- <t t-call="website_mid_header_73lines.company_logo_mid_header"></t> -->
+						</div>
+						<div class="col-md-5 oe_structure" id="col-row2-right">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+
+
+		<template id="company_logo_mid_header" name="show Company Logo"
+			inherit_id="website_mid_header_73lines.mid_header" active="True"
+			customize_show="True">
+			<xpath expr="//div[@id='col-row2-left']" position="inside">
+				<div class="col-md-12 mt32 mb32" id="compnay_name">
+					<a href="/">
+						<img src="/logo.png" class="img img-responsive" t-att-alt="'Logo of %s' % res_company.name"
+							t-att-title="res_company.name" />
+					</a>
+				</div>
+			</xpath>
+		</template>
+
+		<!-- Cutomize options dropdown menu scroll -->
+
+		<template id="customize_options" inherit_id="website.user_navbar"
+			name="Scroll in Dropdown">
+			<xpath expr="//li[@id='customize-menu']/ul[1]" position="attributes">
+				<attribute name="class">dropdown-menu drop-scroll</attribute>
+			</xpath>
+
+
+		</template>
+
+
+	</data>
+</openerp>

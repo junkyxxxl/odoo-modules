@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+	<data>
+		
+		<!-- Snippets -->
+
+		<template id="theme_blueboy_snippets" inherit_id="website.snippets">
+			<xpath expr="//div[@id='snippet_structure']" position="inside">
+				<div class="o_panel_body">
+					<t t-snippet="theme_blueboy.s_navbar_menu_mega" t-thumbnail="/theme_blueboy/static/src/img/navbar-menu-snippet.png" />
+					<t t-snippet="theme_blueboy.s_navbar_menu_mid" t-thumbnail="/theme_blueboy/static/src/img/navbar-menu-snippet-mid-size.png" />
+					<t t-snippet="theme_blueboy.s_navbar_menu_small" t-thumbnail="/theme_blueboy/static/src/img/navbar-menu-snippet-small-size.png" />
+					<t t-snippet="theme_blueboy.s_footer_one" t-thumbnail="/theme_blueboy/static/src/img/footer.png" />
+				</div>
+			</xpath>
+		</template>
+		
+		<template id="theme_blueboy_assets_frontend" name="Theme Blueboy Frontend Assets"
+			inherit_id="website.assets_frontend">
+			<xpath expr="." position="inside">
+				<link href="/theme_blueboy/static/src/less/mid-header.less"
+					type="text/less" rel="stylesheet" />
+				<link href="/theme_blueboy/static/src/less/navbar.less" type="text/less"
+					rel="stylesheet" />
+				<link href="/theme_blueboy/static/src/less/common.less" type="text/less"
+					rel="stylesheet" />
+				<link href="/theme_blueboy/static/src/less/banner.less" type="text/less"
+					rel="stylesheet" />
+				<script src="/theme_blueboy/static/src/js/navbarfix.js" type="text/javascript" />
+				<script src="/theme_blueboy/static/src/js/navbarfix.js" type="text/javascript" />
+				<script src="/theme_blueboy/static/src/js/jquery.nicescroll.min.js"
+					type="text/javascript" />
+			</xpath>
+		</template>
+	</data>
+</openerp>

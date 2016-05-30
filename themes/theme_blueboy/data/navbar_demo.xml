@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<!-- Menu 1 -->
+
+
+		<record id="menu_men" model="website.menu">
+			<field name="name">Men</field>
+			<field name="url">#</field>
+			<field name="parent_id" ref="website.main_menu" />
+			<field name="sequence" type="int">12</field>
+			<field name="menu_size">fw</field>
+			<field name="submenu_view"><![CDATA[ 
+				   <div class="row">
+							<div class="col-md-12 mt16">
+								<div class="col-md-8 ">
+									<div class="col-md-3 ">
+										<ul class="list-unstyled">
+											<li>
+												<a href="#">
+													<span>Footwear</span>
+												</a>
+												<ul class="list-unstyled bullets">
+													<li>
+														<a href="#">
+															<span>Casual Shoes</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Sport Shoes</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Formal Shoes</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Sandals</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Flip-Flops </span>
+														</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+									<div class="col-md-3 ">
+										<ul class="list-unstyled">
+											<li>
+												<a href="#">
+													<span>Clothing</span>
+												</a>
+												<ul class="list-unstyled bullets">
+													<li>
+														<a href="#">
+															<span>T-shirts</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Casual Shirts</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Formal Shirts</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Jeans</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Trousers</span>
+														</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+									<div class="col-md-3 ">
+										<ul class="list-unstyled">
+											<li>
+												<a href="#">
+													<span>Watches</span>
+												</a>
+												<ul class="list-unstyled bullets">
+													<li>
+														<a href="#">
+															<span> Swatch</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Fastrack</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Casio</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Sonata</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Titan</span>
+														</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+									
+									<div class="col-md-3 ">
+										<ul class="list-unstyled">
+											<li>
+												<a href="#">
+													<span>Accessories</span>
+												</a>
+												<ul class="list-unstyled bullets">
+													<li>
+														<a href="#">
+															<span>Wallets</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Belts</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Socks</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Caps</span>
+														</a>
+													</li>
+													<li>
+														<a href="#">
+															<span>Bracelets</span>
+														</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+									
+									
+									<div class="col-md-12 mt16" style="padding: 0px;">
+										<div class="col-md-3 ">
+											<ul class="list-unstyled">
+												<li>
+													<a href="#">
+														<span>Sunglasses</span>
+													</a>
+													<ul class="list-unstyled bullets">
+														<li>
+															<a href="#">
+																<span>Ray-Ban</span>
+															</a>
+														</li>
+														<li>
+															<a href="#">
+																<span>Fastrack</span>
+															</a>
+														</li>
+														<li>
+															<a href="#">
+																<span>Idee</span>
+															</a>
+														</li>
+														<li>
+															<a href="#">
+																<span>Oakley</span>
+															</a>
+														</li>
+														<li>
+															<a href="#">
+																<span>Vogue</span>
+															</a>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+										
+										<div class="col-md-3 ">
+											<ul class="list-unstyled">
+												<li>
+													<a href="#">
+														<span>Fragrances</span>
+													</a>
+													<ul class="list-unstyled bullets">
+														<li>
+															<a href="#">
+																<span>Deodorants</span>
+															</a>
+														</li>
+														<li>
+															<a href="#">
+																<span>Perfumes</span>
+															</a>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+										
+										<div class="col-md-6 mb16">
+											<img class="img img-responsive" src="/theme_blueboy/static/src/img/men_menu_2.jpg"></img>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 mt8">
+									<div class="oe_structure">
+										<img class="img img-responsive" src="/theme_blueboy/static/src/img/men_menu_1.jpg"></img>
+									</div>
+								</div>
+							</div>
+						</div>
+					]]>
+			</field>
+		</record>
+
+
+		<record id="menu_brands" model="website.menu">
+			<field name="name">Brands</field>
+			<field name="url">#</field>
+			<field name="parent_id" ref="website.main_menu" />
+			<field name="sequence" type="int">13</field>
+			<field name="menu_size">sm</field>
+			<field name="submenu_view"><![CDATA[ 
+				   <div class="row">
+							<div class="col-md-12 ">
+								<div class="col-md-4 ">
+									<ul class="list-unstyled">
+									
+										<li>
+											<a href="#">
+												<span>Lifestyle Brand</span>
+											</a>
+											<ul class="list-unstyled bullets">
+												<li>
+													<a href="#">
+														<span>Puma</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Adidas</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>American Swan</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Reebok</span>
+													</a>
+												</li>
+												
+												<li>
+												<a href="#">
+													<span>Polo</span>
+												</a>
+											</li>
+												
+												</ul>
+											</li>
+										<li>
+											<a href="#">
+												<span>Originals</span>
+											</a>
+											<ul class="list-unstyled bullets">
+												<li>
+													<a href="#">
+														<span>Ray-Ban</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Levi's</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Lee</span>
+													</a>
+												</li>
+												<li>
+												<a href="#">
+													<span>Fastrack</span>
+												</a>
+											</li>
+												</ul>
+											</li>
+											
+									</ul>
+								</div>
+								<div class="col-md-8">
+									<ul class="mb8 mt8 col-md-12">
+										<img class="img img-responsive" src="/theme_blueboy/static/src/img/puma-458x146.jpg"></img>
+									</ul>
+									<ul class="mb8 mt8 col-md-12">
+										<img class="img img-responsive" src="/theme_blueboy/static/src/img/footware-458x146.jpg"></img>
+									</ul>
+								</div>
+							</div>
+						</div>
+					]]>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

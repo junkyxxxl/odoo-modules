@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<template id="website_product_tag" inherit_id="website_sale.products"
+			name="Product Tags" customize_show="True" priority="300">
+			<xpath expr="//div[@id='products_grid_before']" position="inside">
+				<t t-set="tags" t-value="website.get_product_tags()" />
+				<t t-if="len(tags) &gt; 1">
+					<div class="mt16 mb16">
+						<h3>Tags</h3>
+						<t t-foreach="tags" t-as="tag">
+							<span>
+								<a class="product-tag btn btn-primary btn-xs mb8" t-attf-href="/shop?search=#{tag.name}"
+									style="font-size: 14px;">
+									<span t-field="tag.name" />
+								</a>
+							</span>
+						</t>
+					</div>
+				</t>
+			</xpath>
+		</template>
+	</data>
+</openerp>

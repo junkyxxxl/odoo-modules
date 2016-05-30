@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+    
+<template id="website.footer_custom" inherit_id="website.layout" name="Footer">
+    <xpath expr="//div[@id='footer_container']" position="replace">
+        <div class="oe_structure" id="footer">
+            <section class="s_navbar_menu_mega">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 mt16">
+							<div class="col-md-8">
+								<div class="col-md-3 ">
+									<ul class="list-unstyled">
+										<li>
+											<a href="#">
+												<h6>Theme Features</h6>
+											</a>
+											<ul class="list-unstyled bullets">
+												<li>
+													<a href="#">
+														<span>Theme Features</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Typography</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Sample Link</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Partners</span>
+													</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<div class="col-md-3 ">
+									<ul class="list-unstyled">
+										<li>
+											<a href="#">
+												<h6>Shipping</h6>
+											</a>
+											<ul class="list-unstyled bullets">
+												<li>
+													<a href="#">
+														<span>Delivery</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Track your Order</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Buy gift card</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Returns</span>
+													</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<div class="col-md-3 ">
+									<ul class="list-unstyled">
+										<li>
+											<a href="#">
+												<h6>About Us</h6>
+											</a>
+											<ul class="list-unstyled bullets">
+												<li>
+													<a href="#">
+														<span>Responsive</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Odoo Themes</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>E-commerce</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>The Company</span>
+													</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+
+								<div class="col-md-3 ">
+									<ul class="list-unstyled">
+										<li>
+											<a href="#">
+												<h6>Questions ?</h6>
+											</a>
+											<ul class="list-unstyled bullets">
+												<li>
+													<a href="#">
+														<span>Terms</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Conditions</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>About Us</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span>Example</span>
+													</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-4 ">
+								<div class="oe_structure">
+									<div class="s_ecommerce_terms homepage-bar s_three_boxes_with_icon row">
+													<div class="icon-box-footer col-md-12  mt8 mb8 pull-left">
+														<span class="fa fa fa-phone fa-1x bg-primary"
+															style="" />
+															<h4 class="o_default_snippet_text">Call Us +001 737373 73</h4>
+													</div>
+													<div class="icon-box-footer col-md-12  mt8 mb8 pull-left">
+														<span class="fa fa-envelope-o fa-1x bg-primary"
+															style="" />
+														<h4 class="o_default_snippet_text">themes@73lines.com</h4>	
+													</div>
+													<div class="icon-box-footer col-md-12 mt8 mb8 pull-left">
+														<span class="fa fa-twitter fa-1x bg-primary"
+															style="" />
+														<h4 class="o_default_snippet_text">Follow us</h4>	
+													</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<div id="back-top">
+				<a class="img-square" href="#wrap">
+					<i class="fa fa-chevron-up"></i>
+				</a>
+			</div>
+			
+        </div>
+    </xpath>
+</template>
+
+
+<template id="website.footer_default" inherit_id="website.footer_custom" customize_show="False" active="False" name="Automatic Footer">
+    <xpath expr="//div[@id='footer']" position="replace">
+        <div id="footer" class="container hidden-print">
+            <div class="row">
+                <div class="col-md-4 col-lg-3">
+                    <h4>Our products &amp; Services</h4>
+                    <ul class="list-unstyled" id="products">
+                        <li><a href="/">Home</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4  col-lg-3" id="info">
+                    <h4>Connect with us</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="/page/website.contactus">Contact us</a></li>
+                    </ul>
+                    <ul class="list-unstyled">
+                        <li t-ignore="true"><i class="fa fa-phone"></i> <span t-field="res_company.phone"></span></li>
+                        <li t-ignore="true"><i class="fa fa-envelope"></i>  <span t-field="res_company.email"></span></li>
+                    </ul>
+                    <h2>
+                        <a t-att-href="website.social_facebook" t-if="website.social_facebook"><i class="fa fa-facebook-square"/></a>
+                        <a t-att-href="website.social_twitter" t-if="website.social_twitter"><i class="fa fa-twitter"/></a>
+                        <a t-att-href="website.social_linkedin" t-if="website.social_linkedin"><i class="fa fa-linkedin"/></a>
+                        <a t-att-href="website.social_youtube" t-if="website.social_youtube"><i class="fa fa-youtube-play"/></a>
+                        <a t-att-href="website.social_googleplus" t-if="website.social_googleplus" rel="publisher"><i class="fa fa-google-plus-square"/></a>
+                        <a t-att-href="website.social_github" t-if="website.social_github"><i class="fa fa-github"/></a>
+                    </h2>
+                </div>
+                <div class="col-md-4 col-lg-5 col-lg-offset-1">
+                    <h4>
+                        <span t-field="res_company.name" />
+                        <small> - <a href="/page/website.aboutus">About us</a></small>
+                    </h4>
+                    <div>
+                        <p>
+                            We are a team of passionate people whose goal is to improve everyone's
+                            life through disruptive products. We build great products to solve your
+                            business problems.
+                        </p>
+                        <p>
+                            Our products are designed for small to medium size companies willing to optimize
+                            their performance.
+                        </p>
+                    </div>
+                    <t t-call="website.language_selector"/>
+                </div>
+            </div>
+        </div>
+        
+        <div id="back-top">
+				<a class="img-square" href="#wrap">
+					<i class="fa fa-chevron-up"></i>
+				</a>
+			</div>
+        
+    </xpath>
+</template>
+    
+    </data>
+</openerp>

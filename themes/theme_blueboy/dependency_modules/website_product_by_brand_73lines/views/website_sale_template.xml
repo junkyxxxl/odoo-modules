@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<template id="website_product_brand" inherit_id="website_sale.products_attributes"
+			name="Product Brands" customize_show="True" active="True">
+			<xpath expr="//form[@class='js_attributes']" position="inside">
+				<t t-set="brands" t-value="website.get_product_brand(category)" />
+				<div class="mt16 mb16" t-if="(brands and len(brands) &gt;= 1)">
+					<ul class="nav nav-pills nav-stacked mt16">
+						<div>
+							<h3>Brands</h3>
+						</div>
+						<t t-foreach="brands" t-as="brand">
+							<label style="margin: 0 20px;">
+								<input type="checkbox" name="brand" t-att-value="'%s' % (brand.id)"
+									t-att-checked="'checked' if brand.id in brand_set else ''" />
+								<span style="font-weight: normal" t-field="brand.name" />
+							</label>
+						</t>
+					</ul>
+				</div>
+			</xpath>
+		</template>
+	</data>
+</openerp>

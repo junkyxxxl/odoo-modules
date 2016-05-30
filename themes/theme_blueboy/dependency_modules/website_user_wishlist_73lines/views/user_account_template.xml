@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<template id="wishlist_account" name="Wist List"
+			inherit_id="website_portal.account">
+			<xpath expr="//div[contains(@class,'o_my_documents')]" position="inside">
+				<t t-call="website_user_wishlist_73lines.wishlist_product_user_profile" />
+			</xpath>
+		</template>
+	</data>
+</openerp>

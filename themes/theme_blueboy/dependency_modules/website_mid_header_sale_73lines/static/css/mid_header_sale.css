@@ -1,0 +1,22 @@
+.oe_search_clear {
+  position: absolute;
+  display: none;
+  cursor: pointer;
+  z-index: 2;
+  right: 42px;
+  color: #939393;
+  padding: 10px 0;
+  top: 1px;
+}
+
+.oe_search_box {
+  padding-right: 23px;
+}
+
+.note-editor button {
+  height: 30px;
+}
+
+.o_hidden {
+  display: none !important;
+}

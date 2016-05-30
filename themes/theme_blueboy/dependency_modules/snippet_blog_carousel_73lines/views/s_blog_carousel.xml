@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+	<data>
+
+		<!-- ======== Blog Carousel With Header ======== -->
+
+		<!-- Snippet's Body -->
+		<template id="s_blog_carousel_header" name="Blog Carousel With Header">
+			<section class="s_blog_carousel">
+				<div class="container">
+					<div class="js_get_objects" data-loading="true"
+						data-template="snippet_blog_carousel_73lines.blog_list_template_header"
+						data-object_name="blog.post" data-custom_controller="1" />
+				</div>
+			</section>
+		</template>
+
+		<!-- Latest blogs's Template -->
+		<template id="blog_list_template_header">
+			<div class="headline">
+				<h2 t-esc="title"></h2>
+			</div>
+			<div class="blog-list owl-carousel">
+				<t t-foreach="objects" t-as="obj">
+					<div class="item blog-single " style="margin-right:20px;">
+						<t t-foreach="obj" t-as="blog">
+							<t t-call="snippet_blog_carousel_73lines.new_blog_item" />
+						</t>
+					</div>
+				</t>
+			</div>
+		</template>
+
+
+
+
+		<!-- ======== Blog Carousel Without Header ======== -->
+
+		<!-- Snippet's Body -->
+		<template id="s_blog_carousel_no_header" name="Blog Carousel Without Header">
+			<section class="s_blog_carousel">
+				<div class="container">
+					<div class="js_get_objects" data-loading="true"
+						data-template="snippet_blog_carousel_73lines.blog_list_template_no_header"
+						data-object_name="blog.post" />
+				</div>
+			</section>
+		</template>
+
+		<!-- Latest blogs's Template -->
+		<template id="blog_list_template_no_header">
+			<div class="blog-list owl-carousel">
+				<t t-foreach="objects" t-as="obj">
+					<div class="item blog-single " style="margin-right:20px;">
+						<t t-foreach="obj" t-as="blog">
+							<t t-call="snippet_blog_carousel_73lines.new_blog_item" />
+						</t>
+					</div>
+				</t>
+			</div>
+		</template>
+
+
+		<template id="new_blog_item" name="Blog item">
+			<div class="post-thumb">
+				<!-- <a t-att-href="'/blog/%s/post/%s' % (blog.blog_id.id, blog.id)"> 
+					<t t-set="blog_post_cover_properties" t-value="get_property_value(blog)" 
+					/> <div t-attf-style="background-image: #{blog_post_cover_properties.get('background-image', 
+					'none')}; -webkit-background-size: cover; min-height:222px; opacity:#{blog_post_cover_properties.get('opacity', 
+					1)}"></div> </a> -->
+				<a t-att-href="'/blog/%s/post/%s' % (blog.blog_id.id, blog.id)">
+					<div class="cover js_fullheight img img-responsive" id="title"
+						t-attf-style="background-image: url(#{blog.background_image});min-height: 222px;"
+						t-ignore="True">
+					</div>
+				</a>
+				<div class="latest-blog-info">
+					<a t-att-href="'/blog/%s/post/%s' % (blog.blog_id.id, blog.id)">
+						<h4 t-field="blog.name"></h4>
+					</a>
+					<div class="post-excerpt">
+						<p t-field="blog.subtitle" />
+					</div>
+					<div class="post-meta">
+						<span class="entry-date">
+							<i class="fa fa-calendar"></i>
+							<span t-field="blog.create_date" t-field-options='{"format": "MMMM d, yyyy"}' />
+						</span>
+						<span class="entry-comment">
+							<i class="fa fa-user"></i>
+							<span t-field="blog.author_id" />
+						</span>
+					</div>
+				</div>
+
+			</div>
+		</template>
+
+	</data>
+</openerp>

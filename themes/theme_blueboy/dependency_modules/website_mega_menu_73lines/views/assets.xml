@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<template id="megamenu_assets_frontend" name="MegaMenu Frontend Assets"
+			inherit_id="website.assets_frontend">
+			<xpath expr="." position="inside">
+				<link href="/website_mega_menu_73lines/static/src/less/navbar.less"
+					type="text/less" rel="stylesheet" />
+				<link href="/website_mega_menu_73lines/static/src/less/custom.css"
+					type="text/css" rel="stylesheet" />
+			</xpath>
+		</template>
+
+	</data>
+</openerp>

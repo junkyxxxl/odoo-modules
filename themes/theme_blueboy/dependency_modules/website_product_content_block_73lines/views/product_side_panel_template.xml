@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- Product Single Page Template -->
+
+
+		<template id="product_half_section" inherit_id="website_sale.product"
+			name="Show Product Half Section Block" priority="100" active="False" customize_show="True">
+<!-- 			<xpath expr="//section[@id='product_detail']/div[2]" position="attributes"> -->
+<!-- 				<attribute name="class">row col-sm-8 col-md-8 col-lg-8</attribute> -->
+<!-- 			</xpath> -->
+			<xpath expr="//div[@class='col-sm-7 col-md-7 col-lg-7']" position="attributes">
+				<attribute name="class">col-sm-4 col-md-4 col-lg-4</attribute>
+				<attribute name="id">product_image_section</attribute>
+			</xpath>
+			<xpath expr="//div[@class='col-sm-5 col-md-5 col-lg-4 col-lg-offset-1']" position="attributes">
+				<attribute name="class">col-sm-4 col-md-4 col-lg-4</attribute>
+				<attribute name="id">product_price_section</attribute>
+			</xpath>
+		</template>
+
+		<template id="product_image_template" inherit_id="website_product_content_block_73lines.product_half_section"
+			name="Show Product Side Block" active="False" customize_show="True">
+
+<!-- 			<xpath expr="//div[@class='col-sm-7 col-md-7 col-lg-7']" -->
+<!-- 				position="attributes"> -->
+<!-- 				<attribute name="class">col-sm-4 col-md-4 col-lg-4</attribute> -->
+<!-- 			</xpath> -->
+<!-- 			<xpath expr="//div[@class='col-sm-5 col-md-5 col-lg-4 col-lg-offset-1']" -->
+<!-- 				position="attributes"> -->
+<!-- 				<attribute name="class">col-sm-4 col-md-4 col-lg-4</attribute> -->
+<!-- 				<attribute name="id">product_details</attribute> -->
+<!-- 			</xpath> -->
+			
+
+			<xpath expr="//div[@id='product_price_section']" position="after">
+				<div class="col-sm-4 col-md-4 col-lg-4">
+					<div class="oe_structure">
+						<h2> Put Your Content Here Like Images,Carousel etc... </h2>
+					</div>
+				</div>
+			</xpath>
+
+		</template>
+
+
+
+
+		<!-- Description -->
+
+
+		<template id="product_replace_description" inherit_id="website_sale.product"
+			active="True" name="Disable Product Description" priority="30">
+			<xpath expr="//div[@t-field='product.website_description']"
+				position="replace">
+			</xpath>
+		</template>
+
+		<template id="website_product_full_details" inherit_id="website_sale.product"
+			name="Product Full Info" priority="600">
+			<xpath expr="//section[@id='product_detail']/div[2]" position="inside">
+				<div itemprop="description" class="pro-more-info col-md-12 mt32 mb64 oe_structure"
+					id="product_full_description">
+					<div role="tabpanel">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active" id="full_description">
+								<a href="#pro-desc-full" aria-controls="full" role="tab"
+									data-toggle="tab" aria-expanded="true">Full Description</a>
+							</li>
+							<li role="presentation" class="" id="all_review">
+								<a href="#pro-comment" aria-controls="profile" role="tab"
+									data-toggle="tab" aria-expanded="false">All Reviews</a>
+							</li>
+						</ul>
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="pro-desc-full">
+								<div t-if="product.description_sale">
+									<div itemprop="description" t-field="product.website_description"
+										class="oe_structure mt16" id="product_full_description" />
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="pro-comment">
+								<section class="container">
+									<div class="row col-md-10 col-md-offset-1">
+										<div class="text-muted">
+											<h3 class="fa fa-comment-o">
+												<a id="comments">
+													<t t-if="len(product.website_message_ids) &lt;= 1">
+														<t t-esc="len(product.website_message_ids)" />
+														comment
+													</t>
+													<t t-if="len(product.website_message_ids) > 1">
+														<t t-esc="len(product.website_message_ids)" />
+														comments
+													</t>
+												</a>
+											</h3>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</xpath>
+		</template>
+
+		<template id="website_sale.recommended_products" inherit_id="website_sale.product"
+			customize_show="True" active="False" name="Suggested Products" priority="900">
+			<xpath expr="//section[@id='product_detail']/div[2]" position="inside">
+				<div class="container col-md-12 mt32" t-if="product.alternative_product_ids">
+					<h3>Suggested alternatives:</h3>
+					<div class='row mt16' style="">
+						<t t-foreach="product.alternative_product_ids" t-as="product">
+							<div class='col-md-2 '>
+								<div class='mt16 text-center' style="height: 100%;">
+									<div t-field="product.image"
+										t-field-options='{"widget": "image", "class": " o_alternative_product" }' />
+									<h5>
+										<a t-attf-href="/shop/product/#{ slug(product) }" style="display: block">
+											<span t-att-title='product.name' t-field='product.name'
+												style="display: block;" />
+										</a>
+									</h5>
+									<div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer"
+										class="product_price" t-if="product.product_variant_ids">
+										<b class="text-center">
+											<t
+												t-if="(compute_currency(product.lst_price) - product.price) &gt; 0.1">
+												<del class="text-danger mr8" style="white-space: nowrap;"
+													t-field="product.lst_price"
+																					t-field-options='{
+								                          "widget": "monetary",
+								                          "from_currency": "product.company_id.currency_id", 
+								                           "display_currency": "user_id.partner_id.property_product_pricelist.currency_id" 
+								                         }' />
+											</t>
+											<span t-field="product.price" style="white-space: nowrap;"
+												t-field-options='{
+							                           "widget": "monetary", 
+							                           "display_currency": "user_id.partner_id.property_product_pricelist.currency_id" 
+							                        }'>
+											</span>
+											<span itemprop="price" style="display:none;" t-esc="product.price" />
+											<span itemprop="priceCurrency" style="display:none;"
+												t-esc="user_id.partner_id.property_product_pricelist.currency_id.name" />
+										</b>
+									</div>
+								</div>
+							</div>
+						</t>
+					</div>
+				</div>
+			</xpath>
+		</template>
+
+
+
+		<!-- End Description -->
+
+		<!-- Products Page Template -->
+
+		<template id="product_top_block_template" name="Show Top Content Block"
+			inherit_id="website_sale.products" active="False" customize_show="True"
+			priority="100">
+			<xpath expr="//div[@id='products_grid_before']/form" position="before">
+				<div class="oe_structure mt16">
+					<h3>Product Top Block :- Place Your Content Here...</h3>
+				</div>
+			</xpath>
+		</template>
+
+
+		<template id="product_bottom_block_template" name="Show Bottom Content Block"
+			inherit_id="website_sale.products" active="False" customize_show="True"
+			priority="300">
+			<xpath expr="//div[@id='products_grid_before']" position="inside">
+				<div class="oe_structure mt16">
+					<h3>Product Bottom Block :- Place Your Content Here...</h3>
+				</div>
+			</xpath>
+		</template>
+
+	</data>
+</openerp>

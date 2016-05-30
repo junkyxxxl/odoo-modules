@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="s_brand_carousel_place_in_tab" inherit_id="website.snippets">
+			<xpath expr="//div[@id='snippet_content']" position="inside">
+					<t t-snippet="snippet_brand_carousel_73lines.s_brand_carousel_header"
+						t-thumbnail="/snippet_brand_carousel_73lines/static/src/img/s_brand-carousel-with-header.png" />
+					<t t-snippet="snippet_brand_carousel_73lines.s_brand_carousel_no_header"
+						t-thumbnail="/snippet_brand_carousel_73lines/static/src/img/s_brand-carousel-without-header.png" />
+			</xpath>
+		</template>
+		
+		
+	</data>
+</openerp>
