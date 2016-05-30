@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+
+		<template name="Homepage" priority="29" t-name="website.homepage">
+			<t t-call="website.layout">
+				<div id="wrap" class="oe_structure oe_empty">
+					<div id="myCarouselBanner" class="carousel slide"
+						data-interval="10000" style="height: 620px;">
+						<ol class="carousel-indicators">
+							<li data-target="#myCarouselBanner" data-slide-to="0" class="active" />
+							<li data-target="#myCarouselBanner" data-slide-to="1" />
+						</ol>
+						<div class="carousel-inner">
+							<div class="item active"
+								style="background-image: url('/theme_blueboy/static/src/img/banner_background1.jpg')">
+
+
+								<div class="container">
+									<div class="carousel-img col-md-8  mt64">
+										<div class="col-md-3 ">
+											<img src="/theme_blueboy/static/src/img/boy-3.png" class=""
+												style="animation: none;margin: 0px -52px;" />
+										</div>
+
+										<div class="col-md-3 ">
+											<img src="/theme_blueboy/static/src/img/boy-1.png" class=""
+												style="margin: 0px -49px;" />
+										</div>
+
+										<div class="col-md-3">
+											<img src="/theme_blueboy/static/src/img/boy-2.png" class=""
+												style="margin: 0px 29px;" />
+										</div>
+
+									</div>
+
+
+									<div class="col-md-4  mt200">
+										<div class="content-heading">
+											<h2>Your Banner Title</h2>
+											<p>Lorem Ipsum is simply dummy text of the printing and
+												typesetting industry. Lorem Ipsum has been the industry's
+												standard dummy text ever since the 1500s, when an unknown
+												printer took
+											</p>
+											<a href="#" class="btn btn-success text-center">Take a Look</a>
+										</div>
+
+
+									</div>
+
+								</div>
+							</div>
+
+							<div class="item"
+								style="background-image: url('/theme_blueboy/static/src/img/banner_background3.jpg');">
+								<div class="container">
+
+
+									<div class="carousel-img col-md-4 mt64 ">
+										<div class="col-md-2">
+											<img src="/theme_blueboy/static/src/img/boy-4.png" class=""
+												style=" margin: 0px -55px;" />
+										</div>
+
+										<div class="col-md-2">
+											<img src="/theme_blueboy/static/src/img/boy-5.png" class="" />
+										</div>
+
+									</div>
+
+									<div class="col-md-4 mt200">
+										<div class="content-heading">
+											<h2>Your Banner Title</h2>
+											<p>Lorem Ipsum is simply dummy text of the printing and
+												typesetting industry. Lorem Ipsum has been the industry's
+												standard dummy text ever since the 1500s, when an unknown
+												printer took
+											</p>
+											<a href="#" class="btn btn-success text-center">Shop Now</a>
+										</div>
+
+									</div>
+									<div class="carousel-img col-md-4  hidden-sm hidden-xs mt64 ">
+
+										<div class="col-md-2">
+											<img src="/theme_blueboy/static/src/img/boy-6.png" class="" />
+										</div>
+
+										<div class="col-md-2">
+											<img src="/theme_blueboy/static/src/img/boy-7.png" class=""
+												style="margin: 0px 100px;" />
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+						<div class="carousel-control left" data-target="#myCarouselBanner"
+							data-slide="prev" style="width: 10%" data-cke-saved-href="#myCarouselBanner">
+							<i class="fa fa-chevron-left" />
+						</div>
+						<div class="carousel-control right" data-target="#myCarouselBanner"
+							data-slide="next" style="width: 10%" data-cke-saved-href="#myCarouselBanner">
+							<i class="fa fa-chevron-right" />
+						</div>
+					</div>
+					<section class="s_three_same_size_images mt16 mb16">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-4 col-sm-4 col-xs-12 mb8 mt8">
+									<img class="img img-responsive"
+										src="/theme_blueboy/static/src/img/360x146-banner-1.jpg" />
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-12 mb8 mt8">
+									<img class="img img-responsive"
+										src="/theme_blueboy/static/src/img/360x146-banner-2.jpg" />
+								</div>
+								<div class="col-md-4 col-sm-3 col-xs-12 mb8 mt8">
+									<img class="img img-responsive"
+										src="/theme_blueboy/static/src/img/360x146-banner-3.jpg" />
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="s_product_carousel">
+						<div class="container">
+							<div class="js_get_objects" data-custom_controller="1"
+								data-filter_by_filter_id="13" data-loading="true"
+								data-object_name="product.template" data-objects_limit="6"
+								data-template="snippet_product_carousel_73lines.product_list_template_header" />
+						</div>
+					</section>
+					<section class="s_one_carousel_three_images mt16">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-9 col-md-9 col-sm-12 mb16 mt16">
+									<div class="oe_structure b-stripe">
+										<img src="/theme_blueboy/static/src/img/banner.jpg" class="img img-responsive">
+											<span class="b-line-9 b-position-1"></span>
+											<span class="b-line-9 b-position-2">
+											</span>
+											<span class="b-line-9 b-position-3">
+											</span>
+											<span class="b-line-9 b-position-4">
+											</span>
+											<span class="b-line-9 b-position-5">
+											</span>
+											<span class="b-line-9 b-position-6">
+											</span>
+											<span class="b-line-9 b-position-7">
+											</span>
+											<span class="b-line-9 b-position-8">
+											</span>
+											<span class="b-line-9 b-position-9">
+											</span>
+										</img>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-12">
+									<div class="oe_structure ">
+										<div class="container">
+											<div class="row">
+												<div class="col-md-12 mb16 mt16">
+													<div class="b-stripe">
+														<a href="#">
+															<img class="img img-responsive"
+																src="/theme_blueboy/static/src/img/282x129-banner-1.jpg">
+																<span class="b-line-9 b-position-1"></span>
+																<span class="b-line-9 b-position-2">
+																</span>
+																<span class="b-line-9 b-position-3">
+																</span>
+																<span class="b-line-9 b-position-4">
+																</span>
+																<span class="b-line-9 b-position-5">
+																</span>
+																<span class="b-line-9 b-position-6">
+																</span>
+																<span class="b-line-9 b-position-7">
+																</span>
+																<span class="b-line-9 b-position-8">
+																</span>
+																<span class="b-line-9 b-position-9">
+																</span>
+
+															</img>
+														</a>
+													</div>
+												</div>
+												<div class="col-md-12 mb16 mt16">
+													<div class="b-stripe">
+														<a href="#">
+															<img class="img img-responsive"
+																src="/theme_blueboy/static/src/img/282x129-banner-2.jpg">
+																<span class="b-line-9 b-position-1"></span>
+																<span class="b-line-9 b-position-2">
+																</span>
+																<span class="b-line-9 b-position-3">
+																</span>
+																<span class="b-line-9 b-position-4">
+																</span>
+																<span class="b-line-9 b-position-5">
+																</span>
+																<span class="b-line-9 b-position-6">
+																</span>
+																<span class="b-line-9 b-position-7">
+																</span>
+																<span class="b-line-9 b-position-8">
+																</span>
+																<span class="b-line-9 b-position-9">
+																</span>
+
+															</img>
+														</a>
+													</div>
+												</div>
+												<div class="col-md-12 b-stripe mb16 mt16">
+													<div class="b-stripe">
+														<a href="#">
+															<img class="img img-responsive"
+																src="/theme_blueboy/static/src/img/282x129-banner-3.jpg"
+																style="">
+
+																<span class="b-line-9 b-position-1"></span>
+																<span class="b-line-9 b-position-2">
+																</span>
+																<span class="b-line-9 b-position-3">
+																</span>
+																<span class="b-line-9 b-position-4">
+																</span>
+																<span class="b-line-9 b-position-5">
+																</span>
+																<span class="b-line-9 b-position-6">
+																</span>
+																<span class="b-line-9 b-position-7">
+																</span>
+																<span class="b-line-9 b-position-8">
+																</span>
+																<span class="b-line-9 b-position-9">
+																</span>
+
+															</img>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="s_product_carousel product_carousel_mini mt16">
+						<div class="container">
+							<div class="js_get_objects" data-custom_controller="1"
+								data-filter_by_filter_id="15" data-loading="true"
+								data-object_name="product.template" data-objects_in_row="2"
+								data-objects_limit="10"
+								data-template="snippet_product_carousel_73lines.product_list_template_mini" />
+						</div>
+					</section>
+
+					<section class="s_blog_carousel">
+						<div class="container">
+							<div class="js_get_objects" data-loading="true"
+								data-template="snippet_blog_carousel_73lines.blog_list_template_header"
+								data-object_name="blog.post" data-custom_controller="1"
+								data-filter_by_filter_id="10" data-objects_limit="6"
+								data-objects_in_slide="3" />
+						</div>
+					</section>
+					<section class="s_three_boxes_with_icon mb16 mt16">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="col-md-4 text-center feature-box-border">
+										<div class="feature-box-icon-background">
+											<span class="fa fa-clock-o fa-3x" style="" />
+										</div>
+										<div class="col-md-12 feature-box-text">
+											<h4> Support 24/7 </h4>
+										</div>
+									</div>
+									<div class="col-md-4 text-center feature-box-border">
+										<div class="feature-box-icon-background" id="add_class">
+											<span class="fa fa-truck fa-3x" style="" />
+										</div>
+										<div class="col-md-12 feature-box-text">
+											<h4> Free Shipping </h4>
+										</div>
+									</div>
+									<div class="col-md-4 text-center feature-box-border">
+										<div class="feature-box-icon-background">
+											<span class="fa fa-usd fa-3x" style="" />
+										</div>
+										<div class="col-md-12 feature-box-text">
+											<h4> Easy Returns </h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="s_brand_carousel">
+						<div class="container">
+							<div class="js_get_objects" data-loading="true"
+								data-template="snippet_brand_carousel_73lines.brand_list_template_header"
+								data-object_name="product.brand" data-filter_by_filter_id="16"
+								data-objects_limit="12" data-objects_in_slide="4" />
+						</div>
+					</section>
+
+				</div>
+			</t>
+		</template>
+	</data>
+</openerp>

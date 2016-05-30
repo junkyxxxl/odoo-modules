@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+	<data>
+
+		<!-- ======== Brand Carousel With Header ======== -->
+
+		<!-- Snippet's Body -->
+		<template id="s_brand_carousel_header" name="Brand Carousel With Header">
+			<section class="s_brand_carousel">
+				<div class="container">
+					<div class="js_get_objects" data-loading="true"
+						data-template="snippet_brand_carousel_73lines.brand_list_template_header"
+						data-object_name="product.brand" />
+				</div>
+			</section>
+		</template>
+
+		<!-- Latest brands's Template -->
+		<template id="brand_list_template_header">
+			<div class="headline">
+				<h2 t-esc="title"></h2>
+			</div>
+			<div class="brand-list owl-carousel">
+				<t t-foreach="objects" t-as="obj">
+					<div class="item brand-single " style="margin-right:20px;">
+						<t t-foreach="obj" t-as="brand">
+							<t t-call="snippet_brand_carousel_73lines.new_brand_item" />
+						</t>
+					</div>
+				</t>
+			</div>
+		</template>
+
+		<!-- ======== Brand Carousel Without Header ======== -->
+
+		<!-- Snippet's Body -->
+		<template id="s_brand_carousel_no_header" name="Brand Carousel Without Header">
+			<section class="s_brand_carousel">
+				<div class="container">
+					<div class="js_get_objects" data-loading="true"
+						data-template="snippet_brand_carousel_73lines.brand_list_template_no_header"
+						data-object_name="product.brand" />
+				</div>
+			</section>
+		</template>
+
+		<!-- Latest brands's Template -->
+		<template id="brand_list_template_no_header">
+			<div class="brand-list owl-carousel">
+				<t t-foreach="objects" t-as="obj">
+					<div class="item brand-single " style="margin-right:20px;">
+						<t t-foreach="obj" t-as="brand">
+							<t t-call="snippet_brand_carousel_73lines.new_brand_item" />
+						</t>
+					</div>
+				</t>
+			</div>
+		</template>
+
+
+		<template id="new_brand_item" name="Brand item">
+			<div class="post-thumb">
+				<a itemprop="url" t-att-href="'/shop/?brand=%s' % (brand.id)">
+					<span itemprop="image" t-field="brand.brand_image"
+						t-field-options='{"widget": "image"}'
+						t-att-alt="brand.name" />
+				</a>
+			</div>
+		</template>
+
+	</data>
+</openerp>

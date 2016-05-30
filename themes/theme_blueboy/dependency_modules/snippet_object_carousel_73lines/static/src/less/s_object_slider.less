@@ -1,0 +1,121 @@
+ul.thumbnails {
+    margin-bottom: 0px;
+}
+.control-box {
+    text-align: right;
+}
+
+@media (max-width: 767px) {
+    .control-box {
+        text-align: center;
+    } 
+}
+
+li {
+    list-style-type:none;
+}
+
+
+.product-list{
+		.product-single{
+			background: #ffffff none repeat scroll 0 0;
+			border: 1px solid #f7f7f7;
+			min-height: 230px;
+			padding: 7px;
+			width: 100%;
+		    .product-wid-price {
+					ins{
+						 color: #222222;
+						 float: left;
+						 font-size: 20px;
+						 margin-right: 20px;
+						 padding-top: 3px;
+						 text-decoration: none;
+					 }
+					 del{
+					 	color: #777777;
+					    display: block;
+					    font-size: 14px;
+					    padding-top: 9px;
+					 }
+				}
+		}
+	}
+
+
+
+.headline{		
+		border-bottom: 2px solid #eeeeee;
+  		display: block;
+  		margin-bottom: 24px;
+  		margin-top: 12px;
+		>h2{
+			border-bottom: 2px solid #337AB7;
+		  	color: #222222;
+		  	display: inline-block;
+		  	/* font-family: "Bitter";*/
+		  	font-size: 24px;
+		  	font-weight: 400;
+		  	margin: 0 0 -2px;
+		  	padding-bottom: 16px;
+		}
+}
+
+/* To move navigation buttons on side on hover */
+
+.owl-theme .owl-controls .owl-buttons div {
+  color: #252525;
+  display: inline-block;
+  font-size: 25px;
+  height: 40px;
+  left: -3px;
+  margin: 0;
+  opacity: 0;
+  padding: 1px 0 0;
+  position: absolute;
+  text-align: center;
+  top: 35%;
+  width: 35px;
+  transition: all 0.3s ease 0s;
+  margin-top: -50px;
+  visibility: hidden;
+}
+.owl-theme .owl-controls .owl-buttons div.owl-next {
+  left: auto;
+  right: -4px;
+//  background-color: @color-primary;
+}
+
+.owl-theme .owl-controls .owl-buttons div.owl-prev {
+//	 background-color: @color-primary;
+}
+.owl-carousel:hover.owl-theme .owl-controls .owl-buttons div {
+  opacity: 1;
+  visibility: visible;
+  z-index: 9;
+}
+.owl-theme .owl-controls .owl-buttons div:hover {
+  border-color: #FFFFFF;
+  color: black;
+}
+.owl-theme .owl-controls {
+  margin-top: 0;
+  text-align: center;
+}
+
+
+/* To move navigation buttons on top */
+
+/* .owl-buttons { */
+	
+/*  	position: absolute; comment this line if you want navigation Buttons in bottom and center */
+/*     right: 0; */
+/*     top: -70px; */
+/* } */
+
+/* .owl-theme { */
+/*     .owl-controls { */
+/*     	margin-top: 10px; */
+/* 		text-align: center; */
+/* 		} */
+/* } */

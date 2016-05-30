@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<template id="s_navbar_menu_mid" name="Navbar Menu Snippet Mid Size">
+			<section class="s_navbar_menu_mid">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 ">
+							<div class="col-md-4 ">
+								<ul class="list-unstyled">
+									<li>
+										<a href="#">
+											<span>Lifestyle Brand</span>
+										</a>
+										<ul class="list-unstyled bullets">
+											<li>
+												<a href="#">
+													<span>Puma</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span>Adidas</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span>American Swan</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span>Reebok</span>
+												</a>
+											</li>
+
+											<li>
+												<a href="#">
+													<span>Polo</span>
+												</a>
+											</li>
+
+										</ul>
+									</li>
+									<li>
+										<a href="#">
+											<span>Originals</span>
+										</a>
+										<ul class="list-unstyled bullets">
+											<li>
+												<a href="#">
+													<span>Ray-Ban</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span>Levi's</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span>Lee</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span>Fastrack</span>
+												</a>
+											</li>
+										</ul>
+									</li>
+
+								</ul>
+							</div>
+							<div class="col-md-8">
+								<ul class="mb8 mt8">
+									<img class="img img-responsive" src="/theme_blueboy/static/src/img/458x146.png"></img>
+								</ul>
+								<ul class="mb8 mt8">
+									<img class="img img-responsive" src="/theme_blueboy/static/src/img/458x146.png"></img>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</template>
+	</data>
+</openerp>

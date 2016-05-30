@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+		<template id="add_to_wishlist_product" inherit_id="website_sale.product"
+			name="Add to Wishlist">
+			<xpath expr="//h1[1]" position="after">
+				<t t-if="uid &gt; 0">
+					<div id="added_wishlist_hide" style="display:none">
+						<u>
+							<a href="/my/home"><i class="fa fa-heart" /> Added to Wish List</a>
+						</u>
+					</div>
+					<t t-if="product.is_favorite()">
+						<div>
+							<a href="/my/home">
+								<i class="fa fa-heart" />
+								Added to Wish List
+							</a>
+						</div>
+					</t>
+					<t t-if="not product.is_favorite()">
+						<div id="on_click_change_lable">
+							<i class="fa fa-heart" />
+							<a t-attf-href="/profile/add_to_wishlist/#{product.id}" class="js_add_wish_list_json">Add
+								to
+								Wish List
+							</a>
+						</div>
+					</t>
+				</t>
+			</xpath>
+		</template>
+
+		<template id="wishlist_product_user_profile" name="User's Wishlist">
+			<div id="wishlist">
+				<h3 class="page-header">Your Wish List</h3>
+				<t t-if="not wishlists">
+					<p>There are currently no Wish Lists.</p>
+				</t>
+				<t t-if="wishlists">
+					<t t-foreach="wishlists" t-as="wishlist">
+						<div class="col-md-12 mb16">
+							<div class="col-md-4">
+								<a t-attf-href="/shop/product/#{ slug(wishlist.product_template_id)}">
+									<span itemprop="image" t-field="wishlist.product_template_id.image_medium"
+										t-field-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name"}' />
+								</a>
+							</div>
+							<div class="col-md-8">
+								<a t-attf-href="/shop/product/#{ slug(wishlist.product_template_id)}">
+									<h3>
+										<span t-field="wishlist.product_template_id.name" />
+									</h3>
+									<h4>
+										<span t-field="wishlist.product_template_id.list_price" />
+									</h4>
+								</a>
+								<span t-field="wishlist.product_template_id.description_sale" />
+							</div>
+						</div>
+					</t>
+				</t>
+			</div>
+		</template>
+
+	</data>
+</openerp>

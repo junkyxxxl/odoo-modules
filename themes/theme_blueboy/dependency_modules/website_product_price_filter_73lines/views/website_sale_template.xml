@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<template id="website_product_price_filter" inherit_id="website_sale.products_attributes"
+			name="Product Price Filter" customize_show="True" active="True">
+			<xpath expr="//form[@class='js_attributes']" position="inside">
+				<t t-if="category and products">
+					<div class="mt16 mb16">
+						<h3>Price Filter</h3>
+					</div>
+					<input type="hidden" id="price_min_max" t-att-value="price_min_max"
+						name="price_min_max" />
+					<input type="text" id="price_range" t-att-value="price_range"
+						name="price_range" />
+				</t>
+			</xpath>
+		</template>
+	</data>
+</openerp>

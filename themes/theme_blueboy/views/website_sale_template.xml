@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+	<data>
+
+		<!-- <template id="theme_pricelist" inherit_id="website_sale.pricelist_list" -->
+		<!-- name="Price List Button"> -->
+		<!-- <xpath expr="//a[@class='dropdown-toggle btn btn-default']" -->
+		<!-- position="attributes"> -->
+		<!-- <attribute name="class">dropdown-toggle btn btn-default btn-sm -->
+		<!-- </attribute> -->
+		<!-- </xpath> -->
+		<!-- </template> -->
+
+		<template id="product_breadcrum" inherit_id="website_sale.product"
+			name="Product Breadcrum size">
+			<xpath
+				expr="//section[@id='product_detail']/div[1]/div[@class='col-sm-4']"
+				position="attributes">
+				<attribute name="class">col-sm-5</attribute>
+			</xpath>
+		</template>
+
+		<template id="website_product_content_block_73lines.product_half_section"
+			inherit_id="website_sale.product" name="Show Product Half Section Block"
+			priority="100" active="False" customize_show="True">
+			<!-- <xpath expr="//section[@id='product_detail']/div[2]" position="attributes"> -->
+			<!-- <attribute name="class">row col-sm-8 col-md-8 col-lg-8</attribute> -->
+			<!-- </xpath> -->
+			<xpath expr="//div[@class='col-sm-7 col-md-7 col-lg-7']"
+				position="attributes">
+				<attribute name="class">col-sm-4 col-md-4 col-lg-4</attribute>
+				<attribute name="id">product_image_section</attribute>
+			</xpath>
+			<xpath expr="//div[@class='col-sm-5 col-md-5 col-lg-4 col-lg-offset-1']"
+				position="attributes">
+				<attribute name="class">col-sm-4 col-md-4 col-lg-4</attribute>
+				<attribute name="id">product_price_section</attribute>
+			</xpath>
+		</template>
+
+		<template
+			id="website_product_content_block_73lines.product_image_template"
+			inherit_id="website_product_content_block_73lines.product_half_section"
+			name="Show Product Side Block" active="True" customize_show="True">
+
+			<xpath expr="//div[@id='product_price_section']" position="after">
+				<div class="col-sm-4 col-md-4 col-lg-4 mb16">
+					<div class="oe_structure">
+						<div class="s_ecommerce_terms homepage-bar s_three_boxes_with_icon row">
+							<div class="icon-box-footer col-md-12  mt8 mb8 pull-left">
+								<span class="fa fa-fighter-jet fa-1x img-circle bg-primary"
+									style="" />
+								<h4 class="o_default_snippet_text">FREE SHIPPING &amp;amp; RETURN</h4>
+								<p>Free shipping on all orders over $99.</p>
+							</div>
+							<div class="icon-box-footer col-md-12  mt8 mb8 pull-left">
+								<span class="fa fa-phone fa-1x img-circle bg-primary"
+									style="" />
+								<h4 class="o_default_snippet_text">CALL US NOW FOR MORE INFO</h4>
+								<p>+91 1234567890</p>
+							</div>
+							<div class="icon-box-footer col-md-12 mt8 mb8 pull-left">
+								<span class="fa fa-inr fa-1x img-circle bg-primary" style="" />
+								<h4 class="o_default_snippet_text">MONEY BACK GUARANTEE</h4>
+								<p>A money-back guarantee</p>
+							</div>
+
+							<div class="icon-box-footer col-md-12 mt8 mb8 pull-left">
+								<span class="fa fa-life-ring fa-1x img-circle bg-primary"
+									style="" />
+								<h4 class="o_default_snippet_text">ONLINE SUPPORT 24/7</h4>
+								<p>ONLINE SUPPORT 24/7</p>
+							</div>
+						</div>
+
+						<section class="s_product_carousel">
+							<div class="container">
+								<div class="js_get_objects" data-custom_controller="1"
+									data-filter_by_filter_id="17" data-loading="true"
+									data-object_name="product.template.recent.view"
+									data-objects_in_row="3" data-objects_in_slide="1"
+									data-objects_limit="9"
+									data-template="snippet_recently_viewed_products_carousel_73lines.product_recent_list_template_mini_header" />
+							</div>
+						</section>
+
+					</div>
+				</div>
+			</xpath>
+		</template>
+
+
+		<!-- Carousel Design Changes -->
+
+
+		<!-- Product Carousel Mini -->
+
+		<template id="snippet_product_carousel_73lines.new_products_item_mini"
+			name="Products item Mini">
+			<ul class="list-unstyled product-mini-ca">
+				<li>
+					<form action="/shop/cart/update" method="post">
+						<a itemprop="url" t-att-href="'/shop/product/%s' % slug(product)"
+							class="product-mini">
+							<span itemprop="image" t-field="product.image"
+								t-field-options='{"widget": "image"}' t-att-alt="product.name" />
+						</a>
+						<div class="product-price-mini" style="height: 48px; overflow: hidden;">
+							<h6>
+								<strong>
+									<a itemprop="name" t-att-href="'/shop/product/%s' % slug(product)"
+										t-field="product.name" />
+								</strong>
+							</h6>
+						</div>
+						<div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer"
+							class="product_price product-price-mini" t-if="product.product_variant_ids">
+							<b>
+								<t
+									t-if="(compute_currency(product.lst_price) - product.price) &gt; 0.1">
+									<del class="text-danger mr8" style="white-space: nowrap;"
+										t-field="product.lst_price"
+										t-field-options='{
+		                  "widget": "monetary",
+		                  "from_currency": "product.company_id.currency_id",
+		                  "display_currency": "website.pricelist_id.currency_id"
+		                }' />
+								</t>
+								<h6 t-field="product.price" style="white-space: nowrap;"
+									class="text-primary"
+									t-field-options='{
+		                   "widget": "monetary",
+		                   "display_currency": "website.pricelist_id.currency_id"
+		               }'>
+								</h6>
+								<h6 itemprop="price" style="display:none;" t-esc="product.price" />
+								<h6 itemprop="priceCurrency" style="display:none;"
+									t-esc="website.pricelist_id.currency_id" />
+							</b>
+						</div>
+					</form>
+				</li>
+			</ul>
+		</template>
+
+		<!-- Product Carousel -->
+
+		<template id="snippet_product_carousel_73lines.new_products_item"
+			name="Products Carousel">
+			<form action="/shop/cart/update" method="post">
+				<!-- <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" 
+					/> -->
+				<div itemscope="itemscope" itemtype="http://schema.org/Product">
+					<div class="oe_product_image">
+						<a itemprop="url" t-att-href="'/shop/product/%s' % slug(product)">
+							<span itemprop="image" t-field="product.image"
+								t-field-options='{"widget": "image"}' t-att-alt="product.name" />
+						</a>
+					</div>
+					<t t-if="show_publish">
+						<div id="website_published_button" class=""
+							groups="base.group_sale_manager">
+							<t t-call="website.publish_management">
+								<t t-set="object" t-value="product" />
+								<t t-set="publish_edit" t-value="True" />
+								<t t-set="action" t-value="'product.product_template_action'" />
+							</t>
+						</div>
+					</t>
+					<section class="text-center" style="height: 48px; overflow: hidden;">
+						<h6>
+							<strong>
+								<a itemprop="name" t-att-href="'/shop/product/%s' % slug(product)"
+									t-field="product.name" />
+							</strong>
+						</h6>
+					</section>
+					<!-- <div class="text-center"> -->
+					<!-- <t t-call="rating.rating_card"> -->
+					<!-- <t t-set="rating_stat" t-value="get_rating_stat(product)" /> -->
+					<!-- <t t-set="max_rate" t-value="5" /> -->
+					<!-- <t t-set="min_rate" t-value="1" /> -->
+					<!-- </t> -->
+					<!-- </div> -->
+					<div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer"
+						class="product_price text-center" t-if="product.product_variant_ids">
+						<b class="text-primary">
+							<t
+								t-if="(compute_currency(product.lst_price) - product.price) &gt; 0.1">
+								<del class="text-danger mr8" style="white-space: nowrap;"
+									t-field="product.lst_price"
+									t-field-options='{
+		                  "widget": "monetary",
+		                  "from_currency": "product.company_id.currency_id",
+		                  "display_currency": "website.currency_id"
+		                }' />
+							</t>
+							<h6 t-field="product.price" style="white-space: nowrap;"
+								t-field-options='{
+		                   "widget": "monetary",
+		                   "display_currency": "website.currency_id"
+		               }'>
+							</h6>
+							<span itemprop="price" style="display:none;" t-esc="product.price" />
+							<span itemprop="priceCurrency" style="display:none;"
+								t-esc="website.currency_id.name" />
+						</b>
+					</div>
+				</div>
+			</form>
+		</template>
+
+		<!-- Brand Carousel -->
+
+<!-- 		<template id="snippet_brand_carousel_73lines.new_brand_item" -->
+<!-- 			name="Brand item"> -->
+<!-- 			<div class="post-thumb"> -->
+<!-- 				<a itemprop="url" t-att-href="'/shop/?brand=%s' % (brand.id)"> -->
+<!-- 					<span itemprop="image" t-field="brand.brand_image" -->
+<!-- 						t-field-options='{"widget": "image", "style":"width:200px; margin: 0px auto;" , "class":"img img-responsive"}' -->
+<!-- 						t-att-alt="brand.name" /> -->
+<!-- 				</a> -->
+<!-- 			</div> -->
+<!-- 		</template> -->
+
+
+
+		<!-- Blog Carousel -->
+
+
+		<template id="snippet_blog_carousel_73lines.new_blog_item"
+			name="Blog item">
+			<div class="post-thumb">
+				<a t-att-href="'/blog/%s/post/%s' % (blog.blog_id.id, blog.id)">
+					<div class="cover js_fullheight img b-stripe img-responsive" id="title"
+						t-attf-style="background-image: url(#{blog.background_image});min-height: 222px;"
+						t-ignore="True">
+						<span class="b-line-9 b-position-1"></span>
+				           <span class="b-line-9 b-position-2">
+				           </span>
+				           <span class="b-line-9 b-position-3">
+				           </span>
+				           <span class="b-line-9 b-position-4">
+				           </span>
+				           <span class="b-line-9 b-position-5">
+				           </span>
+				           <span class="b-line-9 b-position-6">
+				           </span>
+				           <span class="b-line-9 b-position-7">
+				           </span>
+				           <span class="b-line-9 b-position-8">
+				           </span>
+				           <span class="b-line-9 b-position-9">
+				           </span>
+					</div>
+				</a>
+
+				<div class="latest-blog-info">
+					<a t-att-href="'/blog/%s/post/%s' % (blog.blog_id.id, blog.id)">
+						<h4 t-field="blog.name"></h4>
+					</a>
+					<div class="post-excerpt">
+						<p t-field="blog.subtitle" />
+					</div>
+					<div class="post-meta">
+						<span class="entry-date">
+							<i class="fa fa-calendar"></i>
+							<span t-field="blog.create_date" t-field-options='{"format": "MMMM d, yyyy"}' />
+						</span>
+						<span class="entry-comment">
+							<i class="fa fa-user"></i>
+							<span t-field="blog.author_id" />
+						</span>
+					</div>
+				</div>
+			</div>
+		</template>
+
+
+
+
+	</data>
+</openerp>
