@@ -2,7 +2,7 @@
 
 Name:       odoo-nabla
 Version:    %{version}
-Release:    %{?BUILD_TAG}%{?dist}
+Release:    %{?BUILD_NUMBER}%{?dist}
 
 License:    AGPLv3 and GPLv3 and BSD and LGPLv2+
 Group:      System Environment/Daemons
