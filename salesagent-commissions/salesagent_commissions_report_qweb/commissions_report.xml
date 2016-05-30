@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report 
+            id="qweb_commissions_report" 
+            string="Riepilogo Provvigioni"
+            model="account.invoice.line"  
+            report_type="qweb-pdf"
+            file="salesagent_commissions_report_qweb.report_commissions_qweb" 
+            name="salesagent_commissions_report_qweb.report_commissions_qweb"  
+        />
+    </data>
+</openerp>
