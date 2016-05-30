@@ -1,0 +1,44 @@
+<openerp>
+    <data>
+        
+        <!-- Vista relativa al wizard -->
+        <record id="view_stock_picking_transfer_all" model="ir.ui.view">
+            <field name="name">Transfer selected picking</field>
+            <field name="model">stock.picking.transfer.all</field>
+            <field name="arch" type="xml">
+                <form string="Transfer selected picking">
+                    <span><b>This action will transfer all selected pickings that have not yet been transferred</b></span>
+                    <group>
+                        <field name="force_quantity"/> 
+                    </group>
+                    <footer>
+                        <button name="transfer_all" string="Transfer" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+        <!-- Definizione azione -->
+        <record id='action_stock_picking_transfer_all' model='ir.actions.act_window'>
+            <field name='name'>Transfer selected picking</field>
+            <field name='res_model'>stock.picking.transfer.all</field>
+            <field name='view_type'>form</field>
+            <field name='view_mode'>form</field>
+            <field name="view_id" ref="view_stock_picking_transfer_all"/>
+            <field name="groups_id" eval="[(6,0,[ref('stock.group_stock_manager')])]"/>
+            <field name="target">new</field>
+        </record>
+        
+        <!-- Collegamento azione a modello specifico -->
+        <record model="ir.values" id="values_stock_picking_transfer_all">
+            <field name="name">Trasferisci i picking selezionati</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_stock_picking_transfer_all'))" />
+            <field name="key">action</field>
+            <field name="model">stock.picking</field>         
+        </record>
+
+    </data>
+</openerp>
