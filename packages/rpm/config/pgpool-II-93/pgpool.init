@@ -1,0 +1,136 @@
+#!/bin/bash
+# pgpool - the postgres replication daemon.
+#
+# chkconfig: 2345 64 36
+# description: Pgpool-II Daemon
+#
+# description: start and stop the pgpool daemon
+# pidfile: /var/run/pgpool.pid
+
+
+# Source function library
+if [ -f /etc/init.d/functions ] ; then
+    . /etc/init.d/functions
+elif [ -f /etc/rc.d/init.d/functions ] ; then
+    . /etc/rc.d/init.d/functions
+else
+ exit 0
+fi
+
+# command that needs to run:
+# pgpool -f /etc/pgpool-II-93/pgpool.conf -F /etc/pgpool-II-93/pcp.conf 
+
+exec="/usr/pgpool-9.3/bin/pgpool"
+prog="pgpool"
+desc="Pgpool-II Daemon"
+
+pgpool_config="/etc/pgpool-II-93/pgpool.conf"
+pcp_config="/etc/pgpool-II-93/pcp.conf"
+
+[ -e /etc/sysconfig/pgpool-II-93 ] && . /etc/sysconfig/pgpool-II-93
+
+LOCKFILE=/var/lock/subsys/$prog
+
+RETVAL=0
+
+start() {
+
+    if [ ! -d /var/run/pgpool-II-93 ] ; then
+      mkdir /var/run/pgpool-II-93
+      chmod 777 /var/run/pgpool-II-93
+    fi
+
+    [ -x $exec ] || exit 5
+    [ -f $pgpool_config ] || exit 6
+    [ -f $pcp_config ] || exit 6
+    echo -n $"Starting $prog: "
+    # if not running, start it up here, usually something like "daemon $exec"
+
+    pgpool_command
+    RETVAL=$?
+    if [ $RETVAL -eq 0 ] ; then
+        touch $LOCKFILE
+        echo_success
+        echo
+    else
+        echo_failure
+        echo
+    fi
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    # stop it here, often "killproc $prog"
+
+    echo pgpool_command stop
+
+    pgpool_command stop
+    RETVAL=$?
+    if [ $RETVAL -eq 0 ] ; then
+        rm -f $LOCKFILE
+        echo_success
+        echo
+    else
+        echo_failure
+        echo
+    fi
+    return $RETVAL
+}
+
+restart() {
+    stop
+    start
+}
+
+reload() {
+    pgpool_command reload
+}
+
+force_reload() {
+    restart
+}
+
+rh_status() {
+    # run checks to determine if the service is running or use generic status
+    status $prog
+}
+
+rh_status_q() {
+    rh_status >/dev/null 2>&1
+}
+
+pgpool_command() {
+    $exec -f "$pgpool_config" -F "$pcp_config" $1
+}
+
+case "$1" in
+    start)
+        rh_status_q && exit 0
+        $1
+        ;;
+    stop)
+        rh_status_q || exit 0
+        $1
+        ;;
+    restart)
+        $1
+        ;;
+    reload)
+        rh_status_q || exit 7
+        $1
+        ;;
+    force-reload)
+        force_reload
+        ;;
+    status)
+        rh_status
+        ;;
+    condrestart|try-restart)
+        rh_status_q || exit 0
+        restart
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|status|restart|condrestart|try-restart|reload|force-reload}"
+        exit 2
+esac
