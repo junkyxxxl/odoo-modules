@@ -26,7 +26,7 @@ class account_report(models.TransientModel):
         return list_agent
 
     category = fields.Many2one('product.category', string='Categoria', required=True)
-    budget_year = fields.Selection('_get_fiscal_year', string='Anno del budget', default=lambda self: self.env['account.fiscalyear'].search([])[0].code, required=True)
+    budget_year = fields.Selection('_get_fiscal_year', string='Anno del budget', default=lambda self: self.env['account.fiscalyear'].search([])[1].code, required=True)
     salesagent = fields.Many2many('res.partner', default=_get_selected_salesagent)
 
 

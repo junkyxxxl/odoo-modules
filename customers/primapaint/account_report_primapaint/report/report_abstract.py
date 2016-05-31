@@ -81,27 +81,18 @@ class ReportTrial(models.AbstractModel):
         cont1 = 0
         cont2 = 0
         while cont1<12:
-                if not list2[cont1] and list1[cont1]:
-                    #elemento1 = 0+list1[cont1]
-                    elemento1 = 0-100
-                if not list1[cont1] and list2[cont1]:
-                    elemento1 = list2[cont1]-0
                 if list2[cont1] and list1[cont1]:
-                    #elemento1 = list2[cont1]-list1[cont1]
-                    resto_percentuale = (list2[cont1]/list1[cont1])*100
-                    elemento1 = resto_percentuale-100
-                if not list2[cont1] and not list1[cont1]:
+                    resto_percentuale1 = (list2[cont1]-list1[cont1])/list1[cont1]
+                    elemento1 = resto_percentuale1*100
+                else:
                     elemento1 = 0
                 lista_scostamento_mese.append(elemento1)
                 cont1 = cont1+1
         while cont2<12:
-                if not list4[cont2] and list3[cont2]:
-                    elemento2 = 0+list3[cont2]
-                if not list3[cont2] and list4[cont2]:
-                    elemento2 = list4[cont2]-0
                 if list4[cont2] and list3[cont2]:
-                    elemento2 = list4[cont2]-list3[cont2]
-                if not list4[cont2] and not list3[cont2]:
+                    resto_percentuale2 = (list4[cont2]-list3[cont2])/list3[cont2]
+                    elemento2 = resto_percentuale2*100
+                else:
                     elemento2 = 0
                 lista_scostamento_prog.append(elemento2)
                 cont2 = cont2+1
@@ -217,29 +208,29 @@ class ReportTrial(models.AbstractModel):
                 scostamento_budget_progressivo.update({s: listElement12})
 
 
-                docargs = {
-                    'doc_ids': self.ids,
-                    'doc_model': self.model,
-                    'data': data['form'],
-                    'docs': docs,
-                    'time': time,
-                    'list_salesagent': list_salesagent,
-                    'category': category,
-                    'budget_year': budget_year,
-                    'last_year': last_year,
-                    'invoice_deviation': invoice_deviation,
-                    'fatturato_anno_precedente_mese': fatturato_anno_precedente_mese,
-                    'fatturato_anno_precedente_progressivo': fatturato_anno_precedente_progressivo,
-                    'fatturato_anno_corso_mese': fatturato_anno_corso_mese,
-                    'fatturato_anno_corso_progressivo': fatturato_anno_corso_progressivo,
-                    'scostamento_fatt_mese': scostamento_fatt_mese,
-                    'scostamento_fatt_progressivo': scostamento_fatt_progressivo,
-                    'budget_anno_precedente_mese': budget_anno_precedente_mese,
-                    'budget_anno_precedente_progressivo': budget_anno_precedente_progressivo,
-                    'budget_anno_corso_mese': budget_anno_corso_mese,
-                    'budget_anno_corso_progressivo': budget_anno_corso_progressivo,
-                    'scostamento_budget_mese': scostamento_budget_mese,
-                    'scostamento_budget_progressivo': scostamento_budget_progressivo,
-                }
+            docargs = {
+                'doc_ids': self.ids,
+                'doc_model': self.model,
+                'data': data['form'],
+                'docs': docs,
+                'time': time,
+                'list_salesagent': list_salesagent,
+                'category': category,
+                'budget_year': budget_year,
+                'last_year': last_year,
+                'invoice_deviation': invoice_deviation,
+                'fatturato_anno_precedente_mese': fatturato_anno_precedente_mese,
+                'fatturato_anno_precedente_progressivo': fatturato_anno_precedente_progressivo,
+                'fatturato_anno_corso_mese': fatturato_anno_corso_mese,
+                'fatturato_anno_corso_progressivo': fatturato_anno_corso_progressivo,
+                'scostamento_fatt_mese': scostamento_fatt_mese,
+                'scostamento_fatt_progressivo': scostamento_fatt_progressivo,
+                'budget_anno_precedente_mese': budget_anno_precedente_mese,
+                'budget_anno_precedente_progressivo': budget_anno_precedente_progressivo,
+                'budget_anno_corso_mese': budget_anno_corso_mese,
+                'budget_anno_corso_progressivo': budget_anno_corso_progressivo,
+                'scostamento_budget_mese': scostamento_budget_mese,
+                'scostamento_budget_progressivo': scostamento_budget_progressivo,
+            }
 
-                return self.env['report'].render('account_report_primapaint.print_budget', docargs)
+            return self.env['report'].render('account_report_primapaint.print_budget', docargs)
