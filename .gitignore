@@ -1,2 +1,5 @@
 #Ignore a pycharm forlder
 .idea/
+#Compiled source
+*.pyc
+*.pyo
