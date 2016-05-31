@@ -79,7 +79,7 @@
                 account_balance_cumul_curr = 0.0
                 %>
 
-                <div class="account_title bg" style="width: 1080px; margin-top: 20px; font-size: 12px;">${account.code} - ${account.name}</div>
+                <div class="account_title bg" style="width: 1080px; margin-top: 20px; font-size: 12px; page-break-inside:avoid;">${account.code} - ${account.name}</div>
 
                 %for partner_name, p_id, p_ref, p_name in partners_order[account.id]:
                 <%
@@ -96,7 +96,7 @@
                         ${partner_name or _('No Partner')}
                     </div>
                     <div class="act_as_thead">
-                        <div class="act_as_row labels">
+                        <div class="act_as_row labels" style="page-break-inside:avoid;">
                             ## date
                             <div class="act_as_cell first_column" style="width: 50px;">${_('Date')}</div>
                             ## period
@@ -110,9 +110,11 @@
                             ## move reference
                             <div class="act_as_cell" style="width: 60px;">${_('Reference')}</div>
                             ## label
-                            <div class="act_as_cell" style="width: 280px;">${_('Label')}</div>
+                            <div class="act_as_cell" style="width: 230px;">${_('Label')}</div>
+                            ## data scadenza
+                            <div class="act_as_cell" style="width: 65px;">${_('Data Scadenza')}</div>                            
                             ## reconcile
-                            <div class="act_as_cell" style="width: 80px;">${_('Rec.')}</div>
+                            <div class="act_as_cell" style="width: 65px;">${_('Rec.')}</div>
                             ## debit
                             <div class="act_as_cell amount" style="width: 80px;">${_('Debit')}</div>
                             ## credit
@@ -141,7 +143,7 @@
                               cumul_balance += part_cumul_balance
                               cumul_balance_curr += part_cumul_balance_curr
                             %>
-                            <div class="act_as_row initial_balance">
+                            <div class="act_as_row initial_balance" style="page-break-inside:avoid;">
                               ## date
                               <div class="act_as_cell first_column"></div>
                               ## period
@@ -156,6 +158,8 @@
                               <div class="act_as_cell"></div>
                               ## label
                               <div class="act_as_cell" >${_('Initial Balance')}</div>
+                              ## data scadenza
+                              <div class="act_as_cell"></div>
                               ## reconcile
                               <div class="act_as_cell"></div>
                               ## debit
@@ -184,7 +188,7 @@
                             label_elements.append("(%s)" % (line['invoice_number'],))
                           label = ' '.join(label_elements)
                           %>
-                            <div class="act_as_row lines">
+                            <div class="act_as_row lines" style="page-break-inside:avoid;">
                               ## date
                               <div class="act_as_cell first_column">${formatLang(line.get('ldate') or '', date=True)}</div>
                               ## period
@@ -199,6 +203,8 @@
                               <div class="act_as_cell">${line.get('lref') or ''}</div>
                               ## label
                               <div class="act_as_cell">${label}</div>
+                              ## data scadenza                              
+                              <div class="act_as_cell">${formatLang(line.get('date_maturity') or '', date=True)}</div>
                               ## reconcile
                               <div class="act_as_cell">${line.get('rec_name') or ''}</div>
                               ## debit
@@ -216,7 +222,7 @@
                               %endif
                           </div>
                         %endfor
-                        <div class="act_as_row lines labels">
+                        <div class="act_as_row lines labels" style="page-break-inside:avoid;">
                           ## date
                           <div class="act_as_cell first_column"></div>
                           ## period
@@ -231,6 +237,8 @@
                           <div class="act_as_cell"></div>
                           ## label
                           <div class="act_as_cell">${_('Cumulated Balance on Partner')}</div>
+                          ## data scadenza
+                          <div class="act_as_cell"></div>                          
                           ## reconcile
                           <div class="act_as_cell"></div>
                           ## debit
@@ -261,7 +269,7 @@
                 %endfor
 
                 <div class="act_as_table list_table" style="margin-top:5px;">
-                    <div class="act_as_row labels" style="font-weight: bold; font-size: 12px;">
+                    <div class="act_as_row labels" style="font-weight: bold; font-size: 12px; page-break-inside:avoid;">
                             <div class="act_as_cell first_column" style="width: 450px;">${account.code} - ${account.name}</div>
                             ## label
                             <div class="act_as_cell" style="width: 360px;">${_("Cumulated Balance on Account")}</div>

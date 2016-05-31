@@ -19,3 +19,6 @@
 #
 ##############################################################################
 from . import controllers
+import models
+import wizard
+import invoice_zip_out_model

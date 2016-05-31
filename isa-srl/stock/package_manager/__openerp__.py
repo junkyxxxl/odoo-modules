@@ -25,10 +25,6 @@
     'category': '',
     'description': """
 Package Manager
-
-Questo modulo permette di aggiungere le informazioni sul pacco, riguardante:
-locazione del pacco
-Compagnia di riferimento
 ===================
 """,
     'author': 'ISA srl',

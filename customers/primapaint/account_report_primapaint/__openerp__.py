@@ -3,20 +3,19 @@
     'name': "account_report_primapaint",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Stampa budget agenti""",
 
     'description': """
-        Long description of module's purpose
+        Stampa base del fatturato e budget per agenti
     """,
 
-    'author': "Your Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Isa s.r.l.",
+    'website': "http://www.isa.it",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Invoicing & Payments',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
@@ -27,7 +26,6 @@
 
     # always loaded
     'data': [
-        'data/report_paperformat.xml',
         'wizard/account_report_view.xml',
         'report/template.xml',
         'report/report.xml',

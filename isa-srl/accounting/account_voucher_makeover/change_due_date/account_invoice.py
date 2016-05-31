@@ -66,6 +66,7 @@ class account_invoice_voucher_makeover(orm.Model):
                                         'amount': t_amount,
                                         'date_due': t_move_line.date_maturity,
                                         'line_state': 'old',
+                                        'payment_type':t_move_line.payment_type_move_line
                                     }))
 
         ''' Aggiunto per l'inserimento di default dei valori delle scadenze new'''
@@ -88,6 +89,7 @@ class account_invoice_voucher_makeover(orm.Model):
                     'amount': t_amount,
                     'date_due': t_move_line.date_maturity,
                     'line_state': 'new',
+                    'payment_type': t_move_line.payment_type_move_line
                 }))
         wizard_obj.write(cr, uid, [res_id], {'old_ids': t_lines, })
         wizard_obj.write(cr, uid, [res_id], {'new_ids': t_lines_new,})

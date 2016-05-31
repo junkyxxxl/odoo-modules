@@ -28,24 +28,24 @@
         %else:
         <div class="act_as_table data_table" style="width: 1100px;">
         %endif
-            <div class="act_as_row labels" style="font-size: small;">
-                <div class="act_as_cell" style="font-size: small;">${_('Chart of Account')}</div>
-                <div class="act_as_cell" style="font-size: small;">${_('Fiscal Year')}</div>
-                <div class="act_as_cell" style="font-size: small;">
+            <div class="act_as_row labels" style="font-size: x-small;">
+                <div class="act_as_cell" style="font-size: x-small;">${_('Chart of Account')}</div>
+                <div class="act_as_cell" style="font-size: x-small;">${_('Fiscal Year')}</div>
+                <div class="act_as_cell" style="font-size: x-small;">
                     %if filter_form(data) == 'filter_date':
                         ${_('Dates Filter')}
                     %else:
                         ${_('Periods Filter')}
                     %endif
                 </div>
-                <div class="act_as_cell" style="font-size: small;">${_('Accounts Filter')}</div>
-                <div class="act_as_cell" style="font-size: small;">${_('Target Moves')}</div>
-                <div class="act_as_cell" style="font-size: small;">${_('Initial Balance')}</div>
+                <div class="act_as_cell" style="font-size: x-small;">${_('Accounts Filter')}</div>
+                <div class="act_as_cell" style="font-size: x-small;">${_('Target Moves')}</div>
+                <div class="act_as_cell" style="font-size: x-small;">${_('Initial Balance')}</div>
             </div>
-            <div class="act_as_row" style="font-size: small;">
-                <div class="act_as_cell" style="font-size: small;">${ chart_account.name }</div>
-                <div class="act_as_cell" style="font-size: small;">${ fiscalyear.name if fiscalyear else '-' }</div>
-                <div class="act_as_cell" style="font-size: small;">
+            <div class="act_as_row" style="font-size: x-small;">
+                <div class="act_as_cell" style="font-size: x-small;">${ chart_account.name }</div>
+                <div class="act_as_cell" style="font-size: x-small;">${ fiscalyear.name if fiscalyear else '-' }</div>
+                <div class="act_as_cell" style="font-size: x-small;">
                     ${_('From:')}
                     %if filter_form(data) == 'filter_date':
                         ${formatLang(start_date, date=True) if start_date else u'' }
@@ -59,7 +59,7 @@
                         ${stop_period.name if stop_period else u'' }
                     %endif
                 </div>
-                <div class="act_as_cell" style="font-size: small;">
+                <div class="act_as_cell" style="font-size: x-small;">
                     %if accounts(data):
                         ${', '.join([account.code for account in accounts(data)])}
                     %else:
@@ -67,8 +67,8 @@
                     %endif
 
                 </div>
-                <div class="act_as_cell" style="font-size: small;">${ display_target_move(data) }</div>
-                <div class="act_as_cell" style="font-size: small;">${ initial_balance_text[initial_balance_mode] }</div>
+                <div class="act_as_cell" style="font-size: x-small;">${ display_target_move(data) }</div>
+                <div class="act_as_cell" style="font-size: x-small;">${ initial_balance_text[initial_balance_mode] }</div>
             </div>
         </div>
 
@@ -85,41 +85,44 @@
               cumul_balance =  0.0
               cumul_balance_curr = 0.0
               %>
-            <div class="act_as_table list_table" style="margin-top: 10px; font-size: small;">
+            <div class="act_as_table list_table" style="margin-top: 10px; font-size: x-small;">
 
-                <div class="act_as_caption account_title" style="font-size: small;">
+                <div class="act_as_caption account_title" style="font-size: x-small;">
                     ${account.code} - ${account.name}
                 </div>
-                <div class="act_as_thead" style="font-size: small;">
-                    <div class="act_as_row labels" style="font-size: small;">
+                <div class="act_as_thead" style="font-size: x-small;">
+                    <div class="act_as_row labels" style="font-size: x-small;">
                         ## date
-                        <div class="act_as_cell first_column" style="width: 70px; font-size: small;">${_('Date')}</div>
+                        <div class="act_as_cell first_column" style="width: 65px; font-size: x-small;">${_('Date')}</div>
                         ## period
-                        <div class="act_as_cell" style="width: 60px; font-size: small;">${_('Period')}</div>
+                        <div class="act_as_cell" style="width: 60px; font-size: x-small;">${_('Period')}</div>
                         ## move
-                        <div class="act_as_cell" style="width: 125px; font-size: small;">${_('Entry')}</div>
+                        <div class="act_as_cell" style="width: 100px; font-size: x-small;">${_('Entry')}</div>
                         ## partner
-                        <div class="act_as_cell" style="width: 235px; font-size: small;">${_('Partner')}</div>
-                        <div class="act_as_cell" style="width: 70px; font-size: small;">${_('Data Doc.')}</div>
+                        <div class="act_as_cell" style="width: 156px; font-size: x-small;">${_('Partner')}</div>
+						## move reference
+                        <div class="act_as_cell" style="width: 156px;">${_('Reference')}</div>           
+                        ## date document             
+                        <div class="act_as_cell" style="width: 65px; font-size: x-small;">${_('Data Doc.')}</div>
                         ## label
-                        <div class="act_as_cell" style="width: 170px; font-size: small;">${_('Label')}</div>
+                        <div class="act_as_cell" style="width: 170px; font-size: x-small;">${_('Label')}</div>
 
                         ## debit
-                        <div class="act_as_cell amount" style="width: 90px; font-size: small;">${_('Debit')}</div>
+                        <div class="act_as_cell amount" style="width: 76px; font-size: x-small;">${_('Dare')}</div>
                         ## credit
-                        <div class="act_as_cell amount" style="width: 90px; font-size: small;">${_('Credit')}</div>
+                        <div class="act_as_cell amount" style="width: 76px; font-size: x-small;">${_('Avere')}</div>
                         ## balance cumulated
-                        <div class="act_as_cell amount" style="width: 90px; font-size: small;">${_('Cumul. Bal.')}</div>
+                        <div class="act_as_cell amount" style="width: 76px; font-size: x-small;">${_('Cumul. Bal.')}</div>
                         %if amount_currency(data):
                             ## currency balance
-                            <div class="act_as_cell amount sep_left" style="width: 75px; font-size: small;">${_('Curr. Balance')}</div>
+                            <div class="act_as_cell amount sep_left" style="width: 75px; font-size: x-small;">${_('Curr. Balance')}</div>
                             ## curency code
-                            <div class="act_as_cell amount" style="width: 30px; text-align: right; font-size: small;">${_('Curr.')}</div>
+                            <div class="act_as_cell amount" style="width: 30px; text-align: right; font-size: x-small;">${_('Curr.')}</div>
                         %endif
                     </div>
                 </div>
 
-                <div class="act_as_tbody" style="font-size: small; page-break-inside:avoid; ">
+                <div class="act_as_tbody" style="font-size: x-small; page-break-inside:avoid; ">
                       %if display_initial_balance:
                         <%
                         cumul_debit = init_balance[account.id].get('debit') or 0.0
@@ -127,30 +130,32 @@
                         cumul_balance = init_balance[account.id].get('init_balance') or 0.0
                         cumul_balance_curr = init_balance[account.id].get('init_balance_currency') or 0.0
                         %>
-                        <div class="act_as_row initial_balance" style="page-break-inside:avoid; font-size: small; page-break-inside:avoid; ">
+                        <div class="act_as_row initial_balance" style="page-break-inside:avoid; font-size: x-small; page-break-inside:avoid; ">
                           ## date
-                          <div class="act_as_cell first_column" style="font-size: small;"></div>
+                          <div class="act_as_cell first_column" style="font-size: x-small;"></div>
                           ## period
-                          <div class="act_as_cell" style="font-size: small;"></div>
+                          <div class="act_as_cell" style="font-size: x-small;"></div>
                           ## move
-                          <div class="act_as_cell" style="font-size: small;"></div>
+                          <div class="act_as_cell" style="font-size: x-small;"></div>
                           ## partner
-                          <div class="act_as_cell" style="font-size: small;"></div>
+                          <div class="act_as_cell" style="font-size: x-small;"></div>
+                          ## move reference
+                          <div class="act_as_cell"></div>                          
                           ##Data Doc.
-                          <div class="act_as_cell" style="font-size: small;"></div>
+                          <div class="act_as_cell" style="font-size: x-small;"></div>
                           ## label
-                          <div class="act_as_cell" style="font-size: small;">${_('Initial Balance')}</div>
+                          <div class="act_as_cell" style="font-size: x-small;">${_('Initial Balance')}</div>
                           ## debit
-                          <div class="act_as_cell amount" style="font-size: small;">${formatLang(init_balance[account.id].get('debit')) | amount}</div>
+                          <div class="act_as_cell amount" style="font-size: x-small;">${formatLang(init_balance[account.id].get('debit')) | amount}</div>
                           ## credit
-                          <div class="act_as_cell amount" style="font-size: small;">${formatLang(init_balance[account.id].get('credit')) | amount}</div>
+                          <div class="act_as_cell amount" style="font-size: x-small;">${formatLang(init_balance[account.id].get('credit')) | amount}</div>
                           ## balance cumulated
-                          <div class="act_as_cell amount" style="padding-right: 1px; font-size: small;">${formatLang(cumul_balance) | amount }</div>
+                          <div class="act_as_cell amount" style="padding-right: 1px; font-size: x-small;">${formatLang(cumul_balance) | amount }</div>
                          %if amount_currency(data):
                               ## currency balance
-                              <div class="act_as_cell amount sep_left" style="font-size: small;">${formatLang(cumul_balance_curr) | amount }</div>
+                              <div class="act_as_cell amount sep_left" style="font-size: x-small;">${formatLang(cumul_balance_curr) | amount }</div>
                               ## curency code
-                              <div class="act_as_cell amount" style="font-size: small;"></div>
+                              <div class="act_as_cell amount" style="font-size: x-small;"></div>
                          %endif
 
                         </div>
@@ -167,54 +172,56 @@
                         label = ' '.join(label_elements)
                         %>
 
-                      <div class="act_as_row lines" style="page-break-inside:avoid; font-size: small; page-break-inside:avoid; ">
+                      <div class="act_as_row lines" style="page-break-inside:avoid; font-size: x-small; page-break-inside:avoid; ">
                           ## date
-                          <div class="act_as_cell first_column" style="font-size: small;">${formatLang(line.get('ldate') or '', date=True)}</div>
+                          <div class="act_as_cell first_column" style="font-size: x-small;">${formatLang(line.get('ldate') or '', date=True)}</div>
                           ## period
-                          <div class="act_as_cell" style="font-size: small;">${line.get('period_code') or ''}</div>
+                          <div class="act_as_cell" style="font-size: x-small;">${line.get('period_code') or ''}</div>
                           ## move
-                          <div class="act_as_cell" style="font-size: small;">${line.get('move_name') or ''}</div>
+                          <div class="act_as_cell" style="font-size: x-small;">${line.get('move_name') or ''}</div>
                           ## partner
-                          <div class="act_as_cell overflow_ellipsis" style="font-size: small;">${line.get('partner_name') or ''}</div>
+                          <div class="act_as_cell overflow_ellipsis" style="font-size: x-small;">${line.get('partner_name') or ''}</div>
+                          ## move reference
+                          <div class="act_as_cell">${line.get('lref') or ''}</div>                          
                           ## Data Doc.
-                          <div class="act_as_cell" style="font-size: small;">${formatLang(line.get('document_date') or '', date=True)}</div>
+                          <div class="act_as_cell" style="font-size: x-small;">${formatLang(line.get('document_date') or '', date=True)}</div>
                           ## label
-                          <div class="act_as_cell overflow_ellipsis" style="font-size: small;">${label}</div>
+                          <div class="act_as_cell overflow_ellipsis" style="font-size: x-small;">${label}</div>
                           ## debit
-                          <div class="act_as_cell amount" style="font-size: small;">${ line.get('debit', 0.0) | amount }</div>
+                          <div class="act_as_cell amount" style="font-size: x-small;">${ line.get('debit', 0.0) | amount }</div>
                           ## credit
-                          <div class="act_as_cell amount" style="font-size: small;">${ line.get('credit', 0.0) | amount }</div>
+                          <div class="act_as_cell amount" style="font-size: x-small;">${ line.get('credit', 0.0) | amount }</div>
                           ## balance cumulated
-                          <div class="act_as_cell amount" style="padding-right: 1px;" font-size: small;>${ formatLang(cumul_balance) | amount }</div>
+                          <div class="act_as_cell amount" style="padding-right: 1px;" font-size: x-small;>${ formatLang(cumul_balance) | amount }</div>
                           %if amount_currency(data):
                               ## currency balance
-                              <div class="act_as_cell amount sep_left" style="font-size: small;">${formatLang(line.get('amount_currency') or 0.0)  | amount }</div>
+                              <div class="act_as_cell amount sep_left" style="font-size: x-small;">${formatLang(line.get('amount_currency') or 0.0)  | amount }</div>
                               ## curency code
-                              <div class="act_as_cell amount" style="text-align: right; font-size: small;">${line.get('currency_code') or ''}</div>
+                              <div class="act_as_cell amount" style="text-align: right; font-size: x-small;">${line.get('currency_code') or ''}</div>
                           %endif
                       </div>
                       %endfor
                 </div>
-                <div class="act_as_table list_table" style="font-size: small; page-break-inside:avoid; ">
-                    <div class="act_as_row labels" style="page-break-inside:avoid; font-weight: bold; font-size: small; page-break-inside:avoid; ">
+                <div class="act_as_table list_table" style="font-size: x-small; page-break-inside:avoid; ">
+                    <div class="act_as_row labels" style="page-break-inside:avoid; font-weight: bold; font-size: x-small; page-break-inside:avoid; ">
                         ## date
-                        <div class="act_as_cell first_column" style="width: 560px; font-size: small;">${account.code} - ${account.name}</div>
-                        <div class="act_as_cell" style="width: 170px; font-size: small;">${_("Cumulated Balance on Account")}</div>
+                        <div class="act_as_cell first_column" style="width: 602px; font-size: x-small;">${account.code} - ${account.name}</div>
+                        <div class="act_as_cell" style="width: 170px; font-size: x-small;">${_("Cumulated Balance on Account")}</div>
                         ## debit
-                        <div class="act_as_cell amount" style="width: 90px; text-align: right; font-size: small;">${ formatLang(cumul_debit) | amount }</div>
+                        <div class="act_as_cell amount" style="width: 76px; text-align: right; font-size: x-small;">${ formatLang(cumul_debit) | amount }</div>
                         ## credit
-                        <div class="act_as_cell amount" style="width: 90px; text-align: right; font-size: small;">${ formatLang(cumul_credit) | amount }</div>
+                        <div class="act_as_cell amount" style="width: 76px; text-align: right; font-size: x-small;">${ formatLang(cumul_credit) | amount }</div>
                         ## balance cumulated
-                        <div class="act_as_cell amount" style="width: 90px; text-align: right; font-size: small; padding-right: 1px;">${ formatLang(cumul_balance) | amount }</div>
+                        <div class="act_as_cell amount" style="width: 76px; text-align: right; font-size: x-small; padding-right: 1px;">${ formatLang(cumul_balance) | amount }</div>
                         %if amount_currency(data):
                             %if account.currency_id:
                                 ## currency balance
-                                <div class="act_as_cell amount sep_left" style="width: 75px; text-align: right; font-size: small;">${formatLang(cumul_balance_curr) | amount }</div>
+                                <div class="act_as_cell amount sep_left" style="width: 75px; text-align: right; font-size: x-small;">${formatLang(cumul_balance_curr) | amount }</div>
                             %else:
-                                <div class="act_as_cell amount sep_left" style="width: 75px; text-align: right; font-size: small;">-</div>
+                                <div class="act_as_cell amount sep_left" style="width: 75px; text-align: right; font-size: x-small;">-</div>
                             %endif
                             ## curency code
-                            <div class="act_as_cell amount" style="width: 30px; text-align: right; font-size: small;"></div>
+                            <div class="act_as_cell amount" style="width: 30px; text-align: right; font-size: x-small;"></div>
                         %endif
                     </div>
                 </div>

@@ -21,15 +21,15 @@
 
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
-from openerp import api
 
 
 class wizard_change_due_date(orm.TransientModel):
     _name = 'wizard.change.due.date'
     _description = 'Wizard Change Due Date'
+
     
-    def _get_amount_to_complete(self, cr, uid, ids, field_name,
-                               arg, context=None):
+    def _get_amount_to_complete(self, cr, uid, ids, field_name=None,
+                               arg=None, context=None):
         res = {}
         t_amount_old = 0.0
         t_amount_new = 0.0
@@ -44,7 +44,7 @@ class wizard_change_due_date(orm.TransientModel):
             
             res[rec.id] = t_amount_old - t_amount_new
         return res
-   
+
     _columns = {
         'move_id': fields.many2one('account.move',
                                    'Move'),
@@ -74,7 +74,7 @@ class wizard_change_due_date(orm.TransientModel):
                                             ),
     }
     
-    def add_new_line(self, cr, uid, ids, context=None):
+    '''def add_new_line(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
         mod_obj = self.pool.get('ir.model.data')
@@ -96,10 +96,9 @@ class wizard_change_due_date(orm.TransientModel):
               'view_id': view_id,
               'context': context,
               'target': 'new',
-              }
+              }'''
         
-    def change_move(self, cr, uid, ids, context=None):
-        print 'ok'
+    def change_move(self, cr, uid, ids, vals, context=None):
         move_obj = self.pool.get('account.move')
         move_line_obj = self.pool.get('account.move.line')
         bank_draft_rel_obj = self.pool.get('account.move.bank.draft.rel')
@@ -123,61 +122,66 @@ class wizard_change_due_date(orm.TransientModel):
             #somma tutte le new line che trova nella tabella wizard_canghe_due_date_line
         for t_line in t_wizard.new_ids:
             t_amount_new += t_line.amount
-        
-        if(str(t_amount_old) != str(t_amount_new)):
-            #print abs(t_amount_old - t_amount_new) aggiungere un controllo preciso sulle date
+
+        '''new = vals.get('new_ids')
+        sum_new = 0.00
+        for record in new:
+            if record[1]!= False:
+                print record[1]
+                wiz = self.pool.get('wizard.change.due.date.line').search(cr,uid,[('id','=',record[1])],context)
+                a = self.pool.get('wizard.change.due.date.line').browse(cr,uid,wiz[0],context).amount
+                sum_new += a
+            else:
+                sum_new += record[2].get('amount')'''
+
+        if (str(t_amount_old) != str(t_amount_new)):
+            # print abs(t_amount_old - t_amount_new) aggiungere un controllo preciso sulle date
             raise orm.except_orm(_('Attenzione!'),
                                  _("L'importo totale delle nuove scandenze deve coincidere con l'originale"))
-        
-        
+
+
         t_lines = []
         for t_line in t_wizard.old_ids:
-             id=t_line.move_line_id.id
-             
-            #Rimuovo le vecchie move_line_id
-            
-             cr.execute('DELETE '\
-                    'FROM account_move_line '\
-                    'WHERE id=%s ', (id,))
-             
-             
-        #le aggiungo alla tabella account_move_line      
+            id = t_line.move_line_id.id
+
+            # Rimuovo le vecchie move_line_id
+
+            cr.execute('DELETE ' \
+                       'FROM account_move_line ' \
+                       'WHERE id=%s ', (id,))
+
+        # le aggiungo alla tabella account_move_line
         t_lines = []
         for t_line in t_wizard.new_ids:
-             if not t_invoice and t_line.amount < 0:
-                 t_debit_flag = 0.0
-                 t_credit_flag = -1.0
-                 
-             t_lines.append((0, 0, {
-                                        'partner_id': t_line.partner_id.id,
-                                        'account_id': t_line.account_id.id,
-                                        'debit': t_line.amount * t_debit_flag,
-                                        'credit': t_line.amount * t_credit_flag,
-                                        'date_maturity': t_line.date_due,
-                                        'payment_type_move_line': t_line.payment_type,
-                                        'state': 'valid',
-                                        'amount_to_pay': -t_line.amount, 
-                                        'received_check': "f",
-                                        'day': t_line.date_due,
-                                        'name': "/"
-                                }))
-             
-             
+            if not t_invoice and t_line.amount < 0:
+                t_debit_flag = 0.0
+                t_credit_flag = -1.0
+
+            t_lines.append((0, 0, {
+                'partner_id': t_line.partner_id.id,
+                'account_id': t_line.account_id.id,
+                'debit': t_line.amount * t_debit_flag,
+                'credit': t_line.amount * t_credit_flag,
+                'date_maturity': t_line.date_due,
+                'payment_type_move_line': t_line.payment_type,
+                'state': 'valid',
+                'amount_to_pay': -t_line.amount,
+                'received_check': "f",
+                'day': t_line.date_due,
+                'name': "/"
+            }))
+
         move_obj.write(cr, uid, [t_move.id], {
-                                           'line_id': t_lines
-                                           })
-         
-                
+            'line_id': t_lines
+        })
+
         return t_move.id
 
-
-    
-    def confirm(self, cr, uid, ids, context=None):
+    def confirm(self, cr, uid, ids, vals, context=None):
         if context is None:
             context = {}
        
-        res_id = self.change_move(cr, uid, ids)
-        
+        res_id = self.change_move(cr, uid, ids, vals,context)
         mod_obj = self.pool.get('ir.model.data')
         result = mod_obj.get_object_reference(cr, uid,
                                               'account',
@@ -195,3 +199,11 @@ class wizard_change_due_date(orm.TransientModel):
               'context': context,
               'target': 'current',
               }
+
+    def write(self, cr, uid, ids, vals, context=None):
+        if not context:
+            return super(wizard_change_due_date, self).write(cr, uid, ids, vals, context=context)
+        else:
+            super(wizard_change_due_date, self).write(cr, uid, ids, vals, context=context)
+            return self.confirm( cr, uid, ids, context)
+

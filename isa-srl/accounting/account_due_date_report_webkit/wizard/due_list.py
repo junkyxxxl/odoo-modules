@@ -28,6 +28,8 @@ class due_list(orm.TransientModel):
                                   required=True),
         'print_customers': fields.boolean('All Customers'),
         'print_suppliers': fields.boolean('All Suppliers'),
+        'type': fields.selection([('debit','Cliente'),('credit','Fornitore')],'Tipo Scadenza'),
+        'all_partner': fields.boolean('Tutti i partner',default = True)
     }
     _defaults = {
         'company_id': lambda self, cr, uid, c: self.pool.get('res.company')._company_default_get(cr, uid, context=c),        
@@ -42,6 +44,7 @@ class due_list(orm.TransientModel):
              'model': 'account.move.line',
              'form': self.read(cr, uid, ids)[0]
         }
+        print datas
         return {
             'type': 'ir.actions.report.xml',
             'report_name': 'due_list_pdf',

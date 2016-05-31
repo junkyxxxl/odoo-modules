@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
+from openerp import api
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
@@ -27,10 +27,38 @@ class wizard_change_due_date_line(orm.TransientModel):
     _name = 'wizard.change.due.date.line'
     _description = 'Wizard Change Due Date Line'
 
-    def onchange_partner_id(self, cr, uid, ids, partner_id=None, context=None):
+
+    def onchange_amount(self,cr, uid, ids, amount=None, context=None):
+        list_moveline = self.pool.get('wizard.change.due.date').search(cr, uid, [('move_id', '=', context.get('move_id'))],context=context)
+        list2 = self.pool.get('wizard.change.due.date.line').search(cr, uid, [('change_id','=',list_moveline[list_moveline.__len__()-1])], context=context)
+        total_new = 0.0
+        total_old = 0.0
+        for l in list2:
+            obj = self.pool.get('wizard.change.due.date.line').browse(cr, uid, l, context=context)
+            for o in obj:
+                if o.line_state == 'new':
+                    total_new += o.amount
+                else:
+                    total_old += o.amount
+        total_new += amount
+        diff = total_old-total_new
+        return {'value':{'test':diff}}
+
+    def onchange_partner_id(self, cr, uid, ids, partner_id=None, account_id=None, context=None):
         if partner_id:
-            account_id = self.pool.get('res.partner').browse(cr,uid,partner_id,context=context).property_account_receivable.id
+            list_moveline = self.pool.get('account.move.line').search(cr,uid,[('move_id','=',context.get('move_id')),('date_maturity','!=',None)],context=context)
+            account_id = ''
+            if list_moveline[0]:
+                obj = self.pool.get('account.move.line').browse(cr,uid,list_moveline[0],context=context)
+
+                if obj.account_id.type == 'receivable':
+                    account_id = self.pool.get('res.partner').browse(cr, uid, partner_id,context=context).property_account_receivable.id
+                elif obj.account_id.type == 'payable':
+                    account_id = self.pool.get('res.partner').browse(cr, uid, partner_id,context=context).property_account_payable.id
+
         return {'value':{'account_id':account_id}}
+
+
 
     _columns = {
         'partner_id': fields.many2one('res.partner', 'Customer', select=1),
@@ -61,30 +89,3 @@ class wizard_change_due_date_line(orm.TransientModel):
         'document_number': fields.related('move_line_id', 'move_id', 'document_number', type='char', relation='account.move', string='Document Number', readonly=1),
     }
 
-
-
-
-    def delete_line(self, cr, uid, ids, context=None):
-        t = ids[0]
-        self.write(cr, uid, [t],
-                   {'line_state': 'ref'})
-        
-        res_id = self.browse(cr, uid, t).change_id.id
-              
-        mod_obj = self.pool.get('ir.model.data')
-        result = mod_obj.get_object_reference(cr, uid,
-                                              'account_voucher_makeover',
-                                              'wizard_change_due_date_view')
-        view_id = result and result[1] or False
-
-        return {
-              'name': _("Change Due Date Action"),
-              'view_type': 'form',
-              'view_mode': 'form',
-              'res_model': 'wizard.change.due.date',
-              'type': 'ir.actions.act_window',
-              'view_id': view_id,
-              'context': context,
-              'res_id': res_id,
-              'target': 'inline',
-              }

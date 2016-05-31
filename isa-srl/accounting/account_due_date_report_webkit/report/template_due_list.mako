@@ -82,8 +82,8 @@
                         <div class="act_as_thead">
                             <div class="act_as_row labels">
                                 <div class="act_as_cell first_column" style="width: 70px;">${_('DATA SCADENZA')}</div>                               
-                                <div class="act_as_cell" style="width: 90px;">${_('FATTURA')}</div>                                
-                                <div class="act_as_cell" style="width: 70px;">${_('DATA FATTURA')}</div>
+                                <div class="act_as_cell" style="width: 90px;">${_('DOCUMENTO')}</div>
+                                <div class="act_as_cell" style="width: 70px;">${_('DATA DOCUMENTO')}</div>
                                 <div class="act_as_cell" style="width: 100px;">${_('TOTALE DOCUMENTO')}</div>
                                 <div class="act_as_cell" style="width: 70px;">
                                 	%if get_mode():

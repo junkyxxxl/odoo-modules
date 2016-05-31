@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_wizard_invoice" model="ir.ui.view">
+            <field name="name">view.wizard.invoice</field>
+            <field name="model">wizard.invoice</field>
+            <field name="arch" type="xml">
+                <form string="Invoice wizard zip">
+                  <group>
+					 <field name="invoice_report" label="Scegli il report" domain="[('model','=like','account.invoice')]"/>
+                  </group>
+                    <footer>
+                        <button class="oe_button" string="Scarica" id="create_invoice_zip" name="create_invoice_zip" type="object"></button>
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+
+        <record id="action_export_zip_invoice" model="ir.actions.act_window">
+			<field name="name">Esporta fatture zip</field>
+			<field name="res_model">wizard.invoice</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_wizard_invoice"/>
+			<field name="target">new</field>
+		</record>
+
+
+		<record model="ir.values" id="invoice_zip_fatture">
+            <field name="name">Esporta zip fatture</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_export_zip_invoice'))" />
+            <field name="key">action</field>
+            <field name="model">account.invoice</field>
+        </record>
+
+
+    </data>
+</openerp>

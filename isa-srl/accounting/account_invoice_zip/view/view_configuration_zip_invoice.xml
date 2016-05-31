@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        <!-- Aggiungo la sezione "Configurazione zip fatture" -->
+   		<record id="view_invoice_zip" model="ir.ui.view">
+            <field name="name">view.invoice.zip</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Report Configuration']/group" position="after">
+                    <group>
+                        <group name="configuration_zip_invoice" string="Configurazione zip fatture">
+                            <field name="invoice_report" domain="[('model','like','account.invoice')]"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

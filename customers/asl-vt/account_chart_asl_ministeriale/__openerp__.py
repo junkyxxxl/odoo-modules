@@ -43,6 +43,11 @@ Asl accounting chart and localization.
     'website': 'http://www.isa.it/',
     'data': [
         'data/account.account.template.csv',
+        'data/account.tax.code.template.csv',
+        'account_chart.xml',
+        'data/account.tax.template.csv',
+        'data/account.fiscal.position.template.csv',
+        'l10n_chart_it_asl_vt.xml',
         ],
     'demo': [],
     'installable': True,

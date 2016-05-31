@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from itertools import chain
-from openerp import models, fields, api, _
+from openerp import models, fields, api, _, tools
 import time
 import openerp.addons.decimal_precision as dp
 from openerp.exceptions import except_orm, Warning, RedirectWarning, ValidationError

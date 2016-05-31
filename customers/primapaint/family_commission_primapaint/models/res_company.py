@@ -27,6 +27,8 @@ class res_company_family_commission(models.Model):
 
     _inherit = 'res.company'
 
+    pricelist_for_recompute = fields.Many2one('product.pricelist', string="Pricelist for Price Recompute", )  
+
     def _function_priorities(self):
         res = super(res_company_family_commission,self)._function_priorities()
         res.append(('family','Family'))

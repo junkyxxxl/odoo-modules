@@ -19,11 +19,11 @@
 #
 ##############################################################################
 import copy
-import math
 from openerp.report import report_sxw
 from openerp.tools.translate import _
 import os
 from datetime import datetime, date, timedelta
+from openerp.osv import orm, fields
 
 from openerp.addons.account_financial_report_webkit.report.common_partner_reports import CommonPartnersReportHeaderWebkit
 from openerp.addons.account_financial_report_webkit.report.webkit_parser_header_fix import HeaderFooterTextWebKitParser
@@ -42,7 +42,9 @@ class account_due_list_report_ext_isa(report_sxw.rml_parse, CommonPartnersReport
         company = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).company_id
         self.mode = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).mode
         self.print_customers = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).print_customers
-        self.print_suppliers = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).print_suppliers        
+        self.print_suppliers = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).print_suppliers
+        self.type = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).type
+        self.all_partner = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).all_partner
         self.filters = [('date_maturity', '!=', False),
                         ('reconcile_id', '=', False),
                         ('company_id','=',company.id),
@@ -138,46 +140,26 @@ class account_due_list_report_ext_isa(report_sxw.rml_parse, CommonPartnersReport
     def _get_move_line(self):
         move_lines = []
         hrs = self.pool.get('account.move.line')
-        if self.print_customers or self.print_suppliers:
-            if self.print_customers:
-                partner = self.pool.get('res.partner').search(self.cr, self.uid, [('customer','=',True)])
+
+        test = self.partners
+        if self.all_partner or len(self.partners)==0:
+            test = self.pool.get('res.partner').search(self.cr, self.uid,[('id', '!=', None)])
+
+        for partner in test:
+            if self.type == 'debit':
+                partner = self.pool.get('res.partner').search(self.cr, self.uid, [('customer','=',True),('id','=',partner)])
                 for id in partner:
-                    t_filter = copy.deepcopy(self.filters)                
-                    t_filter.append(('partner_id','=',id))
-                    hrs_list = hrs.search(self.cr, self.uid, t_filter,order='date_maturity')
-                    move_lines.append(hrs.browse(self.cr, self.uid, hrs_list))                
-                    if len(move_lines[-1].ids)>0:  
-                        move_lines[-1].partner=move_lines[-1][0].partner_id                                                
-            if self.print_suppliers:
-                partner = self.pool.get('res.partner').search(self.cr, self.uid, [('supplier','=',True)])
+                    lines = self.pool.get('account.move.line').search(self.cr,self.uid,[('partner_id', '=', id),('account_id.type','=','receivable'),('date_maturity','!=',False)])
+                    move_lines.append(hrs.browse(self.cr, self.uid, lines))
+                    if len(move_lines[-1].ids)>0:
+                        move_lines[-1].partner=move_lines[-1][0].partner_id
+            if self.type == 'credit':
+                partner = self.pool.get('res.partner').search(self.cr, self.uid, [('supplier','=',True),('id','=',partner)])
                 for id in partner:
-                    t_filter = copy.deepcopy(self.filters)                
-                    t_filter.append(('partner_id','=',id))
-                    hrs_list = hrs.search(self.cr, self.uid, t_filter,order='date_maturity')
-                    move_lines.append(hrs.browse(self.cr, self.uid, hrs_list))       
-                    if len(move_lines[-1].ids)>0:  
-                        move_lines[-1].partner=move_lines[-1][0].partner_id                        
-            
-            if len(self.partners)>0:
-                for partner in self.partners:
-                    t_filter = copy.deepcopy(self.filters)
-                    t_filter.append(('partner_id','=',partner),)
-                    hrs_list = hrs.search(self.cr, self.uid, t_filter,order='date_maturity')
-                    move_lines.append(hrs.browse(self.cr, self.uid, hrs_list))
-                    if len(move_lines[-1].ids)>0:  
-                        move_lines[-1].partner=move_lines[-1][0].partner_id                          
-            
-        elif len(self.partners)>0:
-            for partner in self.partners:
-                t_filter = copy.deepcopy(self.filters)
-                t_filter.append(('partner_id','=',partner),)
-                hrs_list = hrs.search(self.cr, self.uid, t_filter,order='date_maturity')
-                move_lines.append(hrs.browse(self.cr, self.uid, hrs_list))
-                if len(move_lines[-1].ids)>0:  
-                    move_lines[-1].partner=move_lines[-1][0].partner_id              
-        else:
-            hrs_list = hrs.search(self.cr, self.uid, self.filters,order='date_maturity')
-            move_lines.append(hrs.browse(self.cr, self.uid, hrs_list))
+                    lines = self.pool.get('account.move.line').search(self.cr,self.uid,[('partner_id', '=', id),('account_id.type','=','payable'),('date_maturity','!=',False)])
+                    move_lines.append(hrs.browse(self.cr, self.uid, lines))
+                    if len(move_lines[-1].ids)>0:
+                        move_lines[-1].partner=move_lines[-1][0].partner_id
             
         final_move_lines = []
         
@@ -185,10 +167,10 @@ class account_due_list_report_ext_isa(report_sxw.rml_parse, CommonPartnersReport
             move_lines_ids = []
             for move_line in move_partner_line:
                 if move_line.account_id:
-                    if (move_line.account_id.type == 'payable' and move_line.debit == 0):
+                    if (move_line.account_id.type == 'payable'):
                         if move_line.partner_id.property_account_payable == move_line.account_id:
                             move_lines_ids.append(move_line.id)
-                    elif (move_line.account_id.type == 'receivable' and move_line.credit == 0):
+                    elif (move_line.account_id.type == 'receivable'):
                         if move_line.partner_id.property_account_receivable == move_line.account_id:
                             move_lines_ids.append(move_line.id)
         
@@ -217,8 +199,12 @@ class account_due_list_report_ext_isa(report_sxw.rml_parse, CommonPartnersReport
             acc = self.pool.get('account.move.reconcile')
             acc_list = acc.browse(self.cr, self.uid, reconcile_id)
             reconcile_description = acc_list.name_get()[0][1]
-            
+
         return reconcile_description
+
+    def get_all_partner(self):
+        obj = self.pool.get('res.partner')
+        return obj
         
 HeaderFooterTextWebKitParser('report.due_list_pdf',
                              'account.move.line',

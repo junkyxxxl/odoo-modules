@@ -9,6 +9,9 @@
         	<xpath expr="//field[@name='commission_priority4']" position="after">
         		<field name="commission_priority5"/>
         	</xpath>
+        	<xpath expr="//field[@name='commission_product_id']" position="after">
+        		<field name="pricelist_for_recompute"/>
+        	</xpath>        	
         </field>
     </record>
   </data>

@@ -34,6 +34,9 @@
     ],
     'data': [
         'view/web_export_invoice_zip_view.xml',
+        'view/view_configuration_zip_invoice.xml',
+        'view/wizard_invoice.xml',
+        'invoice_zip_out_view.xml',
     ],
     'qweb': [
         'static/src/xml/web_export_account_zip_template.xml',

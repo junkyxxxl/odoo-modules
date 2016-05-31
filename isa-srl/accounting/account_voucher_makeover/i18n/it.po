@@ -965,7 +965,7 @@ msgstr "Cliente"
 #: selection:wizard.payment.specification.line,payment_type:0
 #: selection:wizard.set.partial.amount,payment_type:0
 msgid "Bank Draft"
-msgstr "Ritiro Riba"
+msgstr "Ricevuta Bancaria"
 
 #. module: account_voucher_makeover
 #: field:wizard.confirm.customer.payment.line,amount_allowance:0

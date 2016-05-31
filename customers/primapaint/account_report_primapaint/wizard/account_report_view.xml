@@ -15,7 +15,7 @@
                         </group>
                      </group>
                      <group>
-                         <field name="salesagent" string="Seleziona gli agenti"></field>
+                         <field name="salesagent" string="Seleziona gli agenti" domain = "[('salesagent','=',True)]"></field>
                      </group>
 
 

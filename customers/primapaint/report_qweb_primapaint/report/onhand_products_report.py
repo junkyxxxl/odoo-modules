@@ -170,7 +170,16 @@ class report_onhand_products_parser(report_sxw.rml_parse):
             item = []
             
             item.append(product.default_code)   #[0]
-            item.append(product.name)           #[1]
+            
+            name = product.name
+            if product.attribute_value_ids:
+                name2 = ''
+                for attr_val in product.attribute_value_ids:
+                    name2 += attr_val.name + ', '
+                name2 = name2[:len(name2)-2]
+                name = name+' ('+name2+')'
+            
+            item.append(name)           #[1]
             
             #[2,3,4]
             for id in stock_ids:                

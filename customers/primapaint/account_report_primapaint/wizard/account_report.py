@@ -18,7 +18,12 @@ class account_report(models.TransientModel):
     def _get_selected_salesagent(self):
         #Prendo gli agenti che sono stati selezionati da tree view
         selected = self.env['res.partner'].search([('id', 'in', self.env.context.get('active_ids'))])
-        return selected
+        is_agent = []
+        for s in selected:
+            if s.salesagent:
+                is_agent.append(s.id)
+        list_agent = self.env['res.partner'].search([('id', 'in', is_agent)])
+        return list_agent
 
     category = fields.Many2one('product.category', string='Categoria', required=True)
     budget_year = fields.Selection('_get_fiscal_year', string='Anno del budget', default=lambda self: self.env['account.fiscalyear'].search([])[0].code, required=True)

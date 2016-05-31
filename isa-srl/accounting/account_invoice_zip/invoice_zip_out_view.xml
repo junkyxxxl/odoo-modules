@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="zip_invoice_form_view">
+            <field name="name">wizard.form</field>
+            <field name="model">invoice.zip</field>
+            <field name="arch" type="xml">
+                <form string="Invoice Zip Form">
+                    <sheet>
+                        <group>
+                            <field name="filename"/>
+                            <field name="filedata" filename="filename"/>
+                            <field name="create_date"/>
+                            <field name="type"/>
+                            <field name="element"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="zip_invoice_tree_view">
+            <field name="name">zip_invoice.tree</field>
+            <field name="model">invoice.zip</field>
+            <field name="arch" type="xml">
+                <tree string="Invoice Tree">
+                    <field name="filename"/>
+                    <field name="filedata" filename="filename"/>
+                    <field name="create_date"/>
+                    <field name="type"/>
+                    <field name="element"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="invoice_zip_list_action">
+            <field name="name">Invoice Zip</field>
+            <field name="res_model">invoice.zip</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+
+    </data>
+</openerp>

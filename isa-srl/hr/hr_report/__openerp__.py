@@ -7,11 +7,10 @@
         subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Long description of module's purpose
+        HR Report
     """,
 
-    'author': "Your Company",
-    'website': "http://www.yourcompany.com",
+    'author': "ISA srl",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml

@@ -2,7 +2,7 @@
 <openerp>
     <data noupdate="0">
         <report
-            id="account_report_primapaint"
+            id="report_agent_qweb"
             model="res.partner"
             string="Report Per Agente"
             report_type="qweb-pdf"
@@ -12,9 +12,26 @@
             menu="False"
         />
 
+        <record id="paperformat_account_report" model="report.paperformat">
+            <field name="name">Report Paperformat</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">5</field>
+            <field name="dpi">90</field>
+        </record>
+
         <!-- Definisco il tipo di formato per il report -->
-        <record id="res_partner" model="ir.actions.report.xml">
+        <record id="report_agent_qweb" model="ir.actions.report.xml">
             <field name="paperformat_id" ref="account_report_primapaint.paperformat_account_report"/>
+            <field name="menu">0</field>
         </record>
     </data>
 </openerp>

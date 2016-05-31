@@ -79,7 +79,6 @@
                                             <div class="c23">
                                                 <table class="table table-bordered">
                                                     <thead>
-                                                        <h4 style="font-weight: bold" t-esc="e.name_related"></h4>
                                                         <h4 style="font-weight: bold"> <t t-esc="e.name_related"></t></h4>
                                                         <br/>
                                                     </thead>

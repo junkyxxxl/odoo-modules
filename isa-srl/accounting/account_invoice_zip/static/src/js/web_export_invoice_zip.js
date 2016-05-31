@@ -7,7 +7,7 @@ openerp.account_invoice_zip = function (instance) {
         redraw: function () {
             var self = this;
             this._super.apply(this, arguments);
-            if (self.getParent().ViewManager.active_view == 'list' && this.getParent().name == 'Invoice') {
+            if (self.getParent().ViewManager.active_view == 'list' && this.getParent().name == 'Fattura') {
                 self.$el.find('.oe_sidebar').append(QWeb.render('AddExportInvoiceZipMain', {widget: self}));
                 self.$el.find('#export_invoice_zip').on('click', self.on_sidebar_export_invoice_zip);
             }

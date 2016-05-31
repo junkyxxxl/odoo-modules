@@ -51,7 +51,7 @@ class purchase_order_line_discount(models.Model):
             raise ValidationError(_("Sum of discounts can't be greater than what setted as maximum discount!"))          
 
     @api.cr_uid_ids_context    
-    def onchange_product_id(self, cr, uid, ids, pricelist_id, product_id, qty, uom_id, partner_id, date_order=False, fiscal_position_id=False, date_planned=False, name=False, price_unit=False, state='draft', context=None):        
+    def onchange_product_id(self, cr, uid, ids, pricelist_id, product_id, qty, uom_id, partner_id, date_order=False, fiscal_position_id=False, date_planned=False, name=False, price_unit=False, state='draft', context=None):
         res = super(purchase_order_line_discount, self).onchange_product_id(cr,uid,ids,pricelist_id,product_id,qty,uom_id,partner_id,date_order,fiscal_position_id,date_planned,name,price_unit,state,context)
 
         if product_id and res and res['value']:

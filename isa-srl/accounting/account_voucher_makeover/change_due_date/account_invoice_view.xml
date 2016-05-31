@@ -30,7 +30,8 @@
                             string="Change Due Date"
                             icon="gtk-new"
                             type="object"
-                            attrs="{'invisible': [('state','not in',('open'))]}"/>
+                            attrs="{'invisible': [('state','not in',('open'))]}"
+                    />
                 </xpath>
                 
             </field>

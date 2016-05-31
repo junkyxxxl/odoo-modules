@@ -7,7 +7,7 @@ class hr_report(models.TransientModel):
 
     @api.model
     def _get_selected_employee(self):
-        selected = self.env['hr.employee'].search([('resource_id', '=', self.env.context.get('active_ids'))])
+        selected = self.env['hr.employee'].search([('id', '=', self.env.context.get('active_ids'))])
         return selected
 
     month= fields.Selection([(1, 'January'),

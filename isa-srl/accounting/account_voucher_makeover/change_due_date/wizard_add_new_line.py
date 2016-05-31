@@ -47,31 +47,33 @@ class wizard_add_new_line(orm.TransientModel):
         t_due_date = form["date_due"]
         t_payment_type = form["payment_type"]
         t_amount = form["amount"]
-        
+
         t_total = 0.0
         for line in self.browse(cr,uid,ids[0]).change_id.old_ids:
-            t_total += line.amount        
+            t_total += line.amount
 
         if(t_total > 0.0 and t_amount <= 0.0):
             raise orm.except_orm(_('Error!'),
                                  _("Inserire importo positivo e non nullo!"))
         elif(t_total <= 0.0 and t_amount >= 0.0):
             raise orm.except_orm(_('Error!'),
-                                 _("Inserire importo negativo e non nullo!"))            
+                                 _("Inserire importo negativo e non nullo!"))
 
         t_wizard = self.browse(cr, uid, ids[0])
         t_change = t_wizard.change_id
         t_line = t_change.old_ids[0]
         t_lines = []
-        
+
+
         '''
-        if t_payment_type == 'D':
-           if not t_change.invoice_id or not t_change.invoice_id.bank_account:
-            if not t_change.partner_id or not t_change.partner_id.bank_ids:
-                raise orm.except_orm(_('Error!'),
-                                 _("Non puoi impostare scadenze Ri.Ba. poichè nella fattura non è specificato alcuno conto bancario per il cliente, ed il cliente non ha associato alcun conto bancario."))
+            if t_payment_type == 'D':
+               if not t_change.invoice_id or not t_change.invoice_id.bank_account:
+                if not t_change.partner_id or not t_change.partner_id.bank_ids:
+                    raise orm.except_orm(_('Error!'),
+                                     _("Non puoi impostare scadenze Ri.Ba. poichè nella fattura non è specificato alcuno conto bancario per il cliente, ed il cliente non ha associato alcun conto bancario."))
+
         '''
-            
+
         t_lines.append((0, 0, {
                                 'partner_id': t_line.partner_id.id,
                                 'account_id': t_line.account_id.id,
@@ -82,7 +84,7 @@ class wizard_add_new_line(orm.TransientModel):
                                 'line_state': 'new',
                                 'payment_type': t_payment_type
                             }))
-        
+
         wizard_obj.write(cr, uid, [t_change.id], {'new_ids': t_lines, })
-        
+
         return True

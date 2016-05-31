@@ -91,6 +91,7 @@ lo sconto applicato rientra.
              'views/account_invoice_view.xml',
              'views/sale_order_view.xml',   
              'views/res_partner_view.xml',
+             'data/update_lst_price.xml',
              ],
     'installable': True,
     'auto_install': False,

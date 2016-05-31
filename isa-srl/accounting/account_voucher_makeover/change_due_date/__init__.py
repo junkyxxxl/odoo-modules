@@ -24,3 +24,4 @@ import wizard_change_due_date_line
 import wizard_add_new_line
 import account_invoice
 import account_move
+import wizard_change_due_date_v8
