@@ -1,2 +1,1 @@
-# odoo-modules 
-test
+# odoo-modules
