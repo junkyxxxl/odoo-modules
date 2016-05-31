@@ -1,6 +1,6 @@
 #Ignore a pycharm forlder
 .idea/
-# compiled python files
+# compiled python files odoo
 *.py[co]
 # emacs backup files
 *~
