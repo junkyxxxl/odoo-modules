@@ -65,7 +65,9 @@ class ReportTrialBalance(models.AbstractModel):
                 else:
                     res.append(0.0)
                 day = (first.day + 1).__str__()
-                first = datetime.datetime.strptime(str(data['form']['year']) + '-' + m + '-' + day, '%Y-%m-%d')
+                if day != str(32):
+                    print day
+                    first = datetime.datetime.strptime(str(data['form']['year']) + '-' + m + '-' + day, '%Y-%m-%d')
             for cont2 in range(today.day.__int__(), len_month.__len__() + 1):
                 res.append(0.0)
             return res
@@ -100,7 +102,8 @@ class ReportTrialBalance(models.AbstractModel):
                 else:
                     res.append(0.0)
                 a = (first.day + 1).__str__()
-                first = datetime.datetime.strptime(str(data['form']['year']) + '-' + m + '-' + a, '%Y-%m-%d')
+                if a != str(32):
+                    first = datetime.datetime.strptime(str(data['form']['year']) + '-' + m + '-' + a, '%Y-%m-%d')
             for cont2 in range(today.day.__int__(), len_month.__len__() + 1):
                 res.append(0.0)
             return res
@@ -178,7 +181,8 @@ class ReportTrialBalance(models.AbstractModel):
                 else:
                     res.append(0.0)
                 day = (first.day +1).__str__()
-                first = datetime.datetime.strptime(str(data['form']['year'])+'-'+m+'-'+day,'%Y-%m-%d')
+                if day != str(32):
+                    first = datetime.datetime.strptime(str(data['form']['year'])+'-'+m+'-'+day,'%Y-%m-%d')
             for cont2 in range(today.day.__int__(),len_month.__len__()+1):
                 res.append(0.0)
             return res
@@ -333,7 +337,8 @@ class ReportTrialBalance(models.AbstractModel):
                 else:
                     res.append(0.0)
                 a = (first.day + 1).__str__()
-                first = datetime.datetime.strptime(str(data['form']['year']) + '-' + m + '-' + a, '%Y-%m-%d')
+                if a != str(32):
+                    first = datetime.datetime.strptime(str(data['form']['year']) + '-' + m + '-' + a, '%Y-%m-%d')
             for cont2 in range(today.day.__int__(), len_month.__len__() + 1):
                 res.append(0.0)
             return res

@@ -1,2 +1,6 @@
 #Ignore a pycharm forlder
 .idea/
+# compiled python files
+*.py[co]
+# emacs backup files
+*~
