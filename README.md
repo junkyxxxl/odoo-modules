@@ -1,2 +1,2 @@
 # odoo-modules
-Isa modules for Odoo 8
+Isa modules for Odoo 8.0
