@@ -1,2 +1,0 @@
-
-Extends the module "Project"
