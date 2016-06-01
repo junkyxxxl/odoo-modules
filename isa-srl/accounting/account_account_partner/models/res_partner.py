@@ -82,7 +82,7 @@ class res_partner(models.Model):
                 account_receivable_id = self._create_account_account(account_receivable_code, default_account_receivable, vals['name'], 'receivable')
                 vals.update({'property_account_receivable':account_receivable_id,
                              'customer_code': customer_form_code})
-                self.env.user.company_id.write({'start_new_partner_code_from':customer_form_code})                
+                self.env.user.company_id.write({'start_new_partner_code_from':str(int(customer_form_code)+1)})                
 
         '''
            FORNITORE
@@ -103,7 +103,7 @@ class res_partner(models.Model):
                 account_payable_id = self._create_account_account(account_payable_code, default_account_payable, vals['name'], 'payable')
                 vals.update({'property_account_payable':account_payable_id,
                              'supplier_code': supplier_form_code})
-                self.env.user.company_id.write({'start_new_supplier_code_from':supplier_form_code})
+                self.env.user.company_id.write({'start_new_supplier_code_from':str(int(supplier_form_code)+1)})
 
         #Creo il partner
         partner = super(res_partner, self).create(vals)

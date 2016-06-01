@@ -50,7 +50,8 @@ class account_account_auto_code(models.Model):
                       ''' % (account_account.id,parent_length, start_from)
                 self.env.cr.execute(sql)
                 list = self.env.cr.fetchall()
-                if list:
+                
+                if False and list:
                     sql = '''SELECT MIN(a.code) 
                              FROM   account_account a 
                              
