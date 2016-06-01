@@ -1,6 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_account_discount_type,access_account_discount_type,model_account_discount_type,,1,1,1,1
-access_account_invoice_discount,access_account_invoice_discount,model_account_invoice_discount,,1,1,1,1
-access_sale_order_discount,access_sale_order_discount,model_sale_order_discount,,1,1,1,1
-access_account_payment_term_discount,access_account_payment_term_discount,model_account_payment_term_discount,,1,1,1,1
-access_partner_discount,access_partner_discount,model_partner_discount,,1,1,1,1

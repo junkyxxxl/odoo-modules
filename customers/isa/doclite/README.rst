@@ -1,3 +1,0 @@
-
-DocLite - Documents Content Manager
-

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-    
-        <!-- Cancellazione azione associata al partner per stampa mastrino cliente (viene associata la stampa per orizzontale) -->
-        <delete id="account.action_account_partner_ledger" model="ir.actions.act_window"/>
-
-    </data>
-</openerp>

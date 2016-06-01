@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_doclite_uffici,doclite.uffici,model_doclite_uffici,doclite.group_doclite_isa,1,1,1,1
-access_doclite_server_1,doclite.server,model_doclite_server,,1,0,0,0
-access_doclite_server_2,doclite.server,model_doclite_server,doclite.group_doclite_isa,1,1,1,1

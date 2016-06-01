@@ -1,5 +1,0 @@
-Paolo Chiara <p.chiara@isa.it>
-Daniele Arcangeli <d.arcangeli@isa.it>
-Loris Turchetti <l.turchetti@isa.it>
-Gianpaolo Marzi <g.marzi@isa.it>
-

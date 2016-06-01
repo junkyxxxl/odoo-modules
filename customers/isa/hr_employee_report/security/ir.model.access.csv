@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_res_company_closed_day,res_company_closed_day,base_res_company_isa.model_res_company_closed_day,base.group_user,1,1,1,1
-access_res_company_festivity,res_company_festivity,base_res_company_isa.model_res_company_festivity,base.group_user,1,1,1,1

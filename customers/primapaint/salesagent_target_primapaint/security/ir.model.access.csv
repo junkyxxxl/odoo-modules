@@ -1,5 +1,0 @@
-id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-salesagent_target_all,salesagent_target all,salesagent_target_primapaint.model_salesagent_target,,1,0,0,0
-salesagent_target_line_all,salesagent_target_line all,salesagent_target_primapaint.model_salesagent_target_line,,1,0,0,0
-salesagent_target_manager,salesagent_target manager,salesagent_target_primapaint.model_salesagent_target,account.group_account_manager,1,1,1,1
-salesagent_target_line_manager,salesagent_target_line manager,salesagent_target_primapaint.model_salesagent_target_line,account.group_account_manager,1,1,1,1

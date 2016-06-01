@@ -1,3 +1,0 @@
-id,active,perm_unlink,perm_create,domain_force,groups/id,perm_read,name,model_id/id,perm_write
-salesagent_target_group_salesagent,True,False,False,"[('salesagent_target_id.salesagent_id', '=', user.partner_id.id)]",account_commission.group_salesagent,True,salesagent.target.line Salesagent,salesagent_target_primapaint.model_salesagent_target_line,False
-salesagent_target_line_group_salesagent,True,False,False,"[('salesagent_id', '=', user.partner_id.id)]",account_commission.group_salesagent,True,salesagent.target Salesagent,salesagent_target_primapaint.model_salesagent_target,False

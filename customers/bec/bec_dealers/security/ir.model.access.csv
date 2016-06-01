@@ -1,3 +1,0 @@
-"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-"access_res_partner_dealer_group_all","res_partner_dealer group_user_all","model_res_partner_dealer",,1,0,0,0
-"access_res_partner_dealer_group_user","res_partner_dealer group_user","model_res_partner_dealer","base.group_partner_manager",1,1,1,1

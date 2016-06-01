@@ -1,7 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_website_voucher1,website.voucher,model_website_voucher,base.group_sale_manager,1,1,1,1
-access_website_voucher2,website.voucher,model_website_voucher,,1,0,0,0
-access_website_voucher3,website.voucher.config,model_website_voucher_config,base.group_sale_manager,1,1,1,1
-access_website_voucher4,website.voucher.config,model_website_voucher_config,,1,0,0,0
-access_website_voucher5,wk_website.history,model_wk_website_history,base.group_sale_manager,1,1,1,1
-access_website_voucher6,wk_website.history,model_wk_website_history,,1,0,0,0

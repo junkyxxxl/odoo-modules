@@ -1,4 +1,0 @@
-
-Warehouse - Warehouse manager
-=============================
-

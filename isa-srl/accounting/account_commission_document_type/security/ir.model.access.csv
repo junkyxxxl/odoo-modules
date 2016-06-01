@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_sale_document_type_salesagent,access_sale_document_type salesagent users,sale_makeover.model_sale_document_type,account_commission.group_salesagent_invoice,1,0,0,0
