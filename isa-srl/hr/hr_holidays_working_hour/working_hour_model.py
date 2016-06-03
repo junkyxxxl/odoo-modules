@@ -6,7 +6,7 @@ import datetime
 class working_hour(models.Model):
     _inherit = 'hr.holidays'
 
-    working_hour = fields.Float(default=0)
+    working_hour = fields.Float(string = "Ore", default=0)
 
     @api.onchange('employee_id')
     def onchange_employee(self):
@@ -14,7 +14,7 @@ class working_hour(models.Model):
             self.department_id = self.employee_id.department_id.id
 
     @api.onchange('date_from','employee_id','date_to')
-    def onchange_date_from(self):
+    def _onchange_date_from(self):
 
         def daterange(start_date, end_date):
             for n in range(int((end_date - start_date).days)):
@@ -120,6 +120,10 @@ class working_hour(models.Model):
             return current_contract
         return None
 
+    '''@api.onchange('working_hour')
+    def onchange_working_hour(self):
+        self.number_of_days_temp = self.converter_day(float(self.working_hour % 1) + self.converter_minute(int(self.working_hour)))
+    '''
     def converter_cent(self, min):
         cent = int((min / 60) * 100)
         cent = str(cent)
@@ -135,4 +139,4 @@ class working_hour(models.Model):
         return res
 
     def converter_day(self,min):
-        return round(min/1440,3)
+        return round(min/480,3)

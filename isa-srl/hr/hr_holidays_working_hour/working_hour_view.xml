@@ -6,24 +6,62 @@
             <field name="model">hr.holidays</field>
             <field name="inherit_id" ref="hr_holidays.edit_holiday_new"/>
             <field name="arch" type="xml">
-                <xpath expr="//sheet/group/group/div/div" position="after">
-                    <div>
-                        <field name="working_hour" class="oe_inline"/> ore
-                    </div>
-                </xpath>
-                <xpath expr="//field[@name='date_from']" position="attributes">
-                    <attribute name="on_change">1</attribute>
-                </xpath>
-                <xpath expr="//field[@name='date_to']" position="attributes">
-                    <attribute name="on_change">1</attribute>
-                </xpath>
-                <xpath expr="//field[@name='employee_id']" position="attributes">
-                    <attribute name="on_change">1</attribute>
-                </xpath>
-                <xpath expr="//field[@name='number_of_days_temp']" position="attributes">
-                    <attribute name="readonly">0</attribute>
+                <xpath expr="//sheet/group" position="replace">
+                    <group>
+                        <group>
+                            <field name="name" attrs="{'readonly':[('state','!=','draft'),('state','!=','confirm')], 'required': [('type', '=', 'add')]}"/>
+                            <field name="holiday_status_id" context="{'employee_id':employee_id}"/>
+                        </group>
+                            <group attrs="{'invisible': [('type', '=', 'add')]}">
+                                <field name="date_from" on_change="onchange_date_from(date_to, date_from)" attrs="{'required':[('type', '=', 'remove')]}" />
+                                <field name="date_to" on_change="onchange_date_to(date_to, date_from)"  attrs="{'required':[('type', '=', 'remove')]}" />
+                                <field name="working_hour"/>
+                            </group>
+                    </group>
+                    <group>
+                        <field name="holiday_type" on_change="onchange_type(holiday_type)" attrs="{'readonly':[('type', '=', 'remove'),('state','!=','draft')]}" string="Mode" groups="base.group_hr_user" context="{'employee_id':employee_id}" />
+                        <field name="employee_id" attrs="{'required':[('holiday_type','=','employee')],'invisible':[('holiday_type','=','category')]}" on_change="onchange_employee(employee_id)" groups="base.group_hr_user"/>
+                        <field name="category_id" attrs="{'required':[('holiday_type','=','category')], 'readonly': [('type', '=', 'remove'),('state','!=','draft'), ('state','!=','confirm')], 'invisible':[('holiday_type','=','employee')]}"/>
+                        <field name="department_id" attrs="{'readonly':['|', ('type','=','add'),('holiday_type','=','category')],'invisible':[('holiday_type','=','category')]}" groups="base.group_hr_user"/>
+                    </group>
                 </xpath>
             </field>
         </record>
+
+
+        <record id="view_form_holidays" model="ir.ui.view">
+            <field name="name">view.working.hour</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.view_holiday"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='number_of_days']" position="replace">
+                    <field name="working_hour"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_form_holidays_simple" model="ir.ui.view">
+            <field name="name">view.working.hour.holiday.simple</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.view_holiday_simple"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='number_of_days']" position="replace">
+                    <field name="working_hour"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_form_holidays_simple" model="ir.ui.view">
+            <field name="name">view.working.hour.holiday.simple</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.view_holiday_allocation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='number_of_days']" position="replace">
+                    <field name="working_hour"/>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </openerp>
