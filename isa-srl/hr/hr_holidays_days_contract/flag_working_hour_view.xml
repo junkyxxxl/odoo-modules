@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="manage_working_hour_view" model="ir.ui.view">
+            <field name="name">manage working hour view</field>
+            <field name="model">hr.config.settings</field>
+            <field name="inherit_id" ref="hr.view_human_resources_configuration"/>
+            <field name="arch" type="xml">
+                <data>
+                     <xpath expr="//field[@name='module_hr_holidays']" position="before">
+                        <div>
+                            <field name="module_hr_holidays_working_hour"/>
+                            <label for="module_hr_holidays_working_hour"/>
+                        </div>
+                     </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</openerp>
