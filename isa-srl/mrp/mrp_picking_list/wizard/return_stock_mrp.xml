@@ -16,7 +16,9 @@
                                     <field name="product_uom_id"/>
                                     <field name="return_product_qty" string="Returned Quantity"/>
                                     <field name="lot_id" groups="stock.group_production_lot" domain="[('product_id','=?', product_id)]" context="{'product_id': product_id}"/>
+                                    <!--
                                     <field name="package_id" groups="stock.group_tracking_lot"/>
+                                    -->
                                     <field name="result_package_id" groups="stock.group_tracking_lot"/>
                                 </tree>
                             </field>
