@@ -16,6 +16,7 @@
                                 <field name="date_from" on_change="onchange_date_from(date_to, date_from)" attrs="{'required':[('type', '=', 'remove')]}" />
                                 <field name="date_to" on_change="onchange_date_to(date_to, date_from)"  attrs="{'required':[('type', '=', 'remove')]}" />
                                 <field name="working_hour"/>
+                                <field name="number_of_days_temp" invisible="1"></field>
                             </group>
                     </group>
                     <group>

@@ -27,6 +27,7 @@
 
     # always loaded
     'data': [
+        'refactor_working_hour_view.xml',
         'working_hour_view.xml',
     ],
     # only loaded in demonstration mode

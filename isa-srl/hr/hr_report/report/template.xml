@@ -7,6 +7,7 @@
                 <t t-set="data_report_header_spacing" t-value="9"/>
                 <t t-set="data_report_dpi" t-value="110"/>
                 <t t-foreach="docs" t-as="o"/>
+
                 <t t-if="o and 'company_id' in o">
                     <t t-set="company" t-value="o.company_id"></t>
                 </t>
@@ -43,7 +44,17 @@
 
                         <div class="container-fluid">
                                 <div class="row">
-                                    <div class="col-xs-3"></div>
+                                    <div class="col-xs-3">
+
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <h4 style="font-weight: bold" align="center">Configurazione</h4>
+                                            </thead>
+                                            <td class="warning">
+                                                <t t-esc="info"/>
+                                            </td>
+                                        </table>
+                                    </div>
                                     <div class="col-xs-3"></div>
                                     <div class="col-xs-3"></div>
                                     <div class="col-xs-3">
@@ -69,8 +80,7 @@
                                         </table>
                                     </div>
                                 </div>
-                            </div>
-
+                        </div>
                         <div>
                             <t t-foreach="list_employee" t-as="e">
                                 <div>
@@ -79,7 +89,7 @@
                                             <div class="c23">
                                                 <table class="table table-bordered">
                                                     <thead>
-                                                        <h4 style="font-weight: bold"> <t t-esc="e.name_related"></t></h4>
+                                                        <h4 style="font-weight: bold"> <span t-field="e.name_related"></span></h4>
                                                         <br/>
                                                     </thead>
 
