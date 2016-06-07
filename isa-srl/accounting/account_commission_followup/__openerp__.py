@@ -28,7 +28,8 @@
     'data': ['views/res.partner.xml',
              'security/commission_security.xml',
              'security/ir.model.access.csv',
-             'security/ir.rule.csv'
+             'security/ir.rule.csv',
+             'security/ir.ui.menu.csv'
              ],
     'auto_install': True,
 }
