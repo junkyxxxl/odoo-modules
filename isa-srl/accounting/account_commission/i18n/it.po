@@ -492,6 +492,16 @@ msgid "Salesagent Commission Lines"
 msgstr "Linee di Provvigione Agente"
 
 #. module: account_commission
+#: view:account.commission.line:account_commission.view_account_commission_line_tree
+msgid "Total untaxed"
+msgstr "Totale base imponibile"
+
+#. module: account_commission
+#: view:account.commission.line:account_commission.view_account_commission_line_tree
+msgid "Total amount commission"
+msgstr "Totale importo provvigione"
+
+#. module: account_commission
 #: model:ir.actions.act_window,name:account_commission.action_account_commission
 #: model:ir.ui.menu,name:account_commission.menu_action_account_commission
 #: model:ir.ui.menu,name:account_commission.menu_salesagent_action_account_commission

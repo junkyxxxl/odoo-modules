@@ -13,8 +13,8 @@
                     <field name="invoice_src_id"/>
                     <field name="partner_id"/>                    
                     <field name="invoice_date"/>                    
-                    <field name="base_untaxed"/>
-                    <field name="amount_commission"/>
+                    <field name="base_untaxed" sum="Total untaxed"/>
+                    <field name="amount_commission" sum="Total amount commission"/>
                     <field name="state"/>
                 </tree>
             </field>

@@ -1,0 +1,2 @@
+id,name,model_id:id,groups:id,active,domain_force,perm_read,perm_write,perm_create,perm_unlink
+invoice_analysis_comp_rule_only_user,invoice.analysis.comp.rule.only.user,account.model_account_invoice_report,account_commission.group_salesagent_invoice,True,"[('user_id','=',user.id)]",1,0,0,0

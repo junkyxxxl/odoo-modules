@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_commission_followup_followup,access.account.commission.followup.followup,account_followup.model_account_followup_followup,account_commission.group_salesagent_invoice,1,0,0,0
+access_account_commission_followup_group_salesagent,access.account.commission.followup.group.salesagent,account_followup.model_account_followup_stat_by_partner,account_commission.group_salesagent_invoice,1,0,0,0
+access_account_commission_followup_line,access.account.commission.followup.line,account_followup.model_account_followup_followup_line,account_commission.group_salesagent_invoice,1,0,0,0
