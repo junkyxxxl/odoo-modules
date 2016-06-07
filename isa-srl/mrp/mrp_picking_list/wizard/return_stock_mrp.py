@@ -1,15 +1,6 @@
 # -*- coding: utf-8 -*-
 from openerp import models, fields, api, osv
-import logging
-from openerp.tools.translate import _
 import openerp.addons.decimal_precision as dp
-from openerp.exceptions import ValidationError, Warning
-from datetime import datetime
-from openerp import workflow
-import operator
-import itertools
-
-_logger = logging.getLogger(__name__)
 
 class return_stock_lines(models.TransientModel):
     _name = 'return.stock.lines'
@@ -41,24 +32,6 @@ class return_stock_lines(models.TransientModel):
                     'domain': {'product_id':[('id','in',product_ids)],
                                 },
                 }
-
-    '''
-    @api.onchange('return_product_qty')
-    def check_return_product_qty(self):
-        t_group_by_product = {}
-
-        for return_line in self.return_lines:
-            if return_line.product_id.id not in t_group_by_product:
-                t_value = {return_line.product_id.id: return_line.return_product_qty}
-                t_group_by_product.update(t_value)
-            else:
-                old_qty = t_group_by_product.get(return_line.product_id.id)
-                t_value = {return_line.product_id.id: return_line.return_product_qty + old_qty}
-                t_group_by_product.update(t_value)
-
-        if self.return_product_qty > t_group_by_product[self.product_id]:
-            raise Warning(_('Attenzione: quantità da restituire maggiore di quella presente.'))
-    '''
 
 
 class return_stock_mrp(models.TransientModel):
@@ -97,7 +70,7 @@ class return_stock_mrp(models.TransientModel):
                         stock_quant.lot_id,
                         stock_quant.package_id
                         ''')
-        self.env.cr.execute(sql, (mrp_production_obj.distinct_picking_id.id,mrp_production_obj.location_src_id.id))
+        self.env.cr.execute(sql, (mrp_production_obj.distinct_picking_id.id, mrp_production_obj.location_src_id.id))
         queryResult = self.env.cr.dictfetchall()
 
         return queryResult
@@ -151,7 +124,7 @@ class return_stock_mrp(models.TransientModel):
                     items_value.append((0, 0, { 'product_id': return_line.product_id.id,
                                                 'product_uom_id': return_line.product_id.uom_id.id,
                                                 'lot_id': lot_id.id,
-                                                'package_id': package_id,
+                                                #'package_id': package_id,
                                                 'result_package_id': result_package_id,
                                                 'sourceloc_id': mrp_production_obj.location_src_id.id,
                                                 'destinationloc_id': mrp_production_obj.location_tmp_id.id,
@@ -179,8 +152,8 @@ class return_stock_mrp(models.TransientModel):
                     items_value.append((0, 0, { 'product_id': return_line.product_id.id,
                                                 'product_uom_id': return_line.product_id.uom_id.id,
                                                 'lot_id': lot_id.id,
-                                                'package_id': package_id,
-                                                'result_package_id': result_package_id,
+                                                #'package_id': package_id,
+                                                #'result_package_id': result_package_id,
                                                 'sourceloc_id': mrp_production_obj.location_src_id.id,
                                                 'destinationloc_id': scrap_location_id.id,
                                                 'quantity': (return_line.product_qty - return_line.return_product_qty)/return_line.product_id.uom_mrp_coeff if return_line.product_id.uom_mrp_id else return_line.product_qty - return_line.return_product_qty,

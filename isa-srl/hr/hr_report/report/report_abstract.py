@@ -66,9 +66,8 @@ class ReportTrialBalance(models.AbstractModel):
                     res.append(0.0)
                 day = (first.day + 1).__str__()
                 if day != str(32):
-                    print day
                     first = datetime.datetime.strptime(str(data['form']['year']) + '-' + m + '-' + day, '%Y-%m-%d')
-            for cont2 in range(today.day.__int__(), len_month.__len__() + 1):
+            for cont2 in range(today.day.__int__(), len_month.__len__()):
                 res.append(0.0)
             return res
         else:
@@ -104,7 +103,7 @@ class ReportTrialBalance(models.AbstractModel):
                 a = (first.day + 1).__str__()
                 if a != str(32):
                     first = datetime.datetime.strptime(str(data['form']['year']) + '-' + m + '-' + a, '%Y-%m-%d')
-            for cont2 in range(today.day.__int__(), len_month.__len__() + 1):
+            for cont2 in range(today.day.__int__(), len_month.__len__()):
                 res.append(0.0)
             return res
         else:
@@ -152,11 +151,14 @@ class ReportTrialBalance(models.AbstractModel):
                 test.update({dayofweek: h.hour_to - h.hour_from})
         return test
 
+
+    def get_working_hour(self,hours,day, number_of_days):
+        return hours.get(str(day))*number_of_days
+
     '''Ritorna una lista delle ore del mese lavorate per chi ha un solo contratto'''
-    def get_work_days(self,hours,data,e):
+    def get_work_days(self,hours,data,e, type):
         today = datetime.datetime.today()
         m = today.month.__str__()
-        config = self.env['hr.config.settings'].search([], limit=1, order="id DESC")
 
         if today.month.__int__() == data['form']['month'] and today.year.__int__()==data['form']['year']:
             first = datetime.datetime.strptime(str(data['form']['year'])+'-'+m+'-1','%Y-%m-%d')
@@ -169,9 +171,9 @@ class ReportTrialBalance(models.AbstractModel):
                     else:
                         start = datetime.datetime.strptime((self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).date_from).split(" ")[0], '%Y-%m-%d')
                         end = datetime.datetime.strptime((self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).date_to).split(" ")[0], '%Y-%m-%d')
-                        if not config.manage_working_hour:
+                        if not type:
                             res.append(hours.get(str(first.weekday())) -
-                                   (float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp))/
+                                   (self.get_working_hour(hours,first.weekday(),float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp)))/
                                    float(self.number_of_days(start,end,data)))
                         else:
                             res.append(hours.get(str(first.weekday())) -
@@ -183,7 +185,7 @@ class ReportTrialBalance(models.AbstractModel):
                 day = (first.day +1).__str__()
                 if day != str(32):
                     first = datetime.datetime.strptime(str(data['form']['year'])+'-'+m+'-'+day,'%Y-%m-%d')
-            for cont2 in range(today.day.__int__(),len_month.__len__()+1):
+            for cont2 in range(today.day.__int__(),len_month.__len__()):
                 res.append(0.0)
             return res
         else: #se il report non è del mese corrente
@@ -196,9 +198,10 @@ class ReportTrialBalance(models.AbstractModel):
                         res.append(hours.get(str(first.weekday())))
                     else:
                         if self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).date_from == self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).date_to:
-                            if not config.manage_working_hour:
+                            if not type:
                                 res.append(hours.get(str(first.weekday())) -
-                                       (float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp)))
+                                           (self.get_working_hour(hours, first.weekday(), float(
+                                               self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first,e))]).number_of_days_temp))))
                             else:
                                 res.append(hours.get(str(first.weekday())) -
                                            (float(self.env['hr.holidays'].search(
@@ -208,19 +211,24 @@ class ReportTrialBalance(models.AbstractModel):
                             end = datetime.datetime.strptime((self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).date_to).split(" ")[0],'%Y-%m-%d')
                             days = self.number_of_days(start,end,data)
                             if days !=0:
-                                if not config.manage_working_hour:
+                                if not type:
                                     res.append(hours.get(str(first.weekday())) -
-                                           (float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp))/
+                                               (self.get_working_hour(hours, first.weekday(), float(
+                                                   self.env['hr.holidays'].search([('id', '=',
+                                                                                    self.is_holiday(data, first,
+                                                                                                    e))]).number_of_days_temp)))/
                                            float(self.number_of_days(start,end,data)))
                                 else:
                                     res.append(hours.get(str(first.weekday())) -
                                                (float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).working_hour)) /
                                                float(self.number_of_days(start, end, data)))
                             else:
-                                if not config.manage_working_hour:
+                                if not type:
                                     res.append(hours.get(str(first.weekday())) -
-                                           (float(self.env['hr.holidays'].search(
-                                               [('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp)))
+                                               (self.get_working_hour(hours, first.weekday(), float(
+                                                   self.env['hr.holidays'].search([('id', '=',
+                                                                                    self.is_holiday(data, first,
+                                                                                                    e))]).number_of_days_temp))))
                                 else:
                                     res.append(hours.get(str(first.weekday())) -
                                                (float(self.env['hr.holidays'].search(
@@ -272,19 +280,22 @@ class ReportTrialBalance(models.AbstractModel):
             start = c.date_start
             ys,ms,ds = start.split("-")
             start = datetime.datetime.strptime(ys + '-' + ms + '-'+ds, '%Y-%m-%d')
-            end = c.date_end
-            ye,me,de = end.split("-")
-            end = datetime.datetime.strptime(ye + '-' + me + '-'+de, '%Y-%m-%d')
-            if target_date >= start:
-                if target_date <= end:
-                    return c.id #ritorno l'id della riga del contratto della settimana target
+            if not c.date_end:
+                end = c.date_end
+                ye,me,de = end.split("-")
+                end = datetime.datetime.strptime(ye + '-' + me + '-'+de, '%Y-%m-%d')
+                if target_date >= start:
+                    if target_date <= end:
+                        return c.id #ritorno l'id della riga del contratto della settimana target
+            else:
+                if target_date >= start:
+                        return c.id  # ritorno l'id della riga del contratto della settimana target
         return 0
 
     '''Ritorna una lista delle ore del mese lavorate per chi ha più di un contratto'''
-    def get_work_days_more_contract(self, data,e):
+    def get_work_days_more_contract(self, data,e, type):
         today = datetime.datetime.today()  # giorno attuale
         m = today.month.__str__()
-        config = self.env['hr.config.settings'].search([], limit=1, order="id DESC")
 
         if today.month.__int__() == data['form']['month'] and today.year.__int__()==data['form']['year']:  # se il report è del mese corrente
             first = datetime.datetime.strptime(str(data['form']['year']) + '-' + m + '-1', '%Y-%m-%d')  # recupero il primo giorno del mese
@@ -299,11 +310,12 @@ class ReportTrialBalance(models.AbstractModel):
                     else:
                         if self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).date_from == \
                                 self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).date_to:
-                            if not config.manage_working_hour:
+                            if not type:
 
                                 res.append(hours.get(str(first.weekday())) -
-                                       (float(self.env['hr.holidays'].search(
-                                           [('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp)))
+                                           (self.get_working_hour(hours, first.weekday(), float(
+                                               self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first,
+                                                                                                           e))]).number_of_days_temp))))
                             else:
                                 res.append(hours.get(str(first.weekday())) -
                                    (float(self.env['hr.holidays'].search(
@@ -314,11 +326,10 @@ class ReportTrialBalance(models.AbstractModel):
                             end = datetime.datetime.strptime((self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).date_to).split(" ")[0], '%Y-%m-%d')
                             days = self.number_of_days(start, end, data)
                             if days != 0:
-                                if not config.manage_working_hour:
+                                if not type:
 
                                     res.append(hours.get(str(first.weekday())) -
-                                           (float(self.env['hr.holidays'].search(
-                                               [('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp)) /
+                                           (self.get_working_hour(hours,first.weekday(),float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp)))/
                                            float(self.number_of_days(start, end, data)))
                                 else:
                                     res.append(hours.get(str(first.weekday())) -
@@ -326,10 +337,9 @@ class ReportTrialBalance(models.AbstractModel):
                                            [('id', '=', self.is_holiday(data, first, e))]).working_hour)) /
                                        float(self.number_of_days(start, end, data)))
                             else:
-                                if not config.manage_working_hour:
+                                if not type:
                                     res.append(hours.get(str(first.weekday())) -
-                                           (float(self.env['hr.holidays'].search(
-                                               [('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp)))
+                                           ((self.get_working_hour(hours,first.weekday(),float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp)))))
                                 else:
                                     res.append(hours.get(str(first.weekday())) -
                                                (float(self.env['hr.holidays'].search(
@@ -339,7 +349,7 @@ class ReportTrialBalance(models.AbstractModel):
                 a = (first.day + 1).__str__()
                 if a != str(32):
                     first = datetime.datetime.strptime(str(data['form']['year']) + '-' + m + '-' + a, '%Y-%m-%d')
-            for cont2 in range(today.day.__int__(), len_month.__len__() + 1):
+            for cont2 in range(today.day.__int__(), len_month.__len__()):
                 res.append(0.0)
             return res
         else:  # se il report non è del mese corrente
@@ -355,10 +365,9 @@ class ReportTrialBalance(models.AbstractModel):
                     else:
                         if self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).date_from == self.env[
                             'hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).date_to:
-                            if not config.manage_working_hour:
+                            if not type:
                                 res.append(hours.get(str(first.weekday())) -
-                                       (float(self.env['hr.holidays'].search(
-                                           [('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp)))
+                                           (self.get_working_hour(hours,first.weekday(),float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp))))
                             else:
                                 res.append(hours.get(str(first.weekday())) -
                                    (float(self.env['hr.holidays'].search(
@@ -368,10 +377,11 @@ class ReportTrialBalance(models.AbstractModel):
                             end = datetime.datetime.strptime((self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).date_to).split(" ")[0], '%Y-%m-%d')
                             days = self.number_of_days(start, end, data)
                             if days != 0:
-                                if not config.manage_working_hour:
+                                if not type:
 
                                     res.append(hours.get(str(first.weekday())) -
-                                           (float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp)) /
+                                               (self.get_working_hour(hours, first.weekday(), float(
+                                                   self.env['hr.holidays'].search([('id', '=',self.is_holiday(data, first,e))]).number_of_days_temp))) /
                                            float(self.number_of_days(start, end, data)))
 
                                 else:
@@ -379,9 +389,8 @@ class ReportTrialBalance(models.AbstractModel):
                                        (float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).working_hour)) /
                                        float(self.number_of_days(start, end, data)))
                             else:
-                                if not config.manage_working_hour:
-                                    res.append(hours.get(str(first.weekday())) -
-                                           (float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp)))
+                                if not type:
+                                    res.append(hours.get(str(first.weekday())) -(self.get_working_hour(hours,first.weekday(),float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).number_of_days_temp))))
                                 else:
                                     res.append(hours.get(str(first.weekday())) -
                                             (float(self.env['hr.holidays'].search([('id', '=', self.is_holiday(data, first, e))]).working_hour)))
@@ -466,15 +475,10 @@ class ReportTrialBalance(models.AbstractModel):
         return cent
 
     '''Sezione per il recupero dei permessi'''
-    def retrieve_holidays(self,data,e):
-        config = self.env['hr.config.settings'].search([], limit=1, order="id DESC")
-
+    def retrieve_holidays(self,data,e, type):
         first = datetime.datetime.strptime(str(data['form']['year']) + '-' + str(data['form']['month']) + '-1 00:00:00','%Y-%m-%d %H:%M:%S')
         end = datetime.datetime.strptime(str(data['form']['year']) + '-' + str(data['form']['month']) + '-' +str(self.lengthmonth(data['form']['month'],data['form']['year']).__len__())+' 23:59:00','%Y-%m-%d %H:%M:%S')
         holidays = self.env['hr.holidays'].search([('employee_id','=',e),('date_to','>=',str(first)),('date_to','<=',str(end))])
-        print holidays
-
-        # date_from>=first
 
         res = {}
         for h in holidays:
@@ -496,9 +500,9 @@ class ReportTrialBalance(models.AbstractModel):
                 start = datetime.datetime.strptime(holiday.date_from,'%Y-%m-%d %H:%M:%S')
                 end = datetime.datetime.strptime(holiday.date_to,'%Y-%m-%d %H:%M:%S')
                 if start.day != end.day:
-                    hour = self.set_hour(hour,start,end,holiday,data)
+                    hour = self.set_hour(hour,start,end,holiday,data, type)
                 else:
-                    if not config.manage_working_hour:
+                    if not type:
                         hour.__setitem__(start.day -1,holiday.number_of_days_temp)
                     else:
                         hour.__setitem__(start.day - 1, holiday.working_hour)
@@ -534,12 +538,11 @@ class ReportTrialBalance(models.AbstractModel):
         return sum
 
     '''Settaggio delle ore di permesso su più giorni'''
-    def set_hour(self,hour,start,end,holiday,data):
-        config = self.env['hr.config.settings'].search([], limit=1, order="id DESC")
+    def set_hour(self,hour,start,end,holiday,data, type):
         days = self.number_of_days(start, end,data)
         if days == 0:
             days = 1
-        if not config.manage_working_hour:
+        if not type:
             hour_for_day = holiday.number_of_days_temp/days
         else:
             hour_for_day = holiday.working_hour / days
@@ -599,6 +602,13 @@ class ReportTrialBalance(models.AbstractModel):
         real_works = {}
         list_holidays = {}
         list_overtime = {}
+        info = 'Permessi/Ferie espressi in giorni lavorativi. Presenze contrattuali, Normalizzate, Straordinari espressi in ore.'
+
+        type = False
+        if self.env['hr.config.settings'].fields_get().get('module_hr_holidays_working_hour'):
+            if self.env['hr.config.settings'].search([], limit=1, order="id DESC").module_hr_holidays_working_hour:
+                type = True
+                info = 'Permessi/Ferie, Presenze contrattuali, Presenze Normalizzate e Straordinari espressi in ore.'
 
         for e in selected_employee:
             employee = self.env['hr.employee'].search([('id','=',e)])
@@ -622,9 +632,9 @@ class ReportTrialBalance(models.AbstractModel):
             '''Presenze Normalizzate'''
             if len(contract.ids) == 1:
                 week_hour = self.get_week_hour(e)  # orario di lavoro dei dipendenti
-                list_hour = self.get_work_days(week_hour,data,e)
+                list_hour = self.get_work_days(week_hour,data,e,type)
             else:
-                list_hour = self.get_work_days_more_contract(data,e)
+                list_hour = self.get_work_days_more_contract(data,e, type)
             list_hour.append(self.get_total_hour(list_hour))
 
             for l in range(0,list_hour.__len__()):
@@ -644,7 +654,7 @@ class ReportTrialBalance(models.AbstractModel):
             real_works.update({e:real_hour})
 
             '''Recupero dei permessi'''
-            holidays = self.retrieve_holidays(data,e)
+            holidays = self.retrieve_holidays(data,e, type)
             list_holidays.update({e:holidays})
 
             '''Recupero Straordinari'''
@@ -678,6 +688,7 @@ class ReportTrialBalance(models.AbstractModel):
             'real_hour':real_works,
             'holidays':list_holidays,
             'overtime':list_overtime,
-            'works_contract': works_contract
+            'works_contract': works_contract,
+            'info':info
         }
         return self.env['report'].render('hr_report.print_attendance', docargs)

@@ -20,7 +20,7 @@
                     <field name="cancel_reason" states="cancel" />
                 </xpath>
                 <xpath expr="//tree/field[@name='price_subtotal']" position="after">
-                    <field name="invoiced" />
+                    <field name="invoiced_related" />
                 </xpath>
                 <xpath expr='//button[@name="cancel"]' position="before">
                     <button name="action_done" states="manual,progress" string="Completa" type="object" groups="base.group_user"/>

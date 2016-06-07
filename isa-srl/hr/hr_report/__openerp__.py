@@ -23,7 +23,7 @@
                 'hr',
                 'report',
                 'hr_overtime',
-                'hr_holidays_working_hour'],
+                'hr_holidays_days_contract'],
 
     # always loaded
     'data': [

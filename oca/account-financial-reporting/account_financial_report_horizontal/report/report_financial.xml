@@ -24,8 +24,8 @@
                             <tbody>
                                 <tr t-foreach="get_lines_function(data)" t-as="a">
                                     <t t-if="a['level'] != 0">
-                                        <t t-if="a.get('level') &gt; 3"><t t-set="style" t-value="'font-weight: normal;'"/></t>
-                                        <t t-if="not a.get('level') &gt; 3"><t t-set="style" t-value="'font-weight: bold;'"/></t>
+                                        <t t-if="a.get('level') &gt; 3"><t t-set="style" t-value="'font-weight: normal; font-size: x-small;'"/></t>
+                                        <t t-if="not a.get('level') &gt; 3"><t t-set="style" t-value="'font-weight: bold; font-size: x-small;'"/></t>
 
                                         <td>
                                             <span style="color: white;" t-esc="'..' * a.get('level', 0)"/>
@@ -45,7 +45,7 @@
                         </table>
                     </div>
                 </div>
-            </xpath>
+            </xpath>           
         </template>
     </data>
 </openerp>

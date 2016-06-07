@@ -26,6 +26,7 @@ class sale_order_line(orm.Model):
     _inherit = 'sale.order.line'
     _columns = {'exclude_from_print': fields.boolean('Exclude From Printings'),
                 'exclude_from_invoice': fields.boolean('Escludi dalla Fatturazione'),
+                'invoiced_related': fields.related('invoiced', type="boolean", string="Invoiced")
                 }
 
     _defaults = {'exclude_from_print': False,

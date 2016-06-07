@@ -9,8 +9,8 @@
                 <data>
                      <xpath expr="//field[@name='module_hr_holidays']" position="before">
                         <div>
-                            <field name="manage_working_hour"/>
-                            <label for="manage_working_hour"/>
+                            <field name="module_hr_holidays_working_hour"/>
+                            <label for="module_hr_holidays_working_hour"/>
                         </div>
                      </xpath>
                 </data>

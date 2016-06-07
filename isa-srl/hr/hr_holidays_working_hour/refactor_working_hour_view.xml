@@ -1,0 +1,13 @@
+<openerp>
+  <data noupdate="1">
+
+
+      <record id="holidays_precision_target" model="decimal.precision">
+            <field name="name">Hour holidays</field>
+            <field name="digits">2</field>
+      </record>
+
+      <function model="hr.holidays" name="_convert_day_to_hour"/>
+
+  </data>
+</openerp>

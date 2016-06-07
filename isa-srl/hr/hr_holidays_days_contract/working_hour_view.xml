@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_working_hour" model="ir.ui.view">
+            <field name="name">view.working.hour</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_new"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_from']" position="attributes">
+                    <attribute name="on_change">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_to']" position="attributes">
+                    <attribute name="on_change">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='employee_id']" position="attributes">
+                    <attribute name="on_change">1</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
