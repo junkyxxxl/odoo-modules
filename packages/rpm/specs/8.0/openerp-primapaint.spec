@@ -99,7 +99,7 @@ BuildRequires:  python-babel
 BuildRequires:  python-setuptools
 BuildRequires:  python2-devel
 
-Summary: Modules for Odoo for Primapaint.
+Summary: Modules for Odoo for primapaint.
 Group: System Environment/Daemons
 %description
 Modules for Odoo for Primapaint.
@@ -110,7 +110,7 @@ Summary: Modules for Odoo for customer Primapaint Srl.
 Modules for Odoo for customer Primapaint Srl.
 
 %prep
-%setup -q -n src
+%setup -q -n odoo-modules
 
 %install
 
@@ -124,10 +124,26 @@ install -d %{buildroot}%{python_sitelib}/openerp/addons/
 install -d %{buildroot}%{python_sitelib}/openerp/addons/isa
 
 #Isa srl
-cp -r isa-srl/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/accounting/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/base_isa/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/hr/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/l10n_it/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/marketing/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/mrp/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/partner-contact/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/product/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/project/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/purchase/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/sales/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/stock/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/users_multi_signature/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/web/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+cp -r isa-srl/website/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+
+# Customer
 cp -r customers/primapaint/* %{buildroot}%{python_sitelib}/openerp/addons/isa
 
-# Third party
+# Oca
 cp -r oca/account-financial-reporting/* %{buildroot}%{python_sitelib}/openerp/addons/isa
 cp -r oca/account-financial-tools/* %{buildroot}%{python_sitelib}/openerp/addons/isa
 cp -r oca/account-invoicing/* %{buildroot}%{python_sitelib}/openerp/addons/isa
@@ -148,10 +164,10 @@ cp -r oca/purchase-workflow/* %{buildroot}%{python_sitelib}/openerp/addons/isa
 cp -r oca/sale-workflow/* %{buildroot}%{python_sitelib}/openerp/addons/isa
 cp -r oca/product/* %{buildroot}%{python_sitelib}/openerp/addons/isa
 
+#Third part
 cp -r third-party/* %{buildroot}%{python_sitelib}/openerp/addons/isa
 cp -r third-party/website-sale-addons/* %{buildroot}%{python_sitelib}/openerp/addons/isa
 
-cp -r odoo-extra/* %{buildroot}%{python_sitelib}/openerp/addons/isa
 cp -r aeroo/* %{buildroot}%{python_sitelib}/openerp/addons/isa
 
 
