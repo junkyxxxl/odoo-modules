@@ -9,7 +9,6 @@ class stock_picking(models.Model):
     def action_invoice_create(self, journal_id, group=False, type='out_invoice'):
         invoice_id = super(stock_picking, self).action_invoice_create(journal_id, group, type)
         invoice_obj = self.env['account.invoice'].browse(invoice_id)
-        
         sale_order_line_ids = []
         
         for picking in self:
@@ -23,6 +22,7 @@ class stock_picking(models.Model):
                     #TODO da verificare con fatture multiple sullo stesso picking
                     product_tmpl_id = sale_order_line.product_id.product_tmpl_id.id
                     kit_obj = self.env['mrp.bom'].search([('product_tmpl_id', '=', product_tmpl_id)])
+
                     #Controllo se il prodotto associato alla sale_order_line è un kit: se si,
                     #prendo le linee di fattura relative alla sale_order_line e:
                     #setto sulla prima il product_id = sale_order_line.product_id (write)
@@ -40,6 +40,7 @@ class stock_picking(models.Model):
                         sale_order_line.invoice_lines[0].discount1 = sale_order_line.discount1
                         sale_order_line.invoice_lines[0].discount2 = sale_order_line.discount2
                         sale_order_line.invoice_lines[0].discount3 = sale_order_line.discount3
+
                         #Controllo se nel kit è stato settato il conto
                         property_account = sale_order_line.product_id.product_tmpl_id.property_account_income
                         if property_account:
@@ -48,6 +49,11 @@ class stock_picking(models.Model):
                         while(i < number_of_invoices):
                            sale_order_line.invoice_lines[i].unlink()
                            i = i+1
+
+                #Richiamo il metodo button_reset_taxes, in modo tale che aggiorna in maniera corretta
+                #il totale della fattura
+                invoice_obj.button_reset_taxes()
+
         return invoice_id
 
 

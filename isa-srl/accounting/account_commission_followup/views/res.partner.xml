@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+        <record id="view_partner_inherit_followup_form" model="ir.ui.view">
+            <field name="name">view.partner.inherit.followup.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account_followup.view_partner_inherit_followup_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Payment Follow-up']" position="attributes">
+				   <attribute name="groups">account.group_account_invoice,account_commission.group_salesagent_invoice</attribute>
+                </xpath>
+                <xpath expr="//button[@name='do_button_print']" position="attributes">
+                   <attribute name="groups">account.group_account_user</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+
+  </data>
+</openerp>
