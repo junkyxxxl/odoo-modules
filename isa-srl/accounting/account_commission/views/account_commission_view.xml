@@ -67,7 +67,8 @@
                         <filter string="Salesagent" domain="[]" context="{'group_by':'salesagent_id'}"/>
                         <filter string="Source Invoice" domain="[]" context="{'group_by':'invoice_src_id'}"/>
                         <filter string="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
-                        <filter string="State" domain="[]" context="{'group_by':'state'}"/>                        
+                        <filter string="State" domain="[]" context="{'group_by':'state'}"/>    
+                        <filter string="Mese" domain="[]" context="{'group_by':'invoice_date:month'}"/>	                    
                     </group>
                </search>
             </field>
