@@ -45,19 +45,17 @@
                                     <dd><b><t t-esc="partner.name"/></b><br/>
                                         <t t-esc="partner.street"/><br/>
                                         <t t-esc="partner.zip"/> <t t-esc="partner.city"/> 
+                                        	
+	                                    <t t-if="o.delivery_address_id">
+											<br/><b>Spedizione 1<br/>
+											<t t-esc="o.delivery_address_id.name"/></b><br/>
+                                            <t t-esc="o.delivery_address_id.street"/><br/>
+                                            <t t-esc="o.delivery_address_id.zip"/> <t t-esc="o.delivery_address_id.city"/>
+	                                    </t>                                        	
+                                        	
                                     </dd>
                                 </dl>
-                                <p>
-                                    <t t-if="o.delivery_address_id">
-                                        <dl class="dl-horizontal">
-                                            <dt>Spedizione 1</dt>
-                                            <dd><t t-esc="o.delivery_address_id.name"/><br/>
-                                                <t t-esc="o.delivery_address_id.street"/><br/>
-                                                <t t-esc="o.delivery_address_id.zip"/> <t t-esc="o.delivery_address_id.city"/>
-                                            </dd>
-                                        </dl>
-                                    </t>
-                                </p>
+
                             </div>
                         </div>
                     </div>
