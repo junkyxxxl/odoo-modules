@@ -46,23 +46,20 @@
                             <div class="panel-body">
                                 <dl class="dl-horizontal">
                                     <dt>Spett.le</dt>
-                                    <t t-set="partner" t-value="o.partner_id" />
+                                    <t t-set="partner" t-value="o.partner_id"/>
                                     <dd><b><t t-esc="partner.name"/></b><br/>
                                     <t t-esc="partner.street"/><br/>
                                     <t t-esc="partner.zip"/> <t t-esc="partner.city"/>
-                                </dd>
-                            </dl>
-                            <p>
-                                <t t-if="order and order.partner_shipping_id != o.partner_id">
-                                    <dl class="dl-horizontal">
-                                        <dt>Luogo destinazione</dt>
-                                        <dd><t t-esc="order.partner_shipping_id.name" /><br/>
+
+                                    <t t-if="order and order.partner_shipping_id != o.partner_id">
+                                        <br/><b>Luogo destinazione<br/>
+                                        <t t-esc="order.partner_shipping_id.name"/></b><br/>
                                         <t t-esc="order.partner_shipping_id.street"/><br/>
                                         <t t-esc="order.partner_shipping_id.zip"/> <t t-esc="order.partner_shipping_id.city"/>
-                                    </dd>
-                                </dl>
-                            </t>
-                        </p>
+                                    </t>
+
+                                </dd>
+                            </dl>
                     </div>
                 </div>
             </div>
