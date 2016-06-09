@@ -124,16 +124,16 @@ install -d %{buildroot}%{python_sitelib}/openerp/addons/
 install -d %{buildroot}%{python_sitelib}/openerp/addons/isa
 
 #Isa srl
-find PycharmProjects/odoo-modules/isa-srl -maxdepth 2 -mindepth 2 -type d -exec cp -R --backup=numbered -t %{buildroot}%{python_sitelib}/openerp/addons/isa {} +
+find isa-srl -maxdepth 2 -mindepth 2 -type d -exec cp -R --backup=numbered -t %{buildroot}%{python_sitelib}/openerp/addons/isa {} +
 
 # All Customer
-find PycharmProjects/odoo-modules/customers -maxdepth 2 -mindepth 2 -type d -exec cp -R --backup=numbered -t %{buildroot}%{python_sitelib}/openerp/addons/isa {} +
+find customers -maxdepth 2 -mindepth 2 -type d -exec cp -R --backup=numbered -t %{buildroot}%{python_sitelib}/openerp/addons/isa {} +
 
 # Oca
-find PycharmProjects/odoo-modules/oca -maxdepth 2 -mindepth 2 -type d -exec cp -R --backup=numbered -t %{buildroot}%{python_sitelib}/openerp/addons/isa {} +
+find oca -maxdepth 2 -mindepth 2 -type d -exec cp -R --backup=numbered -t %{buildroot}%{python_sitelib}/openerp/addons/isa {} +
 
 #Third part
-find PycharmProjects/odoo-modules/third-party -maxdepth 1 -mindepth 1 -type d -exec cp -R --backup=numbered -t %{buildroot}%{python_sitelib}/openerp/addons/isa {} +
+find third-party -maxdepth 1 -mindepth 1 -type d -exec cp -R --backup=numbered -t %{buildroot}%{python_sitelib}/openerp/addons/isa {} +
 
 #Aeroo report
 cp -r aeroo/* %{buildroot}%{python_sitelib}/openerp/addons/isa
