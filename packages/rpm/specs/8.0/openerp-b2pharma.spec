@@ -124,21 +124,7 @@ install -d %{buildroot}%{python_sitelib}/openerp/addons/
 install -d %{buildroot}%{python_sitelib}/openerp/addons/isa
 
 #Isa srl
-cp -r isa-srl/accounting/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/base_isa/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/hr/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/l10n_it/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/marketing/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/mrp/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/partner-contact/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/product/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/project/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/purchase/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/sales/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/stock/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/users_multi_signature/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/web/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/website/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+find isa-srl -maxdepth 2 -mindepth 2 -type d -exec cp -R --backup=numbered -t %{buildroot}%{python_sitelib}/openerp/addons/isa {} +
 
 # Customer
 cp -r customers/b2pharma/* %{buildroot}%{python_sitelib}/openerp/addons/isa

@@ -124,50 +124,18 @@ install -d %{buildroot}%{python_sitelib}/openerp/addons/
 install -d %{buildroot}%{python_sitelib}/openerp/addons/isa
 
 #Isa srl
-cp -r isa-srl/accounting/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/base_isa/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/hr/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/l10n_it/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/marketing/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/mrp/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/partner-contact/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/product/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/project/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/purchase/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/sales/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/stock/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/users_multi_signature/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/web/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r isa-srl/website/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+find isa-srl -maxdepth 2 -mindepth 2 -type d -exec cp -R --backup=numbered -t %{buildroot}%{python_sitelib}/openerp/addons/isa {} +
 
 # Customer
 cp -r customers/idi/* %{buildroot}%{python_sitelib}/openerp/addons/isa
 
 # Oca
-cp -r oca/account-financial-reporting/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/account-financial-tools/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/account-invoicing/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/account-payment/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/connector-telephony/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/bank-payment/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/community_data_files/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/l10n-italy/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/reporting-engine/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/server-tools/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/stock-logistics-warehouse/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/webkit-tools/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/knowledge/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/web/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/partner-contact/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/procurement/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/purchase-workflow/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/sale-workflow/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r oca/product/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+find oca -maxdepth 2 -mindepth 2 -type d -exec cp -R --backup=numbered -t %{buildroot}%{python_sitelib}/openerp/addons/isa {} +
 
 #Third part
-cp -r third-party/* %{buildroot}%{python_sitelib}/openerp/addons/isa
-cp -r third-party/website-sale-addons/* %{buildroot}%{python_sitelib}/openerp/addons/isa
+find third-party -maxdepth 1 -mindepth 1 -type d -exec cp -R --backup=numbered -t %{buildroot}%{python_sitelib}/openerp/addons/isa {} +
 
+#Aeroo report
 cp -r aeroo/* %{buildroot}%{python_sitelib}/openerp/addons/isa
 
 
