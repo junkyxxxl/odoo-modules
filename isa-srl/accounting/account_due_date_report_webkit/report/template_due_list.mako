@@ -82,8 +82,8 @@
                         <div class="act_as_thead">
                             <div class="act_as_row labels">
                                 <div class="act_as_cell first_column" style="width: 70px;">${_('DATA SCADENZA')}</div>                               
-                                <div class="act_as_cell" style="width: 90px;">${_('DOCUMENTO')}</div>
-                                <div class="act_as_cell" style="width: 70px;">${_('DATA DOCUMENTO')}</div>
+                                <div class="act_as_cell" style="width: 90px;">${_('FATTURA')}</div>                                
+                                <div class="act_as_cell" style="width: 70px;">${_('DATA FATTURA')}</div>
                                 <div class="act_as_cell" style="width: 100px;">${_('TOTALE DOCUMENTO')}</div>
                                 <div class="act_as_cell" style="width: 70px;">
                                 	%if get_mode():
@@ -125,12 +125,14 @@
 			                                <div class="act_as_cell" style="width: 70px; text-align: right; padding-right: 20px;">
 												%if get_maturity(line.date_maturity,data["form"]["date_maturity"],0,0):
 													%if line.reconcile_ref:
-														<% t = get_residual(line.reconcile_ref) %>
+														<% t = get_residual(line.reconcile_ref,line) %>
 													%else:
 														<% t = line.debit-line.credit %>
 													%endif
 													<div>${t}</div>
-													<% totalscaduto = totalscaduto + t %>
+													%if t > 0:
+														<% totalscaduto = totalscaduto + t %>
+													%endif
 												%else:
 													<br />
 												%endif
@@ -138,12 +140,14 @@
 			                                <div class="act_as_cell" style="width: 70px; text-align: right; padding-right: 20px;">
 												%if get_maturity(line.date_maturity,data["form"]["date_maturity"],0,30):
 													%if line.reconcile_ref:
-														<% t = get_residual(line.reconcile_ref) %>
+														<% t = get_residual(line.reconcile_ref,line) %>
 													%else:
 														<% t = line.debit-line.credit %>
 													%endif
 													<div>${t}</div>
-													<% total30 = total30 + t %>
+													%if t > 0:
+														<% total30 = total30 + t %>
+													%endif
 												%else:
 													<br />
 												%endif
@@ -151,12 +155,14 @@
 			                                <div class="act_as_cell" style="width: 70px; text-align: right; padding-right: 20px;">
 												%if get_maturity(line.date_maturity,data["form"]["date_maturity"],30,60):
 													%if line.reconcile_ref:
-														<% t = get_residual(line.reconcile_ref) %>
+														<% t = get_residual(line.reconcile_ref,line) %>
 													%else:
 														<% t = line.debit-line.credit %>
 													%endif
 													<div>${t}</div>
-													<% total60 = total60 + t %>
+													%if t > 0:
+														<% total60 = total60 + t %>
+													%endif
 												%else:
 													<br />
 												%endif
@@ -164,12 +170,14 @@
 			                                <div class="act_as_cell" style="width: 70px;  text-align: right; padding-right: 20px;">
 												%if get_maturity(line.date_maturity,data["form"]["date_maturity"],60,90):
 													%if line.reconcile_ref:
-														<% t = get_residual(line.reconcile_ref) %>
+														<% t = get_residual(line.reconcile_ref,line) %>
 													%else:
 														<% t = line.debit-line.credit %>
 													%endif
 													<div>${t}</div>
-													<% total90 = total90 + t %>
+													%if t > 0:
+														<% total90 = total90 + t %>
+													%endif
 												%else:
 													<br />
 												%endif
@@ -177,12 +185,14 @@
 			                                <div class="act_as_cell" style="width: 70px;  text-align: right; padding-right: 20px;">
 												%if get_maturity(line.date_maturity,data["form"]["date_maturity"],90,120):
 													%if line.reconcile_ref:
-														<% t = get_residual(line.reconcile_ref) %>
+														<% t = get_residual(line.reconcile_ref,line) %>
 													%else:
 														<% t = line.debit-line.credit %>
 													%endif
 													<div>${t}</div>
-													<% total120 = total120 + t %>
+													%if t > 0:
+														<% total120 = total120 + t %>
+													%endif
 												%else:
 													<br />
 												%endif
@@ -190,12 +200,14 @@
 			                                <div class="act_as_cell" style="width: 70px;  text-align: right; padding-right: 20px;">
 												%if get_maturity(line.date_maturity,data["form"]["date_maturity"],120,150):
 													%if line.reconcile_ref:
-														<% t = get_residual(line.reconcile_ref) %>
+														<% t = get_residual(line.reconcile_ref,line) %>
 													%else:
 														<% t = line.debit-line.credit %>
 													%endif
 													<div>${t}</div>
-													<% total150 = total150 + t %>
+													%if t > 0:
+														<% total150 = total150 + t %>
+													%endif
 												%else:
 													<br />
 												%endif
@@ -203,12 +215,14 @@
 			                                <div class="act_as_cell" style="width: 70px;  text-align: right; padding-right: 20px;">
 												%if get_maturity(line.date_maturity,data["form"]["date_maturity"],150,180):
 													%if line.reconcile_ref:
-														<% t = get_residual(line.reconcile_ref) %>
+														<% t = get_residual(line.reconcile_ref,line) %>
 													%else:
 														<% t = line.debit-line.credit %>
 													%endif
 													<div>${t}</div>
-													<% total180 = total180 + t %>
+													%if t > 0:
+														<% total180 = total180 + t %>
+													%endif
 												%else:
 													<br />
 												%endif
@@ -216,12 +230,14 @@
 			                                <div class="act_as_cell" style="width: 70px;  text-align: right; padding-right: 20px;">
 												%if get_maturity(line.date_maturity,data["form"]["date_maturity"],180,0):
 													%if line.reconcile_ref:
-														<% t = get_residual(line.reconcile_ref) %>
+														<% t = get_residual(line.reconcile_ref,line) %>
 													%else:
 														<% t = line.debit-line.credit %>
 													%endif
 													<div>${t}</div>
-													<% totaloltre = totaloltre + t %>
+													%if t > 0:
+														<% totaloltre = totaloltre + t %>
+													%endif
 												%else:
 													<br />
 												%endif
