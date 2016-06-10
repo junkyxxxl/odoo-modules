@@ -24,6 +24,9 @@
             <xpath expr="//tree/field[@name='payment_term_id']" position="after" >
                 <field name="payment_type_move_line" readonly="1"/>
             </xpath>
+            <xpath expr="//tree/field[@name='partner_ref']" position="after">
+				<field name="name" readonly="1"/>            	
+            </xpath>
         </field>
     </record>
 
