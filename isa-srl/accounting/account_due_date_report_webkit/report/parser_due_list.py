@@ -19,11 +19,11 @@
 #
 ##############################################################################
 import copy
+import math
 from openerp.report import report_sxw
 from openerp.tools.translate import _
 import os
 from datetime import datetime, date, timedelta
-from openerp.osv import orm, fields
 
 from openerp.addons.account_financial_report_webkit.report.common_partner_reports import CommonPartnersReportHeaderWebkit
 from openerp.addons.account_financial_report_webkit.report.webkit_parser_header_fix import HeaderFooterTextWebKitParser
@@ -39,16 +39,25 @@ class account_due_list_report_ext_isa(report_sxw.rml_parse, CommonPartnersReport
         self.context = context
         super(account_due_list_report_ext_isa, self).__init__(cursor, uid, name, context)
 
+        self.target_move = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).target_move
         company = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).company_id
         self.mode = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).mode
         self.print_customers = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).print_customers
-        self.print_suppliers = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).print_suppliers
-        self.type = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).type
-        self.all_partner = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).all_partner
+        self.print_suppliers = self.pool.get('account.due.list.report').browse(self.cr, self.uid, self.parents['active_id']).print_suppliers        
         self.filters = [('date_maturity', '!=', False),
                         ('reconcile_id', '=', False),
                         ('company_id','=',company.id),
                         ('date_maturity','!=',None)]
+        
+        self.inner_filters = [('date_maturity', '!=', False),
+                            ('reconcile_id', '!=', False),
+                            ('company_id','=',company.id),
+                            ('date_maturity','!=',None)]
+        
+        if self.target_move == 'posted':
+            self.filters.append(('move_id.state','=','posted'))
+            self.inner_filters.append(('move_id.state','=','posted'))
+        
         self.partners = []
         header_report_name = ' - '.join((_('SCADENZARIO'), company.name, company.currency_id.name))
 
@@ -136,30 +145,210 @@ class account_due_list_report_ext_isa(report_sxw.rml_parse, CommonPartnersReport
         domain = ['|', '&', ('account_id.type', '=', 'payable'), ('debit', '=', 0), '&', ('account_id.type', '=', 'receivable'), ('credit', '=', 0)]
         for i in domain:
             self.filters.append(i)
+            self.inner_filters.append(i)
     
     def _get_move_line(self):
         move_lines = []
         hrs = self.pool.get('account.move.line')
-
-        test = self.partners
-        if self.all_partner or len(self.partners)==0:
-            test = self.pool.get('res.partner').search(self.cr, self.uid,[('id', '!=', None)])
-
-        for partner in test:
-            if self.type == 'debit':
-                partner = self.pool.get('res.partner').search(self.cr, self.uid, [('customer','=',True),('id','=',partner)])
+        
+        if self.print_customers or self.print_suppliers:
+            if self.print_customers:
+                partner = self.pool.get('res.partner').search(self.cr, self.uid, [('customer','=',True)])
                 for id in partner:
-                    lines = self.pool.get('account.move.line').search(self.cr,self.uid,[('partner_id', '=', id),('account_id.type','=','receivable'),('date_maturity','!=',False)])
-                    move_lines.append(hrs.browse(self.cr, self.uid, lines))
-                    if len(move_lines[-1].ids)>0:
-                        move_lines[-1].partner=move_lines[-1][0].partner_id
-            if self.type == 'credit':
-                partner = self.pool.get('res.partner').search(self.cr, self.uid, [('supplier','=',True),('id','=',partner)])
+                    t_filter = copy.deepcopy(self.filters)                
+                    t_filter.append(('partner_id','=',id))
+                    t_inner_filter = copy.deepcopy(self.inner_filters)                    
+                    t_inner_filter.append(('partner_id','=',id))
+                    hrs_list = hrs.search(self.cr, self.uid, t_filter,order='date_maturity')
+
+                    if self.target_move == 'posted':
+                        hrs_list1 = hrs.search(self.cr, self.uid, t_inner_filter, order='date_maturity')
+                        self.cr.execute('''
+                            select 
+                                lin1.id,
+                                mov1.state,
+                                lin2.id,
+                                lin2.state
+                            from 
+                                account_move_line AS lin1,
+                                account_move_line AS lin2,
+                                account_move AS mov1,
+                                account_move AS mov2
+                            where
+                                lin1.move_id = mov1.id AND
+                                lin2.move_id = mov2.id AND
+                                lin1.id != lin2.id AND
+                                lin1.id IN %s AND
+                                lin1.reconcile_id = lin2.reconcile_id AND    
+                                mov1.state = 'posted' AND
+                                mov2.state != 'posted'                                     
+                        ''',(tuple(hrs_list1),))
+                        
+                        qry_res = self.cr.fetchall()
+                        if qry_res:
+                            for record in qry_res:
+                                hrs_list.append(record[0])                      
+                    
+                    move_lines.append(hrs.browse(self.cr, self.uid, hrs_list))                
+                    if len(move_lines[-1].ids)>0:  
+                        move_lines[-1].partner=move_lines[-1][0].partner_id      
+                                            
+                                                              
+            if self.print_suppliers:
+                partner = self.pool.get('res.partner').search(self.cr, self.uid, [('supplier','=',True)])
                 for id in partner:
-                    lines = self.pool.get('account.move.line').search(self.cr,self.uid,[('partner_id', '=', id),('account_id.type','=','payable'),('date_maturity','!=',False)])
-                    move_lines.append(hrs.browse(self.cr, self.uid, lines))
-                    if len(move_lines[-1].ids)>0:
-                        move_lines[-1].partner=move_lines[-1][0].partner_id
+                    t_filter = copy.deepcopy(self.filters)                
+                    t_filter.append(('partner_id','=',id))
+                    t_inner_filter = copy.deepcopy(self.inner_filters)                    
+                    t_inner_filter.append(('partner_id','=',id))                    
+                    hrs_list = hrs.search(self.cr, self.uid, t_filter,order='date_maturity')
+
+                    if self.target_move == 'posted':
+                        hrs_list1 = hrs.search(self.cr, self.uid, t_inner_filter, order='date_maturity')
+                        self.cr.execute('''
+                            select 
+                                lin1.id,
+                                mov1.state,
+                                lin2.id,
+                                lin2.state
+                            from 
+                                account_move_line AS lin1,
+                                account_move_line AS lin2,
+                                account_move AS mov1,
+                                account_move AS mov2
+                            where
+                                lin1.move_id = mov1.id AND
+                                lin2.move_id = mov2.id AND
+                                lin1.id != lin2.id AND
+                                lin1.id IN %s AND
+                                lin1.reconcile_id = lin2.reconcile_id AND    
+                                mov1.state = 'posted' AND
+                                mov2.state != 'posted'                                     
+                        ''',(tuple(hrs_list1),))
+                        
+                        qry_res = self.cr.fetchall()
+                        if qry_res:
+                            for record in qry_res:
+                                hrs_list.append(record[0])   
+                    
+                    move_lines.append(hrs.browse(self.cr, self.uid, hrs_list))       
+                    if len(move_lines[-1].ids)>0:  
+                        move_lines[-1].partner=move_lines[-1][0].partner_id   
+                                                                    
+            
+            if len(self.partners)>0:
+                for partner in self.partners:
+                    t_filter = copy.deepcopy(self.filters)
+                    t_filter.append(('partner_id','=',partner),)
+                    t_inner_filter = copy.deepcopy(self.inner_filters)                    
+                    t_inner_filter.append(('partner_id','=',partner))                    
+                    hrs_list = hrs.search(self.cr, self.uid, t_filter,order='date_maturity')
+
+                    if self.target_move == 'posted':
+                        hrs_list1 = hrs.search(self.cr, self.uid, t_inner_filter, order='date_maturity')
+                        self.cr.execute('''
+                            select 
+                                lin1.id,
+                                mov1.state,
+                                lin2.id,
+                                lin2.state
+                            from 
+                                account_move_line AS lin1,
+                                account_move_line AS lin2,
+                                account_move AS mov1,
+                                account_move AS mov2
+                            where
+                                lin1.move_id = mov1.id AND
+                                lin2.move_id = mov2.id AND
+                                lin1.id != lin2.id AND
+                                lin1.id IN %s AND
+                                lin1.reconcile_id = lin2.reconcile_id AND    
+                                mov1.state = 'posted' AND
+                                mov2.state != 'posted'                                     
+                        ''',(tuple(hrs_list1),))
+                        
+                        qry_res = self.cr.fetchall()
+                        if qry_res:
+                            for record in qry_res:
+                                hrs_list.append(record[0])                       
+                    
+                    move_lines.append(hrs.browse(self.cr, self.uid, hrs_list))
+                    if len(move_lines[-1].ids)>0:  
+                        move_lines[-1].partner=move_lines[-1][0].partner_id        
+                                                                  
+            
+        elif len(self.partners)>0:
+            for partner in self.partners:
+                t_filter = copy.deepcopy(self.filters)
+                t_filter.append(('partner_id','=',partner),)
+                t_inner_filter = copy.deepcopy(self.inner_filters)                    
+                t_inner_filter.append(('partner_id','=',partner))                
+                hrs_list = hrs.search(self.cr, self.uid, t_filter,order='date_maturity')
+                
+                if self.target_move == 'posted':
+                    hrs_list1 = hrs.search(self.cr, self.uid, t_inner_filter, order='date_maturity')
+                    self.cr.execute('''
+                        select 
+                            lin1.id,
+                            mov1.state,
+                            lin2.id,
+                            lin2.state
+                        from 
+                            account_move_line AS lin1,
+                            account_move_line AS lin2,
+                            account_move AS mov1,
+                            account_move AS mov2
+                        where
+                            lin1.move_id = mov1.id AND
+                            lin2.move_id = mov2.id AND
+                            lin1.id != lin2.id AND
+                            lin1.id IN %s AND
+                            lin1.reconcile_id = lin2.reconcile_id AND    
+                            mov1.state = 'posted' AND
+                            mov2.state != 'posted'                                     
+                    ''',(tuple(hrs_list1),))
+                    
+                    qry_res = self.cr.fetchall()
+                    if qry_res:
+                        for record in qry_res:
+                            hrs_list.append(record[0])   
+                
+                move_lines.append(hrs.browse(self.cr, self.uid, hrs_list))
+                if len(move_lines[-1].ids)>0:  
+                    move_lines[-1].partner=move_lines[-1][0].partner_id                      
+                           
+        else:
+            hrs_list = hrs.search(self.cr, self.uid, self.filters,order='date_maturity')
+
+            if self.target_move == 'posted':
+                hrs_list1 = hrs.search(self.cr, self.uid, t_inner_filter, order='date_maturity')
+                self.cr.execute('''
+                    select 
+                        lin1.id,
+                        mov1.state,
+                        lin2.id,
+                        lin2.state
+                    from 
+                        account_move_line AS lin1,
+                        account_move_line AS lin2,
+                        account_move AS mov1,
+                        account_move AS mov2
+                    where
+                        lin1.move_id = mov1.id AND
+                        lin2.move_id = mov2.id AND
+                        lin1.id != lin2.id AND
+                        lin1.id IN %s AND
+                        lin1.reconcile_id = lin2.reconcile_id AND    
+                        mov1.state = 'posted' AND
+                        mov2.state != 'posted'                                     
+                ''',(tuple(hrs_list1),))
+                
+                qry_res = self.cr.fetchall()
+                if qry_res:
+                    for record in qry_res:
+                        hrs_list.append(record[0])               
+            
+            move_lines.append(hrs.browse(self.cr, self.uid, hrs_list))            
             
         final_move_lines = []
         
@@ -167,10 +356,10 @@ class account_due_list_report_ext_isa(report_sxw.rml_parse, CommonPartnersReport
             move_lines_ids = []
             for move_line in move_partner_line:
                 if move_line.account_id:
-                    if (move_line.account_id.type == 'payable'):
+                    if (move_line.account_id.type == 'payable' and move_line.debit == 0):
                         if move_line.partner_id.property_account_payable == move_line.account_id:
                             move_lines_ids.append(move_line.id)
-                    elif (move_line.account_id.type == 'receivable'):
+                    elif (move_line.account_id.type == 'receivable' and move_line.credit == 0):
                         if move_line.partner_id.property_account_receivable == move_line.account_id:
                             move_lines_ids.append(move_line.id)
         
@@ -184,9 +373,14 @@ class account_due_list_report_ext_isa(report_sxw.rml_parse, CommonPartnersReport
         name= partner_obj.browse(self.cr, self.uid, partner_id).name
         return name
     
-    def _get_residual(self,reconcile_ref):
+    def _get_residual(self,reconcile_ref,move_line):
         move_obj = self.pool.get('account.move.line')
-        move_ids = move_obj.search(self.cr, self.uid,[('reconcile_ref','=',reconcile_ref)])
+        
+        if self.target_move != 'posted' or not move_line.reconcile_id:
+            move_ids = move_obj.search(self.cr, self.uid,[('reconcile_ref','=',reconcile_ref)])
+        else:
+            move_ids = move_obj.search(self.cr, self.uid,[('reconcile_ref','=',reconcile_ref),('move_id.state','!=','posted')])
+            
         residual = 0
         for line in move_ids:
             move = move_obj.browse(self.cr, self.uid,line)
@@ -199,12 +393,8 @@ class account_due_list_report_ext_isa(report_sxw.rml_parse, CommonPartnersReport
             acc = self.pool.get('account.move.reconcile')
             acc_list = acc.browse(self.cr, self.uid, reconcile_id)
             reconcile_description = acc_list.name_get()[0][1]
-
+            
         return reconcile_description
-
-    def get_all_partner(self):
-        obj = self.pool.get('res.partner')
-        return obj
         
 HeaderFooterTextWebKitParser('report.due_list_pdf',
                              'account.move.line',

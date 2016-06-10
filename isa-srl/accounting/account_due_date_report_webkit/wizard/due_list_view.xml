@@ -9,17 +9,18 @@
             <form string="Print Account Due List Report" version="7.0">
                 <group>
                 	<group>
-                        <field name="company_id" required="1" groups="base.group_multi_company"/>
-                        <field name="type" required="1"/>
-                        <field name="all_partner"/>
+                        <field name="company_id" required="1" groups="base.group_multi_company"/>  
+                        <field name="print_customers"/>
+                        <field name="print_suppliers"/>
                 	</group>
                     <group>
                     	<field name="mode"/>
+                    	<field name="target_move"/>
                         <field name="date_maturity"/>
                     </group>
                 </group>
                 <group>
-                    <field name="partner_ids" attrs="{'invisible':[('all_partner','=',True)]}"/>
+                    <field name="partner_ids"/>
                 </group>
                 <footer>
                     <button name="print_report_pdf" string="Stampa" type="object" class="oe_highlight" />
