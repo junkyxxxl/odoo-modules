@@ -10,6 +10,7 @@ class working_hour(models.Model):
 
     working_hour = fields.Float(string = "Ore", default=0, digits=dp.get_precision('Hour holidays'))
 
+    @api.model
     @api.onchange('employee_id')
     def onchange_employee(self):
         if self.employee_id:
