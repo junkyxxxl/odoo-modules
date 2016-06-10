@@ -35,7 +35,8 @@ class working_hour(models.Model):
         day_from = datetime.datetime.strptime(self.date_from, '%Y-%m-%d %H:%M:%S')
         day_to = datetime.datetime.strptime(self.date_to, '%Y-%m-%d %H:%M:%S')
 
-        for single_date in daterange(day_from, day_to + datetime.timedelta(days=1)):
+        for single_date in daterange(day_from.date(), day_to.date() + datetime.timedelta(days=1)):
+            single_date = datetime.datetime.strptime(str(single_date)+" 00:00:00" ,'%Y-%m-%d %H:%M:%S')
             current_contracts = self._get_contract(single_date,contract)
             hh_start = 0
             hh_end = 0.0
@@ -73,6 +74,8 @@ class working_hour(models.Model):
                     if hh_start.hour+2 >= c.hour_from and hh_start.hour+2 <= c.hour_to:
                         hour_from = float(hh_start.hour+2) + float('0.'+self.converter_cent(float(hh_start.minute)))
                         self.working_hour += float(c.hour_to - hour_from)
+                    elif hh_start.hour +2 >= c.hour_from and hh_start.hour +2 >= c.hour_to:
+                        continue
                     else:
                         self.working_hour += float(c.hour_to) - float(c.hour_from)
 
