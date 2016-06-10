@@ -24,6 +24,11 @@
     'version': '0.1',
     'category': 'Warehouse',
     'author': 'ISA srl',
+    'description': """
+    - Porta la data di creazione del picking sul movimento di magazzino all'atto del trasferimento
+    - Introduce la data di ultimo inventario su un prodotto
+    ===================
+    """,
     'depends': ['stock_account', # necessario per attibute module_stock_invoice_directly
                 'product',
                 'stock',
