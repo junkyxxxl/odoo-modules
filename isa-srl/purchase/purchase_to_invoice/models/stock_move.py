@@ -37,6 +37,6 @@ class StockMovePurchase(models.Model):
             for purchase_move in move.picking_id.move_lines:
                 if purchase_move.purchase_line_id:
                     purchase_order = purchase_move.purchase_line_id.order_id
-                    return purchase_order.partner_id, purchase_order.SUPERUSER_ID, purchase_order.currency_id.id        
+                    return purchase_order.partner_id, SUPERUSER_ID, purchase_order.currency_id.id        
         #QUESTO AVVIENE SOLO SE NON E' VERIFICATO NESSUNO DEI PRECEDENTI CASI. E' PREFERIBILE RISPETTO ALLA CLAUSOLA ELSE, POICHE' IL PROGRAMMA POTREBBE ENTRARE NEL SECONDO BRANCH ELIF E MAI ARRIVARE AL return
         return super(StockMovePurchase,self)._get_master_data(cr, uid, move, company, context=context)
