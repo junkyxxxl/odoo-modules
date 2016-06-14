@@ -33,7 +33,6 @@
     "depends" : [
         'account',
         'account_asset',
-        'account_makeover',
         ],
     "init_xml" : [],
     "update_xml" : [

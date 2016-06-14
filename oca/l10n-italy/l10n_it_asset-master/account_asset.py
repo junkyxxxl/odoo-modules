@@ -556,7 +556,7 @@ class account_asset_depreciation_line(orm.Model):
         'fiscal_year': fields.many2one(
             'account.fiscalyear', 'Fiscal Year'),
         'move_check': fields.function(
-            _get_move_check, method=True, type='boolean', string='Posted'),
+            _get_move_check, method=True, type='boolean', string='Posted', store=True),
         }
 
     def create_move(self, cr, uid, ids, context={}):

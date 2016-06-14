@@ -76,8 +76,6 @@
                 'website_product_tags_73lines',
                 'website_user_wishlist_73lines',
                 ],
-    'conflicts': ['website_multi_image',
-              ],
     'images': [
         'static/description/blueboy-banner.png',
     ],
