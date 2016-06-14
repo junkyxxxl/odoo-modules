@@ -84,9 +84,9 @@ class account_invoice_line_family_discount(models.Model):
             
             product_data = self.env['product.product'].browse(product)
             if pricelist_data:   
-                rule = self.pool.get('product.pricelist').pricelist_item_get(self._cr, self._uid, pricelist_data,[(product_data, qty or 1.0, partner_id)], context=self._context)[product]   
-                         
-            if not rule or not rule.is_net_price:
+                rule = self.pool.get('product.pricelist').pricelist_item_get(self._cr, self._uid, pricelist_data,[(product_data, qty or 1.0, partner_id)], context=self._context)[product]
+
+            if not rule or (rule and not rule.is_net_price):
             
                 product_data = self.env['product.product'].browse(product)
                 partner_data = self.env['res.partner'].browse(partner_id)

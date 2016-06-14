@@ -51,11 +51,11 @@ class product_pricelist_custom(models.Model):
             (prod_tmpl_ids, prod_ids, categ_ids, pricelist.id, date, date))
         
         item_ids = [x[0] for x in cr.fetchall()]
-        items = self.pool.get('product.pricelist.item').browse(cr, uid, item_ids, context=context)        
+        items = self.pool.get('product.pricelist.item').browse(cr, uid, item_ids, context=context)
 
         results = {}
         for product, qty, partner in products_by_qty_by_partner:
-            results[product.id] = (0.0,0.0,0.0,0.0)
+            results[product.id] = None
             rule_id = False
             
             for rule in items:
