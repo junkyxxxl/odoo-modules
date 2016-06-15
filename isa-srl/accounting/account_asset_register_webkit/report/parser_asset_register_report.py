@@ -120,7 +120,7 @@ class asset_register_report(report_sxw.rml_parse, CommonPartnersReportHeaderWebk
                 FROM account_asset_asset aaa
                      JOIN account_asset_depreciation_line aadl ON (aadl.asset_id = aaa.id)
                      JOIN account_asset_category aac ON (aaa.category_id = aac.id)
-                     JOIN account_move_line aml ON (aml.id=aadl.move_id)
+                     JOIN account_move aml ON (aml.id=aadl.move_id)
                      JOIN account_period ap ON (ap.id=aml.period_id)
                      JOIN account_fiscalyear af ON (af.id=ap.fiscalyear_id)
                 WHERE aaa.state NOT LIKE 'draft'
